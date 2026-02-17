@@ -1,0 +1,258 @@
+export const brands = [
+  {
+    name: "3M",
+    slug: "3m",
+    category: "Major Manufacturers",
+    description: "Global innovator offering Fasara decorative films, Scotchtint solar films, Scotchshield security films, and Thinsulate insulation films.",
+    url: "https://www.3m.com",
+    relatedFilms: ["decorative", "safety", "energy-saving"]
+  },
+  {
+    name: "Eastman Chemical Company",
+    slug: "eastman",
+    category: "Major Manufacturers",
+    description: "Producer of LLumar, Vista, and SunTek — high-performance solar, safety, and automotive window films.",
+    url: "https://www.eastman.com",
+    relatedFilms: ["safety", "energy-saving"]
+  },
+  {
+    name: "Saint-Gobain / Solar Gard",
+    slug: "solar-gard",
+    category: "Major Manufacturers",
+    description: "Solar Gard and SunTek brands from Saint-Gobain, providing solar control, safety, and automotive window tinting films.",
+    url: "https://www.solargard.com",
+    relatedFilms: ["energy-saving", "safety"]
+  },
+  {
+    name: "Avery Dennison / Hanita",
+    slug: "avery-dennison",
+    category: "Major Manufacturers",
+    description: "Global materials science company with Hanita Coatings. Offers specialty, graphic, and architectural films.",
+    url: "https://graphics.averydennison.com",
+    relatedFilms: ["decorative", "films/specialty-films"]
+  },
+  {
+    name: "XPEL",
+    slug: "xpel",
+    category: "Major Manufacturers",
+    description: "Leading brand known for paint protection film (PPF) and high-performance automotive tints.",
+    url: "https://www.xpel.com",
+    relatedFilms: ["safety"]
+  },
+  {
+    name: "Madico",
+    slug: "madico",
+    category: "Major Manufacturers",
+    description: "Established manufacturer with films for automotive, architectural, and safety applications.",
+    url: "https://madico.com",
+    relatedFilms: ["safety", "residential"]
+  },
+  {
+    name: "Hüper Optik",
+    slug: "huper-optik",
+    category: "Automotive",
+    description: "High-end multi-layer ceramic window films with excellent heat rejection and low reflectivity.",
+    url: "https://www.huperoptikusa.com",
+    relatedFilms: ["energy-saving"]
+  },
+  {
+    name: "Johnson Window Films",
+    slug: "johnson",
+    category: "Automotive",
+    description: "Veteran manufacturer offering films for both vehicles and buildings, including InsulatIR Nano Ceramic line.",
+    url: "https://www.johnsonwindowfilms.com",
+    relatedFilms: ["residential"]
+  },
+  {
+    name: "Geoshield",
+    slug: "geoshield",
+    category: "Automotive",
+    description: "Known for its ceramic films like Apex Ultra series, offering high heat rejection and clarity.",
+    url: "https://geoshieldusa.com",
+    relatedFilms: ["energy-saving"]
+  },
+  {
+    name: "Rayno",
+    slug: "rayno",
+    category: "Automotive",
+    description: "Innovative brand using ceramic and sputter technology for advanced performance films.",
+    url: "https://rayno.com",
+    relatedFilms: ["films/specialty-films"]
+  },
+  {
+    name: "Global Window Films",
+    slug: "global",
+    category: "Automotive",
+    description: "Reliable and budget-friendly films for both installers and DIY consumers.",
+    url: "https://globalwindowfilms.com",
+    relatedFilms: ["residential"]
+  },
+  {
+    name: "TERMINAX",
+    slug: "terminax",
+    category: "Automotive",
+    description: "Newer entrant offering cutting-edge ceramic window tint technology.",
+    url: "#",
+    relatedFilms: ["films/specialty-films"]
+  },
+  {
+    name: "Motoshield Pro",
+    slug: "motoshield",
+    category: "Automotive",
+    description: "Specializes in nano-ceramic window tints for cars, SUVs, and trucks.",
+    url: "https://motoshieldpro.com",
+    relatedFilms: ["films/specialty-films"]
+  },
+  {
+    name: "Gila",
+    slug: "gila",
+    category: "Architectural & Residential",
+    description: "Popular DIY brand offering heat, glare, and privacy films for homes.",
+    url: "https://gila.com",
+    relatedFilms: ["residential", "decorative"]
+  },
+  {
+    name: "Artscape",
+    slug: "artscape",
+    category: "Architectural & Residential",
+    description: "Decorative films that mimic etched and stained glass without adhesives.",
+    url: "https://artscape-inc.com",
+    relatedFilms: ["decorative"]
+  },
+  {
+    name: "EnerLogic",
+    slug: "enerlogic",
+    category: "Architectural & Residential",
+    description: "High-performance, energy-saving window films designed for year-round insulation.",
+    url: "https://enerlogicwindowfilms.com",
+    relatedFilms: ["energy-saving"]
+  },
+  {
+    name: "Concord Window Film",
+    slug: "concord",
+    category: "Architectural & Residential",
+    description: "Direct-to-consumer brand offering ComforTech ceramic and solar control films.",
+    url: "https://www.concordwindowfilm.com",
+    relatedFilms: ["residential", "energy-saving"]
+  },
+  {
+    name: "BuyDecorativeFilm (BDF)",
+    slug: "bdf",
+    category: "Architectural & Residential",
+    description: "Offers decorative films such as one-way privacy and sun control tints.",
+    url: "https://www.buydecorativefilm.com",
+    relatedFilms: ["decorative", "residential"]
+  },
+  {
+    name: "Rockrose",
+    slug: "rockrose",
+    category: "Architectural & Residential",
+    description: "High-performance films under the Ultra Vista brand for UV and heat blocking.",
+    url: "#",
+    relatedFilms: ["residential", "energy-saving"]
+  },
+  {
+    name: "V-KOOL",
+    slug: "vkool",
+    category: "Architectural & Residential",
+    description: "Pioneering brand focusing on high-performance architectural window films.",
+    url: "https://www.vkool.com",
+    relatedFilms: ["residential", "energy-saving"]
+  },
+  {
+    name: "Decorative Films, LLC",
+    slug: "decorative-films-llc",
+    category: "Architectural & Residential",
+    description: "Wide variety of frosted, etched, and patterned decorative films.",
+    url: "https://www.decorativefilm.com",
+    relatedFilms: ["decorative"]
+  },
+  {
+    name: "Smart Glass Technologies",
+    slug: "smart-glass",
+    category: "Architectural & Residential",
+    description: "Producers of switchable smart films that turn from opaque to transparent.",
+    url: "https://smartglasstech.us",
+    relatedFilms: ["films/specialty-films", "residential"]
+  },
+  {
+    name: "Armor Glass International",
+    slug: "armor-glass",
+    category: "Architectural & Residential",
+    description: "Specializes in security and safety films for homes and buildings.",
+    url: "https://armorglass.com",
+    relatedFilms: ["safety", "residential"]
+  },
+  {
+    name: "HanitaTek",
+    slug: "hanitatek",
+    category: "Architectural & Residential",
+    description: "Former independent manufacturer, now part of Avery Dennison, known for SolarZone film series.",
+    url: "#",
+    relatedFilms: ["energy-saving", "safety"]
+  },
+  {
+    name: "Lintec",
+    slug: "lintec",
+    category: "Specialty / Niche",
+    description: "Japanese manufacturer producing advanced polyester and architectural films.",
+    url: "https://www.lintecusa.com",
+    relatedFilms: ["films/specialty-films"]
+  },
+  {
+    name: "Garware Polyester",
+    slug: "garware",
+    category: "Specialty / Niche",
+    description: "Indian manufacturer exporting polyester and solar control window films.",
+    url: "https://www.garwarehitechfilms.com",
+    relatedFilms: ["films/specialty-films"]
+  },
+  {
+    name: "Reflek Technologies",
+    slug: "reflek",
+    category: "Specialty / Niche",
+    description: "American producer specializing in sputter-coated advanced window films.",
+    url: "https://reflektechnologies.com",
+    relatedFilms: ["films/specialty-films"]
+  },
+  {
+    name: "Contra Vision",
+    slug: "contra-vision",
+    category: "Specialty / Niche",
+    description: "Leader in perforated and one-way films for signage and advertising.",
+    url: "https://www.contravision.com",
+    relatedFilms: ["films/specialty-films", "decorative"]
+  },
+  {
+    name: "Vsmile",
+    slug: "vsmile",
+    category: "Specialty / Niche",
+    description: "Sells static-cling privacy and sun-blocking films for DIY consumers.",
+    url: "#",
+    relatedFilms: ["decorative", "residential"]
+  },
+  {
+    name: "Flexfilm",
+    slug: "flexfilm",
+    category: "Specialty / Niche",
+    description: "Offers specialized architectural tints like the Dualflex series for advanced solar control.",
+    url: "https://flexfilmstore.com",
+    relatedFilms: ["energy-saving", "films/specialty-films"]
+  },
+  {
+    name: "Solyx",
+    slug: "solyx",
+    category: "Architectural & Residential",
+    description: "Leading provider of decorative, privacy, and specialty window films.",
+    url: "https://www.solyxfilms.com/",
+    relatedFilms: ["decorative", "privacy", "specialty"]
+  },
+  {
+    name: "SimGlas",
+    slug: "simglas",
+    category: "Architectural & Residential",
+    description: "High-quality films that simulate the look of real cut, etched, and textured glass.",
+    url: "#",
+    relatedFilms: ["decorative", "privacy"]
+  }
+];

@@ -105,25 +105,21 @@ const Decorative = () => {
   return (
     <>
       <Helmet>
-        {/* Basic Meta */}
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
 
-        {/* Open Graph / Facebook */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImage} />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
 
@@ -133,7 +129,12 @@ const Decorative = () => {
           <img 
             alt="Elegant decorative window film on glass door" 
             className="w-full h-full object-cover opacity-40" 
-            src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg" 
+            src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg"
+            /* PERFORMANCE CORE FIXES */
+            width="1920"
+            height="1080"
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-transparent" />
         </div>
@@ -150,7 +151,7 @@ const Decorative = () => {
               Elevate your glass surfaces with sophisticated frosted, patterned, and custom-printed films. Mimic the look of expensive specialty glass at a fraction of the cost.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 h-14 text-lg font-bold">
+              <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 h-14 text-lg font-bold transition-all shadow-lg hover:shadow-indigo-500/20">
                 <a href="#film-library">Explore The Library</a>
               </Button>
               <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-14 rounded-md border-2 border-white/30 text-white font-bold hover:bg-white hover:text-slate-900 transition-all">
@@ -166,7 +167,7 @@ const Decorative = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 uppercase">Form Meets Function</h2>
           <div className="w-24 h-2 bg-indigo-500 mx-auto mb-8" />
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Our decorative solutions provide more than just beauty—they solve privacy and branding challenges for Arizona homes and offices.
           </p>
         </div>
@@ -194,14 +195,14 @@ const Decorative = () => {
           <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-3xl">
               <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase italic">The Film Collection</h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed">
                 Explore hundreds of patterns from premium brands like{" "}
-                <Link to="/brands/3m" className="text-indigo-400 hover:underline">3M Fasara</Link>{" "}
+                <Link to="/brands/3m" className="text-indigo-400 hover:underline font-bold">3M Fasara</Link>{" "}
                 and{" "}
-                <Link to="/brands/madico" className="text-indigo-400 hover:underline">Madico</Link>.
+                <Link to="/brands/madico" className="text-indigo-400 hover:underline font-bold">Madico</Link>.
               </p>
             </div>
-            <Button asChild variant="outline" className="border-indigo-500 text-indigo-400 hover:bg-indigo-600 hover:text-white">
+            <Button asChild variant="outline" className="border-indigo-500 text-indigo-400 hover:bg-indigo-600 hover:text-white font-bold">
               <Link to="/films">View All Specifications</Link>
             </Button>
           </div>
@@ -218,7 +219,7 @@ const Decorative = () => {
                 <p className="text-gray-400 mb-8 h-12 text-sm">{category.description}</p>
                 <div className="grid grid-cols-2 gap-3">
                   {category.patterns.map((pattern, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-2 text-xs font-bold text-gray-300">
+                    <div key={pIdx} className="flex items-center gap-2 text-xs font-bold text-gray-200">
                       <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
                       {pattern}
                     </div>
@@ -239,6 +240,10 @@ const Decorative = () => {
                 alt="Custom company logo window film in Phoenix storefront" 
                 className="rounded-3xl shadow-2xl relative z-10" 
                 src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20210413_115512-1-Wb1kK.jpg" 
+                /* PERFORMANCE FIXES */
+                width="800"
+                height="600"
+                loading="lazy"
               />
               <div className="absolute -top-6 -left-6 w-64 h-64 bg-indigo-500/10 rounded-full z-0 blur-3xl" />
             </div>
@@ -247,7 +252,7 @@ const Decorative = () => {
               <h2 className="text-5xl font-black text-slate-900 mb-8 uppercase leading-tight">
                 Custom <span className="text-indigo-600 italic">Graphics</span> & Branding
               </h2>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              <p className="text-xl text-gray-700 mb-10 leading-relaxed">
                 Need something unique? Our in-house designers create precision-cut graphics, company logos, and custom-printed architectural elements tailored to your brand identity.
               </p>
               
@@ -258,8 +263,8 @@ const Decorative = () => {
                   'Personalized text, messaging, and safety markings',
                   'Bespoke architectural patterns and gradients'
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 text-slate-700 font-bold uppercase tracking-tight text-sm">
-                    <CheckCircle className="w-5 h-5 text-indigo-600" />
+                  <div key={i} className="flex items-center gap-4 text-slate-800 font-bold uppercase tracking-tight text-sm">
+                    <CheckCircle className="w-5 h-5 text-indigo-600 flex-shrink-0" />
                     {item}
                   </div>
                 ))}
@@ -278,7 +283,7 @@ const Decorative = () => {
               <Link 
                 key={city.slug} 
                 to={`/${city.slug}-window-tinting`}
-                className="px-6 py-2 bg-white border border-slate-200 rounded-full text-xs font-black text-slate-500 uppercase hover:border-indigo-500 hover:text-indigo-600 transition-all shadow-sm"
+                className="px-6 py-2 bg-white border border-slate-200 rounded-full text-xs font-black text-slate-600 uppercase hover:border-indigo-500 hover:text-indigo-600 transition-all shadow-sm"
               >
                 {city.name}
               </Link>
@@ -292,7 +297,7 @@ const Decorative = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic">Ready to transform your glass?</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button asChild size="lg" className="bg-white text-indigo-900 hover:bg-slate-100 px-12 h-16 text-xl font-black">
+            <Button asChild size="lg" className="bg-white text-indigo-900 hover:bg-slate-100 px-12 h-16 text-xl font-black shadow-2xl">
               <Link to="/contact">Get Free Project Quote</Link>
             </Button>
             <a href="tel:480-788-1591" className="flex items-center justify-center text-3xl font-black text-white hover:scale-105 transition-transform">

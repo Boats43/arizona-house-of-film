@@ -2,483 +2,307 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Palette, Eye, Sparkles, Home, Building, ArrowRight, Phone } from 'lucide-react';
+import { 
+  Palette, Eye, Sparkles, Home, Building, 
+  ArrowRight, Phone, CheckCircle 
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cities } from '@/data/cities';
+
 const Decorative = () => {
-  const pageTitle = "#1 Decorative Window Film in Arizona | Arizona House of Film";
-  const metaDescription = "Expert decorative window film installation across Arizona—transform glass into art with frosted, patterned, and custom designs for privacy and style.";
+  /* ================= SEO & SCHEMA ================= */
+  const pageTitle = "Decorative Window Film Arizona | Frosted & Custom Glass Designs";
+  const metaDescription = "Expert decorative window film installation in Arizona. Transform glass with frosted, patterned, and custom designs for privacy and style. Licensed & Bonded.";
   const canonicalUrl = "https://arizonahouseoffilm.com/decorative-window-films";
-  const filmLibrary = [{
-    category: 'Frosted Films',
-    slug: 'frosted-etched-films',
-    description: 'Classic etched glass appearance',
-    patterns: ['Light Frost', 'Medium Frost', 'Heavy Frost', 'Crystal Frost']
-  }, {
-    category: 'Geometric Patterns',
-    slug: 'patterned-privacy-films',
-    description: 'Modern geometric designs',
-    patterns: ['Squares', 'Diamonds', 'Hexagons', 'Triangles']
-  }, {
-    category: 'Nature Inspired',
-    slug: 'patterned-privacy-films',
-    description: 'Organic and natural motifs',
-    patterns: ['Bamboo', 'Rice Paper', 'Stone', 'Wood Grain']
-  }, {
-    category: 'Abstract Designs',
-    slug: 'elegant-textured-films',
-    description: 'Contemporary artistic patterns',
-    patterns: ['Waves', 'Clouds', 'Bubbles', 'Swirls']
-  }, {
-    category: 'Traditional Patterns',
-    slug: 'stained-glass-films',
-    description: 'Classic and timeless designs',
-    patterns: ['Victorian', 'Art Deco', 'Floral', 'Paisley']
-  }, {
-    category: 'Custom Graphics',
-    slug: 'specialty-films',
-    description: 'Personalized designs and logos',
-    patterns: ['Company Logos', 'Custom Text', 'Artwork', 'Branding']
-  }];
-  const benefits = [{
-    icon: Eye,
-    title: 'Enhanced Privacy',
-    slug: 'enhanced-privacy',
-    description: 'Create private spaces while maintaining natural light flow throughout your property.'
-  }, {
-    icon: Sparkles,
-    title: 'Aesthetic Appeal',
-    slug: 'aesthetic-appeal',
-    description: 'Transform plain glass into stunning design elements that complement your décor.'
-  }, {
-    icon: Palette,
-    title: 'Design Flexibility',
-    slug: 'design-flexibility',
-    description: 'Choose from hundreds of patterns or create custom designs to match your vision.'
-  }, {
-    icon: Home,
-    title: 'Easy Maintenance',
-    slug: 'easy-maintenance',
-    description: 'Decorative films are easy to clean and maintain, lasting for years with proper care.'
-  }];
-  const applications = [{
-    name: 'Conference Room Glass',
-    slug: 'industries/office-buildings'
-  }, {
-    name: 'Bathroom Windows',
-    slug: 'decorative-window-films/enhanced-privacy'
-  }, {
-    name: 'Front Doors',
-    slug: 'safety/french-doors'
-  }, {
-    name: 'Shower Enclosures',
-    slug: 'decorative-window-films/enhanced-privacy'
-  }, {
-    name: 'Office Partitions',
-    slug: 'industries/office-buildings'
-  }, {
-    name: 'Retail Storefronts',
-    slug: 'industries/retail-stores'
-  }, {
-    name: 'Restaurant Dividers',
-    slug: 'industries/restaurants'
-  }, {
-    name: 'Home Windows',
-    slug: 'residential-window-tinting'
-  }];
-  const faqSchema = {
+  const ogImage = "https://arizonahouseoffilm.com/og-image-decorative.jpg";
+
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What types of decorative window film do you offer in Arizona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer a vast selection of decorative window films, including frosted films, etched glass patterns, geometric designs, nature-inspired textures, and fully custom-printed graphics. Our films can mimic the look of expensive specialty glass for a fraction of the cost."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Can decorative film be used for privacy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, decorative films are an excellent solution for enhancing privacy. Frosted and patterned films obscure the view while still allowing natural light to pass through, making them perfect for bathrooms, conference rooms, and front doors."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Is it possible to get a custom logo printed on window film?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. We specialize in creating custom decorative films, including company logos, branding elements, and unique graphics. This is a popular choice for commercial clients looking to enhance their storefront or office space."
-      }
-    }]
+    "@type": "Service",
+    "name": "Decorative Window Film Installation",
+    "serviceType": "Decorative & Privacy Window Film",
+    "provider": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Arizona House of Film",
+      "url": "https://arizonahouseoffilm.com/",
+      "telephone": "+1-480-788-1591"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Arizona"
+    },
+    "description": metaDescription,
+    "url": canonicalUrl
   };
-  const productSchema = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "Decorative Window Film",
-    "image": "https://arizonahouseoffilm.com/images/films/decorative-window-film.webp",
-    "description": "Professional decorative window film installation in Arizona. Transform glass with frosted, patterned, and custom designs for privacy and style.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Arizona House of Film"
+
+  /* ================= DATA ================= */
+  const filmLibrary = [
+    {
+      category: 'Frosted Films',
+      slug: 'frosted-etched-films',
+      description: 'Classic etched glass appearance for high-end privacy.',
+      patterns: ['Light Frost', 'Medium Frost', 'Heavy Frost', 'Crystal Frost']
     },
-    "sku": "AHOF-DECORATIVE-001",
-    "url": "https://arizonahouseoffilm.com/decorative-window-films",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "0.00",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 30,
-        "returnFees": "https://schema.org/FreeReturn"
-      },
-      "url": "https://arizonahouseoffilm.com/decorative-window-films"
+    {
+      category: 'Geometric Patterns',
+      slug: 'patterned-privacy-films',
+      description: 'Modern lines and shapes for contemporary office spaces.',
+      patterns: ['Squares', 'Diamonds', 'Hexagons', 'Triangles']
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "24"
+    {
+      category: 'Nature Inspired',
+      slug: 'patterned-privacy-films',
+      description: 'Organic motifs that bring the outdoors inside.',
+      patterns: ['Bamboo', 'Rice Paper', 'Stone', 'Wood Grain']
     },
-    "review": [{
-      "@type": "Review",
-      "itemReviewed": {
-        "@type": "Organization",
-        "name": "Arizona House of Film"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Verified Customer"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Excellent quality tint and professional installation."
-    }]
-  };
-  return <>
+    {
+      category: 'Abstract Designs',
+      slug: 'elegant-textured-films',
+      description: 'Contemporary artistic patterns for unique focal points.',
+      patterns: ['Waves', 'Clouds', 'Bubbles', 'Swirls']
+    },
+    {
+      category: 'Traditional Patterns',
+      slug: 'stained-glass-films',
+      description: 'Classic and timeless designs for a vintage aesthetic.',
+      patterns: ['Victorian', 'Art Deco', 'Floral', 'Paisley']
+    },
+    {
+      category: 'Custom Graphics',
+      slug: 'specialty-films',
+      description: 'Precision-cut branding and personalized artwork.',
+      patterns: ['Company Logos', 'Custom Text', 'Artwork', 'Branding']
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: Eye,
+      title: 'Enhanced Privacy',
+      slug: 'enhanced-privacy',
+      description: 'Create secluded spaces while maintaining natural light flow throughout your property.'
+    },
+    {
+      icon: Sparkles,
+      title: 'Aesthetic Appeal',
+      slug: 'aesthetic-appeal',
+      description: 'Transform plain glass into stunning design elements that complement your interior décor.'
+    },
+    {
+      icon: Palette,
+      title: 'Design Flexibility',
+      slug: 'design-flexibility',
+      description: 'Choose from hundreds of patterns or collaborate with us for a fully custom vision.'
+    },
+    {
+      icon: Home,
+      title: 'Easy Maintenance',
+      slug: 'easy-maintenance',
+      description: 'Our films are durable, easy to clean, and simple to update if your style changes.'
+    }
+  ];
+
+  return (
+    <>
       <Helmet>
+        {/* Basic Meta */}
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+
+        {/* Open Graph / Facebook */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image-decorative.jpg" />
         <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <meta property="og:image" content={ogImage} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden text-white">
-        <div className="absolute inset-0">
-            <img alt="Elegant decorative window film with a frosted pattern on a glass door" className="w-full h-full object-cover" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg" />
-            <div className="absolute inset-0 bg-black/40"></div>
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-[75vh] flex items-center pt-20 bg-slate-900 overflow-hidden text-white">
+        <div className="absolute inset-0 z-0">
+          <img 
+            alt="Elegant decorative window film on glass door" 
+            className="w-full h-full object-cover opacity-40" 
+            src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-transparent" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{
-            opacity: 0,
-            x: -30
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }}>
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Decorative Window Film Arizona
-              </h1>
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                Transform ordinary glass into stunning design elements. Our extensive decorative film library offers endless possibilities for privacy and style.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-                  <a href="#film-library">
-                    View Our Library
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </Button>
-                <a href="tel:480-788-1591" className="bg-white/20 text-white hover:bg-white hover:text-purple-900 inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white h-11 rounded-md px-8 text-lg">
-                  <Phone className="mr-2 w-5 h-5" /> Call 480-788-1591
-                </a>
-              </div>
-            </motion.div>
-            
-            <motion.div initial={{
-            opacity: 0,
-            x: 30
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.2
-          }} className="relative">
-              <img alt="Close-up of a custom decorative film with a nature-inspired pattern" className="w-full h-96 object-cover rounded-2xl shadow-2xl" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/united-airlines-sky-harbor-window-tint-Ye98m.jpg" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Film Library Section */}
-      <section id="film-library" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Decorative Film Library
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our extensive collection of decorative window films, featuring hundreds of patterns and the option for custom designs. See our full <Link to="/films" className="text-blue-600 hover:underline">film library</Link> or films from <Link to="/brands/3m" className="text-blue-600 hover:underline">3M Fasara</Link>.
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <span className="inline-block px-4 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-bold text-sm mb-6 border border-indigo-500/30 uppercase tracking-widest">
+              Design & Privacy Specialists
+            </span>
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-[1.1] uppercase">
+              Decorative <br/><span className="text-indigo-400">Window Film</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+              Elevate your glass surfaces with sophisticated frosted, patterned, and custom-printed films. Mimic the look of expensive specialty glass at a fraction of the cost.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filmLibrary.map((category, index) => <motion.div key={category.category} initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }} className="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                <Link to={`/films/${category.slug}`}>
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-                    <Palette className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
-                    {category.category}
-                    </h3>
-                </Link>
-                <p className="text-gray-600 mb-6">
-                  {category.description}
-                </p>
-                <div className="space-y-2">
-                  {category.patterns.map((pattern, patternIndex) => <div key={patternIndex} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span className="text-gray-700">{pattern}</span>
-                    </div>)}
-                </div>
-              </motion.div>)}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Features
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how decorative window films can enhance both the functionality and aesthetics of your space.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => <motion.div key={benefit.title} initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }} className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200 card-hover">
-                <Link to={`/decorative-window-films/${benefit.slug}`} className="block">
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-                    <benefit.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
-                    {benefit.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
-                    </p>
-                </Link>
-              </motion.div>)}
-          </div>
-        </div>
-      </section>
-
-      {/* Applications Section */}
-        <section className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Perfect Applications</h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Decorative window films are ideal for a wide variety of residential and commercial applications.
-                    </p>
-                </motion.div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {applications.map((application, index) => <motion.div key={application.name} initial={{
-            opacity: 0,
-            scale: 0.9
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.5,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }}>
-                            <Link to={`/${application.slug}`} className="block bg-white p-4 rounded-lg shadow-md border border-purple-200 hover:shadow-lg hover:border-purple-400 transition-all">
-                                <div className="flex items-center space-x-3">
-                                    <Building className="w-5 h-5 text-purple-600" />
-                                    <span className="font-medium text-gray-900">{application.name}</span>
-                                </div>
-                            </Link>
-                        </motion.div>)}
-                </div>
-            </div>
-        </section>
-
-      {/* Custom Design Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{
-            opacity: 0,
-            x: -30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }} className="relative">
-              <img alt="Custom decorative window film with a company logo on a Phoenix storefront" className="w-full h-96 object-cover rounded-2xl shadow-2xl" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20210413_115512-1-Wb1kK.jpg" />
-            </motion.div>
-            
-            <motion.div initial={{
-            opacity: 0,
-            x: 30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }}>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Custom Design Services
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Can't find what you're looking for in our library? We offer custom design services to create unique decorative films tailored to your specific needs.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">✓</span>
-                  </div>
-                  <span className="text-gray-700">Company logos and branding</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">✓</span>
-                  </div>
-                  <span className="text-gray-700">Custom artwork and graphics</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">✓</span>
-                  </div>
-                  <span className="text-gray-700">Personalized text and messaging</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">✓</span>
-                  </div>
-                  <span className="text-gray-700">Architectural design elements</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Space?
-            </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Explore our decorative film library and discover the perfect design for your project. Contact us for a consultation today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-4">
-                <Link to="/contact">
-                  Get Your Free Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 h-14 text-lg font-bold">
+                <a href="#film-library">Explore The Library</a>
               </Button>
-              <a href="tel:480-788-1591" className="bg-white/20 text-white hover:bg-white hover:text-purple-600 inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white h-11 rounded-md px-8">
-                Call Now: 480-788-1591
+              <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-14 rounded-md border-2 border-white/30 text-white font-bold hover:bg-white hover:text-slate-900 transition-all">
+                <Phone className="w-5 h-5" /> 480-788-1591
               </a>
             </div>
           </motion.div>
         </div>
       </section>
-    </>;
+
+      {/* --- BENEFITS GRID --- */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 uppercase">Form Meets Function</h2>
+          <div className="w-24 h-2 bg-indigo-500 mx-auto mb-8" />
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Our decorative solutions provide more than just beauty—they solve privacy and branding challenges for Arizona homes and offices.
+          </p>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {benefits.map((benefit, idx) => (
+            <motion.div 
+              key={idx} 
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all group text-center"
+            >
+              <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 mx-auto group-hover:bg-indigo-600 transition-colors">
+                <benefit.icon className="w-8 h-8 text-indigo-600 group-hover:text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">{benefit.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- FILM LIBRARY SECTION --- */}
+      <section id="film-library" className="py-24 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase italic">The Film Collection</h2>
+              <p className="text-xl text-gray-400 leading-relaxed">
+                Explore hundreds of patterns from premium brands like{" "}
+                <Link to="/brands/3m" className="text-indigo-400 hover:underline">3M Fasara</Link>{" "}
+                and{" "}
+                <Link to="/brands/madico" className="text-indigo-400 hover:underline">Madico</Link>.
+              </p>
+            </div>
+            <Button asChild variant="outline" className="border-indigo-500 text-indigo-400 hover:bg-indigo-600 hover:text-white">
+              <Link to="/films">View All Specifications</Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filmLibrary.map((category, idx) => (
+              <div key={idx} className="p-8 rounded-3xl bg-slate-800/50 border border-slate-700 hover:border-indigo-500 transition-colors">
+                <Link to={`/films/${category.slug}`}>
+                  <h3 className="text-2xl font-bold mb-4 flex items-center justify-between group">
+                    {category.category}
+                    <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all text-indigo-500" />
+                  </h3>
+                </Link>
+                <p className="text-gray-400 mb-8 h-12 text-sm">{category.description}</p>
+                <div className="grid grid-cols-2 gap-3">
+                  {category.patterns.map((pattern, pIdx) => (
+                    <div key={pIdx} className="flex items-center gap-2 text-xs font-bold text-gray-300">
+                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
+                      {pattern}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CUSTOM DESIGN SECTION --- */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative order-2 lg:order-1">
+              <img 
+                alt="Custom company logo window film in Phoenix storefront" 
+                className="rounded-3xl shadow-2xl relative z-10" 
+                src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20210413_115512-1-Wb1kK.jpg" 
+              />
+              <div className="absolute -top-6 -left-6 w-64 h-64 bg-indigo-500/10 rounded-full z-0 blur-3xl" />
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <h2 className="text-5xl font-black text-slate-900 mb-8 uppercase leading-tight">
+                Custom <span className="text-indigo-600 italic">Graphics</span> & Branding
+              </h2>
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+                Need something unique? Our in-house designers create precision-cut graphics, company logos, and custom-printed architectural elements tailored to your brand identity.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  'Precision-cut company logos and branding',
+                  'Custom-printed opaque or translucent graphics',
+                  'Personalized text, messaging, and safety markings',
+                  'Bespoke architectural patterns and gradients'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 text-slate-700 font-bold uppercase tracking-tight text-sm">
+                    <CheckCircle className="w-5 h-5 text-indigo-600" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- AUTHORITY LOOP --- */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-black text-slate-900 mb-10 uppercase">Serving All of Arizona</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {cities.map(city => (
+              <Link 
+                key={city.slug} 
+                to={`/${city.slug}-window-tinting`}
+                className="px-6 py-2 bg-white border border-slate-200 rounded-full text-xs font-black text-slate-500 uppercase hover:border-indigo-500 hover:text-indigo-600 transition-all shadow-sm"
+              >
+                {city.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CTA SECTION --- */}
+      <section className="py-24 bg-gradient-to-r from-indigo-700 to-purple-700 text-center text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic">Ready to transform your glass?</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button asChild size="lg" className="bg-white text-indigo-900 hover:bg-slate-100 px-12 h-16 text-xl font-black">
+              <Link to="/contact">Get Free Project Quote</Link>
+            </Button>
+            <a href="tel:480-788-1591" className="flex items-center justify-center text-3xl font-black text-white hover:scale-105 transition-transform">
+              <Phone className="mr-3 w-8 h-8" /> 480-788-1591
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
+
 export default Decorative;

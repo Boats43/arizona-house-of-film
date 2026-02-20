@@ -1,4 +1,5 @@
 ﻿User-agent: *
-Allow: /
+Disallow: /*?*
+Disallow: /index.php?*
 
 Sitemap: https://arizonahouseoffilm.com/sitemap-index.xml

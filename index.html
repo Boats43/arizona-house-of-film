@@ -7,12 +7,23 @@
   <title>Phoenix Window Tinting | Residential & Commercial Experts</title>
   <meta name="description" content="Professional residential and commercial window tinting in Phoenix. Licensed, Bonded, and Insured ROC #315259." />
 
-  <!-- Fonts -->
+  <!-- 🔥 Non-blocking Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
 
-  <!-- Preload Hero -->
+  <!-- 🔥 Preload Hero Image -->
   <link
     rel="preload"
     as="image"
@@ -21,43 +32,46 @@
   />
 
   <style>
-    /* 🔥 CRITICAL: Reserve header height BEFORE React loads */
+    /* Prevent default margin */
     body {
       margin: 0;
     }
 
+    /* Reserve header height before React loads */
     #header-reserve {
-      height: 80px; /* matches h-20 */
+      height: 80px;
     }
 
-    /* 🔥 Reserve hero space to prevent CLS */
+    /* 🔥 Reserve hero space WITHOUT loading image twice */
     #hero-reserve {
       width: 100%;
       aspect-ratio: 1600 / 1066;
-      background: #111 url("https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/phoenix-window-tinting-sQw5T.jpg") center/cover no-repeat;
+      background: #111;
     }
 
+    /* Prevent white flash before hydration */
     #root:empty {
       min-height: 100vh;
     }
   </style>
 
+  <!-- Vite entry -->
   <script type="module" src="/src/main.jsx"></script>
 </head>
 
 <body>
 
-  <!-- Header Space Reservation -->
+  <!-- Header space reservation -->
   <div id="header-reserve"></div>
 
-  <!-- Hero Space Reservation -->
+  <!-- Hero space reservation -->
   <div id="hero-reserve"></div>
 
-  <!-- React Root -->
+  <!-- React root -->
   <div id="root"></div>
 
   <script>
-    // Remove reserves AFTER React mounts (without collapsing layout)
+    // Remove reserves after React mounts
     const observer = new MutationObserver(() => {
       const root = document.getElementById("root");
       if (root && root.children.length > 0) {

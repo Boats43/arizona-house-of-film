@@ -7,7 +7,6 @@ import {
   Navigate,
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { AnimatePresence } from 'framer-motion';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -50,7 +49,7 @@ const SupportingPage = lazy(() => import('@/pages/SupportingPage'));
 const AntiGraffiti = lazy(() => import('@/pages/AntiGraffiti'));
 const SecurityFilmPage = lazy(() => import('@/pages/films/SecurityFilmPage'));
 const CasperCloakingPage = lazy(() =>
-  import('@/pages/films/CasperCloakingPage'),
+  import('@/pages/films/CasperCloakingPage')
 );
 const IndustriesPage = lazy(() => import('@/pages/IndustriesPage'));
 const Success = lazy(() => import('@/pages/Success'));
@@ -70,7 +69,8 @@ const globalLocalBusinessSchema = {
   name: 'Arizona House of Film',
   url: 'https://arizonahouseoffilm.com/',
   image: 'https://arizonahouseoffilm.com/og-image.jpg',
-  description: 'Professional residential and commercial window tinting in Phoenix, Arizona.',
+  description:
+    'Professional residential and commercial window tinting in Phoenix, Arizona.',
   telephone: '+1-480-788-1591',
   address: {
     '@type': 'PostalAddress',
@@ -83,7 +83,7 @@ const globalLocalBusinessSchema = {
     geoMidpoint: {
       '@type': 'GeoCoordinates',
       latitude: 33.4484,
-      longitude: -112.0740,
+      longitude: -112.074,
     },
     geoRadius: 50000,
   },
@@ -92,75 +92,73 @@ const globalLocalBusinessSchema = {
 };
 
 /* ---------------- ROUTES ---------------- */
-function AnimatedRoutes() {
+function AppRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <Suspense
-        fallback={
-          <div className="w-full h-screen flex items-center justify-center bg-white">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-900" />
-          </div>
-        }
-      >
-        <Routes location={location} key={location.pathname}>
-          <Route path="/index.php" element={<LegacyRedirect />} />
-          <Route path="/" element={<Home />} />
+    <Suspense
+      fallback={
+        <div className="w-full h-screen flex items-center justify-center bg-white">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-900" />
+        </div>
+      }
+    >
+      <Routes location={location}>
+        <Route path="/index.php" element={<LegacyRedirect />} />
+        <Route path="/" element={<Home />} />
 
-          {/* MAIN SERVICES */}
-          <Route path="/commercial" element={<Navigate to="/commercial-window-tinting" replace />} />
-          <Route path="/commercial-window-tinting" element={<Commercial />} />
-          <Route path="/residential" element={<Navigate to="/residential-window-tinting" replace />} />
-          <Route path="/residential-window-tinting" element={<Residential />} />
-          <Route path="/decorative" element={<Navigate to="/decorative-window-films" replace />} />
-          <Route path="/decorative-window-films" element={<Decorative />} />
-          <Route path="/safety-film" element={<Navigate to="/safety" replace />} />
-          <Route path="/safety" element={<Safety />} />
-          <Route path="/energy-saving" element={<Navigate to="/energy-saving-window-films" replace />} />
-          <Route path="/energy-saving-window-films" element={<EnergySaving />} />
-          <Route path="/anti-graffiti" element={<AntiGraffiti />} />
-          <Route path="/solutions" element={<Solutions />} />
+        {/* MAIN SERVICES */}
+        <Route path="/commercial" element={<Navigate to="/commercial-window-tinting" replace />} />
+        <Route path="/commercial-window-tinting" element={<Commercial />} />
+        <Route path="/residential" element={<Navigate to="/residential-window-tinting" replace />} />
+        <Route path="/residential-window-tinting" element={<Residential />} />
+        <Route path="/decorative" element={<Navigate to="/decorative-window-films" replace />} />
+        <Route path="/decorative-window-films" element={<Decorative />} />
+        <Route path="/safety-film" element={<Navigate to="/safety" replace />} />
+        <Route path="/safety" element={<Safety />} />
+        <Route path="/energy-saving" element={<Navigate to="/energy-saving-window-films" replace />} />
+        <Route path="/energy-saving-window-films" element={<EnergySaving />} />
+        <Route path="/anti-graffiti" element={<AntiGraffiti />} />
+        <Route path="/solutions" element={<Solutions />} />
 
-          {/* SERVICE AREAS */}
-          <Route path="/service-areas" element={<ServiceAreas />} />
-          <Route path="/service-areas/:slug" element={<CityPage />} />
-          <Route path="/:slug-window-tinting" element={<CityPage />} />
+        {/* SERVICE AREAS */}
+        <Route path="/service-areas" element={<ServiceAreas />} />
+        <Route path="/service-areas/:slug" element={<CityPage />} />
+        <Route path="/:slug-window-tinting" element={<CityPage />} />
 
-          {/* SUPPORTING */}
-          <Route path="/industries/:slug" element={<IndustriesPage />} />
-          <Route path="/:category/:slug" element={<SupportingPage />} />
+        {/* SUPPORTING */}
+        <Route path="/industries/:slug" element={<IndustriesPage />} />
+        <Route path="/:category/:slug" element={<SupportingPage />} />
 
-          {/* FILMS */}
-          <Route path="/films" element={<FilmsHub />} />
-          <Route path="/films/security" element={<SecurityFilmPage />} />
-          <Route path="/films/casper-cloaking" element={<CasperCloakingPage />} />
-          <Route path="/films/:categorySlug" element={<FilmCategoryPage />} />
-          <Route path="/films/:categorySlug/:productSlug" element={<FilmProductPage />} />
+        {/* FILMS */}
+        <Route path="/films" element={<FilmsHub />} />
+        <Route path="/films/security" element={<SecurityFilmPage />} />
+        <Route path="/films/casper-cloaking" element={<CasperCloakingPage />} />
+        <Route path="/films/:categorySlug" element={<FilmCategoryPage />} />
+        <Route path="/films/:categorySlug/:productSlug" element={<FilmProductPage />} />
 
-          {/* BRANDS */}
-          <Route path="/brands" element={<BrandsHub />} />
-          <Route path="/brands/flexfilm" element={<FlexfilmPage />} />
-          <Route path="/brands/:slug" element={<BrandPage />} />
+        {/* BRANDS */}
+        <Route path="/brands" element={<BrandsHub />} />
+        <Route path="/brands/flexfilm" element={<FlexfilmPage />} />
+        <Route path="/brands/:slug" element={<BrandPage />} />
 
-          {/* MISC */}
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/book-now" element={<BookNow />} />
-          <Route path="/book" element={<BookNow />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/success" element={<Success />} />
-          <Route path="/store" element={<Store />} />
+        {/* MISC */}
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/book-now" element={<BookNow />} />
+        <Route path="/book" element={<BookNow />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/store" element={<Store />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </AnimatePresence>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 
@@ -168,13 +166,10 @@ function AnimatedRoutes() {
 function App() {
   const location = useLocation();
   const canonicalUrl = `https://arizonahouseoffilm.com${location.pathname}`;
-
-  // Check if we are in production mode to avoid 404s on localhost
   const isProduction = import.meta.env.PROD;
 
   return (
     <>
-      {/* ---------- VERCEL TELEMETRY (Only in Production) ---------- */}
       {isProduction && (
         <>
           <Analytics />
@@ -201,7 +196,7 @@ function App() {
       <div className="min-h-screen flex flex-col bg-white">
         <Header />
         <main className="flex-1">
-          <AnimatedRoutes />
+          <AppRoutes />
         </main>
         <Footer />
         <Toaster />

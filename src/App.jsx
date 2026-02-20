@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
   useLocation,
-  Navigate
+  Navigate,
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { AnimatePresence } from 'framer-motion';
@@ -15,6 +15,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 import FloatingContactButton from '@/components/FloatingContactButton';
 import { Toaster } from '@/components/ui/toaster';
 import LegacyRedirect from '@/components/LegacyRedirect';
+
+/* ----------- VERCEL ANALYTICS + SPEED INSIGHTS ----------- */
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 /* ---------------- LAZY PAGES ---------------- */
 
@@ -46,18 +50,48 @@ const Store = lazy(() => import('@/pages/Store'));
 const SupportingPage = lazy(() => import('@/pages/SupportingPage'));
 const AntiGraffiti = lazy(() => import('@/pages/AntiGraffiti'));
 const SecurityFilmPage = lazy(() => import('@/pages/films/SecurityFilmPage'));
-const CasperCloakingPage = lazy(() => import('@/pages/films/CasperCloakingPage'));
+const CasperCloakingPage = lazy(() =>
+  import('@/pages/films/CasperCloakingPage'),
+);
 const IndustriesPage = lazy(() => import('@/pages/IndustriesPage'));
 const Success = lazy(() => import('@/pages/Success'));
 const Solutions = lazy(() => import('@/pages/Solutions'));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 
-const globalSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Arizona House of Film",
-  "url": "https://arizonahouseoffilm.com"
+const globalWebsiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Arizona House of Film',
+  url: 'https://arizonahouseoffilm.com',
+};
+
+const globalLocalBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: 'Arizona House of Film',
+  url: 'https://arizonahouseoffilm.com/',
+  image: 'https://arizonahouseoffilm.com/og-image.jpg',
+  description:
+    'Professional residential and commercial window tinting in Phoenix, Arizona.',
+  telephone: '+1-480-788-1591',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Phoenix',
+    addressRegion: 'AZ',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 33.4484,
+      longitude: -112.0740,
+    },
+    geoRadius: 50000,
+  },
+  areaServed: ['Phoenix', 'Scottsdale', 'Mesa', 'Tempe', 'Glendale'],
+  priceRange: '$$',
 };
 
 /* ---------------- ROUTES ---------------- */
@@ -70,66 +104,91 @@ function AnimatedRoutes() {
       <Suspense
         fallback={
           <div className="w-full h-screen flex items-center justify-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-900"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-900" />
           </div>
         }
       >
         <Routes location={location} key={location.pathname}>
-
           <Route path="/index.php" element={<LegacyRedirect />} />
           <Route path="/" element={<Home />} />
 
           {/* MAIN SERVICES */}
-          <Route path="/commercial" element={<Navigate to="/commercial-window-tinting" replace />} />
-          <Route path="/commercial-window-tinting" element={<Commercial />} />
+          <Route
+            path="/commercial"
+            element={<Navigate to="/commercial-window-tinting" replace />}
+          />
+          <Route
+            path="/commercial-window-tinting"
+            element={<Commercial />}
+          />
 
-          <Route path="/residential" element={<Navigate to="/residential-window-tinting" replace />} />
-          <Route path="/residential-window-tinting" element={<Residential />} />
+          <Route
+            path="/residential"
+            element={<Navigate to="/residential-window-tinting" replace />}
+          />
+          <Route
+            path="/residential-window-tinting"
+            element={<Residential />}
+          />
 
-          <Route path="/decorative" element={<Navigate to="/decorative-window-films" replace />} />
-          <Route path="/decorative-window-films" element={<Decorative />} />
+          <Route
+            path="/decorative"
+            element={<Navigate to="/decorative-window-films" replace />}
+          />
+          <Route
+            path="/decorative-window-films"
+            element={<Decorative />}
+          />
 
-          <Route path="/safety-film" element={<Navigate to="/safety" replace />} />
+          <Route
+            path="/safety-film"
+            element={<Navigate to="/safety" replace />}
+          />
           <Route path="/safety" element={<Safety />} />
 
-          <Route path="/energy-saving" element={<Navigate to="/energy-saving-window-films" replace />} />
-          <Route path="/energy-saving-window-films" element={<EnergySaving />} />
+          <Route
+            path="/energy-saving"
+            element={<Navigate to="/energy-saving-window-films" replace />}
+          />
+          <Route
+            path="/energy-saving-window-films"
+            element={<EnergySaving />}
+          />
 
           <Route path="/anti-graffiti" element={<AntiGraffiti />} />
           <Route path="/solutions" element={<Solutions />} />
 
-          {/* ---------------- SERVICE AREAS ---------------- */}
-
-          {/* Hub FIRST */}
+          {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />
-
-          {/* Short URL Version */}
           <Route path="/service-areas/:slug" element={<CityPage />} />
-
-          {/* Long SEO Version */}
           <Route path="/:slug-window-tinting" element={<CityPage />} />
 
-          {/* ---------------- SUPPORTING ---------------- */}
-
+          {/* SUPPORTING */}
           <Route path="/industries/:slug" element={<IndustriesPage />} />
           <Route path="/:category/:slug" element={<SupportingPage />} />
 
-          {/* ---------------- FILMS ---------------- */}
-
+          {/* FILMS */}
           <Route path="/films" element={<FilmsHub />} />
           <Route path="/films/security" element={<SecurityFilmPage />} />
-          <Route path="/films/casper-cloaking" element={<CasperCloakingPage />} />
-          <Route path="/films/:categorySlug" element={<FilmCategoryPage />} />
-          <Route path="/films/:categorySlug/:productSlug" element={<FilmProductPage />} />
+          <Route
+            path="/films/casper-cloaking"
+            element={<CasperCloakingPage />}
+          />
+          <Route
+            path="/films/:categorySlug"
+            element={<FilmCategoryPage />}
+          />
+          <Route
+            path="/films/:categorySlug/:productSlug"
+            element={<FilmProductPage />}
+          />
 
-          {/* ---------------- BRANDS ---------------- */}
-
+          {/* BRANDS */}
           <Route path="/brands" element={<BrandsHub />} />
           <Route path="/brands/flexfilm" element={<FlexfilmPage />} />
           <Route path="/brands/:slug" element={<BrandPage />} />
 
-          {/* ---------------- MISC ---------------- */}
-
+          {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/contact" element={<Contact />} />
@@ -144,7 +203,6 @@ function AnimatedRoutes() {
           <Route path="/store" element={<Store />} />
 
           <Route path="*" element={<NotFound />} />
-
         </Routes>
       </Suspense>
     </AnimatePresence>
@@ -159,6 +217,10 @@ function App() {
 
   return (
     <>
+      {/* ---------- VERCEL GLOBAL TELEMETRY ---------- */}
+      <Analytics />
+      <SpeedInsights />
+
       <Helmet>
         <html lang="en" />
         <meta name="robots" content="index,follow" />
@@ -166,7 +228,10 @@ function App() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#ffffff" />
         <script type="application/ld+json">
-          {JSON.stringify(globalSchema)}
+          {JSON.stringify(globalWebsiteSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(globalLocalBusinessSchema)}
         </script>
       </Helmet>
 

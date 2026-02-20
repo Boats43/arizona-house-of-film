@@ -21,7 +21,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 /* ---------------- LAZY PAGES ---------------- */
-
 const Home = lazy(() => import('@/pages/Home'));
 const Commercial = lazy(() => import('@/pages/Commercial'));
 const Residential = lazy(() => import('@/pages/Residential'));
@@ -58,7 +57,6 @@ const Success = lazy(() => import('@/pages/Success'));
 const Solutions = lazy(() => import('@/pages/Solutions'));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
-
 const globalWebsiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -72,8 +70,7 @@ const globalLocalBusinessSchema = {
   name: 'Arizona House of Film',
   url: 'https://arizonahouseoffilm.com/',
   image: 'https://arizonahouseoffilm.com/og-image.jpg',
-  description:
-    'Professional residential and commercial window tinting in Phoenix, Arizona.',
+  description: 'Professional residential and commercial window tinting in Phoenix, Arizona.',
   telephone: '+1-480-788-1591',
   address: {
     '@type': 'PostalAddress',
@@ -95,7 +92,6 @@ const globalLocalBusinessSchema = {
 };
 
 /* ---------------- ROUTES ---------------- */
-
 function AnimatedRoutes() {
   const location = useLocation();
 
@@ -103,8 +99,8 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Suspense
         fallback={
-          <div className="w-full h-screen flex items-center justify-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-900" />
+          <div className="w-full h-screen flex items-center justify-center bg-white">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-900" />
           </div>
         }
       >
@@ -113,48 +109,16 @@ function AnimatedRoutes() {
           <Route path="/" element={<Home />} />
 
           {/* MAIN SERVICES */}
-          <Route
-            path="/commercial"
-            element={<Navigate to="/commercial-window-tinting" replace />}
-          />
-          <Route
-            path="/commercial-window-tinting"
-            element={<Commercial />}
-          />
-
-          <Route
-            path="/residential"
-            element={<Navigate to="/residential-window-tinting" replace />}
-          />
-          <Route
-            path="/residential-window-tinting"
-            element={<Residential />}
-          />
-
-          <Route
-            path="/decorative"
-            element={<Navigate to="/decorative-window-films" replace />}
-          />
-          <Route
-            path="/decorative-window-films"
-            element={<Decorative />}
-          />
-
-          <Route
-            path="/safety-film"
-            element={<Navigate to="/safety" replace />}
-          />
+          <Route path="/commercial" element={<Navigate to="/commercial-window-tinting" replace />} />
+          <Route path="/commercial-window-tinting" element={<Commercial />} />
+          <Route path="/residential" element={<Navigate to="/residential-window-tinting" replace />} />
+          <Route path="/residential-window-tinting" element={<Residential />} />
+          <Route path="/decorative" element={<Navigate to="/decorative-window-films" replace />} />
+          <Route path="/decorative-window-films" element={<Decorative />} />
+          <Route path="/safety-film" element={<Navigate to="/safety" replace />} />
           <Route path="/safety" element={<Safety />} />
-
-          <Route
-            path="/energy-saving"
-            element={<Navigate to="/energy-saving-window-films" replace />}
-          />
-          <Route
-            path="/energy-saving-window-films"
-            element={<EnergySaving />}
-          />
-
+          <Route path="/energy-saving" element={<Navigate to="/energy-saving-window-films" replace />} />
+          <Route path="/energy-saving-window-films" element={<EnergySaving />} />
           <Route path="/anti-graffiti" element={<AntiGraffiti />} />
           <Route path="/solutions" element={<Solutions />} />
 
@@ -170,18 +134,9 @@ function AnimatedRoutes() {
           {/* FILMS */}
           <Route path="/films" element={<FilmsHub />} />
           <Route path="/films/security" element={<SecurityFilmPage />} />
-          <Route
-            path="/films/casper-cloaking"
-            element={<CasperCloakingPage />}
-          />
-          <Route
-            path="/films/:categorySlug"
-            element={<FilmCategoryPage />}
-          />
-          <Route
-            path="/films/:categorySlug/:productSlug"
-            element={<FilmProductPage />}
-          />
+          <Route path="/films/casper-cloaking" element={<CasperCloakingPage />} />
+          <Route path="/films/:categorySlug" element={<FilmCategoryPage />} />
+          <Route path="/films/:categorySlug/:productSlug" element={<FilmProductPage />} />
 
           {/* BRANDS */}
           <Route path="/brands" element={<BrandsHub />} />
@@ -210,16 +165,22 @@ function AnimatedRoutes() {
 }
 
 /* ---------------- APP ---------------- */
-
 function App() {
   const location = useLocation();
   const canonicalUrl = `https://arizonahouseoffilm.com${location.pathname}`;
 
+  // Check if we are in production mode to avoid 404s on localhost
+  const isProduction = import.meta.env.PROD;
+
   return (
     <>
-      {/* ---------- VERCEL GLOBAL TELEMETRY ---------- */}
-      <Analytics />
-      <SpeedInsights />
+      {/* ---------- VERCEL TELEMETRY (Only in Production) ---------- */}
+      {isProduction && (
+        <>
+          <Analytics />
+          <SpeedInsights />
+        </>
+      )}
 
       <Helmet>
         <html lang="en" />
@@ -251,7 +212,6 @@ function App() {
 }
 
 /* ---------------- WRAPPER ---------------- */
-
 function AppWrapper() {
   return (
     <Router>

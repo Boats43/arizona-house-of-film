@@ -1,95 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <!-- PRIMARY SEO -->
+  <!-- SECURITY HEADERS -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com https://snapwidget.com https://maps.googleapis.com https://www.google.com https://www.google-analytics.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    img-src * data: https://www.google-analytics.com;
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src *;
+    frame-src 'self' https://www.google.com https://calendly.com https://www.googletagmanager.com https://www.dealeriframe.com;
+    base-uri 'self';
+    form-action 'self';
+    object-src 'none';">
+
+  <!-- SEO -->
   <title>Phoenix Window Tinting | Residential & Commercial Window Film Experts</title>
+  <meta name="description"
+    content="Professional residential and commercial window tinting in Phoenix and across Arizona. Solar, decorative, and security films installed by licensed experts. Free estimates available." />
 
-  <meta name="description" content="Top-rated Phoenix window tinting company specializing in residential and commercial window film installation. Licensed, bonded, insured. Serving Phoenix, Scottsdale, Mesa and all of Arizona. Free quotes within 24 hours." />
-
-  <link rel="canonical" href="https://arizonahouseoffilm.com/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Phoenix Window Tinting | Arizona House of Film" />
-  <meta property="og:description" content="Professional residential and commercial window tinting in Phoenix. Heat reduction, UV protection, decorative and security films installed by licensed experts." />
-  <meta property="og:url" content="https://arizonahouseoffilm.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
-  <meta property="og:image:alt" content="Arizona House of Film - Professional Window Tinting Installation" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Phoenix Window Tinting | Arizona House of Film" />
-  <meta name="twitter:description" content="Residential and commercial window tinting experts serving Phoenix and all of Arizona." />
-  <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
-
-  <!-- Favicon -->
+  <link rel="alternate" hreflang="en-us" href="https://arizonahouseoffilm.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-  <!-- Fonts Optimization -->
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload"
-        as="style"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
   </noscript>
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MC2PDPFR');
-  </script>
+  <!-- PRELOAD LCP IMAGE -->
+  <link rel="preload" fetchpriority="high" as="image"
+    href="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/phoenix-window-tinting-sQw5T.jpg"
+    type="image/jpeg" />
 
-  <!-- Local Business Structured Data -->
+  <!-- STATIC HERO FOR LCP BOOST -->
+  <style>.static-hero{background-color:#1a1a1a;background-image:url(https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/phoenix-window-tinting-sQw5T.jpg);background-position:50%;background-size:cover;display:block;height:420px;width:100%}#root:empty{background:#fff;min-height:100vh}.hero-hidden{display:none!important}@media (max-width:768px){.static-hero{height:300px}}</style>
+
+  <!-- LOCAL BUSINESS SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
+    "@type": "ProfessionalService",
     "name": "Arizona House of Film",
-    "url": "https://arizonahouseoffilm.com/",
+    "url": "https://arizonahouseoffilm.com",
+    "logo": "https://arizonahouseoffilm.com/logo.png",
     "image": "https://arizonahouseoffilm.com/og-image.jpg",
-    "description": "Professional residential and commercial window tinting in Phoenix, Arizona.",
+    "description": "Professional residential and commercial window tinting services across Phoenix and Arizona.",
     "telephone": "+1-480-788-1591",
+    "sameAs": [
+      "https://www.instagram.com/arizonahouseoffilm/",
+      "https://www.linkedin.com/company/arizona-house-of-film"
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Phoenix",
       "addressRegion": "AZ",
       "addressCountry": "US"
     },
-    "geo": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.4484,
-        "longitude": -112.0740
-      },
-      "geoRadius": 50000
-    },
-    "areaServed": [
-      "Phoenix",
-      "Scottsdale",
-      "Mesa",
-      "Tempe",
-      "Glendale"
-    ],
+    "areaServed": ["Phoenix", "Scottsdale", "Mesa", "Tempe", "Glendale"],
     "priceRange": "$$"
   }
+  </script>
+
+  <!-- GOOGLE TAG MANAGER -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MC2PDPFR');
   </script>
 
   <script type="module" crossorigin src="/assets/index-CpiY-cmC.js"></script>
@@ -248,22 +240,33 @@ if (window.navigation && window.self !== window.top) {
 </head>
 
 <body>
-
-  <!-- GTM (noscript) -->
+  <!-- GTM NOSCRIPT -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
-            height="0"
-            width="0"
-            style="display:none;visibility:hidden">
-    </iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
   </noscript>
 
+  <!-- STATIC HERO -->
+  <div id="hero-loader" class="static-hero" aria-hidden="true"></div>
+
+  <!-- REACT ROOT -->
   <div id="root"></div>
 
-  <!-- React Entry -->
+  <!-- CORRECT VITE ENTRY (DO NOT CHANGE) -->
 
-  <!-- Instagram Widget -->
+  <!-- SNAPWIDGET -->
   <script src="https://snapwidget.com/js/snapwidget.js" async defer></script>
+
+  <!-- REMOVE HERO WHEN REACT LOADS -->
+  <script>
+    const observer = new MutationObserver(() => {
+      if (document.getElementById('root').children.length > 0) {
+        document.getElementById('hero-loader').classList.add('hero-hidden');
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.getElementById('root'), { childList: true });
+  </script>
 
 </body>
 </html>

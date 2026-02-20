@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { AnimatePresence } from 'framer-motion';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -180,6 +181,7 @@ function App() {
         <Footer />
         <Toaster />
         <FloatingContactButton />
+        <SpeedInsights />
       </div>
     </>
   );

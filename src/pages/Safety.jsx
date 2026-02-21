@@ -2,456 +2,142 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Shield, AlertTriangle, Home, Building, Lock, Eye, ArrowRight, Phone, Wind } from 'lucide-react';
+import { Shield, Phone, Hammer, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cities } from '@/data/cities';
+import ContactFormSection from '@/components/contact/ContactFormSection';
+
 const Safety = () => {
-  const benefits = [{
-    icon: Shield,
-    title: 'Break-in Deterrent',
-    slug: 'break-in-deterrent',
-    description: 'Security films hold glass together when broken, making it extremely difficult for intruders to gain entry quickly.'
-  }, {
-    icon: AlertTriangle,
-    title: 'Accident Protection',
-    slug: 'accident-protection',
-    description: 'Prevent dangerous glass shards from scattering during accidents, protecting occupants from injury.'
-  }, {
-    icon: Wind,
-    title: 'Storm Protection',
-    slug: 'storm-protection',
-    description: 'Strengthen windows against severe weather, flying debris, and high winds for enhanced property protection.'
-  }, {
-    icon: Eye,
-    title: 'Clear Visibility',
-    slug: 'clear-visibility',
-    description: 'Maintain crystal-clear views while adding an invisible layer of protection to your windows.'
-  }];
-  const applications = [{
-    name: 'Ground Floor Windows',
-    slug: 'ground-floor-windows'
-  }, {
-    name: 'Sliding Glass Doors',
-    slug: 'sliding-glass-doors'
-  }, {
-    name: 'French Doors',
-    slug: 'french-doors'
-  }, {
-    name: 'Basement Windows',
-    slug: 'basement-windows'
-  }, {
-    name: 'Storefronts',
-    slug: 'storefronts'
-  }, {
-    name: 'Office Buildings',
-    slug: 'office-buildings'
-  }, {
-    name: 'Schools',
-    slug: 'schools'
-  }, {
-    name: 'Government Facilities',
-    slug: 'government-facilities'
-  }];
-  const features = ['Invisible protection - maintains natural appearance', 'Multiple thickness options available', 'Professional installation required', 'Long-term durability and performance', 'Compatible with existing window systems', 'Available in clear and tinted options'];
-  const pageTitle = "#1 Safety & Security Film in Arizona | Arizona House of Film";
-  const metaDescription = "Expert safety & security film installation across Arizona—deter break-ins, prevent storm damage, and protect your property.";
-  const canonicalUrl = "https://arizonahouseoffilm.com/safety";
-  const productSchema = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "Safety & Security Window Film",
-    "image": "https://arizonahouseoffilm.com/images/films/safety-security-film.webp",
-    "description": "Professional safety & security window film installation across Arizona for protection against break-ins, accidents, and storms.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Arizona House of Film"
-    },
-    "sku": "AHOF-SAFETY-001",
-    "url": "https://arizonahouseoffilm.com/safety",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "0.00",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 30,
-        "returnFees": "https://schema.org/FreeReturn"
-      },
-      "url": "https://arizonahouseoffilm.com/safety"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "24"
-    },
-    "review": [{
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Verified Customer"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Excellent quality tint and professional installation."
-    }]
-  };
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "How does security window film work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Security window film is a heavy-duty polyester film bonded to glass with a strong adhesive. When the glass breaks, the film holds the dangerous shards together, preventing easy entry for intruders and reducing the risk of injury from flying glass."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Is security film bulletproof?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, standard security window film is not bulletproof, but it is bullet-resistant. It is designed to delay entry and withstand significant impact from blunt objects, forced entry attempts, and extreme weather. For ballistic resistance, specialized products are required."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Can security film be installed on any window?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, security window film can be professionally installed on most types of glass, including residential windows, commercial storefronts, and office partitions. It is a cost-effective alternative to replacing windows with laminated glass."
-      }
-    }]
-  };
-  return <>
-          <Helmet>
-            <title>{pageTitle}</title>
-            <meta name="description" content={metaDescription} />
-            <link rel="canonical" href={canonicalUrl} />
-            <meta property="og:title" content={pageTitle} />
-            <meta property="og:description" content={metaDescription} />
-            <meta property="og:url" content={canonicalUrl} />
-            <meta property="og:image" content="https://arizonahouseoffilm.com/og-image-safety.jpg" />
-            <meta property="og:type" content="website" />
-            <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
-            <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-          </Helmet>
-    
-          {/* Hero Section */}
-          <section className="relative py-20 bg-gradient-to-br from-red-900 to-orange-900 overflow-hidden text-white">
-            <div className="absolute inset-0 hero-pattern opacity-20"></div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div initial={{
-            opacity: 0,
-            x: -30
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }}>
-                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Safety and Security Window Films
-                  </h1>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                    Protect your property and loved ones with our advanced security window films. Invisible protection that holds glass together during impact.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-                      <Link to="/contact">
-                        Get Security Assessment
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </Link>
-                    </Button>
-                    <a href="tel:480-788-1591" className="bg-white/20 text-white hover:bg-white hover:text-red-900 inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white h-11 rounded-md px-8 text-lg">
-                      <Phone className="mr-2 w-5 h-5" /> Call 480-788-1591
-                    </a>
-                  </div>
-                </motion.div>
-                
-                <motion.div initial={{
-            opacity: 0,
-            x: 30
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.2
-          }} className="relative">
-                  <img alt="Shattered glass being held together by safety and security window film on an Arizona property" className="w-full h-96 object-cover rounded-2xl shadow-2xl" src="https://images.unsplash.com/photo-1565046777382-cf5feec7e638" />
-                </motion.div>
-              </div>
+  return (
+    <>
+      <Helmet>
+        <title>Security Window Film Phoenix | Forced Entry Protection AZ</title>
+        <meta name="description" content="High-performance security window film installation in Phoenix. 8-mil to 14-mil forced entry protection. Access denial experts for AZ homes and businesses." />
+        <link rel="canonical" href="https://arizonahouseoffilm.com/safety" />
+        {/* PRELOAD CRITICAL ASSET */}
+        <link rel="preload" as="image" href="/images/Security Window Film Phoenix.webp" />
+      </Helmet>
+
+      {/* --- HERO SECTION: NO ANIMATION FOR MAX LCP SCORE --- */}
+      <section className="relative min-h-[70vh] flex items-center pt-20 bg-slate-950 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            alt="Security Window Film Phoenix" 
+            className="w-full h-full object-cover opacity-50" 
+            src="/images/Security Window Film Phoenix.webp" 
+            fetchpriority="high" 
+            loading="eager"
+            decoding="sync"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-tight tracking-tighter">
+              Access <span className="text-red-600">Denial</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-100 max-w-2xl mb-10 leading-relaxed font-bold">
+              Reinforcing Phoenix properties with 8-mil to 14-mil industrial laminates. We turn standard glass into an impenetrable security barrier.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild size="lg" className="bg-red-700 hover:bg-red-800 text-white px-8 h-16 text-xl font-black uppercase italic shadow-2xl">
+                <Link to="/contact">Get Security Audit</Link>
+              </Button>
+              <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-16 rounded-md border-2 border-white/40 text-white font-black hover:bg-white hover:text-slate-900 transition-all uppercase tracking-tighter">
+                <Phone className="w-6 h-6" /> 480-788-1591
+              </a>
             </div>
-          </section>
-    
-          {/* Benefits Section */}
-          <section className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Protection Benefits
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Our safety and security window films provide multiple layers of protection for your property and peace of mind. Learn more from our <Link to="/blog/a-business-owners-guide-to-security-window-films" className="text-blue-600 hover:underline">security film guide</Link>.
-                </p>
-              </motion.div>
-    
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {benefits.map((benefit, index) => <motion.div key={benefit.title} initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }} className="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                     <Link to={`/safety/${benefit.slug}`} className="block">
-                        <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
-                        <benefit.icon className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
-                        {benefit.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                        {benefit.description}
-                        </p>
-                    </Link>
-                  </motion.div>)}
+          </div>
+        </div>
+      </section>
+
+      {/* --- VALUE PROPS: ANIMATE THESE AS THEY ARE BELOW THE FOLD --- */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+          {[
+            { icon: Hammer, t: 'Access Denial', d: 'Turn standard glass into a high-strength barrier. Designed to withstand repeated strikes from heavy tools.' },
+            { icon: ShieldCheck, t: 'Blast Mitigation', d: 'In the event of high-impact explosions, film holds glass shards in place to prevent secondary injury.' },
+            { icon: Zap, t: 'Invisible Strength', d: 'Crystal clear optics with industrial-grade polyester construction. Protection without compromise.' }
+          ].map((benefit, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-10 rounded-3xl bg-slate-50 border border-slate-200"
+            >
+              <div className="w-16 h-16 bg-red-700 rounded-2xl flex items-center justify-center mb-8">
+                <benefit.icon className="w-8 h-8 text-white" />
               </div>
-            </div>
-          </section>
-    
-          {/* How It Works Section */}
-          <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div initial={{
-            opacity: 0,
-            x: -30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }}>
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    How Security Films Work
-                  </h2>
-                  <p className="text-xl text-gray-600 mb-8">
-                    Security window films are made from multiple layers of polyester that create a strong, flexible barrier when applied to glass.
-                  </p>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white font-bold text-sm">1</span>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Impact Absorption</h3>
-                        <p className="text-gray-600">The film absorbs and distributes impact energy across the entire window surface.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white font-bold text-sm">2</span>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Glass Retention</h3>
-                        <p className="text-gray-600">When glass breaks, the film holds the pieces together, preventing dangerous shards.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white font-bold text-sm">3</span>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Barrier Maintenance</h3>
-                        <p className="text-gray-600">The window remains intact as a barrier, deterring intruders and protecting occupants.</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-                
-                <motion.div initial={{
-            opacity: 0,
-            x: 30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }} className="relative">
-                  <img alt="Diagram showing the layers of security window film and how it absorbs impact on glass" className="w-full h-96 object-cover rounded-2xl shadow-2xl" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20200602_103708-wbnWL.jpg" />
-                </motion.div>
-              </div>
-            </div>
-          </section>
-    
-          {/* Applications Section */}
-           <section className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Perfect Applications
-                    </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Security films are ideal for a wide variety of residential and commercial applications requiring an extra layer of protection.
-                    </p>
-                </motion.div>
-                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {applications.map((application, index) => <motion.div key={application.name} initial={{
-            opacity: 0,
-            scale: 0.9
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.5,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }}>
-                            <Link to={`/safety/${application.slug}`} className="block bg-white p-4 rounded-lg shadow-md border border-red-200 hover:shadow-lg hover:border-red-400 transition-all">
-                                <div className="flex items-center space-x-3">
-                                    <Building className="w-5 h-5 text-red-600" />
-                                    <span className="font-medium text-gray-900">{application.name}</span>
-                                </div>
-                            </Link>
-                        </motion.div>)}
+              <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter">{benefit.t}</h3>
+              <p className="text-slate-800 leading-relaxed font-semibold">{benefit.d}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- SPECS: TEXT FIRST FOR ACCESSIBILITY AND SEO --- */}
+      <section className="py-24 bg-slate-950 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic tracking-tighter text-white">
+                Industrial <span className="text-red-600 font-black">Specs</span>
+              </h2>
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                   <div className="text-red-600 font-black text-2xl italic">01</div>
+                   <div>
+                     <h4 className="text-xl font-bold uppercase tracking-tight text-white underline decoration-red-600 decoration-4">C-Bond Technology</h4>
+                     <p className="text-slate-200 mt-2 font-medium">Molecular glass enhancement that increases glass strength by up to 40% before the film is even applied.</p>
+                   </div>
                 </div>
-            </div>
-        </section>
-    
-          {/* Features Section */}
-          <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div initial={{
-            opacity: 0,
-            x: -30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }} className="relative">
-                  <img alt="Technician professionally installing clear security window film on a commercial storefront in Phoenix" className="w-full h-96 object-cover rounded-2xl shadow-2xl" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20210522_100207-HOphX.jpg" />
-                </motion.div>
-                
-                <motion.div initial={{
-            opacity: 0,
-            x: 30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }}>
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Security Film Features
-                  </h2>
-                  <p className="text-xl text-gray-600 mb-8">
-                    Our security films from top brands like <Link to="/brands/3m" className="text-blue-600 hover:underline">3M</Link> and <Link to="/brands/madico" className="text-blue-600 hover:underline">Madico</Link> combine advanced technology with professional installation for maximum protection.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    {features.map((feature, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                x: 20
-              }} whileInView={{
-                opacity: 1,
-                x: 0
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} viewport={{
-                once: true
-              }} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold text-xs">✓</span>
-                        </div>
-                        <span className="text-gray-700">{feature}</span>
-                      </motion.div>)}
-                  </div>
-                </motion.div>
+                <div className="flex gap-4">
+                   <div className="text-red-600 font-black text-2xl italic">02</div>
+                   <div>
+                     <h4 className="text-xl font-bold uppercase tracking-tight text-white underline decoration-red-600 decoration-4">Wet-Glaze Anchoring</h4>
+                     <p className="text-slate-200 mt-2 font-medium">The film is chemically bonded to the window frame, ensuring the glass stays in the frame under heavy attack.</p>
+                   </div>
+                </div>
               </div>
             </div>
-          </section>
-    
-          {/* CTA Section */}
-          <section className="py-20 bg-gradient-to-r from-red-600 to-orange-600">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Secure Your Property Today
-                </h2>
-                <p className="text-xl text-gray-200 mb-8">
-                  Don't wait for an incident to occur. Contact us today for a security assessment and protect what matters most.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-4">
-                    <Link to="/contact">
-                      Get Security Assessment
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </Button>
-                  <a href="tel:480-788-1591" className="bg-white/20 text-white hover:bg-white hover:text-red-600 inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white h-11 rounded-md px-8">
-                    Call Now: 480-788-1591
-                  </a>
-                </div>
-              </motion.div>
+            <div className="relative">
+              <img 
+                src="/images/Phoenix PD Security Film.webp" 
+                alt="Phoenix PD Grade Security Film" 
+                className="rounded-3xl shadow-2xl border border-white/10"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
+              />
             </div>
-          </section>
-        </>;
+          </div>
+        </div>
+      </section>
+
+      {/* --- CITY LINKS: DARKER TEXT FOR CONTRAST SCORE --- */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-sm font-black text-slate-900 mb-10 uppercase tracking-[0.3em]">Security Deployments Across Arizona</h2>
+          <div className="flex flex-wrap justify-center gap-2">
+            {cities.map(city => (
+              <Link 
+                key={city.slug} 
+                to={`/${city.slug}-window-tinting`}
+                className="px-4 py-2 bg-slate-200 rounded-md text-[10px] font-black text-slate-900 uppercase hover:bg-red-700 hover:text-white transition-all"
+              >
+                {city.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContactFormSection />
+    </>
+  );
 };
+
 export default Safety;

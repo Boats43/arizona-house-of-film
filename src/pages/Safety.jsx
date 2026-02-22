@@ -10,7 +10,6 @@ import {
   ArrowRight, 
   Phone, 
   Wind, 
-  Hammer,
   CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -120,11 +119,13 @@ const Safety = () => {
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        {/* LCP CRITICAL FIX: Preload the image so it starts before JS hydration */}
+        
+        {/* LCP CRITICAL FIX */}
         <link rel="preload" as="image" href="/images/Security Window Film Phoenix AZ.webp" fetchpriority="high" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Helmet>
 
-      {/* --- HERO SECTION: PERFORMANCE OPTIMIZED --- */}
+      {/* --- HERO SECTION --- */}
       <section className="relative min-h-[65vh] flex items-center pt-20 bg-slate-950 overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <img 
@@ -132,28 +133,28 @@ const Safety = () => {
             className="w-full h-full object-cover opacity-50" 
             src="/images/Security Window Film Phoenix AZ.webp" 
             fetchpriority="high" 
-            loading="eager" // Hero images should never be lazy-loaded
+            loading="eager" 
             decoding="async"
             width="1200"
             height="800"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-5xl md:text-8xl font-black mb-6 uppercase leading-tight tracking-tighter">
+            <h1 className="text-5xl md:text-8xl font-black mb-6 uppercase leading-tight tracking-tighter text-white">
               Access <span className="text-red-600">Denial</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-100 max-w-2xl mb-10 leading-relaxed font-bold">
+            <p className="text-xl md:text-2xl text-white max-w-2xl mb-10 leading-relaxed font-bold">
               Reinforcing Phoenix properties with industrial laminates. We turn standard glass into an impenetrable barrier.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-red-700 hover:bg-red-800 text-white px-8 h-16 text-xl font-black uppercase italic shadow-2xl">
+              <Button asChild size="lg" className="bg-red-700 hover:bg-red-800 text-white px-8 h-16 text-xl font-black uppercase italic shadow-2xl border-none">
                 <Link to="/contact">Get Security Audit</Link>
               </Button>
-              <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-16 rounded-md border-2 border-white/40 text-white font-black hover:bg-white hover:text-slate-900 transition-all uppercase tracking-tighter">
-                <Phone className="w-6 h-6" /> 480-788-1591
+              <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-16 rounded-md border-2 border-white text-white font-black hover:bg-white hover:text-slate-900 transition-all uppercase tracking-tighter">
+                <Phone className="w-6 h-6" aria-hidden="true" /> 480-788-1591
               </a>
             </div>
           </motion.div>
@@ -182,7 +183,7 @@ const Safety = () => {
               >
                 <Link to={`/safety/${benefit.slug}`} className="block h-full bg-slate-50 rounded-3xl p-10 border border-slate-200 hover:border-red-600 transition-all shadow-sm hover:shadow-xl">
                   <div className="w-16 h-16 bg-red-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
-                    <benefit.icon className="w-8 h-8 text-white" />
+                    <benefit.icon className="w-8 h-8 text-white" aria-hidden="true" />
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase group-hover:text-red-700 transition-colors">
                     {benefit.title}
@@ -191,7 +192,7 @@ const Safety = () => {
                     {benefit.description}
                   </p>
                   <div className="mt-6 flex items-center text-red-700 font-black text-sm uppercase tracking-widest">
-                    Explore Defense <ArrowRight className="ml-2 w-5 h-5" />
+                    Explore Defense <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
                   </div>
                 </Link>
               </motion.div>
@@ -200,12 +201,12 @@ const Safety = () => {
         </div>
       </section>
 
-      {/* --- HOW IT WORKS / TECHNICAL SECTION --- */}
-      <section className="py-24 bg-slate-950 text-white">
+      {/* --- HOW IT WORKS: ENHANCED READABILITY --- */}
+      <section className="py-24 bg-slate-950 text-white border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic tracking-tighter leading-none">
+              <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic tracking-tighter leading-none text-white">
                 How Security <br/><span className="text-red-600">Films Work</span>
               </h2>
               <div className="space-y-8">
@@ -217,8 +218,8 @@ const Safety = () => {
                   <div key={idx} className="flex gap-5">
                     <div className="text-red-600 font-black text-3xl italic">0{idx + 1}</div>
                     <div>
-                      <h3 className="text-xl font-bold uppercase">{step.t}</h3>
-                      <p className="text-slate-400 mt-1 font-medium">{step.d}</p>
+                      <h3 className="text-xl font-bold uppercase text-white">{step.t}</h3>
+                      <p className="text-slate-200 mt-1 font-medium text-lg leading-relaxed">{step.d}</p>
                     </div>
                   </div>
                 ))}
@@ -228,7 +229,7 @@ const Safety = () => {
               <img 
                 src="/images/Security Window Film Phoenix PD.webp" 
                 alt="Technical Diagram of Security Film Impact" 
-                className="rounded-3xl shadow-2xl border border-white/10"
+                className="rounded-3xl shadow-2xl border border-white/20"
                 loading="lazy"
                 width="800"
                 height="600"
@@ -237,10 +238,8 @@ const Safety = () => {
           </div>
         </div>
       </section>
-      
-      
 
-      {/* --- TARGETED APPLICATIONS GRID --- */}
+      {/* --- TARGETED APPLICATIONS --- */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -248,10 +247,10 @@ const Safety = () => {
             <div className="w-24 h-2 bg-red-600 mx-auto mt-4" />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {applications.map((app, index) => (
+            {applications.map((app) => (
               <motion.div key={app.name} whileHover={{ y: -5 }}>
                 <Link to={`/safety/${app.slug}`} className="flex flex-col items-center justify-center p-8 bg-white border-2 border-slate-100 rounded-2xl shadow-sm hover:border-red-600 hover:shadow-md transition-all h-full text-center">
-                  <Building className="w-8 h-8 text-red-700 mb-4" />
+                  <Building className="w-8 h-8 text-red-700 mb-4" aria-hidden="true" />
                   <span className="font-black text-slate-900 uppercase text-xs tracking-tighter">{app.name}</span>
                 </Link>
               </motion.div>
@@ -268,7 +267,7 @@ const Safety = () => {
             <div className="grid grid-cols-1 gap-4">
               {features.map((feature, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-                  <CheckCircle2 className="w-6 h-6 text-red-700 flex-shrink-0" />
+                  <CheckCircle2 className="w-6 h-6 text-red-700 flex-shrink-0" aria-hidden="true" />
                   <span className="font-bold text-slate-800">{feature}</span>
                 </div>
               ))}
@@ -290,7 +289,7 @@ const Safety = () => {
         </div>
       </section>
 
-      {/* --- SEO CITY LOOP (ACCESSIBILITY OPTIMIZED) --- */}
+      {/* --- SEO CITY LOOP --- */}
       <section className="py-16 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-[10px] font-black text-slate-500 mb-8 uppercase tracking-[0.5em]">Safety Installations Statewide</p>
@@ -299,7 +298,6 @@ const Safety = () => {
               <Link 
                 key={city.slug} 
                 to={`/${city.slug}-window-tinting`}
-                // Accessibility: Increased contrast text and hover border
                 className="px-3 py-1 bg-slate-50 border border-slate-200 rounded text-[10px] font-black text-slate-700 uppercase hover:bg-red-700 hover:text-white hover:border-red-700 transition-all shadow-sm"
               >
                 {city.name}

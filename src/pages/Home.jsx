@@ -19,7 +19,11 @@ import HelpCircle from "lucide-react/dist/esm/icons/help-circle";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
-  // 1. IMPROVED SCRIPT DEFERRAL (TBT Optimization)
+  // IMAGE PATHS - Uniform local filenames
+  const HERO_IMAGE = "/images/phoenix- arizona -window-tinting-Arizona House of Film.webp";
+  const LOGO_IMAGE = "/images/Arizona House of Film.webp";
+
+  // PageSpeed Optimization: Script Deferral
   useEffect(() => {
     const loadDeferredScripts = () => {
       if (window.scriptsLoaded) return;
@@ -43,28 +47,28 @@ const Home = () => {
 
   const services = [
     { 
-      name: "Residential Tinting", 
+      name: "Residential Window Tinting", 
       icon: HomeIcon, 
       path: "/residential-window-tinting", 
-      description: "Advanced home window tinting using spectrally selective ceramic films that block 84% of solar heat while maintaining crystal-clear views.", 
+      description: "Advanced home window tinting using ceramic films that block 84% of solar heat and 99.9% of UV rays while maintaining crystal-clear views.", 
     },
     { 
-      name: "Commercial Tinting", 
+      name: "Commercial Window Tinting", 
       icon: Building, 
       path: "/commercial-window-tinting", 
-      description: "Industrial-grade solar control solutions for Phoenix offices and retail centers, designed to lower HVAC loads and improve tenant comfort.", 
+      description: "Industrial-grade solar control solutions for Phoenix offices designed to lower HVAC loads and improve employee comfort.", 
     },
     { 
-      name: "Decorative Films", 
+      name: "Decorative & Privacy Films", 
       icon: Zap, 
       path: "/solutions", 
-      description: "Custom privacy glass and frosted window film patterns for Scottsdale interiors, providing modern design without the cost of etched glass.", 
+      description: "Custom frosted patterns and privacy glass films for Scottsdale interiors, providing modern design without the cost of etched glass.", 
     },
     { 
-      name: "Safety & Security", 
+      name: "Safety & Security Film", 
       icon: Shield, 
       path: "/solutions", 
-      description: "Impact-resistant 8-mil safety films designed to mitigate smash-and-grab threats and hold glass together during high-velocity impacts.", 
+      description: "Impact-resistant 8-mil safety films designed to mitigate smash-and-grab threats and reinforce glass against high-velocity impacts.", 
     },
   ];
 
@@ -77,7 +81,7 @@ const Home = () => {
         "name": "How much does residential window tinting cost in Phoenix?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pricing for home window tinting depends on the film type (Ceramic vs. Traditional) and the square footage. We offer free estimates to provide exact quotes for Arizona homeowners."
+          "text": "Home window tinting pricing depends on film technology (Ceramic vs. Traditional). Most Arizona homeowners see a return on investment within 2-3 years via energy savings."
         }
       },
       {
@@ -85,21 +89,18 @@ const Home = () => {
         "name": "Does window film really lower electric bills in Arizona?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Our high-rejection solar films can block up to 84% of infrared heat, significantly reducing the runtime of your HVAC system during Phoenix summers."
+          "text": "Yes. High-rejection solar films can block up to 84% of infrared heat, reducing cooling costs by $250-$725 annually depending on the property size."
         }
       }
     ]
   };
 
-  // Corrected Local Path to your specific file
-  const ASSET_IMAGE = "/images/phoenix-window-tinting-Arizona House of Film.webp";
-
   return (
     <>
       <Helmet>
-        <title>Phoenix Window Tinting | Arizona House of Film | Licensed ROC #315259</title>
-        <meta name="description" content="Phoenix's authority in ceramic window tinting for 20+ years. 480k+ sq ft installed. Licensed, bonded, and insured experts. Get your free estimate today!" />
-        <link rel="preload" as="image" href={ASSET_IMAGE} fetchpriority="high" />
+        <title>Window Tinting Phoenix | Residential & Commercial | Arizona House of Film</title>
+        <meta name="description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #315259. We specialize in solar control, privacy, and security films. Get a free estimate!" />
+        <link rel="preload" as="image" href={HERO_IMAGE} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
@@ -109,8 +110,8 @@ const Home = () => {
         style={{ aspectRatio: '1600/1066', minHeight: '500px', maxHeight: '85vh', display: 'block' }}
       >
         <img
-          src={ASSET_IMAGE} 
-          alt="Professional Phoenix Window Tinting Installation"
+          src={HERO_IMAGE} 
+          alt="Commercial and Residential Window Tinting Phoenix Arizona"
           className="absolute inset-0 w-full h-full object-cover"
           width="1600" height="1066" fetchPriority="high" loading="eager" decoding="async"
         />
@@ -120,17 +121,17 @@ const Home = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] uppercase tracking-tighter drop-shadow-2xl">
                 Phoenix <span className="text-blue-500 italic">Window Tinting</span> <br/> 
-                <span className="text-3xl md:text-5xl block mt-4 font-bold tracking-normal normal-case">The Science of Cooler Living</span>
+                <span className="text-3xl md:text-5xl block mt-4 font-bold tracking-normal normal-case">Residential & Commercial Specialists</span>
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto leading-relaxed">
-                Specializing in <span className="text-white font-bold underline decoration-blue-500">Nano-Ceramic</span> heat rejection for the Arizona climate. Licensed, Bonded, and Insured ROC #315259.
+                Expert <span className="text-white font-bold underline decoration-blue-500">Nano-Ceramic</span> solar control for the Arizona climate. Licensed, Bonded, and Insured ROC #315259.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" asChild className="bg-white text-blue-900 hover:bg-gray-100 font-black h-16 px-10 rounded-none">
-                  <a href="tel:480-788-1591">CALL (480) 788-1591</a>
+                <Button size="lg" asChild className="bg-blue-600 text-white hover:bg-blue-700 font-black h-16 px-10 rounded-none border-none">
+                  <Link to="/contact">GET A FREE QUOTE</Link>
                 </Button>
-                <Button size="lg" asChild className="bg-blue-700 text-white hover:bg-blue-800 font-black h-16 px-10 rounded-none">
-                  <Link to="/contact">FREE ESTIMATE</Link>
+                <Button size="lg" asChild variant="outline" className="text-white border-white hover:bg-white hover:text-black font-black h-16 px-10 rounded-none">
+                  <a href="tel:480-788-1591">CALL (480) 788-1591</a>
                 </Button>
               </div>
             </motion.div>
@@ -142,7 +143,7 @@ const Home = () => {
       <section className="bg-white py-12 border-b border-gray-100">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { icon: Star, text: "4.4/5 Google Rating", sub: "15+ Local Reviews" },
+            { icon: Star, text: "Top Rated Google", sub: "15+ Local Reviews" },
             { icon: Award, text: "ROC #315259", sub: "Licensed & Bonded" },
             { icon: Server, text: "480,000+ Sq Ft", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },
@@ -166,13 +167,13 @@ const Home = () => {
               </h2>
               <div className="prose prose-slate prose-lg">
                 <p className="text-gray-700 font-medium leading-relaxed mb-6">
-                  Since 2012, Arizona House of Film has served as the leading provider of <strong>residential and commercial window tinting in Phoenix and Scottsdale</strong>.
+                  Since 2012, Arizona House of Film has served as the leading provider of <strong>residential and commercial window tinting in Phoenix, Scottsdale, and Tempe</strong>.
                 </p>
                 <p className="text-gray-700 font-medium leading-relaxed mb-6">
-                  Our advanced <strong>Nano-Ceramic window films</strong> are engineered specifically for the Sonoran Desert. By targeting the infrared spectrum, we achieve up to 84% Total Solar Energy Rejection (TSER).
+                  Our advanced <strong>Nano-Ceramic window films</strong> can reduce annual air conditioning loads by <strong>$250–$725</strong>. By targeting the infrared spectrum, we achieve up to 84% Total Solar Energy Rejection (TSER).
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                  {['SRP & APS Savings', 'Glare Mitigation', 'Privacy Film', 'Heat Barriers'].map((check) => (
+                  {['SRP & APS Rebate Ready', '99.9% UV Protection', 'Glare Mitigation', 'Dual-Pane Safe'].map((check) => (
                     <div key={check} className="flex items-center gap-2 font-black text-xs uppercase italic text-blue-900">
                       <CheckCircle className="w-4 h-4" /> {check}
                     </div>
@@ -181,7 +182,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="bg-gray-50 p-10 border border-gray-100">
+            <div className="bg-gray-50 p-10 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                 <HelpCircle className="w-6 h-6 text-blue-700" />
                 <h3 className="text-2xl font-black text-gray-900 uppercase">Window Tinting FAQ</h3>
@@ -189,7 +190,14 @@ const Home = () => {
               <div className="space-y-8">
                 <div>
                   <h4 className="font-black text-gray-900 uppercase text-sm mb-2">How much does home window tinting cost in Phoenix?</h4>
-                  <p className="text-sm text-gray-600 font-medium">Pricing varies based on film technology and square footage. We provide precise <Link to="/contact" className="text-blue-700 underline">free estimates</Link> for all projects.</p>
+                  <p className="text-sm text-gray-600 font-medium">Pricing varies based on square footage and film technology. We provide precise <Link to="/contact" className="text-blue-700 underline">free estimates</Link> and lifetime warranties on all residential installs.</p>
+                </div>
+                <div>
+                  <h4 className="font-black text-gray-900 uppercase text-sm mb-2">Is tinting safe for dual-pane windows?</h4>
+                  <p className="text-sm text-gray-600 font-medium">Yes. We use films specifically engineered for the high thermal stress of the Arizona desert to ensure your glass remains safe and effective.</p>
+                </div>
+                <div className="pt-6 border-t border-gray-200 flex justify-center">
+                   <img src={LOGO_IMAGE} alt="Arizona House of Film Official Logo" className="h-12 w-auto grayscale opacity-70" />
                 </div>
               </div>
             </div>
@@ -197,7 +205,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SERVICES GRID (CORRECTED CONTRAST) --- */}
+      {/* --- SERVICES GRID --- */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="container mx-auto px-4 text-center mb-16">
           <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Our Expertise</h2>
@@ -205,13 +213,14 @@ const Home = () => {
         </div>
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
-            <div key={s.name} className="bg-white/5 p-8 border border-white/10 hover:bg-white/10 transition-all">
-              <s.icon className="w-10 h-10 text-blue-400 mb-6" />
+            <div key={s.name} className="bg-white/5 p-8 border border-white/10 hover:border-blue-500 transition-all group">
+              <s.icon className="w-10 h-10 text-blue-400 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-black uppercase mb-4 tracking-tighter text-white">{s.name}</h3>
-              {/* Changed text-gray-400 to text-gray-100 for better contrast on dark background */}
               <p className="text-sm text-gray-100 font-medium leading-relaxed mb-8">{s.description}</p>
               <Button variant="link" asChild className="p-0 text-blue-300 hover:text-white uppercase font-black text-xs">
-                <Link to={s.path}>Learn More <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                <Link to={s.path}>
+                  Learn about {s.name} <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </Button>
             </div>
           ))}

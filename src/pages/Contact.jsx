@@ -15,24 +15,24 @@ const Contact = () => {
     "@type": "FAQPage",
     "mainEntity": [{
       "@type": "Question",
-      "name": "How do I get a quote for window tinting?",
+      "name": "How do I get a quote for window tinting in Phoenix?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can get a free quote by filling out the contact form on our website, calling us at 480-788-1591, or emailing us at info@arizonahouseoffilm.com. We offer free consultations and estimates."
+        "text": "You can get a free quote by filling out our contact form, calling 480-788-1591, or emailing info@arizonahouseoffilm.com. We provide free on-site solar and security audits."
       }
     }, {
       "@type": "Question",
       "name": "What areas do you service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We proudly serve the entire state of Arizona, including Phoenix, Scottsdale, Tempe, Mesa, Chandler, and surrounding areas."
+        "text": "Arizona House of Film serves the entire Phoenix Valley, including Scottsdale, Tempe, Mesa, Chandler, Gilbert, and Peoria."
       }
     }, {
       "@type": "Question",
-      "name": "Are you licensed and insured?",
+      "name": "Are you a licensed contractor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Arizona House of Film is fully licensed (ROC #315259), bonded, and insured for your complete peace of mind."
+        "text": "Yes, we are a fully licensed Arizona Registrar of Contractors (ROC) holder, #315259. We are also fully bonded and insured."
       }
     }]
   };
@@ -40,50 +40,61 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact for a Free Window Tinting Quote | Arizona House of Film</title>
-        <meta name="description" content="Get in touch with Arizona House of Film for a free estimate on residential or commercial window tinting in Arizona. Call 480-788-1591 to schedule your security or solar audit." />
+        <title>Contact Us | Window Tinting Quote Phoenix | Arizona House of Film</title>
+        <meta name="description" content="Get a free estimate for residential or commercial window tinting. Serving Phoenix & Scottsdale since 2012. Call 480-788-1591 today for a solar or security audit." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/contact" />
+        
+        {/* Performance Optimization: Preconnect to external scripts if necessary */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
 
-      <main className="bg-slate-950">
-        {/* ContactHeader usually contains the Hero text - ensure it uses Slate-950/Red-600 */}
-        <div className="pt-20">
+      <main className="bg-slate-950 min-h-screen">
+        {/* Header Section */}
+        <div className="pt-24 pb-12">
             <ContactHeader 
                 title="Establish Perimeter Protection" 
-                subtitle={`Contact our experts today. Arizona Licensed Contractor ROC #${rocNumber}`} 
+                subtitle={`Licensed Arizona Contractor ROC #${rocNumber}`} 
             />
         </div>
 
-        <section className="relative z-10 -mt-12 pb-24">
+        {/* Form and Info Section */}
+        <section className="relative z-10 pb-24">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* ContactInfo: Ensure this component uses white cards with black text for clarity */}
-                    <div className="lg:col-span-1">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8 items-start">
+                    
+                    {/* Sidebar Info: White card with Black/Blue text for readability */}
+                    <div className="lg:col-span-1 bg-white p-8 shadow-xl border-b lg:border-none border-gray-100">
                         <ContactInfo />
                     </div>
                     
-                    {/* ContactFormSection: The primary conversion engine */}
+                    {/* Main Form: Clean, High-Contrast approach */}
                     <div className="lg:col-span-2 bg-white p-8 md:p-12 shadow-2xl">
+                        <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-6">
+                            Request Your <span className="text-blue-600 italic">Free Audit</span>
+                        </h2>
                         <ContactFormSection />
                     </div>
+                    
                 </div>
             </div>
         </section>
 
-        {/* ContactMap: Provides local proof for Phoenix presence */}
-        <section className="bg-slate-900 border-t border-white/10">
+        {/* Map Section: Full width local proof */}
+        <section className="bg-slate-900 border-t border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
             <ContactMap />
         </section>
 
-        {/* Legal Footer Mini-Bar */}
-        <div className="bg-black py-4 text-center">
-            <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest">
-                Arizona House of Film • ROC #{rocNumber} • Licensed • Bonded • Insured
+        {/* Mini Footer */}
+        <footer className="bg-black py-6 text-center border-t border-white/5">
+            <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em]">
+                Arizona House of Film • ROC #{rocNumber} • Phoenix Specialists
             </p>
-        </div>
+        </footer>
       </main>
     </>
   );

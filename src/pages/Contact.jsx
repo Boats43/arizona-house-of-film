@@ -44,7 +44,7 @@ const Contact = () => {
         <meta name="description" content="Get a free estimate for residential or commercial window tinting. Serving Phoenix & Scottsdale since 2012. Call 480-788-1591 today for a solar or security audit." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/contact" />
         
-        {/* Performance Optimization: Preconnect to external scripts if necessary */}
+        {/* Performance Optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
@@ -67,16 +67,19 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8 items-start">
                     
-                    {/* Sidebar Info: White card with Black/Blue text for readability */}
+                    {/* Sidebar Info */}
                     <div className="lg:col-span-1 bg-white p-8 shadow-xl border-b lg:border-none border-gray-100">
                         <ContactInfo />
                     </div>
                     
-                    {/* Main Form: Clean, High-Contrast approach */}
+                    {/* Main Form Section */}
                     <div className="lg:col-span-2 bg-white p-8 md:p-12 shadow-2xl">
-                        <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-6">
+                        <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-2">
                             Request Your <span className="text-blue-600 italic">Free Audit</span>
                         </h2>
+                        <p className="text-gray-600 mb-8 font-medium italic">
+                            Fill out the form below and our security specialists will respond within 24 hours.
+                        </p>
                         <ContactFormSection />
                     </div>
                     
@@ -84,7 +87,7 @@ const Contact = () => {
             </div>
         </section>
 
-        {/* Map Section: Full width local proof */}
+        {/* Map Section */}
         <section className="bg-slate-900 border-t border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
             <ContactMap />
         </section>

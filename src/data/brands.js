@@ -5,7 +5,13 @@ export const brands = [
     category: "Major Manufacturers",
     description: "Global innovator offering Fasara decorative films, Scotchtint solar films, Scotchshield security films, and Thinsulate insulation films.",
     url: "https://www.3m.com",
-    relatedFilms: ["decorative", "safety", "energy-saving"]
+    relatedFilms: ["decorative", "safety", "energy-saving"],
+    specs: {
+      heatRejection: "Up to 97% IR",
+      uvProtection: "99.9% Blockage",
+      warranty: "Limited Lifetime",
+      tech: "Multi-layer Optical"
+    }
   },
   {
     name: "Eastman Chemical Company",
@@ -13,7 +19,13 @@ export const brands = [
     category: "Major Manufacturers",
     description: "Producer of LLumar, Vista, and SunTek — high-performance solar, safety, and automotive window films.",
     url: "https://www.eastman.com",
-    relatedFilms: ["safety", "energy-saving"]
+    relatedFilms: ["safety", "energy-saving"],
+    specs: {
+      heatRejection: "Up to 95% IR",
+      uvProtection: "99.9% Blockage",
+      warranty: "Factory Backed",
+      tech: "Advanced Sputtering"
+    }
   },
   {
     name: "Saint-Gobain / Solar Gard",
@@ -21,7 +33,13 @@ export const brands = [
     category: "Major Manufacturers",
     description: "Solar Gard and SunTek brands from Saint-Gobain, providing solar control, safety, and automotive window tinting films.",
     url: "https://www.solargard.com",
-    relatedFilms: ["energy-saving", "safety"]
+    relatedFilms: ["energy-saving", "safety"],
+    specs: {
+      heatRejection: "Up to 91% TSER",
+      uvProtection: "99% +",
+      warranty: "Residential Lifetime",
+      tech: "Sustainable Solar"
+    }
   },
   {
     name: "Avery Dennison / Hanita",
@@ -29,7 +47,13 @@ export const brands = [
     category: "Major Manufacturers",
     description: "Global materials science company with Hanita Coatings. Offers specialty, graphic, and architectural films.",
     url: "https://graphics.averydennison.com",
-    relatedFilms: ["decorative", "films/specialty-films"]
+    relatedFilms: ["decorative", "films/specialty-films"],
+    specs: {
+      heatRejection: "Variable by SKU",
+      uvProtection: "High UV Defense",
+      warranty: "Manufacturer Bonded",
+      tech: "Specialty Polyester"
+    }
   },
   {
     name: "XPEL",
@@ -37,7 +61,13 @@ export const brands = [
     category: "Major Manufacturers",
     description: "Leading brand known for paint protection film (PPF) and high-performance automotive tints.",
     url: "https://www.xpel.com",
-    relatedFilms: ["safety"]
+    relatedFilms: ["safety"],
+    specs: {
+      heatRejection: "Up to 98% IR",
+      uvProtection: "99.9% Blockage",
+      warranty: "Transferable Lifetime",
+      tech: "Nano-Ceramic"
+    }
   },
   {
     name: "Madico",
@@ -45,7 +75,13 @@ export const brands = [
     category: "Major Manufacturers",
     description: "Established manufacturer with films for automotive, architectural, and safety applications.",
     url: "https://madico.com",
-    relatedFilms: ["safety", "residential"]
+    relatedFilms: ["safety", "residential"],
+    specs: {
+      heatRejection: "Premium Solar Block",
+      uvProtection: "99% Blockage",
+      warranty: "Lifetime Residential",
+      tech: "Sputtered Metal/Dielectric"
+    }
   },
   {
     name: "Hüper Optik",
@@ -53,7 +89,13 @@ export const brands = [
     category: "Automotive",
     description: "High-end multi-layer ceramic window films with excellent heat rejection and low reflectivity.",
     url: "https://www.huperoptikusa.com",
-    relatedFilms: ["energy-saving"]
+    relatedFilms: ["energy-saving"],
+    specs: {
+      heatRejection: "Up to 98% IR",
+      uvProtection: "99.9% Blockage",
+      warranty: "Residential Lifetime",
+      tech: "Patented Multi-Ceramic"
+    }
   },
   {
     name: "Johnson Window Films",
@@ -61,7 +103,13 @@ export const brands = [
     category: "Automotive",
     description: "Veteran manufacturer offering films for both vehicles and buildings, including InsulatIR Nano Ceramic line.",
     url: "https://www.johnsonwindowfilms.com",
-    relatedFilms: ["residential"]
+    relatedFilms: ["residential"],
+    specs: {
+      heatRejection: "Varies (InsulatIR High)",
+      uvProtection: "99% Blockage",
+      warranty: "Limited Lifetime",
+      tech: "Ceramic / Dual-Ply"
+    }
   },
   {
     name: "Geoshield",
@@ -69,7 +117,13 @@ export const brands = [
     category: "Automotive",
     description: "Known for its ceramic films like Apex Ultra series, offering high heat rejection and clarity.",
     url: "https://geoshieldusa.com",
-    relatedFilms: ["energy-saving"]
+    relatedFilms: ["energy-saving"],
+    specs: {
+      heatRejection: "Up to 96% IR",
+      uvProtection: "99% Blockage",
+      warranty: "Lifetime Performance",
+      tech: "Apex Nano-Ceramic"
+    }
   },
   {
     name: "Rayno",
@@ -77,7 +131,13 @@ export const brands = [
     category: "Automotive",
     description: "Innovative brand using ceramic and sputter technology for advanced performance films.",
     url: "https://rayno.com",
-    relatedFilms: ["films/specialty-films"]
+    relatedFilms: ["films/specialty-films"],
+    specs: {
+      heatRejection: "Carbon-Ceramic Mix",
+      uvProtection: "99.9% Blockage",
+      warranty: "Lifetime",
+      tech: "Phantom Nano-Carbon"
+    }
   },
   {
     name: "Global Window Films",
@@ -85,7 +145,13 @@ export const brands = [
     category: "Automotive",
     description: "Reliable and budget-friendly films for both installers and DIY consumers.",
     url: "https://globalwindowfilms.com",
-    relatedFilms: ["residential"]
+    relatedFilms: ["residential"],
+    specs: {
+      heatRejection: "High Heat Rejection",
+      uvProtection: "99% Blockage",
+      warranty: "Limited Lifetime",
+      tech: "Non-Reflective Dyed/Metal"
+    }
   },
   {
     name: "TERMINAX",
@@ -125,7 +191,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "High-performance, energy-saving window films designed for year-round insulation.",
     url: "https://enerlogicwindowfilms.com",
-    relatedFilms: ["energy-saving"]
+    relatedFilms: ["energy-saving"],
+    specs: {
+      heatRejection: "Low-E Insulation",
+      uvProtection: "99% Blockage",
+      warranty: "Energy Performance Bond",
+      tech: "Year-Round Low-E"
+    }
   },
   {
     name: "Concord Window Film",
@@ -157,7 +229,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Pioneering brand focusing on high-performance architectural window films.",
     url: "https://www.vkool.com",
-    relatedFilms: ["residential", "energy-saving"]
+    relatedFilms: ["residential", "energy-saving"],
+    specs: {
+      heatRejection: "Up to 94% IR",
+      uvProtection: "99% Blockage",
+      warranty: "Residential Lifetime",
+      tech: "Sputtered Precious Metal"
+    }
   },
   {
     name: "Decorative Films, LLC",
@@ -181,7 +259,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Specializes in security and safety films for homes and buildings.",
     url: "https://armorglass.com",
-    relatedFilms: ["safety", "residential"]
+    relatedFilms: ["safety", "residential"],
+    specs: {
+      heatRejection: "Safety Focused",
+      uvProtection: "99% Blockage",
+      warranty: "System Failure Bonded",
+      tech: "Multi-Ply Security"
+    }
   },
   {
     name: "HanitaTek",

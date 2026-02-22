@@ -120,6 +120,7 @@ const Safety = () => {
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        {/* LCP CRITICAL FIX: Preload the image so it starts before JS hydration */}
         <link rel="preload" as="image" href="/images/Security Window Film Phoenix AZ.webp" fetchpriority="high" />
       </Helmet>
 
@@ -131,7 +132,7 @@ const Safety = () => {
             className="w-full h-full object-cover opacity-50" 
             src="/images/Security Window Film Phoenix AZ.webp" 
             fetchpriority="high" 
-            loading="eager"
+            loading="eager" // Hero images should never be lazy-loaded
             decoding="async"
             width="1200"
             height="800"
@@ -236,6 +237,8 @@ const Safety = () => {
           </div>
         </div>
       </section>
+      
+      
 
       {/* --- TARGETED APPLICATIONS GRID --- */}
       <section className="py-24 bg-white">
@@ -287,16 +290,17 @@ const Safety = () => {
         </div>
       </section>
 
-      {/* --- SEO CITY LOOP (THE GOAT GRID) --- */}
+      {/* --- SEO CITY LOOP (ACCESSIBILITY OPTIMIZED) --- */}
       <section className="py-16 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-[10px] font-black text-slate-400 mb-8 uppercase tracking-[0.5em]">Safety Installations Statewide</p>
+          <p className="text-[10px] font-black text-slate-500 mb-8 uppercase tracking-[0.5em]">Safety Installations Statewide</p>
           <div className="flex flex-wrap justify-center gap-2">
             {cities.map(city => (
               <Link 
                 key={city.slug} 
                 to={`/${city.slug}-window-tinting`}
-                className="px-3 py-1 bg-slate-50 border border-slate-200 rounded text-[10px] font-black text-slate-600 uppercase hover:bg-red-700 hover:text-white hover:border-red-700 transition-all shadow-sm"
+                // Accessibility: Increased contrast text and hover border
+                className="px-3 py-1 bg-slate-50 border border-slate-200 rounded text-[10px] font-black text-slate-700 uppercase hover:bg-red-700 hover:text-white hover:border-red-700 transition-all shadow-sm"
               >
                 {city.name}
               </Link>

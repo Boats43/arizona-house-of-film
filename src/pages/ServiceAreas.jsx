@@ -2,13 +2,14 @@ import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Search } from 'lucide-react';
+import { MapPin, Phone, Search, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cities } from '@/data/cities';
 
 const ServiceAreas = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const rocNumber = "315259";
 
   const filteredCities = useMemo(() => {
     return cities.filter(city =>
@@ -16,102 +17,115 @@ const ServiceAreas = () => {
     ).sort((a, b) => a.name.localeCompare(b.name));
   }, [searchTerm]);
 
-  const pageTitle = "Arizona Window Tinting Service Areas | Arizona House of Film";
-  const metaDescription = "We serve Phoenix, Tucson, Mesa, Scottsdale, and over 100 other cities across Arizona. Find your city and get a free window tinting estimate today for your home or business. We are your local experts.";
-  const canonicalUrl = "https://arizonahouseoffilm.com/service-areas";
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Arizona House of Film",
-    "url": canonicalUrl,
-    "telephone": "480-788-1591",
-    "email": "arizonahouseoffilm@gmail.com",
-    "description": metaDescription,
-    "areaServed": cities.map(city => ({ "@type": "City", "name": city.name })),
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Phoenix",
-      "addressRegion": "AZ",
-      "addressCountry": "US"
-    }
-  };
-
   return (
     <>
       <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image-service-areas.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <title>Arizona Window Tinting Service Areas | Arizona House of Film</title>
+        <meta name="description" content="We serve Phoenix, Tucson, Mesa, Scottsdale, and over 100 cities across Arizona. Find your local window tinting expert and get a free estimate today." />
+        <link rel="canonical" href="https://arizonahouseoffilm.com/service-areas" />
       </Helmet>
 
-      <div className="bg-gray-50">
-        <section className="relative py-20 text-white bg-gray-900">
-          <div className="absolute inset-0 hero-pattern opacity-10"></div>
-          <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              Our Arizona Service Areas
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="text-lg md:text-xl text-gray-200 mb-8">
-              We provide expert window film installation for homes and businesses across the entire state of Arizona. Find your city below.
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}>
-              <Button asChild size="lg" className="bg-white text-blue-900 hover:bg-gray-200">
-                <a href="tel:480-788-1591">Call for a Free Estimate <Phone className="ml-2 h-5 w-5" /></a>
-              </Button>
+      <main className="bg-slate-950 min-h-screen">
+        {/* --- HERO SECTION --- */}
+        <section className="relative py-32 text-white border-b border-white/10 overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-20">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+          </div>
+          
+          <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <span className="inline-flex items-center gap-2 px-4 py-1 bg-red-600 text-white font-black text-xs mb-6 uppercase tracking-[0.2em]">
+                <ShieldCheck className="w-4 h-4" /> Statewide Deployment • ROC #{rocNumber}
+              </span>
+              <h1 className="text-5xl md:text-8xl font-black mb-6 uppercase leading-none tracking-tighter">
+                Our <span className="text-red-600 italic">Service Areas</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 font-bold italic">
+                From Phoenix to Flagstaff, we provide industrial-grade window film for Arizona's most demanding environments.
+              </p>
+              <div className="flex justify-center gap-4">
+                <Button asChild size="lg" className="bg-white hover:bg-red-600 text-slate-950 hover:text-white px-10 h-16 text-xl font-black uppercase italic rounded-none transition-all">
+                  <a href="tel:480-788-1591">Call Dispatch: 480-788-1591</a>
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto mb-12">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+        {/* --- SEARCH & GRID SECTION --- */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto mb-16">
+              <div className="relative group">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-slate-400 group-focus-within:text-red-600 transition-colors" />
                 <Input
                   type="text"
-                  placeholder="Search for your city..."
+                  placeholder="SEARCH YOUR CITY (e.g. SCOTTSDALE)..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 text-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-full"
+                  className="w-full pl-14 pr-4 py-8 text-xl border-4 border-slate-900 focus:ring-0 focus:border-red-600 rounded-none font-black uppercase tracking-tighter placeholder:text-slate-300"
                 />
               </div>
             </div>
 
             <motion.div 
               layout
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {filteredCities.map((city) => (
                 <motion.div
                   key={city.slug}
                   layout
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="group"
                 >
-                  <Link to={`/service-areas/${city.slug}`} className="flex items-center justify-center text-center bg-white hover:bg-blue-600 hover:text-white text-blue-700 font-medium py-3 px-4 rounded-lg shadow-md transition-all duration-300 border border-gray-200 h-full underline hover:no-underline">
-                    <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
-                    <span className="flex-grow">{city.name}</span>
+                  <Link 
+                    to={`/service-areas/${city.slug}`} 
+                    className="flex flex-col items-center justify-center text-center bg-slate-50 border-2 border-slate-100 p-6 group-hover:bg-slate-950 group-hover:border-slate-950 transition-all duration-300 h-full"
+                  >
+                    <MapPin className="w-5 h-5 mb-2 text-red-600 group-hover:text-white transition-colors" />
+                    <span className="font-black text-slate-950 group-hover:text-white uppercase text-xs tracking-widest leading-tight">
+                      {city.name}
+                    </span>
+                    <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowRight className="w-4 h-4 text-red-600" />
+                    </div>
                   </Link>
                 </motion.div>
               ))}
             </motion.div>
+
             {filteredCities.length === 0 && (
-              <p className="text-center text-gray-500 mt-8 text-lg">No cities found. We likely still serve your area! Please contact us to confirm.</p>
+              <div className="text-center py-20 border-4 border-dashed border-slate-100">
+                <p className="text-slate-400 font-black uppercase tracking-tighter text-2xl">
+                  CITY NOT FOUND. WE LIKELY STILL SERVE YOUR AREA.
+                </p>
+                <Button asChild variant="link" className="text-red-600 font-black uppercase mt-4 underline">
+                    <Link to="/contact">Confirm Coverage with Dispatch</Link>
+                </Button>
+              </div>
             )}
           </div>
         </section>
-      </div>
+
+        {/* --- REINFORCEMENT BANNER --- */}
+        <section className="bg-slate-950 py-12 border-t border-white/10">
+            <div className="max-w-7xl mx-auto px-6 text-center">
+                <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.5em]">
+                    Arizona House of Film • Licensed ROC #{rocNumber} • Professional Installation Statewide
+                </p>
+            </div>
+        </section>
+      </main>
     </>
   );
 };
+
+// Simple Arrow icon for the grid
+const ArrowRight = ({ className }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+);
 
 export default ServiceAreas;

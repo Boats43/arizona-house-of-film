@@ -6,7 +6,6 @@ import { ArrowLeft, CheckCircle, ExternalLink, ShieldCheck, Zap, ThermometerSun,
 import { brands } from '@/data/brands';
 import { filmCategories } from '@/data/films';
 import { blogPosts } from '@/data/blogPosts.jsx';
-import { cities } from '@/data/cities';
 import NotFound from '@/pages/NotFound';
 import { Button } from '@/components/ui/button';
 
@@ -20,19 +19,35 @@ const BrandPage = () => {
   const metaDescription = `Authorized ${brand.name} window film installation in Arizona. High-performance solar, security, and decorative solutions for Phoenix & Scottsdale homes.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/brands/${brand.slug}`;
 
-  // ✅ Schema Logic (Keeping your exact structures)
-  const breadcrumbSchema = { /* ... your breadcrumb code ... */ };
-  const organizationSchema = { /* ... your org code ... */ };
-  const faqSchema = { /* ... your faq code ... */ };
-  const reviewSchema = { /* ... your review code ... */ };
+  // ✅ Safety Guards for Schema Logic
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arizonahouseoffilm.com" },
+      { "@type": "ListItem", "position": 2, "name": "Brands", "item": "https://arizonahouseoffilm.com/brands" },
+      { "@type": "ListItem", "position": 3, "name": brand.name }
+    ]
+  };
+
+  // We check if brand has specific FAQs, otherwise provide an empty structure to prevent .map crashes
+  const faqSchema = brand.faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": brand.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  } : null;
 
   const relatedFilmCategories = filmCategories.filter(cat =>
-    brand.relatedFilms.some(rf => cat.slug.includes(rf))
+    brand.relatedFilms?.some(rf => cat.slug.includes(rf))
   );
 
   const relatedBlogPosts = blogPosts
-    .filter(post => post.brandMentions?.includes(brand.name))
-    .slice(0, 3);
+    ? blogPosts.filter(post => post.brandMentions?.includes(brand.name)).slice(0, 3)
+    : [];
 
   return (
     <>
@@ -41,9 +56,7 @@ const BrandPage = () => {
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
       </Helmet>
 
       <div className="bg-slate-950 min-h-screen text-white">
@@ -71,7 +84,7 @@ const BrandPage = () => {
               </motion.div>
 
               <div className="flex flex-wrap gap-4 lg:justify-end">
-                {brand.url !== "#" && (
+                {brand.url && brand.url !== "#" && (
                   <Button asChild variant="outline" className="rounded-none border-white/20 hover:bg-white hover:text-black font-black uppercase italic">
                     <a href={brand.url} target="_blank" rel="noopener noreferrer">
                       Official Specs <ExternalLink className="w-4 h-4 ml-2" />
@@ -104,17 +117,19 @@ const BrandPage = () => {
                   </p>
                 </div>
 
-                <div className="mt-12">
-                  <h3 className="text-2xl font-black uppercase italic mb-6">Available {brand.name} Solutions</h3>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {relatedFilmCategories.map(cat => (
-                      <Link key={cat.slug} to={`/films/${cat.slug}`} className="group p-6 border-2 border-slate-100 hover:border-red-600 transition-all flex justify-between items-center">
-                        <span className="font-black uppercase tracking-tighter text-xl group-hover:text-red-600 transition-colors">{cat.name}</span>
-                        <CheckCircle className="text-slate-200 group-hover:text-red-600 w-6 h-6" />
-                      </Link>
-                    ))}
+                {relatedFilmCategories.length > 0 && (
+                  <div className="mt-12">
+                    <h3 className="text-2xl font-black uppercase italic mb-6">Available {brand.name} Solutions</h3>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {relatedFilmCategories.map(cat => (
+                        <Link key={cat.slug} to={`/films/${cat.slug}`} className="group p-6 border-2 border-slate-100 hover:border-red-600 transition-all flex justify-between items-center">
+                          <span className="font-black uppercase tracking-tighter text-xl group-hover:text-red-600 transition-colors">{cat.name}</span>
+                          <CheckCircle className="text-slate-200 group-hover:text-red-600 w-6 h-6" />
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Technical Sidebar */}
@@ -128,21 +143,27 @@ const BrandPage = () => {
                       <ThermometerSun className="text-red-600 w-6 h-6 shrink-0" />
                       <div>
                         <span className="block font-black uppercase text-sm tracking-tighter italic">Heat Rejection</span>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Up to 97% IR Rejection</span>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
+                          {brand.specs?.heatRejection || "High Performance IR Block"}
+                        </span>
                       </div>
                     </li>
                     <li className="flex gap-4">
                       <ShieldCheck className="text-red-600 w-6 h-6 shrink-0" />
                       <div>
                         <span className="block font-black uppercase text-sm tracking-tighter italic">UV Protection</span>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">99.9% Solar Blockade</span>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
+                          {brand.specs?.uvProtection || "99.9% Solar Blockade"}
+                        </span>
                       </div>
                     </li>
                     <li className="flex gap-4">
                       <Zap className="text-red-600 w-6 h-6 shrink-0" />
                       <div>
-                        <span className="block font-black uppercase text-sm tracking-tighter italic">Warranty</span>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Lifetime Residential</span>
+                        <span className="block font-black uppercase text-sm tracking-tighter italic">Technology</span>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
+                          {brand.specs?.tech || "Advanced Nanotechnology"}
+                        </span>
                       </div>
                     </li>
                   </ul>
@@ -153,26 +174,28 @@ const BrandPage = () => {
           </div>
         </section>
 
-        {/* --- FAQ SECTION --- */}
-        <section className="py-24 border-t border-white/5 bg-slate-950">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-black uppercase italic tracking-tighter mb-12 text-center underline decoration-red-600 underline-offset-8">
-              Technical FAQ
-            </h2>
-            <div className="space-y-4">
-              {faqSchema.mainEntity.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-slate-900/50 border border-white/10 p-6 hover:border-red-600/50 transition-colors"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-                >
-                  <h3 className="text-red-500 font-black uppercase tracking-tighter italic mb-2">Q: {faq.name}</h3>
-                  <p className="text-slate-400 font-bold uppercase text-xs tracking-widest leading-relaxed">A: {faq.acceptedAnswer.text}</p>
-                </motion.div>
-              ))}
+        {/* --- FAQ SECTION (Safely Guarded) --- */}
+        {faqSchema?.mainEntity && (
+          <section className="py-24 border-t border-white/5 bg-slate-950">
+            <div className="max-w-4xl mx-auto px-6">
+              <h2 className="text-3xl font-black uppercase italic tracking-tighter mb-12 text-center underline decoration-red-600 underline-offset-8">
+                Technical FAQ
+              </h2>
+              <div className="space-y-4">
+                {faqSchema.mainEntity.map((faq, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-slate-900/50 border border-white/10 p-6 hover:border-red-600/50 transition-colors"
+                    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+                  >
+                    <h3 className="text-red-500 font-black uppercase tracking-tighter italic mb-2">Q: {faq.name}</h3>
+                    <p className="text-slate-400 font-bold uppercase text-xs tracking-widest leading-relaxed">A: {faq.acceptedAnswer?.text}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* --- DYNAMIC BLOG LINKS --- */}
         {relatedBlogPosts.length > 0 && (

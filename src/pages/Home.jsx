@@ -19,11 +19,11 @@ import HelpCircle from "lucide-react/dist/esm/icons/help-circle";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
-  // IMAGE PATHS - Uniform local filenames
+  // IMAGE PATHS - Fixed for your local public directory
   const HERO_IMAGE = "/images/phoenix- arizona -window-tinting-Arizona House of Film.webp";
   const LOGO_IMAGE = "/images/Arizona House of Film.webp";
 
-  // PageSpeed Optimization: Script Deferral
+  // PageSpeed Optimization: Script Deferral for GTM
   useEffect(() => {
     const loadDeferredScripts = () => {
       if (window.scriptsLoaded) return;
@@ -130,8 +130,9 @@ const Home = () => {
                 <Button size="lg" asChild className="bg-blue-600 text-white hover:bg-blue-700 font-black h-16 px-10 rounded-none border-none">
                   <Link to="/contact">GET A FREE QUOTE</Link>
                 </Button>
-                <Button size="lg" asChild variant="outline" className="text-white border-white hover:bg-white hover:text-black font-black h-16 px-10 rounded-none">
-                  <a href="tel:480-788-1591">CALL (480) 788-1591</a>
+                {/* --- CALL BUTTON: FIXED WITH BLACK TEXT --- */}
+                <Button size="lg" asChild variant="outline" className="bg-white text-black border-white hover:bg-gray-100 font-black h-16 px-10 rounded-none">
+                  <a href="tel:480-788-1591" className="text-black">CALL (480) 788-1591</a>
                 </Button>
               </div>
             </motion.div>

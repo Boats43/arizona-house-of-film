@@ -10,10 +10,8 @@ import Shield from "lucide-react/dist/esm/icons/shield";
 import Building from "lucide-react/dist/esm/icons/building";
 import HomeIcon from "lucide-react/dist/esm/icons/home";
 import Star from "lucide-react/dist/esm/icons/star";
-import Phone from "lucide-react/dist/esm/icons/phone";
 import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
 import Server from "lucide-react/dist/esm/icons/server";
-import Quote from "lucide-react/dist/esm/icons/quote";
 import Clock from "lucide-react/dist/esm/icons/clock";
 import CheckCircle from "lucide-react/dist/esm/icons/check-circle";
 import HelpCircle from "lucide-react/dist/esm/icons/help-circle";
@@ -32,7 +30,6 @@ const Home = () => {
       window.scriptsLoaded = true;
     };
 
-    // Use requestIdleCallback if available for peak performance
     if ("requestIdleCallback" in window) {
       window.requestIdleCallback(() => setTimeout(loadDeferredScripts, 3500));
     } else {
@@ -44,39 +41,33 @@ const Home = () => {
     return () => window.removeEventListener("scroll", trigger);
   }, []);
 
-  // SERVICE DATA (Densitied with Keywords & Metrics)
   const services = [
     { 
       name: "Residential Tinting", 
       icon: HomeIcon, 
       path: "/residential-window-tinting", 
       description: "Advanced home window tinting using spectrally selective ceramic films that block 84% of solar heat while maintaining crystal-clear views.", 
-      gradient: "from-blue-700 to-blue-900" 
     },
     { 
       name: "Commercial Tinting", 
       icon: Building, 
       path: "/commercial-window-tinting", 
       description: "Industrial-grade solar control solutions for Phoenix offices and retail centers, designed to lower HVAC loads and improve tenant comfort.", 
-      gradient: "from-slate-700 to-slate-900" 
     },
     { 
       name: "Decorative Films", 
       icon: Zap, 
       path: "/solutions", 
       description: "Custom privacy glass and frosted window film patterns for Scottsdale interiors, providing modern design without the cost of etched glass.", 
-      gradient: "from-indigo-700 to-indigo-900" 
     },
     { 
       name: "Safety & Security", 
       icon: Shield, 
       path: "/solutions", 
       description: "Impact-resistant 8-mil safety films designed to mitigate smash-and-grab threats and hold glass together during high-velocity impacts.", 
-      gradient: "from-gray-800 to-black" 
     },
   ];
 
-  // FAQ SCHEMA DATA
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -100,27 +91,25 @@ const Home = () => {
     ]
   };
 
+  // Corrected Local Path to your specific file
+  const ASSET_IMAGE = "/images/phoenix-window-tinting-Arizona House of Film.webp";
+
   return (
     <>
       <Helmet>
-        {/* SEO OPTIMIZED META */}
         <title>Phoenix Window Tinting | Arizona House of Film | Licensed ROC #315259</title>
         <meta name="description" content="Phoenix's authority in ceramic window tinting for 20+ years. 480k+ sq ft installed. Licensed, bonded, and insured experts. Get your free estimate today!" />
-        
-        {/* LCP PRELOADS */}
-        <link rel="preload" as="image" href="/images/phoenix-window-tinting-sQw5T.webp" fetchpriority="high" />
-        
-        {/* FAQ SCHEMA */}
+        <link rel="preload" as="image" href={ASSET_IMAGE} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      {/* --- HERO SECTION (KW REINFORCED H1) --- */}
+      {/* --- HERO SECTION --- */}
       <section 
         className="relative w-full bg-gray-900 overflow-hidden" 
         style={{ aspectRatio: '1600/1066', minHeight: '500px', maxHeight: '85vh', display: 'block' }}
       >
         <img
-          src="/images/phoenix-window-tinting-sQw5T.webp" 
+          src={ASSET_IMAGE} 
           alt="Professional Phoenix Window Tinting Installation"
           className="absolute inset-0 w-full h-full object-cover"
           width="1600" height="1066" fetchPriority="high" loading="eager" decoding="async"
@@ -149,7 +138,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- TRUST STACK (VISIBLE & CRAWLABLE) --- */}
+      {/* --- TRUST STACK --- */}
       <section className="bg-white py-12 border-b border-gray-100">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
@@ -167,7 +156,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- STRUCTURED AUTHORITY TEXT (THE "DENSIFICATION" BLOCK) --- */}
+      {/* --- STRUCTURED AUTHORITY TEXT --- */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -177,10 +166,10 @@ const Home = () => {
               </h2>
               <div className="prose prose-slate prose-lg">
                 <p className="text-gray-700 font-medium leading-relaxed mb-6">
-                  Since 2012, Arizona House of Film has served as the leading provider of <strong>residential and commercial window tinting in Phoenix and Scottsdale</strong>. In a region where summer temperatures frequently exceed 110°F, standard glass is often the weakest link in your building's envelope.
+                  Since 2012, Arizona House of Film has served as the leading provider of <strong>residential and commercial window tinting in Phoenix and Scottsdale</strong>.
                 </p>
                 <p className="text-gray-700 font-medium leading-relaxed mb-6">
-                  Our advanced <strong>Nano-Ceramic window films</strong> are engineered specifically for the Sonoran Desert. By targeting the infrared spectrum, we achieve up to 84% Total Solar Energy Rejection (TSER), allowing Scottsdale homeowners to maintain natural light while drastically reducing cooling costs and protecting interior furnishings from 99.9% of harmful UV rays.
+                  Our advanced <strong>Nano-Ceramic window films</strong> are engineered specifically for the Sonoran Desert. By targeting the infrared spectrum, we achieve up to 84% Total Solar Energy Rejection (TSER).
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                   {['SRP & APS Savings', 'Glare Mitigation', 'Privacy Film', 'Heat Barriers'].map((check) => (
@@ -200,11 +189,7 @@ const Home = () => {
               <div className="space-y-8">
                 <div>
                   <h4 className="font-black text-gray-900 uppercase text-sm mb-2">How much does home window tinting cost in Phoenix?</h4>
-                  <p className="text-sm text-gray-600 font-medium">Pricing varies based on film technology (Ceramic vs. Carbon) and total square footage. We provide precise <Link to="/contact" className="text-blue-700 underline">free estimates</Link> for all Valley projects.</p>
-                </div>
-                <div>
-                  <h4 className="font-black text-gray-900 uppercase text-sm mb-2">Can window film stop my furniture from fading?</h4>
-                  <p className="text-sm text-gray-600 font-medium">Yes. Our films block 99% of UV rays, which are the primary cause of fading for hardwood floors, artwork, and upholstery in Arizona homes.</p>
+                  <p className="text-sm text-gray-600 font-medium">Pricing varies based on film technology and square footage. We provide precise <Link to="/contact" className="text-blue-700 underline">free estimates</Link> for all projects.</p>
                 </div>
               </div>
             </div>
@@ -212,19 +197,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SERVICES GRID --- */}
+      {/* --- SERVICES GRID (CORRECTED CONTRAST) --- */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="container mx-auto px-4 text-center mb-16">
-          <h2 className="text-4xl font-black uppercase tracking-tighter">Our Expertise</h2>
+          <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Our Expertise</h2>
           <div className="h-1.5 w-24 bg-blue-600 mx-auto mt-4" />
         </div>
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
             <div key={s.name} className="bg-white/5 p-8 border border-white/10 hover:bg-white/10 transition-all">
               <s.icon className="w-10 h-10 text-blue-400 mb-6" />
-              <h3 className="text-xl font-black uppercase mb-4 tracking-tighter">{s.name}</h3>
-              <p className="text-sm text-gray-400 font-medium leading-relaxed mb-8">{s.description}</p>
-              <Button variant="link" asChild className="p-0 text-blue-400 uppercase font-black text-xs">
+              <h3 className="text-xl font-black uppercase mb-4 tracking-tighter text-white">{s.name}</h3>
+              {/* Changed text-gray-400 to text-gray-100 for better contrast on dark background */}
+              <p className="text-sm text-gray-100 font-medium leading-relaxed mb-8">{s.description}</p>
+              <Button variant="link" asChild className="p-0 text-blue-300 hover:text-white uppercase font-black text-xs">
                 <Link to={s.path}>Learn More <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
             </div>

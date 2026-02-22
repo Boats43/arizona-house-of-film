@@ -11,7 +11,6 @@ import { cities } from '@/data/cities';
 
 const Decorative = () => {
   /* ================= SEO & SCHEMA ================= */
-  // ROC Number verified from dashboard
   const rocNumber = "315259"; 
   const pageTitle = "Decorative Window Film Arizona | Frosted & Custom Glass Designs";
   const metaDescription = `Expert decorative window film installation in Arizona. Featuring premium 3M Fasara and Madico frosted, patterned, and custom designs. Licensed & Bonded ROC #${rocNumber}.`;
@@ -95,7 +94,6 @@ const Decorative = () => {
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        {/* PERFORMANCE: Resource Hints */}
         <link rel="preload" as="image" href={heroImageUrl} />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Helmet>
@@ -151,15 +149,16 @@ const Decorative = () => {
         </section>
 
         {/* --- THE FILM COLLECTION SECTION --- */}
-        <section id="film-collection" className="py-24 bg-slate-50 border-y border-slate-200">
+        <section id="film-collection" className="py-24 bg-slate-950 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h2 className="text-5xl font-black text-slate-950 uppercase italic leading-none">The Film Collection</h2>
+                {/* FIXED: Changed text color to white for visibility on dark bg */}
+                <h2 className="text-5xl font-black text-white uppercase italic leading-none">The Film Collection</h2>
                 <div className="w-24 h-2 bg-indigo-600 mt-4" />
               </div>
-              <p className="max-w-md text-slate-600 font-medium text-sm leading-relaxed">
-                Explore hundreds of patterns from premium architectural brands like <strong>3M Fasara</strong> and <strong>Madico</strong>.
+              <p className="max-w-md text-slate-300 font-medium text-sm leading-relaxed">
+                Explore hundreds of patterns from premium architectural brands like <strong className="text-white">3M Fasara</strong> and <strong className="text-white">Madico</strong>.
               </p>
             </div>
 
@@ -241,12 +240,13 @@ const Decorative = () => {
         {/* --- CTA SECTION --- */}
         <section className="py-24 bg-slate-950 text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-5xl md:text-7xl font-black mb-10 uppercase italic">Ready to Transform Your Glass?</h2>
+            {/* FIXED: Ensured text-white is applied to heading */}
+            <h2 className="text-5xl md:text-7xl font-black mb-10 uppercase italic text-white">Ready to Transform Your Glass?</h2>
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-12 h-20 text-2xl font-black transition-transform hover:scale-105 rounded-none">
                 <Link to="/contact">Request A Quote</Link>
               </Button>
-              <a href="tel:480-788-1591" className="text-3xl font-black hover:text-indigo-400 transition-colors">
+              <a href="tel:480-788-1591" className="text-3xl font-black text-white hover:text-indigo-400 transition-colors">
                 480-788-1591
               </a>
             </div>

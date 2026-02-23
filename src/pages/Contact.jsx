@@ -24,8 +24,8 @@ const Contact = () => {
         </section>
 
         {/* MAIN CONTENT */}
-        <section className="max-w-7xl mx-auto px-4 pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <section className="max-w-7xl mx-auto px-4 pb-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
             {/* LEFT: Contact Info */}
             <div className="lg:col-span-4 order-2 lg:order-1">
@@ -37,12 +37,18 @@ const Contact = () => {
             {/* RIGHT: Form */}
             <div className="lg:col-span-8 order-1 lg:order-2">
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden text-slate-900">
-                <div className="p-8 md:p-12">
+                <div className="p-10 md:p-14">
 
-                  <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-8">
-                    Request Your{" "}
-                    <span className="text-blue-600 italic">Free Audit</span>
-                  </h2>
+                  {/* SECTION TITLE */}
+                  <div className="mb-12">
+                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">
+                      Request Your{" "}
+                      <span className="text-blue-600 italic">Free Audit</span>
+                    </h2>
+                    <p className="text-slate-600 mt-4 max-w-2xl">
+                      Fill out the form below and our team will provide a detailed quote tailored to your residential or commercial window film project.
+                    </p>
+                  </div>
 
                   <ContactFormSection />
 
@@ -54,7 +60,7 @@ const Contact = () => {
         </section>
 
         {/* MAP SECTION */}
-        <section className="bg-slate-900 border-t border-white/10 py-16">
+        <section className="bg-slate-900 border-t border-white/10 py-20">
           <div className="max-w-7xl mx-auto px-4">
 
             <div className="mb-12 text-center">

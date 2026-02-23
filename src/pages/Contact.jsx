@@ -56,9 +56,20 @@ const Contact = () => {
         {/* MAP SECTION */}
         <section className="bg-slate-900 border-t border-white/10 py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="h-[400px] rounded-2xl overflow-hidden border border-white/10">
+
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Our Service Area
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto">
+                We proudly serve the entire state of Arizona with professional window film installation services.
+              </p>
+            </div>
+
+            <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/10">
               <ContactMap />
             </div>
+
           </div>
         </section>
 

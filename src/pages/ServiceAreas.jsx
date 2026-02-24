@@ -15,7 +15,7 @@ const ArrowRight = ({ className }) => (
 
 const ServiceAreas = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "Arizona Window Tinting Service Areas | Arizona House of Film";
   const metaDescription = "We serve Phoenix, Tucson, Mesa, Scottsdale, and over 100 cities across Arizona. Find your local window tinting expert and get a free estimate today.";
   const canonicalUrl = "https://arizonahouseoffilm.com/service-areas";

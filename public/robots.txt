@@ -1,5 +1,30 @@
-﻿User-agent: *
-Disallow: /*?*
-Disallow: /index.php?*
+User-agent: *
+Allow: /
+Disallow: /success
+Disallow: /thank-you
+Disallow: /?*
+Disallow: /index.php
+
+# AI Crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
 
 Sitemap: https://arizonahouseoffilm.com/sitemap-index.xml

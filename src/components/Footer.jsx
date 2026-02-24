@@ -156,7 +156,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-800 pt-8 text-center">
           <p className="text-base text-gray-400">
-            &copy; {currentYear} Arizona House of Film. All Rights Reserved. Arizona Contractor's License: ROC 315259.
+            &copy; {currentYear} Arizona House of Film. All Rights Reserved. Arizona Contractor's License: ROC 314088.
           </p>
         </div>
       </div>

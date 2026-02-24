@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
 
 const Decorative = () => {
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "Decorative Window Film Arizona | Frosted & Custom Glass Designs";
   const metaDescription = `Expert decorative window film installation in Arizona. Featuring premium 3M Fasara and Madico frosted, patterned, and custom designs. Licensed & Bonded ROC #${rocNumber}.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/decorative-window-films";

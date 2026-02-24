@@ -5,7 +5,7 @@ import ContactFormSection from "@/components/contact/ContactFormSection";
 import ContactMap from "@/components/contact/ContactMap";
 
 const Contact = () => {
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "Contact Phoenix Window Tinting Experts | Arizona House of Film";
   const metaDescription =
     "Contact Arizona House of Film for commercial and residential window tinting in Phoenix. Licensed, bonded, insured. Call 480-788-1591 for a free estimate.";
@@ -67,8 +67,7 @@ const Contact = () => {
               Licensed • Bonded • ROC #{rocNumber}
             </span>
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.85] tracking-tighter mb-8">
-              Phoenix Window Tinting <br />
-              <span className="text-green-500 italic">Contact Experts</span>
+              Get a Free Window Tinting Quote | Phoenix, AZ | Call 480-788-1591
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl font-medium leading-relaxed">
               Commercial and residential window film solutions across Arizona.

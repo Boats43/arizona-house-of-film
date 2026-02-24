@@ -40,10 +40,10 @@ const Home = () => {
   }, []);
 
   const services = [
-    { name: "Residential Window Tinting", icon: HomeIcon, path: "/residential-window-tinting", description: "Advanced home tinting using ceramic films that block 84% of solar heat and 99.9% of UV rays." },
-    { name: "Commercial Window Tinting", icon: Building, path: "/commercial-window-tinting", description: "Industrial-grade solar control solutions designed to lower HVAC loads and improve comfort." },
-    { name: "Decorative & Privacy Films", icon: Zap, path: "/decorative-window-films", description: "Modern frosted and privacy films that transform interior glass without replacing it." },
-    { name: "Safety & Security Film", icon: Shield, path: "/safety", description: "8–12 mil impact-resistant safety films that strengthen glass and deter break-ins." },
+    { name: "Residential Window Tinting", icon: HomeIcon, path: "/residential-window-tinting", cta: "Explore Residential Tinting", description: "Advanced home tinting using ceramic films that block 84% of solar heat and 99.9% of UV rays." },
+    { name: "Commercial Window Tinting", icon: Building, path: "/commercial-window-tinting", cta: "Explore Commercial Tinting", description: "Industrial-grade solar control solutions designed to lower HVAC loads and improve comfort." },
+    { name: "Decorative & Privacy Films", icon: Zap, path: "/decorative-window-films", cta: "Explore Decorative Films", description: "Modern frosted and privacy films that transform interior glass without replacing it." },
+    { name: "Safety & Security Film", icon: Shield, path: "/safety", cta: "Explore Security Films", description: "8–12 mil impact-resistant safety films that strengthen glass and deter break-ins." },
   ];
 
   const faqSchema = {
@@ -62,7 +62,7 @@ const Home = () => {
     url: "https://arizonahouseoffilm.com",
     telephone: "480-788-1591",
     image: ogImage,
-    description: "Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #315259.",
+    description: "Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088.",
     address: { "@type": "PostalAddress", streetAddress: "7007 W Flower St", addressLocality: "Phoenix", addressRegion: "AZ", postalCode: "85033", addressCountry: "US" },
     geo: { "@type": "GeoCoordinates", latitude: 33.4484, longitude: -112.074 },
     openingHoursSpecification: [
@@ -75,17 +75,17 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Phoenix | Residential & Commercial | Arizona House of Film</title>
-        <meta name="description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #315259. We specialize in solar control, privacy, and security films." />
+        <title>Arizona Window Film & Tinting Phoenix | ROC #314088 | Arizona House of Film</title>
+        <meta name="description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088. We specialize in solar control, privacy, and security films." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Window Tinting Phoenix | Residential & Commercial | Arizona House of Film" />
-        <meta property="og:description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #315259. Solar control, privacy, and security films." />
+        <meta property="og:description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088. Solar control, privacy, and security films." />
         <meta property="og:url" content="https://arizonahouseoffilm.com/" />
         <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Window Tinting Phoenix | Arizona House of Film" />
-        <meta name="twitter:description" content="Phoenix's authority in ceramic window tinting. Licensed ROC #315259." />
+        <meta name="twitter:description" content="Phoenix's authority in ceramic window tinting. Licensed ROC #314088." />
         <meta name="twitter:image" content={ogImage} />
         <link rel="preload" as="image" href={HERO_IMAGE} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -104,7 +104,7 @@ const Home = () => {
                 <br /><span className="text-3xl md:text-5xl block mt-4">Residential & Commercial Specialists</span>
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
-                Expert <strong className="underline decoration-blue-500">Nano-Ceramic</strong> solar control for the Arizona climate. ROC #315259.
+                Expert <strong className="underline decoration-blue-500">Nano-Ceramic</strong> solar control for the Arizona climate. ROC #314088.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" asChild className="bg-blue-600 text-white font-black h-16 px-10 rounded-none">
@@ -124,7 +124,7 @@ const Home = () => {
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { icon: Star, text: "Top Rated Google", sub: "15+ Local Reviews" },
-            { icon: Award, text: "ROC #315259", sub: "Licensed & Bonded" },
+            { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
             { icon: Server, text: "480,000+ Sq Ft", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },
           ].map((item, i) => (
@@ -152,6 +152,17 @@ const Home = () => {
                   </div>
                 ))}
               </div>
+              <p className="text-gray-600 text-sm font-medium mt-6 leading-relaxed">
+                We serve{" "}
+                <Link to="/commercial-window-tinting" className="text-blue-700 underline">commercial properties</Link>{" "}
+                and{" "}
+                <Link to="/residential-window-tinting" className="text-blue-700 underline">residential homes</Link>{" "}
+                across the Valley. Explore our{" "}
+                <Link to="/solutions" className="text-blue-700 underline">full range of film solutions</Link>{" "}
+                or browse our{" "}
+                <Link to="/service-areas" className="text-blue-700 underline">service areas</Link>{" "}
+                to find coverage near you.
+              </p>
             </div>
             <div className="bg-gray-50 p-10 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
@@ -168,7 +179,7 @@ const Home = () => {
                   <p className="text-sm text-gray-600 font-medium">Yes — we use Arizona-engineered ceramics designed for high thermal load.</p>
                 </div>
                 <div className="pt-6 border-t border-gray-200 flex justify-center">
-                  <img src={LOGO_IMAGE} alt="Arizona House of Film Logo" className="h-12 w-auto grayscale opacity-70" />
+                  <img src={LOGO_IMAGE} alt="Arizona House of Film Logo" className="h-12 w-auto grayscale opacity-70" width={240} height={48} />
                 </div>
               </div>
             </div>
@@ -189,7 +200,7 @@ const Home = () => {
               <h3 className="text-xl font-black uppercase mb-4 tracking-tighter text-white">{s.name}</h3>
               <p className="text-sm text-gray-100 font-medium leading-relaxed mb-8">{s.description}</p>
               <Button variant="link" asChild className="p-0 text-blue-300 hover:text-white uppercase font-black text-xs">
-                <Link to={s.path}>Learn more <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                <Link to={s.path}>{s.cta} <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
             </div>
           ))}

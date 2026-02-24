@@ -18,9 +18,9 @@ import { cities } from "@/data/cities";
 import ContactFormSection from "@/components/contact/ContactFormSection";
 
 const Commercial = () => {
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "Commercial Window Tinting Phoenix | Arizona House of Film";
-  const metaDescription = `Expert commercial window tinting in Phoenix, AZ. High-performance solar, security, and decorative films for offices and retail. Licensed ROC #${rocNumber}.`;
+  const metaDescription = `Commercial window film installation in Phoenix & Scottsdale. Industrial-grade solar control, privacy & security films. Licensed ROC #${rocNumber}. Free estimates: 480-788-1591.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
@@ -120,8 +120,7 @@ const Commercial = () => {
                 Licensed • Bonded • ROC #{rocNumber}
               </span>
               <h1 className="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">
-                Commercial <br />
-                <span className="text-green-500 italic">Window Tinting</span>
+                Commercial Window Tinting Phoenix &amp; Scottsdale | Arizona House of Film
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">
                 Industrial-grade solar and security solutions engineered for the Arizona climate. Protect your
@@ -236,6 +235,21 @@ const Commercial = () => {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* INTERNAL LINKS */}
+        <section className="py-8 bg-white border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-gray-600 text-sm leading-relaxed mt-4">
+              Also serving{" "}
+              <Link to="/residential-window-tinting" className="text-blue-700 underline">residential clients</Link>.{" "}
+              View our{" "}
+              <Link to="/service-areas" className="text-blue-700 underline">Arizona service areas</Link>{" "}
+              or explore{" "}
+              <Link to="/safety" className="text-blue-700 underline">safety &amp; security films</Link>{" "}
+              for your building.
+            </p>
           </div>
         </section>
 

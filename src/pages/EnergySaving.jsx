@@ -6,9 +6,9 @@ import { DollarSign, Thermometer, Shield, Activity, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const EnergySaving = () => {
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "#1 Energy-Saving Window Film Arizona | Arizona House of Film";
-  const metaDescription = "Reduce cooling costs by 30% with professional energy-saving window film. Expert installation across Arizona. Licensed ROC #315259.";
+  const metaDescription = "Reduce cooling costs by 30% with professional energy-saving window film. Expert installation across Arizona. Licensed ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/energy-saving-window-films";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 

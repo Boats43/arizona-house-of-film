@@ -14,7 +14,7 @@ const solutionsData = [
 ];
 
 const Solutions = () => {
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "Window Film Solutions in Arizona | Arizona House of Film";
   const metaDescription = "Explore our comprehensive window film solutions for energy savings, privacy, security, and branding. Serving Phoenix, Scottsdale, and all of Arizona.";
   const canonicalUrl = "https://arizonahouseoffilm.com/solutions";

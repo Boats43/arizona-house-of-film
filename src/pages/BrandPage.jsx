@@ -15,7 +15,7 @@ const BrandPage = () => {
 
   if (!brand) return <NotFound />;
 
-  const pageTitle = `${brand.name} Window Films | Arizona House of Film | ROC #315259`;
+  const pageTitle = `${brand.name} Window Films | Arizona House of Film | ROC #314088`;
   const metaDescription = `Authorized ${brand.name} window film installation in Arizona. High-performance solar, security, and decorative solutions for Phoenix & Scottsdale homes.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/brands/${brand.slug}`;
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";

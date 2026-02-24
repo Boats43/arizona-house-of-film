@@ -8,9 +8,9 @@ import { cities } from '@/data/cities';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const Safety = () => {
-  const rocNumber = "315259";
+  const rocNumber = "314088";
   const pageTitle = "#1 Safety & Security Film in Arizona | Arizona House of Film";
-  const metaDescription = "Expert safety & security film installation across Arizona—deter break-ins, prevent storm damage, and protect your property with industrial laminates. ROC #315259.";
+  const metaDescription = "Expert safety & security film installation across Arizona—deter break-ins, prevent storm damage, and protect your property with industrial laminates. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/safety";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 

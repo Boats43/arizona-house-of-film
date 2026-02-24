@@ -8,7 +8,7 @@ import { cities } from '@/data/cities';
 
 const Residential = () => {
   const pageTitle = "#1 Home Window Tinting in Arizona | Arizona House of Film";
-  const metaDescription = "Expert home window tinting across Arizona. Reduce UV damage, lower energy bills, and enhance privacy. Licensed, Bonded, and Insured Arizona experts.";
+  const metaDescription = "Residential window tinting in Phoenix, Scottsdale & Mesa. Ceramic films block 84% heat, 99.9% UV. SRP/APS rebate ready. Licensed ROC #314088. Get a free estimate today.";
   const canonicalUrl = "https://arizonahouseoffilm.com/residential-window-tinting";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
@@ -73,7 +73,7 @@ const Residential = () => {
                 Residential Specialists
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                Home Window Tinting <span className="text-green-500">Arizona</span>
+                Residential Window Tinting Phoenix | Home Solar Control Films
               </h1>
               <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
                 Slash your cooling costs and protect your family from Arizona's intense UV rays. We deliver high-performance ceramic window film solutions for the modern home.

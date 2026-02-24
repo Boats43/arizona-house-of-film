@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Phoenix Window Tinting | Residential & Commercial Experts</title>
-  <meta name="description" content="Professional residential and commercial window tinting in Phoenix. Licensed, Bonded, and Insured ROC #315259." />
+  <!-- ✅ Base SEO -->
+  <title>Arizona Window Film & Tinting Phoenix | ROC #314088 | Arizona House of Film</title>
+  <meta name="description" content="Arizona House of Film provides residential and commercial window tinting in Phoenix, Scottsdale & statewide. Licensed ROC #314088. 4.4★ rated. Free estimates available." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Canonical -->
+  <link rel="canonical" href="https://arizonahouseoffilm.com/" />
 
   <!-- 🔥 Non-blocking Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,40 +28,41 @@
     />
   </noscript>
 
-  <!-- 🔥 Preload Hero Image -->
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
   <link
     rel="preload"
     as="image"
-    href="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/phoenix-window-tinting-sQw5T.jpg"
+    href="/images/phoenix-window-tinting.webp"
     fetchpriority="high"
   />
 
+  <!-- Prevent layout shift before hydration -->
   <style>
-    /* Prevent default margin */
     body {
       margin: 0;
     }
 
-    /* Reserve header height before React loads */
+    /* Reserve header height */
     #header-reserve {
       height: 80px;
     }
 
-    /* 🔥 Reserve hero space WITHOUT loading image twice */
+    /* Reserve hero space */
     #hero-reserve {
       width: 100%;
       aspect-ratio: 1600 / 1066;
       background: #111;
     }
 
-    /* Prevent white flash before hydration */
+    /* Prevent white flash */
     #root:empty {
       min-height: 100vh;
     }
   </style>
 
-  <!-- Vite entry -->
+  <!-- Vite entry (Dev Mode) -->
   <script type="module" src="/src/main.jsx"></script>
+
 </head>
 
 <body>
@@ -80,6 +86,7 @@
         observer.disconnect();
       }
     });
+
     observer.observe(document.getElementById("root"), { childList: true });
   </script>
 

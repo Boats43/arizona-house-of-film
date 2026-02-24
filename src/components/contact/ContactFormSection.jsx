@@ -1,61 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ContactForm from '@/components/contact/ContactForm';
+import { CheckCircle2 } from 'lucide-react';
+import ContactForm from './ContactForm';
 
 const ContactFormSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Request Your Free Quote
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background Large Text - Fixed Visibility */}
+      <div className="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0">
+        <h2 className="text-[12vw] font-black uppercase leading-none text-slate-900">
+          PHOENIX <br /> WINDOW <br /> TINTING
+        </h2>
+      </div>
+
+      <div className="max-w-full mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start">
+          
+          {/* Left Info Column */}
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <h2 className="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">
+              Request <br /> Your Free <br />
+              <span className="text-green-600 italic">Audit</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Fill out the form below and we'll get back to you with a detailed quote for your window film project.
+            <div className="h-3 w-32 bg-green-600 mb-10" />
+            <p className="text-xl text-slate-600 font-bold mb-10 max-w-md">
+              Fill out the form for a detailed quote on your commercial or residential project.
             </p>
             
-            <div className="space-y-6">
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">✓</span>
-                </div>
-                <span className="text-gray-700">Free consultation and measurement</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">✓</span>
-                </div>
-                <span className="text-gray-700">Detailed quote within 24 hours</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">✓</span>
-                </div>
-                <span className="text-gray-700">Licensed, bonded, and insured</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">✓</span>
-                </div>
-                <span className="text-gray-700">Professional installation guarantee</span>
-              </div>
+            <div className="space-y-4">
+               {["Detailed quote within 24 hours", "Licensed, bonded, and insured", "Professional installation guarantee"].map((text, i) => (
+                 <div key={i} className="flex items-center gap-4">
+                   <CheckCircle2 className="text-green-600 w-6 h-6" />
+                   <span className="font-black uppercase text-xs tracking-widest text-slate-900">{text}</span>
+                 </div>
+               ))}
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8 border border-teal-200"
-          >
-            <ContactForm />
+          {/* Right Form Column - Fixed Width */}
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <div className="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]">
+              <ContactForm />
+            </div>
           </motion.div>
         </div>
       </div>

@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Send, Upload, Loader2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/components/ui/use-toast';
 
 const ContactForm = () => {
@@ -34,25 +30,19 @@ const ContactForm = () => {
       const response = await fetch("https://formsubmit.co/ajax/arizonahouseoffilm@gmail.com", {
         method: "POST",
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       });
 
       const data = await response.json();
 
       if (response.ok && data.success) {
-        // Clear form
         form.reset();
-        
-        // Show success toast
         toast({
-          title: "Message Sent Successfully! ✓",
-          description: "Thank you for contacting us. We'll respond within 24 hours.",
-          className: "bg-green-50 border-green-200",
+          title: "Audit Request Received ✓",
+          description: "Our estimators will contact you within 24 hours.",
+          className: "bg-green-600 border-none text-white font-bold rounded-none",
         });
 
-        // Navigate to thank you page after a brief delay
         setTimeout(() => {
           navigate('/thank-you');
         }, 1500);
@@ -60,19 +50,11 @@ const ContactForm = () => {
         throw new Error(data.message || 'Form submission failed');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      
       toast({
         variant: "destructive",
-        title: "Unable to Send Message",
-        description: (
-          <div className="space-y-2">
-            <p>Please contact us directly:</p>
-            <p className="font-semibold">📧 arizonahouseoffilm@gmail.com</p>
-            <p className="font-semibold">📞 480-788-1591</p>
-          </div>
-        ),
-        duration: 8000,
+        title: "Submission Error",
+        description: "Please call us directly at 480-788-1591",
+        className: "rounded-none font-bold",
       });
     } finally {
       setIsSubmitting(false);
@@ -80,191 +62,120 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="space-y-6">
-      {/* Email Service Notice */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
-        <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-        <div className="text-sm text-blue-900">
-          <p className="font-semibold mb-1">Need immediate assistance?</p>
-          <p>Call us at <span className="font-bold">480-788-1591</span> or email <span className="font-bold">arizonahouseoffilm@gmail.com</span></p>
+    <form onSubmit={handleSubmit} className="space-y-8">
+      {/* FormSubmit Configuration */}
+      <input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      {interestedFilm && (
+        <div className="animate-in fade-in slide-in-from-top-2">
+          <label className="industrial-label text-green-600">Selected Film Specification</label>
+          <input
+            name="Interested Film"
+            value={interestedFilm}
+            readOnly
+            className="industrial-input bg-slate-50 border-green-200 text-green-700"
+          />
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label className="industrial-label">First Name *</label>
+          <input name="First Name" required className="industrial-input" placeholder="JOHN" disabled={isSubmitting} />
+        </div>
+        <div>
+          <label className="industrial-label">Last Name *</label>
+          <input name="Last Name" required className="industrial-input" placeholder="SMITH" disabled={isSubmitting} />
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* FormSubmit Configuration */}
-        <input type="hidden" name="_next" value="https://arizonahouseoffilm.com/thank-you" />
-        <input type="hidden" name="_subject" value="🎬 New Website Quote Request - Arizona House of Film" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_autoresponse" value="Thank you for contacting Arizona House of Film! We've received your request and will respond within 24 hours." />
-        
-        {interestedFilm && (
-          <div>
-            <Label htmlFor="interested_film">Film of Interest</Label>
-            <Input
-              id="interested_film"
-              name="Interested Film"
-              value={interestedFilm}
-              readOnly
-              className="mt-1 bg-gray-100 cursor-not-allowed text-gray-900"
-            />
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="firstName">First Name *</Label>
-            <Input 
-              id="firstName" 
-              name="First Name" 
-              required 
-              className="mt-1 text-gray-900" 
-              disabled={isSubmitting}
-              placeholder="John"
-            />
-          </div>
-          <div>
-            <Label htmlFor="lastName">Last Name *</Label>
-            <Input 
-              id="lastName" 
-              name="Last Name" 
-              required 
-              className="mt-1 text-gray-900" 
-              disabled={isSubmitting}
-              placeholder="Smith"
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="email">Email *</Label>
-            <Input 
-              id="email" 
-              name="Email" 
-              type="email" 
-              required 
-              className="mt-1 text-gray-900" 
-              disabled={isSubmitting}
-              placeholder="john@example.com"
-            />
-          </div>
-          <div>
-            <Label htmlFor="phone">Phone *</Label>
-            <Input 
-              id="phone" 
-              name="Phone" 
-              type="tel" 
-              required
-              className="mt-1 text-gray-900" 
-              disabled={isSubmitting}
-              placeholder="(480) 555-1234"
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="city">City *</Label>
-            <Input 
-              id="city" 
-              name="City" 
-              required
-              className="mt-1 text-gray-900" 
-              disabled={isSubmitting}
-              placeholder="Phoenix"
-            />
-          </div>
-          <div>
-            <Label htmlFor="zipCode">Zip Code *</Label>
-            <Input 
-              id="zipCode" 
-              name="Zip Code" 
-              required
-              className="mt-1 text-gray-900" 
-              disabled={isSubmitting}
-              placeholder="85001"
-            />
-          </div>
-        </div>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <Label>Project Type *</Label>
-          <RadioGroup name="Project Type" required defaultValue="Residential" className="flex flex-wrap gap-4 mt-2">
-            {['Commercial', 'Residential', 'Decorative', 'Safety & Security'].map(
-              (type) => (
-                <div key={type} className="flex items-center space-x-2">
-                  <RadioGroupItem value={type} id={type.toLowerCase()} disabled={isSubmitting} />
-                  <Label htmlFor={type.toLowerCase()} className="cursor-pointer">{type}</Label>
-                </div>
-              )
-            )}
-          </RadioGroup>
+          <label className="industrial-label">Email Address *</label>
+          <input name="Email" type="email" required className="industrial-input" placeholder="J.SMITH@COMPANY.COM" disabled={isSubmitting} />
         </div>
-
         <div>
-          <Label htmlFor="message">Message *</Label>
-          <Textarea
-            id="message"
-            name="Message"
-            rows={5}
-            required
-            className="mt-1 text-gray-900"
-            placeholder="Tell us about your project, timeline, and any specific requirements..."
-            disabled={isSubmitting}
-          />
+          <label className="industrial-label">Phone Number *</label>
+          <input name="Phone" type="tel" required className="industrial-input" placeholder="480-000-0000" disabled={isSubmitting} />
         </div>
+      </div>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <Label htmlFor="attachment">Upload Photos (Optional)</Label>
-          <div className="relative mt-1">
-            <Input
-              id="attachment"
-              name="attachment"
-              type="file"
-              multiple
-              accept="image/png, image/jpeg, image/jpg, image/gif, .pdf"
-              className="block w-full text-sm text-gray-900 file:mr-4 file:py-2 file:px-4 
-                         file:rounded-full file:border-0 file:text-sm file:font-semibold 
-                         file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100
-                         cursor-pointer"
-              disabled={isSubmitting}
-            />
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-              <Upload className="w-5 h-5 text-gray-400" />
-            </div>
-          </div>
-          <p className="text-xs text-gray-500 mt-1">
-            Upload photos of windows/areas to be tinted (PNG, JPG, GIF, PDF - max 10MB total)
-          </p>
+          <label className="industrial-label">Project City *</label>
+          <input name="City" required className="industrial-input" placeholder="PHOENIX" disabled={isSubmitting} />
         </div>
+        <div>
+          <label className="industrial-label">Zip Code *</label>
+          <input name="Zip Code" required className="industrial-input" placeholder="85001" disabled={isSubmitting} />
+        </div>
+      </div>
 
-        <Button
-          type="submit"
-          className="w-full bg-gradient-to-r from-blue-600 to-teal-600 
-                     hover:from-blue-700 hover:to-teal-700 text-white py-3 text-lg font-bold shadow-lg
-                     transition-all duration-200 transform hover:scale-[1.02]"
+      <div>
+        <label className="industrial-label">Project Type *</label>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2">
+          {['Commercial', 'Residential', 'Decorative', 'Safety'].map((type) => (
+            <label key={type} className="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50">
+              <input type="radio" name="Project Type" value={type} className="hidden" required defaultChecked={type === 'Commercial'} />
+              <span className="text-[10px] font-black uppercase text-slate-600 tracking-tighter">{type}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label className="industrial-label">Project Details *</label>
+        <textarea
+          name="Message"
+          rows={4}
+          required
+          className="industrial-input min-h-[120px] resize-none"
+          placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."
           disabled={isSubmitting}
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-              Sending Your Request...
-            </>
-          ) : (
-            <>
-              <Send className="w-5 h-5 mr-2" />
-              Request My Free Quote
-            </>
-          )}
-        </Button>
+        />
+      </div>
 
-        <p className="text-xs text-center text-gray-500">
-          By submitting this form, you agree to receive communications from Arizona House of Film. 
-          We respect your privacy and will never share your information.
-        </p>
-      </form>
-    </div>
+      {/* Industrial File Upload */}
+      <div className="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer">
+        <input
+          type="file"
+          name="attachment"
+          multiple
+          accept="image/*,.pdf"
+          className="absolute inset-0 opacity-0 cursor-pointer z-10"
+          disabled={isSubmitting}
+        />
+        <div className="flex flex-col items-center justify-center text-center">
+          <Upload className="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors" />
+          <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p>
+          <p className="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"
+      >
+        {isSubmitting ? (
+          <>
+            <Loader2 className="w-5 h-5 animate-spin" />
+            PROCESSING REQUEST...
+          </>
+        ) : (
+          <>
+            <Send className="w-4 h-4" />
+            REQUEST MY FREE AUDIT
+          </>
+        )}
+      </button>
+
+      <p className="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">
+        Security Protected • 24-Hour Response Guarantee • No Data Sharing
+      </p>
+    </form>
   );
 };
 

@@ -46,15 +46,14 @@ const Home = () => {
     { name: "Safety & Security Film", icon: Shield, path: "/safety", cta: "Explore Security Films", description: "8–12 mil impact-resistant safety films that strengthen glass and deter break-ins." },
   ];
 
+  // 4 questions visible in the on-page FAQ section
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      { "@type": "Question", name: "How much does residential window tinting cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Home window tinting pricing varies by film type and square footage. Most homeowners recover costs within 2–3 years via energy savings. Contact us for a free estimate." } },
-      { "@type": "Question", name: "Does window film lower electric bills in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Yes. High-performance ceramic films can block up to 84% of solar heat, reducing annual cooling costs significantly." } },
       { "@type": "Question", name: "How long does window film last in Arizona's heat?", acceptedAnswer: { "@type": "Answer", text: "Quality ceramic films are engineered for high-heat climates and typically last 15–25 years in Arizona conditions. We install only manufacturer-certified films backed by warranty." } },
       { "@type": "Question", name: "Does window film make rooms too dark?", acceptedAnswer: { "@type": "Answer", text: "No. Modern ceramic films reject heat through infrared blocking, not by darkening the glass. You keep natural light while eliminating heat and glare." } },
-      { "@type": "Question", name: "Do you serve my city in Arizona?", acceptedAnswer: { "@type": "Answer", text: "We serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Tucson, and 100+ Arizona communities. View our full service area coverage." } },
+      { "@type": "Question", name: "Do you serve my city?", acceptedAnswer: { "@type": "Answer", text: "We serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Tucson, and 100+ Arizona communities. View our full service area coverage." } },
       { "@type": "Question", name: "Is window film worth it in Arizona?", acceptedAnswer: { "@type": "Answer", text: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." } },
     ],
   };
@@ -64,23 +63,39 @@ const Home = () => {
     "@type": "HomeAndConstructionBusiness",
     name: "Arizona House of Film",
     url: "https://arizonahouseoffilm.com",
-    telephone: "480-788-1591",
+    telephone: "+1-480-788-1591",
     image: ogImage,
-    description: "Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088.",
+    description: "Arizona's trusted window film installer since 2012. Licensed ROC #314088.",
     address: { "@type": "PostalAddress", streetAddress: "7007 W Flower St", addressLocality: "Phoenix", addressRegion: "AZ", postalCode: "85033", addressCountry: "US" },
     geo: { "@type": "GeoCoordinates", latitude: 33.4484, longitude: -112.074 },
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "17:00" },
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "15:00" }
     ],
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "15" }
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "15" },
+    priceRange: "$$",
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Arizona House of Film",
+    url: "https://arizonahouseoffilm.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://arizonahouseoffilm.com/search?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
     <>
       <Helmet>
         <title>Arizona Window Film & Tinting Phoenix | ROC #314088 | Arizona House of Film</title>
-        <meta name="description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088. We specialize in solar control, privacy, and security films." />
+        <meta name="description" content="Arizona's trusted window film installer since 2012. Ceramic films block 84% solar heat, 99.9% UV. Serving Phoenix, Scottsdale & 100+ Arizona cities. Licensed ROC #314088. Free estimates: 480-788-1591." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Window Tinting Phoenix | Residential & Commercial | Arizona House of Film" />
         <meta property="og:description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088. Solar control, privacy, and security films." />
@@ -94,18 +109,19 @@ const Home = () => {
         <link rel="preload" as="image" href={HERO_IMAGE} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       </Helmet>
 
       {/* HERO */}
       <section className="relative w-full bg-gray-900 overflow-hidden" style={{ aspectRatio: "1600/1066", minHeight: "500px", maxHeight: "85vh" }}>
         <img src={HERO_IMAGE} alt="Commercial and Residential Window Tinting Phoenix Arizona" className="absolute inset-0 w-full h-full object-cover" width="1600" height="1066" fetchpriority="high" loading="eager" decoding="async" />
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center relative z-20">
           <div className="text-center max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] uppercase tracking-tighter drop-shadow-2xl">
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
                 Phoenix <span className="text-blue-500 italic">Window Tinting</span>
-                <br /><span className="text-3xl md:text-5xl block mt-4">Residential & Commercial Specialists</span>
+                <br /><span className="text-2xl sm:text-3xl md:text-5xl block mt-4">Residential & Commercial Specialists</span>
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
                 Expert <strong className="underline decoration-blue-500">Nano-Ceramic</strong> solar control for the Arizona climate. ROC #314088.
@@ -115,7 +131,7 @@ const Home = () => {
                   <Link to="/contact">GET A FREE QUOTE</Link>
                 </Button>
                 <Button size="lg" asChild variant="outline" className="bg-white text-black border-white hover:bg-gray-100 font-black h-16 px-10 rounded-none">
-                  <a href="tel:480-788-1591">CALL (480) 788-1591</a>
+                  <a href="tel:4807881591" className="hover:underline">(480) 788-1591</a>
                 </Button>
               </div>
             </motion.div>
@@ -125,7 +141,7 @@ const Home = () => {
 
       {/* CLIMATE CONTEXT */}
       <section className="py-8 bg-blue-950 text-white border-b border-blue-900">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <p className="text-base md:text-lg text-blue-100 font-medium leading-relaxed text-center">
             Arizona's extreme climate — with summer temperatures exceeding 115°F and one of the highest UV indexes in North America — makes window film not a luxury but a necessity. Arizona House of Film has been protecting Phoenix homes and businesses since 2012, installing ceramic, safety, decorative, and energy-saving films for thousands of Arizona properties. Licensed ROC #314088.
           </p>
@@ -134,7 +150,7 @@ const Home = () => {
 
       {/* TRUST STACK */}
       <section className="bg-white py-12 border-b border-gray-100">
-        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { icon: Star, text: "Top Rated Google", sub: "15+ Local Reviews" },
             { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
@@ -152,7 +168,7 @@ const Home = () => {
 
       {/* AUTHORITY SECTION */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
               <h2 className="text-4xl font-black text-gray-900 uppercase leading-none mb-8">The Standard for <br /><span className="text-blue-700">Arizona Solar Control</span></h2>
@@ -192,7 +208,7 @@ const Home = () => {
                   <p className="text-sm text-gray-600 font-medium">Yes — we use Arizona-engineered ceramics designed for high thermal load.</p>
                 </div>
                 <div className="pt-6 border-t border-gray-200 flex justify-center">
-                  <img src={LOGO_IMAGE} alt="Arizona House of Film Logo" className="h-12 w-auto grayscale opacity-70" width={240} height={48} />
+                  <img src={LOGO_IMAGE} alt="Arizona House of Film Logo" className="h-12 w-auto grayscale opacity-70" width={240} height={48} loading="lazy" />
                 </div>
               </div>
             </div>
@@ -202,11 +218,11 @@ const Home = () => {
 
       {/* SERVICES GRID */}
       <section className="py-24 bg-slate-900 text-white">
-        <div className="container mx-auto px-4 text-center mb-16">
+        <div className="container mx-auto px-4 sm:px-6 text-center mb-16">
           <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Our Expertise</h2>
           <div className="h-1.5 w-24 bg-blue-600 mx-auto mt-4" />
         </div>
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
             <div key={s.name} className="bg-white/5 p-8 border border-white/10 hover:border-blue-500 transition-all group">
               <s.icon className="w-10 h-10 text-blue-400 mb-6 group-hover:scale-110 transition-transform" />
@@ -222,7 +238,7 @@ const Home = () => {
 
       {/* ARIZONA BENEFITS */}
       <section className="py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-12">Why Window Film Matters in Arizona</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -242,7 +258,7 @@ const Home = () => {
 
       {/* HOME FAQ */}
       <section className="py-24 bg-gray-50 border-t border-gray-100">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-12">Arizona Window Film — Common Questions</h2>
           <div className="space-y-8">
             {[

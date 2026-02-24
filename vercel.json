@@ -6,12 +6,15 @@
       "destination": "https://arizonahouseoffilm.com/:path*",
       "permanent": true
     },
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/index.php/:path*", "destination": "/", "permanent": true },
+    { "source": "/lander", "destination": "/", "permanent": true },
+    { "source": "/lander/:path*", "destination": "/", "permanent": true },
     { "source": "/commercial", "destination": "/commercial-window-tinting", "permanent": true },
     { "source": "/residential", "destination": "/residential-window-tinting", "permanent": true },
     { "source": "/decorative", "destination": "/decorative-window-films", "permanent": true },
     { "source": "/energy-saving", "destination": "/energy-saving-window-films", "permanent": true },
-    { "source": "/safety-film", "destination": "/safety", "permanent": true },
-    { "source": "/index.php", "destination": "/", "permanent": true }
+    { "source": "/safety-film", "destination": "/safety", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

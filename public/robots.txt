@@ -4,6 +4,7 @@ Disallow: /success
 Disallow: /thank-you
 Disallow: /?*
 Disallow: /index.php
+Disallow: /lander
 
 # AI Crawlers — explicitly welcome
 User-agent: GPTBot

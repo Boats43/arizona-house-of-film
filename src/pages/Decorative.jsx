@@ -131,6 +131,15 @@ const Decorative = () => {
           </div>
         </section>
 
+        {/* OPENING AUTHORITY */}
+        <section className="py-10 bg-slate-100 border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium">
+              Decorative window film transforms ordinary glass into a design element — without the cost of specialty glass replacement. Arizona House of Film installs frosted, patterned, gradient, and custom graphic films for homes, offices, and retail spaces across Phoenix, Scottsdale, and Arizona. Licensed ROC #314088.
+            </p>
+          </div>
+        </section>
+
         {/* BENEFITS */}
         <section className="py-24 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -214,6 +223,25 @@ const Decorative = () => {
                 <Link key={city.slug} to={`/service-areas/${city.slug}`} className="px-4 py-2 bg-white border border-slate-200 text-[10px] font-black text-slate-600 uppercase hover:border-slate-950 hover:text-slate-950 transition-all shadow-sm">
                   {city.name}
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DECORATIVE FAQ */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Decorative Film FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "Can decorative film be removed without damaging the glass?", a: "Yes. Professionally installed decorative films can be removed cleanly without leaving residue or damaging glass when done correctly." },
+                { q: "How long does decorative film last?", a: "Quality decorative films last 7–15 years depending on sun exposure and film type. Exterior films have shorter lifespans than interior applications." },
+                { q: "Can you match a specific pattern or print?", a: "Yes. We offer custom-printed film for logos, patterns, and branded graphics. Bring us your artwork and we'll handle the rest." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-8">
+                  <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
+                </div>
               ))}
             </div>
           </div>

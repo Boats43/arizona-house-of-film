@@ -52,6 +52,10 @@ const Home = () => {
     mainEntity: [
       { "@type": "Question", name: "How much does residential window tinting cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Home window tinting pricing varies by film type and square footage. Most homeowners recover costs within 2–3 years via energy savings. Contact us for a free estimate." } },
       { "@type": "Question", name: "Does window film lower electric bills in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Yes. High-performance ceramic films can block up to 84% of solar heat, reducing annual cooling costs significantly." } },
+      { "@type": "Question", name: "How long does window film last in Arizona's heat?", acceptedAnswer: { "@type": "Answer", text: "Quality ceramic films are engineered for high-heat climates and typically last 15–25 years in Arizona conditions. We install only manufacturer-certified films backed by warranty." } },
+      { "@type": "Question", name: "Does window film make rooms too dark?", acceptedAnswer: { "@type": "Answer", text: "No. Modern ceramic films reject heat through infrared blocking, not by darkening the glass. You keep natural light while eliminating heat and glare." } },
+      { "@type": "Question", name: "Do you serve my city in Arizona?", acceptedAnswer: { "@type": "Answer", text: "We serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Tucson, and 100+ Arizona communities. View our full service area coverage." } },
+      { "@type": "Question", name: "Is window film worth it in Arizona?", acceptedAnswer: { "@type": "Answer", text: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." } },
     ],
   };
 
@@ -116,6 +120,15 @@ const Home = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* CLIMATE CONTEXT */}
+      <section className="py-8 bg-blue-950 text-white border-b border-blue-900">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <p className="text-base md:text-lg text-blue-100 font-medium leading-relaxed text-center">
+            Arizona's extreme climate — with summer temperatures exceeding 115°F and one of the highest UV indexes in North America — makes window film not a luxury but a necessity. Arizona House of Film has been protecting Phoenix homes and businesses since 2012, installing ceramic, safety, decorative, and energy-saving films for thousands of Arizona properties. Licensed ROC #314088.
+          </p>
         </div>
       </section>
 
@@ -204,6 +217,46 @@ const Home = () => {
               </Button>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ARIZONA BENEFITS */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-12">Why Window Film Matters in Arizona</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: "Beat 115°F Heat", body: "Ceramic films block up to 84% of solar heat, keeping interiors 10–15°F cooler without darkening your rooms." },
+              { title: "Block 99.9% UV", body: "Arizona's UV index regularly hits 11 (extreme). Our films block 99.9% of UV rays, protecting furniture, flooring, and skin." },
+              { title: "Cut Cooling Costs 30%", body: "SRP and APS utility rebates available for qualifying energy-saving film installations." },
+              { title: "Protect Against Break-ins", body: "Security films hold shattered glass in place, making forced entry significantly harder." },
+            ].map((card, i) => (
+              <div key={i} className="p-8 border border-gray-100 bg-gray-50 hover:shadow-lg transition-all">
+                <h3 className="text-lg font-black text-gray-900 uppercase mb-4">{card.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed font-medium">{card.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOME FAQ */}
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-12">Arizona Window Film — Common Questions</h2>
+          <div className="space-y-8">
+            {[
+              { q: "How long does window film last in Arizona's heat?", a: "Quality ceramic films are engineered for high-heat climates and typically last 15–25 years in Arizona conditions. We install only manufacturer-certified films backed by warranty." },
+              { q: "Does window film make rooms too dark?", a: "No. Modern ceramic films reject heat through infrared blocking, not by darkening the glass. You keep natural light while eliminating heat and glare." },
+              { q: "Do you serve my city?", a: "We serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Tucson, and 100+ Arizona communities. View our full service area coverage." },
+              { q: "Is window film worth it in Arizona?", a: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." },
+            ].map((faq, i) => (
+              <div key={i} className="border-b border-gray-200 pb-8">
+                <h3 className="font-black text-gray-900 uppercase text-sm mb-3">{faq.q}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed font-medium">{faq.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

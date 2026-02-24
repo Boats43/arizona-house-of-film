@@ -26,13 +26,24 @@ const Commercial = () => {
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
+  const commercialFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "How long does commercial window film installation take?", acceptedAnswer: { "@type": "Answer", text: "Most commercial projects are completed in 1–3 days depending on square footage. We work around your business hours to minimize disruption." } },
+      { "@type": "Question", name: "Do commercial window films meet building codes in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Yes. We install films that comply with Arizona building codes and can provide documentation for permit applications when required." } },
+      { "@type": "Question", name: "What's the ROI on commercial window film?", acceptedAnswer: { "@type": "Answer", text: "Typical commercial installations pay back within 2–5 years through energy savings alone. Security film adds additional insurance value." } },
+      { "@type": "Question", name: "Can window film be applied to any commercial glass?", acceptedAnswer: { "@type": "Answer", text: "Most standard commercial glass accepts film. We assess your glass type during the free estimate to recommend the correct product and ensure warranty validity." } },
+    ],
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Commercial Window Tinting",
     serviceType: "Commercial Window Film Installation",
     provider: {
-      "@type": "HomeAndConstructionBusiness",
+      "@type": "LocalBusiness",
       name: "Arizona House of Film",
       url: "https://arizonahouseoffilm.com/",
       telephone: "+1-480-788-1591",
@@ -43,6 +54,7 @@ const Commercial = () => {
         addressRegion: "AZ",
         postalCode: "85033",
       },
+      priceRange: "$$",
     },
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,
@@ -100,6 +112,7 @@ const Commercial = () => {
         <link rel="preload" as="image" href={heroImageUrl} />
         {/* Schema */}
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(commercialFaqSchema)}</script>
       </Helmet>
 
       <main id="main-content">
@@ -142,6 +155,15 @@ const Commercial = () => {
                 </a>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* AUTHORITY */}
+        <section className="py-12 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+              Arizona House of Film is Phoenix's licensed commercial window film installer for offices, retail centers, medical facilities, schools, HOAs, and industrial properties. We've completed commercial installations across Maricopa and Pima Counties — from single-suite offices to multi-story buildings. Licensed ROC #314088. Authorized installer for 3M, XPEL, Madico, and Solar Gard commercial films.
+            </p>
           </div>
         </section>
 
@@ -194,6 +216,28 @@ const Commercial = () => {
           </div>
         </section>
 
+        {/* ENERGY SAVINGS DATA */}
+        <section className="py-16 bg-green-600 text-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black uppercase tracking-tighter mb-8">Energy Savings for Arizona Businesses</h2>
+            <p className="text-white/90 text-lg font-medium leading-relaxed max-w-4xl mb-10">
+              Commercial buildings in Arizona can reduce cooling costs by 20–30% with solar control window film. For a 10,000 sq ft office building, that translates to $3,000–$8,000 in annual energy savings. SRP and APS offer commercial rebate programs for qualifying installations.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { stat: "20–30%", label: "Cooling cost reduction" },
+                { stat: "$3K–$8K", label: "Annual savings per 10,000 sq ft" },
+                { stat: "2–5 yrs", label: "Typical ROI payback period" },
+              ].map((item, i) => (
+                <div key={i} className="text-center border border-white/20 p-8">
+                  <p className="text-4xl font-black mb-2">{item.stat}</p>
+                  <p className="text-white/80 font-bold uppercase text-xs tracking-widest">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* PROCESS */}
         <section className="py-24 bg-white text-slate-950">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -233,6 +277,26 @@ const Commercial = () => {
                 >
                   {city.name}
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Commercial Window Film FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "How long does commercial window film installation take?", a: "Most commercial projects are completed in 1–3 days depending on square footage. We work around your business hours to minimize disruption." },
+                { q: "Do commercial window films meet building codes in Arizona?", a: "Yes. We install films that comply with Arizona building codes and can provide documentation for permit applications when required." },
+                { q: "What's the ROI on commercial window film?", a: "Typical commercial installations pay back within 2–5 years through energy savings alone. Security film adds additional insurance value." },
+                { q: "Can window film be applied to any commercial glass?", a: "Most standard commercial glass accepts film. We assess your glass type during the free estimate to recommend the correct product and ensure warranty validity." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-8">
+                  <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
+                </div>
               ))}
             </div>
           </div>

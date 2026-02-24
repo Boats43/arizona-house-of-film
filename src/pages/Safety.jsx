@@ -105,6 +105,15 @@ const Safety = () => {
           </div>
         </section>
 
+        {/* OPENING AUTHORITY */}
+        <section className="py-12 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+              Security window film is one of the fastest-growing segments of the window film industry — and for good reason. In Arizona, both residential and commercial properties benefit from film that holds shattered glass in place after impact. Arizona House of Film installs 4-mil through 12-mil safety films across Phoenix, Scottsdale, and the Greater Arizona market. Licensed ROC #314088.
+            </p>
+          </div>
+        </section>
+
         {/* BENEFITS */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -162,6 +171,52 @@ const Safety = () => {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* FILM THICKNESS GUIDE */}
+        <section className="py-16 bg-slate-900 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-10">Film Thickness Guide</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { mil: "4 Mil", label: "Entry-Level Safety", body: "Good for residential and light commercial use. Holds glass together after standard impact." },
+                { mil: "8 Mil", label: "Mid-Grade", body: "Standard for retail storefronts and medical offices. Significant smash-and-grab deterrence." },
+                { mil: "12 Mil", label: "Heavy-Duty", body: "Used in schools, government buildings, and high-risk commercial. Meets blast mitigation specifications." },
+              ].map((item, i) => (
+                <div key={i} className="p-8 bg-slate-800 border border-slate-700 hover:border-red-600 transition-colors">
+                  <p className="text-4xl font-black text-red-600 mb-2">{item.mil}</p>
+                  <p className="font-black text-white uppercase text-sm mb-4">{item.label}</p>
+                  <p className="text-slate-400 text-sm font-medium leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SAFETY FAQ */}
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Security Film FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "Does security film stop someone from breaking a window?", a: "It doesn't prevent breakage — it holds the broken glass in place, making entry dramatically slower and louder. Most smash-and-grab attempts are abandoned within 60 seconds." },
+                { q: "Can safety film be combined with tinting?", a: "Yes. We offer tinted safety films that provide both heat rejection and impact resistance in one product." },
+                { q: "Is safety film visible?", a: "Clear safety films are nearly invisible. Lightly tinted options are also available if heat rejection is also a goal." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-8">
+                  <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-600 text-sm leading-relaxed mt-10">
+              Also explore our{" "}
+              <Link to="/commercial-window-tinting" className="text-red-600 underline font-bold">commercial window tinting services</Link>,{" "}
+              <Link to="/residential-window-tinting" className="text-red-600 underline font-bold">residential tinting</Link>, or{" "}
+              <Link to="/anti-graffiti-window-film" className="text-red-600 underline font-bold">anti-graffiti film</Link>{" "}
+              for storefronts.
+            </p>
           </div>
         </section>
 

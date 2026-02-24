@@ -109,6 +109,15 @@ const EnergySaving = () => {
           </div>
         </section>
 
+        {/* OPENING AUTHORITY */}
+        <section className="py-12 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+              Energy-saving window film is one of the most cost-effective home and building improvements available in Arizona. By blocking 40–84% of solar heat before it enters through glass, our films reduce the workload on AC systems — translating directly to lower utility bills. SRP and APS customers may qualify for rebates on qualifying installations. Licensed ROC #314088.
+            </p>
+          </div>
+        </section>
+
         {/* PERFORMANCE METRICS */}
         <section className="py-24 bg-white text-slate-950">
           <div className="max-w-7xl mx-auto px-6">
@@ -124,6 +133,53 @@ const EnergySaving = () => {
                   <benefit.icon className="w-10 h-10 text-red-600 mb-6 group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-black uppercase tracking-tighter mb-4">{benefit.title}</h3>
                   <p className="text-slate-600 font-bold uppercase text-xs leading-tight tracking-widest">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ROI + REBATE */}
+        <section className="py-16 bg-slate-950 text-white border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-2xl font-black uppercase tracking-tighter mb-8 text-red-600">ROI Estimates</h2>
+              <div className="space-y-4 text-slate-300 font-medium text-sm">
+                <p className="font-black text-white uppercase text-xs tracking-widest">Average Arizona Home:</p>
+                <p>• Annual energy savings: $200–$600</p>
+                <p>• Typical installation cost: $1,200–$2,400</p>
+                <p>• Payback period: 2–4 years</p>
+                <p>• Film lifespan: 15–25 years</p>
+                <p className="font-black text-white uppercase text-xs tracking-widest mt-6">Commercial Building (10,000 sq ft):</p>
+                <p>• Annual energy savings: $3,000–$8,000</p>
+                <p>• Payback period: 1–3 years</p>
+              </div>
+            </div>
+            <div className="bg-red-600 p-10">
+              <h3 className="text-xl font-black uppercase tracking-tighter mb-4">SRP &amp; APS Rebate Program</h3>
+              <p className="text-white/90 font-medium leading-relaxed text-sm mb-6">
+                Arizona utility companies SRP and APS offer rebates for energy-efficient window film on qualifying properties. Rebate amounts and eligibility change seasonally — ask us during your free estimate whether your installation qualifies.
+              </p>
+              <Button asChild size="lg" className="bg-white text-red-600 hover:bg-slate-950 hover:text-white rounded-none font-black px-8">
+                <Link to="/contact">Check Rebate Eligibility</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ENERGY FAQ */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Energy Film FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "How much can window film reduce my APS or SRP bill?", a: "Most Arizona homeowners see 15–30% reductions in cooling costs. The exact amount depends on window orientation, size, and existing glass type." },
+                { q: "Do I need to tell my utility company I'm installing window film?", a: "Only if you're claiming a rebate. We can help with the paperwork." },
+                { q: "Does energy-saving film work in winter too?", a: "Yes. Low-e films also retain interior heat in winter, making them beneficial year-round even in Arizona." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-8">
+                  <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
                 </div>
               ))}
             </div>

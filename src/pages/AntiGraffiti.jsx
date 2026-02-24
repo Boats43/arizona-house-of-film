@@ -98,6 +98,15 @@ const AntiGraffiti = () => {
           </div>
         </section>
 
+        {/* OPENING AUTHORITY */}
+        <section className="py-12 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+              Anti-graffiti window film is a cost-effective alternative to glass replacement after vandalism. A thin sacrificial film layer takes the damage — permanent markers, acid etching, spray paint — and peels away to reveal undamaged glass beneath. Arizona House of Film installs anti-graffiti film for storefronts, transit shelters, elevators, and commercial glass across Phoenix, Scottsdale, and Greater Arizona. Licensed ROC #314088.
+            </p>
+          </div>
+        </section>
+
         {/* BENEFITS */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -146,6 +155,45 @@ const AntiGraffiti = () => {
               <div className="absolute -bottom-8 -left-8 bg-red-600 p-8 font-black uppercase italic leading-none hidden md:block">
                 Lower OpEx <br /> Costs
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* COST COMPARISON */}
+        <section className="py-16 bg-slate-900 border-t border-slate-800 text-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black uppercase tracking-tighter mb-10">Cost Comparison</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { label: "Glass replacement after graffiti etching", cost: "$300–$2,000+ per panel", highlight: false },
+                { label: "Anti-graffiti film installation", cost: "$8–$15 per sq ft", highlight: true },
+                { label: "Film replacement after an incident", cost: "$3–$6 per sq ft", highlight: true },
+              ].map((item, i) => (
+                <div key={i} className={`p-8 border ${item.highlight ? 'border-red-600 bg-red-600/10' : 'border-slate-700'}`}>
+                  <p className="text-slate-300 font-medium text-sm mb-4">{item.label}</p>
+                  <p className={`text-2xl font-black ${item.highlight ? 'text-red-400' : 'text-white'}`}>{item.cost}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-400 font-medium text-sm mt-8">For high-incident locations, anti-graffiti film typically pays for itself after 1–2 incidents.</p>
+          </div>
+        </section>
+
+        {/* ANTI-GRAFFITI FAQ */}
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Anti-Graffiti Film FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "Does anti-graffiti film work against acid etching?", a: "Yes. It's specifically designed to protect against acid etching, which permanently damages unprotected glass." },
+                { q: "How often does the film need to be replaced?", a: "Film is only replaced after an incident — otherwise it lasts 5–10 years. Many locations go years without needing replacement." },
+                { q: "Can it be applied to mirrors and other surfaces?", a: "We primarily install on glass surfaces. Contact us about specific surface types." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-8">
+                  <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

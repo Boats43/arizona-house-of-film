@@ -71,7 +71,7 @@ const ServiceAreas = () => {
                 <ShieldCheck className="w-4 h-4" /> Statewide Deployment • ROC #{rocNumber}
               </span>
               <h1 className="text-5xl md:text-8xl font-black mb-6 uppercase leading-none tracking-tighter">
-                Our <span className="text-red-600 italic">Service Areas</span>
+                Arizona Window Tinting Service Areas | Phoenix, Scottsdale &amp; Statewide
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 font-bold italic">
                 From Phoenix to Flagstaff, we provide industrial-grade window film for Arizona's most demanding environments.
@@ -115,6 +115,46 @@ const ServiceAreas = () => {
                 </Button>
               </div>
             )}
+          </div>
+        </section>
+
+        {/* METRO REGIONS */}
+        <section className="py-20 bg-slate-950 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-12">Service Coverage by Region</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {[
+                { region: "Phoenix Metro", cities: "Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria, Surprise, Goodyear, Avondale, Buckeye, Fountain Hills, Paradise Valley, Cave Creek, Anthem", note: "Our primary service area. Same-week installation typically available for all Phoenix Metro locations." },
+                { region: "Tucson & Southern Arizona", cities: "Tucson, Oro Valley, Marana, Sahuarita, Green Valley, Sierra Vista, Nogales, Bisbee", note: "We make regular runs to Tucson and Southern Arizona. Contact us to schedule." },
+                { region: "Central & Northern Arizona", cities: "Flagstaff, Prescott, Sedona, Cottonwood, Payson, Williams", note: "Available for commercial and larger residential projects. Contact us for scheduling." },
+                { region: "Western Arizona", cities: "Yuma, Lake Havasu City, Kingman, Bullhead City, Quartzsite", note: "Available for commercial projects. Contact us to confirm scheduling availability." },
+              ].map((area, i) => (
+                <div key={i} className="border border-slate-700 p-8 hover:border-red-600 transition-colors">
+                  <h3 className="text-xl font-black text-white uppercase tracking-tight mb-3">{area.region}</h3>
+                  <p className="text-slate-400 text-sm font-medium mb-4">{area.cities}</p>
+                  <p className="text-slate-500 text-xs font-bold italic">{area.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICE AREAS FAQ */}
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Service Area FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "Do you charge extra for driving outside Phoenix?", a: "Travel fees may apply for locations more than 60 miles from Phoenix. We'll disclose any travel fees during the estimate." },
+                { q: "How quickly can you schedule in my area?", a: "Phoenix Metro: typically 1–5 business days. Tucson: weekly runs. Remote areas: by appointment." },
+                { q: "Do you do mobile/on-site installation?", a: "Yes. We come to your home or business — you do not need to bring anything to us." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-slate-200 pb-8">
+                  <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

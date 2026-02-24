@@ -59,6 +59,16 @@ const Residential = () => {
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "How much does residential window tinting cost in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Most Arizona homeowners pay $8–$18 per square foot installed, depending on film type and window size. We provide free, no-obligation estimates." } },
+            { "@type": "Question", name: "Will window film void my home warranty?", acceptedAnswer: { "@type": "Answer", text: "Quality films installed by certified professionals do not void standard home warranties. We use only manufacturer-certified products with their own warranties." } },
+            { "@type": "Question", name: "How long does home window tinting take?", acceptedAnswer: { "@type": "Answer", text: "A typical single-family home is completed in one day. Larger properties or custom film selections may take 2 days." } },
+            { "@type": "Question", name: "Can you tint sliding glass doors and skylights?", acceptedAnswer: { "@type": "Answer", text: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights." } },
+          ]
+        })}</script>
       </Helmet>
 
       <main>
@@ -87,6 +97,15 @@ const Residential = () => {
                 </a>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* OPENING AUTHORITY */}
+        <section className="py-12 bg-slate-800 border-b border-slate-700">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
+              Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088.
+            </p>
           </div>
         </section>
 
@@ -147,6 +166,21 @@ const Residential = () => {
           </div>
         </section>
 
+        {/* SRP/APS REBATE CALLOUT */}
+        <section className="py-12 bg-green-600 text-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-black uppercase tracking-tight mb-2">SRP &amp; APS Rebate Eligible</h3>
+              <p className="text-white/90 font-medium leading-relaxed max-w-2xl">
+                Arizona utility companies SRP and APS offer rebates for energy-saving window film installations on qualifying residential properties. Ask us about current rebate eligibility during your free estimate.
+              </p>
+            </div>
+            <Button asChild size="lg" className="bg-white text-green-700 hover:bg-slate-900 hover:text-white font-black shrink-0 rounded-none px-8 h-14">
+              <Link to="/contact">Check My Eligibility</Link>
+            </Button>
+          </div>
+        </section>
+
         {/* PROCESS */}
         <section className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -184,6 +218,33 @@ const Residential = () => {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 bg-white border-t border-gray-100">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-12">Residential Tinting FAQ</h2>
+            <div className="space-y-8">
+              {[
+                { q: "How much does residential window tinting cost in Arizona?", a: "Most Arizona homeowners pay $8–$18 per square foot installed, depending on film type and window size. We provide free, no-obligation estimates." },
+                { q: "Will window film void my home warranty?", a: "Quality films installed by certified professionals do not void standard home warranties. We use only manufacturer-certified products with their own warranties." },
+                { q: "How long does home window tinting take?", a: "A typical single-family home is completed in one day. Larger properties or custom film selections may take 2 days." },
+                { q: "Can you tint sliding glass doors and skylights?", a: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights." },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-gray-200 pb-8">
+                  <h3 className="font-black text-slate-900 uppercase text-sm mb-3">{faq.q}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed font-medium">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed mt-10">
+              Looking for commercial installation? We also serve offices and retail properties across the Valley.{" "}
+              <Link to="/commercial-window-tinting" className="text-green-600 underline font-bold">Explore commercial tinting</Link>,{" "}
+              <Link to="/solutions" className="text-green-600 underline font-bold">view all film solutions</Link>, or{" "}
+              <Link to="/service-areas" className="text-green-600 underline font-bold">check our service areas</Link>{" "}
+              to confirm coverage in your city.
+            </p>
           </div>
         </section>
 

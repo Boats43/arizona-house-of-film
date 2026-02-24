@@ -44,18 +44,11 @@ const CityPage = () => {
     (c) => c.slug.toLowerCase() === cleanSlug.toLowerCase()
   );
 
-  if (!city) {
-    return (
-      <>
-        <Helmet>
-          <meta name="robots" content="noindex,nofollow" />
-        </Helmet>
-        <NotFound />
-      </>
-    );
-  }
-
-  const { name, geo } = city;
+  // Graceful fallback: derive name from slug if city is not in the data file
+  const name = city
+    ? city.name
+    : cleanSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  const geo = city?.geo || null;
 
   /* ======================================================
      SEO — CLEAN CANONICAL

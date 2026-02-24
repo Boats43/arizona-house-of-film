@@ -39,7 +39,16 @@ const FilmsHub = () => {
         "@type": "Product",
         "name": category.name,
         "url": `https://arizonahouseoffilm.com/films/${category.slug}`,
-        "description": category.description
+        "description": category.description,
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "price": "0",
+          "priceValidUntil": "2027-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": `https://arizonahouseoffilm.com/films/${category.slug}`,
+          "seller": { "@type": "LocalBusiness", "name": "Arizona House of Film" }
+        }
       }
     }))
   };

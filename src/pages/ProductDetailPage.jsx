@@ -102,6 +102,7 @@ function ProductDetailPage() {
       "@type": "Offer",
       price: selectedVariant?.price_in_cents ? (selectedVariant.price_in_cents / 100).toFixed(2) : "0.00",
       priceCurrency: "USD",
+      priceValidUntil: "2027-12-31",
       availability: availableStock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       url: canonicalUrl
     }

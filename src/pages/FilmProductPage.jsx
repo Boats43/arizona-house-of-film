@@ -74,6 +74,7 @@ const FilmProductPage = () => {
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "19.99",
+      "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
       "url": canonicalUrl,
       "hasMerchantReturnPolicy": {
@@ -98,6 +99,7 @@ const FilmProductPage = () => {
         "@type": "Offer",
         "priceCurrency": "USD",
         "price": "19.99",
+        "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
         "url": `${canonicalUrl}/${variant.sku}`,
         "hasMerchantReturnPolicy": {

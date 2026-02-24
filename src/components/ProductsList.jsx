@@ -78,6 +78,7 @@ const ProductCard = ({ variant, index }) => {
       '@type': 'Offer',
       priceCurrency: 'USD',
       price: '0.00',
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       url: 'https://arizonahouseoffilm.com/contact'

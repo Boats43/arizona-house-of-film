@@ -92,6 +92,7 @@ const SupportingPage = () => {
       '@type': 'Offer',
       priceCurrency: 'USD',
       price: '0.00',
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       url: canonicalUrl,
     },

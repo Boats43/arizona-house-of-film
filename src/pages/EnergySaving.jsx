@@ -1,63 +1,89 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Sun, DollarSign, Thermometer, Zap, Shield, ArrowRight, Phone, Activity } from 'lucide-react';
+import { DollarSign, Thermometer, Shield, Activity, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const EnergySaving = () => {
   const rocNumber = "315259";
+  const pageTitle = "#1 Energy-Saving Window Film Arizona | Arizona House of Film";
+  const metaDescription = "Reduce cooling costs by 30% with professional energy-saving window film. Expert installation across Arizona. Licensed ROC #315259.";
   const canonicalUrl = "https://arizonahouseoffilm.com/energy-saving-window-films";
+  const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
   const benefits = [
-    {
-      icon: DollarSign,
-      title: '30% HVAC Reduction',
-      description: 'Dramatically lower cooling costs by neutralizing primary solar heat gain before it enters.'
-    },
-    {
-      icon: Thermometer,
-      title: 'Thermal Stability',
-      description: 'Eliminate interior hot spots and maintain consistent temperatures across large glass perimeters.'
-    },
-    {
-      icon: Shield,
-      title: '99% UV Intercept',
-      description: 'Industrial-grade protection for assets, flooring, and inventory against UV degradation.'
-    },
-    {
-      icon: Activity,
-      title: 'Precision Clarity',
-      description: 'Advanced spectrally selective technology offers heat rejection without sacrificing natural light.'
-    }
+    { icon: DollarSign, title: '30% HVAC Reduction', description: 'Dramatically lower cooling costs by neutralizing primary solar heat gain before it enters.' },
+    { icon: Thermometer, title: 'Thermal Stability', description: 'Eliminate interior hot spots and maintain consistent temperatures across large glass perimeters.' },
+    { icon: Shield, title: '99% UV Intercept', description: 'Industrial-grade protection for assets, flooring, and inventory against UV degradation.' },
+    { icon: Activity, title: 'Precision Clarity', description: 'Advanced spectrally selective technology offers heat rejection without sacrificing natural light.' }
   ];
 
-  // Schema objects remain the same as your source
-  const faqSchema = { /* ... your FAQ schema ... */ };
-  const productSchema = { /* ... your Product schema ... */ };
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Energy-Saving Window Film Installation",
+    serviceType: "Energy Efficient Window Film",
+    provider: {
+      "@type": "HomeAndConstructionBusiness",
+      name: "Arizona House of Film",
+      url: "https://arizonahouseoffilm.com/",
+      telephone: "+1-480-788-1591"
+    },
+    areaServed: { "@type": "State", name: "Arizona" },
+    description: metaDescription,
+    url: canonicalUrl
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much can energy-saving window film reduce my cooling costs?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "High-performance window films can reduce HVAC cooling costs by up to 30% by blocking solar heat before it enters your building."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Does energy-saving window film block natural light?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Spectrally selective films reject heat and UV while maintaining excellent visible light transmission, so your space stays bright without the heat."
+        }
+      }
+    ]
+  };
 
   return (
     <>
       <Helmet>
-        <title>#1 Energy-Saving Window Film Arizona | ROC #315259</title>
-        <meta name="description" content="Reduce cooling costs by 30% with professional energy-saving window film. Expert installation across Arizona. ROC #315259." />
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <main className="bg-slate-950 text-white min-h-screen">
-        {/* --- PERFORMANCE HERO --- */}
+        {/* HERO */}
         <section className="relative py-24 border-b border-white/10 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent opacity-50" />
-          
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }} 
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                 <div className="inline-block px-3 py-1 bg-red-600 text-white font-black text-xs uppercase tracking-widest mb-6">
                   Performance Grade Window Film
                 </div>
@@ -76,19 +102,14 @@ const EnergySaving = () => {
                   </a>
                 </div>
               </motion.div>
-
-              <div className="relative border-2 border-white/10 p-2 bg-slate-900">
-                <img 
-                  alt="Industrial window film performance" 
-                  className="w-full grayscale hover:grayscale-0 transition-all duration-700" 
-                  src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20210626_114245-K8xAB.jpg" 
-                />
+              <div className="relative border-2 border-white/10 p-2 bg-slate-900 min-h-64 flex items-center justify-center">
+                <p className="text-slate-600 text-sm">Image coming soon</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* --- PERFORMANCE METRICS --- */}
+        {/* PERFORMANCE METRICS */}
         <section className="py-24 bg-white text-slate-950">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b-4 border-slate-950 pb-8">
@@ -97,7 +118,6 @@ const EnergySaving = () => {
               </h2>
               <span className="font-bold uppercase tracking-widest text-slate-400">ROC #{rocNumber}</span>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {benefits.map((benefit) => (
                 <div key={benefit.title} className="bg-slate-50 p-8 border border-slate-200 hover:border-red-600 transition-all group">
@@ -110,7 +130,7 @@ const EnergySaving = () => {
           </div>
         </section>
 
-        {/* --- INDUSTRIAL CTA --- */}
+        {/* CTA */}
         <section className="py-24 bg-red-600 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -121,7 +141,7 @@ const EnergySaving = () => {
               Get an expert energy assessment for your facility today.
             </p>
             <Button asChild size="lg" className="bg-white text-red-600 hover:bg-slate-950 hover:text-white rounded-none h-20 px-16 text-3xl font-black uppercase italic transition-all shadow-2xl">
-              <Link to="/contact tracking-tighter">Get a Free Quote</Link>
+              <Link to="/contact">Get a Free Quote</Link>
             </Button>
           </div>
         </section>

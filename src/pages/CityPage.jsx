@@ -1,6 +1,6 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Link, useParams } from 'react-router-dom';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { Link, useParams } from "react-router-dom";
 import {
   Shield,
   Building,
@@ -11,85 +11,118 @@ import {
   Thermometer,
   CheckCircle,
   Phone,
-  ArrowRight
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import NotFound from '@/pages/NotFound';
-import { cities } from '@/data/cities';
+  ArrowRight,
+} from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import NotFound from "@/pages/NotFound";
+import { cities } from "@/data/cities";
 
 const CityPage = () => {
-  const params = useParams();
+  const { slug } = useParams();
 
-  // Flexible slug handling: supports /service-areas/:slug AND /:slug-window-tinting
-  let rawSlug = params.slug || params.slugWindowTinting || Object.values(params)[0];
-  if (!rawSlug) return <NotFound />;
+  /* ======================================================
+     HARD FIREWALL — BLOCK BEFORE PAGE RENDER
+     This guarantees Google cannot index ghost HTML.
+  ====================================================== */
+  if (!slug) {
+    return (
+      <>
+        <Helmet>
+          <meta name="robots" content="noindex,nofollow" />
+        </Helmet>
+        <NotFound />
+      </>
+    );
+  }
 
-  const cleanSlug = rawSlug.replace('-window-tinting', '');
-  const city = cities.find((c) => c.slug.toLowerCase() === cleanSlug.toLowerCase());
-  if (!city) return <NotFound />;
+  // Normalize slug
+  const cleanSlug = slug.replace("-window-tinting", "");
+
+  // Validate against actual cities
+  const city = cities.find(
+    (c) => c.slug.toLowerCase() === cleanSlug.toLowerCase()
+  );
+
+  if (!city) {
+    return (
+      <>
+        <Helmet>
+          <meta name="robots" content="noindex,nofollow" />
+        </Helmet>
+        <NotFound />
+      </>
+    );
+  }
 
   const { name, geo } = city;
 
-  /* ================= SEO ================= */
-
+  /* ======================================================
+     SEO — CLEAN CANONICAL
+  ====================================================== */
   const pageTitle = `Window Tinting ${name}, AZ | Residential & Commercial Experts`;
-  const metaDescription = `Professional window tinting in ${name}, AZ. We install residential and commercial window film to reduce heat, block 99% of UV rays, improve privacy, and lower energy bills. Free estimates available in ${name}.`;
+  const metaDescription = `Professional window tinting in ${name}, AZ. We install residential and commercial window film to reduce heat, block 99% UV rays, improve privacy, and lower energy bills. Free estimates available in ${name}.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/${cleanSlug}-window-tinting`;
 
-  /* ================= SERVICE SCHEMA ================= */
-
+  /* ======================================================
+     SERVICE SCHEMA
+  ====================================================== */
   const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+    "@context": "https://schema.org",
+    "@type": "Service",
     name: `Window Tinting in ${name}, AZ`,
-    serviceType: 'Window Film Installation',
+    serviceType: "Window Film Installation",
     provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      name: 'Arizona House of Film',
-      url: 'https://arizonahouseoffilm.com',
-      telephone: '+1-480-788-1591'
+      "@type": "HomeAndConstructionBusiness",
+      name: "Arizona House of Film",
+      url: "https://arizonahouseoffilm.com",
+      telephone: "+1-480-788-1591",
     },
     areaServed: {
-      '@type': 'City',
+      "@type": "City",
       name,
-      addressRegion: 'AZ',
-      addressCountry: 'US',
+      addressRegion: "AZ",
+      addressCountry: "US",
       ...(geo && {
         geo: {
-          '@type': 'GeoCoordinates',
+          "@type": "GeoCoordinates",
           latitude: geo.latitude,
-          longitude: geo.longitude
-        }
-      })
+          longitude: geo.longitude,
+        },
+      }),
     },
-    description: metaDescription
+    description: metaDescription,
   };
 
-  /* ================= FAQ SCHEMA ================= */
-
+  /* ======================================================
+     FAQ SCHEMA
+  ====================================================== */
   const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: [
       {
-        '@type': 'Question',
+        "@type": "Question",
         name: `How much does window tinting cost in ${name}, AZ?`,
         acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Window tinting costs in ${name} typically range from $5 to $12 per square foot depending on the film type and project size. We offer free on-site estimates in ${name}.`
-        }
+          "@type": "Answer",
+          text: `Window tinting in ${name} typically ranges from $5 to $12 per sq ft depending on film type and project size. We offer free on-site estimates.`,
+        },
       },
       {
-        '@type': 'Question',
+        "@type": "Question",
         name: `Is window tinting worth it in ${name}?`,
         acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Yes. With Arizona’s intense sun exposure, window film in ${name} reduces interior heat, blocks harmful UV rays, protects furnishings, and lowers cooling costs.`
-        }
-      }
-    ]
+          "@type": "Answer",
+          text: `Yes. With Arizona’s extreme sun exposure, window film in ${name} reduces heat, blocks UV rays, prevents fading, and lowers AC costs.`,
+        },
+      },
+    ],
   };
 
+  /* ======================================================
+     PAGE CONTENT
+  ====================================================== */
   return (
     <>
       <Helmet>
@@ -97,29 +130,31 @@ const CityPage = () => {
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
 
-        {/* Open Graph */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta
+          property="og:image"
+          content="https://arizonahouseoffilm.com/og-image.jpg"
+        />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta
+          name="twitter:image"
+          content="https://arizonahouseoffilm.com/og-image.jpg"
+        />
 
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img
@@ -128,20 +163,24 @@ const CityPage = () => {
             className="w-full h-full object-cover"
           />
         </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-7xl font-extrabold mb-6 tracking-tight">
             Window Tinting <span className="text-green-400">{name}, AZ</span>
           </h1>
+
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
-            Professional heat rejection and UV protection for {name} homes and businesses. Save on energy costs while
-            enhancing comfort and privacy.
+            Professional heat rejection and UV protection for {name} homes and
+            businesses. Save on energy while improving comfort and privacy.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
               <Link to="/contact">
                 Get A Free Quote <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
+
             <a
               href="tel:480-788-1591"
               className="flex items-center justify-center px-8 py-3 rounded-md border-2 border-white font-bold hover:bg-white hover:text-slate-900 transition-all"
@@ -152,7 +191,7 @@ const CityPage = () => {
         </div>
       </section>
 
-      {/* CLIMATE-SPECIFIC DEPTH */}
+      {/* CLIMATE SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -160,28 +199,35 @@ const CityPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Combating the {name} Heat with Advanced Window Film
               </h2>
-              <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-                <p>
-                  Living in <strong>{name}, Arizona</strong> means dealing with some of the most intense solar heat in
-                  the country. Standard glass windows allow massive amounts of infrared heat to penetrate your home or
-                  business, forcing your AC to work overtime.
-                </p>
-                <p>
-                  Our high-performance window films are selected specifically for the {name} climate. By blocking up to
-                  99% of UV rays and significantly reducing heat gain, we help protect your interiors from fading and
-                  help lower monthly cooling costs.
-                </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
-                  {['99% UV Protection', 'Up to 25% Energy Savings', 'Glare Reduction', 'Interior Preservation'].map(
-                    (item) => (
-                      <li key={item} className="flex items-center text-gray-800 font-medium">
-                        <CheckCircle className="text-green-600 mr-2 w-5 h-5" /> {item}
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
+
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                Living in <strong>{name}, Arizona</strong> means facing extreme
+                sunlight and intense heat year-round.
+              </p>
+
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                Our high-performance ceramic window films are engineered specifically for
+                the {name} climate — blocking up to 99% UV and cutting heat by up to 84%.
+              </p>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+                {[
+                  "99% UV Protection",
+                  "Up to 25% Energy Savings",
+                  "Glare Reduction",
+                  "Interior Preservation",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center text-gray-800 font-medium"
+                  >
+                    <CheckCircle className="text-green-600 mr-2 w-5 h-5" />{" "}
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
+
             <div className="relative bg-gray-100 rounded-3xl p-8 overflow-hidden shadow-xl">
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center space-x-2">
@@ -190,15 +236,19 @@ const CityPage = () => {
                     {name} UV Index
                   </span>
                 </div>
-                <div className="bg-red-500 text-white px-4 py-1 rounded-full font-bold">EXTREME</div>
+                <div className="bg-red-500 text-white px-4 py-1 rounded-full font-bold">
+                  EXTREME
+                </div>
               </div>
+
               <p className="text-gray-600 mb-6">
-                Our ceramic films act as a thermal barrier, keeping your {name} property significantly cooler without
-                losing your view.
+                Ceramic window film reduces thermal load dramatically — keeping your{" "}
+                {name} property cooler without excessive AC usage.
               </p>
+
               <img
                 src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20250308_084212-1-aYIad.jpg"
-                alt="Interior cool comfort"
+                alt="Interior cooling comfort"
                 className="rounded-xl shadow-md"
               />
             </div>
@@ -209,45 +259,48 @@ const CityPage = () => {
       {/* SERVICES GRID */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12">Expert Window Film Solutions for {name}</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-12">
+            Expert Window Film Solutions for {name}
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               {
-                n: 'Residential Window Tinting',
+                n: "Residential Window Tinting",
                 i: HomeIcon,
-                l: '/residential-window-tinting',
-                d: `Protect your family and furniture in ${name} from harsh sun and heat.`
+                l: "/residential-window-tinting",
+                d: `Protect your family and furniture in ${name} from harsh sun.`,
               },
               {
-                n: 'Commercial Window Tinting',
+                n: "Commercial Window Tinting",
                 i: Building,
-                l: '/commercial-window-tinting',
-                d: `Lower overhead and improve comfort in your ${name} business or office.`
+                l: "/commercial-window-tinting",
+                d: `Lower overhead and improve comfort in your ${name} office.`,
               },
               {
-                n: 'Energy-Saving Films',
+                n: "Energy-Saving Films",
                 i: Zap,
-                l: '/energy-saving-window-films',
-                d: 'A highly cost-effective upgrade for Arizona desert properties.'
+                l: "/energy-saving-window-films",
+                d: "Highly cost-effective upgrade for desert climates.",
               },
               {
-                n: 'Safety & Security Films',
+                n: "Safety & Security Films",
                 i: Shield,
-                l: '/safety',
-                d: 'Add an invisible layer of protection against break-ins and impacts.'
+                l: "/safety",
+                d: "Invisible protection against break-ins and impacts.",
               },
               {
-                n: 'Decorative & Frosted Films',
+                n: "Decorative & Frosted Films",
                 i: Palette,
-                l: '/decorative-window-films',
-                d: 'Enhance aesthetics and privacy with frosted and patterned films.'
+                l: "/decorative-window-films",
+                d: "Enhance privacy and style with frosted patterns.",
               },
               {
-                n: 'Privacy Films',
+                n: "Privacy Films",
                 i: Thermometer,
-                l: '/residential-window-tinting',
-                d: 'Maintain views out while keeping prying eyes from looking in.'
-              }
+                l: "/residential-window-tinting",
+                d: "Maintain views while blocking outside visibility.",
+              },
             ].map((s, idx) => (
               <Link
                 key={idx}
@@ -270,14 +323,23 @@ const CityPage = () => {
             Ready to cool down your {name} property?
           </h2>
           <p className="text-xl mb-10 opacity-80">
-            Join homeowners and business owners across {name} and the surrounding valley. We offer free, on-site
-            estimates and professional installation.
+            Join homeowners and business owners across {name} and the surrounding
+            valley. We offer free, on-site estimates and professional installation.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button asChild size="lg" className="bg-white text-green-900 hover:bg-gray-200">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-green-900 hover:bg-gray-200"
+            >
               <Link to="/contact">Book Your {name} Estimate</Link>
             </Button>
-            <a href="tel:480-788-1591" className="text-2xl font-bold flex items-center justify-center">
+
+            <a
+              href="tel:480-788-1591"
+              className="text-2xl font-bold flex items-center justify-center"
+            >
               <Phone className="mr-3 text-green-400" /> 480-788-1591
             </a>
           </div>

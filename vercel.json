@@ -1,12 +1,13 @@
 {
-  "installCommand": "npm ci",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "redirects": [
+    { "source": "/commercial", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/residential", "destination": "/residential-window-tinting", "permanent": true },
+    { "source": "/decorative", "destination": "/decorative-window-films", "permanent": true },
+    { "source": "/energy-saving", "destination": "/energy-saving-window-films", "permanent": true },
+    { "source": "/safety-film", "destination": "/safety", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

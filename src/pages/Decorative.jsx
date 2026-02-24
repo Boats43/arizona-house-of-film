@@ -1,46 +1,42 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Palette, Eye, Sparkles, Home, Building, 
-  ArrowRight, Phone, CheckCircle, ShieldCheck 
-} from 'lucide-react';
+import { Palette, Eye, Sparkles, Home, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
 
 const Decorative = () => {
-  /* ================= SEO & SCHEMA ================= */
-  const rocNumber = "315259"; 
+  const rocNumber = "315259";
   const pageTitle = "Decorative Window Film Arizona | Frosted & Custom Glass Designs";
   const metaDescription = `Expert decorative window film installation in Arizona. Featuring premium 3M Fasara and Madico frosted, patterned, and custom designs. Licensed & Bonded ROC #${rocNumber}.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/decorative-window-films";
   const heroImageUrl = "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg";
+  const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Decorative Window Film Installation",
-    "serviceType": "Decorative & Privacy Window Film",
-    "provider": {
+    name: "Decorative Window Film Installation",
+    serviceType: "Decorative & Privacy Window Film",
+    provider: {
       "@type": "HomeAndConstructionBusiness",
-      "name": "Arizona House of Film",
-      "url": "https://arizonahouseoffilm.com/",
-      "telephone": "+1-480-788-1591",
-      "address": {
+      name: "Arizona House of Film",
+      url: "https://arizonahouseoffilm.com/",
+      telephone: "+1-480-788-1591",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "7007 W Flower St",
-        "addressLocality": "Phoenix",
-        "addressRegion": "AZ",
-        "postalCode": "85033"
+        streetAddress: "7007 W Flower St",
+        addressLocality: "Phoenix",
+        addressRegion: "AZ",
+        postalCode: "85033"
       }
     },
-    "areaServed": { "@type": "State", "name": "Arizona" },
-    "description": metaDescription,
-    "url": canonicalUrl
+    areaServed: { "@type": "State", name: "Arizona" },
+    description: metaDescription,
+    url: canonicalUrl
   };
 
-  /* ================= DATA ================= */
   const filmLibrary = [
     {
       category: 'Frosted & Etched',
@@ -93,25 +89,25 @@ const Decorative = () => {
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
         <link rel="preload" as="image" href={heroImageUrl} />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
 
       <main id="main-content">
-        {/* --- HERO SECTION --- */}
+        {/* HERO */}
         <section className="relative min-h-[70vh] flex items-center pt-24 bg-white overflow-hidden text-slate-900">
           <div className="absolute inset-0 z-0 opacity-15">
-            <img 
-              alt="Decorative window film pattern installation" 
-              className="w-full h-full object-cover" 
-              src={heroImageUrl}
-              fetchpriority="high"
-              width="1920"
-              height="1080"
-            />
+            <img alt="Decorative window film pattern installation" className="w-full h-full object-cover" src={heroImageUrl} fetchpriority="high" width="1920" height="1080" />
           </div>
-          
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="max-w-3xl">
               <span className="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-800 font-black text-xs mb-6 border border-slate-200 uppercase tracking-widest">
@@ -135,7 +131,7 @@ const Decorative = () => {
           </div>
         </section>
 
-        {/* --- BENEFITS --- */}
+        {/* BENEFITS */}
         <section className="py-24 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, idx) => (
@@ -148,12 +144,11 @@ const Decorative = () => {
           </div>
         </section>
 
-        {/* --- THE FILM COLLECTION SECTION --- */}
+        {/* FILM COLLECTION */}
         <section id="film-collection" className="py-24 bg-slate-950 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                {/* FIXED: Changed text color to white for visibility on dark bg */}
                 <h2 className="text-5xl font-black text-white uppercase italic leading-none">The Film Collection</h2>
                 <div className="w-24 h-2 bg-indigo-600 mt-4" />
               </div>
@@ -161,7 +156,6 @@ const Decorative = () => {
                 Explore hundreds of patterns from premium architectural brands like <strong className="text-white">3M Fasara</strong> and <strong className="text-white">Madico</strong>.
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filmLibrary.map((category, idx) => (
                 <div key={idx} className="p-8 bg-white border border-slate-200 hover:border-indigo-500 transition-all group shadow-sm hover:shadow-xl flex flex-col justify-between">
@@ -188,18 +182,10 @@ const Decorative = () => {
           </div>
         </section>
 
-        {/* --- CUSTOM DESIGN SECTION --- */}
+        {/* CUSTOM DESIGN */}
         <section className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative">
-                <img 
-                  alt="Custom glass branding and graphics" 
-                  className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" 
-                  src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20210413_115512-1-Wb1kK.jpg" 
-                  width="800" height="600" loading="lazy"
-                />
-              </div>
               <div>
                 <h2 className="text-5xl font-black text-slate-950 mb-8 uppercase leading-tight">
                   Custom <span className="text-indigo-600 italic text-6xl block">Graphics</span>
@@ -219,17 +205,13 @@ const Decorative = () => {
           </div>
         </section>
 
-        {/* --- SITEMAP-ALIGNED SERVICE AREAS --- */}
+        {/* SERVICE AREAS */}
         <section className="py-20 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-sm font-black text-slate-600 mb-10 uppercase tracking-[0.3em]">Licensed Statewide Service</h2>
             <div className="flex flex-wrap justify-center gap-2">
               {cities.map(city => (
-                <Link 
-                  key={city.slug} 
-                  to={`/service-areas/${city.slug}`}
-                  className="px-4 py-2 bg-white border border-slate-200 text-[10px] font-black text-slate-600 uppercase hover:border-slate-950 hover:text-slate-950 transition-all shadow-sm"
-                >
+                <Link key={city.slug} to={`/service-areas/${city.slug}`} className="px-4 py-2 bg-white border border-slate-200 text-[10px] font-black text-slate-600 uppercase hover:border-slate-950 hover:text-slate-950 transition-all shadow-sm">
                   {city.name}
                 </Link>
               ))}
@@ -237,10 +219,9 @@ const Decorative = () => {
           </div>
         </section>
 
-        {/* --- CTA SECTION --- */}
+        {/* CTA */}
         <section className="py-24 bg-slate-950 text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            {/* FIXED: Ensured text-white is applied to heading */}
             <h2 className="text-5xl md:text-7xl font-black mb-10 uppercase italic text-white">Ready to Transform Your Glass?</h2>
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-12 h-20 text-2xl font-black transition-transform hover:scale-105 rounded-none">

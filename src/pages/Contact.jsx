@@ -1,11 +1,16 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Phone, Mail, Zap } from "lucide-react";
 import ContactFormSection from "@/components/contact/ContactFormSection";
 import ContactMap from "@/components/contact/ContactMap";
 
 const Contact = () => {
   const rocNumber = "315259";
+  const pageTitle = "Contact Phoenix Window Tinting Experts | Arizona House of Film";
+  const metaDescription =
+    "Contact Arizona House of Film for commercial and residential window tinting in Phoenix. Licensed, bonded, insured. Call 480-788-1591 for a free estimate.";
+  const canonicalUrl = "https://arizonahouseoffilm.com/contact";
+  const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -16,32 +21,36 @@ const Contact = () => {
         name: "How do I get a quote for window tinting?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can get a free quote by filling out the contact form, calling 480-788-1591, or emailing arizonahouseoffilm@gmail.com."
-        }
+          text: "You can get a free quote by filling out the contact form, calling 480-788-1591, or emailing arizonahouseoffilm@gmail.com.",
+        },
       },
       {
         "@type": "Question",
         name: "What areas do you service?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We proudly serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, and the entire state of Arizona."
-        }
-      }
-    ]
+          text: "We proudly serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, and the entire state of Arizona.",
+        },
+      },
+    ],
   };
 
   return (
     <>
       <Helmet>
-        <title>Contact Phoenix Window Tinting Experts | Arizona House of Film</title>
-        <meta
-          name="description"
-          content="Contact Arizona House of Film for commercial and residential window tinting in Phoenix. Licensed, bonded, insured. Call 480-788-1591 for a free estimate."
-        />
-        <link rel="canonical" href="https://arizonahouseoffilm.com/contact" />
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <main className="bg-slate-950 min-h-screen text-white selection:bg-green-500 selection:text-slate-950">
@@ -57,12 +66,10 @@ const Contact = () => {
             <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-[0.2em]">
               Licensed • Bonded • ROC #{rocNumber}
             </span>
-
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.85] tracking-tighter mb-8">
               Phoenix Window Tinting <br />
               <span className="text-green-500 italic">Contact Experts</span>
             </h1>
-
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl font-medium leading-relaxed">
               Commercial and residential window film solutions across Arizona.
               Contact our team for specifications, site assessments, and rapid quotes.
@@ -78,19 +85,14 @@ const Contact = () => {
               {/* LEFT SIDEBAR */}
               <div className="lg:col-span-4 p-8 md:p-12 bg-slate-950 border-r border-white/10">
                 <div className="space-y-12">
-
                   <div>
                     <h3 className="text-green-500 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
                       <Phone size={14} /> Direct Line
                     </h3>
-                    <a
-                      href="tel:480-788-1591"
-                      className="text-3xl font-black hover:text-green-400 transition-colors"
-                    >
+                    <a href="tel:480-788-1591" className="text-3xl font-black hover:text-green-400 transition-colors">
                       480-788-1591
                     </a>
                   </div>
-
                   <div>
                     <h3 className="text-green-500 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
                       <Mail size={14} /> Project Desk
@@ -102,23 +104,19 @@ const Contact = () => {
                       arizonahouseoffilm@gmail.com
                     </a>
                   </div>
-
                   <div className="pt-12 border-t border-white/5">
                     <div className="flex items-start gap-4">
                       <div className="p-2 bg-green-500/10 rounded-lg">
                         <Zap className="text-green-500" size={20} />
                       </div>
                       <div>
-                        <p className="font-black uppercase text-sm italic">
-                          Rapid Quote System
-                        </p>
+                        <p className="font-black uppercase text-sm italic">Rapid Quote System</p>
                         <p className="text-slate-400 text-sm mt-1">
                           Commercial audits typically delivered within 24 hours.
                         </p>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
 
@@ -133,7 +131,6 @@ const Contact = () => {
                     to schedule a site visit or consultation.
                   </p>
                 </div>
-
                 <ContactFormSection />
               </div>
 
@@ -144,7 +141,6 @@ const Contact = () => {
         {/* SERVICE AREA MAP */}
         <section className="py-20 md:py-24 border-t border-white/5 bg-slate-950">
           <div className="max-w-7xl mx-auto px-6">
-
             <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
               <div>
                 <h2 className="text-3xl md:text-4xl font-black uppercase italic tracking-tighter">
@@ -156,11 +152,9 @@ const Contact = () => {
                 Statewide Arizona Coverage
               </p>
             </div>
-
             <div className="aspect-video w-full border-4 border-slate-900 shadow-2xl">
               <ContactMap />
             </div>
-
           </div>
         </section>
 

@@ -1,38 +1,75 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { Phone, Mail, Zap } from "lucide-react";
-import ContactFormSection from "@/components/contact/ContactFormSection";
+import { Phone, Mail, MapPin, CheckCircle, Shield, Award, Users } from "lucide-react";
+import ContactForm from "@/components/contact/ContactForm";
 import ContactMap from "@/components/contact/ContactMap";
 
 const Contact = () => {
-  const rocNumber = "314088";
-  const pageTitle = "Contact Phoenix Window Tinting Experts | Arizona House of Film";
+  const pageTitle = "Contact Arizona House of Film | Free Quote | Phoenix, AZ | 480-788-1591";
   const metaDescription =
-    "Contact Arizona House of Film for commercial and residential window tinting in Phoenix. Licensed, bonded, insured. Call 480-788-1591 for a free estimate.";
+    "Contact Arizona House of Film for a free window tinting quote in Phoenix, AZ. Licensed ROC #314088. Call 480-788-1591 or fill out our form for a 24-hour response.";
   const canonicalUrl = "https://arizonahouseoffilm.com/contact";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
-  const faqSchema = {
+  const contactPageSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "How do I get a quote for window tinting?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "You can get a free quote by filling out the contact form, calling 480-788-1591, or emailing arizonahouseoffilm@gmail.com.",
-        },
+    "@type": "ContactPage",
+    name: "Contact Arizona House of Film",
+    url: canonicalUrl,
+    description: metaDescription,
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: "Arizona House of Film",
+      url: "https://arizonahouseoffilm.com",
+      telephone: "+1-480-788-1591",
+      email: "arizonahouseoffilm@gmail.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Phoenix",
+        addressRegion: "AZ",
+        addressCountry: "US",
       },
-      {
-        "@type": "Question",
-        name: "What areas do you service?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We proudly serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, and the entire state of Arizona.",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "07:00",
+          closes: "18:00",
         },
-      },
-    ],
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Saturday"],
+          opens: "08:00",
+          closes: "14:00",
+        },
+      ],
+    },
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Arizona House of Film",
+    url: "https://arizonahouseoffilm.com",
+    telephone: "+1-480-788-1591",
+    email: "arizonahouseoffilm@gmail.com",
+    image: ogImage,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Phoenix",
+      addressRegion: "AZ",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 33.4484,
+      longitude: -112.074,
+    },
+    areaServed: {
+      "@type": "State",
+      name: "Arizona",
+    },
+    priceRange: "$$",
   };
 
   return (
@@ -50,87 +87,157 @@ const Contact = () => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(contactPageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
-      <main className="bg-slate-950 min-h-screen text-white selection:bg-green-500 selection:text-slate-950">
+      <main>
 
-        {/* HERO */}
-        <section className="relative pt-24 md:pt-32 pb-16 md:pb-20 border-b border-white/5">
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950" />
-            <div className="h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
-          </div>
-
-          <div className="relative max-w-7xl mx-auto px-6">
+        {/* HERO — dark, short */}
+        <section className="bg-slate-950 pt-24 md:pt-32 pb-16 md:pb-20">
+          <div className="max-w-7xl mx-auto px-6">
             <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-[0.2em]">
-              Licensed • Bonded • ROC #{rocNumber}
+              Licensed • Bonded • ROC #314088
             </span>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.85] tracking-tighter mb-8">
-              Get a Free Window Tinting Quote | Phoenix, AZ | Call 480-788-1591
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter text-white mb-8">
+              Get Your Free<br />
+              <span className="text-green-400">Window Tinting</span><br />
+              Quote Today
             </h1>
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl font-medium leading-relaxed">
-              Commercial and residential window film solutions across Arizona.
-              Contact our team for specifications, site assessments, and rapid quotes.
-            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="tel:480-788-1591"
+                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-slate-950 font-black uppercase px-8 py-4 text-sm tracking-widest transition-colors"
+              >
+                <Phone size={16} /> Call 480-788-1591
+              </a>
+              <a
+                href="mailto:arizonahouseoffilm@gmail.com"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-green-500 text-white font-black uppercase px-8 py-4 text-sm tracking-widest transition-colors"
+              >
+                <Mail size={16} /> Email Us
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* CONTACT GRID */}
-        <section className="py-12 md:py-24">
+        {/* CONTACT INFO STRIP */}
+        <section className="bg-white border-b border-slate-100 py-12">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 bg-slate-900 border border-white/10 shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-              {/* LEFT SIDEBAR */}
-              <div className="lg:col-span-4 p-8 md:p-12 bg-slate-950 border-r border-white/10">
-                <div className="space-y-12">
-                  <div>
-                    <h3 className="text-green-500 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
-                      <Phone size={14} /> Direct Line
-                    </h3>
-                    <a href="tel:480-788-1591" className="text-3xl font-black hover:text-green-400 transition-colors">
-                      480-788-1591
-                    </a>
-                  </div>
-                  <div>
-                    <h3 className="text-green-500 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
-                      <Mail size={14} /> Project Desk
-                    </h3>
-                    <a
-                      href="mailto:arizonahouseoffilm@gmail.com"
-                      className="text-lg font-black break-all hover:text-green-400 transition-colors"
-                    >
-                      arizonahouseoffilm@gmail.com
-                    </a>
-                  </div>
-                  <div className="pt-12 border-t border-white/5">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 bg-green-500/10 rounded-lg">
-                        <Zap className="text-green-500" size={20} />
-                      </div>
-                      <div>
-                        <p className="font-black uppercase text-sm italic">Rapid Quote System</p>
-                        <p className="text-slate-400 text-sm mt-1">
-                          Commercial audits typically delivered within 24 hours.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-50 flex items-center justify-center">
+                  <Phone className="text-green-600" size={20} />
+                </div>
+                <div>
+                  <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Call Us</p>
+                  <a href="tel:480-788-1591" className="text-xl font-black text-slate-900 hover:text-green-600 transition-colors">
+                    480-788-1591
+                  </a>
+                  <p className="text-sm text-slate-500 mt-0.5">Mon–Fri 7am–6pm · Sat 8am–2pm</p>
                 </div>
               </div>
 
-              {/* RIGHT FORM */}
-              <div className="lg:col-span-8 p-8 md:p-16 bg-white text-slate-950">
-                <div className="mb-12">
-                  <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-6">
-                    Request Your <span className="text-green-600">Free Audit</span>
-                  </h2>
-                  <p className="text-slate-600 font-bold max-w-xl">
-                    Submit your project details and an estimator will contact you
-                    to schedule a site visit or consultation.
-                  </p>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-50 flex items-center justify-center">
+                  <Mail className="text-green-600" size={20} />
                 </div>
-                <ContactFormSection />
+                <div>
+                  <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Email</p>
+                  <a
+                    href="mailto:arizonahouseoffilm@gmail.com"
+                    className="text-base font-black text-slate-900 hover:text-green-600 transition-colors break-all"
+                  >
+                    arizonahouseoffilm@gmail.com
+                  </a>
+                  <p className="text-sm text-slate-500 mt-0.5">24-hour response guarantee</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-50 flex items-center justify-center">
+                  <MapPin className="text-green-600" size={20} />
+                </div>
+                <div>
+                  <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Service Area</p>
+                  <p className="text-xl font-black text-slate-900">Phoenix Metro</p>
+                  <p className="text-sm text-slate-500 mt-0.5">Statewide Arizona coverage</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* 2-COLUMN MAIN — How It Works + Form */}
+        <section className="bg-slate-50 py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+              {/* LEFT — How It Works + Trust Grid */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-slate-900 mb-10">
+                  What to Expect
+                </h2>
+
+                <div className="space-y-8 mb-14">
+                  {[
+                    {
+                      step: "01",
+                      title: "Submit Your Request",
+                      desc: "Fill out the form with your project type, location, and goals. Takes less than 2 minutes.",
+                    },
+                    {
+                      step: "02",
+                      title: "Free On-Site Audit",
+                      desc: "An estimator contacts you within 24 hours to schedule a site visit and provide a detailed quote.",
+                    },
+                    {
+                      step: "03",
+                      title: "Professional Installation",
+                      desc: "Our certified crew arrives on time, installs your film with precision, and cleans up completely.",
+                    },
+                  ].map(({ step, title, desc }) => (
+                    <div key={step} className="flex gap-5">
+                      <span className="flex-shrink-0 w-12 h-12 bg-green-600 text-white flex items-center justify-center font-black text-sm">
+                        {step}
+                      </span>
+                      <div>
+                        <p className="font-black uppercase text-sm tracking-wider text-slate-900 mb-1">{title}</p>
+                        <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* 2×2 Trust Grid */}
+                <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 mb-5">Why Arizona House of Film</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: Shield, title: "Licensed & Bonded", sub: "ROC #314088 verified" },
+                    { icon: Award, title: "15+ Years Experience", sub: "Commercial & residential" },
+                    { icon: CheckCircle, title: "24-Hour Guarantee", sub: "Rapid quote turnaround" },
+                    { icon: Users, title: "500+ Projects", sub: "Across Arizona" },
+                  ].map(({ icon: Icon, title, sub }) => (
+                    <div key={title} className="bg-white border border-slate-200 p-5">
+                      <Icon className="text-green-600 mb-3" size={20} />
+                      <p className="font-black uppercase text-xs tracking-wider text-slate-900 mb-0.5">{title}</p>
+                      <p className="text-slate-500 text-xs">{sub}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* RIGHT — Form */}
+              <div className="bg-white border border-slate-200 shadow-sm p-8 md:p-10">
+                <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-slate-900 mb-2">
+                  Request a Free Audit
+                </h2>
+                <p className="text-slate-500 text-sm mb-8 font-medium">
+                  Estimators contact you within 24 hours — no commitment required.
+                </p>
+                <ContactForm />
               </div>
 
             </div>
@@ -138,21 +245,26 @@ const Contact = () => {
         </section>
 
         {/* SERVICE AREA MAP */}
-        <section className="py-20 md:py-24 border-t border-white/5 bg-slate-950">
+        <ContactMap />
+
+        {/* BOTTOM TRUST BAR */}
+        <section className="bg-slate-950 py-10 border-t border-white/5">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-black uppercase italic tracking-tighter">
-                  Our Service Area
-                </h2>
-                <div className="h-1.5 w-24 bg-green-500 mt-4" />
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <p className="text-white font-black uppercase text-sm tracking-widest">Arizona House of Film</p>
+              <div className="flex flex-wrap justify-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-widest">
+                <span>ROC #314088</span>
+                <span>Licensed</span>
+                <span>Bonded</span>
+                <span>Insured</span>
+                <span>15+ Years</span>
               </div>
-              <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">
-                Statewide Arizona Coverage
-              </p>
-            </div>
-            <div className="aspect-video w-full border-4 border-slate-900 shadow-2xl">
-              <ContactMap />
+              <a
+                href="tel:480-788-1591"
+                className="text-green-400 font-black text-lg hover:text-green-300 transition-colors"
+              >
+                480-788-1591
+              </a>
             </div>
           </div>
         </section>

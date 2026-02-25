@@ -39,6 +39,7 @@ const Header = () => {
             {[
               { name: "Commercial", path: "/commercial-window-tinting" },
               { name: "Residential", path: "/residential-window-tinting" },
+              { name: "Industries", path: "/industries" },
               { name: "Solutions", path: "/solutions" },
               { name: "Contact", path: "/contact" },
             ].map((item) => (
@@ -112,6 +113,14 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
             >
               Residential
+            </Link>
+
+            <Link
+              to="/industries"
+              className="block text-lg font-bold text-gray-900 border-b border-gray-50 pb-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Industries
             </Link>
 
             <Link

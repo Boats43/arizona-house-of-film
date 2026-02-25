@@ -56,6 +56,7 @@ const CasperCloakingPage = lazy(() =>
   import("@/pages/films/CasperCloakingPage")
 );
 const IndustriesPage = lazy(() => import("@/pages/IndustriesPage"));
+const Industries = lazy(() => import("@/pages/Industries"));
 const Success = lazy(() => import("@/pages/Success"));
 const Solutions = lazy(() => import("@/pages/Solutions"));
 
@@ -153,6 +154,7 @@ function AppRoutes() {
           <Route path="/:slug-window-tinting" element={<CityPage />} />
 
           {/* SUPPORTING */}
+          <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:slug" element={<IndustriesPage />} />
           <Route path="/:category/:slug" element={<SupportingPage />} />
 

@@ -14,7 +14,10 @@
     { "source": "/residential", "destination": "/residential-window-tinting", "permanent": true },
     { "source": "/decorative", "destination": "/decorative-window-films", "permanent": true },
     { "source": "/energy-saving", "destination": "/energy-saving-window-films", "permanent": true },
-    { "source": "/safety-film", "destination": "/safety", "permanent": true }
+    { "source": "/safety-film", "destination": "/safety", "permanent": true },
+    { "source": "/anti-graffiti-film", "destination": "/anti-graffiti", "permanent": true },
+    { "source": "/anti-graffiti-window-film", "destination": "/anti-graffiti", "permanent": true },
+    { "source": "/services/anti-graffiti", "destination": "/anti-graffiti", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

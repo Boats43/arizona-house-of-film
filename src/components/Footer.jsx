@@ -41,6 +41,34 @@ const Footer = () => {
     name: 'Contact',
     path: '/contact'
   }];
+  const industriesLinks = [{
+    name: 'All Industries',
+    path: '/industries'
+  }, {
+    name: 'Office Buildings',
+    path: '/industries/office-buildings'
+  }, {
+    name: 'Retail Stores',
+    path: '/industries/retail-stores'
+  }, {
+    name: 'Restaurants',
+    path: '/industries/restaurants'
+  }, {
+    name: 'Medical Facilities',
+    path: '/industries/medical-facilities'
+  }, {
+    name: 'Schools',
+    path: '/industries/educational-institutions'
+  }, {
+    name: 'Government',
+    path: '/industries/government-buildings'
+  }, {
+    name: 'Hotels',
+    path: '/industries/hotels-hospitality'
+  }, {
+    name: 'Warehouses',
+    path: '/industries/warehouses'
+  }];
   const legalLinks = [{
     name: 'About Us',
     path: '/welcome'
@@ -70,7 +98,7 @@ const Footer = () => {
   }];
   return <footer className="bg-gray-900 text-white" itemScope itemType="https://schema.org/WPFooter">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
@@ -110,6 +138,18 @@ const Footer = () => {
             <p className="text-sm font-semibold tracking-wider uppercase text-gray-300">Explore</p>
             <ul className="mt-4 space-y-4">
               {secondaryLinks.map(item => <li key={item.name}>
+                  <Link to={item.path} className="text-base text-gray-400 hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>)}
+            </ul>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <p className="text-sm font-semibold tracking-wider uppercase text-gray-300">Industries</p>
+            <ul className="mt-4 space-y-4">
+              {industriesLinks.map(item => <li key={item.name}>
                   <Link to={item.path} className="text-base text-gray-400 hover:text-white">
                     {item.name}
                   </Link>

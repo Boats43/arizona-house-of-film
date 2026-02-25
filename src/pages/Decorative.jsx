@@ -35,7 +35,7 @@ const Decorative = () => {
     },
     {
       q: "Can you match a specific pattern or print?",
-      a: "Yes. We offer custom-printed film for logos, patterns, and branded graphics. Bring us your artwork and we'll handle the rest.",
+      a: "Yes. We have worked with design-focused firms including Coventry Design and Build and AZ Pro Group to match specific brand aesthetics across multiple locations. Whether it is a specific gradient, a custom-cut geometric pattern, or a precise brand color match, we replicate it consistently at scale.",
     },
     {
       q: "Does decorative film reduce heat as well as provide privacy?",
@@ -163,7 +163,7 @@ const Decorative = () => {
     },
     {
       title: 'I need branded graphics or a logo on my storefront glass',
-      copy: "Custom-cut vinyl and printed films turn plain storefront glass into branded marketing surfaces. Precision-cut logos, frosted panels with logo cutouts, full-color printed graphics — all removable and updatable.",
+      copy: "Custom-cut vinyl and printed films turn plain storefront glass into high-value marketing surfaces. We've executed precision branding rollouts for national and local leaders — from custom-cut logos for PetSmart and Yoga Six to decorative entry films for Super Chunk Sweets. We handle design, production, and installation end to end.",
       cta: 'Commercial Branding Solutions',
       link: '/commercial-window-tinting',
       external: false,
@@ -188,6 +188,7 @@ const Decorative = () => {
         'Executive suite frosting',
         'Casper Cloaking for screen security',
       ],
+      trusted: 'Trusted by: Wespac Construction, DNG Construction, On Q Financial, ASM America, Delta Construction, Menlo Group Commercial Real Estate, Transact Commercial Interiors',
       link: '/industries/office-buildings',
     },
     {
@@ -199,6 +200,7 @@ const Decorative = () => {
         'Waiting area glass',
         'Reception partitions',
       ],
+      trusted: 'Trusted by: Community Bridges Inc. (CBI), Banner Physical Therapy, Arizona Trauma Evaluations — HIPAA-compliant privacy frosting for clinical exam rooms and patient waiting areas.',
       link: '/industries/medical-facilities',
     },
     {
@@ -222,6 +224,7 @@ const Decorative = () => {
         'Bedroom privacy',
         'Sliding door frosting',
       ],
+      trusted: 'Trusted by: Camden Development, DMC Builders — clubhouse bathroom frosting, custom shower window privacy, entry sidelight privacy across North Scottsdale.',
       link: '/residential-window-tinting',
     },
   ];
@@ -402,7 +405,7 @@ const Decorative = () => {
                     <uc.icon className="w-6 h-6 text-indigo-600 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-lg font-black text-slate-950 uppercase mb-4">{uc.title}</h3>
-                  <ul className="space-y-2 mb-6 flex-grow">
+                  <ul className="space-y-2 mb-4 flex-grow">
                     {uc.uses.map((use, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-slate-600 font-medium">
                         <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 shrink-0" />
@@ -410,6 +413,11 @@ const Decorative = () => {
                       </li>
                     ))}
                   </ul>
+                  {uc.trusted && (
+                    <p className="text-[11px] text-slate-500 italic leading-relaxed mb-5 border-t border-slate-200 pt-4">
+                      {uc.trusted}
+                    </p>
+                  )}
                   <Link
                     to={uc.link}
                     className="text-indigo-600 font-black text-xs uppercase tracking-widest hover:text-indigo-800 transition-colors"
@@ -418,6 +426,38 @@ const Decorative = () => {
                   </Link>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SPECIALTY FROSTING CALLOUT */}
+        <section className="py-16 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="border-l-4 border-blue-500 pl-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-2 uppercase tracking-tight">
+                Beyond Standard Frost: Specialized Privacy Solutions
+              </h2>
+              <div className="w-16 h-1 bg-blue-500 mb-10" />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                  <h3 className="text-sm font-black text-blue-400 uppercase tracking-widest mb-3">Clubhouses &amp; Locker Rooms</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed font-medium">
+                    High-moisture resistant films for pool houses, gyms, and wet areas. Recently completed for Yoga Six across multiple Arizona locations.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-black text-blue-400 uppercase tracking-widest mb-3">Glass Partition Privacy Bands</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed font-medium">
+                    Modern center-band frosting provides privacy while seated but keeps the office feeling open — no full blackout. Executed for Transact Commercial Interiors tenant improvement projects.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-black text-blue-400 uppercase tracking-widest mb-3">Bathroom &amp; Shower Upgrades</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed font-medium">
+                    Avoid the $500+ cost of glass replacement. Architectural frost provides 100% moisture-safe privacy for shower windows and bathroom doors. Recently completed for residential clients across North Scottsdale.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

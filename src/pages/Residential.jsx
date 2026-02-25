@@ -7,10 +7,45 @@ import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
 
 const Residential = () => {
-  const pageTitle = "#1 Home Window Tinting in Arizona | Arizona House of Film";
-  const metaDescription = "Residential window tinting in Phoenix, Scottsdale & Mesa. Ceramic films block 84% heat, 99.9% UV. SRP/APS rebate ready. Licensed ROC #314088. Get a free estimate today.";
+  const pageTitle = "Residential Window Tinting Phoenix AZ | Ceramic Solar Films | Arizona House of Film";
+  const metaDescription = "Professional residential window tinting in Phoenix, Scottsdale & Mesa. Ceramic films block 84% heat, 99.9% UV. SRP & APS rebate eligible. Licensed ROC #314088. Free estimates: 480-788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/residential-window-tinting";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
+
+  const allFaqItems = [
+    {
+      q: "How much does residential window tinting cost in Arizona?",
+      a: "Most Arizona homeowners pay $8–$18 per square foot installed, depending on film type and window size. We provide free, no-obligation estimates.",
+    },
+    {
+      q: "Will window film void my home warranty?",
+      a: "Quality films installed by certified professionals do not void standard home warranties. We use only manufacturer-certified products with their own warranties.",
+    },
+    {
+      q: "How long does home window tinting take?",
+      a: "A typical single-family home is completed in one day. Larger properties or custom film selections may take 2 days.",
+    },
+    {
+      q: "Can you tint sliding glass doors and skylights?",
+      a: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights.",
+    },
+    {
+      q: "Which windows should I prioritize for tinting?",
+      a: "South and west-facing windows receive the most direct Arizona sun and should be prioritized first. These windows drive the majority of your home's solar heat gain. East-facing windows are secondary. North-facing windows rarely need solar film but may benefit from privacy or decorative film.",
+    },
+    {
+      q: "Will window film affect my home's resale value?",
+      a: "Window film is considered a home improvement that adds value in Arizona. Buyers in Phoenix actively look for energy-efficient features. Ceramic film installations typically increase perceived home value and reduce time on market.",
+    },
+    {
+      q: "Do you offer a warranty on residential installs?",
+      a: "Yes. All residential installations include the manufacturer's warranty (15–25 years depending on film) plus our installation guarantee. If any film peels, bubbles, or fails due to installation, we fix it at no charge.",
+    },
+    {
+      q: "Can window film be installed on older single-pane windows?",
+      a: "Yes — single-pane windows actually benefit more from film than double-pane because they have less inherent insulation. We install on all glass types including single-pane, double-pane, tempered, laminated, and low-e glass.",
+    },
+  ];
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -21,11 +56,32 @@ const Residential = () => {
       "@type": "HomeAndConstructionBusiness",
       name: "Arizona House of Film",
       url: "https://arizonahouseoffilm.com",
-      telephone: "+1-480-788-1591"
+      telephone: "+1-480-788-1591",
     },
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,
-    url: canonicalUrl
+    url: canonicalUrl,
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Arizona House of Film",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.4",
+      reviewCount: "15",
+    },
   };
 
   const benefits = [
@@ -34,13 +90,61 @@ const Residential = () => {
     { icon: Eye, title: 'Enhanced Privacy', slug: 'enhanced-privacy', description: 'Enjoy daytime privacy while maintaining your view of the outdoors with our advanced one-way visibility films.' },
     { icon: Thermometer, title: 'Temperature Control', slug: 'temperature-control', description: 'Eliminate hot spots and maintain consistent temperatures throughout your home for total year-round comfort.' },
     { icon: Shield, title: 'Glare Reduction', slug: 'glare-reduction', description: 'Reduce annoying glare on TV screens and monitors while preserving your beautiful Arizona views.' },
-    { icon: Home, title: 'Increased Comfort', slug: 'increased-comfort', description: 'Create a cooler living environment by reducing total solar heat gain by up to 78%.' }
+    { icon: Home, title: 'Increased Comfort', slug: 'increased-comfort', description: 'Create a cooler living environment by reducing total solar heat gain by up to 78%.' },
   ];
 
   const filmTypes = [
     { name: 'Ceramic Solar Films', link: '/energy-saving-window-films', description: 'Highest heat rejection without the "mirror" look.', features: ['Extreme Heat Rejection', 'Non-Reflective', 'GPS/Signal Friendly', 'Lifetime Warranty'] },
     { name: 'Privacy & Decorative', link: '/decorative-window-films', description: 'Style meets function for bathrooms and entryways.', features: ['Frosted Options', 'Textured Designs', 'Daytime Privacy', 'Custom Patterns'] },
-    { name: 'Safety & Security', link: '/safety', description: 'Hold glass together during impact or break-in attempts.', features: ['Thick 8mil+ Film', 'Impact Resistant', 'Crystal Clear', 'UV Blocking'] }
+    { name: 'Safety & Security', link: '/safety', description: 'Hold glass together during impact or break-in attempts.', features: ['Thick 8mil+ Film', 'Impact Resistant', 'Crystal Clear', 'UV Blocking'] },
+  ];
+
+  const problemCards = [
+    {
+      title: 'Your rooms feel like an oven by 2pm',
+      copy: "South and west-facing windows receive 8+ hours of direct Arizona sun. Unprotected glass turns rooms into solar collectors. Ceramic film blocks 84% of that heat at the glass — before it enters your home.",
+      cta: 'See Solar Films',
+      link: '/energy-saving-window-films',
+    },
+    {
+      title: 'Your SRP or APS bill spikes $200–$400 every summer',
+      copy: "Window film reduces AC cooling load 20–30%, saving Arizona homeowners $250–$725 annually. SRP and APS both offer rebates for qualifying ceramic film installations.",
+      cta: 'Check Rebate Eligibility',
+      link: '/contact',
+    },
+    {
+      title: 'Your floors, furniture, and artwork are fading',
+      copy: "Arizona UV index hits 11 — the highest rating (extreme). UV rays cause 40% of all interior fading. Our films block 99.9% of UV year-round, protecting everything inside your home.",
+      cta: 'See UV Protection',
+      link: '/energy-saving-window-films',
+    },
+    {
+      title: 'You have no privacy without closing the blinds',
+      copy: "Frosted and one-way films give you full daytime privacy while maintaining your view outward and keeping full natural light. No blinds, no darkness.",
+      cta: 'See Privacy Films',
+      link: '/decorative-window-films',
+    },
+    {
+      title: 'Your home has been broken into or targeted',
+      copy: "8–12 mil safety film holds shattered glass in place, turning a 10-second smash-and-grab into a 3–5 minute forced entry — long enough for most criminals to abandon the attempt.",
+      cta: 'See Security Films',
+      link: '/safety',
+    },
+    {
+      title: 'Glare makes your TV and screens unwatchable',
+      copy: "Ceramic film cuts glare on screens by up to 80% without darkening your rooms. You keep the view and the natural light — without the glare.",
+      cta: 'See Glare Solutions',
+      link: '/energy-saving-window-films',
+    },
+  ];
+
+  const filmSelectorRows = [
+    { type: 'Ceramic 5%', heat: '84%', uv: '99.9%', light: 'Low', bestFor: 'South/west-facing rooms, max heat rejection', price: '$12/sq ft' },
+    { type: 'Ceramic 35%', heat: '74%', uv: '99.9%', light: 'Moderate', bestFor: 'Living rooms, balanced light and heat', price: '$10/sq ft' },
+    { type: 'Ceramic 50%', heat: '60%', uv: '99.9%', light: 'High', bestFor: 'North-facing, light preservation priority', price: '$8/sq ft' },
+    { type: 'Dual Reflective', heat: '79%', uv: '99.9%', light: 'Moderate', bestFor: 'Privacy + heat, street-facing windows', price: '$11/sq ft' },
+    { type: 'Frosted Privacy', heat: 'Moderate', uv: '99%', light: 'Diffused', bestFor: 'Bathrooms, entryways, sidelights', price: '$9/sq ft' },
+    { type: 'Safety 8 mil', heat: 'Moderate', uv: '99%', light: 'Clear', bestFor: 'Ground floor, entry doors, garage', price: '$14/sq ft' },
   ];
 
   return (
@@ -59,16 +163,8 @@ const Residential = () => {
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
-            { "@type": "Question", name: "How much does residential window tinting cost in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Most Arizona homeowners pay $8–$18 per square foot installed, depending on film type and window size. We provide free, no-obligation estimates." } },
-            { "@type": "Question", name: "Will window film void my home warranty?", acceptedAnswer: { "@type": "Answer", text: "Quality films installed by certified professionals do not void standard home warranties. We use only manufacturer-certified products with their own warranties." } },
-            { "@type": "Question", name: "How long does home window tinting take?", acceptedAnswer: { "@type": "Answer", text: "A typical single-family home is completed in one day. Larger properties or custom film selections may take 2 days." } },
-            { "@type": "Question", name: "Can you tint sliding glass doors and skylights?", acceptedAnswer: { "@type": "Answer", text: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights." } },
-          ]
-        })}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
 
       <main>
@@ -106,6 +202,38 @@ const Residential = () => {
             <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
               Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088.
             </p>
+          </div>
+        </section>
+
+        {/* PROBLEM-FIRST SECTION */}
+        <section className="py-24 bg-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                Is Your Home Suffering From Any of These?
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto">
+                Arizona's climate creates specific problems standard glass cannot handle.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {problemCards.map((card, idx) => (
+                <div
+                  key={idx}
+                  className="bg-slate-900 border border-slate-800 hover:border-green-500/40 p-8 transition-all group"
+                >
+                  <h3 className="text-base font-black text-white uppercase mb-3 leading-snug">{card.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed font-medium mb-5">{card.copy}</p>
+                  <Link
+                    to={card.link}
+                    className="text-green-500 font-black text-xs uppercase tracking-widest hover:text-green-400 transition-colors"
+                  >
+                    {card.cta} →
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -166,6 +294,88 @@ const Residential = () => {
           </div>
         </section>
 
+        {/* FILM SELECTOR */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 uppercase tracking-tight">
+                Which Film Is Right for Your Home?
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Arizona homes need different films depending on window orientation and primary concern.
+              </p>
+            </div>
+            <div className="overflow-x-auto rounded-none shadow-sm">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-slate-900 text-white">
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Film Type</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Heat Blocked</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">UV Blocked</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Visible Light</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Best For</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Starting Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filmSelectorRows.map((row, i) => (
+                    <tr
+                      key={i}
+                      className={`border-b border-slate-100 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50'} hover:bg-green-50 transition-colors`}
+                    >
+                      <td className="px-5 py-4 font-black text-slate-900 whitespace-nowrap">{row.type}</td>
+                      <td className="px-5 py-4 font-bold text-green-600 whitespace-nowrap">{row.heat}</td>
+                      <td className="px-5 py-4 font-bold text-green-600 whitespace-nowrap">{row.uv}</td>
+                      <td className="px-5 py-4 text-slate-600 whitespace-nowrap">{row.light}</td>
+                      <td className="px-5 py-4 text-slate-600">{row.bestFor}</td>
+                      <td className="px-5 py-4 font-black text-slate-900 whitespace-nowrap">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-slate-600 mt-6 leading-relaxed font-medium">
+              Not sure which to choose? We assess your window orientation, glass type, and goals — free.{' '}
+              <a href="tel:480-788-1591" className="text-green-600 font-bold hover:underline">Call 480-788-1591</a>{' '}
+              or{' '}
+              <Link to="/contact" className="text-green-600 font-bold hover:underline">submit a project online</Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* ROI SECTION */}
+        <section className="py-24 bg-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                What's the ROI on Window Film for an Arizona Home?
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium">
+                Real numbers for a typical 2,000 sq ft Phoenix home.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              {[
+                { stat: '$250–$725', label: 'Saved annually on SRP/APS cooling costs' },
+                { stat: '2–4 Years', label: 'Payback period — fastest ROI in the country due to Arizona heat' },
+                { stat: '15–25 Years', label: 'Film lifespan with manufacturer warranty' },
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-900 border border-slate-800 p-8 text-center">
+                  <p className="text-4xl md:text-5xl font-black text-green-500 mb-3 leading-tight">{item.stat}</p>
+                  <p className="text-slate-400 font-bold uppercase text-xs tracking-widest leading-relaxed">{item.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-slate-900 border border-slate-800 p-8 max-w-4xl mx-auto">
+              <p className="text-slate-300 text-base leading-relaxed font-medium">
+                Arizona's extreme climate means window film pays back faster here than anywhere else in the country. A northern climate homeowner might wait 8–12 years for ROI. In Phoenix, most installs pay for themselves in 2–4 years — then save money every year after that. SRP and APS rebates shorten the payback period further.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* SRP/APS REBATE CALLOUT */}
         <section className="py-12 bg-green-600 text-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -192,7 +402,7 @@ const Residential = () => {
                 {[
                   { n: '01', t: 'Precision Measure', d: 'We use laser-precision tools to ensure every window film is cut to the exact millimeter of your home glass.' },
                   { n: '02', t: 'Glass Preparation', d: 'A multi-stage mechanical decontamination of your glass ensures a lifetime bond without bubbles or peeling.' },
-                  { n: '03', t: 'Expert Cure', d: 'Our technicians utilize specialized heat-forming techniques to ensure immediate clarity and performance.' }
+                  { n: '03', t: 'Expert Cure', d: 'Our technicians utilize specialized heat-forming techniques to ensure immediate clarity and performance.' },
                 ].map((step, i) => (
                   <div key={i} className="flex gap-8">
                     <span className="text-5xl font-black text-slate-200">{step.n}</span>
@@ -226,12 +436,7 @@ const Residential = () => {
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-12">Residential Tinting FAQ</h2>
             <div className="space-y-8">
-              {[
-                { q: "How much does residential window tinting cost in Arizona?", a: "Most Arizona homeowners pay $8–$18 per square foot installed, depending on film type and window size. We provide free, no-obligation estimates." },
-                { q: "Will window film void my home warranty?", a: "Quality films installed by certified professionals do not void standard home warranties. We use only manufacturer-certified products with their own warranties." },
-                { q: "How long does home window tinting take?", a: "A typical single-family home is completed in one day. Larger properties or custom film selections may take 2 days." },
-                { q: "Can you tint sliding glass doors and skylights?", a: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights." },
-              ].map((faq, i) => (
+              {allFaqItems.map((faq, i) => (
                 <div key={i} className="border-b border-gray-200 pb-8">
                   <h3 className="font-black text-slate-900 uppercase text-sm mb-3">{faq.q}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed font-medium">{faq.a}</p>

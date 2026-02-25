@@ -4,14 +4,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Building,
-  Briefcase,
-  Utensils,
-  School,
-  Stethoscope,
-  Hotel,
-  Warehouse,
   Zap,
   ShieldCheck,
+  Shield,
+  Stethoscope,
+  Warehouse,
+  ShoppingBag,
+  Home,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cities } from "@/data/cities";
@@ -19,21 +18,94 @@ import ContactFormSection from "@/components/contact/ContactFormSection";
 
 const Commercial = () => {
   const rocNumber = "314088";
-  const pageTitle = "Commercial Window Tinting Phoenix | Arizona House of Film";
-  const metaDescription = `Commercial window film installation in Phoenix & Scottsdale. Industrial-grade solar control, privacy & security films. Licensed ROC #${rocNumber}. Free estimates: 480-788-1591.`;
+  const pageTitle =
+    "Commercial Window Tinting Phoenix AZ | 700+ Projects | ROC #314088 | Arizona House of Film";
+  const metaDescription = `Arizona's most experienced commercial window film contractor. 700+ completed projects across Maricopa and Pima counties since 2012. Licensed ROC #${rocNumber}. Solar control, security, privacy & decorative film. Free estimates: 480-788-1591.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
+  const trustedNames = [
+    "State of Arizona",
+    "Skechers USA",
+    "Grand Canyon University",
+    "Valley Metro",
+    "Coca-Cola",
+    "Navy Recruitment Center",
+    "PetSmart",
+    "Love's Travel Stop",
+    "Wespac Construction",
+    "Renaissance Companies",
+    "Delta Construction",
+    "G3 Glass Granite Group",
+    "Community Bridges Inc.",
+    "Genuine Parts Company",
+    "FCI Constructors",
+    "Camden Development",
+    "DNG Construction",
+    "Willmeng Construction",
+    "Banner Physical Therapy",
+    "ASU / MacroTechnology Works",
+    "Glendale Fire Station",
+    "Frank Lloyd Wright Foundation",
+    "Boeing",
+    "Sherwin-Williams",
+    "Clune Construction",
+  ];
+
   const commercialFaqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      { "@type": "Question", name: "How long does commercial window film installation take?", acceptedAnswer: { "@type": "Answer", text: "Most commercial projects are completed in 1–3 days depending on square footage. We work around your business hours to minimize disruption." } },
-      { "@type": "Question", name: "Do commercial window films meet building codes in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Yes. We install films that comply with Arizona building codes and can provide documentation for permit applications when required." } },
-      { "@type": "Question", name: "What's the ROI on commercial window film?", acceptedAnswer: { "@type": "Answer", text: "Typical commercial installations pay back within 2–5 years through energy savings alone. Security film adds additional insurance value." } },
-      { "@type": "Question", name: "Can window film be applied to any commercial glass?", acceptedAnswer: { "@type": "Answer", text: "Most standard commercial glass accepts film. We assess your glass type during the free estimate to recommend the correct product and ensure warranty validity." } },
+      {
+        "@type": "Question",
+        name: "How long does commercial window film installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most commercial projects are completed in 1–3 days depending on square footage. We work around your business hours to minimize disruption.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do commercial window films meet building codes in Arizona?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We install films that comply with Arizona building codes and can provide documentation for permit applications when required.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What's the ROI on commercial window film?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Typical commercial installations pay back within 2–5 years through energy savings alone. Security film adds additional insurance value.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can window film be applied to any commercial glass?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most standard commercial glass accepts film. We assess your glass type during the free estimate to recommend the correct product and ensure warranty validity.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Have you worked on projects similar to mine?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "With over 700 completed commercial projects across Maricopa and Pima counties, the answer is almost certainly yes. From small storefronts to federal recruitment centers, university campuses, and large distribution facilities like Peyton's Distribution Center, we have documented experience across every commercial building type in Arizona.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are you licensed for high-liability commercial environments?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088, is fully bonded and insured, and meets procurement requirements for government and institutional projects. We have completed work for the State of Arizona, Glendale Fire Station 152, Grand Canyon University, and ASU — environments where licensing documentation is mandatory.",
+        },
+      },
     ],
   };
 
@@ -81,14 +153,164 @@ const Commercial = () => {
     },
   ];
 
-  const industries = [
-    { name: "Office Buildings", icon: Briefcase, link: "/industries/office-buildings" },
-    { name: "Retail Stores", icon: Building, link: "/industries/retail-stores" },
-    { name: "Restaurants", icon: Utensils, link: "/industries/restaurants" },
-    { name: "Medical Facilities", icon: Stethoscope, link: "/industries/medical-facilities" },
-    { name: "Schools & Universities", icon: School, link: "/industries/educational-institutions" },
-    { name: "Hotels & Hospitality", icon: Hotel, link: "/industries/hotels-hospitality" },
-    { name: "Warehouses", icon: Warehouse, link: "/industries/warehouses" },
+  const industrySolutions = [
+    {
+      icon: Building,
+      title: "General Construction & Tenant Improvement",
+      body: "Arizona House of Film is the preferred window film subcontractor for the Valley's leading general contractors. We work within your critical path schedule, coordinate directly with project managers, and meet all architectural specifications including LEED certification and Arizona energy codes. From ground-up builds to tenant improvement (TI) projects, we deliver on time and on spec.",
+      partners: [
+        "Wespac Construction",
+        "Renaissance Companies",
+        "Delta Construction",
+        "G3 Glass Granite Group",
+        "DNG Construction",
+        "Clune Construction",
+        "FCI Constructors",
+        "Willmeng Construction",
+        "ForeSite Design & Construction",
+      ],
+      solution:
+        "Architectural solar films, decorative privacy glass, safety film for code compliance",
+    },
+    {
+      icon: Shield,
+      title: "Government, Military & Municipal Facilities",
+      body: "Licensed, bonded, and experienced in high-security government environments. We provide fragmentation retention films, privacy solutions for sensitive infrastructure, and anti-graffiti protection for public-facing buildings. Our work meets GSA standards and Arizona procurement requirements — fully documented for compliance review.",
+      partners: [
+        "State of Arizona",
+        "State of Arizona Department of Corrections",
+        "Glendale Fire Station 152",
+        "Navy Recruitment Center",
+        "Valley Metro",
+        "City of Buckeye",
+        "City of Phoenix Facilities",
+      ],
+      solution:
+        "Blast-mitigation films, GSA-compliant security film, anti-graffiti protection, privacy frosting",
+    },
+    {
+      icon: Stethoscope,
+      title: "Healthcare Facilities & Educational Institutions",
+      body: "Privacy and safety are non-negotiable in medical and educational environments. We install HIPAA-compliant frosted and one-way privacy films for clinics, waiting rooms, and patient areas. For schools and childcare centers, our 8-mil and 12-mil security films hold shattered glass in place — a proven delay-of-entry barrier that gives students and staff critical time to reach safety.",
+      partners: [
+        "Community Bridges Inc.",
+        "Yad B'Yad Children's Center",
+        "Maxwell Preschool Academy",
+        "Catalina Animal Hospital",
+        "Humanities and Sciences Academy",
+        "SDC Clinical",
+        "Grand Canyon University",
+        "ASU / MacroTechnology Works",
+        "Banner Physical Therapy",
+        "Applied Hearing Solutions",
+        "Arizona Trauma Evaluations & Treatment",
+      ],
+      solution:
+        "HIPAA-compliant privacy film, 8-mil and 12-mil security film, UV protection for sensitive equipment",
+    },
+    {
+      icon: Warehouse,
+      title: "Industrial Facilities, Warehouses & Distribution Centers",
+      body: "Large industrial spaces in Phoenix face some of the highest solar heat loads in the country. Unprotected warehouse glass can raise interior temperatures 15–20°F above ambient — damaging inventory, straining HVAC systems, and creating unsafe working conditions. Our high-performance ceramic solar films reduce heat gain by up to 84%, protecting product and cutting energy costs significantly.",
+      partners: [
+        "Peyton's Distribution Center",
+        "Genuine Parts Company",
+        "Laser Components DG",
+        "Isagenix International",
+        "Central Freight Lines",
+      ],
+      solution:
+        "High-performance ceramic solar film, safety film for OSHA compliance, UV protection for inventory",
+    },
+    {
+      icon: ShoppingBag,
+      title: "Retail, Hospitality & Food Service",
+      body: "Arizona retail and hospitality businesses face a dual challenge: keeping customers comfortable in extreme heat while protecting merchandise and interiors from UV damage. Our solar control films reduce ambient temperature near windows, anti-glare films improve product visibility, and UV-blocking films protect inventory from fading. We minimize disruption with after-hours and weekend installation scheduling.",
+      partners: [
+        "Skechers USA",
+        "PetSmart",
+        "Love's Travel Stop",
+        "Coca-Cola",
+        "Heroes Pub and Grub",
+        "Golden Thai Kitchen",
+        "Super Chunk Sweets & Treats",
+        "Best Dispensary",
+        "A Bake Shop",
+        "Yoga Six",
+        "Glacier House Hotels",
+        "Element Scottsdale at Skysong",
+        "The Enclave at Gilbert Senior Living",
+        "2nd Swing",
+      ],
+      solution:
+        "Solar control film, anti-graffiti protection, decorative branding film, UV merchandise protection",
+    },
+    {
+      icon: Home,
+      title: "Property Management, HOA & Real Estate",
+      body: "Arizona's property management sector requires consistent, professional window film solutions across multi-unit and commercial properties. We offer bulk project pricing, uniform film specification across all units, and coordination with building management to minimize tenant disruption. Our work for Camden Development, Menlo Group, and Associated Asset Management demonstrates our capability at scale.",
+      partners: [
+        "Camden Development",
+        "Menlo Group Commercial Real Estate",
+        "Associated Asset Management",
+        "CRE Property Advisors",
+        "North Scottsdale Dental",
+        "Driggs Title Agency",
+        "Parry Holdings",
+        "Capital Accounting",
+        "Sun Eagle Corporation",
+      ],
+      solution:
+        "Bulk pricing for 10+ units, consistent ceramic film specification, SRP/APS energy rebates",
+    },
+  ];
+
+  const specializedServices = [
+    {
+      title: "Custom Decorative & Branding Film",
+      body: "We brand glass. From high-fidelity vinyl graphics to custom privacy frosting with logo cutouts, we transform plain glass into a marketing surface. Recent commercial branding projects: PetSmart glass graphic install, Yoga Six full privacy frosting, Super Chunk Sweets decorative entry film, Branded Group multi-location graphics rollout.",
+      link: "/decorative-window-films",
+      linkText: "View Decorative Film Services",
+    },
+    {
+      title: "The Arizona Skylight Problem",
+      body: "Skylights are heat magnets. In Phoenix and Scottsdale, unfilmed skylights can raise interior temperatures by 20°F+ during peak summer hours. We provide specialized skylight frosting and ceramic heat-blocking films that eliminate the midday heat spike without sacrificing natural light. Trusted by Menlo Group Commercial Real Estate and On Q Financial for skylight solutions.",
+      link: "/energy-saving-window-films",
+      linkText: "View Energy-Saving Film Solutions",
+    },
+    {
+      title: "Anti-Graffiti & Public Works",
+      body: "Protect storefront and public-facing glass from etching and spray paint with sacrificial anti-graffiti film. When vandalized, peel and replace the film — not the glass. Cost per incident drops from $800–$3,000 in glass replacement to under $200 in film replacement. Trusted by Valley Metro for transit infrastructure protection.",
+      link: "/anti-graffiti",
+      linkText: "View Anti-Graffiti Film",
+    },
+  ];
+
+  const faqItems = [
+    {
+      q: "How long does commercial window film installation take?",
+      a: "Most commercial projects are completed in 1–3 days depending on square footage. We work around your business hours to minimize disruption.",
+    },
+    {
+      q: "Do commercial window films meet building codes in Arizona?",
+      a: "Yes. We install films that comply with Arizona building codes and can provide documentation for permit applications when required.",
+    },
+    {
+      q: "What's the ROI on commercial window film?",
+      a: "Typical commercial installations pay back within 2–5 years through energy savings alone. Security film adds additional insurance value.",
+    },
+    {
+      q: "Can window film be applied to any commercial glass?",
+      a: "Most standard commercial glass accepts film. We assess your glass type during the free estimate to recommend the correct product and ensure warranty validity.",
+    },
+    {
+      q: "Have you worked on projects similar to mine?",
+      a: "With over 700 completed commercial projects across Maricopa and Pima counties, the answer is almost certainly yes. From small storefronts to federal recruitment centers, university campuses, and large distribution facilities like Peyton's Distribution Center, we have documented experience across every commercial building type in Arizona.",
+    },
+    {
+      q: "Are you licensed for high-liability commercial environments?",
+      a: "Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088, is fully bonded and insured, and meets procurement requirements for government and institutional projects. We have completed work for the State of Arizona, Glendale Fire Station 152, Grand Canyon University, and ASU — environments where licensing documentation is mandatory.",
+    },
   ];
 
   return (
@@ -158,6 +380,27 @@ const Commercial = () => {
           </div>
         </section>
 
+        {/* TRUSTED BY BAR */}
+        <section className="py-10 bg-slate-950 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-6 text-center">
+              Trusted by 700+ Arizona Organizations
+            </p>
+            <div className="flex flex-wrap justify-center gap-y-3">
+              {trustedNames.map((name, i) => (
+                <React.Fragment key={name}>
+                  <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide whitespace-nowrap px-3 py-1">
+                    {name}
+                  </span>
+                  {i < trustedNames.length - 1 && (
+                    <span className="text-slate-700 self-center select-none">·</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* AUTHORITY */}
         <section className="py-12 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -195,22 +438,67 @@ const Commercial = () => {
           </div>
         </section>
 
-        {/* INDUSTRIES */}
+        {/* INDUSTRY SOLUTIONS */}
         <section className="py-24 bg-slate-950 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 className="text-4xl font-black text-white mb-16 uppercase italic">Tailored for Every Industry</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-              {industries.map((ind) => (
-                <Link
-                  key={ind.name}
-                  to={ind.link}
-                  className="flex flex-col items-center justify-center aspect-square p-4 bg-slate-900 border border-slate-800 rounded-none hover:border-green-500 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-all group"
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                Commercial Window Film for Every Industry
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium max-w-3xl mx-auto">
+                Arizona House of Film has completed 700+ commercial projects across Maricopa and Pima counties since 2012. ROC #314088.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {industrySolutions.map((card, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -4 }}
+                  className="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"
                 >
-                  <ind.icon className="w-10 h-10 mb-4 text-slate-500 group-hover:text-green-500 transition-colors" />
-                  <span className="text-[10px] font-black text-slate-400 text-center uppercase tracking-tighter leading-tight group-hover:text-white">
-                    {ind.name}
-                  </span>
-                </Link>
+                  <div className="flex items-start gap-5 mb-5">
+                    <div className="w-12 h-12 bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-green-600 transition-colors">
+                      <card.icon className="w-6 h-6 text-green-500 group-hover:text-white transition-colors" />
+                    </div>
+                    <h3 className="text-lg font-black text-white uppercase leading-tight pt-1">{card.title}</h3>
+                  </div>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-5 font-medium">{card.body}</p>
+                  <div className="mb-5">
+                    <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Key Partners</p>
+                    <p className="text-xs text-slate-500 leading-relaxed">{card.partners.join(" · ")}</p>
+                  </div>
+                  <div className="border-t border-slate-800 pt-4">
+                    <p className="text-xs font-black text-green-500 uppercase tracking-wider mb-1">Solutions</p>
+                    <p className="text-xs text-slate-400">{card.solution}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SPECIALIZED SERVICES */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">
+                Specialized Commercial Film Services
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {specializedServices.map((svc, idx) => (
+                <div key={idx} className="bg-slate-50 border-l-4 border-green-500 p-8 flex flex-col">
+                  <h3 className="text-xl font-black text-slate-950 uppercase mb-4">{svc.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium mb-6 flex-grow">{svc.body}</p>
+                  <Link
+                    to={svc.link}
+                    className="text-green-600 font-black text-xs uppercase tracking-widest hover:text-green-700 transition-colors"
+                  >
+                    {svc.linkText} →
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
@@ -234,6 +522,52 @@ const Commercial = () => {
                   <p className="text-white/80 font-bold uppercase text-xs tracking-widest">{item.label}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ROI & BOTTOM LINE */}
+        <section className="py-24 bg-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                Why 700+ Arizona Businesses Chose Arizona House of Film
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium">The numbers behind the decision</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              {[
+                { stat: "700+", label: "Commercial Projects Completed" },
+                { stat: "ROC #314088", label: "Licensed & Bonded Since 2012" },
+                { stat: "2–4 Year", label: "Average Payback on Solar Film" },
+                { stat: "84%", label: "Maximum Solar Heat Rejection" },
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-900 border border-slate-800 p-8 text-center">
+                  <p className="text-3xl md:text-4xl font-black text-green-500 mb-2 leading-tight">{item.stat}</p>
+                  <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">{item.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-slate-900 border border-slate-800 p-8">
+                <h3 className="text-lg font-black text-white uppercase mb-4">Proven Payback</h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                  Installations for clients like Coca-Cola, Love's Travel Stop, and Peyton's Distribution Center typically pay for themselves in 2–4 years through documented energy savings. Arizona's 299 sunny days per year means your film works harder here than anywhere else in the country.
+                </p>
+              </div>
+              <div className="bg-slate-900 border border-slate-800 p-8">
+                <h3 className="text-lg font-black text-white uppercase mb-4">Utility Rebate Expertise</h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                  We help commercial clients navigate SRP and APS commercial rebate programs — often securing thousands in cash back for qualifying energy-efficient film upgrades. We handle the documentation and submit on your behalf.
+                </p>
+              </div>
+              <div className="bg-slate-900 border border-slate-800 p-8">
+                <h3 className="text-lg font-black text-white uppercase mb-4">Security as a Business Asset</h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                  Our 8-mil and 12-mil security films are an insurance-grade barrier against smash-and-grab crime — a documented deterrent for retail operations. Clients including Skechers USA and Best Dispensary have deployed our security film as part of their loss prevention strategy.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -287,12 +621,7 @@ const Commercial = () => {
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Commercial Window Film FAQ</h2>
             <div className="space-y-8">
-              {[
-                { q: "How long does commercial window film installation take?", a: "Most commercial projects are completed in 1–3 days depending on square footage. We work around your business hours to minimize disruption." },
-                { q: "Do commercial window films meet building codes in Arizona?", a: "Yes. We install films that comply with Arizona building codes and can provide documentation for permit applications when required." },
-                { q: "What's the ROI on commercial window film?", a: "Typical commercial installations pay back within 2–5 years through energy savings alone. Security film adds additional insurance value." },
-                { q: "Can window film be applied to any commercial glass?", a: "Most standard commercial glass accepts film. We assess your glass type during the free estimate to recommend the correct product and ensure warranty validity." },
-              ].map((faq, i) => (
+              {faqItems.map((faq, i) => (
                 <div key={i} className="border-b border-slate-200 pb-8">
                   <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>

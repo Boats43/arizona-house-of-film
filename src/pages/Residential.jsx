@@ -45,6 +45,10 @@ const Residential = () => {
       q: "Can window film be installed on older single-pane windows?",
       a: "Yes — single-pane windows actually benefit more from film than double-pane because they have less inherent insulation. We install on all glass types including single-pane, double-pane, tempered, laminated, and low-e glass.",
     },
+    {
+      q: "My windows already have a Low-E coating. Do I still need window film?",
+      a: "Yes. While Low-E glass improves insulation, it often does not block enough solar heat or UV in Arizona's extreme climate. We use Low-E compatible ceramic films that work with your existing glass technology to create a dual-layer heat barrier — significantly outperforming Low-E glass alone. All our films are verified safe for Low-E applications before installation.",
+    },
   ];
 
   const serviceSchema = {
@@ -136,6 +140,12 @@ const Residential = () => {
       cta: 'See Glare Solutions',
       link: '/energy-saving-window-films',
     },
+    {
+      title: 'Your bathroom and shower windows have zero privacy',
+      copy: "Standard blinds in bathrooms trap moisture and grow mildew. We install moisture-safe architectural frost and decorative films for shower windows, bathroom doors, and entryway sidelights. 100% privacy while allowing soft natural light to fill the room — no more closing blinds during the day.",
+      cta: 'See Privacy Films',
+      link: '/decorative-window-films',
+    },
   ];
 
   const filmSelectorRows = [
@@ -202,6 +212,36 @@ const Residential = () => {
             <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
               Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088.
             </p>
+          </div>
+        </section>
+
+        {/* LUXURY HOME CALLOUT */}
+        <section className="py-12 bg-slate-800 border-b border-slate-700">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="border-l-4 border-blue-400 bg-gray-900 p-8">
+              <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">
+                The Standard for Arizona&rsquo;s Custom Homes
+              </h2>
+              <p className="text-gray-300 text-base leading-relaxed font-medium mb-6">
+                Whether it is a modern estate in Paradise Valley, a custom build in North Scottsdale, or a golf-course home in Cave Creek, we understand the unique architectural needs of high-end Arizona real estate.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-white font-black text-sm uppercase tracking-wide">Preserve Your View: </span>
+                    <span className="text-gray-300 text-sm leading-relaxed">High-clarity ceramic films protect interiors without altering the aesthetic of custom glass or impacting views.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-white font-black text-sm uppercase tracking-wide">Trusted by Builders: </span>
+                    <span className="text-gray-300 text-sm leading-relaxed">The preferred installer for DMC Builders and Coventry Design and Build on new construction and renovation projects across the Valley.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -371,6 +411,57 @@ const Residential = () => {
             <div className="bg-slate-900 border border-slate-800 p-8 max-w-4xl mx-auto">
               <p className="text-slate-300 text-base leading-relaxed font-medium">
                 Arizona's extreme climate means window film pays back faster here than anywhere else in the country. A northern climate homeowner might wait 8–12 years for ROI. In Phoenix, most installs pay for themselves in 2–4 years — then save money every year after that. SRP and APS rebates shorten the payback period further.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SKYLIGHT SECTION */}
+        <section className="py-20 bg-slate-900">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                The Skylight Heat Spike
+              </h2>
+              <div className="w-24 h-2 bg-blue-400 mx-auto mb-6" />
+              <p className="text-slate-300 text-xl font-bold">
+                Do you have one room that is 10&deg;F hotter than the rest of the house?
+              </p>
+            </div>
+            <div className="bg-slate-800 border border-slate-700 p-8 max-w-3xl mx-auto mb-8">
+              <p className="text-slate-300 text-base leading-relaxed font-medium mb-6">
+                In Phoenix, unfilmed skylights act like magnifying glasses &mdash; concentrating direct sun onto floors, furniture, and people below. That single skylight can raise room temperature 10&ndash;15&deg;F and create a permanent UV fade zone on whatever sits beneath it.
+              </p>
+              <p className="text-slate-300 text-base leading-relaxed font-medium mb-6">
+                Arizona House of Film installs specialized skylight frosting and heat-blocking ceramic films that eliminate the midday heat spike. Recent installations include residential skylights across North Scottsdale and commercial skylight projects for LDS Church facilities and On Q Financial offices.
+              </p>
+              <p className="text-white font-black text-sm uppercase tracking-wide">
+                Result: Lower AC demand, eliminated sun-spot fading, and consistent room temperature year-round.
+              </p>
+            </div>
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 h-14 text-base font-black rounded-none">
+                <Link to="/contact">Get Skylight Quote &rarr;</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* HOA COMPLIANCE SECTION */}
+        <section className="py-12 bg-slate-800 border-b border-slate-700">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="border-l-4 border-blue-400 bg-gray-900 p-8">
+              <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">
+                HOA Compliant Window Film
+              </h2>
+              <p className="text-gray-300 text-base leading-relaxed font-medium mb-4">
+                Arizona HOAs have strict requirements for window film reflectivity and appearance. The wrong film choice can result in HOA violations and costly removal.
+              </p>
+              <p className="text-gray-300 text-base leading-relaxed font-medium mb-4">
+                Arizona House of Film works directly with Arizona property management firms including Associated Asset Management (AAM) and Camden Development. We know the appearance standards for communities in Gilbert, Chandler, Scottsdale, and the East Valley &mdash; and we only recommend films that meet your HOA guidelines before installation begins.
+              </p>
+              <p className="text-blue-400 font-black text-sm uppercase tracking-wide">
+                Ask us about HOA compliance during your free estimate.
               </p>
             </div>
           </div>

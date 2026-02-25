@@ -38,6 +38,7 @@ const FilmsHub = () => {
       "item": {
         "@type": "Product",
         "name": category.name,
+        "image": "https://arizonahouseoffilm.com/og-image.jpg",
         "url": `https://arizonahouseoffilm.com/films/${category.slug}`,
         "description": category.description,
         "offers": {

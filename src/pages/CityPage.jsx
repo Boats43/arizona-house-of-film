@@ -29,7 +29,7 @@ const CityPage = () => {
     return (
       <>
         <Helmet>
-          <meta name="robots" content="noindex,nofollow" />
+          <meta name="robots" content="index, follow" />
         </Helmet>
         <NotFound />
       </>
@@ -55,7 +55,7 @@ const CityPage = () => {
   ====================================================== */
   const pageTitle = `Window Tinting ${name}, AZ | Residential & Commercial Experts`;
   const metaDescription = `Professional window tinting in ${name}, AZ. We install residential and commercial window film to reduce heat, block 99% UV rays, improve privacy, and lower energy bills. Free estimates available in ${name}.`;
-  const canonicalUrl = `https://arizonahouseoffilm.com/${cleanSlug}-window-tinting`;
+  const canonicalUrl = `https://arizonahouseoffilm.com/service-areas/${cleanSlug}`;
 
   /* ======================================================
      SERVICE SCHEMA

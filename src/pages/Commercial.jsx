@@ -272,7 +272,7 @@ const Commercial = () => {
               {cities.map((city) => (
                 <Link
                   key={city.slug}
-                  to={`/${city.slug}-commercial-window-tinting`}
+                  to={`/service-areas/${city.slug}`}
                   className="px-4 py-2 bg-white border border-slate-200 text-[10px] font-black text-slate-600 uppercase hover:border-green-500 hover:text-green-600 transition-all shadow-sm"
                 >
                   {city.name}

@@ -2,39 +2,95 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Palette, Eye, Sparkles, Home, ArrowRight, CheckCircle } from 'lucide-react';
+import {
+  Palette,
+  Eye,
+  Sparkles,
+  Home,
+  ArrowRight,
+  CheckCircle,
+  Building,
+  Stethoscope,
+  ShoppingBag,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
 
 const Decorative = () => {
   const rocNumber = "314088";
-  const pageTitle = "Decorative Window Film Arizona | Frosted & Custom Glass Designs";
-  const metaDescription = `Expert decorative window film installation in Arizona. Featuring premium 3M Fasara and Madico frosted, patterned, and custom designs. Licensed & Bonded ROC #${rocNumber}.`;
+  const pageTitle = "Decorative Window Film Phoenix AZ | Frosted, Privacy & Custom Graphics | Arizona House of Film";
+  const metaDescription = `Frosted, patterned, and custom decorative window films for Phoenix homes, offices, and retail. Privacy without losing light. Custom branding. Licensed ROC #${rocNumber}. Free estimates: 480-788-1591.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/decorative-window-films";
   const heroImageUrl = "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
+  const allFaqItems = [
+    {
+      q: "Can decorative film be removed without damaging the glass?",
+      a: "Yes. Professionally installed decorative films can be removed cleanly without leaving residue or damaging glass when done correctly.",
+    },
+    {
+      q: "How long does decorative film last?",
+      a: "Quality decorative films last 7–15 years depending on sun exposure and film type. Exterior films have shorter lifespans than interior applications.",
+    },
+    {
+      q: "Can you match a specific pattern or print?",
+      a: "Yes. We offer custom-printed film for logos, patterns, and branded graphics. Bring us your artwork and we'll handle the rest.",
+    },
+    {
+      q: "Does decorative film reduce heat as well as provide privacy?",
+      a: "Many decorative films include solar control properties that block UV rays and moderate heat. Frosted films provide moderate heat reduction. If heat control is your primary concern, we recommend combining decorative film with a ceramic solar layer on south and west-facing windows.",
+    },
+    {
+      q: "Can decorative film be applied to curved or textured glass?",
+      a: "Flat glass surfaces are ideal for decorative film. Lightly textured glass can accept certain film types. Heavily textured, wired, or curved glass requires assessment — contact us for a free consultation.",
+    },
+    {
+      q: "How do you clean decorative window film?",
+      a: "Use a soft cloth or squeegee with mild soapy water. Avoid abrasive cleaners, ammonia-based products, and razor blades. Most decorative films are easy to maintain and resist fingerprints and smudging.",
+    },
+    {
+      q: "Can I use decorative film on my front door glass or sidelights?",
+      a: "Yes. Sidelights, transom windows, and door glass panels are among the most common residential applications. Privacy film on entry door glass prevents visibility into your home while maintaining the appearance of your entryway.",
+    },
+    {
+      q: "Do you offer design consultation for custom graphics?",
+      a: "Yes. For custom logos, branded graphics, and bespoke architectural patterns, we provide a free design consultation. Bring your artwork files or work with our team to develop something custom. We handle everything from design to precision installation.",
+    },
+  ];
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Decorative Window Film Installation",
+    name: "Decorative Window Film Installation Phoenix AZ",
     serviceType: "Decorative & Privacy Window Film",
     provider: {
       "@type": "HomeAndConstructionBusiness",
       name: "Arizona House of Film",
       url: "https://arizonahouseoffilm.com/",
       telephone: "+1-480-788-1591",
+      areaServed: ["Phoenix", "Scottsdale", "Mesa", "Arizona"],
       address: {
         "@type": "PostalAddress",
         streetAddress: "7007 W Flower St",
         addressLocality: "Phoenix",
         addressRegion: "AZ",
-        postalCode: "85033"
-      }
+        postalCode: "85033",
+      },
     },
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,
-    url: canonicalUrl
+    url: canonicalUrl,
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 
   const filmLibrary = [
@@ -42,45 +98,139 @@ const Decorative = () => {
       category: 'Frosted & Etched',
       slug: 'frosted-etched-films',
       description: 'Classic etched glass and white matte frost for total privacy. Featuring 3M Fasara series.',
-      patterns: ['Simple Frosted', 'Frosted Colors', 'Opaque White', 'Light Diffusing', 'Milky Frost']
+      patterns: ['Simple Frosted', 'Frosted Colors', 'Opaque White', 'Light Diffusing', 'Milky Frost'],
     },
     {
       category: 'Casper Cloaking',
       slug: 'specialty-films',
       description: 'Specialty film that obscures LED screens while maintaining glass transparency.',
-      patterns: ['Conference Rooms', 'IT Suites', 'Office Security', 'Screen Privacy']
+      patterns: ['Conference Rooms', 'IT Suites', 'Office Security', 'Screen Privacy'],
     },
     {
       category: 'Patterned Privacy',
       slug: 'patterned-privacy-films',
       description: 'Geometric and organic textures like rice paper and rain glass from Madico and Solyx.',
-      patterns: ['Glasslike Distortion', 'Bamboo', 'Rice Paper', 'Rain Glass']
+      patterns: ['Glasslike Distortion', 'Bamboo', 'Rice Paper', 'Rain Glass'],
     },
     {
       category: 'Geometric Designs',
       slug: 'patterned-privacy-films',
       description: 'Modern lines and shapes for contemporary Arizona office spaces.',
-      patterns: ['Squares', 'Hexagons', 'Triangles', 'Linear Stripes']
+      patterns: ['Squares', 'Hexagons', 'Triangles', 'Linear Stripes'],
     },
     {
       category: 'Gradient Films',
       slug: 'elegant-textured-films',
       description: 'Seamless transitions from solid frosted privacy to clear glass.',
-      patterns: ['Bottom-Up', 'Center-Band', 'Dual-Taper', 'Custom Gradients']
+      patterns: ['Bottom-Up', 'Center-Band', 'Dual-Taper', 'Custom Gradients'],
     },
     {
       category: 'Custom Graphics',
       slug: 'specialty-films',
       description: 'Precision-cut branding, company logos, and bespoke architectural artwork.',
-      patterns: ['Company Logos', 'Custom Text', 'Branding', 'Sandblast Effects']
-    }
+      patterns: ['Company Logos', 'Custom Text', 'Branding', 'Sandblast Effects'],
+    },
   ];
 
   const benefits = [
     { icon: Eye, title: 'Enhanced Privacy', description: 'Create secluded spaces while maintaining natural light flow.' },
     { icon: Sparkles, title: 'Aesthetic Appeal', description: 'Transform plain glass into stunning design elements.' },
     { icon: Palette, title: 'Design Flexibility', description: 'Hundreds of patterns or fully custom branding.' },
-    { icon: Home, title: 'Easy Maintenance', description: 'Durable, easy to clean, and simple to update.' }
+    { icon: Home, title: 'Easy Maintenance', description: 'Durable, easy to clean, and simple to update.' },
+  ];
+
+  const problemCards = [
+    {
+      title: "I need privacy but don\u2019t want to block natural light",
+      copy: "Blinds and curtains block light entirely. Frosted and privacy films diffuse light while blocking views — you keep full brightness inside with zero visibility from outside during the day. Perfect for street-facing windows, bathrooms, and ground-floor offices.",
+      cta: 'See Frosted Films',
+      link: '#film-collection',
+      external: false,
+    },
+    {
+      title: 'My office conference rooms have no privacy',
+      copy: "Glass conference rooms look modern but expose every meeting to the open office. Frosted, gradient, and Casper Cloaking films create visual privacy while maintaining the open feel. HIPAA-compliant options available for medical spaces.",
+      cta: 'Medical & Office Solutions',
+      link: '/industries/medical-facilities',
+      external: false,
+    },
+    {
+      title: 'My glass looks plain and dated',
+      copy: "Specialty etched or sandblasted glass costs $75–$200 per square foot. Decorative film delivers the same frosted, patterned, or etched look for $8–$18 per square foot — installed. Easy to update when your design changes.",
+      cta: 'Get a Free Estimate',
+      link: '/contact',
+      external: false,
+    },
+    {
+      title: 'I need branded graphics or a logo on my storefront glass',
+      copy: "Custom-cut vinyl and printed films turn plain storefront glass into branded marketing surfaces. Precision-cut logos, frosted panels with logo cutouts, full-color printed graphics — all removable and updatable.",
+      cta: 'Commercial Branding Solutions',
+      link: '/commercial-window-tinting',
+      external: false,
+    },
+    {
+      title: 'My bathroom or bedroom windows face neighbors or the street',
+      copy: "One-way and frosted residential privacy films give you full daytime privacy without darkening your rooms. See out, nobody sees in — without blinds or curtains.",
+      cta: 'Residential Privacy Films',
+      link: '/residential-window-tinting',
+      external: false,
+    },
+  ];
+
+  const useCases = [
+    {
+      icon: Building,
+      title: 'Office & Corporate',
+      uses: [
+        'Conference room privacy',
+        'Lobby branding',
+        'Partition glass',
+        'Executive suite frosting',
+        'Casper Cloaking for screen security',
+      ],
+      link: '/industries/office-buildings',
+    },
+    {
+      icon: Stethoscope,
+      title: 'Medical & Healthcare',
+      uses: [
+        'Patient room privacy',
+        'HIPAA-compliant exam room frosting',
+        'Waiting area glass',
+        'Reception partitions',
+      ],
+      link: '/industries/medical-facilities',
+    },
+    {
+      icon: ShoppingBag,
+      title: 'Retail & Storefront',
+      uses: [
+        'Storefront branding',
+        'Window graphics',
+        'Product display privacy',
+        'Anti-graffiti + decorative combo',
+      ],
+      link: '/industries/retail-stores',
+    },
+    {
+      icon: Home,
+      title: 'Residential',
+      uses: [
+        'Bathroom windows',
+        'Sidelights',
+        'Entryway glass',
+        'Bedroom privacy',
+        'Sliding door frosting',
+      ],
+      link: '/residential-window-tinting',
+    },
+  ];
+
+  const costRows = [
+    { solution: 'Decorative Window Film', cost: '$8–$18', removable: 'Yes', updatable: 'Yes', time: 'Hours' },
+    { solution: 'Etched Glass', cost: '$75–$150', removable: 'No', updatable: 'No', time: 'Days' },
+    { solution: 'Sandblasted Glass', cost: '$100–$200', removable: 'No', updatable: 'No', time: 'Days' },
+    { solution: 'Frosted Glass Replacement', cost: '$150–$400', removable: 'No', updatable: 'No', time: 'Weeks' },
   ];
 
   return (
@@ -100,6 +250,7 @@ const Decorative = () => {
         <meta name="twitter:image" content={ogImage} />
         <link rel="preload" as="image" href={heroImageUrl} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <main id="main-content">
@@ -153,6 +304,47 @@ const Decorative = () => {
           </div>
         </section>
 
+        {/* PROBLEM-FIRST SECTION */}
+        <section className="py-24 bg-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                What Problem Are You Solving With Decorative Film?
+              </h2>
+              <div className="w-24 h-2 bg-indigo-600 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto">
+                Every decorative film project starts with a specific need. Find yours.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {problemCards.map((card, idx) => (
+                <div
+                  key={idx}
+                  className="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-8 transition-all group"
+                >
+                  <h3 className="text-base font-black text-white uppercase mb-3 leading-snug">{card.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed font-medium mb-5">{card.copy}</p>
+                  {card.link.startsWith('#') ? (
+                    <a
+                      href={card.link}
+                      className="text-indigo-400 font-black text-xs uppercase tracking-widest hover:text-indigo-300 transition-colors"
+                    >
+                      {card.cta} →
+                    </a>
+                  ) : (
+                    <Link
+                      to={card.link}
+                      className="text-indigo-400 font-black text-xs uppercase tracking-widest hover:text-indigo-300 transition-colors"
+                    >
+                      {card.cta} →
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FILM COLLECTION */}
         <section id="film-collection" className="py-24 bg-slate-950 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -188,6 +380,110 @@ const Decorative = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* USE CASES */}
+        <section className="py-24 bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">
+                Where Arizona Customers Use Decorative Film
+              </h2>
+              <div className="w-24 h-2 bg-indigo-600 mx-auto" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {useCases.map((uc, idx) => (
+                <div
+                  key={idx}
+                  className="p-8 bg-slate-50 border border-slate-100 hover:border-indigo-500 hover:shadow-lg transition-all group flex flex-col"
+                >
+                  <div className="w-12 h-12 bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-colors">
+                    <uc.icon className="w-6 h-6 text-indigo-600 group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-lg font-black text-slate-950 uppercase mb-4">{uc.title}</h3>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {uc.uses.map((use, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-slate-600 font-medium">
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-1.5 shrink-0" />
+                        {use}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={uc.link}
+                    className="text-indigo-600 font-black text-xs uppercase tracking-widest hover:text-indigo-800 transition-colors"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COST COMPARISON */}
+        <section className="py-24 bg-slate-50 border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">
+                Decorative Film vs. Specialty Glass — Real Cost Comparison
+              </h2>
+              <div className="w-24 h-2 bg-indigo-600 mx-auto" />
+            </div>
+            <div className="overflow-x-auto shadow-sm">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-slate-950 text-white">
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Solution</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Cost Per Sq Ft</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Removable</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Updatable</th>
+                    <th className="text-left px-5 py-4 font-black uppercase text-xs tracking-wider">Install Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {costRows.map((row, i) => (
+                    <tr
+                      key={i}
+                      className={`border-b border-slate-200 transition-colors ${
+                        i === 0
+                          ? 'bg-indigo-50 border-indigo-100'
+                          : i % 2 === 0
+                          ? 'bg-white'
+                          : 'bg-slate-50'
+                      } hover:bg-indigo-50`}
+                    >
+                      <td className={`px-5 py-4 font-black whitespace-nowrap ${i === 0 ? 'text-indigo-700' : 'text-slate-900'}`}>
+                        {row.solution}
+                        {i === 0 && (
+                          <span className="ml-2 text-[10px] font-black bg-indigo-600 text-white px-2 py-0.5 uppercase tracking-wide">
+                            Best Value
+                          </span>
+                        )}
+                      </td>
+                      <td className={`px-5 py-4 font-bold whitespace-nowrap ${i === 0 ? 'text-indigo-600' : 'text-slate-700'}`}>
+                        {row.cost}
+                      </td>
+                      <td className="px-5 py-4 whitespace-nowrap">
+                        <span className={`font-black text-xs uppercase ${row.removable === 'Yes' ? 'text-green-600' : 'text-red-500'}`}>
+                          {row.removable}
+                        </span>
+                      </td>
+                      <td className="px-5 py-4 whitespace-nowrap">
+                        <span className={`font-black text-xs uppercase ${row.updatable === 'Yes' ? 'text-green-600' : 'text-red-500'}`}>
+                          {row.updatable}
+                        </span>
+                      </td>
+                      <td className="px-5 py-4 text-slate-600 whitespace-nowrap">{row.time}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-slate-600 mt-6 leading-relaxed font-medium max-w-3xl">
+              Decorative film delivers the same visual result as specialty glass at 5–10% of the cost — with the added benefit of being removable and updatable as your space evolves. ROC #314088.
+            </p>
           </div>
         </section>
 
@@ -233,11 +529,7 @@ const Decorative = () => {
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Decorative Film FAQ</h2>
             <div className="space-y-8">
-              {[
-                { q: "Can decorative film be removed without damaging the glass?", a: "Yes. Professionally installed decorative films can be removed cleanly without leaving residue or damaging glass when done correctly." },
-                { q: "How long does decorative film last?", a: "Quality decorative films last 7–15 years depending on sun exposure and film type. Exterior films have shorter lifespans than interior applications." },
-                { q: "Can you match a specific pattern or print?", a: "Yes. We offer custom-printed film for logos, patterns, and branded graphics. Bring us your artwork and we'll handle the rest." },
-              ].map((faq, i) => (
+              {allFaqItems.map((faq, i) => (
                 <div key={i} className="border-b border-slate-200 pb-8">
                   <h3 className="font-black text-slate-950 uppercase text-sm mb-3">{faq.q}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>

@@ -123,7 +123,7 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center relative z-20">
           <div className="text-center max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
                 Phoenix <span className="text-blue-500 italic">Window Tinting</span> & Performance Glass Solutions
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
@@ -235,9 +235,6 @@ const Home = () => {
                 <div>
                   <h4 className="font-black text-gray-900 uppercase text-sm mb-2">Is tinting safe for dual-pane windows?</h4>
                   <p className="text-sm text-gray-600 font-medium">Yes — we use Arizona-engineered ceramics designed for high thermal load.</p>
-                </div>
-                <div className="pt-6 border-t border-gray-200 flex justify-center">
-                  <img src={LOGO_IMAGE} alt="Arizona House of Film Logo" className="h-12 w-auto grayscale opacity-70" width={240} height={48} loading="lazy" />
                 </div>
               </div>
             </div>

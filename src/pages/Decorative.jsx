@@ -57,6 +57,10 @@ const Decorative = () => {
       q: "Do you offer design consultation for custom graphics?",
       a: "Yes. For custom logos, branded graphics, and bespoke architectural patterns, we provide a free design consultation. Bring your artwork files or work with our team to develop something custom. We handle everything from design to precision installation.",
     },
+    {
+      q: "Do you work with general contractors on new builds and tenant improvements?",
+      a: "Regularly. Arizona House of Film is a licensed subcontractor (ROC #314088) and a frequent partner for Renaissance Companies, Willmeng, and FCI Constructors. We coordinate directly with project managers to install decorative and privacy film during the final phase of tenant improvement buildouts.",
+    },
   ];
 
   const serviceSchema = {

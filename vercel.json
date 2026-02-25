@@ -17,7 +17,13 @@
     { "source": "/safety-film", "destination": "/safety", "permanent": true },
     { "source": "/anti-graffiti-film", "destination": "/anti-graffiti", "permanent": true },
     { "source": "/anti-graffiti-window-film", "destination": "/anti-graffiti", "permanent": true },
-    { "source": "/services/anti-graffiti", "destination": "/anti-graffiti", "permanent": true }
+    { "source": "/services/anti-graffiti", "destination": "/anti-graffiti", "permanent": true },
+    { "source": "/phoenix-window-tinting", "destination": "/service-areas/phoenix", "permanent": true },
+    { "source": "/chandler-window-tinting", "destination": "/service-areas/chandler", "permanent": true },
+    { "source": "/glendale-window-tinting", "destination": "/service-areas/glendale", "permanent": true },
+    { "source": "/mesa-window-tinting", "destination": "/service-areas/mesa", "permanent": true },
+    { "source": "/scottsdale-window-tinting", "destination": "/service-areas/scottsdale", "permanent": true },
+    { "source": "/tucson-window-tinting", "destination": "/service-areas/tucson", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

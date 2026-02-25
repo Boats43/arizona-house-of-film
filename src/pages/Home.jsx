@@ -13,6 +13,8 @@ import Server from "lucide-react/dist/esm/icons/server";
 import Clock from "lucide-react/dist/esm/icons/clock";
 import CheckCircle from "lucide-react/dist/esm/icons/check-circle";
 import HelpCircle from "lucide-react/dist/esm/icons/help-circle";
+import Lock from "lucide-react/dist/esm/icons/lock";
+import CheckSquare from "lucide-react/dist/esm/icons/check-square";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
@@ -46,7 +48,6 @@ const Home = () => {
     { name: "Safety & Security Film", icon: Shield, path: "/safety", cta: "Explore Security Films", description: "8–12 mil impact-resistant safety films that strengthen glass and deter break-ins." },
   ];
 
-  // 4 questions visible in the on-page FAQ section
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -55,6 +56,9 @@ const Home = () => {
       { "@type": "Question", name: "Does window film make rooms too dark?", acceptedAnswer: { "@type": "Answer", text: "No. Modern ceramic films reject heat through infrared blocking, not by darkening the glass. You keep natural light while eliminating heat and glare." } },
       { "@type": "Question", name: "Do you serve my city?", acceptedAnswer: { "@type": "Answer", text: "We serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Tucson, and 100+ Arizona communities. View our full service area coverage." } },
       { "@type": "Question", name: "Is window film worth it in Arizona?", acceptedAnswer: { "@type": "Answer", text: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." } },
+      { "@type": "Question", name: "How much does window tinting cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Residential projects typically range from $600 to $2,500 depending on film type and window count. Commercial projects are quoted by square footage — ROI typically covers installation cost within 2-4 years through energy savings alone." } },
+      { "@type": "Question", name: "Is ceramic film worth it in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Yes — more than anywhere else in the country. In a 115°F climate, ceramic film is the only technology that blocks up to 84% of infrared heat without interfering with GPS signals or darkening glass. The payback period in Phoenix is 2-4 years versus 8-12 years in northern climates." } },
+      { "@type": "Question", name: "Do you help with SRP or APS rebates?", acceptedAnswer: { "@type": "Answer", text: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We identify qualifying films and assist with the paperwork during your free estimate." } },
     ],
   };
 
@@ -94,8 +98,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Arizona Window Film & Tinting Phoenix | ROC #314088 | Arizona House of Film</title>
-        <meta name="description" content="Arizona's trusted window film installer since 2012. Ceramic films block 84% solar heat, 99.9% UV. Serving Phoenix, Scottsdale & 100+ Arizona cities. Licensed ROC #314088. Free estimates: 480-788-1591." />
+        <title>Phoenix Window Tinting | Performance Glass Solutions | Arizona House of Film</title>
+        <meta name="description" content="Phoenix leader in high-performance window tinting since 2012. Ceramic heat rejection, security film, LEED documentation, SRP & APS rebates. Trusted by GCU, U.S. Navy, Skechers. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Window Tinting Phoenix | Residential & Commercial | Arizona House of Film" />
         <meta property="og:description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088. Solar control, privacy, and security films." />
@@ -120,21 +124,46 @@ const Home = () => {
           <div className="text-center max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
-                Phoenix <span className="text-blue-500 italic">Window Tinting</span>
-                <br /><span className="text-2xl sm:text-3xl md:text-5xl block mt-4">Residential & Commercial Specialists</span>
+                Phoenix <span className="text-blue-500 italic">Window Tinting</span> & Performance Glass Solutions
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
-                Expert <strong className="underline decoration-blue-500">Nano-Ceramic</strong> solar control for the Arizona climate. ROC #314088.
+                Extreme climate solar control for Arizona's leading brands, builders, and homeowners. From military installations to high-rise efficiency, we neutralize the 115°F heat. ROC #314088.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" asChild className="bg-blue-600 text-white font-black h-16 px-10 rounded-none">
-                  <Link to="/contact">GET A FREE QUOTE</Link>
+                  <Link to="/contact">Schedule Free Glass Assessment</Link>
                 </Button>
                 <Button size="lg" asChild variant="outline" className="bg-white text-black border-white hover:bg-gray-100 font-black h-16 px-10 rounded-none">
                   <a href="tel:4807881591" className="hover:underline">(480) 788-1591</a>
                 </Button>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUSTED BY STRIP */}
+      <section className="w-full bg-gray-900 border-y border-gray-800 py-6 px-4">
+        <div className="container mx-auto max-w-5xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">
+            Trusted by Arizona's Leading Enterprises &amp; Institutions
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-gray-400 text-sm font-medium">
+            {[
+              "U.S. Navy Recruitment Centers",
+              "Grand Canyon University",
+              "Skechers USA",
+              "Wespac Construction",
+              "Banner Physical Therapy",
+              "On Q Financial",
+              "DMC Builders",
+              "Willmeng Construction",
+            ].map((name, i, arr) => (
+              <React.Fragment key={name}>
+                <span>{name}</span>
+                {i < arr.length - 1 && <span className="text-gray-600">&bull;</span>}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </section>
@@ -154,7 +183,7 @@ const Home = () => {
           {[
             { icon: Star, text: "Top Rated Google", sub: "15+ Local Reviews" },
             { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
-            { icon: Server, text: "480,000+ Sq Ft", sub: "Installed Valley-Wide" },
+            { icon: Server, text: "500,000+ Sq Ft Installed", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },
           ].map((item, i) => (
             <div key={i} className="text-center">
@@ -219,7 +248,7 @@ const Home = () => {
       {/* SERVICES GRID */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 text-center mb-16">
-          <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Our Expertise</h2>
+          <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Professional Window Film Services in Phoenix &amp; Scottsdale</h2>
           <div className="h-1.5 w-24 bg-blue-600 mx-auto mt-4" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -239,7 +268,7 @@ const Home = () => {
       {/* ARIZONA BENEFITS */}
       <section className="py-24 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-12">Why Window Film Matters in Arizona</h2>
+          <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-12">Engineering Glass for the Arizona Desert</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { title: "Beat 115°F Heat", body: "Ceramic films block up to 84% of solar heat, keeping interiors 10–15°F cooler without darkening your rooms." },
@@ -256,6 +285,31 @@ const Home = () => {
         </div>
       </section>
 
+      {/* DIFFERENTIATOR SECTION */}
+      <section className="py-24 bg-gray-950 text-white border-t border-gray-800">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Why Arizona's Leading Brands &amp; Homeowners Choose Us</h2>
+            <div className="h-1.5 w-24 bg-blue-600 mx-auto mt-4" />
+            <p className="mt-6 text-gray-400 max-w-2xl mx-auto font-medium">The difference between a window tint shop and a performance glass partner.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Shield, title: "Military & Government Grade", body: "Trusted for high-security federal and educational installations. Documented work for U.S. Navy Recruitment Centers and State of Arizona facilities. We understand compliance, clearance, and documentation requirements." },
+              { icon: Zap, title: "Utility Rebate Authorized", body: "SRP Business Solutions and APS Peak Player rebate-ready installations. We provide NFRC-rated data sheets and handle the rebate application process for qualifying residential and commercial projects." },
+              { icon: CheckSquare, title: "Architectural Compliance", body: "LEED credit documentation, SHGC-compliant film specifications, and COMcheck support for general contractors and architects. Frequent subcontractor for Wespac, Willmeng, and FCI Constructors." },
+              { icon: Lock, title: "Advanced Security Systems", body: "C-Bond certified glass strengthening and wet-glaze anchoring specialists. Industrial-grade security for schools, dispensaries, government facilities, and high-value retail." },
+            ].map((card, i) => (
+              <div key={i} className="bg-gray-900 border border-gray-800 p-8 hover:border-blue-500 transition-all group">
+                <card.icon className="w-10 h-10 text-blue-400 mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-lg font-black uppercase mb-4 tracking-tighter text-white">{card.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed font-medium">{card.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* HOME FAQ */}
       <section className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
@@ -266,6 +320,9 @@ const Home = () => {
               { q: "Does window film make rooms too dark?", a: "No. Modern ceramic films reject heat through infrared blocking, not by darkening the glass. You keep natural light while eliminating heat and glare." },
               { q: "Do you serve my city?", a: "We serve Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Tucson, and 100+ Arizona communities. View our full service area coverage." },
               { q: "Is window film worth it in Arizona?", a: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." },
+              { q: "How much does window tinting cost in Phoenix?", a: "Residential projects typically range from $600 to $2,500 depending on film type and window count. Commercial projects are quoted by square footage — ROI typically covers installation cost within 2-4 years through energy savings alone." },
+              { q: "Is ceramic film worth it in Arizona?", a: "Yes — more than anywhere else in the country. In a 115°F climate, ceramic film is the only technology that blocks up to 84% of infrared heat without interfering with GPS signals or darkening glass. The payback period in Phoenix is 2-4 years versus 8-12 years in northern climates." },
+              { q: "Do you help with SRP or APS rebates?", a: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We identify qualifying films and assist with the paperwork during your free estimate." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-gray-200 pb-8">
                 <h3 className="font-black text-gray-900 uppercase text-sm mb-3">{faq.q}</h3>

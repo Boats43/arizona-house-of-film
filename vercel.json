@@ -6,6 +6,7 @@
       "destination": "https://arizonahouseoffilm.com/:path*",
       "permanent": true
     },
+    { "source": "/dealeriframe/:path*", "destination": "/films", "permanent": true },
     { "source": "/index.php", "destination": "/", "permanent": true },
     { "source": "/index.php/:path*", "destination": "/", "permanent": true },
     { "source": "/lander", "destination": "/", "permanent": true },

@@ -23,7 +23,23 @@
     { "source": "/glendale-window-tinting", "destination": "/service-areas/glendale", "permanent": true },
     { "source": "/mesa-window-tinting", "destination": "/service-areas/mesa", "permanent": true },
     { "source": "/scottsdale-window-tinting", "destination": "/service-areas/scottsdale", "permanent": true },
-    { "source": "/tucson-window-tinting", "destination": "/service-areas/tucson", "permanent": true }
+    { "source": "/tucson-window-tinting", "destination": "/service-areas/tucson", "permanent": true },
+    { "source": "/films/specialty-films/solar", "destination": "/energy-saving-window-films", "permanent": true },
+    { "source": "/films/specialty-films/ultracool", "destination": "/energy-saving-window-films", "permanent": true },
+    { "source": "/films/specialty-films/temporary", "destination": "/decorative-window-films", "permanent": true },
+    { "source": "/commercial-window-tinting/uv-protection", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/pages/", "destination": "/", "permanent": true },
+    { "source": "/pages", "destination": "/", "permanent": true },
+    { "source": "/welcome/wp-admin/admin-ajax.php", "destination": "/", "permanent": true },
+    { "source": "/welcome/careers/", "destination": "/careers", "permanent": true },
+    { "source": "/welcome/careers", "destination": "/careers", "permanent": true },
+    { "source": "/welcome/gallery/", "destination": "/gallery", "permanent": true },
+    { "source": "/welcome/gallery", "destination": "/gallery", "permanent": true },
+    { "source": "/en/", "destination": "/", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/sv/", "destination": "/", "permanent": true },
+    { "source": "/sv", "destination": "/", "permanent": true },
+    { "source": "/welcome/:path*", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

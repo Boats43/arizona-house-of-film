@@ -751,7 +751,7 @@ export const supportingPagesData = {
         <li>Dispensaries</li>
         <li>Pawn shops</li>
       </ul>
-      <p>Beyond burglary prevention, security film also protects your storefront from vandalism, civil unrest, and accidental impacts. It also blocks 99% of UV rays, which helps to <a href="/commercial-window-tinting/uv-protection">prevent your displayed merchandise from fading</a>.</p>
+      <p>Beyond burglary prevention, security film also protects your storefront from vandalism, civil unrest, and accidental impacts. It also blocks 99% of UV rays, which helps to <a href="/commercial-window-tinting">prevent your displayed merchandise from fading</a>.</p>
       <p>Protect your business, your inventory, and your peace of mind. <a href="/contact">Contact Arizona House of Film</a> for a commercial security consultation today.</p>
     `,
     faqs: [

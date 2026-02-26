@@ -358,7 +358,7 @@ const Commercial = () => {
                 Commercial Window Tinting Phoenix &amp; Scottsdale | Arizona House of Film
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">
-                Industrial-grade solar and security solutions engineered for the Arizona climate. Protect your
+                Industrial-grade solar and <Link to="/safety" className="text-slate-200 underline">security</Link> solutions engineered for the Arizona climate. Protect your
                 facility, reduce overhead, and enhance workplace productivity.
               </p>
               <div className="flex flex-wrap gap-4">

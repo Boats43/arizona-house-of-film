@@ -172,7 +172,7 @@ const Home = () => {
       <section className="py-8 bg-blue-950 text-white border-b border-blue-900">
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <p className="text-base md:text-lg text-blue-100 font-medium leading-relaxed text-center">
-            Arizona's extreme climate — with summer temperatures exceeding 115°F and one of the highest UV indexes in North America — makes window film not a luxury but a necessity. Arizona House of Film has been protecting Phoenix homes and businesses since 2012, installing ceramic, safety, decorative, and energy-saving films for thousands of Arizona properties. Licensed ROC #314088.
+            Arizona's extreme climate — with summer temperatures exceeding 115°F and one of the highest UV indexes in North America — makes window film not a luxury but a necessity. Arizona House of Film has been protecting Phoenix homes and businesses since 2012, installing ceramic, <Link to="/safety" className="text-blue-200 underline">safety</Link>, decorative, and energy-saving films for thousands of Arizona properties. Licensed ROC #314088.
           </p>
         </div>
       </section>

@@ -13,14 +13,20 @@ const Footer = () => {
     name: 'Residential',
     path: '/residential-window-tinting'
   }, {
+    name: 'Safety & Security',
+    path: '/safety'
+  }, {
+    name: 'Anti-Graffiti',
+    path: '/anti-graffiti'
+  }, {
     name: 'Decorative',
     path: '/decorative-window-films'
   }, {
-    name: 'Safety',
-    path: '/safety'
-  }, {
     name: 'Energy Saving',
     path: '/energy-saving-window-films'
+  }, {
+    name: 'All Solutions',
+    path: '/solutions'
   }];
   const secondaryLinks = [{
     name: 'Films',

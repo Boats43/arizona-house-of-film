@@ -67,17 +67,45 @@ const Home = () => {
     "@type": "HomeAndConstructionBusiness",
     name: "Arizona House of Film",
     url: "https://arizonahouseoffilm.com",
-    telephone: "+1-480-788-1591",
+    telephone: "+14807881591",
+    email: "arizonahouseoffilm@gmail.com",
     image: ogImage,
     description: "Arizona's trusted window film installer since 2012. Licensed ROC #314088.",
     address: { "@type": "PostalAddress", streetAddress: "7007 W Flower St", addressLocality: "Phoenix", addressRegion: "AZ", postalCode: "85033", addressCountry: "US" },
     geo: { "@type": "GeoCoordinates", latitude: 33.4484, longitude: -112.074 },
     openingHoursSpecification: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "17:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "15:00" }
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "14:00" }
     ],
     aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "15" },
-    priceRange: "$$",
+    priceRange: "$",
+    areaServed: { "@type": "City", name: "Phoenix", containedInPlace: { "@type": "State", name: "Arizona" } },
+    sameAs: [
+      "https://maps.app.goo.gl/TFe5r35sb3diLvtj9",
+      "https://www.yelp.com/biz/az-house-of-film-phoenix",
+      "https://www.houzz.com/professionals/window-treatments/arizona-house-of-film-pfvwus-pf~1864982788",
+      "https://www.homeadvisor.com/rated.ArizonaHouseofFilmLLC.109629489.html",
+      "https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ot0000000NqN0AAK",
+    ],
+    hasCredential: { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "Arizona Registrar of Contractors License #314088" },
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Arizona House of Film",
+    url: "https://arizonahouseoffilm.com",
+    logo: "https://arizonahouseoffilm.com/images/Arizona-House-of-Film.webp",
+    contactPoint: { "@type": "ContactPoint", telephone: "+14807881591", email: "arizonahouseoffilm@gmail.com", contactType: "customer service" },
+    knowsAbout: [
+      "window film installation",
+      "solar control film",
+      "security film",
+      "decorative film",
+      "anti-graffiti film",
+      "ceramic window tint",
+      "commercial window tinting Phoenix",
+    ],
   };
 
   const websiteSchema = {
@@ -113,6 +141,7 @@ const Home = () => {
         <link rel="preload" as="image" href={HERO_IMAGE} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       </Helmet>
 

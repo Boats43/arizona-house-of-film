@@ -314,7 +314,7 @@ function generateAllBlogPosts(count) {
           "name": "Arizona House of Film",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://arizonahouseoffilm.com/assets/logo.png"
+            "url": "https://arizonahouseoffilm.com/images/Arizona-House-of-Film.webp"
           }
         }
       },

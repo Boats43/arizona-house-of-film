@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, ExternalLink, ShieldCheck, Zap, ThermometerSun, Award } from 'lucide-react';
+import { ArrowLeft, CheckCircle, ExternalLink, ShieldCheck, Zap, ThermometerSun, Award, MapPin } from 'lucide-react';
 import { brands } from '@/data/brands';
 import { filmCategories } from '@/data/films';
 import { blogPosts } from '@/data/blogPosts.jsx';
@@ -37,8 +37,11 @@ const BrandPage = () => {
     }))
   } : null;
 
-  const relatedFilmCategories = filmCategories.filter(cat =>
-    brand.relatedFilms?.some(rf => cat.slug.includes(rf))
+  const relatedFilmCategories = filmCategories.filter(fc =>
+    brand.relatedFilms?.some(rf =>
+      fc.slug.includes(rf) ||
+      rf.includes(fc.slug.replace('-window-films', '').replace('-film', ''))
+    )
   );
 
   const relatedBlogPosts = blogPosts
@@ -125,10 +128,51 @@ const BrandPage = () => {
                     <li className="flex gap-4"><ThermometerSun className="text-red-600 w-6 h-6 shrink-0" /><div><span className="block font-black uppercase text-sm tracking-tighter italic">Heat Rejection</span><span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">{brand.specs?.heatRejection || "High Performance IR Block"}</span></div></li>
                     <li className="flex gap-4"><ShieldCheck className="text-red-600 w-6 h-6 shrink-0" /><div><span className="block font-black uppercase text-sm tracking-tighter italic">UV Protection</span><span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">{brand.specs?.uvProtection || "99.9% Solar Blockade"}</span></div></li>
                     <li className="flex gap-4"><Zap className="text-red-600 w-6 h-6 shrink-0" /><div><span className="block font-black uppercase text-sm tracking-tighter italic">Technology</span><span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">{brand.specs?.tech || "Advanced Nanotechnology"}</span></div></li>
+                    {brand.specs?.warranty && (
+                      <li className="flex gap-4"><Award className="text-red-600 w-6 h-6 shrink-0" /><div><span className="block font-black uppercase text-sm tracking-tighter italic">Warranty</span><span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">{brand.specs.warranty}</span></div></li>
+                    )}
                   </ul>
                 </div>
               </aside>
             </div>
+
+          {brand.arizonaNote && (
+            <div className="mt-16 flex items-start gap-4 bg-blue-950 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-blue-400 mb-2">Arizona Climate Application</p>
+                <p className="text-sm font-medium text-blue-100 leading-relaxed">{brand.arizonaNote}</p>
+              </div>
+            </div>
+          )}
+
+          {brand.bestFor?.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-lg font-black uppercase tracking-tighter text-slate-900 mb-4">Best For</h3>
+              <div className="flex flex-wrap gap-2">
+                {brand.bestFor.map((item) => (
+                  <span key={item} className="bg-slate-100 text-slate-700 font-bold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full border border-slate-200">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {brand.filmSeries?.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-lg font-black uppercase tracking-tighter text-slate-900 mb-6">Key Film Series</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {brand.filmSeries.map((series) => (
+                  <div key={series.name} className="bg-slate-50 border border-slate-200 p-5 rounded-lg">
+                    <p className="font-black uppercase tracking-tighter text-slate-900 mb-2">{series.name}</p>
+                    <p className="text-sm text-slate-600 font-medium leading-relaxed">{series.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           </div>
         </section>
 

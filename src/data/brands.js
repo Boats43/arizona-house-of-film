@@ -11,7 +11,20 @@ export const brands = [
       uvProtection: "99.9% Blockage",
       warranty: "Limited Lifetime",
       tech: "Multi-layer Optical"
-    }
+    },
+    arizonaNote: "We specify 3M Prestige Series for Phoenix and Scottsdale residential installations where maintaining exterior appearance matters. The multi-layer optical construction delivers 97% IR rejection without the mirror look common in older films. For commercial projects, 3M Scotchshield Ultra Series meets GSA blast mitigation specifications.",
+    bestFor: ["High-end residential", "Government facilities", "Dual-pane safe applications", "LEED documentation projects"],
+    filmSeries: [
+      { name: "3M Prestige Series", description: "Non-reflective ceramic. 97% IR rejection. Highest clarity residential solar film." },
+      { name: "3M Scotchtint Series", description: "Commercial solar control. Multiple VLT options for large-perimeter installs." },
+      { name: "3M Scotchshield Ultra", description: "12-mil safety film meeting GSA blast mitigation requirements." },
+      { name: "3M Fasara Series", description: "Architectural decorative film. 100+ patterns including etched, frosted, and geometric." }
+    ],
+    faqs: [
+      { question: "Is 3M window film safe for dual-pane windows?", answer: "Yes. 3M Prestige and Scotchtint series are engineered for dual-pane applications. We verify glass type and manufacturer specifications before every installation to ensure thermal compatibility." },
+      { question: "What is the warranty on 3M window film?", answer: "3M offers a limited lifetime warranty on residential installations and a 10-year commercial warranty. Arizona House of Film backs every install with our own workmanship guarantee." },
+      { question: "Does 3M film interfere with cell signals or GPS?", answer: "No. The 3M Prestige Series uses non-metallic multi-layer optical technology that does not interfere with GPS, cellular, or WiFi signals — unlike older metallic films." }
+    ]
   },
   {
     name: "Eastman Chemical Company",
@@ -39,7 +52,13 @@ export const brands = [
       uvProtection: "99% +",
       warranty: "Residential Lifetime",
       tech: "Sustainable Solar"
-    }
+    },
+    arizonaNote: "Solar Gard is our primary specification for large commercial perimeters requiring LEED documentation and COMcheck compliance. Saint-Gobain backing means full NFRC certification across the product line — critical for GC and architect specifications on new Arizona construction.",
+    bestFor: ["LEED projects", "Large commercial perimeters", "GC and architect specifications", "COMcheck compliance"],
+    filmSeries: [
+      { name: "Solar Gard Panorama Series", description: "Spectrally selective. High VLT with aggressive SHGC ratings for commercial compliance." },
+      { name: "Solar Gard Quantum Series", description: "Nano-ceramic commercial. Designed for glass-heavy facades in high-solar-load climates." }
+    ]
   },
   {
     name: "Avery Dennison / Hanita",
@@ -81,7 +100,16 @@ export const brands = [
       uvProtection: "99% Blockage",
       warranty: "Lifetime Residential",
       tech: "Sputtered Metal/Dielectric"
-    }
+    },
+    arizonaNote: "Madico supplies both our solar control and decorative film lines. The Sunscape ceramic series handles Arizona heat loads effectively, while the Madico decorative collection — including rice paper, rain glass, and geometric patterns — is what we specify for commercial tenant improvements and HIPAA-compliant medical privacy installations.",
+    bestFor: ["Commercial solar control", "Medical and office privacy", "Tenant improvement projects", "Pattern-specific decorative installs"],
+    filmSeries: [
+      { name: "Madico Sunscape Series", description: "Commercial ceramic solar control. Multiple SHGC ratings for COMcheck compliance." },
+      { name: "Madico Decorative Series", description: "Architectural privacy films. Rice paper, rain glass, geometric patterns for commercial interiors." }
+    ],
+    faqs: [
+      { question: "Does Madico film qualify for SRP or APS rebates?", answer: "Select Madico Sunscape series films with qualifying SHGC ratings meet SRP Business Solutions and APS rebate program requirements. We provide the NFRC data sheets required for rebate applications." }
+    ]
   },
   {
     name: "Hüper Optik",
@@ -95,7 +123,17 @@ export const brands = [
       uvProtection: "99.9% Blockage",
       warranty: "Residential Lifetime",
       tech: "Patented Multi-Ceramic"
-    }
+    },
+    arizonaNote: "Hüper Optik patented ceramic technology was developed specifically for high solar load climates. The multi-ceramic construction provides up to 98% IR rejection while maintaining exceptionally low interior reflectivity — critical for North Scottsdale and Paradise Valley properties where view preservation is non-negotiable.",
+    bestFor: ["Luxury residential", "High-clarity applications", "North Scottsdale estates", "View-preservation priority"],
+    filmSeries: [
+      { name: "Hüper Optik Ceramic Series", description: "Patented multi-ceramic. 98% IR rejection. Near-invisible from exterior." },
+      { name: "Hüper Optik Dual Reflective", description: "Daytime privacy with outward reflectivity. Maintains dark exterior appearance." }
+    ],
+    faqs: [
+      { question: "What makes Hüper Optik different from other ceramic films?", answer: "Hüper Optik holds a patent on their multi-ceramic construction process, which layers ceramic particles at the molecular level rather than coating the surface. This delivers more consistent heat rejection and longer durability in extreme heat climates like Arizona." },
+      { question: "Is Hüper Optik worth the premium cost in Arizona?", answer: "For south and west-facing windows in luxury homes, yes. The combination of 98% IR rejection and low interior reflectivity is unmatched in the residential market. Most Paradise Valley and North Scottsdale clients specify Hüper Optik after seeing the clarity difference." }
+    ]
   },
   {
     name: "Johnson Window Films",
@@ -265,7 +303,17 @@ export const brands = [
       uvProtection: "99% Blockage",
       warranty: "System Failure Bonded",
       tech: "Multi-Ply Security"
-    }
+    },
+    arizonaNote: "We deploy Armor Glass films for high-security commercial and residential applications where access denial is the primary objective. The multi-ply construction holds shattered glass intact through sustained impact — the same performance standard we applied for U.S. Navy Recruitment Centers and high-value retail clients including Skechers USA.",
+    bestFor: ["Smash-and-grab deterrence", "School safety", "Government facilities", "Dispensaries and high-theft retail"],
+    filmSeries: [
+      { name: "Armor Glass 8-mil Security", description: "Standard commercial security. Holds glass intact through smash-and-grab attempts. 60+ second forced entry delay." },
+      { name: "Armor Glass 12-mil Heavy Duty", description: "High-security specification. Meets blast mitigation requirements for government and educational facilities." }
+    ],
+    faqs: [
+      { question: "How does Armor Glass film stop break-ins?", answer: "Armor Glass film does not prevent glass from breaking — it holds the broken pieces bonded together. A standard smash-and-grab takes 10 seconds on unprotected glass. With 8-mil Armor Glass film, forced entry takes 60-120 seconds — long enough for most criminals to abandon the attempt." },
+      { question: "Can Armor Glass film be combined with wet-glaze anchoring?", answer: "Yes — and we recommend it for high-security installations. Wet-glaze anchoring (Dow 995 structural silicone) bonds the film and glass directly to the frame. Even if the glass shatters completely, the pane stays in the opening and denies entry." }
+    ]
   },
   {
     name: "HanitaTek",

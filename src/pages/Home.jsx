@@ -99,7 +99,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Phoenix Window Tinting | Performance Glass Solutions | Arizona House of Film</title>
-        <meta name="description" content="Phoenix leader in high-performance window tinting since 2012. Ceramic heat rejection, security film, LEED documentation, SRP & APS rebates. Trusted by GCU, U.S. Navy, Skechers. ROC #314088." />
+        <meta name="description" content="Phoenix #1 window tinting company. Ceramic films block 84% heat, 99.9% UV. Military, university and enterprise trusted. SRP and APS rebates. Free estimate: 480-788-1591. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Window Tinting Phoenix | Residential & Commercial | Arizona House of Film" />
         <meta property="og:description" content="Phoenix's authority in ceramic window tinting for 20+ years. Licensed ROC #314088. Solar control, privacy, and security films." />

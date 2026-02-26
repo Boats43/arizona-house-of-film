@@ -8,7 +8,7 @@ import { cities } from '@/data/cities';
 
 const Residential = () => {
   const pageTitle = "Residential Window Tinting Phoenix AZ | Ceramic Solar Films | Arizona House of Film";
-  const metaDescription = "Professional residential window tinting in Phoenix, Scottsdale & Mesa. Ceramic films block 84% heat, 99.9% UV. SRP & APS rebate eligible. Licensed ROC #314088. Free estimates: 480-788-1591.";
+  const metaDescription = "Ceramic window tinting for Phoenix homes. Block 84% heat, cut SRP and APS bills 20-30%. HOA compliant. North Scottsdale and Paradise Valley specialists. Free estimate. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/residential-window-tinting";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 

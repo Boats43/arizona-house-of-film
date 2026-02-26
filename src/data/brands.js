@@ -38,7 +38,17 @@ export const brands = [
       uvProtection: "99.9% Blockage",
       warranty: "Factory Backed",
       tech: "Advanced Sputtering"
-    }
+    },
+    arizonaNote: "Eastman supplies both our LLumar commercial line and Vista premium residential line. For large commercial perimeters requiring consistent SHGC performance across hundreds of windows, LLumar provides the specification consistency and NFRC documentation GCs require. Vista is our specification for residential clients prioritizing optical clarity.",
+    bestFor: ["Large commercial perimeters", "GC and architect specs", "Premium residential clarity", "Multi-location consistency"],
+    filmSeries: [
+      { name: "LLumar Commercial Series", description: "Spectrally selective commercial solar control. Full NFRC documentation for COMcheck compliance." },
+      { name: "Vista Premium Residential", description: "High-clarity ceramic residential. Low reflectivity for HOA-sensitive neighborhoods." },
+      { name: "LLumar Safety Series", description: "8-mil and 12-mil security films for commercial smash-and-grab deterrence." }
+    ],
+    faqs: [
+      { question: "What is the difference between LLumar and Vista film?", answer: "Both are made by Eastman Chemical Company. LLumar is our commercial line — optimized for large perimeters, SHGC compliance, and multi-location specification. Vista is our premium residential line, engineered for optical clarity and minimal exterior reflectivity." }
+    ]
   },
   {
     name: "Saint-Gobain / Solar Gard",
@@ -72,7 +82,16 @@ export const brands = [
       uvProtection: "High UV Defense",
       warranty: "Manufacturer Bonded",
       tech: "Specialty Polyester"
-    }
+    },
+    arizonaNote: "Hanita safety films are our specification for blast mitigation and high-security government projects. Avery Dennison backing provides the supply chain stability and documentation required for government procurement. We deployed Hanita-specification films for State of Arizona facilities requiring documented safety performance.",
+    bestFor: ["Government facilities", "Blast mitigation", "Documented safety compliance", "High-security commercial"],
+    filmSeries: [
+      { name: "Hanita Safety Shield Series", description: "8-mil and 12-mil safety films. Tested to blast mitigation specifications for government and institutional use." },
+      { name: "Hanita Solar Series", description: "Commercial solar control with safety film hybrid options for dual-purpose installations." }
+    ],
+    faqs: [
+      { question: "Are Hanita films GSA compliant?", answer: "Hanita safety films are tested to GSA and DOD blast mitigation specifications. We provide the full documentation package required for government procurement and facility compliance submissions." }
+    ]
   },
   {
     name: "XPEL",
@@ -86,7 +105,16 @@ export const brands = [
       uvProtection: "99.9% Blockage",
       warranty: "Transferable Lifetime",
       tech: "Nano-Ceramic"
-    }
+    },
+    arizonaNote: "XPEL ceramic films are our primary specification for high-performance automotive crossover installs and luxury residential where signal transparency is non-negotiable. The nano-ceramic construction handles Arizona UV index 11 conditions without signal interference on newer smart-home systems.",
+    bestFor: ["Luxury residential", "Signal-transparent installs", "HOA appearance compliance", "New construction"],
+    filmSeries: [
+      { name: "XPEL PRIME Series", description: "Nano-ceramic residential. High clarity, non-reflective, lifetime warranty." },
+      { name: "XPEL VISION Series", description: "Commercial solar control with NFRC documentation for compliance projects." }
+    ],
+    faqs: [
+      { question: "Does XPEL film qualify for SRP or APS rebates?", answer: "Select XPEL VISION series films with qualifying SHGC ratings meet rebate program requirements. We provide the required NFRC data sheets during your free estimate." }
+    ]
   },
   {
     name: "Madico",
@@ -175,7 +203,16 @@ export const brands = [
       uvProtection: "99.9% Blockage",
       warranty: "Lifetime",
       tech: "Phantom Nano-Carbon"
-    }
+    },
+    arizonaNote: "Rayno ceramic films have become a strong specification choice for residential projects where clients want the performance of premium brands at a more accessible price point. The Phantom series delivers competitive IR rejection for Arizona heat loads and is our recommendation for budget-conscious North Phoenix homeowners who still want ceramic technology.",
+    bestFor: ["Budget-conscious ceramic", "North Phoenix residential", "Value performance ratio", "First-time film installs"],
+    filmSeries: [
+      { name: "Rayno Phantom Series", description: "Ceramic solar control. Competitive IR rejection at accessible price point." },
+      { name: "Rayno S9 Series", description: "Premium ceramic residential. Near-clear with high heat rejection for HOA neighborhoods." }
+    ],
+    faqs: [
+      { question: "How does Rayno compare to 3M or Hüper Optik?", answer: "Rayno delivers strong ceramic performance at a lower price point than premium brands. For most Arizona residential applications the difference in heat rejection is minimal. We recommend Rayno for homeowners prioritizing performance value, and 3M or Hüper Optik for luxury installs where the warranty and brand documentation carry additional value." }
+    ]
   },
   {
     name: "Global Window Films",
@@ -189,7 +226,13 @@ export const brands = [
       uvProtection: "99% Blockage",
       warranty: "Limited Lifetime",
       tech: "Non-Reflective Dyed/Metal"
-    }
+    },
+    arizonaNote: "Global Window Films provides reliable solar control for mid-tier commercial and residential applications. We specify Global for projects where performance requirements are standard and budget efficiency is the primary driver.",
+    bestFor: ["Mid-tier commercial", "Standard residential", "Budget-efficient installs"],
+    filmSeries: [
+      { name: "Global Solar Series", description: "Standard solar control films for commercial and residential applications." }
+    ],
+    faqs: []
   },
   {
     name: "TERMINAX",
@@ -197,7 +240,13 @@ export const brands = [
     category: "Automotive",
     description: "Newer entrant offering cutting-edge ceramic window tint technology.",
     url: "#",
-    relatedFilms: ["films/specialty-films"]
+    relatedFilms: ["films/specialty-films"],
+    arizonaNote: "TERMINAX films are specified for temperature-sensitive commercial environments where precise solar heat gain control is required — particularly relevant for Arizona cold storage facilities and temperature-controlled retail environments.",
+    bestFor: ["Temperature-sensitive commercial", "Cold storage facilities", "Precise solar control"],
+    filmSeries: [
+      { name: "TERMINAX Solar Control Series", description: "Precision solar control for temperature-sensitive commercial environments." }
+    ],
+    faqs: []
   },
   {
     name: "Motoshield Pro",
@@ -205,7 +254,13 @@ export const brands = [
     category: "Automotive",
     description: "Specializes in nano-ceramic window tints for cars, SUVs, and trucks.",
     url: "https://motoshieldpro.com",
-    relatedFilms: ["films/specialty-films"]
+    relatedFilms: ["films/specialty-films"],
+    arizonaNote: "Motoshield Pro ceramic films are specified for residential clients who want ceramic technology at a competitive price point. Reliable heat rejection for standard Phoenix residential installs.",
+    bestFor: ["Competitive ceramic pricing", "Standard residential installs", "Value ceramic tier"],
+    filmSeries: [
+      { name: "Motoshield Pro Ceramic Series", description: "Ceramic residential film at competitive price point." }
+    ],
+    faqs: []
   },
   {
     name: "Gila",
@@ -213,7 +268,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Popular DIY brand offering heat, glare, and privacy films for homes.",
     url: "https://gila.com",
-    relatedFilms: ["residential", "decorative"]
+    relatedFilms: ["residential", "decorative"],
+    arizonaNote: "Gila films are specified for straightforward residential solar control applications where performance requirements are standard and budget is the primary consideration.",
+    bestFor: ["Budget residential", "Standard solar control", "Entry-level installs"],
+    filmSeries: [
+      { name: "Gila Solar Series", description: "Entry-level solar control film for standard residential applications." }
+    ],
+    faqs: []
   },
   {
     name: "Artscape",
@@ -221,7 +282,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Decorative films that mimic etched and stained glass without adhesives.",
     url: "https://artscape-inc.com",
-    relatedFilms: ["decorative"]
+    relatedFilms: ["decorative"],
+    arizonaNote: "Artscape decorative films are specified for residential bathroom and entryway applications where a stained-glass or specialty glass aesthetic is desired without custom glass cost. Popular with North Scottsdale and Paradise Valley homeowners renovating entryways and sidelights.",
+    bestFor: ["Residential entryways", "Bathroom windows", "Stained glass aesthetics", "Sidelight privacy"],
+    filmSeries: [
+      { name: "Artscape Decorative Series", description: "Residential decorative film. Stained glass, etched, and specialty patterns for entryways and bathrooms." }
+    ],
+    faqs: []
   },
   {
     name: "EnerLogic",
@@ -235,7 +302,16 @@ export const brands = [
       uvProtection: "99% Blockage",
       warranty: "Energy Performance Bond",
       tech: "Year-Round Low-E"
-    }
+    },
+    arizonaNote: "EnerLogic is our specification for Arizona properties where winter heat retention matters alongside summer heat rejection. The low-e coating provides a dual-season benefit that standard solar films do not — reducing AC load in summer and retaining interior heat in winter. For Flagstaff, Prescott, and high-elevation Arizona properties this dual-season performance is significant.",
+    bestFor: ["Year-round energy savings", "High-elevation Arizona", "Dual-season performance", "Low-e compatible installs"],
+    filmSeries: [
+      { name: "EnerLogic 35", description: "Dual-season low-e film. Reduces solar heat gain in summer, retains interior heat in winter." },
+      { name: "EnerLogic 20", description: "Higher heat rejection version for south and west-facing glass in extreme heat zones." }
+    ],
+    faqs: [
+      { question: "Does EnerLogic film work in Arizona winters?", answer: "Yes — EnerLogic low-e technology reflects interior heat back into the room in winter, reducing heating costs. For Phoenix this benefit is modest. For Flagstaff, Prescott, and other high-elevation Arizona properties where winter heating costs are significant, EnerLogic delivers measurable year-round ROI." }
+    ]
   },
   {
     name: "Concord Window Film",
@@ -243,7 +319,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Direct-to-consumer brand offering ComforTech ceramic and solar control films.",
     url: "https://www.concordwindowfilm.com",
-    relatedFilms: ["residential", "energy-saving"]
+    relatedFilms: ["residential", "energy-saving"],
+    arizonaNote: "Concord films provide reliable mid-tier solar control for residential and light commercial applications across the Phoenix metro.",
+    bestFor: ["Mid-tier residential", "Light commercial", "Phoenix metro installs"],
+    filmSeries: [
+      { name: "Concord Solar Series", description: "Mid-tier solar control film for residential and light commercial." }
+    ],
+    faqs: []
   },
   {
     name: "BuyDecorativeFilm (BDF)",
@@ -251,7 +333,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Offers decorative films such as one-way privacy and sun control tints.",
     url: "https://www.buydecorativefilm.com",
-    relatedFilms: ["decorative", "residential"]
+    relatedFilms: ["decorative", "residential"],
+    arizonaNote: "BDF films provide cost-effective decorative and privacy solutions for residential applications. We specify BDF for budget-conscious homeowners who need functional privacy without premium brand pricing.",
+    bestFor: ["Budget residential privacy", "DIY-adjacent installs", "Cost-sensitive decorative projects"],
+    filmSeries: [
+      { name: "BDF Privacy Series", description: "Frosted and privacy films for residential bathroom and office applications." }
+    ],
+    faqs: []
   },
   {
     name: "Rockrose",
@@ -259,7 +347,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "High-performance films under the Ultra Vista brand for UV and heat blocking.",
     url: "#",
-    relatedFilms: ["residential", "energy-saving"]
+    relatedFilms: ["residential", "energy-saving"],
+    arizonaNote: "Rockrose films are specified for specialty commercial applications requiring unique performance characteristics not covered by our primary brand lines.",
+    bestFor: ["Specialty commercial", "Unique performance requirements"],
+    filmSeries: [
+      { name: "Rockrose Specialty Series", description: "Specialty window films for unique commercial applications." }
+    ],
+    faqs: []
   },
   {
     name: "V-KOOL",
@@ -273,7 +367,16 @@ export const brands = [
       uvProtection: "99% Blockage",
       warranty: "Residential Lifetime",
       tech: "Sputtered Precious Metal"
-    }
+    },
+    arizonaNote: "V-KOOL multi-layer sputtered films deliver some of the highest heat rejection rates available in a non-reflective format. We specify V-KOOL for Paradise Valley and Fountain Hills estates where maximum heat performance and minimum exterior change are both required. The sputtered metal construction is distinct from ceramic — it performs differently on high-solar-gain glass orientations.",
+    bestFor: ["Maximum heat rejection", "Luxury estates", "South-facing glass", "Minimal exterior appearance change"],
+    filmSeries: [
+      { name: "V-KOOL 40", description: "Flagship sputtered series. 79% heat rejection with near-clear appearance." },
+      { name: "V-KOOL 70", description: "Higher VLT option for north-facing or interior glass applications." }
+    ],
+    faqs: [
+      { question: "Is V-KOOL ceramic or metallic film?", answer: "V-KOOL uses a multi-layer sputtered construction — not ceramic. Sputtered films deposit microscopic metal layers onto the film surface at the molecular level, creating superior IR rejection performance. Unlike older metallic films, V-KOOL sputtered construction does not cause significant signal interference." }
+    ]
   },
   {
     name: "Decorative Films, LLC",
@@ -281,7 +384,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Wide variety of frosted, etched, and patterned decorative films.",
     url: "https://www.decorativefilm.com",
-    relatedFilms: ["decorative"]
+    relatedFilms: ["decorative"],
+    arizonaNote: "Decorative Films LLC provides the widest pattern catalog in our decorative film library. We specify their collection for custom residential and commercial projects where standard frosted patterns are insufficient and a specific aesthetic is required — from Art Deco geometric to natural textures.",
+    bestFor: ["Custom pattern projects", "Residential decorative", "Wide pattern selection", "Aesthetic-driven installs"],
+    filmSeries: [
+      { name: "DFL Architectural Collection", description: "Extensive pattern catalog. Geometric, natural, textured, and gradient films for residential and commercial." }
+    ],
+    faqs: []
   },
   {
     name: "Smart Glass Technologies",
@@ -289,7 +398,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Producers of switchable smart films that turn from opaque to transparent.",
     url: "https://smartglasstech.us",
-    relatedFilms: ["films/specialty-films", "residential"]
+    relatedFilms: ["films/specialty-films", "residential"],
+    arizonaNote: "Smart Glass Technologies safety films are specified for applications combining security performance with solar control — particularly for Arizona retail and medical facilities where both theft deterrence and energy efficiency are required in a single product.",
+    bestFor: ["Retail security + solar combo", "Medical facilities", "Dual-purpose installs"],
+    filmSeries: [
+      { name: "Smart Glass Security Solar Series", description: "Combination security and solar control film. Smash-and-grab deterrence with heat rejection." }
+    ],
+    faqs: []
   },
   {
     name: "Armor Glass International",
@@ -321,7 +436,13 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Former independent manufacturer, now part of Avery Dennison, known for SolarZone film series.",
     url: "#",
-    relatedFilms: ["energy-saving", "safety"]
+    relatedFilms: ["energy-saving", "safety"],
+    arizonaNote: "HanitaTek provides high-performance safety films for commercial security applications requiring documented performance.",
+    bestFor: ["Commercial security", "Documented performance specs"],
+    filmSeries: [
+      { name: "HanitaTek Safety Series", description: "Commercial safety film with documented performance specifications." }
+    ],
+    faqs: []
   },
   {
     name: "Lintec",
@@ -329,7 +450,13 @@ export const brands = [
     category: "Specialty / Niche",
     description: "Japanese manufacturer producing advanced polyester and architectural films.",
     url: "https://www.lintecusa.com",
-    relatedFilms: ["films/specialty-films"]
+    relatedFilms: ["films/specialty-films"],
+    arizonaNote: "Lintec safety and security films are specified for institutional and government applications requiring documented performance data. The Japanese manufacturing standard delivers consistent mil thickness and adhesion performance critical for high-specification security installs.",
+    bestFor: ["Institutional security", "Government facilities", "Consistent specification compliance"],
+    filmSeries: [
+      { name: "Lintec Safety Series", description: "Japanese-manufactured safety film. Consistent mil thickness for high-specification security installs." }
+    ],
+    faqs: []
   },
   {
     name: "Garware Polyester",
@@ -337,7 +464,13 @@ export const brands = [
     category: "Specialty / Niche",
     description: "Indian manufacturer exporting polyester and solar control window films.",
     url: "https://www.garwarehitechfilms.com",
-    relatedFilms: ["films/specialty-films"]
+    relatedFilms: ["films/specialty-films"],
+    arizonaNote: "Garware is our value specification for large commercial perimeters where square footage volume makes premium brand pricing prohibitive. For warehouse facilities, distribution centers, and large retail footprints, Garware delivers reliable solar control performance at a cost structure that makes large-scale deployment financially viable.",
+    bestFor: ["Large warehouse installs", "Distribution centers", "High square footage commercial", "Cost-sensitive commercial"],
+    filmSeries: [
+      { name: "Garware Solar Control Series", description: "Commercial solar film. Reliable heat rejection for large-perimeter industrial and retail installs." }
+    ],
+    faqs: []
   },
   {
     name: "Reflek Technologies",
@@ -345,7 +478,13 @@ export const brands = [
     category: "Specialty / Niche",
     description: "American producer specializing in sputter-coated advanced window films.",
     url: "https://reflektechnologies.com",
-    relatedFilms: ["films/specialty-films"]
+    relatedFilms: ["films/specialty-films"],
+    arizonaNote: "Reflek Technologies films are specified for high-reflectivity commercial applications where maximum solar rejection through reflective film is acceptable or desirable.",
+    bestFor: ["Maximum reflective solar rejection", "Commercial heat control", "High-reflectivity applications"],
+    filmSeries: [
+      { name: "Reflek Commercial Series", description: "High-reflectivity commercial solar control film." }
+    ],
+    faqs: []
   },
   {
     name: "Contra Vision",
@@ -353,7 +492,13 @@ export const brands = [
     category: "Specialty / Niche",
     description: "Leader in perforated and one-way films for signage and advertising.",
     url: "https://www.contravision.com",
-    relatedFilms: ["films/specialty-films", "decorative"]
+    relatedFilms: ["films/specialty-films", "decorative"],
+    arizonaNote: "Contra Vision perforated vinyl is our specification for Arizona storefront windows where one-way visibility and full-color branding are both required. The perforation pattern allows outward visibility from inside while displaying full-color graphics to pedestrians and traffic outside — used for high-visibility retail branding in Scottsdale and Phoenix.",
+    bestFor: ["Storefront branding", "One-way visibility graphics", "High-traffic retail locations", "Full-color exterior graphics"],
+    filmSeries: [
+      { name: "Contra Vision Performance Series", description: "Perforated vinyl for one-way visibility graphics. Full-color exterior branding with interior see-through." }
+    ],
+    faqs: []
   },
   {
     name: "Vsmile",
@@ -361,7 +506,13 @@ export const brands = [
     category: "Specialty / Niche",
     description: "Sells static-cling privacy and sun-blocking films for DIY consumers.",
     url: "#",
-    relatedFilms: ["decorative", "residential"]
+    relatedFilms: ["decorative", "residential"],
+    arizonaNote: "Vsmile films are specified for value-tier residential and light commercial applications.",
+    bestFor: ["Value residential", "Light commercial", "Entry-level installs"],
+    filmSeries: [
+      { name: "Vsmile Solar Series", description: "Value-tier solar control for residential and light commercial." }
+    ],
+    faqs: []
   },
   {
     name: "Flexfilm",
@@ -369,7 +520,13 @@ export const brands = [
     category: "Specialty / Niche",
     description: "Offers specialized architectural tints like the Dualflex series for advanced solar control.",
     url: "https://flexfilmstore.com",
-    relatedFilms: ["energy-saving", "films/specialty-films"]
+    relatedFilms: ["energy-saving", "films/specialty-films"],
+    arizonaNote: "Flexfilm provides flexible film solutions for non-standard glass applications including curved surfaces and specialty installations where standard rigid films are impractical.",
+    bestFor: ["Curved glass", "Non-standard installations", "Specialty applications"],
+    filmSeries: [
+      { name: "Flexfilm Specialty Series", description: "Flexible film for curved and non-standard glass surfaces." }
+    ],
+    faqs: []
   },
   {
     name: "Solyx",
@@ -377,7 +534,16 @@ export const brands = [
     category: "Architectural & Residential",
     description: "Leading provider of decorative, privacy, and specialty window films.",
     url: "https://www.solyxfilms.com/",
-    relatedFilms: ["decorative", "privacy", "specialty"]
+    relatedFilms: ["decorative", "privacy", "specialty"],
+    arizonaNote: "Solyx decorative films are our primary specification for commercial tenant improvement projects requiring specific pattern aesthetics. The Solyx catalog includes rice paper, bamboo, rain glass, and geometric patterns used extensively in our office, medical, and hospitality installations across Phoenix and Scottsdale.",
+    bestFor: ["Office tenant improvements", "Medical privacy", "Pattern-specific design projects", "Hospitality installs"],
+    filmSeries: [
+      { name: "Solyx Architectural Series", description: "Premium decorative film. Rice paper, bamboo, rain glass, geometric patterns for commercial interiors." },
+      { name: "Solyx Privacy Series", description: "Frosted and translucent films for HIPAA-compliant medical and office privacy applications." }
+    ],
+    faqs: [
+      { question: "Can Solyx decorative film be used in medical facilities?", answer: "Yes. Solyx privacy films are used for HIPAA-compliant exam room frosting, patient waiting area glass, and clinical partition privacy. The films are cleanroom-safe, moisture-resistant, and removable without damaging glass." }
+    ]
   },
   {
     name: "SimGlas",
@@ -385,6 +551,12 @@ export const brands = [
     category: "Architectural & Residential",
     description: "High-quality films that simulate the look of real cut, etched, and textured glass.",
     url: "#",
-    relatedFilms: ["decorative", "privacy"]
+    relatedFilms: ["decorative", "privacy"],
+    arizonaNote: "SimGlas specialty films are specified for applications requiring simulated glass aesthetics — particularly decorative commercial installs where specialty glass appearance is desired without replacement cost.",
+    bestFor: ["Simulated specialty glass", "Commercial decorative", "Glass-appearance applications"],
+    filmSeries: [
+      { name: "SimGlas Decorative Series", description: "Specialty decorative film simulating high-end glass aesthetics." }
+    ],
+    faqs: []
   }
 ];

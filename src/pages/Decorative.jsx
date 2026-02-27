@@ -19,7 +19,7 @@ import { cities } from '@/data/cities';
 const Decorative = () => {
   const rocNumber = "314088";
   const pageTitle = "Decorative Window Film Phoenix AZ | Frosted, Privacy & Custom Graphics | Arizona House of Film";
-  const metaDescription = `Frosted, patterned, and custom decorative window films for Phoenix homes, offices, and retail. Privacy without losing light. Custom branding. Licensed ROC #${rocNumber}. Free estimates: 480-788-1591.`;
+  const metaDescription = `Decorative window film in Phoenix and Scottsdale. Frosted glass, privacy film, gradient film, custom graphics. 30+ collections for homes, offices, and retail. ROC #${rocNumber}. Free estimate: (480) 788-1591.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/decorative-window-films";
   const heroImageUrl = "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";

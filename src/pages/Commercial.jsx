@@ -19,8 +19,8 @@ import ContactFormSection from "@/components/contact/ContactFormSection";
 const Commercial = () => {
   const rocNumber = "314088";
   const pageTitle =
-    "Commercial Window Tinting Phoenix AZ | 700+ Projects | ROC #314088 | Arizona House of Film";
-  const metaDescription = `Arizona's most experienced commercial window film contractor. 700+ completed projects across Maricopa and Pima counties since 2012. Licensed ROC #${rocNumber}. Solar control, security, privacy & decorative film. Free estimates: 480-788-1591.`;
+    "Commercial Window Tinting Phoenix & Scottsdale AZ | 700+ Projects | Arizona House of Film";
+  const metaDescription = `Commercial window film contractor serving Phoenix and Scottsdale. 700+ projects since 2012. Solar control, security, privacy, and decorative film. NFRC-certified. Licensed ROC #${rocNumber}. Free estimate: (480) 788-1591.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";

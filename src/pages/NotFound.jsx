@@ -17,7 +17,7 @@ const NotFound = () => {
       <Helmet>
         <title>404 - Page Not Found | Arizona House of Film</title>
         <meta name="description" content="The page you are looking for does not exist. Explore our window tinting services for Phoenix and Arizona." />
-        <meta name="robots" content="noindex, follow" />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/404" />
         <meta property="og:title" content="404 - Page Not Found | Arizona House of Film" />
         <meta property="og:description" content="Page not found. Explore our window tinting services for Phoenix and Arizona." />

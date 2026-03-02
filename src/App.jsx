@@ -26,6 +26,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 /* ---------------- LAZY PAGES ---------------- */
 const Home = lazy(() => import("@/pages/Home"));
 const Commercial = lazy(() => import("@/pages/Commercial"));
+const ScottsdaleCommercial = lazy(() => import("@/pages/ScottsdaleCommercial"));
 const Residential = lazy(() => import("@/pages/Residential"));
 const Decorative = lazy(() => import("@/pages/Decorative"));
 const Safety = lazy(() => import("@/pages/Safety"));
@@ -122,6 +123,7 @@ function AppRoutes() {
             element={<Navigate to="/commercial-window-tinting" replace />}
           />
           <Route path="/commercial-window-tinting" element={<Commercial />} />
+          <Route path="/commercial-window-tinting-scottsdale" element={<ScottsdaleCommercial />} />
           <Route
             path="/residential"
             element={<Navigate to="/residential-window-tinting" replace />}

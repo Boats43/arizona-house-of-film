@@ -162,7 +162,7 @@ const Safety = () => {
               </h2>
               <div className="w-24 h-2 bg-red-600 mx-auto mb-6" />
               <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto">
-                700+ installations. Trusted by schools, government agencies, and high-value retail.
+                713 installations. Trusted by schools, government agencies, and high-value retail.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -298,6 +298,57 @@ const Safety = () => {
                   Arizona House of Film is a certified installer of C-Bond glass-strengthening primers. This nanotechnology solution increases the structural integrity of existing glass by up to 100%, creating the ultimate foundation for security laminates. C-Bond is applied before film installation and is invisible once cured — no change to appearance, significant change to performance.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* COST TRANSPARENCY */}
+        <section className="py-20 bg-slate-900 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              How Much Does Security Window Film Cost in Phoenix?
+            </h2>
+            <p className="text-slate-300 text-base leading-relaxed font-medium max-w-3xl mb-12">
+              Security film projects are custom-quoted based on film specification, square footage, glass type, and anchoring system. There is no flat rate — a single storefront and a school campus require completely different specifications. Below is a framework based on our 713 completed installations.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+              {[
+                { title: 'Film Specification', body: '4-mil safety film, 8-mil security film, and 12-mil blast-mitigation film each carry different material costs. C-Bond primer and wet-glaze anchoring add to project cost but are mandatory for high-security environments. We specify the correct system for each application — not the cheapest option.' },
+                { title: 'Anchoring System', body: 'Film-only installations are faster and lower cost. Wet-glaze anchored systems using Dow 995 structural silicone require additional labor and cure time but are the only system that keeps glass in the opening after a sledgehammer impact. Required for schools, government facilities, and dispensaries.' },
+                { title: 'Project Scale', body: 'Single storefront installs complete in 1 day. School campus and government facility projects are phased across multiple mobilizations with credentialing and documentation requirements. Multi-location retail deployments require coordinated scheduling across sites.' },
+              ].map((card, i) => (
+                <div key={i} className="p-8 bg-slate-800 border border-slate-700 hover:border-red-600 transition-colors">
+                  <p className="font-black text-white uppercase text-sm mb-4 tracking-widest">{card.title}</p>
+                  <p className="text-slate-400 text-sm font-medium leading-relaxed">{card.body}</p>
+                </div>
+              ))}
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm text-left">
+                <thead>
+                  <tr className="border-b-2 border-red-600">
+                    <th className="py-3 pr-6 font-black text-white uppercase tracking-widest text-xs">Application</th>
+                    <th className="py-3 pr-6 font-black text-white uppercase tracking-widest text-xs">Film Spec</th>
+                    <th className="py-3 font-black text-white uppercase tracking-widest text-xs">Approach</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Single Storefront', '8-mil security', '1 day, custom quoted'],
+                    ['Medical or Dental Office', '8-mil security + privacy', '1–2 days, custom quoted'],
+                    ['School or Childcare', '12-mil + wet-glaze', 'Phased, full documentation'],
+                    ['Government Facility', '12-mil + wet-glaze + C-Bond', 'Credentialed access, full compliance'],
+                    ['Dispensary or Jewelry', '8-mil to 12-mil + wet-glaze', 'Custom assessed'],
+                    ['Multi-Location Retail', '8-mil to 12-mil (varies)', 'Coordinated scheduling, custom quoted'],
+                  ].map(([app, spec, approach], i) => (
+                    <tr key={i} className="border-b border-slate-800 hover:bg-slate-800/50 transition-colors">
+                      <td className="py-4 pr-6 text-white font-bold">{app}</td>
+                      <td className="py-4 pr-6 text-slate-300 font-medium">{spec}</td>
+                      <td className="py-4 text-slate-400 font-medium">{approach}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

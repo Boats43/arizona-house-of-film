@@ -153,7 +153,7 @@ const Home = () => {
           <div className="text-center max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
-                Phoenix <span className="text-blue-500 italic">Window Tinting</span> & Performance Glass Solutions
+                Arizona <span className="text-blue-500 italic">Window Film</span> & Tinting Experts — Phoenix, Scottsdale, and Beyond
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
                 Extreme climate solar control for Arizona's leading brands, builders, and homeowners. From military installations to high-rise efficiency, we neutralize the 115°F heat. ROC #314088.
@@ -187,6 +187,14 @@ const Home = () => {
               "On Q Financial",
               "DMC Builders",
               "Willmeng Construction",
+              "Coca-Cola",
+              "FCI Constructors",
+              "State of Arizona",
+              "City of Mesa",
+              "ASU MacroTechnology Works",
+              "Glendale Fire Station 152",
+              "Frank Lloyd Wright Foundation",
+              "Camden Development",
             ].map((name, i, arr) => (
               <React.Fragment key={name}>
                 <span>{name}</span>
@@ -208,12 +216,13 @@ const Home = () => {
 
       {/* TRUST STACK */}
       <section className="bg-white py-12 border-b border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8">
           {[
             { icon: Star, text: "Top Rated Google", sub: "15+ Local Reviews" },
             { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
             { icon: Server, text: "500,000+ Sq Ft Installed", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },
+            { icon: CheckCircle, text: "713+ Projects", sub: "Completed Since 2017" },
           ].map((item, i) => (
             <div key={i} className="text-center">
               <item.icon className="w-8 h-8 text-blue-800 mx-auto mb-3" />

@@ -19,8 +19,8 @@ import ContactFormSection from "@/components/contact/ContactFormSection";
 const Commercial = () => {
   const rocNumber = "314088";
   const pageTitle =
-    "Commercial Window Tinting Phoenix & Scottsdale AZ | 700+ Projects | Arizona House of Film";
-  const metaDescription = `Commercial window film contractor serving Phoenix and Scottsdale. 700+ projects since 2012. Solar control, security, privacy, and decorative film. NFRC-certified. Licensed ROC #${rocNumber}. Free estimate: (480) 788-1591.`;
+    "Commercial Window Tinting Phoenix and Scottsdale AZ | 713 Projects Since 2017 | Arizona House of Film";
+  const metaDescription = `Phoenix commercial window film contractor. 713 projects since 2017. Trusted by Wespac, FCI, Skechers, Coca-Cola and ASU. ROC #${rocNumber}. Call (480) 788-1591 for a quote.`;
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
@@ -95,7 +95,7 @@ const Commercial = () => {
         name: "Have you worked on projects similar to mine?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "With over 700 completed commercial projects across Maricopa and Pima counties, the answer is almost certainly yes. From small storefronts to federal recruitment centers, university campuses, and large distribution facilities like Peyton's Distribution Center, we have documented experience across every commercial building type in Arizona.",
+          text: "With 713 completed commercial projects across Maricopa and Pima counties, the answer is almost certainly yes. From small storefronts to federal recruitment centers, university campuses, and large distribution facilities like Peyton's Distribution Center, we have documented experience across every commercial building type in Arizona.",
         },
       },
       {
@@ -305,7 +305,7 @@ const Commercial = () => {
     },
     {
       q: "Have you worked on projects similar to mine?",
-      a: "With over 700 completed commercial projects across Maricopa and Pima counties, the answer is almost certainly yes. From small storefronts to federal recruitment centers, university campuses, and large distribution facilities like Peyton's Distribution Center, we have documented experience across every commercial building type in Arizona.",
+      a: "With 713 completed commercial projects across Maricopa and Pima counties, the answer is almost certainly yes. From small storefronts to federal recruitment centers, university campuses, and large distribution facilities like Peyton's Distribution Center, we have documented experience across every commercial building type in Arizona.",
     },
     {
       q: "Are you licensed for high-liability commercial environments?",
@@ -384,7 +384,7 @@ const Commercial = () => {
         <section className="py-10 bg-slate-950 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-6 text-center">
-              Trusted by 700+ Arizona Organizations
+              Trusted by 713 Arizona Organizations
             </p>
             <div className="flex flex-wrap justify-center gap-y-3">
               {trustedNames.map((name, i) => (
@@ -447,7 +447,7 @@ const Commercial = () => {
               </h2>
               <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
               <p className="text-slate-400 text-lg font-medium max-w-3xl mx-auto">
-                Arizona House of Film has completed 700+ commercial projects across Maricopa and Pima counties since 2012. ROC #314088.
+                Arizona House of Film has completed 713 commercial projects across Maricopa and Pima counties since 2017. ROC #314088.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -531,14 +531,14 @@ const Commercial = () => {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
-                Why 700+ Arizona Businesses Chose Arizona House of Film
+                Why 713 Arizona Businesses Chose Arizona House of Film
               </h2>
               <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
               <p className="text-slate-400 text-lg font-medium">The numbers behind the decision</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
               {[
-                { stat: "700+", label: "Commercial Projects Completed" },
+                { stat: "713", label: "Commercial Projects Completed" },
                 { stat: "ROC #314088", label: "Licensed & Bonded Since 2012" },
                 { stat: "2–4 Year", label: "Average Payback on Solar Film" },
                 { stat: "84%", label: "Maximum Solar Heat Rejection" },
@@ -611,6 +611,147 @@ const Commercial = () => {
                 >
                   {city.name}
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COST TRANSPARENCY */}
+        <section className="py-24 bg-slate-950 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                Commercial Window Film Pricing — What Phoenix Projects Actually Cost
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium max-w-3xl mx-auto">
+                Every commercial window film project is custom-quoted. There is no flat per-square-foot rate — a ground-floor retail storefront and a multi-story curtain wall building require different films, different equipment, and different scheduling. Pricing is determined after a site assessment. Below is a framework based on our 713 completed projects.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+              {[
+                {
+                  title: "Film Specification",
+                  body: "Film type is the primary cost driver. Ceramic and spectrally selective films require precise application on specific glass types. Security film systems — particularly wet-glaze anchored multi-layer installs — require technical expertise beyond standard tint application. We do not specify entry-level films for commercial projects.",
+                },
+                {
+                  title: "Building Access and Scheduling",
+                  body: "Ground-floor glass completes in 1–2 days. Multi-story curtain wall and high-access projects require lift equipment, phased scheduling, and building management coordination. We execute night and weekend installs for occupied facilities, hospitals, schools, and active retail.",
+                },
+                {
+                  title: "Glass Type and Compatibility",
+                  body: "Single pane, dual pane, tempered, laminated, and coated glass each have different film compatibility requirements. Incorrect film on incompatible glass causes thermal stress failures and voids manufacturer warranties. We assess existing glass before specifying any film.",
+                },
+                {
+                  title: "Project Scale",
+                  body: "Multi-location national brand rollouts require documentation, brand-standard compliance, and coordinated scheduling across sites. We have executed multi-location projects for national retailers including Skechers USA and Genuine Parts Company across the Phoenix metro.",
+                },
+              ].map((card, idx) => (
+                <div key={idx} className="bg-slate-900 border border-slate-800 p-8">
+                  <h3 className="text-lg font-black text-green-500 uppercase mb-3">{card.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed font-medium">{card.body}</p>
+                </div>
+              ))}
+            </div>
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-700">
+                    <th className="text-left text-xs font-black text-slate-400 uppercase tracking-widest py-3 pr-6">Project Type</th>
+                    <th className="text-left text-xs font-black text-slate-400 uppercase tracking-widest py-3 pr-6">Typical Scope</th>
+                    <th className="text-left text-xs font-black text-slate-400 uppercase tracking-widest py-3">Approach</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Retail Storefront", "500–2,500 sq ft", "Single mobilization, 1–2 days"],
+                    ["Office Suite or TI", "1,000–6,000 sq ft", "1–3 days, phased if occupied"],
+                    ["Multi-Story Office", "5,000–40,000 sq ft", "Phased, lift equipment required"],
+                    ["Warehouse or Distribution", "10,000–80,000+ sq ft", "Multi-phase, coordinated with ops"],
+                    ["Government or Institutional", "Variable", "Credentialed access, full documentation"],
+                    ["Multi-Location National Brand", "Per-location", "Rollout coordination, brand standards"],
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-slate-800">
+                      <td className="text-slate-300 font-semibold py-3 pr-6">{row[0]}</td>
+                      <td className="text-slate-400 py-3 pr-6">{row[1]}</td>
+                      <td className="text-slate-400 py-3">{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              All projects quoted after free site assessment. Licensed ROC #314088. We provide NFRC documentation, energy rebate support for SRP and APS programs, and full project closeout packages for GC and institutional clients.
+            </p>
+          </div>
+        </section>
+
+        {/* VERIFIED PROJECTS */}
+        <section className="py-24 bg-white border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">
+                Verified Project Scale — Selected Commercial Installations
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-600 text-lg font-medium max-w-3xl mx-auto">
+                A sample of verified commercial projects from our invoice history. Scale and scope drawn from documented project records dating to 2017.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "Skechers USA, Phoenix",
+                  category: "National Retail Chain",
+                  scope: "Multi-location solar and anti-graffiti film. Exterior ground-floor glass. Sacrificial anti-graffiti coating plus 8-mil security film. Multi-year phased deployment.",
+                  film: "Solar + anti-graffiti + security",
+                  value: "$68,000+",
+                },
+                {
+                  name: "FCI Constructors Inc., Glendale",
+                  category: "General Contractor — New Construction",
+                  scope: "Solar film on commercial construction including Glendale Fire Station. Post-construction GC coordination. NFRC documentation for project closeout.",
+                  film: "Solar control ceramic",
+                  value: "$60,000+ across multiple projects",
+                },
+                {
+                  name: "Renaissance Companies, Scottsdale",
+                  category: "Commercial Construction — Repeat Client",
+                  scope: "Security and decorative film across commercial TI projects. Eight separate project engagements spanning 2020–2025.",
+                  film: "Security + decorative",
+                  value: "$81,000+ across 8 projects",
+                },
+                {
+                  name: "DNG Construction",
+                  category: "General Contractor — Security Film Specialist",
+                  scope: "Security film and glass services across multiple commercial construction projects. Single largest GC relationship by documented value.",
+                  film: "Security + glass services",
+                  value: "$80,000+",
+                },
+                {
+                  name: "Glacier House Hotels + Element Scottsdale at Skysong + Camden Development",
+                  category: "Hotel and Multifamily",
+                  scope: "Solar and decorative film for hotel properties and apartment complexes. Glacier House Hotels single project: $15,000. Camden Development: 6+ mobilizations across multiple properties.",
+                  film: "Solar + decorative",
+                  value: "Hotel and multifamily residential",
+                },
+                {
+                  name: "City of Buckeye + City of Mesa + Glendale Fire Station 152 + State of Arizona Dept of Corrections",
+                  category: "Government and Municipal",
+                  scope: "Solar and security film for city administration buildings, fire stations, and state correctional facilities. Credentialed access environments with full compliance documentation.",
+                  film: "Solar + security",
+                  value: "4 government entities",
+                },
+              ].map((project, idx) => (
+                <div key={idx} className="bg-slate-50 border-l-4 border-green-500 p-8">
+                  <p className="text-xs font-black text-green-600 uppercase tracking-widest mb-2">{project.category}</p>
+                  <h3 className="text-base font-black text-slate-950 uppercase mb-3 leading-tight">{project.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{project.scope}</p>
+                  <div className="border-t border-slate-200 pt-4 space-y-1">
+                    <p className="text-xs text-slate-500"><span className="font-black text-slate-700 uppercase">Film:</span> {project.film}</p>
+                    <p className="text-xs text-slate-500"><span className="font-black text-slate-700 uppercase">Documented value:</span> {project.value}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

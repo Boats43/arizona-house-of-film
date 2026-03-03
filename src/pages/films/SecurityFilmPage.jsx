@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 const SecurityFilmPage = () => {
   const pageTitle = "Security Window Film Arizona | Arizona House of Film";
-  const metaDescription = "Protect your Arizona property with high-performance security window film. Deter break-ins, prevent injuries from shattered glass, and enhance safety for homes and businesses. Free quotes!";
+  const metaDescription = "High-performance security window film for Arizona homes and businesses. Deter break-ins, prevent injuries from shattered glass. Free quotes. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/security";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

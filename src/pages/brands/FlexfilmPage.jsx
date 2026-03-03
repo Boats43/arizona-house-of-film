@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const FlexfilmPage = () => {
   const pageTitle = "Flexfilm Window Films | Authorized Installers in Arizona";
-  const metaDescription = "Arizona House of Film are experienced installers of Flexfilm window films. Advanced ceramic and carbon technology for automotive, residential, and commercial applications.";
+  const metaDescription = "Arizona House of Film installs Flexfilm window films. Ceramic and carbon technology for residential and commercial applications in Arizona.";
   const canonicalUrl = "https://arizonahouseoffilm.com/brands/flexfilm";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

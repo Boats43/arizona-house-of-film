@@ -8,8 +8,7 @@ import { blogPosts } from '@/data/blogPosts.jsx';
 // ✅ Renamed component for clarity and minifier safety
 const BlogPage = () => {
   const pageTitle = "Window Tinting Arizona Blog | Arizona House of Film";
-  const metaDescription =
-    "Expert advice, tips, and news on residential and commercial window tinting in Arizona. Learn about energy savings, UV protection, decorative films, and trusted brands like 3M and SunTek.";
+  const metaDescription = "Expert tips on window tinting in Arizona. Energy savings, UV protection, decorative films, and brands like 3M and SunTek. Phoenix and Scottsdale coverage.";
   const canonicalUrl = "https://arizonahouseoffilm.com/blog";
 
   const faqPageSchema = {

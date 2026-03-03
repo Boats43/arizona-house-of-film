@@ -6,8 +6,7 @@ import ContactMap from "@/components/contact/ContactMap";
 
 const Contact = () => {
   const pageTitle = "Contact Arizona House of Film | Free Quote | Phoenix, AZ | 480-788-1591";
-  const metaDescription =
-    "Contact Arizona House of Film for a free window tinting quote in Phoenix, AZ. Licensed ROC #314088. Call 480-788-1591 or fill out our form for a 24-hour response.";
+  const metaDescription = "Contact Arizona House of Film for a free window tinting quote in Phoenix AZ. Licensed ROC #314088. Call 480-788-1591 for a 24-hour response.";
   const canonicalUrl = "https://arizonahouseoffilm.com/contact";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 

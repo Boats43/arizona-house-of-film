@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 const CasperCloakingPage = () => {
   const pageTitle = "Casper Cloaking Film Arizona | Arizona House of Film";
-  const metaDescription = "Ensure office privacy with Casper Cloaking Film, the revolutionary technology that makes LED screens appear black. Perfect for conference rooms and executive offices in Arizona.";
+  const metaDescription = "Casper Cloaking Film makes LED screens appear black from outside. Perfect for conference rooms and executive offices in Arizona. Free estimate.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/casper-cloaking";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

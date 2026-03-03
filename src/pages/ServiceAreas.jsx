@@ -139,6 +139,30 @@ const ServiceAreas = () => {
           </div>
         </section>
 
+        {/* STATIC CITY DIRECTORY — crawlable links for every city page */}
+        <section className="py-20 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-4">
+              All Arizona Cities We Serve
+            </h2>
+            <p className="text-sm text-slate-500 font-medium mb-10">
+              {cities.length} cities across Arizona — click any city for local pricing, services, and availability.
+            </p>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+              {[...cities].sort((a, b) => a.name.localeCompare(b.name)).map((city) => (
+                <li key={city.slug}>
+                  <Link
+                    to={`/service-areas/${city.slug}`}
+                    className="block px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 bg-white border border-slate-200 hover:bg-slate-950 hover:text-white hover:border-slate-950 transition-colors leading-tight"
+                  >
+                    {city.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         {/* SERVICE AREAS FAQ */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">

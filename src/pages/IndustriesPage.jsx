@@ -156,7 +156,7 @@ const IndustriesPage = () => {
 
   const { title, icon: Icon, content, testimonial } = industry;
   const pageTitle = `${title} Window Tinting | Arizona House of Film`;
-  const metaDescription = `Specialized window tinting services for ${title.toLowerCase()} in Arizona. Improve comfort, security, and energy efficiency. Licensed ROC #314088. Free estimates — call (480) 788-1591.`;
+  const metaDescription = `Specialized window tinting for ${title.toLowerCase()} in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/industries/${slug}`;
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

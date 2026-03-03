@@ -20,7 +20,7 @@ const Commercial = () => {
   const rocNumber = "314088";
   const pageTitle =
     "Commercial Window Tinting Phoenix and Scottsdale AZ | 713 Projects Since 2017 | Arizona House of Film";
-  const metaDescription = `Phoenix commercial window film contractor. 713 projects since 2017. Trusted by Wespac, FCI, Skechers, Coca-Cola and ASU. ROC #${rocNumber}. Call (480) 788-1591 for a quote.`;
+  const metaDescription = "Phoenix commercial window film. 713 projects since 2017. Trusted by Wespac, FCI, Skechers, Coca-Cola and ASU. ROC #314088. (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";

@@ -10,6 +10,9 @@ const Footer = () => {
     name: 'Commercial',
     path: '/commercial-window-tinting'
   }, {
+    name: 'Commercial Scottsdale',
+    path: '/commercial-window-tinting-scottsdale'
+  }, {
     name: 'Residential',
     path: '/residential-window-tinting'
   }, {

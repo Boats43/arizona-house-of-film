@@ -13,7 +13,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 const AntiGraffiti = () => {
   const rocNumber = "314088";
   const pageTitle = "Anti-Graffiti Window Film Phoenix AZ | Peel and Replace Protection | Arizona House of Film";
-  const metaDescription = "Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government facilities. Peel and replace for $3–$8/sq ft vs $800–$3,000 glass replacement. ROC #314088. Free estimate.";
+  const metaDescription = "Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government facilities. Peel and replace vs glass replacement. ROC #314088. Free estimate.";
   const canonicalUrl = "https://arizonahouseoffilm.com/anti-graffiti";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 

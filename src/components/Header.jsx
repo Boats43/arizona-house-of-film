@@ -37,6 +37,7 @@ const mobileSections = [
     defaultOpen: true,
     links: [
       { name: "Commercial Window Tinting", path: "/commercial-window-tinting" },
+      { name: "Commercial Window Tinting Scottsdale", path: "/commercial-window-tinting-scottsdale" },
       { name: "Residential Window Tinting", path: "/residential-window-tinting" },
       { name: "Safety & Security Film", path: "/safety" },
       { name: "Anti-Graffiti Film", path: "/anti-graffiti" },
@@ -136,6 +137,10 @@ const Header = () => {
             >
               <NavLink to="/commercial-window-tinting" className={navLinkClass}>
                 Commercial
+              </NavLink>
+
+              <NavLink to="/commercial-window-tinting-scottsdale" className={navLinkClass}>
+                Commercial Scottsdale
               </NavLink>
 
               <NavLink to="/residential-window-tinting" className={navLinkClass}>

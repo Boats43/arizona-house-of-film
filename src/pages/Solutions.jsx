@@ -181,7 +181,7 @@ const faqs = [
 const Solutions = () => {
   const rocNumber = "314088";
   const pageTitle = "Window Film Solutions in Arizona | Arizona House of Film";
-  const metaDescription = "Arizona's climate is extreme. Find the right film for your specific problem — heat, glare, privacy, security, or graffiti. Licensed ROC #314088. Free estimates: (480) 788-1591.";
+  const metaDescription = "Find the right window film for your problem — heat, glare, privacy, security, or graffiti. Licensed ROC #314088. Free estimates: (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/solutions";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

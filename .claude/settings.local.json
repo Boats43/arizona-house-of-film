@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npm run build)",
+      "Bash(find \"c:/Users/matam/OneDrive/Desktop/AZHOF/horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/src/\" -name \"cities*\")",
+      "Bash(cd \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\" && git add src/pages/Decorative.jsx dist/ && git commit -m \"$\\(cat <<'EOF'\nfeat: Decorative page — problem-first section, use cases, cost comparison table, expanded FAQ schema\n\n- Add 5-card problem-first section \\(privacy/light, conference rooms, plain glass, branding, residential privacy\\)\n- Add use case section with 4 industry cards \\(Office, Medical, Retail, Residential\\) after film collection\n- Add Decorative Film vs. Specialty Glass cost comparison table \\(film $8-18 vs etched $75-200+\\)\n- Expand FAQ from 3 to 8 questions \\(heat reduction, curved glass, cleaning, sidelights, design consult\\)\n- Update FAQPage schema with all 8 questions\n- Update Service schema: name, provider areaServed, telephone fields\n- Update title tag, meta description per spec\n- All internal links verified against App.jsx routes\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push 2>&1)",
+      "Bash(tail:*)",
+      "Bash(cd C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\):*)",
+      "Bash(cd \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\" && git push 2>&1)",
+      "Bash(cd:*)",
+      "Bash(git:*)",
+      "Bash(node:*)"
+    ]
+  }
+}

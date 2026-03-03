@@ -9,7 +9,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
   const pageTitle = 'Commercial Window Tinting Scottsdale AZ | Verified Projects | Arizona House of Film';
-  const metaDescription = 'Scottsdale commercial window film contractor. Verified projects: Chipotle McDowell Rd, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591.';
+  const metaDescription = 'Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =

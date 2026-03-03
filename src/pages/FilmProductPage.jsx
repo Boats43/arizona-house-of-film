@@ -20,7 +20,7 @@ const FilmProductPage = () => {
   }
 
   const pageTitle = `${film.name} | Arizona Window Film Experts`;
-  const metaDescription = `Explore ${film.name} for residential and commercial window film in Phoenix. Ideal for home window tinting, providing solar control and decorative options for your house.`;
+  const metaDescription = `Explore ${film.name} window film in Phoenix. Solar control and decorative options for residential and commercial glass. Arizona House of Film.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/films/${film.categorySlug}/${film.slug}`;
 
   // ✅ Breadcrumb Schema

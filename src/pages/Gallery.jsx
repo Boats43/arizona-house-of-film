@@ -20,7 +20,7 @@ const imageVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y:
 
 const Gallery = () => {
   const pageTitle = "Window Tinting Project Gallery | Arizona House of Film";
-  const metaDescription = "View our gallery of residential and commercial window tinting projects in Arizona. See the quality and craftsmanship of Arizona House of Film's work in Phoenix, Scottsdale, and beyond.";
+  const metaDescription = "Window tinting project gallery — Phoenix, Scottsdale, and Arizona. Residential and commercial installations by Arizona House of Film. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/gallery";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

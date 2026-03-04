@@ -5,7 +5,7 @@ import { Info, Edit } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { filmCategories } from '@/data/films';
 import { Link, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 

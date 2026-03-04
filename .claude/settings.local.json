@@ -10,7 +10,11 @@
       "Bash(cd \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\" && git push 2>&1)",
       "Bash(cd:*)",
       "Bash(git:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(cat:*)",
+      "Bash(npm:*)",
+      "Bash(npx react-snap:*)"
     ]
   }
 }

@@ -302,6 +302,18 @@ const Safety = () => {
           </div>
         </section>
 
+        {/* INSTALLERS CALLOUT */}
+        <section className="py-16 bg-slate-900 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              Phoenix Security Window Film Installers
+            </h2>
+            <p className="text-slate-300 text-base leading-relaxed font-medium max-w-3xl">
+              Arizona House of Film installs security and safety window film across the Phoenix metro — commercial buildings, schools, government facilities, and residential properties.
+            </p>
+          </div>
+        </section>
+
         {/* COST TRANSPARENCY */}
         <section className="py-20 bg-slate-900 border-t border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

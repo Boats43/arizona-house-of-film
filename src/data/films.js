@@ -88,7 +88,7 @@ export const filmCategories = [
       { name: 'Simple Frosted & Etch Films', slug: 'simple-frosted', embedUrl: 'https://www.dealeriframe.com/plain-frosted-light-diffusing-and-etch-films/plain-simple-frosted-and-etch', brands: ['Solyx'], variants: [
         { sku: 'SX-1232', name: 'SX-1232 Dusted Crystal Film', brand: 'Solyx' },
       ] },
-      { name: 'Frosted Film Colors', slug: 'frosted-colors', embedUrl: 'https://www.dealeriframe.com/plain-frosted-light-diffusing-and-etch-films/plain-frosted-colors', brands: ['Solyx'], variants: [
+      { name: 'Frosted Color Window Film', slug: 'frosted-colors', embedUrl: 'https://www.dealeriframe.com/plain-frosted-light-diffusing-and-etch-films/plain-frosted-colors', brands: ['Solyx'], variants: [
         { sku: 'SX-1234', name: 'SX-1234 Gold Frosted Film', brand: 'Solyx' },
       ] },
       { name: 'Opaque Films', slug: 'opaque', embedUrl: 'https://www.dealeriframe.com/plain-frosted-light-diffusing-and-etch-films/plain-opaque', brands: ['Solyx'], variants: [

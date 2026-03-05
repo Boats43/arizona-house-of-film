@@ -9,7 +9,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const Safety = () => {
   const rocNumber = "314088";
-  const pageTitle = "Security Window Film Phoenix AZ | Smash-Grab & School Safety | Arizona House of Film";
+  const pageTitle = "Security Window Film Phoenix AZ | Safety Film Installers | Arizona House of Film";
   const metaDescription = "Security window film Phoenix AZ. 8–12 mil holds glass on impact. Stops smash-and-grab. Deployed for U.S. Navy and GCU. ROC #314088. (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/safety";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
@@ -101,7 +101,7 @@ const Safety = () => {
                 Force Entry Resistance • ROC #{rocNumber}
               </span>
               <h1 className="text-6xl md:text-9xl font-black mb-6 uppercase leading-[0.85] tracking-tighter text-white">
-                Access <span className="text-red-600 italic underline decoration-4 underline-offset-8">Denial</span>
+                Security &amp; Safety Window Film Phoenix | Arizona House of Film
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-bold italic">
                 Buy Critical Time When Seconds Count. Turning Arizona glass from a vulnerability into a defensive barrier. Trusted for school safety, military recruitment centers, and high-value retail.

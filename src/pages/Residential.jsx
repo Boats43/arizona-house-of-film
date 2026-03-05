@@ -522,6 +522,16 @@ const Residential = () => {
           </div>
         </section>
 
+        {/* COST TRANSPARENCY */}
+        <section className="py-20 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-8">Residential Window Tinting Cost in Phoenix — What Homeowners Actually Pay</h2>
+            <p className="text-slate-600 text-base leading-relaxed font-medium">
+              Most Phoenix homes range from $8–$18 per square foot installed depending on film type and glass complexity. A standard 2,000 sq ft home with 15–20 windows typically runs $1,200–$2,800 complete. Ceramic films run $12–$18/sq ft. Solar control films run $8–$12/sq ft. All installs include manufacturer warranty and our ROC #314088 workmanship guarantee.
+            </p>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-20 bg-white border-t border-gray-100">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">

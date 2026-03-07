@@ -5,6 +5,16 @@ Disallow: /thank-you
 Disallow: /?*
 Disallow: /index.php
 Disallow: /lander
+Disallow: /sv/
+Disallow: /sv
+Disallow: /pages/
+Disallow: /en/
+Disallow: /en
+Disallow: /welcome/
+Disallow: /welcome
+Disallow: /commercial
+Disallow: /residential
+Disallow: /decorative
 
 # AI Crawlers — explicitly welcome
 User-agent: GPTBot

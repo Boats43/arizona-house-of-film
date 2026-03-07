@@ -40,7 +40,11 @@
     { "source": "/en", "destination": "/", "permanent": true },
     { "source": "/sv/", "destination": "/", "permanent": true },
     { "source": "/sv", "destination": "/", "permanent": true },
-    { "source": "/welcome/:path*", "destination": "/", "permanent": true }
+    { "source": "/welcome/:path*", "destination": "/", "permanent": true },
+    { "source": "/services/privacy", "destination": "/residential-window-tinting", "permanent": true },
+    { "source": "/benson-window-tinting", "destination": "/service-areas/benson", "permanent": true },
+    { "source": "/residential-window-tinting/temperature-control", "destination": "/residential-window-tinting", "permanent": true },
+    { "source": "/fountain-hills-window-tinting", "destination": "/service-areas/fountain-hills", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

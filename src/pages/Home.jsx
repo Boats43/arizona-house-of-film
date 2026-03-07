@@ -126,8 +126,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Arizona Window Film & Tinting Experts | Ceramic, Security & Decorative | Arizona House of Film</title>
-        <meta name="description" content="Phoenix window film experts since 2012. Ceramic heat rejection, security film, decorative glass. Trusted by U.S. Navy, GCU, Skechers. ROC #314088." />
+        <title>Arizona Window Film | #1 Rated Installer | Arizona House of Film</title>
+        <meta name="description" content="Arizona's top-rated window film contractor. Ceramic heat rejection, security film & decorative glass for homes and businesses. 700+ projects. ROC #314088. Free quote." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Window Tinting Phoenix | Residential & Commercial | Arizona House of Film" />
         <meta property="og:description" content="Phoenix's authority in commercial window tinting since 2017. Licensed ROC #314088. Solar control, privacy, and security films." />

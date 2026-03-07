@@ -14,7 +14,10 @@
       "Bash(npm install:*)",
       "Bash(cat:*)",
       "Bash(npm:*)",
-      "Bash(npx react-snap:*)"
+      "Bash(npx react-snap:*)",
+      "Bash(python3:*)",
+      "Bash(npx vite:*)",
+      "Bash(find dist:*)"
     ]
   }
 }

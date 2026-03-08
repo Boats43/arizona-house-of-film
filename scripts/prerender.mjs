@@ -42,6 +42,7 @@ const ROUTES = [
   '/residential-window-tinting-scottsdale',
   '/commercial-window-film-phoenix',
   '/decorative-window-film-phoenix',
+  '/residential-window-tinting-phoenix',
   '/residential-window-tinting',
   '/decorative-window-films',
   '/safety',

@@ -65,6 +65,7 @@ const ScottsdaleResidential = lazy(() => import("@/pages/ScottsdaleResidential")
 const CommercialPhoenix = lazy(() => import("@/pages/CommercialPhoenix"));
 const DecorativePhoenix = lazy(() => import("@/pages/DecorativePhoenix"));
 const ResidentialPhoenix = lazy(() => import("@/pages/ResidentialPhoenix"));
+const SolarPhoenix = lazy(() => import("@/pages/SolarPhoenix"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalWebsiteSchema = {
@@ -133,6 +134,7 @@ function AppRoutes() {
           <Route path="/commercial-window-film-phoenix" element={<CommercialPhoenix />} />
           <Route path="/decorative-window-film-phoenix" element={<DecorativePhoenix />} />
           <Route path="/residential-window-tinting-phoenix" element={<ResidentialPhoenix />} />
+          <Route path="/solar-window-film-phoenix" element={<SolarPhoenix />} />
           <Route
             path="/residential"
             element={<Navigate to="/residential-window-tinting" replace />}

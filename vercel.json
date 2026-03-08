@@ -7,8 +7,9 @@
       "permanent": true
     },
     { "source": "/dealeriframe/:path*", "destination": "/films", "permanent": true },
+    { "source": "/index.php", "has": [{"type": "query", "key": ".*"}], "destination": "/404", "permanent": true },
     { "source": "/index.php", "destination": "/", "permanent": true },
-    { "source": "/index.php/:path*", "destination": "/", "permanent": true },
+    { "source": "/index.php/:path*", "destination": "/404", "permanent": true },
     { "source": "/lander", "destination": "/", "permanent": true },
     { "source": "/lander/:path*", "destination": "/", "permanent": true },
     { "source": "/commercial", "destination": "/commercial-window-tinting", "permanent": true },
@@ -47,6 +48,9 @@
     { "source": "/fountain-hills-window-tinting", "destination": "/service-areas/fountain-hills", "permanent": true },
 
     { "source": "/cities/:slug", "destination": "/service-areas/:slug", "permanent": true },
+    { "source": "/services", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/films/ceramic-films", "destination": "/films", "permanent": true },
+    { "source": "/blog/ceramic-vs-dual-reflective-film", "destination": "/blog", "permanent": true },
 
     { "source": "/industries/government", "destination": "/industries/government-buildings", "permanent": true },
     { "source": "/industries/museums-libraries", "destination": "/industries", "permanent": true },

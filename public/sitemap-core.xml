@@ -126,12 +126,7 @@
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
-  <url>
-    <loc>https://arizonahouseoffilm.com/thank-you</loc>
-    <lastmod>2025-10-27</lastmod>
-    <priority>0.2</priority>
-    <changefreq>yearly</changefreq>
-  </url>
+
   <url>
     <loc>https://arizonahouseoffilm.com/industries</loc>
     <lastmod>2026-02-24</lastmod>

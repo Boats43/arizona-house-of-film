@@ -44,7 +44,16 @@
     { "source": "/services/privacy", "destination": "/residential-window-tinting", "permanent": true },
     { "source": "/benson-window-tinting", "destination": "/service-areas/benson", "permanent": true },
     { "source": "/residential-window-tinting/temperature-control", "destination": "/residential-window-tinting", "permanent": true },
-    { "source": "/fountain-hills-window-tinting", "destination": "/service-areas/fountain-hills", "permanent": true }
+    { "source": "/fountain-hills-window-tinting", "destination": "/service-areas/fountain-hills", "permanent": true },
+
+    { "source": "/cities/:slug", "destination": "/service-areas/:slug", "permanent": true },
+
+    { "source": "/industries/government", "destination": "/industries/government-buildings", "permanent": true },
+    { "source": "/industries/museums-libraries", "destination": "/industries", "permanent": true },
+
+    { "source": "/blog/:slug(.*)-:num([0-9]{1,2})", "destination": "/blog/:slug", "permanent": true },
+
+    { "source": "/:city((?!service-areas|commercial|residential|decorative|safety|energy-saving|films|brands|blog|industries|gallery|contact|book-now|careers|anti-graffiti|solutions|store|privacy-policy)[a-z][a-z0-9-]*)-window-tinting", "destination": "/service-areas/:city", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

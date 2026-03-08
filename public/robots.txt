@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /success
 Disallow: /thank-you
-Disallow: /?*
+Disallow: /index.php?
 Disallow: /index.php
 Disallow: /lander
 Disallow: /sv/

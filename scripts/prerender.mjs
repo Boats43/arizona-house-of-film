@@ -49,6 +49,7 @@ const ROUTES = [
   '/safety',
   '/energy-saving-window-films',
   '/anti-graffiti',
+  '/anti-graffiti-film-phoenix',
   '/solutions',
   '/service-areas',
   '/industries',

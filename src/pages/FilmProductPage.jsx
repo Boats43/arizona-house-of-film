@@ -2,11 +2,44 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Home, Building, Star, ExternalLink } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Home, Building, Star } from 'lucide-react';
 import { allFilms } from '@/data/films';
 import NotFound from '@/pages/NotFound';
 import { Button } from '@/components/ui/button';
 import { brands as allBrandsData } from '@/data/brands';
+import { solyxProducts } from '@/data/solyxFilms';
+
+function toSlug(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+const solyxToFilmsCategory = {
+  'casper-designtex': 'casper-films',
+  'frosted-etched': 'frosted-etched-films',
+  'stained-glass': 'stained-glass-films',
+  'gradient': 'gradient-films',
+  'colored-films': 'colored-films',
+  'patterned-privacy': 'patterned-privacy-films',
+  'reflective-mirror': 'reflective-films',
+  'decorative': 'specialty-films',
+  'specialty': 'specialty-films',
+};
+
+const categoryMap = {
+  'frosted-etched-films': 'frosted-etched',
+  'casper-films': 'casper-designtex',
+  'stained-glass-films': 'stained-glass',
+  'gradient-films': 'gradient',
+  'colored-films': 'colored-films',
+  'patterned-privacy-films': 'patterned-privacy',
+  'reflective-films': 'reflective-mirror',
+  'specialty-films': 'specialty',
+  'elegant-textured-films': 'frosted-etched',
+  'exterior-films': 'decorative',
+  'glasslike-distortion-films': 'decorative',
+  'smart-spy-films': 'specialty',
+  'squid-window-textile': 'decorative',
+};
 
 const FilmProductPage = () => {
   const { categorySlug, productSlug } = useParams();
@@ -14,8 +47,73 @@ const FilmProductPage = () => {
     (p) => p.slug === productSlug && p.categorySlug === categorySlug
   );
 
-  if (!film) {
+  const solyxFilm = !film
+    ? solyxProducts.find(p => toSlug(p.sku) === productSlug)
+    : null;
+
+  if (!film && !solyxFilm) {
     return <NotFound />;
+  }
+
+  if (solyxFilm) {
+    const relatedSolyx = solyxProducts
+      .filter(p => p.category === solyxFilm.category && p.sku !== solyxFilm.sku)
+      .slice(0, 8);
+    return (
+      <>
+        <Helmet>
+          <title>{solyxFilm.name} Window Film | Arizona House of Film</title>
+          <meta name="description" content={`${solyxFilm.name} (${solyxFilm.sku}) — available through Arizona House of Film, Phoenix's authorized Solyx installer. ROC #314088.`} />
+          <link rel="canonical" href="https://arizonahouseoffilm.com/films" />
+        </Helmet>
+        <div className="bg-white">
+          <section className="py-12 md:py-20">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mb-8">
+                <Link to="/films" className="text-blue-600 hover:underline flex items-center text-sm">
+                  <ArrowLeft className="w-4 h-4 mr-2" /> Film Catalog
+                </Link>
+              </div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">{solyxFilm.name}</h1>
+              <p className="text-gray-500 font-mono mb-8">{solyxFilm.sku}</p>
+              <img
+                src={solyxFilm.img}
+                alt={`${solyxFilm.name} window film — Arizona House of Film`}
+                className="w-full max-w-md rounded-xl shadow-lg mb-8"
+              />
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+                <p className="font-semibold text-green-800 mb-2">We install this film.</p>
+                <p className="text-green-700 text-sm mb-4">Arizona House of Film is an authorized Solyx installer serving Phoenix, Scottsdale, and all of Arizona. ROC #314088.</p>
+                <Link to="/contact" className="inline-block bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-3 rounded-lg transition-colors">
+                  Get Installation Quote
+                </Link>
+              </div>
+              {relatedSolyx.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold text-gray-800 mb-4">Related Films</h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {relatedSolyx.map(p => (
+                      <Link
+                        key={p.sku}
+                        to={`/films/${solyxToFilmsCategory[p.category] || 'specialty-films'}/${toSlug(p.sku)}`}
+                        className="group bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all"
+                      >
+                        <div className="aspect-square overflow-hidden">
+                          <img src={p.img} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div className="p-2">
+                          <p className="text-xs font-semibold text-gray-700 line-clamp-2">{p.name}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        </div>
+      </>
+    );
   }
 
   const pageTitle = `${film.name} | Arizona Window Film Experts`;
@@ -178,6 +276,9 @@ const FilmProductPage = () => {
     return brandData ? brandData.slug : null;
   };
 
+  const solyxCat = categoryMap[categorySlug] || 'decorative';
+  const relatedSolyxProducts = solyxProducts.filter(p => p.category === solyxCat).slice(0, 12);
+
   return (
     <>
       <Helmet>
@@ -237,18 +338,32 @@ const FilmProductPage = () => {
               Your source for professional residential and commercial window tinting in Arizona, featuring top-tier solar and decorative films.
             </motion.p>
 
-            <div className="mb-10 bg-gray-50 border border-gray-100 rounded-2xl p-8 text-center">
-              <p className="text-sm text-gray-400 mb-1">Browse this film in the Solyx catalog</p>
-              <p className="font-bold text-gray-800 text-lg mb-4">{film.name}</p>
-              <a
-                href="https://solyxfilms.com/tag/33/Shop%20All"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Open Solyx Catalog
-              </a>
+            <div className="mb-10">
+              <h2 className="text-xl font-bold text-gray-800 mb-4">
+                {film.name} — Available Films
+              </h2>
+              {relatedSolyxProducts.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  {relatedSolyxProducts.map(p => (
+                    <div key={p.sku} className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={p.img}
+                          alt={`${p.name} — ${film.name} | Arizona House of Film`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-2">
+                        <p className="text-xs font-semibold text-gray-700 line-clamp-2">{p.name}</p>
+                        <p className="text-xs text-gray-400 font-mono">{p.sku}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-500 text-sm">Film samples available — contact us for details.</p>
+              )}
             </div>
 
             <img

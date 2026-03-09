@@ -4,6 +4,22 @@ import { Link } from 'react-router-dom';
 import { Search, Phone, ExternalLink } from 'lucide-react';
 import { solyxCategories, solyxProducts } from '@/data/solyxFilms';
 
+function toSlug(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+const solyxToFilmsCategory = {
+  'casper-designtex': 'casper-films',
+  'frosted-etched': 'frosted-etched-films',
+  'stained-glass': 'stained-glass-films',
+  'gradient': 'gradient-films',
+  'colored-films': 'colored-films',
+  'patterned-privacy': 'patterned-privacy-films',
+  'reflective-mirror': 'reflective-films',
+  'decorative': 'specialty-films',
+  'specialty': 'specialty-films',
+};
+
 export default function FilmsHub() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -128,8 +144,9 @@ export default function FilmsHub() {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {filtered.map(product => (
-              <div
+              <Link
                 key={product.sku}
+                to={`/films/${solyxToFilmsCategory[product.category] || 'specialty-films'}/${toSlug(product.sku)}`}
                 className="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-200"
                 title={`${product.name} — ${product.sku}`}
               >
@@ -149,7 +166,7 @@ export default function FilmsHub() {
                   <p className="text-xs font-semibold text-gray-800 line-clamp-2 leading-snug">{product.name}</p>
                   <p className="text-xs text-gray-400 mt-0.5 font-mono">{product.sku}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (

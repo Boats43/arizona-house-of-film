@@ -9,13 +9,24 @@ import ChevronUp from "lucide-react/dist/esm/icons/chevron-up";
 
 import { Button } from "@/components/ui/button";
 
+const commercialLinks = [
+  { name: "Commercial Phoenix", path: "/commercial-window-film-phoenix" },
+  { name: "Commercial Scottsdale", path: "/commercial-window-tinting-scottsdale" },
+];
+
+const residentialLinks = [
+  { name: "Residential Phoenix", path: "/residential-window-tinting-phoenix" },
+  { name: "Residential Scottsdale", path: "/residential-window-tinting-scottsdale" },
+];
+
 const solutionsLinks = [
-  { name: "All Solutions", path: "/solutions" },
   { name: "Safety & Security", path: "/safety" },
   { name: "Anti-Graffiti", path: "/anti-graffiti" },
   { name: "Decorative Films", path: "/decorative-window-films" },
   { name: "Energy Saving", path: "/energy-saving-window-films" },
-  { name: "Films Library", path: "/films" },
+  { name: "Solar Film Phoenix", path: "/solar-window-film-phoenix" },
+  { name: "Security Film Phoenix", path: "/security-window-film-phoenix" },
+  { name: "Decorative Film Phoenix", path: "/decorative-window-film-phoenix" },
 ];
 
 const industriesLinks = [
@@ -37,13 +48,30 @@ const mobileSections = [
     defaultOpen: true,
     links: [
       { name: "Commercial Window Tinting", path: "/commercial-window-tinting" },
-      { name: "Commercial Window Tinting Scottsdale", path: "/commercial-window-tinting-scottsdale" },
+      { name: "Commercial Phoenix", path: "/commercial-window-film-phoenix" },
+      { name: "Commercial Scottsdale", path: "/commercial-window-tinting-scottsdale" },
       { name: "Residential Window Tinting", path: "/residential-window-tinting" },
+      { name: "Residential Phoenix", path: "/residential-window-tinting-phoenix" },
+      { name: "Residential Scottsdale", path: "/residential-window-tinting-scottsdale" },
       { name: "Safety & Security Film", path: "/safety" },
       { name: "Anti-Graffiti Film", path: "/anti-graffiti" },
       { name: "Decorative Window Films", path: "/decorative-window-films" },
       { name: "Energy Saving Films", path: "/energy-saving-window-films" },
       { name: "All Solutions", path: "/solutions" },
+    ],
+  },
+  {
+    id: "phoenix",
+    label: "Phoenix Locations",
+    defaultOpen: false,
+    links: [
+      { name: "Window Tinting Phoenix", path: "/window-tinting-phoenix" },
+      { name: "Commercial Film Phoenix", path: "/commercial-window-film-phoenix" },
+      { name: "Residential Film Phoenix", path: "/residential-window-tinting-phoenix" },
+      { name: "Solar Film Phoenix", path: "/solar-window-film-phoenix" },
+      { name: "Security Film Phoenix", path: "/security-window-film-phoenix" },
+      { name: "Anti-Graffiti Phoenix", path: "/anti-graffiti-film-phoenix" },
+      { name: "Decorative Film Phoenix", path: "/decorative-window-film-phoenix" },
     ],
   },
   {
@@ -72,6 +100,8 @@ const mobileSections = [
       { name: "Service Areas", path: "/service-areas" },
       { name: "Blog", path: "/blog" },
       { name: "Gallery", path: "/gallery" },
+      { name: "Book Now", path: "/book-now" },
+      { name: "Store", path: "/store" },
     ],
   },
   {
@@ -79,7 +109,7 @@ const mobileSections = [
     label: "Company",
     defaultOpen: false,
     links: [
-      { name: "About Us", path: "/about" },
+      { name: "About Us", path: "/welcome" },
       { name: "Careers", path: "/careers" },
       { name: "Contact", path: "/contact" },
     ],
@@ -108,6 +138,9 @@ const Header = () => {
         : "text-gray-900 hover:text-blue-800"
     }`;
 
+  const dropdownItemClass =
+    "block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600";
+
   return (
     <>
       <header
@@ -135,17 +168,61 @@ const Header = () => {
               className="hidden lg:flex items-center space-x-8"
               role="navigation"
             >
-              <NavLink to="/commercial-window-tinting" className={navLinkClass}>
-                Commercial
-              </NavLink>
+              {/* Commercial Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setOpenDropdown("commercial")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <div className="flex items-center gap-1">
+                  <NavLink to="/commercial-window-tinting" className={navLinkClass}>
+                    Commercial
+                  </NavLink>
+                  <ChevronDown className="w-3.5 h-3.5 text-gray-500" />
+                </div>
+                {openDropdown === "commercial" && (
+                  <div className="absolute top-full left-0 mt-1 bg-white shadow-xl rounded-lg py-2 z-50 min-w-48">
+                    {commercialLinks.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={dropdownItemClass}
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-              <NavLink to="/commercial-window-tinting-scottsdale" className={navLinkClass}>
-                Commercial Scottsdale
-              </NavLink>
-
-              <NavLink to="/residential-window-tinting" className={navLinkClass}>
-                Residential
-              </NavLink>
+              {/* Residential Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setOpenDropdown("residential")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <div className="flex items-center gap-1">
+                  <NavLink to="/residential-window-tinting" className={navLinkClass}>
+                    Residential
+                  </NavLink>
+                  <ChevronDown className="w-3.5 h-3.5 text-gray-500" />
+                </div>
+                {openDropdown === "residential" && (
+                  <div className="absolute top-full left-0 mt-1 bg-white shadow-xl rounded-lg py-2 z-50 min-w-48">
+                    {residentialLinks.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={dropdownItemClass}
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               {/* Solutions Dropdown */}
               <div
@@ -153,20 +230,19 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("solutions")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button
-                  type="button"
-                  className="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-blue-800 transition-colors"
-                >
-                  Solutions
-                  <ChevronDown className="w-3.5 h-3.5" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <NavLink to="/solutions" className={navLinkClass}>
+                    Solutions
+                  </NavLink>
+                  <ChevronDown className="w-3.5 h-3.5 text-gray-500" />
+                </div>
                 {openDropdown === "solutions" && (
                   <div className="absolute top-full left-0 mt-1 bg-white shadow-xl rounded-lg py-2 z-50 min-w-48">
                     {solutionsLinks.map((item) => (
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        className={dropdownItemClass}
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}
@@ -195,7 +271,7 @@ const Header = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        className={dropdownItemClass}
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}

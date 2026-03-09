@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Film, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,6 +6,12 @@ import { Button } from '@/components/ui/button';
 const IframeLoader = ({ src, title }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+
+  // Cross-origin iframes block onLoad — auto-dismiss loader after timeout
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2500);
+    return () => clearTimeout(timer);
+  }, [src]);
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -18,7 +24,7 @@ const IframeLoader = ({ src, title }) => {
   };
 
   return (
-    <div className="relative w-full" style={{ paddingBottom: '150%' }}>
+    <div className="relative w-full" style={{ paddingBottom: '75%' }}>
       {/* Loading State */}
       {isLoading && (
         <motion.div
@@ -52,15 +58,11 @@ const IframeLoader = ({ src, title }) => {
       <iframe
         src={src}
         onLoad={handleLoad}
-        onError={handleError}
         title={title || 'Film Catalog'}
         loading="lazy"
         allowFullScreen
         className="absolute top-0 left-0 w-full h-full rounded-lg"
-        style={{
-          border: 0,
-          visibility: !isLoading && !hasError ? 'visible' : 'hidden',
-        }}
+        style={{ border: 0 }}
       />
     </div>
   );

@@ -216,7 +216,7 @@ const Residential = () => {
                 The Standard for Arizona&rsquo;s Custom Homes
               </h2>
               <p className="text-gray-300 text-base leading-relaxed font-medium mb-6">
-                Whether it is a modern estate in Paradise Valley, a custom build in North Scottsdale, or a golf-course home in Cave Creek, we understand the unique architectural needs of high-end Arizona real estate.
+                Whether it is a modern estate in Paradise Valley, a custom build in <Link to="/residential-window-tinting-scottsdale">North Scottsdale</Link>, or a golf-course home in Cave Creek, we understand the unique architectural needs of high-end Arizona real estate.
               </p>
               <ul className="space-y-4">
                 <li className="flex gap-3">
@@ -558,6 +558,23 @@ const Residential = () => {
               <a href="tel:480-788-1591" className="flex items-center justify-center text-3xl font-black text-white hover:scale-105 transition-transform">
                 <Phone className="mr-3 w-8 h-8" /> 480-788-1591
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── RELATED LOCATIONS ──────────────────────────────── */}
+        <section className="section-related-locations py-12 bg-slate-900">
+          <div className="max-w-5xl mx-auto px-6">
+            <h2 className="text-2xl font-bold text-white mb-4">Residential Window Tinting by Location</h2>
+            <p className="text-gray-300 mb-6">We serve the full Phoenix metro. Explore our Scottsdale-specific residential page:</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Link
+                to="/residential-window-tinting-scottsdale"
+                className="block bg-slate-800 border border-slate-700 rounded-lg p-5 hover:border-green-500 transition-colors"
+              >
+                <strong className="text-white block mb-1">Scottsdale Residential Window Tinting →</strong>
+                <span className="text-gray-400 text-sm">DC Ranch, McCormick Ranch, Gainey Ranch, North Scottsdale, Troon — HOA-compliant ceramic film for luxury homes.</span>
+              </Link>
             </div>
           </div>
         </section>

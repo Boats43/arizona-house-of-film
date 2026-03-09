@@ -308,6 +308,14 @@ const ScottsdaleResidential = () => {
               Scottsdale zip codes served: 85251, 85254, 85255, 85257, 85258, 85259, 85260, 85262, 85266, 85268.{' '}
               Same-day estimates available for most Scottsdale locations.
             </p>
+            <div className="cross-link-banner bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 mt-4 text-center">
+              <p className="text-gray-300 text-sm">
+                Need commercial window film for a Scottsdale business?{" "}
+                <Link to="/commercial-window-tinting-scottsdale" className="text-green-400 hover:text-green-300 font-semibold">
+                  View Scottsdale commercial window tinting →
+                </Link>
+              </p>
+            </div>
           </div>
         </section>
 

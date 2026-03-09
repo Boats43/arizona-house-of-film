@@ -268,6 +268,16 @@ const ScottsdaleCommercial = () => {
               Scottsdale, DC Ranch, Gainey Ranch, McCormick Ranch, Kierland, Scottsdale Quarter, and the Scottsdale
               Airpark industrial corridor. Same-day estimates available for most Scottsdale locations.
             </p>
+
+            {/* ── RESIDENTIAL CROSS-LINK ─────────────────────────── */}
+            <div className="cross-link-banner bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 max-w-3xl mx-auto mt-6 text-center">
+              <p className="text-gray-300 text-sm">
+                Looking for <strong className="text-white">residential</strong> window film for your Scottsdale home?{" "}
+                <Link to="/residential-window-tinting-scottsdale" className="text-green-400 hover:text-green-300 font-semibold">
+                  View Scottsdale residential window tinting →
+                </Link>
+              </p>
+            </div>
           </div>
         </section>
 

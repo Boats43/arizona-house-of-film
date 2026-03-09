@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, CheckCircle2, AlertTriangle, Building2, Home, Lock } from 'lucide-react';
@@ -160,6 +161,11 @@ export default function SecurityPhoenix() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Safety & Security Window Film', path: '/safety' },
+        { name: 'Security Window Film Phoenix', path: '/security-window-film-phoenix' },
+      ]} />
 
       {/* HERO */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">

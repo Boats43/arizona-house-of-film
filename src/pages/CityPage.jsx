@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import { Link, useParams } from "react-router-dom";
 import {
   Shield,
@@ -146,6 +147,11 @@ const CityPage = () => {
         </script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Service Areas', path: '/service-areas' },
+        { name, path: `/service-areas/${cleanSlug}` },
+      ]} />
 
       {/* HERO */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">

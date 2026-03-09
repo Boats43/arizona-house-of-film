@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Building, Shield, Stethoscope, Sun, Home, ShoppingBag } from 'lucide-react';
@@ -137,6 +138,11 @@ const ScottsdaleCommercial = () => {
         <link rel="preload" as="image" href={heroImageUrl} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Commercial Window Tinting', path: '/commercial-window-tinting' },
+        { name: 'Scottsdale', path: '/commercial-window-tinting-scottsdale' },
+      ]} />
 
       <main id="main-content" className="bg-slate-950 min-h-screen">
         {/* HERO */}

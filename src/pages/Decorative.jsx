@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -259,6 +260,10 @@ const Decorative = () => {
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Decorative Window Films', path: '/decorative-window-films' },
+      ]} />
 
       <main id="main-content">
         {/* HERO */}

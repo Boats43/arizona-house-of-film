@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Building, Utensils, School, Stethoscope, Hotel, Briefcase, Warehouse, ArrowLeft, Sun, Shield, Sparkles } from 'lucide-react';
@@ -208,6 +209,11 @@ const IndustriesPage = () => {
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Industries', path: '/industries' },
+        { name: title, path: `/industries/${slug}` },
+      ]} />
       <div className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>

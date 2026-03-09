@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { DollarSign, Thermometer, Shield, Activity, Phone } from 'lucide-react';
@@ -71,6 +72,10 @@ const EnergySaving = () => {
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Energy Saving Window Film', path: '/energy-saving-window-films' },
+      ]} />
 
       <main className="bg-slate-950 text-white min-h-screen">
         {/* HERO */}

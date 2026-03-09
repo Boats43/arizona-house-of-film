@@ -25,7 +25,7 @@ const BrandPage = () => {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arizonahouseoffilm.com" },
       { "@type": "ListItem", "position": 2, "name": "Brands", "item": "https://arizonahouseoffilm.com/brands" },
-      { "@type": "ListItem", "position": 3, "name": brand.name }
+      { "@type": "ListItem", "position": 3, "name": brand.name, "item": canonicalUrl }
     ]
   };
 

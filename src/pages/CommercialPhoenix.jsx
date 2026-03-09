@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Building, Shield, Sun, Zap, Eye, ShoppingBag } from 'lucide-react';
@@ -164,6 +165,11 @@ const CommercialPhoenix = () => {
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Commercial Window Tinting', path: '/commercial-window-tinting' },
+        { name: 'Phoenix', path: '/commercial-window-film-phoenix' },
+      ]} />
 
       <main id="main-content" className="bg-slate-950 min-h-screen">
 

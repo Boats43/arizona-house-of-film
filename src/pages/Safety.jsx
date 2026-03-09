@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, AlertTriangle, Building, Eye, ArrowRight, Wind, CheckCircle2 } from 'lucide-react';
@@ -87,6 +88,10 @@ const Safety = () => {
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'Safety & Security Window Film', path: '/safety' },
+      ]} />
 
       <main className="bg-slate-950 min-h-screen">
         {/* HERO */}

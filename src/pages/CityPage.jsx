@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema.jsx";
+import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema.jsx";
 import { Link, useParams } from "react-router-dom";
 import {
   Shield,

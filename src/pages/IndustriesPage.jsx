@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema.jsx';
+import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Building, Utensils, School, Stethoscope, Hotel, Briefcase, Warehouse, ArrowLeft, Sun, Shield, Sparkles } from 'lucide-react';

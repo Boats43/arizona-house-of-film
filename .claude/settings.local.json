@@ -17,7 +17,8 @@
       "Bash(npx react-snap:*)",
       "Bash(python3:*)",
       "Bash(npx vite:*)",
-      "Bash(find dist:*)"
+      "Bash(find dist:*)",
+      "Bash(xargs sed:*)"
     ]
   }
 }

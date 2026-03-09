@@ -67,10 +67,9 @@ const CityPage = () => {
     name: `Window Tinting in ${name}, AZ`,
     serviceType: "Window Film Installation",
     provider: {
-      "@type": "HomeAndConstructionBusiness",
+      "@type": "LocalBusiness",
+      "@id": "https://arizonahouseoffilm.com",
       name: "Arizona House of Film",
-      url: "https://arizonahouseoffilm.com",
-      telephone: "+1-480-788-1591",
     },
     areaServed: {
       "@type": "City",

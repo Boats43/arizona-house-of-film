@@ -18,16 +18,8 @@ const Contact = () => {
     description: metaDescription,
     mainEntity: {
       "@type": "LocalBusiness",
+      "@id": "https://arizonahouseoffilm.com",
       name: "Arizona House of Film",
-      url: "https://arizonahouseoffilm.com",
-      telephone: "+1-480-788-1591",
-      email: "arizonahouseoffilm@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Phoenix",
-        addressRegion: "AZ",
-        addressCountry: "US",
-      },
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -45,31 +37,6 @@ const Contact = () => {
     },
   };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Arizona House of Film",
-    url: "https://arizonahouseoffilm.com",
-    telephone: "+1-480-788-1591",
-    email: "arizonahouseoffilm@gmail.com",
-    image: ogImage,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Phoenix",
-      addressRegion: "AZ",
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 33.4484,
-      longitude: -112.074,
-    },
-    areaServed: {
-      "@type": "State",
-      name: "Arizona",
-    },
-    priceRange: "$$",
-  };
 
   return (
     <>
@@ -87,7 +54,6 @@ const Contact = () => {
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(contactPageSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
       <main>

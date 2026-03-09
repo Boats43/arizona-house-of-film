@@ -66,9 +66,8 @@ const serviceSchema = {
   name: 'Security Window Film Installation Phoenix',
   provider: {
     '@type': 'LocalBusiness',
+    '@id': 'https://arizonahouseoffilm.com',
     name: 'Arizona House of Film',
-    address: { '@type': 'PostalAddress', addressLocality: 'Phoenix', addressRegion: 'AZ' },
-    telephone: '+1-623-512-7197',
   },
   areaServed: 'Phoenix, AZ',
   description: metaDescription,

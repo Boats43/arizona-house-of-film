@@ -62,34 +62,6 @@ const Home = () => {
     ],
   };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    name: "Arizona House of Film",
-    url: "https://arizonahouseoffilm.com",
-    telephone: "+14807881591",
-    email: "arizonahouseoffilm@gmail.com",
-    image: ogImage,
-    description: "Arizona's trusted window film installer since 2012. Licensed ROC #314088.",
-    address: { "@type": "PostalAddress", streetAddress: "7007 W Flower St", addressLocality: "Phoenix", addressRegion: "AZ", postalCode: "85033", addressCountry: "US" },
-    geo: { "@type": "GeoCoordinates", latitude: 33.4484, longitude: -112.074 },
-    openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "17:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "14:00" }
-    ],
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "15" },
-    priceRange: "$",
-    areaServed: { "@type": "City", name: "Phoenix", containedInPlace: { "@type": "State", name: "Arizona" } },
-    sameAs: [
-      "https://maps.app.goo.gl/TFe5r35sb3diLvtj9",
-      "https://www.yelp.com/biz/az-house-of-film-phoenix",
-      "https://www.houzz.com/professionals/window-treatments/arizona-house-of-film-pfvwus-pf~1864982788",
-      "https://www.homeadvisor.com/rated.ArizonaHouseofFilmLLC.109629489.html",
-      "https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ot0000000NqN0AAK",
-    ],
-    hasCredential: { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "Arizona Registrar of Contractors License #314088" },
-  };
-
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -140,7 +112,6 @@ const Home = () => {
         <meta name="twitter:image" content={ogImage} />
         <link rel="preload" as="image" href={HERO_IMAGE} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       </Helmet>
@@ -209,7 +180,7 @@ const Home = () => {
       <section className="py-8 bg-blue-950 text-white border-b border-blue-900">
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <p className="text-base md:text-lg text-blue-100 font-medium leading-relaxed text-center">
-            Arizona's extreme climate — with summer temperatures exceeding 115°F and one of the highest UV indexes in North America — makes window film not a luxury but a necessity. Arizona House of Film has been protecting Phoenix homes and businesses since 2012, installing ceramic, <Link to="/safety" className="text-blue-200 underline">safety</Link>, decorative, and energy-saving films for thousands of Arizona properties. Licensed ROC #314088.
+            Arizona's extreme climate — with summer temperatures exceeding 115°F and one of the highest UV indexes in North America — makes window film not a luxury but a necessity. Arizona House of Film has been protecting Phoenix homes and businesses since 2017, installing ceramic, <Link to="/safety" className="text-blue-200 underline">safety</Link>, decorative, and energy-saving films for thousands of Arizona properties. Licensed ROC #314088.
           </p>
         </div>
       </section>

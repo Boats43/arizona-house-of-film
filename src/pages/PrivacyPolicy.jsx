@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
     "@type": "WebPage",
     name: "Privacy Policy | Arizona House of Film",
     url: "https://arizonahouseoffilm.com/privacy-policy",
-    publisher: { "@type": "HomeAndConstructionBusiness", name: "Arizona House of Film", url: "https://arizonahouseoffilm.com" }
+    publisher: { "@type": "LocalBusiness", "@id": "https://arizonahouseoffilm.com", name: "Arizona House of Film" }
   };
 
   return (

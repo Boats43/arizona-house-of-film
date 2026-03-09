@@ -18,7 +18,8 @@
       "Bash(python3:*)",
       "Bash(npx vite:*)",
       "Bash(find dist:*)",
-      "Bash(xargs sed:*)"
+      "Bash(xargs sed:*)",
+      "Bash(test:*)"
     ]
   }
 }

@@ -33,23 +33,8 @@ export default function SEOHead({
     image || "https://arizonahouseoffilm.com/images/default-og.jpg";
 
   // -------- SCHEMA ----------
-  const finalSchema = schema
-    ? JSON.stringify(schema)
-    : JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "Arizona House of Film",
-        url: SITE_URL,
-        image: finalImage,
-        telephone: "+1-480-779-8910",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Phoenix",
-          addressRegion: "AZ",
-          addressCountry: "US",
-        },
-        description: finalDescription,
-      });
+  // LocalBusiness is injected globally by App.jsx — pages supply their own schema via props
+  const finalSchema = schema ? JSON.stringify(schema) : null;
 
   return (
     <Helmet>
@@ -89,7 +74,7 @@ export default function SEOHead({
       <meta name="twitter:image" content={finalImage} />
 
       {/* SCHEMA */}
-      <script type="application/ld+json">{finalSchema}</script>
+      {finalSchema && <script type="application/ld+json">{finalSchema}</script>}
     </Helmet>
   );
 }

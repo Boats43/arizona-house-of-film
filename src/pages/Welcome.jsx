@@ -16,40 +16,6 @@ const Welcome = () => {
   const canonicalUrl = 'https://arizonahouseoffilm.com/welcome';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Arizona House of Film',
-    url: 'https://arizonahouseoffilm.com',
-    telephone: '+1-480-788-1591',
-    email: 'arizonahouseoffilm@gmail.com',
-    foundingDate: '2017',
-    description: metaDescription,
-    license: 'ROC #314088',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '7007 W Flower St',
-      addressLocality: 'Phoenix',
-      addressRegion: 'AZ',
-      postalCode: '85033',
-      addressCountry: 'US',
-    },
-    areaServed: [
-      'Phoenix', 'Scottsdale', 'Tempe', 'Mesa',
-      'Chandler', 'Gilbert', 'Glendale', 'Peoria',
-    ].map(city => ({ '@type': 'City', name: city })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.4',
-      reviewCount: '16',
-    },
-    sameAs: [
-      'https://www.facebook.com/Azwindowtint/',
-      'https://www.instagram.com/arizonahouseoffilm',
-      'https://g.co/kgs/hEuns6S',
-    ],
-  };
-
   const stats = [
     { value: '700+',        label: 'Projects Completed' },
     { value: '$1.16M',      label: 'In Completed Work' },
@@ -130,7 +96,6 @@ const Welcome = () => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

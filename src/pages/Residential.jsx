@@ -58,10 +58,9 @@ const Residential = () => {
     name: "Residential Window Tinting",
     serviceType: "Home Window Film Installation",
     provider: {
-      "@type": "HomeAndConstructionBusiness",
+      "@type": "LocalBusiness",
+      "@id": "https://arizonahouseoffilm.com",
       name: "Arizona House of Film",
-      url: "https://arizonahouseoffilm.com",
-      telephone: "+1-480-788-1591",
     },
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,
@@ -78,16 +77,6 @@ const Residential = () => {
     })),
   };
 
-  const aggregateRatingSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Arizona House of Film",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.4",
-      reviewCount: "15",
-    },
-  };
 
   const benefits = [
     { icon: Sun, title: 'UV Protection', slug: 'uv-protection', description: 'Block up to 99.9% of harmful UV rays that cause furniture fading and skin damage while maintaining natural light.' },
@@ -175,7 +164,6 @@ const Residential = () => {
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

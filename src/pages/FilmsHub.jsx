@@ -48,7 +48,7 @@ const FilmsHub = () => {
           "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
           "url": `https://arizonahouseoffilm.com/films/${category.slug}`,
-          "seller": { "@type": "LocalBusiness", "name": "Arizona House of Film" }
+          "seller": { "@type": "LocalBusiness", "@id": "https://arizonahouseoffilm.com", "name": "Arizona House of Film" }
         }
       }
     }))

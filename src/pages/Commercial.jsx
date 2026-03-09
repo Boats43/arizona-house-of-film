@@ -117,17 +117,8 @@ const Commercial = () => {
     serviceType: "Commercial Window Film Installation",
     provider: {
       "@type": "LocalBusiness",
+      "@id": "https://arizonahouseoffilm.com",
       name: "Arizona House of Film",
-      url: "https://arizonahouseoffilm.com/",
-      telephone: "+1-480-788-1591",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "7007 W Flower St",
-        addressLocality: "Phoenix",
-        addressRegion: "AZ",
-        postalCode: "85033",
-      },
-      priceRange: "$$",
     },
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,

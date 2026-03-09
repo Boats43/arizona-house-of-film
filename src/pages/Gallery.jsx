@@ -30,7 +30,7 @@ const Gallery = () => {
     name: pageTitle,
     description: metaDescription,
     url: canonicalUrl,
-    author: { "@type": "HomeAndConstructionBusiness", name: "Arizona House of Film", url: "https://arizonahouseoffilm.com" }
+    author: { "@type": "LocalBusiness", "@id": "https://arizonahouseoffilm.com", name: "Arizona House of Film" }
   };
 
   return (

@@ -79,30 +79,47 @@ const globalWebsiteSchema = {
 
 const globalLocalBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@id": "https://arizonahouseoffilm.com",
   name: "Arizona House of Film",
-  url: "https://arizonahouseoffilm.com/",
-  image: "https://arizonahouseoffilm.com/og-image.jpg",
-  description:
-    "Professional residential and commercial window tinting in Phoenix, Arizona.",
+  url: "https://arizonahouseoffilm.com",
   telephone: "+1-480-788-1591",
+  image: "https://arizonahouseoffilm.com/og-image.jpg",
+  priceRange: "$",
+  foundingDate: "2017",
+  description:
+    "Licensed Arizona window film contractor. Residential, commercial, security, decorative, and solar window film. ROC #314088. Serving Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria. Since 2017.",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "7007 W Flower St",
     addressLocality: "Phoenix",
     addressRegion: "AZ",
+    postalCode: "85033",
     addressCountry: "US",
   },
   geo: {
-    "@type": "GeoCircle",
-    geoMidpoint: {
-      "@type": "GeoCoordinates",
-      latitude: 33.4484,
-      longitude: -112.074,
-    },
-    geoRadius: 50000,
+    "@type": "GeoCoordinates",
+    latitude: 33.4484,
+    longitude: -112.074,
   },
-  areaServed: ["Phoenix", "Scottsdale", "Mesa", "Tempe", "Glendale"],
-  priceRange: "$$",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.4",
+    reviewCount: "16",
+    bestRating: "5",
+  },
+  sameAs: [
+    "https://www.homeadvisor.com/rated.ArizonaHouseofFilm.101201526.html",
+    "https://www.houzz.com/professionals/window-treatments/arizona-house-of-film-pfvwus-pf~688550776",
+    "https://www.yelp.com/biz/arizona-house-of-film-phoenix",
+    "https://www.bbb.org/us/az/phoenix/profile/window-tinting/arizona-house-of-film-1126-1000089782",
+    "https://www.facebook.com/arizonahouseoffilm",
+  ],
+  areaServed: [
+    "Phoenix, AZ", "Scottsdale, AZ", "Mesa, AZ", "Tempe, AZ",
+    "Chandler, AZ", "Gilbert, AZ", "Glendale, AZ", "Peoria, AZ",
+    "Surprise, AZ", "Avondale, AZ", "Tolleson, AZ",
+  ],
 };
 
 /* ---------------- ROUTES ---------------- */

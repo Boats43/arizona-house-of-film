@@ -168,10 +168,9 @@ const IndustriesPage = () => {
     description: metaDescription,
     url: canonicalUrl,
     provider: {
-      "@type": "HomeAndConstructionBusiness",
+      "@type": "LocalBusiness",
+      "@id": "https://arizonahouseoffilm.com",
       name: "Arizona House of Film",
-      telephone: "+1-480-788-1591",
-      address: { "@type": "PostalAddress", addressLocality: "Phoenix", addressRegion: "AZ", postalCode: "85033" }
     }
   };
 

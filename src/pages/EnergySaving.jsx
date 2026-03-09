@@ -26,10 +26,9 @@ const EnergySaving = () => {
     name: "Energy-Saving Window Film Installation",
     serviceType: "Energy Efficient Window Film",
     provider: {
-      "@type": "HomeAndConstructionBusiness",
+      "@type": "LocalBusiness",
+      "@id": "https://arizonahouseoffilm.com",
       name: "Arizona House of Film",
-      url: "https://arizonahouseoffilm.com/",
-      telephone: "+1-480-788-1591"
     },
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,

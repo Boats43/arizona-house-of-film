@@ -17,11 +17,7 @@ const ThankYou = () => {
     name: pageTitle,
     description: metaDescription,
     url: canonicalUrl,
-    publisher: {
-      "@type": "HomeAndConstructionBusiness",
-      name: "Arizona House of Film",
-      url: "https://arizonahouseoffilm.com"
-    }
+    publisher: { "@type": "LocalBusiness", "@id": "https://arizonahouseoffilm.com", name: "Arizona House of Film" }
   };
 
   return (

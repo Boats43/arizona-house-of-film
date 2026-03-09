@@ -115,8 +115,8 @@ const reviewSchema = {
   "@type": "Review",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "name": "Arizona House of Film",
-    "url": "https://arizonahouseoffilm.com"
+    "@id": "https://arizonahouseoffilm.com",
+    "name": "Arizona House of Film"
   },
   "author": { "@type": "Person", "name": "Verified Customer" },
   "reviewRating": { "@type": "Rating", "ratingValue": "4.4", "bestRating": "5" },

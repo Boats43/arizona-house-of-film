@@ -2,11 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Home, Building, Star } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Home, Building, Star, ExternalLink } from 'lucide-react';
 import { allFilms } from '@/data/films';
 import NotFound from '@/pages/NotFound';
 import { Button } from '@/components/ui/button';
-import IframeLoader from '@/components/IframeLoader';
 import { brands as allBrandsData } from '@/data/brands';
 
 const FilmProductPage = () => {
@@ -238,8 +237,18 @@ const FilmProductPage = () => {
               Your source for professional residential and commercial window tinting in Arizona, featuring top-tier solar and decorative films.
             </motion.p>
 
-            <div className="mb-12">
-              <IframeLoader src={film.embedUrl} title={film.name} />
+            <div className="mb-10 bg-gray-50 border border-gray-100 rounded-2xl p-8 text-center">
+              <p className="text-sm text-gray-400 mb-1">Browse this film in the Solyx catalog</p>
+              <p className="font-bold text-gray-800 text-lg mb-4">{film.name}</p>
+              <a
+                href="https://solyxfilms.com/tag/33/Shop%20All"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Open Solyx Catalog
+              </a>
             </div>
 
             <img

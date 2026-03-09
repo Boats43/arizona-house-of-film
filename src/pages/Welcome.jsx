@@ -2,209 +2,361 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Sun, Shield, Building, Home as HomeIcon, Palette, Phone, ArrowRight, Zap, MapPin } from 'lucide-react';
+import {
+  Shield, Building, Home as HomeIcon, Palette, Zap,
+  ArrowRight, CheckCircle,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { cities } from '@/data/cities';
+import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
+import ContactFormSection from '@/components/contact/ContactFormSection';
+
 const Welcome = () => {
-  const services = [{
-    name: 'Residential Tinting',
-    icon: HomeIcon,
-    link: '/residential'
-  }, {
-    name: 'Commercial Tinting',
-    icon: Building,
-    link: '/commercial'
-  }, {
-    name: 'Decorative Films',
-    icon: Palette,
-    link: '/decorative'
-  }, {
-    name: 'Safety & Security',
-    icon: Shield,
-    link: '/safety'
-  }, {
-    name: 'Energy-Saving Films',
-    icon: Zap,
-    link: '/energy-saving'
-  }];
-  const faqs = [{
-    question: "Do you serve all of Arizona?",
-    answer: "Yes, we provide statewide coverage. Whether you're in a major metro area like Phoenix or Tucson, or a smaller community, our team is ready to deliver professional window film installation services to your location."
-  }, {
-    question: "How quickly can installation be scheduled?",
-    answer: "We can typically schedule an installation within 1-3 business days, depending on your location and the scope of the project. Contact us for the most accurate scheduling information."
-  }, {
-    question: "Do you offer warranties?",
-    answer: "Yes, we use premium films that come with robust manufacturer warranties, covering issues like bubbling, peeling, and discoloration. We also guarantee our installation quality."
-  }, {
-    question: "Can window film reduce my AC bills?",
-    answer: "Yes. By rejecting a significant amount of solar heat, our energy-saving films can reduce the load on your air conditioning system, leading to savings of up to 30% on your cooling costs."
-  }];
+  const pageTitle = 'About Arizona House of Film | Licensed Window Film Contractor Phoenix AZ | Since 2017';
+  const metaDescription = 'Arizona House of Film — licensed, bonded window film contractor since 2017. ROC #314088. 700+ projects. $1.16M in completed work. Serving Phoenix, Scottsdale, and the full Arizona metro.';
+  const canonicalUrl = 'https://arizonahouseoffilm.com/welcome';
+  const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';
+
   const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Arizona House of Film",
-    "url": "https://www.arizonahouseoffilm.com/welcome",
-    "telephone": "480-788-1591",
-    "email": "arizonahouseoffilm@gmail.com",
-    "description": "Professional residential & commercial window tinting across Phoenix, Tucson, Mesa, and statewide.",
-    "areaServed": cities.map(city => ({
-      "@type": "City",
-      "name": city.name
-    })),
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Phoenix",
-      "addressRegion": "AZ",
-      "addressCountry": "US"
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Arizona House of Film',
+    url: 'https://arizonahouseoffilm.com',
+    telephone: '+1-480-788-1591',
+    email: 'arizonahouseoffilm@gmail.com',
+    foundingDate: '2017',
+    description: metaDescription,
+    license: 'ROC #314088',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '7007 W Flower St',
+      addressLocality: 'Phoenix',
+      addressRegion: 'AZ',
+      postalCode: '85033',
+      addressCountry: 'US',
     },
-    "sameAs": ["https://www.facebook.com/Azwindowtint/", "https://www.instagram.com/arizonahouseoffilm", "https://g.co/kgs/hEuns6S"]
+    areaServed: [
+      'Phoenix', 'Scottsdale', 'Tempe', 'Mesa',
+      'Chandler', 'Gilbert', 'Glendale', 'Peoria',
+    ].map(city => ({ '@type': 'City', name: city })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.4',
+      reviewCount: '16',
+    },
+    sameAs: [
+      'https://www.facebook.com/Azwindowtint/',
+      'https://www.instagram.com/arizonahouseoffilm',
+      'https://g.co/kgs/hEuns6S',
+    ],
   };
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-  return <>
+
+  const stats = [
+    { value: '700+',        label: 'Projects Completed' },
+    { value: '$1.16M',      label: 'In Completed Work' },
+    { value: 'ROC #314088', label: 'Licensed & Bonded' },
+    { value: 'Since 2017',  label: 'Serving Arizona' },
+  ];
+
+  const values = [
+    {
+      title: 'Transparent Pricing',
+      body: 'Every quote is itemized by film type, glass access, and scope. No hidden charges. No bait-and-switch. You know exactly what you are buying before we start.',
+    },
+    {
+      title: 'Licensed for Every Job',
+      body: 'ROC #314088. Bonded and insured for commercial and residential. Government, school, and institutional projects require documentation — we provide it.',
+    },
+    {
+      title: 'Film-First Specification',
+      body: 'We recommend the right film for your glass type, orientation, and climate exposure — not the film with the best margin. Most competitors skip this step.',
+    },
+    {
+      title: 'No-Disruption Scheduling',
+      body: 'Most commercial installs happen after hours or on weekends. Residential installs fit your schedule. We have never missed a confirmed project start date.',
+    },
+  ];
+
+  const services = [
+    { name: 'Commercial Window Tinting',  link: '/commercial-window-tinting',  icon: Building  },
+    { name: 'Residential Window Tinting', link: '/residential-window-tinting', icon: HomeIcon  },
+    { name: 'Decorative Window Films',    link: '/decorative-window-films',    icon: Palette   },
+    { name: 'Safety & Security Film',     link: '/safety',                     icon: Shield    },
+    { name: 'Energy-Saving Films',        link: '/energy-saving-window-films', icon: Zap       },
+    { name: 'All Solutions',              link: '/solutions',                  icon: CheckCircle },
+  ];
+
+  const clients = [
+    'Grand Canyon University',    'U.S. Navy Recruitment Center',
+    'Skechers USA',               'AutoZone',
+    'Banner Health',              'Boeing',
+    'Arizona State University',   'Valley Metro',
+    'Coca-Cola',                  'Renaissance Hotels',
+    'Wespac Construction',        'LA Fitness',
+    'Starbucks',                  'Isagenix International',
+    'NAPA Auto Parts',            'Frank Lloyd Wright Foundation',
+    'Willmeng Construction',      'City of Phoenix',
+  ];
+
+  const areaCities = [
+    'Phoenix', 'Scottsdale', 'Tempe',    'Mesa',
+    'Chandler', 'Gilbert',   'Glendale', 'Peoria',
+    'Tucson',  'Flagstaff',  'Prescott', 'Yuma',
+    'Avondale', 'Buckeye',  'Surprise',  'Goodyear',
+  ];
+
+  const credentials = [
+    ['License',           'Arizona ROC #314088'],
+    ['Bonded & Insured',  'Yes — all project types'],
+    ['Founded',           '2017'],
+    ['Projects',          '700+ completed'],
+    ['Documented Revenue','$1.16M in verified work'],
+    ['Film Brands',       '3M, XPEL, Madico, Solar Gard, Eastman'],
+    ['Headquarters',      'Phoenix, AZ 85033'],
+    ['Service Area',      'Statewide Arizona'],
+  ];
+
+  return (
+    <>
       <Helmet>
-        <title>Welcome to Arizona House of Film | Statewide Tinting Service</title>
-        <meta name="description" content="Professional residential & commercial window tinting across Phoenix, Tucson, Mesa, and statewide." />
-        <link rel="canonical" href="https://arizonahouseoffilm.com/welcome" />
-        <meta property="og:title" content="Welcome to Arizona House of Film | Statewide Tinting Service" />
-        <meta property="og:description" content="Professional residential & commercial window tinting across Phoenix, Tucson, Mesa, and statewide." />
-        <meta property="og:url" content="https://arizonahouseoffilm.com/welcome" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image-welcome.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', path: '/' },
+        { name: 'About Arizona House of Film', path: '/welcome' },
+      ]} />
 
-      <div className="bg-gray-50 text-gray-800">
-        <section className="relative py-20 text-white">
-          <img alt="Arizona desert landscape at sunset, representing statewide service area" className="absolute inset-0 w-full h-full object-cover" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20180711_125559-jwffm.jpg" fetchPriority="high" width="1920" height="1080" />
-          <div className="absolute inset-0 bg-black/60"></div>
-          <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            <motion.h1 initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.7
-          }} className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Welcome to Arizona House of Film
-            </motion.h1>
-            <motion.p initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.7,
-            delay: 0.2
-          }} className="text-lg md:text-xl text-gray-200 mb-8">
-              Your statewide experts in window tinting solutions for cooling, UV protection, energy savings, and security.
-            </motion.p>
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.7,
-            delay: 0.4
-          }}>
-              <Button asChild size="lg" className="bg-white text-blue-900 hover:bg-gray-200">
-                <a href="tel:480-788-1591">Call 480-788-1591 for a free estimate<Phone className="ml-2 h-5 w-5" /></a>
-              </Button>
+      <main id="main-content" className="bg-slate-950 min-h-screen text-white">
+
+        {/* HERO */}
+        <section className="relative py-24 bg-slate-950 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl"
+            >
+              <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">
+                Licensed · Bonded · ROC #314088 · Since 2017
+              </span>
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase leading-[0.9] tracking-tighter">
+                About Arizona<br /><span className="text-green-500">House of Film</span>
+              </h1>
+              <p className="text-xl text-slate-300 max-w-2xl leading-relaxed font-medium">
+                Phoenix's licensed window film contractor. 700+ completed projects. $1.16M in documented work
+                across commercial, residential, government, and institutional clients throughout Arizona since 2017.
+              </p>
             </motion.div>
-          </div>
-        </section>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Comprehensive Window Film Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {services.map((service, index) => <motion.div key={service.name} initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} viewport={{
-              once: true
-            }} className="text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <Link to={service.link} className="flex flex-col items-center">
-                    <service.icon className="w-12 h-12 mx-auto text-blue-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-700 transition-colors">{service.name}</h3>
-                  </Link>
-                </motion.div>)}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * i, duration: 0.5 }}
+                  className="bg-slate-900 border border-slate-800 p-6 text-center"
+                >
+                  <p className="text-3xl font-black text-green-500 mb-1">{stat.value}</p>
+                  <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Proudly Serving Communities Across Arizona</h2>
+        {/* STORY + CREDENTIALS */}
+        <section className="py-24 bg-white text-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">
+                  Who We Are
+                </h2>
+                <div className="space-y-5 text-slate-700 font-medium leading-relaxed text-lg">
+                  <p>
+                    Arizona House of Film was founded in Phoenix in 2017 by a licensed contractor who saw that
+                    most window film companies in Arizona prioritized sales volume over film specification. We built
+                    the business on a different premise: identify the right film for the glass, the orientation, and
+                    the climate — then install it correctly the first time.
+                  </p>
+                  <p>
+                    Seven years later, we have completed over 700 projects across Maricopa, Pima, Yavapai, and
+                    Pinal counties, documented more than $1.16 million in completed work, and built relationships
+                    with some of Arizona's most demanding clients — from general contractors like Wespac and
+                    Willmeng to institutional clients like Grand Canyon University and the U.S. Navy.
+                  </p>
+                  <p>
+                    We hold Arizona Registrar of Contractors license ROC #314088, are fully bonded and insured,
+                    and are authorized installers for 3M, XPEL, Madico, Solar Gard, and Eastman window film products.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-black uppercase tracking-tighter mb-6 text-slate-950">
+                  Credentials at a Glance
+                </h3>
+                <table className="w-full text-sm">
+                  <tbody>
+                    {credentials.map(([label, value], i) => (
+                      <tr key={i} className="border-b border-slate-200">
+                        <td className="py-3 pr-4 font-black text-slate-500 uppercase text-xs tracking-widest w-44">
+                          {label}
+                        </td>
+                        <td className="py-3 font-semibold text-slate-900">{value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* HOW WE OPERATE */}
+        <section className="py-24 bg-slate-950 border-y border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                How We Operate
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {values.map((v, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -4 }}
+                  className="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
+                    <h3 className="text-lg font-black text-white uppercase tracking-tight">{v.title}</h3>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed font-medium">{v.body}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT WE INSTALL */}
+        <section className="py-24 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                What We Install
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {services.map((svc, i) => (
+                <Link
+                  key={i}
+                  to={svc.link}
+                  className="flex items-center justify-between bg-slate-800 border border-slate-700 hover:border-green-500 p-6 transition-all group"
+                >
+                  <div className="flex items-center gap-4">
+                    <svc.icon className="w-6 h-6 text-green-500 shrink-0" />
+                    <span className="font-black text-white uppercase text-sm tracking-tight group-hover:text-green-400 transition-colors">
+                      {svc.name}
+                    </span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-green-500 transition-colors shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CLIENT PORTFOLIO */}
+        <section className="py-24 bg-white text-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">
+                Selected Client Portfolio
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-600 font-medium max-w-2xl mx-auto">
+                700+ projects completed since 2017. The following organizations represent a cross-section of our
+                verified commercial work across Arizona.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {clients.map((client, i) => (
+                <span
+                  key={i}
+                  className="bg-slate-50 border border-slate-200 text-slate-700 font-bold text-sm uppercase tracking-widest px-4 py-2"
+                >
+                  {client}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICE AREAS */}
+        <section className="py-20 bg-slate-950 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.3em] mb-10">
+              Arizona Service Coverage
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2">
+              {areaCities.map((city) => (
+                <Link
+                  key={city}
+                  to={`/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="px-4 py-2 bg-slate-900 border border-slate-800 text-xs font-black text-slate-400 uppercase hover:border-green-500 hover:text-green-400 transition-all"
+                >
+                  {city}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 bg-green-600">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">
+              Start Your Project
+            </h2>
+            <p className="text-white/90 text-lg font-medium mb-10 max-w-2xl mx-auto">
+              Free on-site assessment. No obligation. Licensed ROC #314088. We respond within one business day.
+            </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {cities.map((city, index) => <motion.div key={city.slug} initial={{
-              opacity: 0,
-              scale: 0.8
-            }} whileInView={{
-              opacity: 1,
-              scale: 1
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.05
-            }} viewport={{
-              once: true
-            }}>
-                  <Link to={`/service-areas/${city.slug}`} className="flex items-center bg-gray-700 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {city.name}
-                  </Link>
-                </motion.div>)}
+              <Button
+                asChild size="lg"
+                className="bg-white text-green-900 hover:bg-gray-100 px-10 h-16 text-xl font-black rounded-none"
+              >
+                <Link to="/contact">Request Free Estimate</Link>
+              </Button>
+              <a
+                href="tel:480-788-1591"
+                className="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-green-800 transition-all text-lg"
+              >
+                (480) 788-1591
+              </a>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              x: -20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} viewport={{
-              once: true
-            }} className="bg-gray-100 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-blue-700 mb-2">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
-                </motion.div>)}
-            </div>
-          </div>
-        </section>
-      </div>
-    </>;
+        <ContactFormSection />
+      </main>
+    </>
+  );
 };
+
 export default Welcome;

@@ -74,6 +74,10 @@ const StorefrontWindowFilm = lazy(() => import("@/pages/solutions/StorefrontWind
 const EntrywaySidelightFilm = lazy(() => import("@/pages/solutions/EntrywaySidelightFilm"));
 const SidelightWindowFilm = lazy(() => import("@/pages/solutions/SidelightWindowFilm"));
 const OneWayMirrorFilm = lazy(() => import("@/pages/solutions/OneWayMirrorFilm"));
+const WindowTintingChandler = lazy(() => import("@/pages/locations/WindowTintingChandler"));
+const WindowTintingGilbert = lazy(() => import("@/pages/locations/WindowTintingGilbert"));
+const WindowTintingPeoria = lazy(() => import("@/pages/locations/WindowTintingPeoria"));
+const WindowTintingQueenCreek = lazy(() => import("@/pages/locations/WindowTintingQueenCreek"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalWebsiteSchema = {
@@ -200,6 +204,12 @@ function AppRoutes() {
           <Route path="/entryway-window-film" element={<EntrywaySidelightFilm />} />
           <Route path="/sidelight-window-film" element={<SidelightWindowFilm />} />
           <Route path="/one-way-mirror-window-film" element={<OneWayMirrorFilm />} />
+
+          {/* LOCATION PAGES */}
+          <Route path="/window-tinting-chandler" element={<WindowTintingChandler />} />
+          <Route path="/window-tinting-gilbert" element={<WindowTintingGilbert />} />
+          <Route path="/window-tinting-peoria" element={<WindowTintingPeoria />} />
+          <Route path="/window-tinting-queen-creek" element={<WindowTintingQueenCreek />} />
 
           {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />

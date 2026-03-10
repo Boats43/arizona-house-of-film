@@ -148,16 +148,25 @@ const ServiceAreas = () => {
               {cities.length} cities across Arizona — click any city for local pricing, services, and availability.
             </p>
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-              {[...cities].sort((a, b) => a.name.localeCompare(b.name)).map((city) => (
-                <li key={city.slug}>
-                  <Link
-                    to={`/service-areas/${city.slug}`}
-                    className="block px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 bg-white border border-slate-200 hover:bg-slate-950 hover:text-white hover:border-slate-950 transition-colors leading-tight"
-                  >
-                    {city.name}
-                  </Link>
-                </li>
-              ))}
+              {[...cities].sort((a, b) => a.name.localeCompare(b.name)).map((city) => {
+                const dedicatedRoutes = {
+                  'chandler': '/window-tinting-chandler',
+                  'gilbert': '/window-tinting-gilbert',
+                  'peoria': '/window-tinting-peoria',
+                  'queen-creek': '/window-tinting-queen-creek',
+                };
+                const to = dedicatedRoutes[city.slug] || `/service-areas/${city.slug}`;
+                return (
+                  <li key={city.slug}>
+                    <Link
+                      to={to}
+                      className="block px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 bg-white border border-slate-200 hover:bg-slate-950 hover:text-white hover:border-slate-950 transition-colors leading-tight"
+                    >
+                      {city.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>

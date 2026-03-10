@@ -27,6 +27,13 @@ const Footer = () => {
     { name: 'Decorative Film Phoenix', path: '/decorative-window-film-phoenix' },
   ];
 
+  const eastValleyLinks = [
+    { name: 'Window Tinting Chandler', path: '/window-tinting-chandler' },
+    { name: 'Window Tinting Gilbert', path: '/window-tinting-gilbert' },
+    { name: 'Window Tinting Peoria', path: '/window-tinting-peoria' },
+    { name: 'Window Tinting Queen Creek', path: '/window-tinting-queen-creek' },
+  ];
+
   const secondaryLinks = [
     { name: 'Films', path: '/films' },
     { name: 'Brands', path: '/brands' },
@@ -145,6 +152,14 @@ const Footer = () => {
             <p className={headingClass}>Phoenix</p>
             <ul className="mt-4 space-y-2">
               {phoenixLinks.map(item => (
+                <li key={item.path}>
+                  <Link to={item.path} className={linkClass}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">East Valley</p>
+            <ul className="space-y-2">
+              {eastValleyLinks.map(item => (
                 <li key={item.path}>
                   <Link to={item.path} className={linkClass}>{item.name}</Link>
                 </li>

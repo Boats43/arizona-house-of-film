@@ -86,6 +86,29 @@ export default function FilmsHub() {
 
       <div className="max-w-7xl mx-auto px-4 py-10">
 
+        {/* Popular Privacy Applications */}
+        <div className="mb-10 bg-gray-50 border border-gray-100 rounded-2xl p-6">
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Looking for a specific application?</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Bathroom Privacy', href: '/bathroom-privacy-window-film' },
+              { label: 'Office Glass', href: '/office-privacy-window-film' },
+              { label: 'Storefront Film', href: '/storefront-window-film' },
+              { label: 'Entryway & Door', href: '/entryway-window-film' },
+              { label: 'Sidelight Panels', href: '/sidelight-window-film' },
+              { label: 'One-Way Mirror', href: '/one-way-mirror-window-film' },
+            ].map(item => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="inline-flex items-center gap-1.5 bg-white border border-gray-200 hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-700 text-sm font-semibold px-4 py-2 rounded-full transition-all"
+              >
+                {item.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Search bar */}
         <div className="relative max-w-lg mx-auto mb-8">
           <Search className="absolute left-3.5 top-3.5 w-5 h-5 text-gray-400" />

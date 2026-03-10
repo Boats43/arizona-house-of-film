@@ -50,6 +50,15 @@ const Footer = () => {
     { name: 'Warehouses', path: '/industries/warehouses' },
   ];
 
+  const privacyLinks = [
+    { name: 'Bathroom Privacy Film', path: '/bathroom-privacy-window-film' },
+    { name: 'Office Privacy Film', path: '/office-privacy-window-film' },
+    { name: 'Storefront Window Film', path: '/storefront-window-film' },
+    { name: 'Entryway & Door Film', path: '/entryway-window-film' },
+    { name: 'Sidelight Window Film', path: '/sidelight-window-film' },
+    { name: 'One-Way Mirror Film', path: '/one-way-mirror-window-film' },
+  ];
+
   const companyLinks = [
     { name: 'About Us', path: '/welcome' },
     { name: 'Careers', path: '/careers' },
@@ -116,6 +125,14 @@ const Footer = () => {
             <p className={headingClass}>Services</p>
             <ul className="mt-4 space-y-2">
               {mainLinks.map(item => (
+                <li key={item.path}>
+                  <Link to={item.path} className={linkClass}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">Privacy Solutions</p>
+            <ul className="space-y-2">
+              {privacyLinks.map(item => (
                 <li key={item.path}>
                   <Link to={item.path} className={linkClass}>{item.name}</Link>
                 </li>

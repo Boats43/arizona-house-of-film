@@ -68,6 +68,12 @@ const ResidentialPhoenix = lazy(() => import("@/pages/ResidentialPhoenix"));
 const SolarPhoenix = lazy(() => import("@/pages/SolarPhoenix"));
 const AntiGraffitiPhoenix = lazy(() => import("@/pages/AntiGraffitiPhoenix"));
 const WindowTintingPhoenix = lazy(() => import("@/pages/WindowTintingPhoenix"));
+const BathroomPrivacyFilm = lazy(() => import("@/pages/solutions/BathroomPrivacyFilm"));
+const OfficePrivacyFilm = lazy(() => import("@/pages/solutions/OfficePrivacyFilm"));
+const StorefrontWindowFilm = lazy(() => import("@/pages/solutions/StorefrontWindowFilm"));
+const EntrywaySidelightFilm = lazy(() => import("@/pages/solutions/EntrywaySidelightFilm"));
+const SidelightWindowFilm = lazy(() => import("@/pages/solutions/SidelightWindowFilm"));
+const OneWayMirrorFilm = lazy(() => import("@/pages/solutions/OneWayMirrorFilm"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalWebsiteSchema = {
@@ -182,6 +188,12 @@ function AppRoutes() {
           <Route path="/anti-graffiti-film-phoenix" element={<AntiGraffitiPhoenix />} />
           <Route path="/window-tinting-phoenix" element={<WindowTintingPhoenix />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/bathroom-privacy-window-film" element={<BathroomPrivacyFilm />} />
+          <Route path="/office-privacy-window-film" element={<OfficePrivacyFilm />} />
+          <Route path="/storefront-window-film" element={<StorefrontWindowFilm />} />
+          <Route path="/entryway-window-film" element={<EntrywaySidelightFilm />} />
+          <Route path="/sidelight-window-film" element={<SidelightWindowFilm />} />
+          <Route path="/one-way-mirror-window-film" element={<OneWayMirrorFilm />} />
 
           {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />

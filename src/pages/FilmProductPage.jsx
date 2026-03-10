@@ -335,7 +335,7 @@ export default function FilmProductPage() {
   // Display data
   const displayName = solyxFilm?.name || film?.name || 'Decorative Window Film';
   const displaySku = solyxFilm?.sku || film?.variants?.[0]?.sku || '';
-  const displayImg = solyxFilm?.img || null;
+  const displayImg = solyxFilm?.img || relatedProducts[0]?.img || null;
 
   // 404
   if (!film && !solyxFilm) {

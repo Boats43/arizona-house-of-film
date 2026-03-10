@@ -58,7 +58,9 @@ const BlogPage = () => {
       "name": "Arizona House of Film",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://arizonahouseoffilm.com/images/Arizona-House-of-Film.webp"
+        "url": "https://arizonahouseoffilm.com/favicon-512.png",
+        "width": 512,
+        "height": 512
       }
     },
     "blogPost": blogPosts.map(entry => ({

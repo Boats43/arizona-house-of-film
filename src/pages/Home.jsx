@@ -67,7 +67,12 @@ const Home = () => {
     "@type": "Organization",
     name: "Arizona House of Film",
     url: "https://arizonahouseoffilm.com",
-    logo: "https://arizonahouseoffilm.com/images/Arizona-House-of-Film.webp",
+    logo: {
+      "@type": "ImageObject",
+      "url": "https://arizonahouseoffilm.com/favicon-512.png",
+      "width": 512,
+      "height": 512,
+    },
     contactPoint: { "@type": "ContactPoint", telephone: "+14807881591", email: "arizonahouseoffilm@gmail.com", contactType: "customer service" },
     knowsAbout: [
       "window film installation",

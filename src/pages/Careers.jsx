@@ -32,7 +32,7 @@ const Careers = () => {
       "@type": "Organization",
       "name": "Arizona House of Film",
       "sameAs": "https://arizonahouseoffilm.com",
-      "logo": "https://arizonahouseoffilm.com/images/Arizona-House-of-Film.webp",
+      "logo": "https://arizonahouseoffilm.com/favicon-512.png",
     },
     "jobLocation": {
       "@type": "Place",

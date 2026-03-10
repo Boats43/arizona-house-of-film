@@ -91,6 +91,12 @@ const globalLocalBusinessSchema = {
   url: "https://arizonahouseoffilm.com",
   telephone: "+1-480-788-1591",
   image: "https://arizonahouseoffilm.com/og-image.jpg",
+  logo: {
+    "@type": "ImageObject",
+    "url": "https://arizonahouseoffilm.com/favicon-512.png",
+    "width": 512,
+    "height": 512,
+  },
   priceRange: "$",
   foundingDate: "2017",
   description:

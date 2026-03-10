@@ -34,6 +34,12 @@ const Footer = () => {
     { name: 'Window Tinting Queen Creek', path: '/window-tinting-queen-creek' },
   ];
 
+  const centralValleyLinks = [
+    { name: 'Window Tinting Mesa', path: '/window-tinting-mesa' },
+    { name: 'Window Tinting Tempe', path: '/window-tinting-tempe' },
+    { name: 'Window Tinting Glendale', path: '/window-tinting-glendale' },
+  ];
+
   const secondaryLinks = [
     { name: 'Films', path: '/films' },
     { name: 'Brands', path: '/brands' },
@@ -160,6 +166,14 @@ const Footer = () => {
             <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">East Valley</p>
             <ul className="space-y-2">
               {eastValleyLinks.map(item => (
+                <li key={item.path}>
+                  <Link to={item.path} className={linkClass}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mt-4 mb-2">West & Central Valley</p>
+            <ul className="space-y-2">
+              {centralValleyLinks.map(item => (
                 <li key={item.path}>
                   <Link to={item.path} className={linkClass}>{item.name}</Link>
                 </li>

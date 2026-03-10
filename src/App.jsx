@@ -78,6 +78,9 @@ const WindowTintingChandler = lazy(() => import("@/pages/locations/WindowTinting
 const WindowTintingGilbert = lazy(() => import("@/pages/locations/WindowTintingGilbert"));
 const WindowTintingPeoria = lazy(() => import("@/pages/locations/WindowTintingPeoria"));
 const WindowTintingQueenCreek = lazy(() => import("@/pages/locations/WindowTintingQueenCreek"));
+const WindowTintingMesa = lazy(() => import("@/pages/locations/WindowTintingMesa"));
+const WindowTintingTempe = lazy(() => import("@/pages/locations/WindowTintingTempe"));
+const WindowTintingGlendale = lazy(() => import("@/pages/locations/WindowTintingGlendale"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalWebsiteSchema = {
@@ -210,6 +213,9 @@ function AppRoutes() {
           <Route path="/window-tinting-gilbert" element={<WindowTintingGilbert />} />
           <Route path="/window-tinting-peoria" element={<WindowTintingPeoria />} />
           <Route path="/window-tinting-queen-creek" element={<WindowTintingQueenCreek />} />
+          <Route path="/window-tinting-mesa" element={<WindowTintingMesa />} />
+          <Route path="/window-tinting-tempe" element={<WindowTintingTempe />} />
+          <Route path="/window-tinting-glendale" element={<WindowTintingGlendale />} />
 
           {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />

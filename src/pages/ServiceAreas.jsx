@@ -154,6 +154,9 @@ const ServiceAreas = () => {
                   'gilbert': '/window-tinting-gilbert',
                   'peoria': '/window-tinting-peoria',
                   'queen-creek': '/window-tinting-queen-creek',
+                  'mesa': '/window-tinting-mesa',
+                  'tempe': '/window-tinting-tempe',
+                  'glendale': '/window-tinting-glendale',
                 };
                 const to = dedicatedRoutes[city.slug] || `/service-areas/${city.slug}`;
                 return (

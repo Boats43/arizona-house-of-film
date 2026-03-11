@@ -31,6 +31,73 @@ const ScottsdaleCommercial = () => {
     url: canonicalUrl,
   };
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://arizonahouseoffilm.com',
+    name: 'Arizona House of Film',
+    url: 'https://arizonahouseoffilm.com',
+    telephone: '+14807881591',
+    email: 'arizonahouseoffilm@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Phoenix',
+      addressRegion: 'AZ',
+      addressCountry: 'US',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Scottsdale', addressRegion: 'AZ' },
+      { '@type': 'City', name: 'Phoenix', addressRegion: 'AZ' },
+    ],
+    priceRange: '$$',
+    openingHours: 'Mo-Fr 08:00-17:00',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.5',
+      reviewCount: '17',
+      bestRating: '5',
+    },
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How much does commercial window film cost in Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Commercial window film in Scottsdale typically ranges from $6–$18 per square foot installed, depending on film type, building height, and glass condition. Small storefronts run $500–$2,000. Large office buildings run $5,000–$25,000+. Free on-site estimates — call (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What commercial window film brands do you install in Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We install LLumar, 3M, Solyx, Huper Optik, Madico, SolarGard, and Vista films for Scottsdale commercial properties. Film selection depends on glass type, building orientation, and HOA or design standard requirements.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you serve North Scottsdale office buildings?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We serve all Scottsdale commercial submarkets including North Scottsdale, Old Town, DC Ranch, Gainey Ranch, Kierland, Scottsdale Quarter, and the Scottsdale Airpark industrial corridor. Same-day estimates available for most locations.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can window film meet Scottsdale HOA or design standard requirements?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We select films based on Visible Light Reflectance (VLR) and appearance specifications required by Scottsdale HOAs and property managers. We provide spec sheets and can coordinate approvals with property management before installation.',
+        },
+      },
+    ],
+  };
+
   const projects = [
     {
       name: 'Chipotle, 8099 E McDowell Rd Scottsdale AZ',
@@ -129,6 +196,8 @@ const ScottsdaleCommercial = () => {
         <meta name="twitter:image" content={ogImage} />
         <link rel="preload" as="image" href={heroImageUrl} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

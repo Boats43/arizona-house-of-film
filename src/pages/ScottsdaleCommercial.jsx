@@ -9,7 +9,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Commercial Window Tinting Scottsdale AZ | Verified Projects | Arizona House of Film';
+  const pageTitle = 'Commercial Window Tinting Scottsdale AZ | Licensed Installer | ROC #314088';
   const metaDescription = 'Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
@@ -65,6 +65,38 @@ const ScottsdaleCommercial = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Yes. We select films based on Visible Light Reflectance (VLR) and appearance specifications required by Scottsdale HOAs and property managers. We provide spec sheets and can coordinate approvals with property management before installation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What window film brands do you install for Scottsdale commercial projects?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We install 3M, Huper Optik, Vista, Solar Gard, and Eastman films on Scottsdale commercial properties. For Old Town storefronts we typically specify 3M Fasara decorative series. North Scottsdale office corridors typically use Huper Optik Ceramic or Vista IS-series dual-reflective solar film for heat rejection without exterior mirror appearance.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does commercial window tinting cost in Scottsdale AZ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Scottsdale commercial window film projects typically range from $3,500 for a small retail storefront to $45,000+ for a full office building installation. Film type, glass square footage, and access complexity drive the final cost. We provide free on-site assessments and detailed written quotes for all Scottsdale commercial projects. Call (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does commercial window film installation take in Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most Scottsdale commercial installations complete in 1–3 days depending on square footage and building access. We work around tenant schedules and business hours to minimize disruption. Large North Scottsdale office buildings are typically scheduled across multiple days with floor-by-floor sequencing.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you install commercial window film in Old Town Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We have completed multiple commercial installations in Old Town Scottsdale including the Chipotle location at 8099 E McDowell Rd and several mixed-use retail properties in the Old Town corridor. Old Town projects often require decorative or low-reflectivity solar film to comply with design standards.',
         },
       },
     ],
@@ -307,6 +339,9 @@ const ScottsdaleCommercial = () => {
               We serve all Scottsdale commercial submarkets — Old Town, South Scottsdale, Central Scottsdale, North
               Scottsdale, DC Ranch, Gainey Ranch, McCormick Ranch, Kierland, Scottsdale Quarter, and the Scottsdale
               Airpark industrial corridor. Same-day estimates available for most Scottsdale locations.
+            </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mt-6">
+              Scottsdale commercial window film projects completed by Arizona House of Film range from $3,500 small retail installs to $45,000+ full building specifications. Common film specifications for Scottsdale commercial include 3M Prestige 70 and Huper Optik Ceramic 40 for solar control, 3M Safety Series S140 for security applications, and 3M Fasara decorative series for privacy and branding. All Scottsdale commercial projects include written specification, manufacturer warranty, and ROC #314088 documentation.
             </p>
 
             {/* ── RESIDENTIAL CROSS-LINK ─────────────────────────── */}

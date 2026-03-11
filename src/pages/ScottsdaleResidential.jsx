@@ -96,6 +96,22 @@ const ScottsdaleResidential = () => {
           text: 'Yes. Skylight film is a specialty installation — we use heat-blocking ceramic and frosted films sized and cut for skylights and clerestory windows. Popular in North Scottsdale custom builds where unfilmed skylights create 10–15°F hot spots.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'What residential window film do you recommend for Scottsdale homes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'For Scottsdale homes we most commonly specify Huper Optik Ceramic 40 or 3M Prestige 70 for south and west-facing glass. Both reject 50-60% of solar heat without darkening interiors. For DC Ranch and McCormick Ranch HOA-sensitive applications, Vista IS-series neutral tone films are popular. We assess each home\'s glass orientation and HOA requirements before recommending a specific film.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does residential window tinting cost in Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Scottsdale residential window film typically runs $8–$18 per square foot installed. A standard 2,000 sq ft Scottsdale home with 12–18 windows averages $1,200–$3,500. North Scottsdale estate properties with large glass elevations run $4,000–$12,000+. All quotes are free and based on on-site glass measurement. Call (480) 788-1591.',
+        },
+      },
     ],
   };
 

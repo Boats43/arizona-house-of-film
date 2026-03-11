@@ -14,6 +14,7 @@
     { "source": "/index.php/:path*", "destination": "/", "permanent": true },
     { "source": "/lander", "destination": "/", "permanent": true },
     { "source": "/lander/:path*", "destination": "/", "permanent": true },
+    { "source": "/book", "destination": "/book-now", "permanent": true },
     { "source": "/commercial", "destination": "/commercial-window-tinting", "permanent": true },
     { "source": "/residential", "destination": "/residential-window-tinting", "permanent": true },
     { "source": "/decorative", "destination": "/decorative-window-films", "permanent": true },

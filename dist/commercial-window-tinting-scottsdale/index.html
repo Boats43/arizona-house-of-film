@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-ChaMxL7a.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-vjnD7tBO.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Commercial Window Tinting Scottsdale AZ | Verified Projects | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591."/><meta data-rh="true" property="og:title" content="Commercial Window Tinting Scottsdale AZ | Verified Projects | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Commercial Window Tinting Scottsdale AZ | Verified Projects | Arizona House of Film"/><meta data-rh="true" name="twitter:description" content="Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale"/><link data-rh="true" rel="preload" as="image" href="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Commercial Window Tinting Scottsdale AZ","serviceType":"Commercial Window Film Installation","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"areaServed":{"@type":"City","name":"Scottsdale","addressRegion":"AZ"},"description":"Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591.","url":"https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does commercial window film cost in Scottsdale?","acceptedAnswer":{"@type":"Answer","text":"Commercial window film in Scottsdale typically ranges from $6–$18 per square foot installed, depending on film type, building height, and glass condition. Small storefronts run $500–$2,000. Large office buildings run $5,000–$25,000+. Free on-site estimates — call (480) 788-1591."}},{"@type":"Question","name":"What commercial window film brands do you install in Scottsdale?","acceptedAnswer":{"@type":"Answer","text":"We install LLumar, 3M, Solyx, Huper Optik, Madico, SolarGard, and Vista films for Scottsdale commercial properties. Film selection depends on glass type, building orientation, and HOA or design standard requirements."}},{"@type":"Question","name":"Do you serve North Scottsdale office buildings?","acceptedAnswer":{"@type":"Answer","text":"Yes. We serve all Scottsdale commercial submarkets including North Scottsdale, Old Town, DC Ranch, Gainey Ranch, Kierland, Scottsdale Quarter, and the Scottsdale Airpark industrial corridor. Same-day estimates available for most locations."}},{"@type":"Question","name":"Can window film meet Scottsdale HOA or design standard requirements?","acceptedAnswer":{"@type":"Answer","text":"Yes. We select films based on Visible Light Reflectance (VLR) and appearance specifications required by Scottsdale HOAs and property managers. We provide spec sheets and can coordinate approvals with property management before installation."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Commercial Window Tinting","item":"https://arizonahouseoffilm.com/commercial-window-tinting"},{"@type":"ListItem","position":3,"name":"Scottsdale","item":"https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale"}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-950 min-h-screen"><section class="relative min-h-[75vh] flex items-center pt-24 bg-slate-950 overflow-hidden"><div class="absolute inset-0 z-0"><img alt="Commercial window tinting Scottsdale AZ" class="w-full h-full object-cover opacity-40" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg" fetchpriority="high"/><div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div></div><div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8"><div class="max-w-4xl" style="opacity:0;transform:translateX(-20px) translateZ(0)"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Licensed • Bonded • ROC #<!-- -->314088</span><h1 class="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Commercial Window Tinting Scottsdale AZ</h1><p class="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">Verified commercial installations across Scottsdale — from Old Town storefronts to North Scottsdale office complexes. ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Get Project Quote</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">The Scottsdale Commercial Window Film Challenge</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">Scottsdale commercial buildings face a specific combination of east-west solar exposure, high-end tenant expectations, and HOA or design standards that require film selection beyond standard solar control. North Scottsdale office corridors, Old Town mixed-use, and Scottsdale Fashion Square area retail each present different glass orientations and film specification requirements. We have completed verified commercial installations across all Scottsdale submarkets.</p></div></section><section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">Verified Commercial Projects — Scottsdale AZ</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div><p class="text-slate-600 text-lg font-medium max-w-3xl mx-auto">Verified sample of completed Scottsdale commercial window film projects drawn from invoice history.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="bg-slate-50 border-l-4 border-green-500 p-8"><p class="text-xs font-black text-green-600 uppercase tracking-widest mb-2">National QSR Chain — Scottsdale</p><h3 class="text-base font-black text-slate-950 uppercase mb-3 leading-tight">Chipotle, 8099 E McDowell Rd Scottsdale AZ</h3><p class="text-slate-600 text-sm leading-relaxed mb-4">3M Fasara Luna decorative film on commercial storefront glass. Custom sizing across sidelights, transoms, and entry doors. Installed through Gable Family Builders as GC. Old Town Scottsdale corridor.</p><div class="border-t border-slate-200 pt-4 space-y-1"><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Film:</span> <!-- -->3M Fasara Luna decorative</p><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Location<!-- -->:</span> <!-- -->8099 E McDowell Rd Scottsdale</p></div></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><p class="text-xs font-black text-green-600 uppercase tracking-widest mb-2">Commercial Construction — Repeat Client</p><h3 class="text-base font-black text-slate-950 uppercase mb-3 leading-tight">Renaissance Companies, Scottsdale</h3><p class="text-slate-600 text-sm leading-relaxed mb-4">Security and decorative film across multiple commercial TI projects in Scottsdale and Phoenix metro. Eight project engagements spanning 2020–2025. Ongoing relationship.</p><div class="border-t border-slate-200 pt-4 space-y-1"><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Film:</span> <!-- -->Security + decorative</p><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Documented value<!-- -->:</span> <!-- -->$81,000+ across 8 projects</p></div></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><p class="text-xs font-black text-green-600 uppercase tracking-widest mb-2">Specialty Retail — Scottsdale</p><h3 class="text-base font-black text-slate-950 uppercase mb-3 leading-tight">2nd Swing, Scottsdale</h3><p class="text-slate-600 text-sm leading-relaxed mb-4">Security film for specialty retail location. High-value golf equipment inventory protection. Smash-and-grab deterrence deployment.</p><div class="border-t border-slate-200 pt-4 space-y-1"><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Film:</span> <!-- -->Security film</p><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Documented value<!-- -->:</span> <!-- -->$13,600+</p></div></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><p class="text-xs font-black text-green-600 uppercase tracking-widest mb-2">Cultural Institution — Taliesin West</p><h3 class="text-base font-black text-slate-950 uppercase mb-3 leading-tight">Frank Lloyd Wright Foundation, Scottsdale</h3><p class="text-slate-600 text-sm leading-relaxed mb-4">Window film installation at Frank Lloyd Wright Foundation Scottsdale campus. Preservation-sensitive environment requiring film selection compatible with historic architectural glass.</p><div class="border-t border-slate-200 pt-4 space-y-1"><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Film:</span> <!-- -->Solar + decorative</p><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Location<!-- -->:</span> <!-- -->Scottsdale AZ</p></div></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><p class="text-xs font-black text-green-600 uppercase tracking-widest mb-2">Hotel and Professional Office — Scottsdale</p><h3 class="text-base font-black text-slate-950 uppercase mb-3 leading-tight">Element Scottsdale at Skysong + North Scottsdale Dental</h3><p class="text-slate-600 text-sm leading-relaxed mb-4">Solar and privacy film for Scottsdale hotel property and dental office. Patient privacy film for clinical environments. Skysong Innovation District location.</p><div class="border-t border-slate-200 pt-4 space-y-1"><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Film:</span> <!-- -->Solar + privacy</p><p class="text-xs text-slate-500"><span class="font-black text-slate-700 uppercase">Scale<!-- -->:</span> <!-- -->Hotel and professional office</p></div></div></div></div></section><section class="py-24 bg-slate-950 border-y border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">Commercial Window Film for Every Scottsdale Property Type</h2><div class="w-24 h-2 bg-green-500 mx-auto"></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"><div class="w-12 h-12 bg-slate-800 flex items-center justify-center mb-5 group-hover:bg-green-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg></div><h3 class="text-base font-black text-white uppercase mb-3 leading-tight">Old Town Mixed-Use Retail</h3><p class="text-slate-400 text-sm leading-relaxed font-medium">Solar + decorative, storefront orientation, design standard compliance</p></div><div class="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"><div class="w-12 h-12 bg-slate-800 flex items-center justify-center mb-5 group-hover:bg-green-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg></div><h3 class="text-base font-black text-white uppercase mb-3 leading-tight">North Scottsdale Office Corridor</h3><p class="text-slate-400 text-sm leading-relaxed font-medium">Dual-reflective solar, east-west exposure, LEED documentation</p></div><div class="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"><div class="w-12 h-12 bg-slate-800 flex items-center justify-center mb-5 group-hover:bg-green-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg></div><h3 class="text-base font-black text-white uppercase mb-3 leading-tight">Scottsdale Medical and Dental</h3><p class="text-slate-400 text-sm leading-relaxed font-medium">Privacy film, HIPAA-sensitive environments, patient area frosting</p></div><div class="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"><div class="w-12 h-12 bg-slate-800 flex items-center justify-center mb-5 group-hover:bg-green-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></div><h3 class="text-base font-black text-white uppercase mb-3 leading-tight">Scottsdale Hotels and Hospitality</h3><p class="text-slate-400 text-sm leading-relaxed font-medium">Solar control, guest comfort, UV protection for furnishings</p></div><div class="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"><div class="w-12 h-12 bg-slate-800 flex items-center justify-center mb-5 group-hover:bg-green-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg></div><h3 class="text-base font-black text-white uppercase mb-3 leading-tight">Scottsdale Schools and Childcare</h3><p class="text-slate-400 text-sm leading-relaxed font-medium">8-mil and 12-mil security, delay-of-entry, emergency protocol compliance</p></div><div class="bg-slate-900 border border-slate-800 hover:border-green-500/50 p-8 transition-all group"><div class="w-12 h-12 bg-slate-800 flex items-center justify-center mb-5 group-hover:bg-green-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div><h3 class="text-base font-black text-white uppercase mb-3 leading-tight">HOA and Property Management</h3><p class="text-slate-400 text-sm leading-relaxed font-medium">Consistent film spec across units, tenant coordination, bulk pricing</p></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Scottsdale Commercial Service Coverage</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We serve all Scottsdale commercial submarkets — Old Town, South Scottsdale, Central Scottsdale, North Scottsdale, DC Ranch, Gainey Ranch, McCormick Ranch, Kierland, Scottsdale Quarter, and the Scottsdale Airpark industrial corridor. Same-day estimates available for most Scottsdale locations.</p><div class="cross-link-banner bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 max-w-3xl mx-auto mt-6 text-center"><p class="text-gray-300 text-sm">Looking for <strong class="text-white">residential</strong> window film for your Scottsdale home?<!-- --> <a class="text-green-400 hover:text-green-300 font-semibold" href="/residential-window-tinting-scottsdale">View Scottsdale residential window tinting →</a></p></div></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">Get a Scottsdale Commercial Window Film Quote</h2><p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">Free on-site assessment. Custom specification for your glass type and building orientation. Licensed ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Request Quote</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001"/></div></div><div><label class="industrial-label">Project Type *</label><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></div><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."></textarea></div><div class="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer"><input type="file" name="attachment" multiple="" accept="image/*,.pdf" class="absolute inset-0 opacity-0 cursor-pointer z-10"/><div class="flex flex-col items-center justify-center text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg><p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p><p class="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p></div></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

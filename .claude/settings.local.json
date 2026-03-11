@@ -19,7 +19,10 @@
       "Bash(npx vite:*)",
       "Bash(find dist:*)",
       "Bash(xargs sed:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(curl -s -o /dev/null -w \"%{size_download}\" https://arizonahouseoffilm.com/window-tinting-chandler 2>&1)",
+      "Bash(curl -s -o /dev/null -w \"%{size_download}\" https://arizonahouseoffilm.com/ 2>&1)",
+      "Bash(curl -s https://arizonahouseoffilm.com/window-tinting-chandler 2>&1 | head -50)"
     ]
   }
 }

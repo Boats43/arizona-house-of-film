@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-ChaMxL7a.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-vjnD7tBO.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Contact Arizona House of Film | Free Quote | Phoenix, AZ | 480-788-1591</title>
+  <meta data-rh="true" name="description" content="Contact Arizona House of Film for a free window tinting quote in Phoenix AZ. Licensed ROC #314088. Call 480-788-1591 for a 24-hour response."/><meta data-rh="true" property="og:title" content="Contact Arizona House of Film | Free Quote | Phoenix, AZ | 480-788-1591"/><meta data-rh="true" property="og:description" content="Contact Arizona House of Film for a free window tinting quote in Phoenix AZ. Licensed ROC #314088. Call 480-788-1591 for a 24-hour response."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/contact"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Contact Arizona House of Film | Free Quote | Phoenix, AZ | 480-788-1591"/><meta data-rh="true" name="twitter:description" content="Contact Arizona House of Film for a free window tinting quote in Phoenix AZ. Licensed ROC #314088. Call 480-788-1591 for a 24-hour response."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/contact"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Arizona House of Film","url":"https://arizonahouseoffilm.com/contact","description":"Contact Arizona House of Film for a free window tinting quote in Phoenix AZ. Licensed ROC #314088. Call 480-788-1591 for a 24-hour response.","mainEntity":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}]}}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main><section class="bg-slate-950 pt-24 md:pt-32 pb-16 md:pb-20"><div class="max-w-7xl mx-auto px-6"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-[0.2em]">Licensed • Bonded • ROC #314088</span><h1 class="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter text-white mb-8">Get Your Free<br/><span class="text-green-400">Window Tinting</span><br/>Quote Today</h1><div class="flex flex-col sm:flex-row gap-4"><a href="tel:480-788-1591" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-slate-950 font-black uppercase px-8 py-4 text-sm tracking-widest transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call 480-788-1591</a><a href="mailto:arizonahouseoffilm@gmail.com" class="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-green-500 text-white font-black uppercase px-8 py-4 text-sm tracking-widest transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg> Email Us</a></div></div></section><section class="bg-white border-b border-slate-100 py-12"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-12 h-12 bg-green-50 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div><p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Call Us</p><a href="tel:480-788-1591" class="text-xl font-black text-slate-900 hover:text-green-600 transition-colors">480-788-1591</a><p class="text-sm text-slate-500 mt-0.5">Mon–Fri 7am–6pm · Sat 8am–2pm</p></div></div><div class="flex items-start gap-4"><div class="flex-shrink-0 w-12 h-12 bg-green-50 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div><div><p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Email</p><a href="mailto:arizonahouseoffilm@gmail.com" class="text-base font-black text-slate-900 hover:text-green-600 transition-colors break-all">arizonahouseoffilm@gmail.com</a><p class="text-sm text-slate-500 mt-0.5">24-hour response guarantee</p></div></div><div class="flex items-start gap-4"><div class="flex-shrink-0 w-12 h-12 bg-green-50 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><div><p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Service Area</p><p class="text-xl font-black text-slate-900">Phoenix Metro</p><p class="text-sm text-slate-500 mt-0.5">Statewide Arizona coverage</p></div></div></div></div></section><section class="bg-slate-50 py-20"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"><div><h2 class="text-3xl md:text-4xl font-black uppercase tracking-tighter text-slate-900 mb-10">What to Expect</h2><div class="space-y-8 mb-14"><div class="flex gap-5"><span class="flex-shrink-0 w-12 h-12 bg-green-600 text-white flex items-center justify-center font-black text-sm">01</span><div><p class="font-black uppercase text-sm tracking-wider text-slate-900 mb-1">Submit Your Request</p><p class="text-slate-600 text-sm leading-relaxed">Fill out the form with your project type, location, and goals. Takes less than 2 minutes.</p></div></div><div class="flex gap-5"><span class="flex-shrink-0 w-12 h-12 bg-green-600 text-white flex items-center justify-center font-black text-sm">02</span><div><p class="font-black uppercase text-sm tracking-wider text-slate-900 mb-1">Free On-Site Audit</p><p class="text-slate-600 text-sm leading-relaxed">An estimator contacts you within 24 hours to schedule a site visit and provide a detailed quote.</p></div></div><div class="flex gap-5"><span class="flex-shrink-0 w-12 h-12 bg-green-600 text-white flex items-center justify-center font-black text-sm">03</span><div><p class="font-black uppercase text-sm tracking-wider text-slate-900 mb-1">Professional Installation</p><p class="text-slate-600 text-sm leading-relaxed">Our certified crew arrives on time, installs your film with precision, and cleans up completely.</p></div></div></div><h3 class="text-lg font-black uppercase tracking-wider text-slate-900 mb-5">Why Arizona House of Film</h3><div class="grid grid-cols-2 gap-4"><div class="bg-white border border-slate-200 p-5"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg><p class="font-black uppercase text-xs tracking-wider text-slate-900 mb-0.5">Licensed &amp; Bonded</p><p class="text-slate-500 text-xs">ROC #314088 verified</p></div><div class="bg-white border border-slate-200 p-5"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-3"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg><p class="font-black uppercase text-xs tracking-wider text-slate-900 mb-0.5">15+ Years Experience</p><p class="text-slate-500 text-xs">Commercial &amp; residential</p></div><div class="bg-white border border-slate-200 p-5"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><p class="font-black uppercase text-xs tracking-wider text-slate-900 mb-0.5">24-Hour Guarantee</p><p class="text-slate-500 text-xs">Rapid quote turnaround</p></div><div class="bg-white border border-slate-200 p-5"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-3"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><p class="font-black uppercase text-xs tracking-wider text-slate-900 mb-0.5">500+ Projects</p><p class="text-slate-500 text-xs">Across Arizona</p></div></div></div><div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10"><h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-slate-900 mb-2">Request a Free Audit</h2><p class="text-slate-500 text-sm mb-8 font-medium">Estimators contact you within 24 hours — no commitment required.</p><form class="space-y-8"><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001"/></div></div><div><label class="industrial-label">Project Type *</label><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></div><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."></textarea></div><div class="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer"><input type="file" name="attachment" multiple="" accept="image/*,.pdf" class="absolute inset-0 opacity-0 cursor-pointer z-10"/><div class="flex flex-col items-center justify-center text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg><p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p><p class="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p></div></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></section><section class="py-20 bg-gray-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12" style="opacity:0;transform:translateY(30px) translateZ(0)"><h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Service Area</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">We proudly serve the entire state of Arizona with professional window film installation services.</p></div><div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200" style="opacity:0;transform:scale(0.95) translateZ(0)"><div class="w-full aspect-[16/9]"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1796192.909479357!2d-112.33924376378129!3d34.24921477717469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12500198d97d%3A0x19396b27d42576b!2sArizona%2C%20USA!5e0!3m2!1sen!2slt!4v1700000000000!5m2!1sen!2slt" class="w-full h-full" style="border:0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Statewide Service Area Map for Arizona"></iframe></div></div></div></section><section class="bg-slate-950 py-10 border-t border-white/5"><div class="max-w-7xl mx-auto px-6"><div class="flex flex-col md:flex-row items-center justify-between gap-6"><p class="text-white font-black uppercase text-sm tracking-widest">Arizona House of Film</p><div class="flex flex-wrap justify-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-widest"><span>ROC #314088</span><span>Licensed</span><span>Bonded</span><span>Insured</span><span>15+ Years</span></div><a href="tel:480-788-1591" class="text-green-400 font-black text-lg hover:text-green-300 transition-colors">480-788-1591</a></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

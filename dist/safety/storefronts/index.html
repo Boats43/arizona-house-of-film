@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-ChaMxL7a.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-vjnD7tBO.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Storefront Security Film | Protect Your Arizona Retail Business</title>
+  <meta data-rh="true" name="description" content="Prevent smash-and-grab burglaries and protect your inventory with storefront security film. A must-have for retail businesses in Phoenix, Scottsdale, and across Arizona."/><meta data-rh="true" property="og:title" content="Storefront Security Film | Protect Your Arizona Retail Business"/><meta data-rh="true" property="og:description" content="Prevent smash-and-grab burglaries and protect your inventory with storefront security film. A must-have for retail businesses in Phoenix, Scottsdale, and across Arizona."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/safety/storefronts"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/safety/storefronts"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Safety & Security Films","item":"https://arizonahouseoffilm.com/safety"},{"@type":"ListItem","position":3,"name":"Storefront Security Film","item":"https://arizonahouseoffilm.com/safety/storefronts"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will security film stop a bullet?","acceptedAnswer":{"@type":"Answer","text":"No. Security film is not bullet-resistant. While it may slow a bullet's velocity and reduce spall (flying glass), it is not designed or rated to stop projectiles from a firearm. Bullet-resistant glass is a specialized, much more expensive product."}},{"@type":"Question","name":"What thickness of film is recommended for a storefront?","acceptedAnswer":{"@type":"Answer","text":"For most retail storefronts, we recommend a security film of at least 8 mil thickness, often combined with an attachment system for maximum strength. This provides a robust defense against the most common smash-and-grab tactics."}},{"@type":"Question","name":"Can we still have our logo or sale signs on the window?","acceptedAnswer":{"@type":"Answer","text":"Yes. Security film is installed on the interior of the glass. You can still apply temporary vinyl lettering or decals to the exterior of the window over the film without any issue."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Storefront Security Film | Protect Your Arizona Retail Business","description":"Prevent smash-and-grab burglaries and protect your inventory with storefront security film. A must-have for retail businesses in Phoenix, Scottsdale, and across Arizona.","brand":{"@type":"Brand","name":"Arizona House of Film"},"url":"https://arizonahouseoffilm.com/safety/storefronts","offers":{"@type":"Offer","priceCurrency":"USD","price":"0.00","priceValidUntil":"2027-12-31","availability":"https://schema.org/InStock","url":"https://arizonahouseoffilm.com/safety/storefronts"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"18"}}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-white"><header class="relative py-20 text-white bg-gradient-to-br from-red-800 to-gray-900"><div class="absolute inset-0 bg-black/40"></div><div class="relative z-10 max-w-4xl mx-auto px-4 text-center"><div class="mb-4"><a class="text-white hover:underline flex items-center justify-center text-sm" href="/safety"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to <!-- -->Safety &amp; Security Films</a></div><h1 class="text-4xl md:text-5xl font-bold text-white" style="opacity:0;transform:translateY(20px) translateZ(0)">Protect Your Retail Storefront</h1><p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Deter smash-and-grab robberies and protect your assets with heavy-duty security film.</p></div></header><main class="py-16 md:py-24"><div class="max-w-4xl mx-auto px-4"><div class="prose lg:prose-lg max-w-none text-gray-800" style="opacity:0;transform:translateY(20px) translateZ(0)"><div>
+      <h2>Your First Line of Defense Against Retail Crime</h2>
+      <p class="lead">For a retail business, a large glass storefront is essential for showcasing merchandise and attracting customers. It's also your single greatest vulnerability to "smash-and-grab" burglaries. These crimes are fast, destructive, and can result in devastating inventory loss and property damage. Storefront security film is the most effective way to protect your business from this pervasive threat.</p>
+      <h3>Stop Smash-and-Grab Robberies Cold</h3>
+      <p>The entire premise of a smash-and-grab is speed. Burglars use a heavy object to shatter the glass, grab as much high-value merchandise as they can, and flee in under a minute. Security film completely disrupts this model.</p>
+      <ul>
+        <li><strong>Denies Entry:</strong> When struck, the filmed glass will break, but it will not shatter. The film holds the glass in a single sheet, creating a barrier that is incredibly difficult to breach quickly.</li>
+        <li><strong>Creates Noise and Delay:</strong> The repeated impacts required to try and get through the film create a huge amount of noise and, most importantly, take time—the two things a burglar cannot afford.</li>
+        <li><strong>Protects Your Assets:</strong> In most cases, the intruder will give up and flee, leaving your valuable inventory safe inside your store.</li>
+      </ul>
+      <h3>An Essential Investment for Any Retailer</h3>
+      <p>Storefront security film is a crucial investment for any brick-and-mortar retailer, especially those selling high-value goods such as:</p>
+      <ul>
+        <li>Jewelry stores</li>
+        <li>Electronics retailers</li>
+        <li>Designer boutiques</li>
+        <li>Dispensaries</li>
+        <li>Pawn shops</li>
+      </ul>
+      <p>Beyond burglary prevention, security film also protects your storefront from vandalism, civil unrest, and accidental impacts. It also blocks 99% of UV rays, which helps to <a href="/commercial-window-tinting">prevent your displayed merchandise from fading</a>.</p>
+      <p>Protect your business, your inventory, and your peace of mind. <a href="/contact">Contact Arizona House of Film</a> for a commercial security consultation today.</p>
+    </div></div></div></main><section class="py-16 md:py-24 bg-gray-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Will security film stop a bullet?</h3><p class="text-gray-700">No. Security film is not bullet-resistant. While it may slow a bullet&#x27;s velocity and reduce spall (flying glass), it is not designed or rated to stop projectiles from a firearm. Bullet-resistant glass is a specialized, much more expensive product.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">What thickness of film is recommended for a storefront?</h3><p class="text-gray-700">For most retail storefronts, we recommend a security film of at least 8 mil thickness, often combined with an attachment system for maximum strength. This provides a robust defense against the most common smash-and-grab tactics.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Can we still have our logo or sale signs on the window?</h3><p class="text-gray-700">Yes. Security film is installed on the interior of the glass. You can still apply temporary vinyl lettering or decals to the exterior of the window over the film without any issue.</p></div></div></div></section><section class="py-20 bg-blue-600 text-white"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Property?</h2><p class="text-lg text-blue-100 mb-8">Contact Arizona House of Film today for a free, no-obligation estimate.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-gray-200 font-semibold" href="/contact">Request Your Free Quote</a><a href="tel:480-788-1591" class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-11 rounded-md px-8 border-white text-white hover:bg-white hover:text-blue-600 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now</a></div></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

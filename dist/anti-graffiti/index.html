@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-ChaMxL7a.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-vjnD7tBO.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Anti-Graffiti Window Film Phoenix AZ | Peel and Replace Protection | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government facilities. Peel and replace vs glass replacement. ROC #314088. Free estimate."/><meta data-rh="true" property="og:title" content="Anti-Graffiti Window Film Phoenix AZ | Peel and Replace Protection | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government facilities. Peel and replace vs glass replacement. ROC #314088. Free estimate."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/anti-graffiti"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Anti-Graffiti Window Film Phoenix AZ | Peel and Replace Protection | Arizona House of Film"/><meta data-rh="true" name="twitter:description" content="Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government facilities. Peel and replace vs glass replacement. ROC #314088. Free estimate."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/anti-graffiti"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does anti-graffiti film work against acid etching?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's specifically designed to protect against acid etching, which permanently damages unprotected glass."}},{"@type":"Question","name":"How often does the film need to be replaced?","acceptedAnswer":{"@type":"Answer","text":"Film is only replaced after an incident — otherwise it lasts 5–10 years. Many locations go years without needing replacement."}},{"@type":"Question","name":"Can it be applied to mirrors and other surfaces?","acceptedAnswer":{"@type":"Answer","text":"We primarily install on glass surfaces. Contact us about specific surface types."}},{"@type":"Question","name":"How long does anti-graffiti film last before replacement?","acceptedAnswer":{"@type":"Answer","text":"Undamaged film typically lasts 2–5 years in Arizona sun. When vandalized, only the affected panel needs replacement — not the full installation."}},{"@type":"Question","name":"Can anti-graffiti film be combined with security or solar film?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install anti-graffiti film over existing security or solar film. The anti-graffiti layer sits outermost and is replaced independently without disturbing underlying film."}},{"@type":"Question","name":"Does anti-graffiti film change the appearance of the glass?","acceptedAnswer":{"@type":"Answer","text":"Standard clear film is virtually invisible. A slight sheen may be visible in direct sunlight at certain angles but there is no significant appearance change."}},{"@type":"Question","name":"What surfaces can anti-graffiti film be applied to?","acceptedAnswer":{"@type":"Answer","text":"Film is designed for flat glass — windows, doors, mirrors, and glass partitions. For brick, concrete, metal, and signage we use permanent anti-graffiti coatings."}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="bg-slate-950"><section class="relative py-32 overflow-hidden text-white border-b border-white/10"><div class="absolute inset-0 z-0"><div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div></div><div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8"><div style="opacity:0;transform:translateX(-20px) translateZ(0)"><span class="px-4 py-1 bg-red-600 text-white font-black text-xs mb-6 uppercase tracking-widest inline-block">Sacrificial Protection • ROC #<!-- -->314088</span><h1 class="text-5xl md:text-8xl font-black mb-6 uppercase leading-[0.9] tracking-tighter">Vandalism <br/><span class="text-red-600 italic">Neutralized</span></h1><p class="text-xl md:text-2xl text-slate-300 max-w-2xl mb-6 font-bold italic leading-relaxed">Arizona storefronts face daily vandalism exposure. Sacrificial anti-graffiti film takes the damage — peel and replace for dollars, not thousands. Trusted by Phoenix retail, transit, and government facilities. ROC #314088.</p><p class="text-base md:text-lg text-slate-400 max-w-2xl mb-10 font-medium leading-relaxed">Anti-graffiti window film in Phoenix is most commonly installed on ground-floor retail storefronts, transit shelters, school entry glass, and municipal buildings where repeated vandalism exposure is expected.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white hover:bg-red-600 text-slate-950 hover:text-white px-10 h-16 text-xl font-black uppercase italic rounded-none transition-all" href="/contact">Get Free Audit</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all uppercase tracking-tighter">480-788-1591</a></div></div></div></section><section class="py-12 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium">Anti-graffiti window film is a cost-effective alternative to glass replacement after vandalism. A thin sacrificial film layer takes the damage — permanent markers, acid etching, spray paint — and peels away to reveal undamaged glass beneath. Arizona House of Film installs anti-graffiti film for storefronts, transit shelters, elevators, and commercial glass across Phoenix, Scottsdale, and Greater Arizona. Licensed ROC #314088.</p></div></section><section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-4xl md:text-5xl font-black text-slate-950 uppercase tracking-tighter mb-12">What Does Anti-Graffiti Film Solve?</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-slate-50 p-8 border-l-4 border-red-600" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><h3 class="text-xl font-black text-slate-950 uppercase mb-3">Glass Etching</h3><p class="text-slate-700 text-sm font-medium leading-relaxed">Typical glass replacement after acid etching ranges from $800–$3,000 per panel depending on size and glazing type. Sacrificial anti-graffiti film takes the damage instead — peel and replace for $3–$8 per square foot. The glass underneath is untouched.</p></div><div class="bg-slate-50 p-8 border-l-4 border-red-600" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><path d="M3 3h.01"></path><path d="M7 5h.01"></path><path d="M11 7h.01"></path><path d="M3 7h.01"></path><path d="M7 9h.01"></path><path d="M3 11h.01"></path><rect width="4" height="4" x="15" y="5"></rect><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"></path><path d="m13 14 8-2"></path><path d="m13 19 8-2"></path></svg><h3 class="text-xl font-black text-slate-950 uppercase mb-3">Spray Paint</h3><p class="text-slate-700 text-sm font-medium leading-relaxed">Paint and permanent markers bond instantly to bare glass. Anti-graffiti film prevents adhesion — graffiti wipes clean with water and a cloth. No solvents, no scrubbing, no cleaning bills.</p></div><div class="bg-slate-50 p-8 border-l-4 border-red-600" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><path d="M7 7h.01"></path></svg><h3 class="text-xl font-black text-slate-950 uppercase mb-3">Sticker Buildup</h3><p class="text-slate-700 text-sm font-medium leading-relaxed">Promotional stickers, political posters, and adhesive residue bond permanently to unprotected glass. Film provides a sacrificial surface — when covered, peel and replace.</p></div><div class="bg-slate-50 p-8 border-l-4 border-red-600" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg><h3 class="text-xl font-black text-slate-950 uppercase mb-3">Repeat Targeting</h3><p class="text-slate-700 text-sm font-medium leading-relaxed">Vandals return to easy targets. A protected surface that cleans in minutes removes the incentive. Protected storefronts see repeat vandalism rates drop significantly.</p></div><div class="bg-slate-50 p-8 border-l-4 border-red-600" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg><h3 class="text-xl font-black text-slate-950 uppercase mb-3">Cleaning Costs</h3><p class="text-slate-700 text-sm font-medium leading-relaxed">Commercial graffiti cleaning runs $150–$500 per incident. For high-frequency locations like transit stops and downtown retail, annual cleaning costs exceed film installation within months.</p></div></div></div></section><section class="py-24 bg-white border-t border-slate-100"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-slate-50 p-10 border-l-8 border-slate-900 hover:border-red-600 transition-all shadow-sm" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-red-600 mb-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg><h3 class="text-2xl font-black text-slate-950 mb-4 uppercase italic leading-none">Sacrificial Barrier</h3><p class="text-slate-700 font-bold text-lg leading-relaxed">Acts as a replaceable skin against spray paint, markers, and acid etching — saving your glass from permanent destruction.</p></div><div class="bg-slate-50 p-10 border-l-8 border-slate-900 hover:border-red-600 transition-all shadow-sm" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-red-600 mb-6"><path d="M3 3h.01"></path><path d="M7 5h.01"></path><path d="M11 7h.01"></path><path d="M3 7h.01"></path><path d="M7 9h.01"></path><path d="M3 11h.01"></path><rect width="4" height="4" x="15" y="5"></rect><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"></path><path d="m13 14 8-2"></path><path d="m13 19 8-2"></path></svg><h3 class="text-2xl font-black text-slate-950 mb-4 uppercase italic leading-none">Rapid Restoration</h3><p class="text-slate-700 font-bold text-lg leading-relaxed">Damaged film is peeled away and replaced in minutes, costing a fraction of full glass replacement.</p></div><div class="bg-slate-50 p-10 border-l-8 border-slate-900 hover:border-red-600 transition-all shadow-sm" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-red-600 mb-6"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg><h3 class="text-2xl font-black text-slate-950 mb-4 uppercase italic leading-none">Optically Invisible</h3><p class="text-slate-700 font-bold text-lg leading-relaxed">Maintains 100% clarity. Vandals won&#x27;t even know the film is there until their damage fails to stick.</p></div></div></div></section><section class="py-24 bg-slate-900 text-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-12">Where We Deploy Anti-Graffiti Film in Arizona</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-slate-800 p-8 border border-slate-700 hover:border-red-600 transition-all" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg><h3 class="text-xl font-black uppercase mb-3 text-white">Retail Storefronts</h3><p class="text-slate-300 text-sm font-medium leading-relaxed">Ground-floor retail glass in Phoenix and Scottsdale faces consistent vandalism exposure. We install anti-graffiti film for national retail brands and local storefronts as part of a combined security package.</p></div><div class="bg-slate-800 p-8 border border-slate-700 hover:border-red-600 transition-all" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><line x1="3" x2="21" y1="22" y2="22"></line><line x1="6" x2="6" y1="18" y2="11"></line><line x1="10" x2="10" y1="18" y2="11"></line><line x1="14" x2="14" y1="18" y2="11"></line><line x1="18" x2="18" y1="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg><h3 class="text-xl font-black uppercase mb-3 text-white">Government and Transit</h3><p class="text-slate-300 text-sm font-medium leading-relaxed">Public-facing glass at transit stops, municipal buildings, and government facilities faces the highest vandalism frequency. Trusted by Arizona public facilities to reduce maintenance costs.</p></div><div class="bg-slate-800 p-8 border border-slate-700 hover:border-red-600 transition-all" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-red-600 mb-4"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg><h3 class="text-xl font-black uppercase mb-3 text-white">Schools and Educational</h3><p class="text-slate-300 text-sm font-medium leading-relaxed">School entry glass and campus points are frequent vandalism targets. Installed for Phoenix-area educational institutions and children&#x27;s centers without altering glass appearance.</p></div></div></div></section><section class="py-24 bg-slate-950 text-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-12">Anti-Graffiti Film vs. Traditional Glass Repair</h2><div class="overflow-x-auto"><table class="w-full text-sm border-collapse"><thead><tr class="bg-red-600 text-left"><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-red-700">Solution</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-red-700">Cost Per Incident</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-red-700">Permanent Fix</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-red-700">Repeat Protection</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-red-700">Downtime</th></tr></thead><tbody><tr class="bg-red-600/20 border-l-4 border-l-red-600"><td class="px-4 py-3 border border-slate-700 font-bold text-red-400">Anti-Graffiti Film (peel and replace)</td><td class="px-4 py-3 text-slate-300 border border-slate-700">$3–$8/sq ft</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Yes</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Yes</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Hours</td></tr><tr class="bg-slate-800"><td class="px-4 py-3 border border-slate-700 font-bold text-white">Professional Graffiti Cleaning</td><td class="px-4 py-3 text-slate-300 border border-slate-700">$150–$500</td><td class="px-4 py-3 text-slate-300 border border-slate-700">No</td><td class="px-4 py-3 text-slate-300 border border-slate-700">No</td><td class="px-4 py-3 text-slate-300 border border-slate-700">1–2 Days</td></tr><tr class="bg-slate-900"><td class="px-4 py-3 border border-slate-700 font-bold text-white">Glass Replacement after etching</td><td class="px-4 py-3 text-slate-300 border border-slate-700">$800–$3,000 per panel</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Yes</td><td class="px-4 py-3 text-slate-300 border border-slate-700">No</td><td class="px-4 py-3 text-slate-300 border border-slate-700">1–2 Weeks</td></tr><tr class="bg-slate-800"><td class="px-4 py-3 border border-slate-700 font-bold text-white">Sandblasting / Resurfacing</td><td class="px-4 py-3 text-slate-300 border border-slate-700">$200–$600</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Partial</td><td class="px-4 py-3 text-slate-300 border border-slate-700">No</td><td class="px-4 py-3 text-slate-300 border border-slate-700">3–5 Days</td></tr></tbody></table></div><p class="text-slate-400 font-medium text-sm mt-6">Anti-graffiti film pays for itself after a single prevented glass replacement. For high-frequency locations, ROI is typically achieved within 60–90 days.</p></div></section><section class="py-24 bg-slate-900 text-white border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-12">Two Types of Anti-Graffiti Protection</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="bg-slate-800 p-10 border border-slate-700 hover:border-red-600 transition-all" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-red-600 mb-6"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg><h3 class="text-2xl font-black uppercase mb-1 leading-none">Sacrificial Film</h3><p class="text-red-400 font-bold uppercase text-xs tracking-widest mb-4">Recommended for Glass</p><p class="text-slate-300 font-medium leading-relaxed">Clear polyester film applied directly to glass. When vandalized, peel and replace — the glass underneath is untouched. Cost: $3–$8 per square foot installed. Best for: storefronts, transit glass, school windows, entry doors.</p></div><div class="bg-slate-800 p-10 border border-slate-700 hover:border-red-600 transition-all" style="opacity:0;transform:translateY(20px) translateZ(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-red-600 mb-6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg><h3 class="text-2xl font-black uppercase mb-1 leading-none">Permanent Coating</h3><p class="text-red-400 font-bold uppercase text-xs tracking-widest mb-4">Non-Glass Surfaces</p><p class="text-slate-300 font-medium leading-relaxed">Chemical coating for concrete, brick, metal, and signage. Graffiti removes with solvent cleaners. Multiple cleaning cycles before recoating required. Best for: walls, pillars, metal doors, concrete surfaces.</p></div></div></div></section><section class="py-20 bg-red-600 text-white"><div class="max-w-4xl mx-auto px-6 lg:px-8 text-center"><h3 class="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Security Film + Anti-Graffiti: The Complete Protection System</h3><p class="text-white/90 font-medium leading-relaxed text-lg mb-10 max-w-3xl mx-auto">For high-risk storefronts and ground-floor commercial glass, we combine<!-- --> <a class="text-white underline font-black" href="/safety">8-mil security film</a> <!-- -->with sacrificial anti-graffiti coating in a single installation. Security film holds shattered glass together against forced entry. Anti-graffiti film protects the surface from vandalism. One install — dual protection.</p><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white hover:bg-slate-950 text-red-600 hover:text-white px-12 h-16 text-xl font-black uppercase italic rounded-none transition-all" href="/contact">Get Security + Anti-Graffiti Quote →</a></div></section><section class="py-20 bg-white"><div class="max-w-4xl mx-auto px-6 lg:px-8"><h2 class="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-12">Anti-Graffiti Film FAQ</h2><div class="space-y-8"><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">Does anti-graffiti film work against acid etching?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">Yes. It&#x27;s specifically designed to protect against acid etching, which permanently damages unprotected glass.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">How often does the film need to be replaced?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">Film is only replaced after an incident — otherwise it lasts 5–10 years. Many locations go years without needing replacement.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">Can it be applied to mirrors and other surfaces?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">We primarily install on glass surfaces. Contact us about specific surface types.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">How long does anti-graffiti film last before replacement?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">Undamaged film typically lasts 2–5 years in Arizona sun. When vandalized, only the affected panel needs replacement — not the full installation.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">Can anti-graffiti film be combined with security or solar film?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">Yes. We install anti-graffiti film over existing security or solar film. The anti-graffiti layer sits outermost and is replaced independently without disturbing underlying film.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">Does anti-graffiti film change the appearance of the glass?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">Standard clear film is virtually invisible. A slight sheen may be visible in direct sunlight at certain angles but there is no significant appearance change.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="font-black text-slate-950 uppercase text-sm mb-3">What surfaces can anti-graffiti film be applied to?</h3><p class="text-sm text-slate-600 leading-relaxed font-medium">Film is designed for flat glass — windows, doors, mirrors, and glass partitions. For brick, concrete, metal, and signage we use permanent anti-graffiti coatings.</p></div></div></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001"/></div></div><div><label class="industrial-label">Project Type *</label><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></div><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."></textarea></div><div class="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer"><input type="file" name="attachment" multiple="" accept="image/*,.pdf" class="absolute inset-0 opacity-0 cursor-pointer z-10"/><div class="flex flex-col items-center justify-center text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg><p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p><p class="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p></div></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

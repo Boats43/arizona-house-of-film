@@ -78,7 +78,7 @@ export default function WindowTintingTempe() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Tempe AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Tempe AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Tempe AZ — solar film, commercial office film, university area rentals, privacy film. Licensed ROC #314088. Serving all Tempe neighborhoods. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting tempe az, window tinting tempe, tempe window film, residential window tinting tempe, commercial window tinting tempe az, window film tempe arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-tempe" />

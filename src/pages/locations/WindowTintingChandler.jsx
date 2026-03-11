@@ -78,7 +78,7 @@ export default function WindowTintingChandler() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Chandler AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Chandler AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Chandler AZ — residential solar film, commercial window film, privacy & decorative film. Licensed ROC #314088. Serving all Chandler neighborhoods. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting chandler az, window tinting chandler, chandler window film, residential window tinting chandler, commercial window tinting chandler az, window film chandler arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-chandler" />

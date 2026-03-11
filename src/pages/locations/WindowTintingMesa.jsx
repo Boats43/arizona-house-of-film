@@ -78,7 +78,7 @@ export default function WindowTintingMesa() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Mesa AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Mesa AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Mesa AZ — residential solar film, commercial window film, privacy & decorative film. Licensed ROC #314088. Serving all Mesa neighborhoods. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting mesa az, window tinting mesa, mesa window film, residential window tinting mesa az, commercial window tinting mesa, home window tinting mesa arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-mesa" />

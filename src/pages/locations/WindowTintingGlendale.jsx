@@ -78,7 +78,7 @@ export default function WindowTintingGlendale() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Glendale AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Glendale AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Glendale AZ — solar control, privacy film, commercial window film. Licensed ROC #314088. Serving Arrowhead, Westgate, Thunderbird Ranch & all Glendale. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting glendale az, window tinting glendale, glendale window film, residential window tinting glendale az, commercial window tinting glendale, home window tinting glendale arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-glendale" />

@@ -54,7 +54,7 @@ const CityPage = () => {
   /* ======================================================
      SEO — CLEAN CANONICAL
   ====================================================== */
-  const pageTitle = `Window Tinting ${name} AZ | Ceramic, Security & Decorative Film | Arizona House of Film`;
+  const pageTitle = `Window Tinting ${name} AZ | Solar, Privacy & Security Film`;
   const metaDescription = `Professional window film in ${name}, AZ. Ceramic heat rejection, security film, decorative glass. Residential and commercial. ROC #314088. (480) 788-1591.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/service-areas/${cleanSlug}`;
 

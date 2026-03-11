@@ -78,7 +78,7 @@ export default function WindowTintingQueenCreek() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Queen Creek AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Queen Creek AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Queen Creek AZ — privacy film, solar control, residential & commercial. Licensed ROC #314088. Serving Hastings Farms, Cortina, Ironwood Crossing. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting queen creek az, privacy window films queen creek, queen creek window film, residential window tinting queen creek, window film queen creek arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-queen-creek" />

@@ -78,7 +78,7 @@ export default function WindowTintingPeoria() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Peoria AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Peoria AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Peoria AZ — solar control, privacy film, commercial window film. Licensed ROC #314088. Serving Peoria, Vistancia, Trilogy, Pleasant Valley. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting peoria az, home window tinting peoria, peoria window film, residential window tinting peoria az, commercial window tinting peoria" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-peoria" />

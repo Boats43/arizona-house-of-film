@@ -78,7 +78,7 @@ export default function WindowTintingGilbert() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Gilbert AZ | Residential & Commercial | Arizona House of Film</title>
+        <title>Window Tinting Gilbert AZ | Residential & Commercial</title>
         <meta name="description" content="Window tinting in Gilbert AZ — residential solar film, commercial window film, privacy & decorative film. Licensed ROC #314088. Serving all Gilbert neighborhoods. Free quote (480) 788-1591." />
         <meta name="keywords" content="window tinting gilbert az, window tinting gilbert, gilbert window film, residential window tinting gilbert, commercial window tinting gilbert az, premium house window tinting gilbert" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-tinting-gilbert" />

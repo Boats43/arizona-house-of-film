@@ -192,10 +192,10 @@ export default function WindowTintingMesa() {
         <section className="mb-12 bg-blue-50 border border-blue-100 rounded-2xl p-8">
           <div className="flex items-center gap-2 mb-3">
             <MapPin className="w-5 h-5 text-blue-600" />
-            <h2 className="font-bold text-gray-800">Also Serving the East Valley & Beyond</h2>
+            <h2 className="font-bold text-gray-800">Also Serving the Phoenix Metro</h2>
           </div>
           <div className="flex flex-wrap gap-2 mb-4">
-            {['Chandler', 'Gilbert', 'Tempe', 'Scottsdale', 'Queen Creek', 'Apache Junction', 'Fountain Hills', 'Phoenix'].map(city => (
+            {['Chandler', 'Gilbert', 'Tempe', 'Scottsdale', 'Queen Creek', 'Apache Junction', 'Fountain Hills', 'Peoria', 'Glendale', 'Phoenix'].map(city => (
               <span key={city} className="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">{city}</span>
             ))}
           </div>

@@ -31,34 +31,6 @@ const ScottsdaleCommercial = () => {
     url: canonicalUrl,
   };
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://arizonahouseoffilm.com',
-    name: 'Arizona House of Film',
-    url: 'https://arizonahouseoffilm.com',
-    telephone: '+14807881591',
-    email: 'arizonahouseoffilm@gmail.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Phoenix',
-      addressRegion: 'AZ',
-      addressCountry: 'US',
-    },
-    areaServed: [
-      { '@type': 'City', name: 'Scottsdale', addressRegion: 'AZ' },
-      { '@type': 'City', name: 'Phoenix', addressRegion: 'AZ' },
-    ],
-    priceRange: '$$',
-    openingHours: 'Mo-Fr 08:00-17:00',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.5',
-      reviewCount: '17',
-      bestRating: '5',
-    },
-  };
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -196,7 +168,6 @@ const ScottsdaleCommercial = () => {
         <meta name="twitter:image" content={ogImage} />
         <link rel="preload" as="image" href={heroImageUrl} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

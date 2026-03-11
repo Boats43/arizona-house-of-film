@@ -83,13 +83,6 @@ const WindowTintingTempe = lazy(() => import("@/pages/locations/WindowTintingTem
 const WindowTintingGlendale = lazy(() => import("@/pages/locations/WindowTintingGlendale"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
-const globalWebsiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Arizona House of Film",
-  url: "https://arizonahouseoffilm.com",
-};
-
 const globalLocalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
@@ -289,9 +282,6 @@ function App() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#ffffff" />
 
-        <script type="application/ld+json">
-          {JSON.stringify(globalWebsiteSchema)}
-        </script>
         <script type="application/ld+json">
           {JSON.stringify(globalLocalBusinessSchema)}
         </script>

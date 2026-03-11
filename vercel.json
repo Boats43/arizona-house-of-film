@@ -1,5 +1,7 @@
 {
   "redirects": [
+    { "source": "/", "has": [{ "type": "query", "key": "a" }], "destination": "/", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "zhHant" }], "destination": "/", "permanent": true },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.arizonahouseoffilm.com" }],
@@ -7,9 +9,9 @@
       "permanent": true
     },
     { "source": "/dealeriframe/:path*", "destination": "/films", "permanent": true },
-    { "source": "/index.php", "has": [{"type": "query", "key": ".*"}], "destination": "/404", "permanent": true },
+    { "source": "/index.php", "has": [{"type": "query", "key": ".*"}], "destination": "/", "permanent": true },
     { "source": "/index.php", "destination": "/", "permanent": true },
-    { "source": "/index.php/:path*", "destination": "/404", "permanent": true },
+    { "source": "/index.php/:path*", "destination": "/", "permanent": true },
     { "source": "/lander", "destination": "/", "permanent": true },
     { "source": "/lander/:path*", "destination": "/", "permanent": true },
     { "source": "/commercial", "destination": "/commercial-window-tinting", "permanent": true },

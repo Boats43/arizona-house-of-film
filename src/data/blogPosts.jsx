@@ -251,40 +251,39 @@ const allBlogData = [
   }
 ];
 
-const generateBlogContent = (post) => `
-  <p class="lead">With over a decade of experience serving Arizona, Arizona House of Film is the state's leading expert in residential and commercial window tinting. This guide explores one of the most critical topics for property owners in our sunny climate: <strong>${post.title}</strong>. Understanding the nuances of ${post.keywords.split(',')[0]} is key to making a smart investment in your property.</p>
-  
-  <h2>The Arizona Challenge: Intense Sun and High Energy Costs</h2>
-  <p>Living in Arizona means enjoying beautiful sunshine, but it also presents a unique challenge for homeowners and businesses. Unfiltered sunlight streaming through windows can cause a host of problems, from skyrocketing energy bills to uncomfortable hot spots and damaging UV radiation. This is where high-performance window film becomes an essential upgrade, not a luxury. Major brands like <strong>${post.brandMentions.split(',')[0]}</strong> have invested millions in developing technology to combat these issues.</p>
-  
-  <img alt="${post.alt}" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/placeholder-blog-image.jpg" />
+const generateBlogContent = (post) => {
+  const primaryKeyword = post.keywords.split(',')[0].trim();
+  const brand1 = post.brandMentions.split(',')[0].trim();
+  const brand2 = post.brandMentions.split(',')[1]?.trim() || brand1;
 
-  <h2>How Professional Window Film Solves the Problem</h2>
-  <p>Modern window films are engineered with spectrally-selective technology. This means they can differentiate between different wavelengths of light. They are designed to block a massive percentage of heat-generating infrared (IR) light and over 99.9% of harmful ultraviolet (UV) rays, all while allowing the majority of natural visible light to pass through. The result is a cooler, safer, and more comfortable indoor environment.</p>
-  <p>For example, a case study involving a commercial client in <a href="/service-areas/yuma">Yuma</a> showed that installing commercial-grade solar film from <strong>${post.brandMentions.split(',')[1] || post.brandMentions.split(',')[0]}</strong> reduced their afternoon cooling load by over 25%, leading to significant savings. You can achieve similar results for your property. Explore our <a href="${post.serviceLink}">main service page</a> to learn more about the specific solutions we offer.</p>
+  return `
+    <p class="lead">Arizona property owners face a specific problem: 299+ days of intense sun annually. At Arizona House of Film (ROC #314088), we've completed 700+ installations since 2017 helping homeowners and businesses in ${post.ctaCity} and across the Phoenix metro solve this with the right window film. This guide covers <strong>${primaryKeyword}</strong> — what to know before you buy, what products work in Arizona's climate, and what real projects cost.</p>
 
-  <h3>Key Benefits Breakdown:</h3>
-  <ul>
-    <li><strong>Energy Savings:</strong> By rejecting solar heat, your HVAC system works less, directly lowering your monthly utility bills. This is especially critical in cities like <a href="${post.cityLink}">${post.ctaCity}</a>.</li>
-    <li><strong>UV Protection:</strong> Our films block over 99.9% of UV rays, the leading cause of fading in furniture, flooring, and artwork. It's like applying SPF 1000 to your windows.</li>
-    <li><strong>Glare Reduction:</strong> Improve visual comfort and reduce eye strain by cutting down on harsh glare, making it easier to watch TV or work on a computer.</li>
-    <li><strong>Enhanced Comfort & Privacy:</strong> Eliminate hot spots and create a more uniform temperature throughout your space. We also offer films that provide excellent daytime privacy.</li>
-  </ul>
+    <h2>The Core Decision: ${post.title}</h2>
+    <p>Most property owners in ${post.ctaCity} come to us having researched ${primaryKeyword} online but unsure which direction fits their glass, HOA requirements, and budget. The answer depends on three factors: your primary goal, your glass type, and your building's solar orientation.</p>
+    <p>We typically recommend <strong>${brand1}</strong> for projects where ${primaryKeyword} is the primary objective. For applications requiring additional performance, <strong>${brand2}</strong> performs consistently in Arizona's UV environment and carries manufacturer warranties valid in extreme heat climates.</p>
 
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-section space-y-4">
-    ${post.faqs.map(faq => `
-      <div>
-        <h3>${faq.question}</h3>
-        <p>${faq.answer}</p>
-      </div>
-    `).join('')}
-  </div>
+    <h2>What Arizona's Climate Demands from Window Film</h2>
+    <p>Phoenix metro averages 107°F+ days in summer. Window film specified for moderate climates often underperforms here — adhesive failure, delamination, and color shift are common with inferior products. The films we install on ${post.ctaCity} properties are tested to IWFA standards and backed by manufacturer warranties we can document for your records.</p>
+    <p>Our <a href="${post.serviceLink}">full service page</a> covers specifications in detail. For ${post.ctaCity} properties specifically, we assess glass orientation, existing coating type, and HOA color restrictions before recommending any film.</p>
 
-  <h2>Take the Next Step in ${post.ctaCity}</h2>
-  <p>Ready to transform your property? Whether you're in ${post.ctaCity} or anywhere else in Arizona, our team is ready to help. We provide free, no-obligation consultations to help you find the perfect window film solution for your needs and budget.</p>
-  <p><strong>Contact Arizona House of Film today!</strong> Don't wait to start saving money and improving your comfort. <a href="/contact">Request your free estimate</a> and see why we are Arizona's most trusted window tinting experts.</p>
-`;
+    <h2>Project Costs for ${post.ctaCity} Properties</h2>
+    <p>Residential window film in ${post.ctaCity} typically runs $8–$18 per square foot installed depending on film series and glass access. Commercial projects are quoted per scope. We provide written quotes after on-site measurement — no per-window estimates over the phone. Call (480) 788-1591 to schedule a free assessment.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      ${post.faqs.map(faq => `
+        <div>
+          <h3>${faq.question}</h3>
+          <p>${faq.answer}</p>
+        </div>
+      `).join('')}
+    </div>
+
+    <h2>Schedule Your Free Assessment in ${post.ctaCity}</h2>
+    <p>Arizona House of Film serves ${post.ctaCity} and the entire Phoenix metro. ROC #314088. Free on-site assessments. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+  `;
+};
 
 function generateAllBlogPosts(count) {
   const posts = [];

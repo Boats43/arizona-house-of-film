@@ -66,7 +66,7 @@ const BookNow = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-10">
             {[
               { label: "Licensed & Bonded", sub: "ROC #314088" },
-              { label: "4.4 Google Rating", sub: "15+ Verified Reviews" },
+              { label: "4.5 Google Rating", sub: "17 Verified Reviews" },
               { label: "Free Estimates", sub: "No Obligation" },
               { label: "Warranty Included", sub: "On All Installs" },
             ].map((item, i) => (

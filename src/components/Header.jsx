@@ -295,7 +295,7 @@ const Header = () => {
               <div className="flex items-center text-sm mr-2 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
                 <Star fill="#B45309" className="w-3.5 h-3.5 text-amber-700" />
                 <span className="ml-1.5 text-gray-900 font-bold">
-                  4.4 Google Rating
+                  4.5 Google Rating
                 </span>
               </div>
               <Button

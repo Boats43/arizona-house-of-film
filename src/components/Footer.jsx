@@ -115,7 +115,7 @@ const Footer = () => {
               <Star fill="currentColor" className="w-4 h-4" />
               <Star fill="currentColor" className="w-4 h-4" />
               <Star fill="currentColor" className="w-4 h-4" />
-              <span className="text-white ml-2 text-sm">4.4 Stars (16 Reviews)</span>
+              <span className="text-white ml-2 text-sm">4.5 Stars (17 Reviews)</span>
             </div>
             <div className="mt-6 flex space-x-4">
               {socialLinks.map(item => (

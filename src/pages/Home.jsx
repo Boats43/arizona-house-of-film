@@ -209,50 +209,125 @@ const Home = () => {
         </div>
       </section>
 
-      {/* AUTHORITY SECTION */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <div>
-              <h2 className="text-4xl font-black text-gray-900 uppercase leading-none mb-8">The Standard for <br /><span className="text-blue-700">Arizona Solar Control</span></h2>
-              <p className="text-gray-700 font-medium leading-relaxed mb-6">Since 2017, Arizona House of Film has been the trusted provider of residential and commercial window tinting in Phoenix, Scottsdale, and Tempe.</p>
-              <p className="text-gray-700 font-medium leading-relaxed mb-6">Our advanced Nano-Ceramic window films can reduce annual cooling loads by <strong>$250–$725</strong>.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                {["SRP & APS Rebate Ready", "99.9% UV Protection", "Glare Mitigation", "Dual-Pane Safe"].map((check) => (
-                  <div key={check} className="flex items-center gap-2 font-black text-xs uppercase italic text-blue-900">
-                    <CheckCircle className="w-4 h-4" /> {check}
+      {/* AUTHORITY SECTION — expanded film inventory */}
+      <section className="bg-slate-900 text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+
+          {/* Header */}
+          <div className="text-center mb-10">
+            <p className="text-green-400 text-sm font-bold uppercase tracking-widest mb-2">ARIZONA'S TRUSTED INSTALLER SINCE 2017</p>
+            <h2 className="text-3xl md:text-4xl font-black mb-4">The Standard for Arizona Solar Control</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto text-base leading-relaxed">
+              Since 2017, Arizona House of Film has been the trusted provider of residential and commercial window tinting in Phoenix, Scottsdale, and across Arizona. Our advanced Nano-Ceramic window films can reduce annual cooling loads by $250–$725. Licensed ROC #314088.
+            </p>
+          </div>
+
+          {/* Core specs */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {[
+              { label: 'SRP & APS Rebate Ready', icon: '⚡' },
+              { label: '99.9% UV Protection', icon: '☀️' },
+              { label: 'Glare Mitigation', icon: '🔆' },
+              { label: 'Dual-Pane Safe', icon: '🪟' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                <div className="text-2xl mb-2">{item.icon}</div>
+                <p className="text-white text-sm font-semibold">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Film categories */}
+          <div className="mb-10">
+            <h3 className="text-lg font-bold text-white mb-5 text-center">Film Technologies We Install</h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                {
+                  category: 'Solar Control Films',
+                  films: ['Nano-Ceramic', 'Spectrally Selective', 'Low-E', 'Carbon Film', 'Dual-Reflective'],
+                  link: '/residential-window-tinting',
+                  desc: 'Reject 50–84% solar heat. SRP/APS rebate eligible.',
+                },
+                {
+                  category: 'Security & Safety Films',
+                  films: ['8 mil Safety Film', '12 mil Security Film', 'C-Bond Strengthening', 'Blast Retention', 'Anti-Shatter'],
+                  link: '/safety',
+                  desc: 'Impact-resistant. Used in schools, government, retail.',
+                },
+                {
+                  category: 'Frosted & Privacy Films',
+                  films: ['Matte Frosted', 'Etched Glass Film', 'Patterned Privacy', 'Rice Paper', 'Linen Texture'],
+                  link: '/bathroom-privacy-window-film',
+                  desc: 'Bathroom, office, entryway, and sidelight privacy.',
+                },
+                {
+                  category: 'Decorative Films',
+                  films: ['Stained Glass', 'Gradient / Ombré', 'Colored Film', 'Casper Cloaking', 'Dichroic'],
+                  link: '/films',
+                  desc: '600+ Solyx patterns. Residential and commercial.',
+                },
+                {
+                  category: 'Anti-Graffiti Films',
+                  films: ['Sacrificial Surface Film', 'Clear Anti-Graffiti', 'Tinted Anti-Graffiti', 'Mirror Anti-Graffiti'],
+                  link: '/anti-graffiti-film',
+                  desc: 'Peel-and-replace protection for storefronts and transit.',
+                },
+                {
+                  category: 'Reflective & One-Way Films',
+                  films: ['Silver Mirror', 'Bronze Reflective', 'Gold Reflective', 'Pewter', 'Neutral Gray'],
+                  link: '/one-way-mirror-window-film',
+                  desc: 'Daytime privacy + maximum solar heat rejection.',
+                },
+              ].map((cat, i) => (
+                <Link key={i} to={cat.link} className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-green-500/40 rounded-xl p-5 transition-all">
+                  <h4 className="font-bold text-white text-sm mb-2 group-hover:text-green-400 transition-colors">{cat.category}</h4>
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">{cat.desc}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {cat.films.map((f, j) => (
+                      <span key={j} className="bg-white/10 text-gray-300 text-xs px-2 py-0.5 rounded-full">{f}</span>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <p className="text-gray-600 text-sm font-medium mt-6 leading-relaxed">
-                We serve{" "}
-                <Link to="/commercial-window-tinting" className="text-blue-700 underline">commercial properties</Link>{" "}
-                and{" "}
-                <Link to="/residential-window-tinting" className="text-blue-700 underline">residential homes</Link>{" "}
-                across the Valley. Explore our{" "}
-                <Link to="/solutions" className="text-blue-700 underline">full range of film solutions</Link>{" "}
-                or browse our{" "}
-                <Link to="/service-areas" className="text-blue-700 underline">service areas</Link>{" "}
-                to find coverage near you.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-10 border border-gray-100 shadow-sm">
-              <div className="flex items-center gap-3 mb-8">
-                <HelpCircle className="w-6 h-6 text-blue-700" />
-                <h3 className="text-2xl font-black text-gray-900 uppercase">Window Tinting FAQ</h3>
-              </div>
-              <div className="space-y-8">
-                <div>
-                  <h4 className="font-black text-gray-900 uppercase text-sm mb-2">How much does home window tinting cost?</h4>
-                  <p className="text-sm text-gray-600 font-medium">Pricing varies by film type and project size. We provide <Link to="/contact" className="text-blue-700 underline">free estimates</Link> with lifetime warranties.</p>
-                </div>
-                <div>
-                  <h4 className="font-black text-gray-900 uppercase text-sm mb-2">Is tinting safe for dual-pane windows?</h4>
-                  <p className="text-sm text-gray-600 font-medium">Yes — we use Arizona-engineered ceramics designed for high thermal load.</p>
-                </div>
-              </div>
+                </Link>
+              ))}
             </div>
           </div>
+
+          {/* Brand signals */}
+          <div className="mb-8">
+            <p className="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Authorized Installer</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {['Solyx', 'LLumar', '3M', 'Huper Optik', 'Madico', 'SolarGard', 'Vista', 'Llumar CTX'].map((brand) => (
+                <span key={brand} className="bg-white/10 border border-white/10 text-gray-200 text-sm font-semibold px-4 py-1.5 rounded-full">{brand}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA line */}
+          <div className="text-center mb-10">
+            <p className="text-gray-300 text-sm">
+              We serve <Link to="/commercial-window-tinting" className="text-green-400 hover:text-green-300 underline">commercial properties</Link> and <Link to="/residential-window-tinting" className="text-green-400 hover:text-green-300 underline">residential homes</Link> across the Valley.{' '}
+              <Link to="/films" className="text-green-400 hover:text-green-300 underline">Browse our full film catalog</Link> or <Link to="/service-areas" className="text-green-400 hover:text-green-300 underline">find coverage near you</Link>.
+            </p>
+          </div>
+
+          {/* FAQ */}
+          <div className="border-t border-white/10 pt-10">
+            <h3 className="text-lg font-bold text-white mb-6 text-center">Common Questions</h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                { q: 'How much does home window tinting cost in Phoenix?', a: 'Residential window tinting in Phoenix typically runs $8–$18 per square foot installed depending on film type and window count. Most homes average $800–$2,500 total. We provide free on-site estimates — call (480) 788-1591.' },
+                { q: 'Is window tinting safe for dual-pane windows?', a: 'Yes — we use Arizona-engineered ceramic and spectrally selective films designed for high thermal load. We assess your glass type before recommending a film to ensure no risk of thermal stress cracking.' },
+                { q: 'What is the difference between ceramic and regular window film?', a: 'Ceramic films block heat through infrared rejection rather than darkness, maintaining natural light while rejecting up to 84% of solar heat. Standard dyed films fade over time and work primarily through light reduction. We recommend ceramic for Arizona conditions.' },
+                { q: 'Do you offer SRP or APS energy rebates?', a: 'Yes. We provide NFRC-rated technical data sheets required for SRP Business Solutions and APS energy efficiency rebate applications. We identify qualifying films and assist with paperwork during your free estimate.' },
+              ].map((faq, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <h4 className="font-bold text-white text-sm mb-2">{faq.q}</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 

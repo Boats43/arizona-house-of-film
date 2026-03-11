@@ -57,6 +57,30 @@ const faqSchema = {
         text: 'Yes. We install commercial security film across Phoenix, Scottsdale, Tempe, Mesa, Chandler, and the greater metro area. Past commercial clients include government facilities, retail locations, and corporate campuses.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'How long does security window film installation take in Phoenix?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most Phoenix residential security film installations complete in 4–8 hours. Commercial security film installation in Phoenix typically takes 1–3 days depending on square footage and building access. We schedule around business hours to minimize disruption. Same-week scheduling available for most Phoenix metro locations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What security window film brands do you install in Phoenix?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We install 3M Safety Series (S40, S70, S140, S600), Eastman LLumar Safety Series, Vista Safety Film, and Madico Safety Series on Phoenix properties. For forced entry deterrence we typically specify 3M Safety S140 or S600 with attachment system. For blast mitigation on Phoenix government and commercial buildings we specify 3M S600 or LLumar ArmorCoat. All films are installed by ROC #314088 licensed technicians.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you install security film for commercial buildings in Phoenix?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Arizona House of Film installs security window film for Phoenix commercial buildings including retail stores, office buildings, schools, government facilities, medical offices, and warehouses. Commercial security film installation in Phoenix is quoted on a per-project basis. We have completed security film installations for national retailers, Phoenix municipal facilities, and private commercial developers. Call (480) 788-1591 for a free commercial assessment.',
+      },
+    },
   ],
 };
 
@@ -144,6 +168,11 @@ const proofPoints = [
     stat: '8+ years',
     label: 'Phoenix metro experience',
     detail: 'We know Arizona glass, heat, and code.',
+  },
+  {
+    stat: 'Named',
+    label: 'Verified clients',
+    detail: '2nd Swing Scottsdale, Renaissance Companies, City of Phoenix facilities, national retail.',
   },
 ];
 

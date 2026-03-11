@@ -44,7 +44,7 @@ const Home = () => {
   const services = [
     { name: "Residential Window Tinting", icon: HomeIcon, path: "/residential-window-tinting", cta: "Explore Residential Tinting", description: "Advanced home tinting using ceramic films that block 84% of solar heat and 99.9% of UV rays." },
     { name: "Commercial Window Tinting", icon: Building, path: "/commercial-window-tinting", cta: "Explore Commercial Tinting", description: "Industrial-grade solar control solutions designed to lower HVAC loads and improve comfort." },
-    { name: "Decorative & Privacy Films", icon: Zap, path: "/decorative-window-films", cta: "Explore Decorative Films", description: "Modern frosted and privacy films that transform interior glass without replacing it." },
+    { name: "Decorative & Privacy Films", icon: Zap, path: "/decorative-window-films", cta: "Explore Decorative Films", description: "600+ patterns including frosted privacy film, bathroom privacy film, office glass film, and one-way mirror film." },
     { name: "Safety & Security Film", icon: Shield, path: "/safety", cta: "Explore Security Films", description: "8–12 mil impact-resistant safety films that strengthen glass and deter break-ins." },
   ];
 
@@ -104,7 +104,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Arizona Window Film | Phoenix's #1 Rated Installer Since 2017 | Free Quote</title>
-        <meta name="description" content="Arizona's trusted window film installer since 2017. 713+ projects. Residential, commercial, security & decorative film. Phoenix, Scottsdale & all AZ. Licensed ROC #314088. Free quote — (480) 788-1591." />
+        <meta name="description" content="Arizona's trusted window film installer since 2017. 713+ projects. Solar, security, decorative & privacy film. Phoenix, Scottsdale, Chandler, Mesa, Gilbert & all AZ. Licensed ROC #314088. Free quote (480) 788-1591." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Arizona Window Film | Phoenix's #1 Rated Installer Since 2017" />
         <meta property="og:description" content="Arizona's trusted window film installer since 2017. 713+ projects. Residential, commercial, security & decorative film. Phoenix, Scottsdale & all AZ. Licensed ROC #314088." />
@@ -215,7 +215,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
               <h2 className="text-4xl font-black text-gray-900 uppercase leading-none mb-8">The Standard for <br /><span className="text-blue-700">Arizona Solar Control</span></h2>
-              <p className="text-gray-700 font-medium leading-relaxed mb-6">Since 2012, Arizona House of Film has been the trusted provider of residential and commercial window tinting in Phoenix, Scottsdale, and Tempe.</p>
+              <p className="text-gray-700 font-medium leading-relaxed mb-6">Since 2017, Arizona House of Film has been the trusted provider of residential and commercial window tinting in Phoenix, Scottsdale, and Tempe.</p>
               <p className="text-gray-700 font-medium leading-relaxed mb-6">Our advanced Nano-Ceramic window films can reduce annual cooling loads by <strong>$250–$725</strong>.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                 {["SRP & APS Rebate Ready", "99.9% UV Protection", "Glare Mitigation", "Dual-Pane Safe"].map((check) => (
@@ -273,6 +273,25 @@ const Home = () => {
               </Button>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SERVICE AREA COVERAGE */}
+      <section className="py-10 bg-slate-800 border-t border-slate-700">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
+          <p className="text-gray-300 font-medium leading-relaxed text-sm md:text-base">
+            Arizona House of Film serves the full Phoenix metro —{" "}
+            <Link to="/window-tinting-phoenix" className="text-blue-300 underline hover:text-white">Phoenix</Link>,{" "}
+            <Link to="/commercial-window-tinting-scottsdale" className="text-blue-300 underline hover:text-white">Scottsdale</Link>,{" "}
+            <Link to="/window-tinting-chandler" className="text-blue-300 underline hover:text-white">Chandler</Link>,{" "}
+            <Link to="/window-tinting-gilbert" className="text-blue-300 underline hover:text-white">Gilbert</Link>,{" "}
+            <Link to="/window-tinting-mesa" className="text-blue-300 underline hover:text-white">Mesa</Link>,{" "}
+            <Link to="/window-tinting-tempe" className="text-blue-300 underline hover:text-white">Tempe</Link>,{" "}
+            <Link to="/window-tinting-glendale" className="text-blue-300 underline hover:text-white">Glendale</Link>,{" "}
+            <Link to="/window-tinting-peoria" className="text-blue-300 underline hover:text-white">Peoria</Link>,{" "}
+            <Link to="/window-tinting-queen-creek" className="text-blue-300 underline hover:text-white">Queen Creek</Link>,{" "}
+            and surrounding Arizona communities.
+          </p>
         </div>
       </section>
 

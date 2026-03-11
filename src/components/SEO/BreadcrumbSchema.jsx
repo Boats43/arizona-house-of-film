@@ -21,7 +21,7 @@ const BreadcrumbSchema = ({ items }) => {
         name: item.name,
       };
       if (item.path) {
-        listItem.item = `${BASE}${item.path}`;
+        listItem.item = { "@id": `${BASE}${item.path}`, "name": item.name };
       }
       return listItem;
     }),

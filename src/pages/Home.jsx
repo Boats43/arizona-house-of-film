@@ -132,7 +132,7 @@ const Home = () => {
                 Arizona <span className="text-blue-500 italic">Window Film</span> & Tinting Experts — Phoenix, Scottsdale, and Beyond
               </h1>
               <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
-                Extreme climate solar control for Arizona's leading brands, builders, and homeowners. From military installations to high-rise efficiency, we neutralize the 115°F heat. ROC #314088.
+                Arizona House of Film installs commercial window tinting, residential window film, security film, decorative glass film, and solar control film across Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088 — serving contractors, enterprises, and homeowners since 2017.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" asChild className="bg-blue-600 text-white font-black h-16 px-10 rounded-none">

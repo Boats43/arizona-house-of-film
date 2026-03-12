@@ -532,17 +532,27 @@ export const brands = [
     name: "Solyx",
     slug: "solyx",
     category: "Architectural & Residential",
-    description: "Leading provider of decorative, privacy, and specialty window films.",
+    description: "Solyx decorative and privacy window films — 600+ patterns for commercial tenant improvements, medical facilities, office partitions, and residential applications across Phoenix and Scottsdale.",
     url: "https://www.solyxfilms.com/",
     relatedFilms: ["decorative", "privacy", "specialty"],
-    arizonaNote: "Solyx decorative films are our primary specification for commercial tenant improvement projects requiring specific pattern aesthetics. The Solyx catalog includes rice paper, bamboo, rain glass, and geometric patterns used extensively in our office, medical, and hospitality installations across Phoenix and Scottsdale.",
-    bestFor: ["Office tenant improvements", "Medical privacy", "Pattern-specific design projects", "Hospitality installs"],
+    specs: {
+      heatRejection: "Up to 55%",
+      uvProtection: "99%",
+      tech: "Optically Clear Adhesive / Pressure Sensitive",
+      warranty: "Manufacturer backed — varies by series"
+    },
+    arizonaNote: "Solyx decorative films are our primary specification for commercial tenant improvement projects in Phoenix and Scottsdale requiring specific pattern aesthetics. The 600+ pattern Solyx catalog includes rice paper, bamboo, rain glass, linen, and geometric patterns used extensively in office, medical, and hospitality installations. Authorized Arizona installer.",
+    bestFor: ["Office tenant improvements", "Medical privacy partitions", "Pattern-specific design projects", "Hospitality installs", "Bathroom privacy", "Conference room glass", "Retail storefronts"],
     filmSeries: [
-      { name: "Solyx Architectural Series", description: "Premium decorative film. Rice paper, bamboo, rain glass, geometric patterns for commercial interiors." },
-      { name: "Solyx Privacy Series", description: "Frosted and translucent films for HIPAA-compliant medical and office privacy applications." }
+      { name: "Solyx Architectural Series", description: "600+ premium decorative patterns. Rice paper, bamboo, rain glass, linen, geometric, and gradient films for commercial interiors and residential applications." },
+      { name: "Solyx Privacy Series", description: "Frosted and translucent films for HIPAA-compliant medical office privacy, exam room glass, and clinical partition applications." },
+      { name: "Solyx Solar Series", description: "Solar control films combining heat rejection with decorative aesthetics. Dual-function for Arizona commercial properties requiring both privacy and energy performance." }
     ],
     faqs: [
-      { question: "Can Solyx decorative film be used in medical facilities?", answer: "Yes. Solyx privacy films are used for HIPAA-compliant exam room frosting, patient waiting area glass, and clinical partition privacy. The films are cleanroom-safe, moisture-resistant, and removable without damaging glass." }
+      { question: "Can Solyx decorative film be used in medical facilities?", answer: "Yes. Solyx privacy films are used for HIPAA-compliant exam room frosting, patient waiting area glass, and clinical partition privacy across Phoenix and Scottsdale. The films are cleanroom-safe, moisture-resistant, and removable without damaging glass." },
+      { question: "How many Solyx patterns are available in Arizona?", answer: "Arizona House of Film installs from the full Solyx catalog of 600+ patterns including rice paper, bamboo, rain glass, linen, gradient, geometric, and frosted designs. We carry pattern samples for on-site review during your free estimate." },
+      { question: "Is Solyx film suitable for Arizona heat?", answer: "Yes. Solyx films are pressure-sensitive, optically clear adhesive films engineered for high-temperature climates. They do not bubble, peel, or delaminate under Arizona's 115°F summer conditions when installed correctly on clean, prepared glass." },
+      { question: "What is the difference between Solyx and 3M decorative film?", answer: "Solyx specializes in architectural decorative and privacy films with the widest pattern catalog in the industry — 600+ designs. 3M offers a more limited decorative line but stronger solar and security film options. For pattern-specific tenant improvements and privacy applications, Solyx is our primary specification." }
     ]
   },
   {

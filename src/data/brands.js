@@ -47,7 +47,9 @@ export const brands = [
       { name: "LLumar Safety Series", description: "8-mil and 12-mil security films for commercial smash-and-grab deterrence." }
     ],
     faqs: [
-      { question: "What is the difference between LLumar and Vista film?", answer: "Both are made by Eastman Chemical Company. LLumar is our commercial line — optimized for large perimeters, SHGC compliance, and multi-location specification. Vista is our premium residential line, engineered for optical clarity and minimal exterior reflectivity." }
+      { question: "What is the difference between LLumar and Vista film?", answer: "Both are made by Eastman Chemical Company. LLumar is our commercial line — optimized for large perimeters, SHGC compliance, and multi-location specification. Vista is our premium residential line, engineered for optical clarity and minimal exterior reflectivity in HOA-sensitive Arizona neighborhoods." },
+      { question: "Does LLumar film qualify for SRP or APS rebates in Arizona?", answer: "Select LLumar commercial films with qualifying SHGC ratings meet SRP Business Solutions and APS energy efficiency rebate program requirements. We provide the NFRC-rated data sheets required for rebate applications during your free estimate." },
+      { question: "How long does LLumar window film last in Arizona heat?", answer: "LLumar commercial and residential films carry factory-backed warranties and are engineered for high-heat climates. In Arizona conditions, properly installed LLumar ceramic films typically perform 15–20 years without delamination, bubbling, or significant fade." }
     ]
   },
   {
@@ -68,6 +70,12 @@ export const brands = [
     filmSeries: [
       { name: "Solar Gard Panorama Series", description: "Spectrally selective. High VLT with aggressive SHGC ratings for commercial compliance." },
       { name: "Solar Gard Quantum Series", description: "Nano-ceramic commercial. Designed for glass-heavy facades in high-solar-load climates." }
+    ],
+    bestFor: ["LEED documentation", "Large commercial perimeters", "COMcheck compliance", "GC and architect specifications", "New Arizona construction"],
+    faqs: [
+      { question: "Does Solar Gard film qualify for LEED credits?", answer: "Yes. Solar Gard films are NFRC-certified and Saint-Gobain provides full documentation for LEED daylight and energy credit submissions. We supply the required SHGC and VLT data sheets for GC and architect specifications on Arizona commercial projects." },
+      { question: "What Solar Gard series do you install in Phoenix?", answer: "We primarily install the Solar Gard Panorama spectrally selective series for commercial perimeters and the Quantum nano-ceramic series for high-solar-load facades. Both carry full NFRC certification and qualify for COMcheck compliance documentation." },
+      { question: "Is Solar Gard suitable for large commercial buildings in Arizona?", answer: "Yes — Solar Gard is our primary specification for large commercial perimeters requiring consistent SHGC performance across hundreds of windows. The Saint-Gobain backing means full NFRC certification across the product line, which is critical for general contractor and architect specifications on new Arizona construction." }
     ]
   },
   {
@@ -136,7 +144,9 @@ export const brands = [
       { name: "Madico Decorative Series", description: "Architectural privacy films. Rice paper, rain glass, geometric patterns for commercial interiors." }
     ],
     faqs: [
-      { question: "Does Madico film qualify for SRP or APS rebates?", answer: "Select Madico Sunscape series films with qualifying SHGC ratings meet SRP Business Solutions and APS rebate program requirements. We provide the NFRC data sheets required for rebate applications." }
+      { question: "Does Madico film qualify for SRP or APS rebates?", answer: "Select Madico Sunscape series films with qualifying SHGC ratings meet SRP Business Solutions and APS rebate program requirements. We provide the NFRC data sheets required for rebate applications during your free estimate." },
+      { question: "What Madico films do you install in Phoenix and Scottsdale?", answer: "We install the Madico Sunscape ceramic series for commercial solar control and the Madico decorative series for tenant improvement and medical privacy applications. Both lines are available for residential and commercial projects across the Phoenix metro." },
+      { question: "Is Madico window film durable in Arizona's extreme heat?", answer: "Yes. Madico uses sputtered metal and dielectric construction that handles Arizona's 115°F heat loads without delamination. The Sunscape ceramic series is specifically rated for high-solar-load climates and carries a lifetime residential warranty." }
     ]
   },
   {
@@ -160,7 +170,8 @@ export const brands = [
     ],
     faqs: [
       { question: "What makes Hüper Optik different from other ceramic films?", answer: "Hüper Optik holds a patent on their multi-ceramic construction process, which layers ceramic particles at the molecular level rather than coating the surface. This delivers more consistent heat rejection and longer durability in extreme heat climates like Arizona." },
-      { question: "Is Hüper Optik worth the premium cost in Arizona?", answer: "For south and west-facing windows in luxury homes, yes. The combination of 98% IR rejection and low interior reflectivity is unmatched in the residential market. Most Paradise Valley and North Scottsdale clients specify Hüper Optik after seeing the clarity difference." }
+      { question: "Is Hüper Optik worth the premium cost in Arizona?", answer: "For south and west-facing windows in luxury homes, yes. The combination of 98% IR rejection and low interior reflectivity is unmatched in the residential market. Most Paradise Valley and North Scottsdale clients specify Hüper Optik after seeing the clarity difference." },
+      { question: "Does Hüper Optik film work on dual-pane windows in Arizona?", answer: "Yes. We assess your glass type before installation and specify the correct Hüper Optik series for dual-pane applications. The multi-ceramic technology produces minimal thermal stress — critical for Arizona dual-pane windows exposed to extreme heat differentials." }
     ]
   },
   {
@@ -310,7 +321,9 @@ export const brands = [
       { name: "EnerLogic 20", description: "Higher heat rejection version for south and west-facing glass in extreme heat zones." }
     ],
     faqs: [
-      { question: "Does EnerLogic film work in Arizona winters?", answer: "Yes — EnerLogic low-e technology reflects interior heat back into the room in winter, reducing heating costs. For Phoenix this benefit is modest. For Flagstaff, Prescott, and other high-elevation Arizona properties where winter heating costs are significant, EnerLogic delivers measurable year-round ROI." }
+      { question: "Does EnerLogic film work in Arizona winters?", answer: "Yes — EnerLogic low-e technology reflects interior heat back into the room in winter, reducing heating costs. For Phoenix this benefit is modest. For Flagstaff, Prescott, and other high-elevation Arizona properties where winter heating costs are significant, EnerLogic delivers measurable year-round ROI." },
+      { question: "What is the difference between EnerLogic and standard solar film?", answer: "Standard solar films reject summer heat only. EnerLogic's low-e coating provides dual-season performance — blocking solar heat gain in summer and retaining interior heat in winter. For Arizona properties at elevation, this dual-season benefit significantly improves the ROI calculation." },
+      { question: "Does EnerLogic qualify for SRP or APS energy rebates in Arizona?", answer: "EnerLogic films may qualify for SRP and APS energy efficiency rebate programs depending on the specific film's SHGC rating and your property type. We review qualifying films and provide the NFRC data sheets needed for rebate applications during your free estimate." }
     ]
   },
   {

@@ -252,4 +252,16 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://arizonahouseoffilm.com/store</loc>
+    <lastmod>2026-03-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://arizonahouseoffilm.com/welcome</loc>
+    <lastmod>2026-03-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

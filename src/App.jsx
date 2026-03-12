@@ -81,6 +81,12 @@ const WindowTintingQueenCreek = lazy(() => import("@/pages/locations/WindowTinti
 const WindowTintingMesa = lazy(() => import("@/pages/locations/WindowTintingMesa"));
 const WindowTintingTempe = lazy(() => import("@/pages/locations/WindowTintingTempe"));
 const WindowTintingGlendale = lazy(() => import("@/pages/locations/WindowTintingGlendale"));
+const WindowFilmCostArizona = lazy(() => import("@/pages/informational/WindowFilmCostArizona"));
+const BestWindowFilmArizonaHeat = lazy(() => import("@/pages/informational/BestWindowFilmArizonaHeat"));
+const WindowFilmEnergyRebatesArizona = lazy(() => import("@/pages/informational/WindowFilmEnergyRebatesArizona"));
+const SecurityFilmVsTemperedGlass = lazy(() => import("@/pages/informational/SecurityFilmVsTemperedGlass"));
+const HowLongDoesWindowFilmLast = lazy(() => import("@/pages/informational/HowLongDoesWindowFilmLast"));
+const CeramicVsDualReflectiveFilm = lazy(() => import("@/pages/informational/CeramicVsDualReflectiveFilm"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -237,6 +243,14 @@ function AppRoutes() {
           <Route path="/brands" element={<BrandsHub />} />
           <Route path="/brands/flexfilm" element={<FlexfilmPage />} />
           <Route path="/brands/:slug" element={<BrandPage />} />
+
+          {/* INFORMATIONAL */}
+          <Route path="/window-film-cost-arizona" element={<WindowFilmCostArizona />} />
+          <Route path="/best-window-film-arizona-heat" element={<BestWindowFilmArizonaHeat />} />
+          <Route path="/window-film-energy-rebates-arizona" element={<WindowFilmEnergyRebatesArizona />} />
+          <Route path="/security-film-vs-tempered-glass" element={<SecurityFilmVsTemperedGlass />} />
+          <Route path="/how-long-does-window-film-last" element={<HowLongDoesWindowFilmLast />} />
+          <Route path="/ceramic-vs-dual-reflective-film" element={<CeramicVsDualReflectiveFilm />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

@@ -22,7 +22,8 @@
       "Bash(test:*)",
       "Bash(curl -s -o /dev/null -w \"%{size_download}\" https://arizonahouseoffilm.com/window-tinting-chandler 2>&1)",
       "Bash(curl -s -o /dev/null -w \"%{size_download}\" https://arizonahouseoffilm.com/ 2>&1)",
-      "Bash(curl -s https://arizonahouseoffilm.com/window-tinting-chandler 2>&1 | head -50)"
+      "Bash(curl -s https://arizonahouseoffilm.com/window-tinting-chandler 2>&1 | head -50)",
+      "Bash(ls 'C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\\\\src\\\\pages\\\\informational' 2>/dev/null || echo \"no dir\")"
     ]
   }
 }

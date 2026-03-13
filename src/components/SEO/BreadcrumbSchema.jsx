@@ -5,10 +5,11 @@ const BASE = 'https://arizonahouseoffilm.com';
 
 /**
  * Renders a BreadcrumbList JSON-LD schema via react-helmet-async.
- * @param {Array<{name: string, path?: string}>} items
- *   Each item needs a name. Provide path (e.g. "/service-areas/phoenix")
- *   for all items that have a canonical URL — omit path only for the
- *   current/final page when there is no canonical URL to assert.
+ * @param {Array<{name: string, path?: string, url?: string}>} items
+ *   Each item needs a name. Provide either:
+ *   - url (full absolute URL, e.g. "https://arizonahouseoffilm.com/solutions")
+ *   - path (relative path, e.g. "/solutions") — BASE is prepended automatically
+ *   Omit both only for the current/final page when there is no canonical URL.
  */
 const BreadcrumbSchema = ({ items }) => {
   const schema = {
@@ -20,8 +21,13 @@ const BreadcrumbSchema = ({ items }) => {
         position: index + 1,
         name: item.name,
       };
-      if (item.path) {
-        listItem.item = { "@id": `${BASE}${item.path}`, "name": item.name };
+      const href = item.url && item.url.startsWith('http')
+        ? item.url
+        : item.path
+          ? `${BASE}${item.path}`
+          : null;
+      if (href) {
+        listItem.item = { "@id": href, "name": item.name };
       }
       return listItem;
     }),

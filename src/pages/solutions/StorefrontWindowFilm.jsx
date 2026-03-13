@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Phone, MapPin, ArrowRight, Sun } from 'lucide-react';
 import { solyxProducts } from '@/data/solyxFilms';
@@ -51,6 +52,11 @@ export default function StorefrontWindowFilm() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+        { name: 'Solutions', url: 'https://arizonahouseoffilm.com/solutions' },
+        { name: 'Storefront Window Film', url: 'https://arizonahouseoffilm.com/storefront-window-film' }
+      ]} />
 
       {/* Hero */}
       <div className="bg-slate-900 text-white py-16 px-4">

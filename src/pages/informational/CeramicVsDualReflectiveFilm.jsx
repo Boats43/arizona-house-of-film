@@ -36,6 +36,15 @@ export default function CeramicVsDualReflectiveFilm() {
         <title>Ceramic vs Dual Reflective Window Film Arizona | Which Is Better?</title>
         <meta name="description" content="Ceramic vs dual reflective window film for Arizona homes — heat rejection, privacy, appearance, and cost compared by a licensed Phoenix installer." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/ceramic-vs-dual-reflective-film" />
+        <meta property="og:title" content="Ceramic vs Dual Reflective Window Film Arizona | Comparison" />
+        <meta property="og:description" content="Ceramic or dual reflective window film for Arizona? Compare heat rejection, privacy, HOA rules, and cost. Free assessment — ROC #314088." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/ceramic-vs-dual-reflective-film" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Ceramic vs Dual Reflective Window Film Arizona | Comparison" />
+        <meta name="twitter:description" content="Ceramic or dual reflective window film for Arizona? Compare heat rejection, privacy, HOA rules, and cost. Free assessment — ROC #314088." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

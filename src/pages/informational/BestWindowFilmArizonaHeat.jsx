@@ -36,6 +36,15 @@ export default function BestWindowFilmArizonaHeat() {
         <title>Best Window Film for Arizona Heat 2026 | Ceramic vs Solar Film Guide</title>
         <meta name="description" content="What is the best window film for Arizona heat? Ceramic film rejects up to 84% solar heat. Compare options for Phoenix homes and businesses." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/best-window-film-arizona-heat" />
+        <meta property="og:title" content="Best Window Film for Arizona Heat 2026 | Installer Guide" />
+        <meta property="og:description" content="Nano-ceramic film rejects up to 84% solar heat — top recommendation for Arizona's 115°F climate. Compare options from a licensed Phoenix installer." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/best-window-film-arizona-heat" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Window Film for Arizona Heat 2026 | Installer Guide" />
+        <meta name="twitter:description" content="Nano-ceramic film rejects up to 84% solar heat — top recommendation for Arizona's 115°F climate. Compare options from a licensed Phoenix installer." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

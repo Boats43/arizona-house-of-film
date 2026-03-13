@@ -36,6 +36,15 @@ export default function SecurityFilmVsTemperedGlass() {
         <title>Security Film vs Tempered Glass Arizona | Cost & Protection Comparison</title>
         <meta name="description" content="Security window film vs tempered glass — cost, protection, and retrofit options for Phoenix homes and businesses. Licensed installer ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/security-film-vs-tempered-glass" />
+        <meta property="og:title" content="Security Film vs Tempered Glass Arizona | Cost & Protection" />
+        <meta property="og:description" content="Security film costs $15–$22/sq ft vs tempered glass at $50–$150+. Compare protection, cost, and retrofit options for Phoenix properties." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/security-film-vs-tempered-glass" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Security Film vs Tempered Glass Arizona | Cost & Protection" />
+        <meta name="twitter:description" content="Security film costs $15–$22/sq ft vs tempered glass at $50–$150+. Compare protection, cost, and retrofit options for Phoenix properties." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

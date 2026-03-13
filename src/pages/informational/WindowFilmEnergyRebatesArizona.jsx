@@ -36,6 +36,15 @@ export default function WindowFilmEnergyRebatesArizona() {
         <title>SRP & APS Window Film Rebates Arizona 2026 | Qualifying Films & Process</title>
         <meta name="description" content="Window film qualifies for SRP Business Solutions and APS energy rebates in Arizona. We provide NFRC data sheets and handle the paperwork. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-film-energy-rebates-arizona" />
+        <meta property="og:title" content="SRP & APS Window Film Rebates Arizona 2026" />
+        <meta property="og:description" content="Window film qualifies for SRP Business Solutions and APS energy rebates. We provide NFRC data sheets. Licensed ROC #314088." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/window-film-energy-rebates-arizona" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SRP & APS Window Film Rebates Arizona 2026" />
+        <meta name="twitter:description" content="Window film qualifies for SRP Business Solutions and APS energy rebates. We provide NFRC data sheets. Licensed ROC #314088." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

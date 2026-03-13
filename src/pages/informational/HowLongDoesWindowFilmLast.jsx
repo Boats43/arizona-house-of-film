@@ -36,6 +36,15 @@ export default function HowLongDoesWindowFilmLast() {
         <title>How Long Does Window Film Last in Arizona? | Lifespan by Film Type</title>
         <meta name="description" content="Window film lifespan in Arizona — ceramic lasts 15–25 years, dyed 5–7 years. Heat, UV, and installation quality all affect durability. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/how-long-does-window-film-last" />
+        <meta property="og:title" content="How Long Does Window Film Last in Arizona? | Lifespan Guide" />
+        <meta property="og:description" content="Ceramic window film lasts 15–25 years in Arizona. Dyed film fails in 5–7 years. Lifespan by film type from a licensed Phoenix installer." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/how-long-does-window-film-last" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How Long Does Window Film Last in Arizona? | Lifespan Guide" />
+        <meta name="twitter:description" content="Ceramic window film lasts 15–25 years in Arizona. Dyed film fails in 5–7 years. Lifespan by film type from a licensed Phoenix installer." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

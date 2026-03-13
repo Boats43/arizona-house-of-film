@@ -87,6 +87,7 @@ const WindowFilmEnergyRebatesArizona = lazy(() => import("@/pages/informational/
 const SecurityFilmVsTemperedGlass = lazy(() => import("@/pages/informational/SecurityFilmVsTemperedGlass"));
 const HowLongDoesWindowFilmLast = lazy(() => import("@/pages/informational/HowLongDoesWindowFilmLast"));
 const CeramicVsDualReflectiveFilm = lazy(() => import("@/pages/informational/CeramicVsDualReflectiveFilm"));
+const CountertopProtectionFilmArizona = lazy(() => import("@/pages/informational/CountertopProtectionFilmArizona"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -251,6 +252,7 @@ function AppRoutes() {
           <Route path="/security-film-vs-tempered-glass" element={<SecurityFilmVsTemperedGlass />} />
           <Route path="/how-long-does-window-film-last" element={<HowLongDoesWindowFilmLast />} />
           <Route path="/ceramic-vs-dual-reflective-film" element={<CeramicVsDualReflectiveFilm />} />
+          <Route path="/countertop-protection-film-arizona" element={<CountertopProtectionFilmArizona />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

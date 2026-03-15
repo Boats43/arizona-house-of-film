@@ -143,6 +143,9 @@ const ROUTES = [
   '/service-areas/superior', '/service-areas/kearny', '/service-areas/hayden',
   '/service-areas/winkelman', '/service-areas/coolidge', '/service-areas/eloy',
   '/service-areas/arizona-city',
+  '/window-tinting-tolleson', '/window-tinting-fountain-hills',
+  '/window-tinting-avondale', '/high-rise-commercial-window-tinting-phoenix',
+  '/countertop-protection-film-arizona',
 ]
 
 const PATTERN_MAP = [
@@ -191,6 +194,11 @@ const PATTERN_MAP = [
   ['/window-tinting-mesa',                  '/src/pages/locations/WindowTintingMesa.jsx'],
   ['/window-tinting-tempe',                 '/src/pages/locations/WindowTintingTempe.jsx'],
   ['/window-tinting-glendale',              '/src/pages/locations/WindowTintingGlendale.jsx'],
+  ['/window-tinting-tolleson',              '/src/pages/locations/WindowTintingTolleson.jsx'],
+  ['/window-tinting-fountain-hills',        '/src/pages/locations/WindowTintingFountainHills.jsx'],
+  ['/window-tinting-avondale',              '/src/pages/locations/WindowTintingAvondale.jsx'],
+  ['/high-rise-commercial-window-tinting-phoenix', '/src/pages/informational/HighRiseCommercialWindowTintingPhoenix.jsx'],
+  ['/countertop-protection-film-arizona',   '/src/pages/informational/CountertopProtectionFilmArizona.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

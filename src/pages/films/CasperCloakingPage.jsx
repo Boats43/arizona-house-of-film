@@ -14,6 +14,7 @@ const CasperCloakingPage = () => {
     name: "Casper Cloaking Film",
     description: "Casper Cloaking Film by Solyx is an architectural film for glass walls that obscures the light from large LED displays, making them appear as black screens to outside viewers.",
     brand: { "@type": "Brand", name: "Solyx" },
+    image: "https://arizonahouseoffilm.com/og-image.jpg",
     offers: { "@type": "Offer", price: "0.00", priceCurrency: "USD", priceValidUntil: "2027-12-31", availability: "https://schema.org/InStock", url: canonicalUrl },
     aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "8" }
   };

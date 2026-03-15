@@ -1,13 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { EyeOff, Building, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 
 const CasperCloakingPage = () => {
-  const pageTitle = "Casper Cloaking Film Arizona | Arizona House of Film";
-  const metaDescription = "Casper Cloaking Film makes LED screens appear black from outside. Perfect for conference rooms and executive offices in Arizona. Free estimate.";
+  const pageTitle = "Casper Cloaking Film Arizona | Screen Privacy for Phoenix Offices | ROC #314088";
+  const metaDescription = "Casper cloaking film makes LED screens invisible from outside glass offices. Phoenix & Scottsdale installation. Licensed commercial installer ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/casper-cloaking";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 
@@ -23,9 +21,11 @@ const CasperCloakingPage = () => {
   const faqSchema = {
     "@context": "https://schema.org", "@type": "FAQPage",
     mainEntity: [
-      { "@type": "Question", name: "What is Casper Cloaking Film?", acceptedAnswer: { "@type": "Answer", text: "Casper Cloaking Film is an innovative architectural window film applied to glass walls. It makes LED screens appear as black boxes to outside viewers while keeping the glass transparent for those inside." } },
-      { "@type": "Question", name: "Where is Casper Cloaking Film most effective?", acceptedAnswer: { "@type": "Answer", text: "It is ideal for glass-walled conference rooms, executive offices, and meeting areas where data privacy on screens is a concern." } },
-      { "@type": "Question", name: "Does Casper film work with all types of screens?", acceptedAnswer: { "@type": "Answer", text: "Casper is specifically engineered to cloak the light output from large LED displays. It is not designed for OLED screens, plasma screens, or some older projection screens." } }
+      { "@type": "Question", name: "What is Casper Cloaking Film?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is a specialty privacy film that makes LED and OLED screens appear completely black from outside a glass partition or window, while people inside see screens normally with no change to brightness, color accuracy, or clarity. It is the standard specification for law firms, financial services, healthcare administration, tech companies, and any organization with screens displaying sensitive or proprietary information." } },
+      { "@type": "Question", name: "How does Casper cloaking film work?", acceptedAnswer: { "@type": "Answer", text: "Casper film uses a micro-louver optical technology that controls the angle at which light passes through the film. Light traveling straight through — from a person inside looking at a screen — passes normally. Light reflecting off the screen at an angle — visible from outside the glass — is blocked. The result is that screens are invisible from outside while remaining fully visible from inside." } },
+      { "@type": "Question", name: "Does Casper film affect screen brightness or color from inside?", acceptedAnswer: { "@type": "Answer", text: "No. Casper cloaking film has zero measurable impact on screen visibility, color accuracy, or brightness for people inside the office. It does not require any adjustment to screen brightness settings." } },
+      { "@type": "Question", name: "What types of screens does Casper film work with?", acceptedAnswer: { "@type": "Answer", text: "Casper film works with LED and OLED screens — the standard in modern commercial environments. It is effective on monitors, presentation screens, video walls, and laptop displays. It is not designed for older fluorescent backlit LCD screens." } },
+      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is priced at a premium over standard privacy film — typically $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } }
     ]
   };
 
@@ -47,39 +47,80 @@ const CasperCloakingPage = () => {
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
-      <div className="bg-white">
-        <header className="relative py-24 bg-gray-900 text-white">
-          <div className="absolute inset-0 bg-black opacity-60"></div>
-          <div className="relative max-w-4xl mx-auto px-4 text-center">
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-6xl font-bold">Casper Cloaking Film Arizona</motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-4 text-lg md:text-xl text-gray-300">The Smart Shield for Data Privacy on Glass Walls.</motion.p>
-          </div>
-        </header>
-        <main>
-          <section className="py-20 px-4">
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900">Open-Office Design Without the Exposure</h2>
-                <p className="mt-4 text-lg text-gray-600">Casper Cloaking Film is the revolutionary solution for maintaining data privacy in modern, glass-walled offices. It selectively blocks the light from LED screens, making them appear as nothing more than black rectangles to outside viewers. For those inside the room, the glass remains perfectly transparent.</p>
-                <ul className="mt-6 space-y-4">
-                  <li className="flex items-start"><EyeOff className="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" /><span><strong>Secures Confidential Information:</strong> Protects sensitive data on screens during meetings and presentations.</span></li>
-                  <li className="flex items-start"><Building className="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" /><span><strong>Maintains Transparency:</strong> Preserves the open, collaborative feel of glass-walled spaces.</span></li>
-                </ul>
-              </div>
-              <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-                <p className="text-gray-500 text-center px-4">Casper Cloaking Film — Contact us for a live demo</p>
-              </div>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+        { name: 'Films', url: 'https://arizonahouseoffilm.com/films' },
+        { name: 'Casper Cloaking Film', url: 'https://arizonahouseoffilm.com/films/casper-cloaking' }
+      ]} />
+      <main className="max-w-4xl mx-auto px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">Casper Cloaking Film Arizona — Screen Privacy for Glass Offices</h1>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">What Is Casper Cloaking Film?</h2>
+          <p className="text-lg text-slate-700 mb-4">Casper cloaking film is a specialty optical privacy film designed for glass-walled offices with LED screens. It uses micro-louver technology to block screen content from outside view while leaving the glass visually transparent and screens fully visible from inside. People outside see only clear glass. People inside see screens normally with zero impact on brightness or color.</p>
+          <p className="text-lg text-slate-700">Arizona House of Film is an authorized Casper cloaking film installer serving Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088.</p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">How Casper Film Works</h2>
+          <p className="text-lg text-slate-700">Standard frosted or privacy film obscures both the glass and what's behind it. Casper film works differently — it controls light by angle. Light passing straight through the film (the viewing angle from inside) passes unobstructed. Light reflecting off screens at an outward angle (visible from outside the glass) is blocked by the micro-louver structure. The glass remains optically clear while screens become invisible from the outside.</p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Where Casper Cloaking Film Is Specified</h2>
+          <ul className="list-disc pl-6 text-lg text-slate-700 space-y-2">
+            <li><strong>Law firms</strong> — client confidentiality on document screens and case management systems</li>
+            <li><strong>Financial services</strong> — trading screens, portfolio data, client financial information</li>
+            <li><strong>Healthcare administration</strong> — HIPAA-compliant visual privacy for patient data screens</li>
+            <li><strong>Technology companies</strong> — IP protection for development screens and proprietary interfaces</li>
+            <li><strong>Executive boardrooms</strong> — presentation privacy during sensitive strategy sessions</li>
+            <li><strong>Government and defense contractors</strong> — classified screen content protection</li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Casper Film vs Standard Frosted Privacy Film</h2>
+          <p className="text-lg text-slate-700 mb-4">Standard frosted film solves visual privacy by diffusing all light through the glass — obscuring both the view and the screen behind it. Casper film is specified when you need screen privacy without losing glass transparency. The glass wall stays visually open and maintains natural light flow. The only thing blocked is screen content from outside view.</p>
+          <p className="text-lg text-slate-700">For conference rooms where the glass should remain clear but screen content must be protected, Casper is the only film that delivers both simultaneously.</p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Available Casper Cloaking Film Patterns</h2>
+          <p className="text-lg text-slate-700 mb-4">Arizona House of Film installs the full Casper by Designtex collection:</p>
+          <ul className="list-disc pl-6 text-lg text-slate-700 space-y-2">
+            <li>Casper Original (PF001-801-48)</li>
+            <li>Big Dot by Designtex (PF002-801)</li>
+            <li>Little Dot by Designtex (PF003-801)</li>
+            <li>Aksel by Designtex (PF005-801)</li>
+            <li>Grid by Designtex (PF006-801)</li>
+            <li>Plus by Designtex (PF007-801)</li>
+            <li>Cell by Designtex (PF008-801)</li>
+            <li>Pixel by Designtex (PF009-801)</li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Installation Cost — Phoenix & Scottsdale</h2>
+          <p className="text-lg text-slate-700 mb-4">Casper cloaking film runs $20–$35 per square foot installed — priced at a premium over standard privacy film due to the specialty optical technology. Most single conference room installations (40–120 sq ft of glass) run $1,500–$4,000. Full office floor projects are quoted by scope.</p>
+          <p className="text-lg text-slate-700">All installations include a site assessment to confirm glass type compatibility and screen placement angles. Call <a href="tel:4807881591" className="text-blue-600 hover:underline">(480) 788-1591</a> for a free commercial estimate.</p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-6">Frequently Asked Questions</h2>
+          {faqSchema.mainEntity.map((faq, i) => (
+            <div key={i} className="mb-6 border-b border-slate-200 pb-6">
+              <h3 className="text-lg font-bold mb-2">{faq.name}</h3>
+              <p className="text-slate-700">{faq.acceptedAnswer.text}</p>
             </div>
-          </section>
-          <section className="py-20 text-center">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Protect Your Digital Privacy?</h2>
-              <p className="text-lg text-gray-600 mb-8">Contact us for a free consultation on Casper Cloaking Film for your Arizona office.</p>
-              <Button asChild size="lg"><Link to="/contact">Get a Quote for Casper Film <ArrowRight className="ml-2 w-5 h-5" /></Link></Button>
-            </div>
-          </section>
-        </main>
-      </div>
+          ))}
+        </section>
+
+        <section className="bg-slate-100 p-8 rounded-lg">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Get a Free Casper Film Estimate</h2>
+          <p className="text-lg text-slate-700 mb-4">Arizona House of Film — licensed ROC #314088. Authorized Casper cloaking film installer for Phoenix, Scottsdale, and Arizona commercial offices.</p>
+          <p className="text-lg font-bold mb-4">Call <a href="tel:4807881591" className="text-blue-600 hover:underline">(480) 788-1591</a> or <Link to="/contact" className="text-blue-600 hover:underline">request a commercial estimate online</Link>.</p>
+        </section>
+      </main>
     </>
   );
 };

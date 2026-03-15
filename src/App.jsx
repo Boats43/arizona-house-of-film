@@ -88,6 +88,10 @@ const SecurityFilmVsTemperedGlass = lazy(() => import("@/pages/informational/Sec
 const HowLongDoesWindowFilmLast = lazy(() => import("@/pages/informational/HowLongDoesWindowFilmLast"));
 const CeramicVsDualReflectiveFilm = lazy(() => import("@/pages/informational/CeramicVsDualReflectiveFilm"));
 const CountertopProtectionFilmArizona = lazy(() => import("@/pages/informational/CountertopProtectionFilmArizona"));
+const WindowTintingTolleson = lazy(() => import("@/pages/locations/WindowTintingTolleson"));
+const WindowTintingFountainHills = lazy(() => import("@/pages/locations/WindowTintingFountainHills"));
+const WindowTintingAvondale = lazy(() => import("@/pages/locations/WindowTintingAvondale"));
+const HighRiseCommercialWindowTintingPhoenix = lazy(() => import("@/pages/informational/HighRiseCommercialWindowTintingPhoenix"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -216,6 +220,9 @@ function AppRoutes() {
           <Route path="/window-tinting-mesa" element={<WindowTintingMesa />} />
           <Route path="/window-tinting-tempe" element={<WindowTintingTempe />} />
           <Route path="/window-tinting-glendale" element={<WindowTintingGlendale />} />
+          <Route path="/window-tinting-tolleson" element={<WindowTintingTolleson />} />
+          <Route path="/window-tinting-fountain-hills" element={<WindowTintingFountainHills />} />
+          <Route path="/window-tinting-avondale" element={<WindowTintingAvondale />} />
 
           {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />
@@ -253,6 +260,7 @@ function AppRoutes() {
           <Route path="/how-long-does-window-film-last" element={<HowLongDoesWindowFilmLast />} />
           <Route path="/ceramic-vs-dual-reflective-film" element={<CeramicVsDualReflectiveFilm />} />
           <Route path="/countertop-protection-film-arizona" element={<CountertopProtectionFilmArizona />} />
+          <Route path="/high-rise-commercial-window-tinting-phoenix" element={<HighRiseCommercialWindowTintingPhoenix />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

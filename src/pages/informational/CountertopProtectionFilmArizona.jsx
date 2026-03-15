@@ -11,7 +11,7 @@ export default function CountertopProtectionFilmArizona() {
         "name": "What is countertop protection film?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Countertop protection film is a clear, self-adhesive polyurethane or polyester film applied to stone, quartz, laminate, and solid-surface countertops to protect against scratches, stains, UV yellowing, and daily wear. Quality countertop protection film uses 4 mil anti-graffiti film — a clear sacrificial polyester layer that peels off cleanly when worn, scratched, or damaged. No adhesive residue. Replacement is fast and cost-effective compared to refinishing or resealing stone surfaces. TuffSkin branded film is available as a premium option with 10-year manufacturer warranty., and etch and stain proof properties. It is removable and replaceable without adhesive residue."
+          "text": "Countertop protection film is a clear, self-adhesive polyurethane or polyester film applied to stone, quartz, laminate, and solid-surface countertops to protect against scratches, stains, UV yellowing, and daily wear. Quality countertop protection film uses 4 mil anti-graffiti film — a clear sacrificial polyester layer that peels off cleanly when worn, scratched, or damaged. No adhesive residue. Replacement is fast and cost-effective compared to refinishing or resealing stone surfaces. TuffSkin branded film is available as a premium option with 10-year manufacturer warranty., and etch and stain proof properties. It is removable and replaceable without adhesive residue. The pressure-sensitive adhesive is time-calibrated to release cleanly within the 3–5 year replacement window — replacement on schedule ensures residue-free removal."
         }
       },
       {
@@ -110,7 +110,7 @@ export default function CountertopProtectionFilmArizona() {
               <tr><td className="border border-gray-200 px-4 py-2">Warranty</td><td className="border border-gray-200 px-4 py-2">Installation warranty</td><td className="border border-gray-200 px-4 py-2">10-year manufacturer warranty</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Heat resistance</td><td className="border border-gray-200 px-4 py-2">Standard</td><td className="border border-gray-200 px-4 py-2">Up to 400°F</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Best for</td><td className="border border-gray-200 px-4 py-2">Commercial kitchens, high-traffic retail, budget residential</td><td className="border border-gray-200 px-4 py-2">Luxury residential, hospitality, warranty-required specs</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Replacement cycle</td><td className="border border-gray-200 px-4 py-2">1–3 years depending on traffic</td><td className="border border-gray-200 px-4 py-2">Longer — warranty-backed performance</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Replacement cycle</td><td className="border border-gray-200 px-4 py-2">3–5 years interior — replace as needed based on surface condition</td><td className="border border-gray-200 px-4 py-2">Longer — warranty-backed performance</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Cost</td><td className="border border-gray-200 px-4 py-2">$4–$8/sq ft installed</td><td className="border border-gray-200 px-4 py-2">$8–$15/sq ft installed</td></tr>
             </tbody>
           </table>
@@ -141,11 +141,23 @@ export default function CountertopProtectionFilmArizona() {
               <tr><td className="border border-gray-200 px-4 py-2">Heat resistance</td><td className="border border-gray-200 px-4 py-2">Up to 400°F</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">UV protection</td><td className="border border-gray-200 px-4 py-2">UV inhibitor — prevents yellowing</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Acid/alkali resistance</td><td className="border border-gray-200 px-4 py-2">Etch-proof — wine, lemon, coffee, toothpaste</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Warranty</td><td className="border border-gray-200 px-4 py-2">Sacrificial surface — designed for periodic replacement (1–3 years depending on traffic). TuffSkin option carries 10-year manufacturer warranty.</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Warranty</td><td className="border border-gray-200 px-4 py-2">3–5 years interior (longer than exterior glass — no UV or weather exposure). Replace as needed to maintain surface appearance.</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Removal</td><td className="border border-gray-200 px-4 py-2">Removable and replaceable — no adhesive residue</td></tr>
             </tbody>
           </table>
         </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Surface Finish & Adhesive Release — What to Know</h2>
+        <p className="text-gray-700 mb-4">Countertop protection film is compatible with polished, satin, and semi-gloss stone finishes. The pressure-sensitive adhesive is engineered to bond securely during use and release cleanly within the designed replacement timeframe — leaving no adhesive residue on polished granite, quartz, or marble surfaces.</p>
+        <p className="text-gray-700 mb-4"><strong>Critical:</strong> Film should be replaced within the 3–5 year replacement window. The adhesive release is time-calibrated to the film's design life. Replacing on schedule ensures clean, residue-free removal. Exceeding the replacement window increases adhesive dwell time and can make removal more difficult.</p>
+        <p className="text-gray-700 mb-4">Surface finish variables:</p>
+        <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+          <li><strong>Polished granite/marble/quartz</strong> — optimal adhesive release. Clean peel within replacement window.</li>
+          <li><strong>Satin/honed finish</strong> — clean release. Slightly more surface texture but adhesive performs within spec.</li>
+          <li><strong>Semi-gloss</strong> — clean release. Confirm compatibility during site assessment for unusual finishes.</li>
+          <li><strong>Rough or unsealed stone</strong> — not recommended without surface assessment. Adhesive may not release cleanly on porous or damaged surfaces.</li>
+        </ul>
+        <p className="text-gray-700 mb-4">Arizona House of Film assesses your countertop finish and condition before installation to confirm film compatibility and set the correct replacement schedule. Call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a>.</p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Installation Cost — Phoenix & Scottsdale</h2>
         <p className="text-gray-700 mb-4">Countertop protection film installation in Arizona runs <strong>$4–$10 per square foot installed</strong> depending on surface type, edge complexity, and film specification.</p>

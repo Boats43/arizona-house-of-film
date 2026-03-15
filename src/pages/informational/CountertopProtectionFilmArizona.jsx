@@ -220,7 +220,7 @@ export default function CountertopProtectionFilmArizona() {
           </table>
         </div>
         <p className="text-gray-700 mb-4">To order: measure your countertop length and width, then contact us with dimensions. We'll confirm the right roll size and shipping cost. Film ships flat or rolled — arrives ready to install.</p>
-        <p className="text-gray-700 mb-4">Film width is typically 48 inches — wide enough for most standard countertops. For wider surfaces or irregular shapes, contact us for custom sizing. Call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a> or email for a shipping quote.</p>
+        <p className="text-gray-700 mb-4">Film width is typically 48 inches — sufficient for standard residential countertop depth. Custom widths available for commercial specifications. Call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a> or <a href="/contact" className="text-blue-600 font-semibold">contact us online</a> to place a material order.</p>
 
         <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-2">Get a Free Countertop Protection Film Estimate</h2>

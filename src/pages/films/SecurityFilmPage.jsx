@@ -16,6 +16,7 @@ const SecurityFilmPage = () => {
     name: "Security Window Film",
     description: "Professional-grade security window film designed to protect against break-ins, accidents, and natural disasters by holding shattered glass together.",
     brand: { "@type": "Brand", name: "Arizona House of Film" },
+    image: "https://arizonahouseoffilm.com/og-image.jpg",
     offers: { "@type": "Offer", price: "0.00", priceCurrency: "USD", priceValidUntil: "2027-12-31", availability: "https://schema.org/InStock", url: canonicalUrl },
     aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "15" }
   };

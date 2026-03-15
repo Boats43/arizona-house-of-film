@@ -87,7 +87,7 @@ const faqSchema = {
 };
 
 const Industries = () => {
-  const pageTitle = "Industries We Serve | Commercial Window Tinting Arizona | Arizona House of Film";
+  const pageTitle = "Industries We Serve | Arizona House of Film";
   const metaDescription = "Window film for offices, retail, medical, schools, government, and warehouses across Phoenix and Arizona. Licensed ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/industries";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";

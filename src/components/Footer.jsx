@@ -32,12 +32,15 @@ const Footer = () => {
     { name: 'Window Tinting Gilbert', path: '/window-tinting-gilbert' },
     { name: 'Window Tinting Peoria', path: '/window-tinting-peoria' },
     { name: 'Window Tinting Queen Creek', path: '/window-tinting-queen-creek' },
+    { name: 'Window Tinting Fountain Hills', path: '/window-tinting-fountain-hills' },
   ];
 
   const centralValleyLinks = [
     { name: 'Window Tinting Mesa', path: '/window-tinting-mesa' },
     { name: 'Window Tinting Tempe', path: '/window-tinting-tempe' },
     { name: 'Window Tinting Glendale', path: '/window-tinting-glendale' },
+    { name: 'Window Tinting Tolleson', path: '/window-tinting-tolleson' },
+    { name: 'Window Tinting Avondale', path: '/window-tinting-avondale' },
   ];
 
   const secondaryLinks = [

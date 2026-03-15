@@ -11,7 +11,7 @@ import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const Welcome = () => {
-  const pageTitle = 'About Arizona House of Film | Licensed Window Film Contractor Phoenix AZ | Since 2017';
+  const pageTitle = 'About Arizona House of Film | Licensed Since 2017';
   const metaDescription = 'Arizona House of Film — licensed, bonded window film contractor since 2017. ROC #314088. 700+ projects. $1.16M in completed work. Serving Phoenix, Scottsdale, and the full Arizona metro.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/welcome';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

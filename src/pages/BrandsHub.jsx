@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 const canonicalUrl = "https://arizonahouseoffilm.com/brands";
 
 const pageTitle = "Window Film Manufacturers & Technology Partners | Arizona House of Film";
-const metaDescription = "Certified installer for 30+ window film brands including 3M, Huper Optik, Madico, and Armor Glass. Independent film selection by glass type and Arizona climate.";
+const metaDescription = "Certified installer for 3M, Huper Optik, Madico, LLumar, Solyx, Solar Gard and 25+ window film brands. Licensed ROC #314088.";
 
 // ── Helper: look up a brand slug from brands.js by name fragment ──────────────
 const findSlug = (nameFragment) => {

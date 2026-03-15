@@ -9,8 +9,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const CommercialPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Commercial Window Film Phoenix AZ | Office & Retail Tinting | Arizona House of Film';
-  const metaDescription = 'Phoenix commercial window film installer. Solar control, security, privacy & decorative film for offices, retail, and industrial. 700+ projects. ROC #314088. Free quote.';
+  const pageTitle = 'Commercial Window Film Phoenix AZ | ROC #314088';
+  const metaDescription = 'Phoenix commercial window film installer. Solar control, security, privacy and decorative film for offices and retail. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-film-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =

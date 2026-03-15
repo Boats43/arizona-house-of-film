@@ -5,7 +5,7 @@ import { Calendar } from 'lucide-react';
 
 const BookNow = () => {
   const pageTitle = "Book a Free Window Tinting Consultation | Arizona House of Film";
-  const metaDescription = "Schedule your free, no-obligation consultation for window tinting in Arizona. Select a time that works for you and let our experts provide a tailored solution.";
+  const metaDescription = "Schedule your free window tinting consultation in Arizona. Same-week appointments available. Licensed ROC #314088 — (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/book-now";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 

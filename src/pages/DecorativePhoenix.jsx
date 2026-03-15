@@ -9,8 +9,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const DecorativePhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Decorative Window Film Phoenix AZ | Frosted, Privacy & Custom Glass Film | Arizona House of Film';
-  const metaDescription = 'Phoenix decorative window film installer. Frosted glass, privacy film, 3M Fasara patterns, custom designs for homes and businesses. 700+ projects. ROC #314088. Free quote.';
+  const pageTitle = 'Decorative Window Film Phoenix AZ | ROC #314088';
+  const metaDescription = 'Phoenix decorative window film installer. Frosted glass, privacy film, 3M Fasara, Solyx patterns. Free estimate. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/decorative-window-film-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =

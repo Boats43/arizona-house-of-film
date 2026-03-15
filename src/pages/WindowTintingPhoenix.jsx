@@ -9,7 +9,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const WindowTintingPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Window Tinting Phoenix AZ | Home & Commercial | Arizona House of Film';
+  const pageTitle = 'Window Tinting Phoenix AZ | ROC #314088';
   const metaDescription =
     'Phoenix window tinting experts since 2017. Residential & commercial window tinting for homes, offices, and storefronts. ROC #314088. Ceramic, solar, security, decorative. Free quote.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/window-tinting-phoenix';

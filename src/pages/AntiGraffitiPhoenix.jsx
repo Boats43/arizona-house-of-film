@@ -9,8 +9,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const AntiGraffitiPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Anti-Graffiti Window Film Phoenix AZ | Sacrificial Glass Protection | Arizona House of Film';
-  const metaDescription = 'Phoenix anti-graffiti film installer. Protect glass, mirrors & polished metal from tagging, scratching & acid etching. Replace film not glass. ROC #314088. Free quote.';
+  const pageTitle = 'Anti-Graffiti Film Phoenix AZ | ROC #314088';
+  const metaDescription = 'Phoenix anti-graffiti film installer. Protect glass, mirrors and polished metal. Peel-and-replace sacrificial film. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/anti-graffiti-film-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl = 'https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg';

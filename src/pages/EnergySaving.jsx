@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 
 const EnergySaving = () => {
   const rocNumber = "314088";
-  const pageTitle = "Energy Saving Window Film Phoenix AZ | HVAC Reduction & SRP Rebates | Arizona House of Film";
+  const pageTitle = "Energy Saving Window Film Phoenix AZ | ROC #314088";
   const metaDescription = "Reduce cooling costs by 30% with professional energy-saving window film. Expert installation across Arizona. Licensed ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/energy-saving-window-films";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";

@@ -9,7 +9,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const ResidentialPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Residential Window Tinting Phoenix AZ | Home Window Film | Arizona House of Film';
+  const pageTitle = 'Residential Window Tinting Phoenix AZ | ROC #314088';
   const metaDescription = 'Phoenix residential window tinting. Heat rejection, UV protection, privacy & security film for Phoenix homes. 700+ projects completed since 2017. ROC #314088. Free quote.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';

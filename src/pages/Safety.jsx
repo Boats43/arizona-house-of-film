@@ -10,7 +10,7 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const Safety = () => {
   const rocNumber = "314088";
-  const pageTitle = "Security Window Film Phoenix AZ | Safety Film Installers | Arizona House of Film";
+  const pageTitle = "Security Window Film Phoenix AZ | ROC #314088";
   const metaDescription = "Security window film Phoenix AZ. 8–12 mil holds glass on impact. Stops smash-and-grab. Deployed for U.S. Navy and GCU. ROC #314088. (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/safety";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";

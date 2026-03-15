@@ -12,8 +12,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const AntiGraffiti = () => {
   const rocNumber = "314088";
-  const pageTitle = "Anti-Graffiti Window Film Phoenix AZ | Peel and Replace Protection | Arizona House of Film";
-  const metaDescription = "Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government facilities. Peel and replace vs glass replacement. ROC #314088. Free estimate.";
+  const pageTitle = "Anti-Graffiti Window Film Phoenix AZ | ROC #314088";
+  const metaDescription = "Sacrificial anti-graffiti film for Phoenix storefronts, schools, and government buildings. Peel-and-replace protection. Licensed ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/anti-graffiti";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 

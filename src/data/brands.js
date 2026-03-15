@@ -305,7 +305,7 @@ export const brands = [
     name: "EnerLogic",
     slug: "enerlogic",
     category: "Architectural & Residential",
-    description: "High-performance, energy-saving window films designed for year-round insulation.",
+    description: "EnerLogic window film is a dual-season low-e film engineered for year-round energy savings — blocking solar heat gain in summer and retaining interior heat in winter. The only window film technology that delivers measurable performance in both Arizona's 115°F summers and high-elevation winters.",
     url: "https://enerlogicwindowfilms.com",
     relatedFilms: ["energy-saving"],
     specs: {
@@ -314,16 +314,19 @@ export const brands = [
       warranty: "Energy Performance Bond",
       tech: "Year-Round Low-E"
     },
-    arizonaNote: "EnerLogic is our specification for Arizona properties where winter heat retention matters alongside summer heat rejection. The low-e coating provides a dual-season benefit that standard solar films do not — reducing AC load in summer and retaining interior heat in winter. For Flagstaff, Prescott, and high-elevation Arizona properties this dual-season performance is significant.",
-    bestFor: ["Year-round energy savings", "High-elevation Arizona", "Dual-season performance", "Low-e compatible installs"],
+    arizonaNote: "EnerLogic is our specification for Arizona properties where dual-season performance matters. For Phoenix and Scottsdale homes, EnerLogic 35 reduces summer cooling loads by blocking solar heat gain while the low-e coating retains interior heat on winter nights — when Phoenix temperatures drop to 35–45°F. For Flagstaff, Prescott, Sedona, and other high-elevation Arizona properties where heating costs are significant, EnerLogic delivers the strongest year-round ROI of any window film we install. Authorized Arizona installer — free estimate at (480) 788-1591.",
+    bestFor: ["Year-round energy savings", "High-elevation Arizona — Flagstaff, Prescott, Sedona", "Phoenix homes with high heating bills", "Dual-season performance", "Low-e glass compatible installs", "SRP and APS rebate-qualifying projects"],
     filmSeries: [
-      { name: "EnerLogic 35", description: "Dual-season low-e film. Reduces solar heat gain in summer, retains interior heat in winter." },
-      { name: "EnerLogic 20", description: "Higher heat rejection version for south and west-facing glass in extreme heat zones." }
+      { name: "EnerLogic 35", description: "Dual-season low-e film with 35% VLT. Reduces solar heat gain in Arizona summers, retains interior heat in winter nights. Primary specification for Phoenix and Scottsdale residential." },
+      { name: "EnerLogic 20", description: "Higher heat rejection version — 20% VLT. South and west-facing glass in extreme heat zones. Maximum summer performance with winter heat retention." },
+      { name: "EnerLogic 40", description: "Higher clarity option — 40% VLT. Ideal for north-facing glass and properties prioritizing natural light alongside dual-season energy performance." }
     ],
     faqs: [
-      { question: "Does EnerLogic film work in Arizona winters?", answer: "Yes — EnerLogic low-e technology reflects interior heat back into the room in winter, reducing heating costs. For Phoenix this benefit is modest. For Flagstaff, Prescott, and other high-elevation Arizona properties where winter heating costs are significant, EnerLogic delivers measurable year-round ROI." },
-      { question: "What is the difference between EnerLogic and standard solar film?", answer: "Standard solar films reject summer heat only. EnerLogic's low-e coating provides dual-season performance — blocking solar heat gain in summer and retaining interior heat in winter. For Arizona properties at elevation, this dual-season benefit significantly improves the ROI calculation." },
-      { question: "Does EnerLogic qualify for SRP or APS energy rebates in Arizona?", answer: "EnerLogic films may qualify for SRP and APS energy efficiency rebate programs depending on the specific film's SHGC rating and your property type. We review qualifying films and provide the NFRC data sheets needed for rebate applications during your free estimate." }
+      { question: "Does EnerLogic film work in Arizona winters?", answer: "Yes — EnerLogic low-e technology reflects interior heat back into the room in winter, reducing heating costs. For Phoenix this benefit is meaningful on nights when temperatures drop to 35–45°F. For Flagstaff, Prescott, and Sedona where winter heating costs are significant, EnerLogic delivers measurable year-round ROI that standard solar films cannot match." },
+      { question: "What is the difference between EnerLogic and standard solar film?", answer: "Standard solar films reject summer heat only — they have no winter performance benefit. EnerLogic's low-e coating provides dual-season performance: blocking solar heat gain in summer and reflecting interior heat back into the room in winter. For Arizona properties at elevation or with high heating bills, this dual-season benefit significantly improves the ROI calculation." },
+      { question: "Does EnerLogic qualify for SRP or APS energy rebates in Arizona?", answer: "EnerLogic films may qualify for SRP Business Solutions and APS energy efficiency rebate programs depending on the specific film's SHGC rating and your property type. We review qualifying films and provide the NFRC data sheets needed for rebate applications during your free estimate. Call (480) 788-1591." },
+      { question: "Is EnerLogic worth it for a Phoenix home?", answer: "Yes — especially for homes with high winter heating bills or west and south-facing glass. EnerLogic 35 blocks summer solar heat like a standard ceramic film while adding low-e winter performance. For most Phoenix homes the dual-season benefit adds 15–25% to the overall energy savings ROI compared to solar-only film." },
+      { question: "Where is EnerLogic window film installed in Arizona?", answer: "Arizona House of Film installs EnerLogic window film throughout Phoenix, Scottsdale, Tempe, Chandler, Gilbert, and the full Arizona metro including high-elevation communities like Flagstaff, Prescott, and Sedona. Licensed ROC #314088. Free estimates — call (480) 788-1591." }
     ]
   },
   {

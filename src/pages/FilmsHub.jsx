@@ -46,6 +46,15 @@ export default function FilmsHub() {
         <title>Decorative Window Film Catalog | 600+ Solyx Films | Arizona House of Film</title>
         <meta name="description" content="Browse 600+ Solyx decorative window films — frosted, etched, stained glass, gradient, Casper cloaking, privacy patterns. Licensed installer serving Phoenix & Scottsdale. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/films" />
+        <meta property="og:title" content="Window Film Types & Technologies | Arizona House of Film" />
+        <meta property="og:description" content="Browse every window film type we install in Arizona — solar, security, decorative, privacy, and anti-graffiti films. Licensed ROC #314088." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/films" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Window Film Types & Technologies | Arizona House of Film" />
+        <meta name="twitter:description" content="Browse every window film type we install in Arizona — solar, security, decorative, privacy, and anti-graffiti films. Licensed ROC #314088." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CollectionPage",

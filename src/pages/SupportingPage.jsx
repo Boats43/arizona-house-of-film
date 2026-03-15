@@ -117,9 +117,12 @@ const SupportingPage = () => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <meta property="og:type" content="article" />
-
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
 
         {/* Structured Data */}
         <script type="application/ld+json">

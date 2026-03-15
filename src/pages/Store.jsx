@@ -40,9 +40,16 @@ const Store = () => {
       <Helmet>
         <title>Arizona Window Film Catalog | UV, Decorative & Privacy Films</title>
         <meta name="description" content="Browse UV, decorative, and privacy films for homes and offices in Arizona. Get a free quote for residential and commercial window tinting today." />
-        <meta property="og:title" content="Arizona Window Film Catalog | Commercial & Residential" />
-        <meta property="og:description" content="Explore our full film catalog for residential and commercial window tinting in Arizona and request a free quote." />
+        <meta property="og:title" content="Window Film Store | Arizona House of Film" />
+        <meta property="og:description" content="Shop window film products and installation supplies from Arizona House of Film. Licensed ROC #314088." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/store" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/store" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Window Film Store | Arizona House of Film" />
+        <meta name="twitter:description" content="Shop window film products and installation supplies from Arizona House of Film. Licensed ROC #314088." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(storeFaqSchema)}</script>
       </Helmet>
       <div className="bg-gray-100 text-gray-800 min-h-screen">

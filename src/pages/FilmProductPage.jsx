@@ -391,6 +391,15 @@ export default function FilmProductPage() {
         <meta name="description" content={pageDesc} />
         <meta name="keywords" content={content.keywords} />
         <link rel="canonical" href={`https://arizonahouseoffilm.com/films/${categorySlug}/${productSlug}`} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:url" content={`https://arizonahouseoffilm.com/films/${categorySlug}/${productSlug}`} />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
       </Helmet>

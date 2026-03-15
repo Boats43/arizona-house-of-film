@@ -19,7 +19,7 @@ export default function CountertopProtectionFilmArizona() {
         "name": "How much does countertop protection film installation cost in Arizona?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Countertop protection film installation in Arizona typically runs $4–$10 per square foot installed depending on surface type, edge complexity, and film specification. Most residential kitchen countertop projects run $300–$900. Commercial kitchen and hospitality projects are quoted by scope — contact us at (480) 788-1591 for a free estimate."
+          "text": "Countertop protection film installation in Arizona typically runs $12–$28 per square foot installed depending on surface type, edge complexity, and film specification. Most residential kitchen countertop projects run $800–$2,500. Commercial kitchen and hospitality projects are quoted by scope — contact us at (480) 788-1591 for a free estimate."
         }
       },
       {
@@ -111,7 +111,7 @@ export default function CountertopProtectionFilmArizona() {
               <tr><td className="border border-gray-200 px-4 py-2">Heat resistance</td><td className="border border-gray-200 px-4 py-2">Standard</td><td className="border border-gray-200 px-4 py-2">Up to 400°F</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Best for</td><td className="border border-gray-200 px-4 py-2">Commercial kitchens, high-traffic retail, budget residential</td><td className="border border-gray-200 px-4 py-2">Luxury residential, hospitality, warranty-required specs</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Replacement cycle</td><td className="border border-gray-200 px-4 py-2">3–5 years interior — replace as needed based on surface condition</td><td className="border border-gray-200 px-4 py-2">Longer — warranty-backed performance</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Cost</td><td className="border border-gray-200 px-4 py-2">$4–$8/sq ft installed</td><td className="border border-gray-200 px-4 py-2">$8–$15/sq ft installed</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Cost</td><td className="border border-gray-200 px-4 py-2">$12–$18/sq ft installed</td><td className="border border-gray-200 px-4 py-2">$18–$28/sq ft installed</td></tr>
             </tbody>
           </table>
         </div>
@@ -160,7 +160,7 @@ export default function CountertopProtectionFilmArizona() {
         <p className="text-gray-700 mb-4">Arizona House of Film assesses your countertop finish and condition before installation to confirm film compatibility and set the correct replacement schedule. Call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a>.</p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Installation Cost — Phoenix & Scottsdale</h2>
-        <p className="text-gray-700 mb-4">Countertop protection film installation in Arizona runs <strong>$4–$10 per square foot installed</strong> depending on surface type, edge complexity, and film specification.</p>
+        <p className="text-gray-700 mb-4">Countertop protection film installation in Arizona runs <strong>$12–$28 per square foot installed</strong> depending on surface type, stone value, edge complexity, and film specification. Pricing reflects professional surface assessment, prep, installation, and warranty coverage against installation-related surface damage.</p>
         <div className="overflow-x-auto mb-6">
           <table className="w-full border-collapse border border-gray-200 text-sm">
             <thead className="bg-gray-50">
@@ -170,10 +170,11 @@ export default function CountertopProtectionFilmArizona() {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border border-gray-200 px-4 py-2">Residential kitchen</td><td className="border border-gray-200 px-4 py-2">$300–$900</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Bathroom vanity</td><td className="border border-gray-200 px-4 py-2">$150–$400</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Commercial kitchen</td><td className="border border-gray-200 px-4 py-2">$800–$3,500+</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Residential kitchen</td><td className="border border-gray-200 px-4 py-2">$800–$2,500</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Bathroom vanity</td><td className="border border-gray-200 px-4 py-2">$400–$900</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Commercial kitchen</td><td className="border border-gray-200 px-4 py-2">$2,500–$8,000+</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">New construction staging</td><td className="border border-gray-200 px-4 py-2">Quoted by scope</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Annual replacement program</td><td className="border border-gray-200 px-4 py-2">Quoted by scope</td></tr>
             </tbody>
           </table>
         </div>
@@ -197,7 +198,7 @@ export default function CountertopProtectionFilmArizona() {
               <tr><td className="border border-gray-200 px-4 py-2">Lease compliance</td><td className="border border-gray-200 px-4 py-2">Removes cleanly for lease end</td><td className="border border-gray-200 px-4 py-2">May violate lease terms</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Commercial use</td><td className="border border-gray-200 px-4 py-2">High-traffic rated</td><td className="border border-gray-200 px-4 py-2">Varies by product</td></tr>
               <tr><td className="border border-gray-200 px-4 py-2">Surface prep</td><td className="border border-gray-200 px-4 py-2">Clean smooth surface recommended</td><td className="border border-gray-200 px-4 py-2">Full restoration required</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Cost</td><td className="border border-gray-200 px-4 py-2">$4–$15/sq ft installed</td><td className="border border-gray-200 px-4 py-2">Comparable or higher</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Cost</td><td className="border border-gray-200 px-4 py-2">$12–$28/sq ft installed</td><td className="border border-gray-200 px-4 py-2">Comparable or higher</td></tr>
             </tbody>
           </table>
         </div>
@@ -214,7 +215,7 @@ export default function CountertopProtectionFilmArizona() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Order Countertop Protection Film — Ship Anywhere in the US</h2>
-        <p className="text-gray-700 mb-4">Not in Arizona? Arizona House of Film supplies 4 mil anti-graffiti countertop protection film for DIY installation. Available in standard roll sizes — tell us your countertop dimensions and we'll quote a cut roll shipped directly to you.</p>
+        <p className="text-gray-700 mb-4">Not in Arizona? Arizona House of Film supplies professional-grade 4 mil anti-graffiti countertop protection film for experienced installers. Note: installation on high-value stone surfaces carries risk — we recommend professional installation for marble, quartzite, and onyx. DIY material supply available for experienced contractors and stone fabricators. Available in standard roll sizes — tell us your countertop dimensions and we'll quote a cut roll shipped directly to you.</p>
         <div className="overflow-x-auto mb-6">
           <table className="w-full border-collapse border border-gray-200 text-sm">
             <thead className="bg-gray-50">

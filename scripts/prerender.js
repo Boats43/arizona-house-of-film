@@ -152,6 +152,8 @@ const ROUTES = [
   '/residential-window-tinting-gilbert', '/residential-window-tinting-tempe',
   '/security-window-film-scottsdale', '/decorative-window-film-scottsdale',
   '/solar-window-film-scottsdale',
+  '/commercial-window-tinting-peoria', '/commercial-window-tinting-glendale',
+  '/commercial-window-tinting-queen-creek',
 ]
 
 const PATTERN_MAP = [
@@ -216,6 +218,9 @@ const PATTERN_MAP = [
   ['/security-window-film-scottsdale',   '/src/pages/locations/SecurityWindowFilmScottsdale.jsx'],
   ['/decorative-window-film-scottsdale', '/src/pages/locations/DecorativeWindowFilmScottsdale.jsx'],
   ['/solar-window-film-scottsdale',      '/src/pages/locations/SolarWindowFilmScottsdale.jsx'],
+  ['/commercial-window-tinting-peoria',      '/src/pages/locations/CommercialWindowTintingPeoria.jsx'],
+  ['/commercial-window-tinting-glendale',    '/src/pages/locations/CommercialWindowTintingGlendale.jsx'],
+  ['/commercial-window-tinting-queen-creek', '/src/pages/locations/CommercialWindowTintingQueenCreek.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

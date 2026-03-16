@@ -91,6 +91,10 @@ const CountertopProtectionFilmArizona = lazy(() => import("@/pages/informational
 const WindowTintingTolleson = lazy(() => import("@/pages/locations/WindowTintingTolleson"));
 const WindowTintingFountainHills = lazy(() => import("@/pages/locations/WindowTintingFountainHills"));
 const WindowTintingAvondale = lazy(() => import("@/pages/locations/WindowTintingAvondale"));
+const ResidentialWindowTintingMesa = lazy(() => import("@/pages/locations/ResidentialWindowTintingMesa"));
+const ResidentialWindowTintingChandler = lazy(() => import("@/pages/locations/ResidentialWindowTintingChandler"));
+const ResidentialWindowTintingGilbert = lazy(() => import("@/pages/locations/ResidentialWindowTintingGilbert"));
+const ResidentialWindowTintingTempe = lazy(() => import("@/pages/locations/ResidentialWindowTintingTempe"));
 const CommercialWindowTintingMesa = lazy(() => import("@/pages/locations/CommercialWindowTintingMesa"));
 const CommercialWindowTintingChandler = lazy(() => import("@/pages/locations/CommercialWindowTintingChandler"));
 const CommercialWindowTintingTempe = lazy(() => import("@/pages/locations/CommercialWindowTintingTempe"));
@@ -231,6 +235,10 @@ function AppRoutes() {
           <Route path="/commercial-window-tinting-chandler" element={<CommercialWindowTintingChandler />} />
           <Route path="/commercial-window-tinting-tempe" element={<CommercialWindowTintingTempe />} />
           <Route path="/commercial-window-tinting-gilbert" element={<CommercialWindowTintingGilbert />} />
+          <Route path="/residential-window-tinting-mesa" element={<ResidentialWindowTintingMesa />} />
+          <Route path="/residential-window-tinting-chandler" element={<ResidentialWindowTintingChandler />} />
+          <Route path="/residential-window-tinting-gilbert" element={<ResidentialWindowTintingGilbert />} />
+          <Route path="/residential-window-tinting-tempe" element={<ResidentialWindowTintingTempe />} />
 
           {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />

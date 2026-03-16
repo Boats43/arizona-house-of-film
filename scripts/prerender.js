@@ -148,6 +148,8 @@ const ROUTES = [
   '/countertop-protection-film-arizona',
   '/commercial-window-tinting-mesa', '/commercial-window-tinting-chandler',
   '/commercial-window-tinting-tempe', '/commercial-window-tinting-gilbert',
+  '/residential-window-tinting-mesa', '/residential-window-tinting-chandler',
+  '/residential-window-tinting-gilbert', '/residential-window-tinting-tempe',
 ]
 
 const PATTERN_MAP = [
@@ -205,6 +207,10 @@ const PATTERN_MAP = [
   ['/commercial-window-tinting-chandler',  '/src/pages/locations/CommercialWindowTintingChandler.jsx'],
   ['/commercial-window-tinting-tempe',     '/src/pages/locations/CommercialWindowTintingTempe.jsx'],
   ['/commercial-window-tinting-gilbert',   '/src/pages/locations/CommercialWindowTintingGilbert.jsx'],
+  ['/residential-window-tinting-mesa',    '/src/pages/locations/ResidentialWindowTintingMesa.jsx'],
+  ['/residential-window-tinting-chandler','/src/pages/locations/ResidentialWindowTintingChandler.jsx'],
+  ['/residential-window-tinting-gilbert', '/src/pages/locations/ResidentialWindowTintingGilbert.jsx'],
+  ['/residential-window-tinting-tempe',   '/src/pages/locations/ResidentialWindowTintingTempe.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

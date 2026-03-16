@@ -150,6 +150,8 @@ const ROUTES = [
   '/commercial-window-tinting-tempe', '/commercial-window-tinting-gilbert',
   '/residential-window-tinting-mesa', '/residential-window-tinting-chandler',
   '/residential-window-tinting-gilbert', '/residential-window-tinting-tempe',
+  '/security-window-film-scottsdale', '/decorative-window-film-scottsdale',
+  '/solar-window-film-scottsdale',
 ]
 
 const PATTERN_MAP = [
@@ -211,6 +213,9 @@ const PATTERN_MAP = [
   ['/residential-window-tinting-chandler','/src/pages/locations/ResidentialWindowTintingChandler.jsx'],
   ['/residential-window-tinting-gilbert', '/src/pages/locations/ResidentialWindowTintingGilbert.jsx'],
   ['/residential-window-tinting-tempe',   '/src/pages/locations/ResidentialWindowTintingTempe.jsx'],
+  ['/security-window-film-scottsdale',   '/src/pages/locations/SecurityWindowFilmScottsdale.jsx'],
+  ['/decorative-window-film-scottsdale', '/src/pages/locations/DecorativeWindowFilmScottsdale.jsx'],
+  ['/solar-window-film-scottsdale',      '/src/pages/locations/SolarWindowFilmScottsdale.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

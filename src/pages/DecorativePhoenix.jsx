@@ -64,7 +64,7 @@ const DecorativePhoenix = () => {
         name: 'Do you install 3M Fasara film in Phoenix?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. We are an authorized installer of 3M Fasara decorative glass film — one of the most extensive decorative film lines available. 3M Fasara includes frosted, patterned, textured, and translucent designs. We have installed 3M Fasara at Chipotle, Starbucks, and numerous commercial and residential projects across Phoenix.',
+          text: 'Yes. We install 3M Fasara decorative glass film — one of the most extensive decorative film lines available. 3M Fasara includes frosted, patterned, textured, and translucent designs. We have installed 3M Fasara at Chipotle, Starbucks, and numerous commercial and residential projects across Phoenix.',
         },
       },
       {

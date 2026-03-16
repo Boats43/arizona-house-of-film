@@ -70,7 +70,7 @@ const faqSchema = {
       name: 'What security window film brands do you install in Phoenix?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We install 3M Safety Series (S40, S70, S140, S600), Eastman LLumar Safety Series, Vista Safety Film, and Madico Safety Series on Phoenix properties. For forced entry deterrence we typically specify 3M Safety S140 or S600 with attachment system. For blast mitigation on Phoenix government and commercial buildings we specify 3M S600 or LLumar ArmorCoat. All films are installed by ROC #314088 licensed technicians.',
+        text: 'We install 3M Safety Series (S40, S70, S140, S600), Eastman LLumar Safety Series, Vista Safety Film, and Madico Safety Series on Phoenix properties. For forced entry deterrence industry-standard specifications include 3M Safety S140 or S600 with attachment system. For blast mitigation on Phoenix government and commercial buildings top specifications include 3M S600 and LLumar ArmorCoat series. All films are installed by ROC #314088 licensed technicians.',
       },
     },
     {

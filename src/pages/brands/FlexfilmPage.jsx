@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const FlexfilmPage = () => {
-  const pageTitle = "Flexfilm Window Films | Authorized Installers in Arizona";
+  const pageTitle = "Flexfilm Window Films | Arizona Installation | Arizona House of Film";
   const metaDescription = "Arizona House of Film installs Flexfilm window films. Ceramic and carbon technology for residential and commercial applications in Arizona.";
   const canonicalUrl = "https://arizonahouseoffilm.com/brands/flexfilm";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";

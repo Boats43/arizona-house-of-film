@@ -165,7 +165,7 @@ const Welcome = () => {
                   </p>
                   <p>
                     We hold Arizona Registrar of Contractors license ROC #314088, are fully bonded and insured,
-                    and are authorized installers for 3M, XPEL, Madico, Solar Gard, and Eastman window film products.
+                    and are installers of leading window film brands including Madico, Solar Gard, Eastman, 3M, and XPEL series — sourced and specified per project requirements.
                   </p>
                 </div>
               </div>

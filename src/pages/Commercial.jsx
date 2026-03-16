@@ -401,7 +401,7 @@ const Commercial = () => {
         <section className="py-12 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
-              Arizona House of Film is Phoenix's licensed commercial window film installer for offices, retail centers, medical facilities, schools, HOAs, and industrial properties. We've completed commercial installations across Maricopa and Pima Counties — from single-suite offices to multi-story buildings. Licensed ROC #314088. Authorized installer for 3M, XPEL, Madico, and Solar Gard commercial films.
+              Arizona House of Film is Phoenix's licensed commercial window film installer for offices, retail centers, medical facilities, schools, HOAs, and industrial properties. We've completed commercial installations across Maricopa and Pima Counties — from single-suite offices to multi-story buildings. Licensed ROC #314088. We source and install leading commercial window film brands including Madico, Solar Gard, LLumar, and 3M series — specified per project requirements.
             </p>
           </div>
         </section>

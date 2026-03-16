@@ -61,7 +61,7 @@ export default function SolarWindowFilmScottsdale() {
         name: 'What is the best solar window film for Scottsdale homes?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "For Scottsdale homes we specify nano-ceramic film — 3M Prestige 70, Huper Optik Ceramic 40, or LLumar CTX depending on glass orientation and HOA requirements. All reject up to 84% solar heat, block 99.9% UV, maintain natural light, and carry HOA-safe exterior appearance. For Paradise Valley and North Scottsdale luxury properties, Huper Optik is our primary specification.",
+          text: "For Scottsdale homes leading nano-ceramic specifications for Scottsdale include 3M Prestige 70, Huper Optik Ceramic 40, and LLumar CTX depending on glass orientation and HOA requirements. All reject up to 84% solar heat, block 99.9% UV, maintain natural light, and carry HOA-safe exterior appearance. For Paradise Valley and North Scottsdale luxury properties, Huper Optik is our primary specification.",
         },
       },
     ],
@@ -140,7 +140,7 @@ export default function SolarWindowFilmScottsdale() {
               <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
             </div>
             <p className="text-slate-700 text-base leading-relaxed font-medium max-w-4xl mx-auto mb-8">
-              Scottsdale homes face some of the highest solar heat loads in North America — particularly on south and west-facing glass. Nano-ceramic film rejects up to 84% of infrared heat without darkening glass or interfering with GPS, cell, or WiFi signals. For North Scottsdale and Paradise Valley luxury homes, we specify Huper Optik Ceramic and 3M Prestige series — both provide maximum heat rejection with near-invisible exterior appearance critical for HOA compliance and view preservation.
+              Scottsdale homes face some of the highest solar heat loads in North America — particularly on south and west-facing glass. Nano-ceramic film rejects up to 84% of infrared heat without darkening glass or interfering with GPS, cell, or WiFi signals. For North Scottsdale and Paradise Valley luxury homes, top specifications for North Scottsdale and Paradise Valley luxury properties include Huper Optik Ceramic and 3M Prestige series — both provide maximum heat rejection with near-invisible exterior appearance critical for HOA compliance and view preservation.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="bg-slate-50 border-l-4 border-green-500 p-8">

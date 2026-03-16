@@ -46,7 +46,7 @@ export default function CommercialWindowTintingChandler() {
         name: 'What window film is recommended for Chandler Class A office buildings?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'For Class A office buildings in Chandler we specify LLumar commercial spectrally selective or Solar Gard Panorama series — both deliver aggressive SHGC reduction with high VLT, maintaining natural light for open-plan offices while qualifying for SRP Business Solutions rebates.',
+          text: 'For Class A office buildings in Chandler leading commercial specifications include LLumar spectrally selective and Solar Gard Panorama series — both deliver aggressive SHGC reduction with high VLT, maintaining natural light for open-plan offices while qualifying for SRP Business Solutions rebates.',
         },
       },
     ],

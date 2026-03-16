@@ -294,7 +294,7 @@ const Home = () => {
 
           {/* Brand signals */}
           <div className="mb-8">
-            <p className="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Authorized Installer</p>
+            <p className="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Films We Install</p>
             <div className="flex flex-wrap justify-center gap-3">
               {['Solyx', 'LLumar', '3M', 'Huper Optik', 'Madico', 'SolarGard', 'Vista', 'Llumar CTX'].map((brand) => (
                 <span key={brand} className="bg-white/10 border border-white/10 text-gray-200 text-sm font-semibold px-4 py-1.5 rounded-full">{brand}</span>

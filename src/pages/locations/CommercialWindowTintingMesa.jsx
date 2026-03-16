@@ -46,7 +46,7 @@ export default function CommercialWindowTintingMesa() {
         name: 'What commercial window film do you recommend for Mesa office buildings?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'For Mesa office buildings we specify LLumar commercial spectrally selective series or Solar Gard Quantum nano-ceramic depending on glass orientation and SHGC requirements. Both carry full NFRC certification for COMcheck compliance and SRP rebate applications.',
+          text: 'For Mesa office buildings leading commercial specifications include LLumar spectrally selective series and Solar Gard Quantum nano-ceramic nano-ceramic depending on glass orientation and SHGC requirements. Both carry full NFRC certification for COMcheck compliance and SRP rebate applications.',
         },
       },
     ],

@@ -91,6 +91,10 @@ const CountertopProtectionFilmArizona = lazy(() => import("@/pages/informational
 const WindowTintingTolleson = lazy(() => import("@/pages/locations/WindowTintingTolleson"));
 const WindowTintingFountainHills = lazy(() => import("@/pages/locations/WindowTintingFountainHills"));
 const WindowTintingAvondale = lazy(() => import("@/pages/locations/WindowTintingAvondale"));
+const CommercialWindowTintingMesa = lazy(() => import("@/pages/locations/CommercialWindowTintingMesa"));
+const CommercialWindowTintingChandler = lazy(() => import("@/pages/locations/CommercialWindowTintingChandler"));
+const CommercialWindowTintingTempe = lazy(() => import("@/pages/locations/CommercialWindowTintingTempe"));
+const CommercialWindowTintingGilbert = lazy(() => import("@/pages/locations/CommercialWindowTintingGilbert"));
 const HighRiseCommercialWindowTintingPhoenix = lazy(() => import("@/pages/informational/HighRiseCommercialWindowTintingPhoenix"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
@@ -223,6 +227,10 @@ function AppRoutes() {
           <Route path="/window-tinting-tolleson" element={<WindowTintingTolleson />} />
           <Route path="/window-tinting-fountain-hills" element={<WindowTintingFountainHills />} />
           <Route path="/window-tinting-avondale" element={<WindowTintingAvondale />} />
+          <Route path="/commercial-window-tinting-mesa" element={<CommercialWindowTintingMesa />} />
+          <Route path="/commercial-window-tinting-chandler" element={<CommercialWindowTintingChandler />} />
+          <Route path="/commercial-window-tinting-tempe" element={<CommercialWindowTintingTempe />} />
+          <Route path="/commercial-window-tinting-gilbert" element={<CommercialWindowTintingGilbert />} />
 
           {/* SERVICE AREAS */}
           <Route path="/service-areas" element={<ServiceAreas />} />

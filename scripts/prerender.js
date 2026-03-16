@@ -156,6 +156,8 @@ const ROUTES = [
   '/commercial-window-tinting-queen-creek',
   '/residential-window-tinting-peoria', '/residential-window-tinting-glendale',
   '/residential-window-tinting-queen-creek',
+  '/reduce-heat-phoenix-windows', '/uv-protection-window-film-phoenix',
+  '/privacy-window-film-phoenix-homes', '/glare-reduction-window-film-phoenix',
 ]
 
 const PATTERN_MAP = [
@@ -226,6 +228,10 @@ const PATTERN_MAP = [
   ['/residential-window-tinting-peoria',      '/src/pages/locations/ResidentialWindowTintingPeoria.jsx'],
   ['/residential-window-tinting-glendale',    '/src/pages/locations/ResidentialWindowTintingGlendale.jsx'],
   ['/residential-window-tinting-queen-creek', '/src/pages/locations/ResidentialWindowTintingQueenCreek.jsx'],
+  ['/reduce-heat-phoenix-windows',           '/src/pages/informational/ReduceHeatPhoenixWindows.jsx'],
+  ['/uv-protection-window-film-phoenix',     '/src/pages/informational/UVProtectionWindowFilmPhoenix.jsx'],
+  ['/privacy-window-film-phoenix-homes',     '/src/pages/informational/PrivacyWindowFilmPhoenixHomes.jsx'],
+  ['/glare-reduction-window-film-phoenix',   '/src/pages/informational/GlareReductionWindowFilmPhoenix.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

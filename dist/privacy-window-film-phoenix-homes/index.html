@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CxYaWZa2.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Privacy Window Film Phoenix AZ | Home &amp; Office Solutions | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Privacy window film for Phoenix homes and offices. Frosted, one-way mirror, and decorative film options. Licensed ROC #314088. Free estimates — (480) 788-1591."/><meta data-rh="true" property="og:title" content="Privacy Window Film Phoenix AZ | Home &amp; Office Solutions | ROC #314088"/><meta data-rh="true" property="og:description" content="Privacy window film for Phoenix homes and offices. Frosted, one-way mirror, and decorative film options. Licensed ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/privacy-window-film-phoenix-homes"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Privacy Window Film Phoenix AZ | Home &amp; Office Solutions"/><meta data-rh="true" name="twitter:description" content="Privacy window film for Phoenix homes and offices. Frosted, one-way mirror, and decorative film options."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/privacy-window-film-phoenix-homes"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best privacy window film for Phoenix homes?","acceptedAnswer":{"@type":"Answer","text":"Depends on the application. For permanent privacy (bathrooms, entryways, sidelights), frosted or etched film is the correct specification — it provides privacy in all light conditions. For daytime privacy with outward visibility (living rooms, offices), one-way mirror film works well. We assess your specific application during the free estimate."}},{"@type":"Question","name":"Does privacy window film let light through?","acceptedAnswer":{"@type":"Answer","text":"Yes. Frosted and etched privacy films diffuse natural light rather than blocking it — rooms stay bright while maintaining complete visual privacy. One-way mirror film maintains high visible light transmission while providing daytime privacy. Blackout film is available for applications requiring complete light control."}},{"@type":"Question","name":"How much does privacy window film cost in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Privacy window film runs $10–$20 per square foot installed depending on film type and complexity. Bathroom window installations typically run $200–$600. Entryway sidelight panels run $150–$400. Office partition privacy film runs $800–$3,000+ depending on glass area. Free on-site estimates — call (480) 788-1591."}},{"@type":"Question","name":"Can privacy film be removed from Phoenix rental properties?","acceptedAnswer":{"@type":"Answer","text":"Yes. All window film installations are fully reversible — no adhesive residue and no glass damage on removal. This makes privacy film suitable for rental properties, leased commercial spaces, and any application where the film may need to be removed in the future."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Window Film Solutions","item":{"@id":"https://arizonahouseoffilm.com/solutions","name":"Window Film Solutions"}},{"@type":"ListItem","position":3,"name":"Privacy Window Film Phoenix","item":{"@id":"https://arizonahouseoffilm.com/privacy-window-film-phoenix-homes","name":"Privacy Window Film Phoenix"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">Privacy Window Film for Phoenix Homes and Offices</h1><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Privacy Window Film Options for Phoenix Homes</h2><p class="text-lg text-slate-700 mb-4">Arizona House of Film installs four primary privacy film categories for Phoenix homes and offices: frosted/etched film for permanent visual privacy, one-way mirror film for daytime privacy with outward visibility, decorative patterned film for aesthetic privacy, and blackout film for complete light and privacy control.</p><p class="text-lg text-slate-700">Each category serves different needs — we assess your specific application and recommend the right film type during your free estimate.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Frosted and Etched Privacy Film</h2><p class="text-lg text-slate-700 mb-4">Frosted and etched privacy film provides permanent visual privacy in all light conditions — day and night, lights on or off. Light passes through while preventing anyone from seeing details through the glass. Available in 100+ patterns from matte frosted to decorative etched designs.</p><p class="text-lg text-slate-700">Best for: bathrooms, sidelights, front-door glass, conference rooms, medical patient areas, and any application requiring permanent privacy regardless of lighting conditions.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">One-Way Mirror Window Film</h2><p class="text-lg text-slate-700 mb-4">One-way mirror film provides daytime privacy — you can see out, but people outside cannot see in. Important caveat: one-way mirror film requires the exterior to be brighter than the interior to work. During daytime with lights off inside, the film provides strong privacy. At night with interior lights on, the effect reverses.</p><p class="text-lg text-slate-700">For permanent privacy regardless of light conditions, frosted film is the correct specification.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Bathroom Privacy Film Phoenix</h2><p class="text-lg text-slate-700 mb-4">Bathroom window privacy film is one of our most common residential installations in Phoenix. Frosted and etched film installs directly on the glass — no blinds or coverings needed. Light passes through while maintaining complete visual privacy. Removable without glass damage.</p><p class="text-lg text-slate-700">Available in 100+ patterns from matte frosted to decorative etched designs. Most bathroom installations run $200–$600.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Office and Commercial Privacy Film Phoenix</h2><p class="text-lg text-slate-700 mb-4">Privacy film for Phoenix offices includes frosted partitions, conference room privacy, HIPAA-compliant medical zones, and branded decorative film. We also install Casper Cloaking film — switchable-privacy technology that turns screens opaque to outside viewers while keeping in-room visibility clear.</p><p class="text-lg text-slate-700">Commercial privacy film installations start around $800 and run $3,000+ for larger glass areas. Licensed commercial contractor ROC #314088.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Cost of Privacy Window Film in Phoenix</h2><div class="overflow-x-auto"><table class="w-full border-collapse border border-slate-300 text-left"><thead><tr class="bg-slate-100"><th class="border border-slate-300 px-4 py-3 font-black uppercase text-sm">Application</th><th class="border border-slate-300 px-4 py-3 font-black uppercase text-sm">Typical Cost</th></tr></thead><tbody class="text-slate-700"><tr><td class="border border-slate-300 px-4 py-3">Bathroom windows</td><td class="border border-slate-300 px-4 py-3">$200–$600</td></tr><tr><td class="border border-slate-300 px-4 py-3">Entryway sidelights</td><td class="border border-slate-300 px-4 py-3">$150–$400</td></tr><tr><td class="border border-slate-300 px-4 py-3">Front door glass</td><td class="border border-slate-300 px-4 py-3">$150–$350</td></tr><tr><td class="border border-slate-300 px-4 py-3">Office partitions</td><td class="border border-slate-300 px-4 py-3">$800–$3,000+</td></tr><tr><td class="border border-slate-300 px-4 py-3">One-way mirror (per sq ft)</td><td class="border border-slate-300 px-4 py-3">$10–$20</td></tr></tbody></table></div></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Frequently Asked Questions</h2><div class="space-y-8"><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">What is the best privacy window film for Phoenix homes?</h3><p class="text-slate-600 leading-relaxed">Depends on the application. For permanent privacy (bathrooms, entryways, sidelights), frosted or etched film is the correct specification — it provides privacy in all light conditions. For daytime privacy with outward visibility (living rooms, offices), one-way mirror film works well. We assess your specific application during the free estimate.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">Does privacy window film let light through?</h3><p class="text-slate-600 leading-relaxed">Yes. Frosted and etched privacy films diffuse natural light rather than blocking it — rooms stay bright while maintaining complete visual privacy. One-way mirror film maintains high visible light transmission while providing daytime privacy. Blackout film is available for applications requiring complete light control.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">How much does privacy window film cost in Phoenix?</h3><p class="text-slate-600 leading-relaxed">Privacy window film runs $10–$20 per square foot installed depending on film type and complexity. Bathroom window installations typically run $200–$600. Entryway sidelight panels run $150–$400. Office partition privacy film runs $800–$3,000+ depending on glass area. Free on-site estimates — call (480) 788-1591.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">Can privacy film be removed from Phoenix rental properties?</h3><p class="text-slate-600 leading-relaxed">Yes. All window film installations are fully reversible — no adhesive residue and no glass damage on removal. This makes privacy film suitable for rental properties, leased commercial spaces, and any application where the film may need to be removed in the future.</p></div></div></section><section class="mb-12 bg-slate-950 text-white p-8 md:p-12 rounded-none"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Get Privacy Film Installed</h2><p class="text-slate-300 text-lg mb-6">We assess your privacy needs and recommend the right film type for your application. Free on-site estimates for residential and commercial. Licensed ROC #314088.</p><div class="flex flex-wrap gap-4"><a class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-black transition-all" href="/contact">Get Free Estimate</a><a href="tel:480-788-1591" class="inline-block border-2 border-white text-white px-8 py-4 text-lg font-black hover:bg-white hover:text-slate-950 transition-all">(480) 788-1591</a></div></section><p class="text-center text-slate-500 text-sm">Also see:<!-- --> <a class="text-green-600 hover:underline" href="/bathroom-privacy-window-film">Bathroom Privacy Film</a> · <a class="text-green-600 hover:underline" href="/office-privacy-window-film">Office Privacy Film</a> · <a class="text-green-600 hover:underline" href="/one-way-mirror-window-film">One-Way Mirror Film</a></p></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

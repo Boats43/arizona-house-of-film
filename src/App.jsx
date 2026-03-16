@@ -108,6 +108,10 @@ const CommercialWindowTintingQueenCreek = lazy(() => import("@/pages/locations/C
 const ResidentialWindowTintingPeoria = lazy(() => import("@/pages/locations/ResidentialWindowTintingPeoria"));
 const ResidentialWindowTintingGlendale = lazy(() => import("@/pages/locations/ResidentialWindowTintingGlendale"));
 const ResidentialWindowTintingQueenCreek = lazy(() => import("@/pages/locations/ResidentialWindowTintingQueenCreek"));
+const ReduceHeatPhoenixWindows = lazy(() => import("@/pages/informational/ReduceHeatPhoenixWindows"));
+const UVProtectionWindowFilmPhoenix = lazy(() => import("@/pages/informational/UVProtectionWindowFilmPhoenix"));
+const PrivacyWindowFilmPhoenixHomes = lazy(() => import("@/pages/informational/PrivacyWindowFilmPhoenixHomes"));
+const GlareReductionWindowFilmPhoenix = lazy(() => import("@/pages/informational/GlareReductionWindowFilmPhoenix"));
 const HighRiseCommercialWindowTintingPhoenix = lazy(() => import("@/pages/informational/HighRiseCommercialWindowTintingPhoenix"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
@@ -294,6 +298,10 @@ function AppRoutes() {
           <Route path="/how-long-does-window-film-last" element={<HowLongDoesWindowFilmLast />} />
           <Route path="/ceramic-vs-dual-reflective-film" element={<CeramicVsDualReflectiveFilm />} />
           <Route path="/countertop-protection-film-arizona" element={<CountertopProtectionFilmArizona />} />
+          <Route path="/reduce-heat-phoenix-windows" element={<ReduceHeatPhoenixWindows />} />
+          <Route path="/uv-protection-window-film-phoenix" element={<UVProtectionWindowFilmPhoenix />} />
+          <Route path="/privacy-window-film-phoenix-homes" element={<PrivacyWindowFilmPhoenixHomes />} />
+          <Route path="/glare-reduction-window-film-phoenix" element={<GlareReductionWindowFilmPhoenix />} />
           <Route path="/high-rise-commercial-window-tinting-phoenix" element={<HighRiseCommercialWindowTintingPhoenix />} />
 
           {/* MISC */}

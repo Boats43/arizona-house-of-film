@@ -206,9 +206,6 @@ const Residential = () => {
                 <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 h-14 text-lg">
                   <Link to="/contact">Get A Free Quote</Link>
                 </Button>
-                <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-14 rounded-md border-2 border-white/30 text-white font-bold hover:bg-white hover:text-slate-900 transition-all">
-                  <Phone className="w-5 h-5" /> 480-788-1591
-                </a>
               </div>
             </motion.div>
           </div>
@@ -318,7 +315,7 @@ const Residential = () => {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase">The Residential Stack</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We only use industry-leading <Link to="/brands" className="text-green-400 hover:underline">brands</Link> like 3M and Madico, engineered for extreme heat.
+              We install industry-leading <Link to="/brands" className="text-green-400 hover:underline">brands</Link> including 3M, Madico, LLumar, Huper Optik, and Solyx — engineered for extreme heat.
             </p>
           </div>
           <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">

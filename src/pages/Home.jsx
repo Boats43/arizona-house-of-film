@@ -138,9 +138,6 @@ const Home = () => {
                 <Button size="lg" asChild className="bg-blue-600 text-white font-black h-16 px-10 rounded-none">
                   <Link to="/contact">Schedule Free Glass Assessment</Link>
                 </Button>
-                <Button size="lg" asChild variant="outline" className="bg-white text-black border-white hover:bg-gray-100 font-black h-16 px-10 rounded-none">
-                  <a href="tel:4807881591" className="hover:underline">(480) 788-1591</a>
-                </Button>
               </div>
             </motion.div>
           </div>
@@ -310,23 +307,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* FAQ */}
-          <div className="border-t border-white/10 pt-10">
-            <h3 className="text-lg font-bold text-white mb-6 text-center">Common Questions</h3>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[
-                { q: 'How much does home window tinting cost in Phoenix?', a: 'Residential window tinting in Phoenix typically runs $8–$18 per square foot installed depending on film type and window count. Most homes average $800–$2,500 total. We provide free on-site estimates — call (480) 788-1591.' },
-                { q: 'Is window tinting safe for dual-pane windows?', a: 'Yes — we use Arizona-engineered ceramic and spectrally selective films designed for high thermal load. We assess your glass type before recommending a film to ensure no risk of thermal stress cracking.' },
-                { q: 'What is the difference between ceramic and regular window film?', a: 'Ceramic films block heat through infrared rejection rather than darkness, maintaining natural light while rejecting up to 84% of solar heat. Standard dyed films fade over time and work primarily through light reduction. We recommend ceramic for Arizona conditions.' },
-                { q: 'Do you offer SRP or APS energy rebates?', a: 'Yes. We provide NFRC-rated technical data sheets required for SRP Business Solutions and APS energy efficiency rebate applications. We identify qualifying films and assist with paperwork during your free estimate.' },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5">
-                  <h4 className="font-bold text-white text-sm mb-2">{faq.q}</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
         </div>
       </section>
@@ -401,7 +381,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Shield, title: "Military & Government Grade", body: "Trusted for high-security federal and educational installations. Documented work for U.S. Navy Recruitment Centers and State of Arizona facilities. We understand compliance, clearance, and documentation requirements." },
-              { icon: Zap, title: "Utility Rebate Authorized", body: "SRP Business Solutions and APS Peak Player rebate-ready installations. We provide NFRC-rated data sheets and handle the rebate application process for qualifying residential and commercial projects." },
+              { icon: Zap, title: "Utility Rebate Authorized", body: "SRP Business Solutions and APS Peak Player rebate-ready installations. We provide NFRC-rated data sheets required for SRP and APS rebate applications. Customers submit directly to their utility provider." },
               { icon: CheckSquare, title: "Architectural Compliance", body: "LEED credit documentation, SHGC-compliant film specifications, and COMcheck support for general contractors and architects. Frequent subcontractor for Wespac, Willmeng, and FCI Constructors." },
               { icon: Lock, title: "Advanced Security Systems", body: "C-Bond certified glass strengthening and wet-glaze anchoring specialists. Industrial-grade security for schools, dispensaries, government facilities, and high-value retail." },
             ].map((card, i) => (
@@ -428,6 +408,8 @@ const Home = () => {
               { q: "How much does window tinting cost in Phoenix?", a: "Residential projects typically range from $600 to $2,500 depending on film type and window count. Commercial projects are quoted by square footage — ROI typically covers installation cost within 2-4 years through energy savings alone." },
               { q: "Is ceramic film worth it in Arizona?", a: "Yes — more than anywhere else in the country. In a 115°F climate, ceramic film is the only technology that blocks up to 84% of infrared heat without interfering with GPS signals or darkening glass. The payback period in Phoenix is 2-4 years versus 8-12 years in northern climates." },
               { q: "Do you help with SRP or APS rebates?", a: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We identify qualifying films and assist with the paperwork during your free estimate." },
+              { q: "Is window tinting safe for dual-pane windows?", a: "Yes — we use Arizona-engineered ceramic and spectrally selective films designed for high thermal load. We assess your glass type before recommending a film to ensure no risk of thermal stress cracking." },
+              { q: "What is the difference between ceramic and regular window film?", a: "Ceramic films block heat through infrared rejection rather than darkness, maintaining natural light while rejecting up to 84% of solar heat. Standard dyed films fade over time and work primarily through light reduction. We recommend ceramic for Arizona conditions." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-gray-200 pb-8">
                 <h3 className="font-black text-gray-900 uppercase text-sm mb-3">{faq.q}</h3>

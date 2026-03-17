@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import BreadcrumbSchema from "../../components/SEO/BreadcrumbSchema";
 import { Link } from "react-router-dom";
@@ -119,6 +119,13 @@ export default function WindowFilmCostEstimator() {
   const [selectedSize, setSelectedSize] = useState(WINDOW_SIZES[2]);
   const [selectedFilms, setSelectedFilms] = useState([]);
   const [propertyType, setPropertyType] = useState("residential");
+  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 640 : false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const totalSqFt = windowCount * selectedSize.sqFt;
 
@@ -245,14 +252,14 @@ export default function WindowFilmCostEstimator() {
           background: "#0a0a0f",
           minHeight: "100vh",
           color: "#f0ede8",
-          padding: "0",
+          padding: isMobile ? "0 0 80px 0" : "0",
         }}
       >
         {/* Header */}
         <div
           style={{
             borderBottom: "1px solid #2a2a35",
-            padding: "20px 32px",
+            padding: isMobile ? "16px 16px" : "20px 32px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -274,12 +281,12 @@ export default function WindowFilmCostEstimator() {
               Window Film Cost Estimator
             </div>
           </div>
-          <div style={{ fontSize: "11px", color: "#555", letterSpacing: "2px" }}>
+          <div style={{ fontSize: "11px", color: "#555", letterSpacing: "2px", display: isMobile ? "none" : "block" }}>
             ROC #314088 · (480) 788-1591
           </div>
         </div>
 
-        <div style={{ maxWidth: "760px", margin: "0 auto", padding: "40px 32px" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto", padding: isMobile ? "24px 16px" : "40px 32px" }}>
           {/* Progress */}
           <div style={{ display: "flex", gap: "8px", marginBottom: "48px" }}>
             {[1, 2, 3, 4].map((s) => (
@@ -310,7 +317,7 @@ export default function WindowFilmCostEstimator() {
               >
                 Step 1 of 4
               </div>
-              <h2 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "8px", lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: isMobile ? "24px" : "32px", fontWeight: "bold", marginBottom: "8px", lineHeight: 1.1 }}>
                 What type of property?
               </h2>
               <p style={{ color: "#888", marginBottom: "36px", fontSize: "15px" }}>
@@ -319,7 +326,7 @@ export default function WindowFilmCostEstimator() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr 1fr",
+                  gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr",
                   gap: "12px",
                   marginBottom: "40px",
                 }}
@@ -374,7 +381,7 @@ export default function WindowFilmCostEstimator() {
               >
                 Step 2 of 4
               </div>
-              <h2 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "8px", lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: isMobile ? "24px" : "32px", fontWeight: "bold", marginBottom: "8px", lineHeight: 1.1 }}>
                 How many windows?
               </h2>
               <p style={{ color: "#888", marginBottom: "36px", fontSize: "15px" }}>
@@ -414,7 +421,7 @@ export default function WindowFilmCostEstimator() {
                 <div style={{ fontSize: "14px", color: "#aaa", marginBottom: "12px" }}>
                   Typical window size (use your largest)
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "8px" }}>
                   {WINDOW_SIZES.map((size) => (
                     <button
                       key={size.id}
@@ -454,7 +461,7 @@ export default function WindowFilmCostEstimator() {
                 <span style={{ fontSize: "22px", fontWeight: "bold" }}>{totalSqFt} sq ft</span>
               </div>
 
-              <div style={{ display: "flex", gap: "12px" }}>
+              <div style={{ display: "flex", gap: "12px", flexDirection: isMobile ? "column" : "row" }}>
                 <button onClick={() => setStep(1)} style={btnStyle("#1e1e2a", "#888")}>
                   ← Back
                 </button>
@@ -479,7 +486,7 @@ export default function WindowFilmCostEstimator() {
               >
                 Step 3 of 4
               </div>
-              <h2 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "8px", lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: isMobile ? "24px" : "32px", fontWeight: "bold", marginBottom: "8px", lineHeight: 1.1 }}>
                 What's your primary goal?
               </h2>
               <p style={{ color: "#888", marginBottom: "36px", fontSize: "15px" }}>
@@ -558,7 +565,7 @@ export default function WindowFilmCostEstimator() {
                   {selectedFilms.length} film{selectedFilms.length > 1 ? " types" : " type"} selected
                 </div>
               )}
-              <div style={{ display: "flex", gap: "12px" }}>
+              <div style={{ display: "flex", gap: "12px", flexDirection: isMobile ? "column" : "row" }}>
                 <button onClick={() => setStep(2)} style={btnStyle("#1e1e2a", "#888")}>
                   ← Back
                 </button>
@@ -590,7 +597,7 @@ export default function WindowFilmCostEstimator() {
               >
                 Your Estimate
               </div>
-              <h2 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "32px", lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: isMobile ? "24px" : "32px", fontWeight: "bold", marginBottom: "32px", lineHeight: 1.1 }}>
                 Here's what to expect
               </h2>
 
@@ -638,7 +645,7 @@ export default function WindowFilmCostEstimator() {
                 <div style={{ fontSize: "13px", color: "#888", marginBottom: "8px", letterSpacing: "1px" }}>
                   {filmEstimates.length > 1 ? "COMBINED ESTIMATED COST" : "ESTIMATED INSTALLATION COST"}
                 </div>
-                <div style={{ fontSize: "52px", fontWeight: "bold", color: "#6b8f71", lineHeight: 1 }}>
+                <div style={{ fontSize: isMobile ? "38px" : "52px", fontWeight: "bold", color: "#6b8f71", lineHeight: 1 }}>
                   ${combinedEstimate.low.toLocaleString()}–${combinedEstimate.high.toLocaleString()}
                 </div>
                 <div style={{ fontSize: "13px", color: "#666", marginTop: "8px" }}>
@@ -651,7 +658,7 @@ export default function WindowFilmCostEstimator() {
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr 1fr",
+                    gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr",
                     gap: "10px",
                     marginBottom: "20px",
                   }}

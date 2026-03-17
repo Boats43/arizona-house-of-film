@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Send, Upload, Loader2, AlertCircle } from 'lucide-react';
+import { Send, Loader2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -141,23 +141,6 @@ const ContactForm = () => {
           placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."
           disabled={isSubmitting}
         />
-      </div>
-
-      {/* Industrial File Upload */}
-      <div className="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer">
-        <input
-          type="file"
-          name="attachment"
-          multiple
-          accept="image/*,.pdf"
-          className="absolute inset-0 opacity-0 cursor-pointer z-10"
-          disabled={isSubmitting}
-        />
-        <div className="flex flex-col items-center justify-center text-center">
-          <Upload className="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors" />
-          <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p>
-          <p className="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p>
-        </div>
       </div>
 
       <button

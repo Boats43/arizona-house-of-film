@@ -60,7 +60,7 @@ const CasperCloakingPage = () => {
         <section className="mb-12">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">What Is Casper Cloaking Film?</h2>
           <p className="text-lg text-slate-700 mb-4">Casper cloaking film is a specialty optical privacy film designed for glass-walled offices with LED screens. It uses micro-louver technology to block screen content from outside view while leaving the glass visually transparent and screens fully visible from inside. People outside see only clear glass. People inside see screens normally with zero impact on brightness or color.</p>
-          <p className="text-lg text-slate-700">Arizona House of Film is an authorized Casper cloaking film installer serving Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088.</p>
+          <p className="text-lg text-slate-700">Arizona House of Film installs Casper cloaking film serving Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088.</p>
         </section>
 
         <section className="mb-12">

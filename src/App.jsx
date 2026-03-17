@@ -366,8 +366,14 @@ function App() {
       <ScrollToTop />
 
       <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <div className="flex-1 w-full">
+        <div className="flex-1 w-full" id="main-content">
           <AppRoutes />
         </div>
         <Footer />

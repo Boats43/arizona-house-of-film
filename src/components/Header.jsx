@@ -167,6 +167,7 @@ const Header = () => {
             <nav
               className="hidden lg:flex items-center space-x-8"
               role="navigation"
+              aria-label="Primary navigation"
             >
               {/* Commercial Dropdown */}
               <div
@@ -331,9 +332,11 @@ const Header = () => {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
             <div>
               <img
-                src="/images/Arizona-House-of-Film.webp"
-                alt="Arizona House of Film"
+                src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/untitled-design-4-IrbHI.png"
+                alt="Arizona House of Film Logo"
                 className="h-8 w-auto"
+                width="80"
+                height="32"
               />
               <p className="text-xs text-gray-500 font-medium mt-1">
                 Phoenix Window Film Specialists — ROC #314088

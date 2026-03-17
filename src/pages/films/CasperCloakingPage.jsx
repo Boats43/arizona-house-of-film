@@ -26,7 +26,8 @@ const CasperCloakingPage = () => {
       { "@type": "Question", name: "How does Casper cloaking film work?", acceptedAnswer: { "@type": "Answer", text: "Casper film uses a micro-louver optical technology that controls the angle at which light passes through the film. Light traveling straight through — from a person inside looking at a screen — passes normally. Light reflecting off the screen at an angle — visible from outside the glass — is blocked. The result is that screens are invisible from outside while remaining fully visible from inside." } },
       { "@type": "Question", name: "Does Casper film affect screen brightness or color from inside?", acceptedAnswer: { "@type": "Answer", text: "No. Casper cloaking film has zero measurable impact on screen visibility, color accuracy, or brightness for people inside the office. It does not require any adjustment to screen brightness settings." } },
       { "@type": "Question", name: "What types of screens does Casper film work with?", acceptedAnswer: { "@type": "Answer", text: "Casper film works with LED and OLED screens — the standard in modern commercial environments. It is effective on monitors, presentation screens, video walls, and laptop displays. It is not designed for older fluorescent backlit LCD screens." } },
-      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is priced at a premium over standard privacy film — typically $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } }
+      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is priced at a premium over standard privacy film — typically $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } },
+      { "@type": "Question", name: "Do you install Quantum Cloaking Film in Phoenix and Scottsdale?", acceptedAnswer: { "@type": "Answer", text: "Yes. Arizona House of Film installs Quantum Cloaking Film® as an alternative cloaking film specification. Quantum Cloaking is used by Wells Fargo, Chase Bank, hospitals, police stations, and government buildings. Both Quantum Cloaking and Casper by Designtex achieve identical results — screens appear completely black from outside while remaining fully visible inside. Specification is determined per project. Call (480) 788-1591 for a free commercial estimate." } }
     ]
   };
 
@@ -98,6 +99,40 @@ const CasperCloakingPage = () => {
             <li>Cell by Designtex (PF008-801)</li>
             <li>Pixel by Designtex (PF009-801)</li>
           </ul>
+        </section>
+
+        <section style={{ background: '#0a1a12', border: '1px solid #2a4a2e', borderRadius: '8px', padding: '32px', margin: '40px 0' }}>
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4" style={{ color: '#6b8f71' }}>
+            Quantum Cloaking Film® — Alternative Specification
+          </h2>
+          <p className="text-gray-300 mb-4">
+            Arizona House of Film also installs Quantum Cloaking Film® — a patent-pending cloaking film specification with verified installations at Wells Fargo, Chase Bank, hospitals, police stations, and government buildings nationwide.
+          </p>
+          <p className="text-gray-300 mb-4">
+            Both Casper by Designtex and Quantum Cloaking Film® achieve the same result: LED and OLED screens appear completely black from outside the glass while maintaining a fully clear view from inside the room. Film specification is determined per project based on glass type, scope, and installation requirements.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '24px' }}>
+            <div style={{ background: '#12121a', padding: '16px', borderRadius: '6px' }}>
+              <div style={{ fontSize: '13px', color: '#6b8f71', fontWeight: 'bold', marginBottom: '8px' }}>QUANTUM CLOAKING ADVANTAGES</div>
+              <ul style={{ color: '#aaa', fontSize: '13px', lineHeight: '1.8', listStyle: 'disc', paddingLeft: '16px' }}>
+                <li>Same-day adjacent panel installation</li>
+                <li>Moisture-resistant patent-pending adhesive</li>
+                <li>No acclimatization period required</li>
+                <li>Stores loosely rolled without tunneling</li>
+                <li>Used by Wells Fargo, Chase Bank, government facilities</li>
+              </ul>
+            </div>
+            <div style={{ background: '#12121a', padding: '16px', borderRadius: '6px' }}>
+              <div style={{ fontSize: '13px', color: '#6b8f71', fontWeight: 'bold', marginBottom: '8px' }}>BOTH FILMS DELIVER</div>
+              <ul style={{ color: '#aaa', fontSize: '13px', lineHeight: '1.8', listStyle: 'disc', paddingLeft: '16px' }}>
+                <li>Screens invisible from outside the glass</li>
+                <li>Fully clear view from inside the room</li>
+                <li>Compatible with LED and OLED displays</li>
+                <li>Commercial and government grade</li>
+                <li>Custom-quoted per project scope</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section className="mb-12">

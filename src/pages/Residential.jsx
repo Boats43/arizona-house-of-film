@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Home, Sun, Shield, Thermometer, Eye, DollarSign, ArrowRight, Phone, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const Residential = () => {
   const pageTitle = "Residential Window Tinting Phoenix AZ | Ceramic Solar Films | Arizona House of Film";
@@ -575,6 +576,8 @@ const Residential = () => {
             </p>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* CTA */}
         <section className="py-24 bg-green-600 text-center">

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function WindowFilmForMedicalFacilitiesArizona() {
   const faqSchema = {
@@ -84,6 +85,8 @@ export default function WindowFilmForMedicalFacilitiesArizona() {
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Cost of Medical Facility Window Film in Arizona</h2>
           <p className="text-lg text-slate-700 mb-4">Medical facility window film is quoted by scope, glass area, and film specification. We work with facility managers, property management companies, and general contractors on budgeting and phased installations that minimize operational disruption. SRP and APS energy rebates can offset a significant portion of project costs. Contact us for a free assessment.</p>
         </section>
+
+        <EstimatorCTA />
 
         <section className="bg-slate-100 p-8 rounded-lg mb-16">
           <p className="text-lg text-slate-700 mb-4">Need HIPAA-compliant privacy film or solar control for your medical facility? We provide free on-site assessments for hospitals, clinics, and medical offices throughout Arizona.</p>

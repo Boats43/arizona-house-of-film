@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Building, Shield, Sun, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormSection from '@/components/contact/ContactFormSection';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function CommercialWindowTintingGilbert() {
   const rocNumber = '314088';
@@ -264,6 +265,8 @@ export default function CommercialWindowTintingGilbert() {
             </p>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* CTA */}
         <section className="py-20 bg-slate-950 border-t border-slate-800">

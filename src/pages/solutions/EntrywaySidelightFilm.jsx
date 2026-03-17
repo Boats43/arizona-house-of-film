@@ -4,6 +4,7 @@ import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { solyxProducts } from '@/data/solyxFilms';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 function toSlug(str) {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -257,6 +258,8 @@ export default function EntrywaySidelightFilm() {
             ))}
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* CTA */}
         <section className="bg-slate-900 rounded-2xl p-10 text-center">

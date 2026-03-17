@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function WindowFilmForWarehousesArizona() {
   const faqSchema = {
@@ -84,6 +85,8 @@ export default function WindowFilmForWarehousesArizona() {
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Cost of Warehouse Window Film in Arizona</h2>
           <p className="text-lg text-slate-700 mb-4">Warehouse window film is quoted by scope, glass area, and film specification. Most warehouse installations run $5,000–$25,000+ depending on glass area and film type. Large distribution facilities with extensive skylights and clerestory windows are quoted individually. We provide free commercial estimates with detailed scope documentation.</p>
         </section>
+
+        <EstimatorCTA />
 
         <section className="bg-slate-100 p-8 rounded-lg mb-16">
           <p className="text-lg text-slate-700 mb-4">Ready to reduce heat, protect inventory, and improve worker comfort in your warehouse? We provide free on-site assessments for industrial and distribution facilities throughout Arizona.</p>

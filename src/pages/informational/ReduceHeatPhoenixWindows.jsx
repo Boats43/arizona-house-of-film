@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function ReduceHeatPhoenixWindows() {
   const faqSchema = {
@@ -105,6 +106,8 @@ export default function ReduceHeatPhoenixWindows() {
             ))}
           </div>
         </section>
+
+        <EstimatorCTA />
 
         <section className="mb-12 bg-slate-950 text-white p-8 md:p-12 rounded-none">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Get a Free Heat Assessment</h2>

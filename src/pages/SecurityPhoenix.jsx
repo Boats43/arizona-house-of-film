@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Shield, CheckCircle2, AlertTriangle, Building2, Home, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormSection from '@/components/contact/ContactFormSection';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const rocNumber = 'ROC #314088';
 const pageTitle = 'Security Window Film Phoenix | Forced Entry & Safety Film';
@@ -391,6 +392,8 @@ export default function SecurityPhoenix() {
           </p>
         </div>
       </section>
+
+      <EstimatorCTA />
 
       {/* CTA */}
       <section className="bg-slate-950 py-20 px-6">

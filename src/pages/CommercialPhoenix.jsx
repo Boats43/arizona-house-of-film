@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Building, Shield, Sun, Zap, Eye, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormSection from '@/components/contact/ContactFormSection';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const CommercialPhoenix = () => {
   const rocNumber = '314088';
@@ -336,6 +337,8 @@ const CommercialPhoenix = () => {
             </p>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* CTA */}
         <section className="py-20 bg-slate-950 border-t border-slate-800">

@@ -27,7 +27,8 @@
       "Bash(find:*)",
       "Bash(find \"/c/Users/matam/OneDrive/Desktop/AZHOF/horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/src/pages\" -type f -name \"*.jsx\")",
       "Bash(find \"/c/Users/matam/OneDrive/Desktop/AZHOF/horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/src/components\" -type f -name \"*Layout*\" -o -name \"*Wrapper*\")",
-      "Bash(ls -la \"/c/Users/matam/OneDrive/Desktop/AZHOF/horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/src/pages/\")"
+      "Bash(ls -la \"/c/Users/matam/OneDrive/Desktop/AZHOF/horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/src/pages/\")",
+      "Bash(find \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/src/pages\" -type f -name \"*.jsx\")"
     ]
   }
 }

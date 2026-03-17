@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function WindowFilmForRestaurantsArizona() {
   const faqSchema = {
@@ -84,6 +85,8 @@ export default function WindowFilmForRestaurantsArizona() {
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Cost of Restaurant Window Film in Arizona</h2>
           <p className="text-lg text-slate-700 mb-4">Restaurant window film is quoted by scope, glass area, and film specification. Most restaurant installations are completed in one day with minimal disruption to operations. SRP and APS energy rebates apply to qualifying solar control installations. Contact us for a free on-site assessment and estimate.</p>
         </section>
+
+        <EstimatorCTA />
 
         <section className="bg-slate-100 p-8 rounded-lg mb-16">
           <p className="text-lg text-slate-700 mb-4">Ready to improve your dining experience with professional window film? We provide free on-site assessments for restaurants throughout the Arizona metro.</p>

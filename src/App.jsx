@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -335,6 +335,43 @@ function AppRoutes() {
   );
 }
 
+/* ---------------- FLOATING ESTIMATOR ---------------- */
+function FloatingEstimator() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!show) return null;
+
+  return (
+    <a
+      href="/window-film-cost-estimator"
+      style={{
+        position: 'fixed',
+        bottom: '80px',
+        right: '16px',
+        zIndex: 9998,
+        background: '#16a34a',
+        color: 'white',
+        padding: '12px 16px',
+        borderRadius: '50px',
+        fontWeight: 'bold',
+        fontSize: '13px',
+        textDecoration: 'none',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        letterSpacing: '0.5px',
+      }}
+    >
+      🧮 Get Estimate
+    </a>
+  );
+}
+
 /* ---------------- APP ---------------- */
 function App() {
   const location = useLocation();
@@ -379,6 +416,7 @@ function App() {
         <Footer />
         <Toaster />
         <FloatingContactButton />
+        <FloatingEstimator />
       </div>
     </>
   );

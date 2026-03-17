@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function WindowFilmForSchoolsArizona() {
   const faqSchema = {
@@ -84,6 +85,8 @@ export default function WindowFilmForSchoolsArizona() {
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Cost and Budgeting for School Window Film</h2>
           <p className="text-lg text-slate-700 mb-4">School window film projects are quoted by scope, glass area, and film specification. We work with facility managers, school boards, and general contractors on budgeting and phased installation schedules. SRP and APS energy rebates can offset a significant portion of project costs for qualifying installations. Contact us for a free assessment and detailed scope estimate.</p>
         </section>
+
+        <EstimatorCTA />
 
         <section className="bg-slate-100 p-8 rounded-lg mb-16">
           <p className="text-lg text-slate-700 mb-4">Ready to protect your school campus with professional window film? We provide free on-site assessments for K-12 and university facilities throughout Arizona.</p>

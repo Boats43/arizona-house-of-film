@@ -50,6 +50,18 @@ const Residential = () => {
       q: "My windows already have a Low-E coating. Do I still need window film?",
       a: "Yes. While Low-E glass improves insulation, it often does not block enough solar heat or UV in Arizona's extreme climate. We use Low-E compatible ceramic films that work with your existing glass technology to create a dual-layer heat barrier — significantly outperforming Low-E glass alone. All our films are verified safe for Low-E applications before installation.",
     },
+    {
+      q: "What is the best residential window tinting in Phoenix AZ?",
+      a: "For Phoenix homes, nano-ceramic film is the top specification — it rejects up to 84% of solar heat without darkening glass or blocking cell signals. It's HOA-compatible and lasts 15–25 years in Arizona conditions. For west and south-facing windows, dual-reflective film adds daytime privacy. Arizona House of Film recommends film based on your specific window orientation and glass type during the free estimate.",
+    },
+    {
+      q: "How long does residential window tinting take in Phoenix?",
+      a: "Most Phoenix residential window tinting installations complete in one day. A standard home with 15–20 windows typically takes 4–6 hours. Larger homes or multi-story properties may require two days. We schedule morning arrivals and most homeowners can resume normal use of all rooms immediately after installation — film is dry to the touch within hours.",
+    },
+    {
+      q: "Does residential window tinting work in Phoenix summers?",
+      a: "Yes — window film performs best in extreme heat climates like Phoenix. In 115°F summers, unprotected south and west-facing glass can raise interior temperatures by 15–20°F and force HVAC systems to run continuously. Nano-ceramic film rejects up to 84% of solar heat at the glass surface — reducing room temperature by 10–15°F near treated windows and cutting annual cooling costs by $250–$725 for an average Phoenix home.",
+    },
   ];
 
   const serviceSchema = {
@@ -184,6 +196,9 @@ const Residential = () => {
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
                 Residential Window Tinting Phoenix | Home Solar Control Films
               </h1>
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                Arizona House of Film installs residential window tinting throughout Phoenix, Scottsdale, and the Arizona metro. Ceramic, solar control, privacy, and security window film for homes — licensed ROC #314088, serving Phoenix homeowners since 2017.
+              </p>
               <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
                 Slash your cooling costs and protect your family from Arizona's intense UV rays. We deliver high-performance ceramic window film solutions for the modern home.
               </p>
@@ -519,9 +534,26 @@ const Residential = () => {
         <section className="py-20 bg-slate-50 border-t border-slate-200">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-8">Residential Window Tinting Cost in Phoenix — What Homeowners Actually Pay</h2>
-            <p className="text-slate-600 text-base leading-relaxed font-medium">
-              Most Phoenix homes range from $8–$18 per square foot installed depending on film type and glass complexity. A standard 2,000 sq ft home with 15–20 windows typically runs $1,200–$2,800 complete. Ceramic films run $12–$18/sq ft. Solar control films run $8–$12/sq ft. All installs include manufacturer warranty and our ROC #314088 workmanship guarantee.
-            </p>
+            <p className="text-gray-700 mb-4">Residential window tinting in Phoenix runs $8–$18 per square foot installed depending on film type and window count. Most Phoenix homes average $1,200–$2,800 total for a complete installation. Here's what to expect by film type:</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="border border-gray-200 rounded-lg p-4">
+                <div className="font-black text-lg mb-1">$8–$12/sq ft</div>
+                <div className="font-bold text-gray-800 mb-1">Solar Control Film</div>
+                <div className="text-sm text-gray-600">Entry to mid-range solar film. Reduces heat 50–70%. Most common residential specification.</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <div className="font-black text-lg mb-1">$12–$18/sq ft</div>
+                <div className="font-bold text-gray-800 mb-1">Nano-Ceramic Film</div>
+                <div className="text-sm text-gray-600">Maximum heat rejection — up to 84%. Signal-safe, HOA-compatible. Recommended for Arizona conditions.</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <div className="font-black text-lg mb-1">$15–$28/sq ft</div>
+                <div className="font-bold text-gray-800 mb-1">Security + Solar Film</div>
+                <div className="text-sm text-gray-600">Combined heat rejection and impact resistance. 8 mil safety film with solar control properties.</div>
+              </div>
+            </div>
+            <p className="text-gray-700 mb-2">Average Phoenix home (15–20 windows, 2,000 sq ft): <strong>$1,200–$2,800</strong>. All residential projects include manufacturer warranty and ROC #314088 guarantee. <a href="/window-film-cost-estimator" className="text-blue-600 underline">Use our cost estimator</a> for a personalized range.</p>
+            <p className="text-gray-700">Qualifying ceramic and spectrally selective installations may be eligible for SRP and APS energy rebates — reducing effective project cost. We provide NFRC documentation. Customers submit directly to their utility provider.</p>
           </div>
         </section>
 
@@ -566,15 +598,27 @@ const Residential = () => {
         <section className="section-related-locations py-12 bg-slate-900">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-2xl font-bold text-white mb-4">Residential Window Tinting by Location</h2>
-            <p className="text-gray-300 mb-6">We serve the full Phoenix metro. Explore our Scottsdale-specific residential page:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link
-                to="/residential-window-tinting-scottsdale"
-                className="block bg-slate-800 border border-slate-700 rounded-lg p-5 hover:border-green-500 transition-colors"
-              >
-                <strong className="text-white block mb-1">Scottsdale Residential Window Tinting →</strong>
-                <span className="text-gray-400 text-sm">DC Ranch, McCormick Ranch, Gainey Ranch, North Scottsdale, Troon — HOA-compliant ceramic film for luxury homes.</span>
-              </Link>
+            <p className="text-gray-300 mb-6">Arizona House of Film installs residential window tinting across the full Phoenix metro. Find coverage for your city:</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { city: 'Scottsdale', slug: 'scottsdale', desc: 'HOA-compliant ceramic film for luxury homes' },
+                { city: 'Mesa', slug: 'mesa', desc: 'Ceramic and solar film for East Valley homes' },
+                { city: 'Chandler', slug: 'chandler', desc: 'Residential film for Chandler and Ocotillo' },
+                { city: 'Gilbert', slug: 'gilbert', desc: 'Home window film for Gilbert communities' },
+                { city: 'Tempe', slug: 'tempe', desc: 'Residential tinting near ASU and downtown' },
+                { city: 'Glendale', slug: 'glendale', desc: 'Window film for Arrowhead Ranch and Westgate' },
+                { city: 'Peoria', slug: 'peoria', desc: 'Ceramic film for Vistancia and Westwing Mountain' },
+                { city: 'Queen Creek', slug: 'queen-creek', desc: 'New construction and HOA-compliant film' },
+              ].map(({ city, slug, desc }) => (
+                <a
+                  key={slug}
+                  href={`/residential-window-tinting-${slug}`}
+                  className="block bg-slate-800 border border-slate-700 rounded-lg p-3 hover:border-green-500 transition-colors"
+                >
+                  <div className="font-bold text-white text-sm">{city}</div>
+                  <div className="text-xs text-gray-400 mt-1">{desc}</div>
+                </a>
+              ))}
             </div>
           </div>
         </section>

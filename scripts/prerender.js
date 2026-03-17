@@ -160,6 +160,7 @@ const ROUTES = [
   '/privacy-window-film-phoenix-homes', '/glare-reduction-window-film-phoenix',
   '/window-film-for-schools-arizona', '/window-film-for-medical-facilities-arizona',
   '/window-film-for-restaurants-arizona', '/window-film-for-warehouses-arizona',
+  '/window-film-cost-estimator',
 ]
 
 const PATTERN_MAP = [
@@ -238,6 +239,7 @@ const PATTERN_MAP = [
   ['/window-film-for-medical-facilities-arizona', '/src/pages/informational/WindowFilmForMedicalFacilitiesArizona.jsx'],
   ['/window-film-for-restaurants-arizona',  '/src/pages/informational/WindowFilmForRestaurantsArizona.jsx'],
   ['/window-film-for-warehouses-arizona',   '/src/pages/informational/WindowFilmForWarehousesArizona.jsx'],
+  ['/window-film-cost-estimator',           '/src/pages/informational/WindowFilmCostEstimator.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

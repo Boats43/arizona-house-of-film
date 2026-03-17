@@ -113,6 +113,10 @@ const UVProtectionWindowFilmPhoenix = lazy(() => import("@/pages/informational/U
 const PrivacyWindowFilmPhoenixHomes = lazy(() => import("@/pages/informational/PrivacyWindowFilmPhoenixHomes"));
 const GlareReductionWindowFilmPhoenix = lazy(() => import("@/pages/informational/GlareReductionWindowFilmPhoenix"));
 const HighRiseCommercialWindowTintingPhoenix = lazy(() => import("@/pages/informational/HighRiseCommercialWindowTintingPhoenix"));
+const WindowFilmForSchoolsArizona = lazy(() => import("@/pages/informational/WindowFilmForSchoolsArizona"));
+const WindowFilmForMedicalFacilitiesArizona = lazy(() => import("@/pages/informational/WindowFilmForMedicalFacilitiesArizona"));
+const WindowFilmForRestaurantsArizona = lazy(() => import("@/pages/informational/WindowFilmForRestaurantsArizona"));
+const WindowFilmForWarehousesArizona = lazy(() => import("@/pages/informational/WindowFilmForWarehousesArizona"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -303,6 +307,10 @@ function AppRoutes() {
           <Route path="/privacy-window-film-phoenix-homes" element={<PrivacyWindowFilmPhoenixHomes />} />
           <Route path="/glare-reduction-window-film-phoenix" element={<GlareReductionWindowFilmPhoenix />} />
           <Route path="/high-rise-commercial-window-tinting-phoenix" element={<HighRiseCommercialWindowTintingPhoenix />} />
+          <Route path="/window-film-for-schools-arizona" element={<WindowFilmForSchoolsArizona />} />
+          <Route path="/window-film-for-medical-facilities-arizona" element={<WindowFilmForMedicalFacilitiesArizona />} />
+          <Route path="/window-film-for-restaurants-arizona" element={<WindowFilmForRestaurantsArizona />} />
+          <Route path="/window-film-for-warehouses-arizona" element={<WindowFilmForWarehousesArizona />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

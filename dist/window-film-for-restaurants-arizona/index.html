@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-BuCLASpA.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Window Film for Restaurants Arizona | Solar Control &amp; Privacy | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Window film for Arizona restaurants. Solar control, decorative privacy film, and glare reduction for dining rooms and storefronts. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:title" content="Window Film for Restaurants Arizona | Solar Control &amp; Privacy | ROC #314088"/><meta data-rh="true" property="og:description" content="Window film for Arizona restaurants. Solar control, decorative privacy film, and glare reduction for dining rooms and storefronts. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/window-film-for-restaurants-arizona"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Window Film for Restaurants Arizona | Solar Control &amp; Privacy | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Window film for Arizona restaurants. Solar control, decorative privacy film, and glare reduction for dining rooms and storefronts. Licensed ROC #314088. Free estimates."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/window-film-for-restaurants-arizona"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you install window film for restaurants in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film installs solar control, decorative, anti-graffiti, and privacy window film for restaurants throughout Phoenix, Scottsdale, Tempe, and the Arizona metro. Licensed ROC #314088. Call (480) 788-1591 for a free commercial estimate."}},{"@type":"Question","name":"Will window film make restaurant window seating more comfortable in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes — significantly. Solar control film reduces interior temperatures by 10–15°F near window seating, eliminating the heat that makes window tables uncomfortable during Arizona summers. Window seating becomes a premium dining position rather than a liability."}},{"@type":"Question","name":"What decorative window film options are available for Arizona restaurants?","acceptedAnswer":{"@type":"Answer","text":"We install the full Solyx 600+ pattern catalog including frosted, etched, gradient, stained glass, and branded graphic film for restaurant applications. From booth privacy panels to branded entry glass to patio enclosure film — we assess your design requirements during the free estimate."}},{"@type":"Question","name":"Does restaurant window film qualify for SRP or APS energy rebates in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes. Qualifying solar control film on Arizona restaurant commercial properties meets SRP Business Solutions and APS energy efficiency rebate requirements. We provide NFRC documentation for rebate applications during your free estimate."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Industries","item":{"@id":"https://arizonahouseoffilm.com/industries","name":"Industries"}},{"@type":"ListItem","position":3,"name":"Window Film for Restaurants Arizona","item":{"@id":"https://arizonahouseoffilm.com/window-film-for-restaurants-arizona","name":"Window Film for Restaurants Arizona"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">Window Film for Restaurants in Arizona — Solar Control, Privacy, and Ambiance</h1><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Why Arizona Restaurants Need Window Film</h2><p class="text-lg text-slate-700 mb-4">Arizona restaurants face intense solar heat and glare that directly affects dining experience and utility costs. South and west-facing dining rooms become uncomfortable during peak hours — forcing operators to close blinds and lose the atmosphere they paid to create. Window film solves the problem at the glass — reducing heat and glare while maintaining the view and ambiance.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Solar Control for Restaurant Dining Rooms</h2><p class="text-lg text-slate-700 mb-4">Solar control film reduces interior temperatures by 10–15°F near treated windows — eliminating the hot zones that drive guests away from window seating. For Arizona restaurants, window film converts the most desirable seating areas (window tables with views) from uncomfortable heat traps to premium dining positions. Energy savings from reduced HVAC load typically run $300–$1,200 annually for a mid-size restaurant.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Glare Reduction for Restaurant Patrons</h2><p class="text-lg text-slate-700 mb-4">Glare from Arizona&#x27;s intense sunlight creates uncomfortable dining conditions — squinting patrons, washed-out ambiance, and hot spots that make window tables unusable during peak sun hours. Solar control film reduces visible glare by 50–80% while maintaining outward views, making every table a comfortable dining position throughout the day.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Decorative and Privacy Film for Restaurants</h2><p class="text-lg text-slate-700 mb-4">Scottsdale, Old Town, and Phoenix restaurant corridors use decorative film for design identity — etched patterns on entry glass, frosted lower panels for booth privacy, gradient films for aesthetic transitions. Solyx 600+ pattern catalog provides restaurant-specific design options. We install decorative film for restaurants throughout Phoenix, Scottsdale, Tempe, and the full Arizona metro.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Anti-Graffiti Film for Restaurant Storefronts</h2><p class="text-lg text-slate-700 mb-4">Peel-and-replace anti-graffiti film protects storefront glass from vandalism, etching, and marking. When the film is damaged, it peels off and a new layer is applied — protecting the original glass indefinitely. Standard specification for restaurant storefronts on high-traffic corridors in Phoenix, Scottsdale, and Tempe.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Cost of Restaurant Window Film in Arizona</h2><p class="text-lg text-slate-700 mb-4">Restaurant window film is quoted by scope, glass area, and film specification. Most restaurant installations are completed in one day with minimal disruption to operations. SRP and APS energy rebates apply to qualifying solar control installations. Contact us for a free on-site assessment and estimate.</p></section><section class="bg-slate-100 p-8 rounded-lg mb-16"><p class="text-lg text-slate-700 mb-4">Ready to improve your dining experience with professional window film? We provide free on-site assessments for restaurants throughout the Arizona metro.</p><p class="text-lg font-bold">Call <a href="tel:4807881591" class="text-blue-600 hover:underline">(480) 788-1591</a> or <a class="text-blue-600 hover:underline" href="/contact">schedule your free estimate</a>.</p></section><section><h2 class="text-2xl font-black uppercase tracking-tight mb-6">Frequently Asked Questions</h2><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Do you install window film for restaurants in Arizona?</h3><p class="text-slate-700">Yes. Arizona House of Film installs solar control, decorative, anti-graffiti, and privacy window film for restaurants throughout Phoenix, Scottsdale, Tempe, and the Arizona metro. Licensed ROC #314088. Call (480) 788-1591 for a free commercial estimate.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Will window film make restaurant window seating more comfortable in Arizona?</h3><p class="text-slate-700">Yes — significantly. Solar control film reduces interior temperatures by 10–15°F near window seating, eliminating the heat that makes window tables uncomfortable during Arizona summers. Window seating becomes a premium dining position rather than a liability.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">What decorative window film options are available for Arizona restaurants?</h3><p class="text-slate-700">We install the full Solyx 600+ pattern catalog including frosted, etched, gradient, stained glass, and branded graphic film for restaurant applications. From booth privacy panels to branded entry glass to patio enclosure film — we assess your design requirements during the free estimate.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Does restaurant window film qualify for SRP or APS energy rebates in Arizona?</h3><p class="text-slate-700">Yes. Qualifying solar control film on Arizona restaurant commercial properties meets SRP Business Solutions and APS energy efficiency rebate requirements. We provide NFRC documentation for rebate applications during your free estimate.</p></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

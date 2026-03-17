@@ -158,6 +158,8 @@ const ROUTES = [
   '/residential-window-tinting-queen-creek',
   '/reduce-heat-phoenix-windows', '/uv-protection-window-film-phoenix',
   '/privacy-window-film-phoenix-homes', '/glare-reduction-window-film-phoenix',
+  '/window-film-for-schools-arizona', '/window-film-for-medical-facilities-arizona',
+  '/window-film-for-restaurants-arizona', '/window-film-for-warehouses-arizona',
 ]
 
 const PATTERN_MAP = [
@@ -232,6 +234,10 @@ const PATTERN_MAP = [
   ['/uv-protection-window-film-phoenix',     '/src/pages/informational/UVProtectionWindowFilmPhoenix.jsx'],
   ['/privacy-window-film-phoenix-homes',     '/src/pages/informational/PrivacyWindowFilmPhoenixHomes.jsx'],
   ['/glare-reduction-window-film-phoenix',   '/src/pages/informational/GlareReductionWindowFilmPhoenix.jsx'],
+  ['/window-film-for-schools-arizona',      '/src/pages/informational/WindowFilmForSchoolsArizona.jsx'],
+  ['/window-film-for-medical-facilities-arizona', '/src/pages/informational/WindowFilmForMedicalFacilitiesArizona.jsx'],
+  ['/window-film-for-restaurants-arizona',  '/src/pages/informational/WindowFilmForRestaurantsArizona.jsx'],
+  ['/window-film-for-warehouses-arizona',   '/src/pages/informational/WindowFilmForWarehousesArizona.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],
   ['/book-now',                             '/src/pages/BookNow.jsx'],

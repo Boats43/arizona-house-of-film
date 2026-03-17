@@ -136,6 +136,18 @@ const statCard = {
   textAlign: "center",
 };
 
+const inputStyle = {
+  background: "#0a0a0f",
+  border: "1px solid #2a2a35",
+  borderRadius: "6px",
+  padding: "12px 16px",
+  color: "#f0ede8",
+  fontSize: "14px",
+  outline: "none",
+  width: "100%",
+  boxSizing: "border-box",
+};
+
 export default function WindowFilmCostEstimator() {
   const [step, setStep] = useState(1);
   const [windowCount, setWindowCount] = useState(14);
@@ -143,6 +155,9 @@ export default function WindowFilmCostEstimator() {
   const [selectedFilms, setSelectedFilms] = useState([]);
   const [propertyType, setPropertyType] = useState("residential");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 640 : false);
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', address: '', notes: '' });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 640);
@@ -176,6 +191,38 @@ export default function WindowFilmCostEstimator() {
           high: filmEstimates.reduce((sum, e) => sum + e.high, 0),
         }
       : null;
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.phone || !formData.email) {
+      setFormError('Please fill in your name, phone, and email.');
+      return;
+    }
+    setFormError('');
+    const body = new URLSearchParams({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      address: formData.address,
+      notes: formData.notes,
+      propertyType: propertyType,
+      windowCount: windowCount,
+      windowSize: selectedSize?.label || '',
+      films: selectedFilms.map(f => f.name).join(', '),
+      estimateLow: combinedEstimate?.low || '',
+      estimateHigh: combinedEstimate?.high || '',
+      source: 'cost-estimator',
+    });
+    try {
+      await fetch('https://formsubmit.co/arizonahouseoffilm@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+      setFormSubmitted(true);
+    } catch(e) {
+      setFormError('Something went wrong. Please call (480) 788-1591 directly.');
+    }
+  };
 
   const anyRebateEligible = selectedFilms.some((f) => f.srpEligible || f.apsEligible);
 
@@ -824,19 +871,118 @@ export default function WindowFilmCostEstimator() {
                 >
                   Call (480) 788-1591 — Get Exact Quote
                 </a>
-                <a
-                  href={`/contact?windows=${windowCount}&size=${selectedSize?.label || ""}&film=${encodeURIComponent(filmQueryParam)}&estimate=${estimateQueryParam}`}
-                  style={{
-                    ...btnStyle("#1e1e2a", "#aaa"),
-                    textDecoration: "none",
-                    textAlign: "center",
-                    display: "block",
-                    border: "1px solid #2a2a35",
-                  }}
-                >
-                  Submit for Free On-Site Estimate →
-                </a>
               </div>
+
+              {/* Inline estimate form */}
+              {!formSubmitted ? (
+                <div style={{
+                  background: "#12121a",
+                  border: "1px solid #2a2a35",
+                  borderRadius: "12px",
+                  padding: "24px",
+                  marginTop: "20px",
+                }}>
+                  <h3 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "6px", color: "#f0ede8" }}>
+                    Get Your Free On-Site Estimate
+                  </h3>
+                  <p style={{ fontSize: "13px", color: "#666", marginBottom: "20px" }}>
+                    Your estimate details will be included automatically. We'll contact you within 24 hours.
+                  </p>
+
+                  {/* Estimate summary */}
+                  <div style={{
+                    background: "#0a0a0f",
+                    border: "1px solid #1e1e2a",
+                    borderRadius: "8px",
+                    padding: "12px 16px",
+                    marginBottom: "20px",
+                    fontSize: "12px",
+                    color: "#555",
+                  }}>
+                    <strong style={{ color: "#6b8f71" }}>Your estimate:</strong> {propertyType} · {windowCount} windows · {selectedSize?.label} · {selectedFilms.map(f => f.name).join(' + ')} · ${combinedEstimate?.low?.toLocaleString()}–${combinedEstimate?.high?.toLocaleString()}
+                  </div>
+
+                  {/* Form fields */}
+                  <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                    <input
+                      type="text"
+                      placeholder="Full Name *"
+                      value={formData.name}
+                      onChange={e => setFormData({...formData, name: e.target.value})}
+                      style={inputStyle}
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number *"
+                      value={formData.phone}
+                      onChange={e => setFormData({...formData, phone: e.target.value})}
+                      style={inputStyle}
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address *"
+                      value={formData.email}
+                      onChange={e => setFormData({...formData, email: e.target.value})}
+                      style={inputStyle}
+                    />
+                    <input
+                      type="text"
+                      placeholder="Property Address (optional)"
+                      value={formData.address}
+                      onChange={e => setFormData({...formData, address: e.target.value})}
+                      style={inputStyle}
+                    />
+                    <textarea
+                      placeholder="Additional notes (optional)"
+                      value={formData.notes}
+                      onChange={e => setFormData({...formData, notes: e.target.value})}
+                      rows={3}
+                      style={{ ...inputStyle, resize: "vertical" }}
+                    />
+                  </div>
+
+                  {formError && (
+                    <div style={{ color: "#c0392b", fontSize: "13px", marginTop: "10px" }}>{formError}</div>
+                  )}
+
+                  <button
+                    onClick={handleSubmit}
+                    style={{
+                      ...btnStyle("#6b8f71"),
+                      width: "100%",
+                      marginTop: "16px",
+                      padding: "16px",
+                      fontSize: "15px",
+                    }}
+                  >
+                    Submit Estimate Request →
+                  </button>
+
+                  <p style={{ fontSize: "11px", color: "#444", marginTop: "10px", textAlign: "center" }}>
+                    Licensed ROC #314088 · We respond within 24 hours · No obligation
+                  </p>
+                </div>
+              ) : (
+                <div style={{
+                  background: "#0d1a0f",
+                  border: "1px solid #2a4a2e",
+                  borderRadius: "12px",
+                  padding: "32px",
+                  marginTop: "20px",
+                  textAlign: "center",
+                }}>
+                  <div style={{ fontSize: "32px", marginBottom: "12px" }}>✅</div>
+                  <h3 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "8px", color: "#6b8f71" }}>
+                    Estimate Request Received
+                  </h3>
+                  <p style={{ fontSize: "14px", color: "#888", marginBottom: "16px" }}>
+                    We'll contact you within 24 hours to confirm your free on-site estimate. Your estimate details have been sent to our team.
+                  </p>
+                  <a href="tel:4807881591" style={{ color: "#6b8f71", fontSize: "14px", fontWeight: "bold" }}>
+                    Call now: (480) 788-1591
+                  </a>
+                </div>
+              )}
 
               <button
                 onClick={() => {

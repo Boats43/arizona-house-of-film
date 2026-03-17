@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CDFMzPXl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Reduce Heat Through Windows Phoenix AZ | Window Film Solution</title>
+  <meta data-rh="true" name="description" content="Window film reduces heat through Phoenix windows by up to 84%. Nano-ceramic film keeps interiors 10–15°F cooler. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:title" content="Reduce Heat Through Windows Phoenix AZ | Window Film Solution"/><meta data-rh="true" property="og:description" content="Window film reduces heat through Phoenix windows by up to 84%. Nano-ceramic film keeps interiors 10–15°F cooler. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/reduce-heat-phoenix-windows"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Reduce Heat Through Windows Phoenix AZ | Window Film Solution"/><meta data-rh="true" name="twitter:description" content="Window film reduces heat through Phoenix windows by up to 84%. Nano-ceramic film keeps interiors 10–15°F cooler."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/reduce-heat-phoenix-windows"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much heat does window film reduce in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Nano-ceramic window film reduces solar heat gain by up to 84% and lowers interior temperatures by 10–15°F near south and west-facing windows. Most Phoenix homeowners report measurable comfort improvement within days of installation — and annual cooling cost reductions of $250–$725."}},{"@type":"Question","name":"What is the best window film for reducing heat in Phoenix homes?","acceptedAnswer":{"@type":"Answer","text":"Nano-ceramic film is our primary recommendation for Phoenix heat reduction. It rejects up to 84% of infrared heat without darkening glass or interfering with GPS, WiFi, or cell signals. For west-facing glass with privacy requirements, dual-reflective film provides maximum heat rejection combined with daytime privacy."}},{"@type":"Question","name":"Does window film for heat reduction qualify for SRP or APS rebates in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Yes. Qualifying nano-ceramic and spectrally selective window film installations meet SRP Business Solutions and APS energy efficiency rebate requirements. We provide NFRC-rated data sheets for rebate applications during your free estimate. Call (480) 788-1591."}},{"@type":"Question","name":"How long does heat-reducing window film last in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Quality nano-ceramic window film lasts 15–25 years in Phoenix conditions. We install manufacturer-certified films with warranty documentation — not lower-grade dyed films that fade and delaminate within 3–5 years in Arizona's extreme UV and heat."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Window Film Solutions","item":{"@id":"https://arizonahouseoffilm.com/solutions","name":"Window Film Solutions"}},{"@type":"ListItem","position":3,"name":"Reduce Heat Through Windows Phoenix","item":{"@id":"https://arizonahouseoffilm.com/reduce-heat-phoenix-windows","name":"Reduce Heat Through Windows Phoenix"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">Reduce Heat Through Windows in Phoenix — Window Film Solutions</h1><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Why Phoenix Windows Let In So Much Heat</h2><p class="text-lg text-slate-700 mb-4">Phoenix&#x27;s solar intensity is among the highest in North America. Standard double-pane glass blocks very little infrared radiation — the heat you feel when standing near a window. In Phoenix&#x27;s 115°F summers, unprotected south and west-facing glass can raise interior temperatures by 15–20°F and force HVAC systems to run continuously. Window film targets the infrared spectrum directly.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">How Window Film Reduces Heat in Phoenix Homes</h2><p class="text-lg text-slate-700 mb-4">Nano-ceramic window film rejects up to 84% of solar heat through infrared blocking technology. Unlike tinted glass or standard dyed film, ceramic film works by absorbing and reflecting infrared radiation at the molecular level — not by darkening the glass. Interior rooms stay bright while heat stays out.</p><p class="text-lg text-slate-700">Most Phoenix homeowners report 10–15°F reduction in room temperature near treated windows within days of installation.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Heat Reduction Results — What to Expect</h2><p class="text-lg text-slate-700 mb-4">Typical results for Phoenix properties after ceramic window film installation:</p><ul class="list-disc pl-6 text-lg text-slate-700 space-y-2"><li><strong>10–15°F reduction</strong> in temperature near south and west-facing windows</li><li><strong>$250–$725 annual reduction</strong> in cooling costs for an average Phoenix home</li><li><strong>HVAC runtime reduction of 20–30%</strong> during peak summer months</li><li><strong>SRP and APS utility rebates</strong> available for qualifying installations — reducing effective installation cost</li></ul></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Best Films for Heat Reduction in Phoenix</h2><p class="text-lg text-slate-700 mb-4">For maximum heat rejection in Phoenix we install nano-ceramic and spectrally selective films. Key specifications:</p><ul class="list-disc pl-6 text-lg text-slate-700 space-y-2"><li><strong>Nano-ceramic film</strong> — up to 84% solar heat rejection, 99.9% UV block, signal-safe</li><li><strong>Spectrally selective film</strong> — high visible light transmission with aggressive SHGC reduction</li><li><strong>Low-E film</strong> — dual-season performance, heat rejection in summer and heat retention in winter</li><li><strong>Dual-reflective film</strong> — maximum heat rejection with daytime privacy on west-facing glass</li></ul></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Heat Reduction for Phoenix Commercial Buildings</h2><p class="text-lg text-slate-700 mb-4">Commercial properties in Phoenix face the same solar heat problems at a larger scale — with the added complexity of building codes, COMcheck compliance, and NFRC documentation requirements. We install commercial-grade solar control film for office buildings, retail centers, medical facilities, and government buildings throughout Phoenix.</p><p class="text-lg text-slate-700">All commercial installations include NFRC data sheets for SRP Business Solutions and APS energy efficiency rebate applications. Licensed ROC #314088.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Frequently Asked Questions</h2><div class="space-y-8"><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">How much heat does window film reduce in Phoenix?</h3><p class="text-slate-600 leading-relaxed">Nano-ceramic window film reduces solar heat gain by up to 84% and lowers interior temperatures by 10–15°F near south and west-facing windows. Most Phoenix homeowners report measurable comfort improvement within days of installation — and annual cooling cost reductions of $250–$725.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">What is the best window film for reducing heat in Phoenix homes?</h3><p class="text-slate-600 leading-relaxed">Nano-ceramic film is our primary recommendation for Phoenix heat reduction. It rejects up to 84% of infrared heat without darkening glass or interfering with GPS, WiFi, or cell signals. For west-facing glass with privacy requirements, dual-reflective film provides maximum heat rejection combined with daytime privacy.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">Does window film for heat reduction qualify for SRP or APS rebates in Phoenix?</h3><p class="text-slate-600 leading-relaxed">Yes. Qualifying nano-ceramic and spectrally selective window film installations meet SRP Business Solutions and APS energy efficiency rebate requirements. We provide NFRC-rated data sheets for rebate applications during your free estimate. Call (480) 788-1591.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="text-lg font-black text-slate-900 mb-2">How long does heat-reducing window film last in Phoenix?</h3><p class="text-slate-600 leading-relaxed">Quality nano-ceramic window film lasts 15–25 years in Phoenix conditions. We install manufacturer-certified films with warranty documentation — not lower-grade dyed films that fade and delaminate within 3–5 years in Arizona&#x27;s extreme UV and heat.</p></div></div></section><section class="mb-12 bg-slate-950 text-white p-8 md:p-12 rounded-none"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Get a Free Heat Assessment</h2><p class="text-slate-300 text-lg mb-6">We assess your window orientation, glass type, and heat load — then recommend the right film specification for maximum heat reduction. Free on-site estimates. Licensed ROC #314088.</p><div class="flex flex-wrap gap-4"><a class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-black transition-all" href="/contact">Get Free Estimate</a><a href="tel:480-788-1591" class="inline-block border-2 border-white text-white px-8 py-4 text-lg font-black hover:bg-white hover:text-slate-950 transition-all">(480) 788-1591</a></div></section><p class="text-center text-slate-500 text-sm">Also see:<!-- --> <a class="text-green-600 hover:underline" href="/best-window-film-arizona-heat">Best Window Film for Arizona Heat</a> · <a class="text-green-600 hover:underline" href="/window-film-energy-rebates-arizona">Energy Rebates Arizona</a> · <a class="text-green-600 hover:underline" href="/window-film-cost-arizona">Window Film Cost Arizona</a></p></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

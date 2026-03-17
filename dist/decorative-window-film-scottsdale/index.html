@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CDFMzPXl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Decorative Window Film Scottsdale AZ | Licensed Installer | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Decorative window film installation in Scottsdale AZ. Frosted, etched, Casper cloaking, and 600+ Solyx patterns. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:title" content="Decorative Window Film Scottsdale AZ | Licensed Installer | ROC #314088"/><meta data-rh="true" property="og:description" content="Decorative window film installation in Scottsdale AZ. Frosted, etched, Casper cloaking, and 600+ Solyx patterns. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/decorative-window-film-scottsdale"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Decorative Window Film Scottsdale AZ | Licensed Installer | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Decorative window film installation in Scottsdale AZ. Frosted, etched, Casper cloaking, and 600+ Solyx patterns. Licensed ROC #314088. Free estimates."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/decorative-window-film-scottsdale"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Decorative Window Film Scottsdale AZ","serviceType":"Decorative Window Film Installation","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"areaServed":{"@type":"City","name":"Scottsdale","addressRegion":"AZ"},"description":"Decorative window film installation in Scottsdale AZ. Frosted, etched, Casper cloaking, and 600+ Solyx patterns. Licensed ROC #314088. Free estimates.","url":"https://arizonahouseoffilm.com/decorative-window-film-scottsdale"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you install decorative window film in Scottsdale AZ?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film installs frosted, etched, Casper cloaking, and 600+ Solyx decorative patterns for residential and commercial properties throughout Scottsdale. Licensed ROC #314088. Call (480) 788-1591 for a free estimate."}},{"@type":"Question","name":"What decorative window film options are available in Scottsdale?","acceptedAnswer":{"@type":"Answer","text":"We install the full Solyx catalog — 600+ patterns including frosted, matte, rice paper, bamboo, linen, geometric, gradient, stained glass, and Casper cloaking. We carry pattern samples for on-site review during your free estimate."}},{"@type":"Question","name":"How much does decorative window film cost in Scottsdale?","acceptedAnswer":{"@type":"Answer","text":"Decorative window film in Scottsdale runs $10–$25 per square foot installed depending on pattern and complexity. Casper cloaking film runs $20–$35/sq ft. Most residential bathroom or entryway installations run $300–$800. Commercial conference room and office installations run $1,500–$6,000+."}},{"@type":"Question","name":"Can decorative film be removed without damaging glass in Scottsdale rentals?","acceptedAnswer":{"@type":"Answer","text":"Yes. All decorative film installations are fully reversible — no adhesive residue and no glass damage on removal. This makes decorative film suitable for leased commercial spaces and rental properties throughout Scottsdale."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Scottsdale","item":{"@id":"https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale","name":"Scottsdale"}},{"@type":"ListItem","position":3,"name":"Decorative Window Film Scottsdale","item":{"@id":"https://arizonahouseoffilm.com/decorative-window-film-scottsdale","name":"Decorative Window Film Scottsdale"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-950 min-h-screen"><section class="relative flex items-center pt-24 pb-16 bg-slate-950"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="max-w-4xl"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Licensed • Bonded • ROC #<!-- -->314088</span><h1 class="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Decorative Window Film Scottsdale AZ — Licensed Installer Since 2017</h1><p class="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">Frosted privacy film, etched glass film, Casper cloaking, and 600+ Solyx decorative patterns for Scottsdale homes and businesses. Licensed ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Get Free Estimate</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Decorative Window Film Services in Scottsdale AZ</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">Arizona House of Film installs frosted privacy film, etched glass film, Casper cloaking film, and 600+ Solyx decorative patterns for residential and commercial properties throughout Scottsdale. From bathroom privacy film to conference room Casper installations to restaurant branding graphics, we specify and install every decorative film category. Licensed ROC #<!-- -->314088<!-- -->.</p></div></section><section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">Frosted and Privacy Film Scottsdale</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg><h3 class="text-base font-black text-slate-950 uppercase">Residential Privacy</h3></div><p class="text-slate-600 text-sm leading-relaxed">Frosted and etched glass film for Scottsdale home bathrooms, sidelights, entry doors, and street-facing windows. Diffused natural light with full privacy — without blackout blinds. Popular in North Scottsdale custom builds and DC Ranch community homes.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">Commercial Privacy</h3></div><p class="text-slate-600 text-sm leading-relaxed">Frosted and gradient privacy film for Scottsdale office conference rooms, medical patient areas, and HIPAA-sensitive zones. Custom-cut designs for branding, wayfinding, and ADA-compliant glass marking on interior partitions.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">Patterned Film</h3></div><p class="text-slate-600 text-sm leading-relaxed">Rice paper, bamboo, linen, geometric, and abstract patterns from the full Solyx catalog. 600+ options available for residential and commercial applications. We carry samples for on-site review during your free estimate.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg><h3 class="text-base font-black text-slate-950 uppercase">Gradient Film</h3></div><p class="text-slate-600 text-sm leading-relaxed">Gradient privacy film transitions from opaque at the bottom to clear at the top — providing privacy at eye level while preserving natural light above. Popular for Scottsdale medical offices, spa environments, and luxury residential bathrooms.</p></div></div></div></section><section class="py-24 bg-slate-950 border-y border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">Casper Cloaking Film Scottsdale — Screen Privacy for Glass Offices</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div></div><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mx-auto mb-8">Casper cloaking film is the premium specification for Scottsdale law firms, financial services, healthcare administration, and tech companies with glass-walled offices. It makes LED screens appear black from outside the glass while leaving screens fully visible from inside. Available in 8 Designtex patterns. We are an authorized Casper installer serving Scottsdale and North Scottsdale commercial properties.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"><div class="bg-slate-900 border border-slate-800 p-8"><h3 class="text-base font-black text-white uppercase mb-3">Law Firms</h3><p class="text-slate-400 text-sm leading-relaxed">Protect client data on screens visible through glass conference rooms and partner offices. Casper renders all LED/LCD screens opaque from outside the glass.</p></div><div class="bg-slate-900 border border-slate-800 p-8"><h3 class="text-base font-black text-white uppercase mb-3">Financial Services</h3><p class="text-slate-400 text-sm leading-relaxed">Wealth management, banking, and financial advisory offices with sensitive portfolio data displayed on screens near glass partitions.</p></div><div class="bg-slate-900 border border-slate-800 p-8"><h3 class="text-base font-black text-white uppercase mb-3">Healthcare Admin</h3><p class="text-slate-400 text-sm leading-relaxed">HIPAA-sensitive administrative offices with electronic health records visible on screens. Casper prevents screen visibility from hallways and common areas.</p></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">600+ Solyx Decorative Patterns Available in Scottsdale</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-4">We install the full Solyx decorative film catalog — the industry&#x27;s largest selection of architectural window film patterns. Categories include frosted and matte, rice paper and natural textures, bamboo and linen, geometric and modern, gradient and ombre, stained glass, and custom-printed graphics. Every pattern is available for residential and commercial installation in Scottsdale.</p><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We carry physical samples for on-site review during your free estimate. Interior designers, architects, and commercial tenants can request sample books for specification. All installations are fully reversible — no adhesive damage on removal.</p></div></section><section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="max-w-4xl mx-auto"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Decorative Film for Scottsdale Restaurants and Hospitality</h2><p class="text-slate-700 text-base leading-relaxed font-medium mb-4">Scottsdale&#x27;s restaurant and hospitality corridor — Old Town, Kierland, DC Ranch — uses decorative film for privacy partitions, branded entry glass, and patio enclosure panels. Solyx gradient, frosted, and stained glass patterns are standard specifications for restaurant and hotel interior design in Scottsdale.</p><p class="text-slate-700 text-base leading-relaxed font-medium">Custom-printed graphics and branding film are available for Scottsdale restaurant entry doors, hostess partitions, and bar dividers. All installations are designed around your space and brand — we coordinate with interior designers and architects for specification-grade results.</p></div></div></section><section class="py-24 bg-slate-950"><div class="max-w-4xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl font-black text-white uppercase tracking-tight mb-4">Decorative Window Film FAQs — Scottsdale</h2><div class="w-24 h-2 bg-green-500 mx-auto"></div></div><div class="space-y-8"><div class="border-b border-slate-800 pb-8"><h3 class="text-lg font-black text-white mb-3 uppercase">Do you install decorative window film in Scottsdale AZ?</h3><p class="text-slate-400 leading-relaxed">Yes. Arizona House of Film installs frosted, etched, Casper cloaking, and 600+ Solyx decorative patterns for residential and commercial properties throughout Scottsdale. Licensed ROC #314088. Call (480) 788-1591 for a free estimate.</p></div><div class="border-b border-slate-800 pb-8"><h3 class="text-lg font-black text-white mb-3 uppercase">What decorative window film options are available in Scottsdale?</h3><p class="text-slate-400 leading-relaxed">We install the full Solyx catalog — 600+ patterns including frosted, matte, rice paper, bamboo, linen, geometric, gradient, stained glass, and Casper cloaking. We carry pattern samples for on-site review during your free estimate.</p></div><div class="border-b border-slate-800 pb-8"><h3 class="text-lg font-black text-white mb-3 uppercase">How much does decorative window film cost in Scottsdale?</h3><p class="text-slate-400 leading-relaxed">Decorative window film in Scottsdale runs $10–$25 per square foot installed depending on pattern and complexity. Casper cloaking film runs $20–$35/sq ft. Most residential bathroom or entryway installations run $300–$800. Commercial conference room and office installations run $1,500–$6,000+.</p></div><div class="border-b border-slate-800 pb-8"><h3 class="text-lg font-black text-white mb-3 uppercase">Can decorative film be removed without damaging glass in Scottsdale rentals?</h3><p class="text-slate-400 leading-relaxed">Yes. All decorative film installations are fully reversible — no adhesive residue and no glass damage on removal. This makes decorative film suitable for leased commercial spaces and rental properties throughout Scottsdale.</p></div></div><div class="mt-10 text-center text-slate-500 text-sm">Also see:<!-- --> <a class="text-green-500 hover:underline" href="/decorative-window-films">Decorative Window Films</a> · <a class="text-green-500 hover:underline" href="/films/casper-cloaking">Casper Cloaking Film</a> · <a class="text-green-500 hover:underline" href="/commercial-window-tinting-scottsdale">Scottsdale Commercial</a></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Service Area</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We install decorative window film throughout Scottsdale — Old Town, North Scottsdale, DC Ranch, Gainey Ranch, McCormick Ranch, Kierland, and Paradise Valley. Same-day estimates available for most Scottsdale locations. Licensed, bonded, insured. ROC #<!-- -->314088<!-- -->.</p></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">Get a Scottsdale Decorative Film Quote</h2><p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">Free on-site estimate with pattern samples. We bring the full Solyx catalog to your property. Licensed ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Request Free Estimate</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001"/></div></div><div><label class="industrial-label">Project Type *</label><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></div><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."></textarea></div><div class="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer"><input type="file" name="attachment" multiple="" accept="image/*,.pdf" class="absolute inset-0 opacity-0 cursor-pointer z-10"/><div class="flex flex-col items-center justify-center text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg><p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p><p class="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p></div></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

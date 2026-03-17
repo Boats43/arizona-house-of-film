@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CDFMzPXl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Residential Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Residential window tinting in Queen Creek AZ. Ceramic, solar, and privacy window film for homes and new construction. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:title" content="Residential Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088"/><meta data-rh="true" property="og:description" content="Residential window tinting in Queen Creek AZ. Ceramic, solar, and privacy window film for homes and new construction. Licensed ROC #314088. Free estimates."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/residential-window-tinting-queen-creek"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Residential Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Residential window tinting in Queen Creek AZ. Ceramic, solar, and privacy window film for homes and new construction. Licensed ROC #314088. Free estimates."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/residential-window-tinting-queen-creek"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Residential Window Tinting Queen Creek AZ","serviceType":"Residential Window Film Installation","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"areaServed":{"@type":"City","name":"Queen Creek","addressRegion":"AZ"},"description":"Residential window tinting in Queen Creek AZ. Ceramic, solar, and privacy window film for homes and new construction. Licensed ROC #314088. Free estimates.","url":"https://arizonahouseoffilm.com/residential-window-tinting-queen-creek"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you install residential window film in Queen Creek AZ?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film installs residential window tinting throughout Queen Creek and San Tan Valley for new construction and existing homes. Licensed ROC #314088. Call (480) 788-1591 for a free home estimate."}},{"@type":"Question","name":"How much does home window tinting cost in Queen Creek?","acceptedAnswer":{"@type":"Answer","text":"Residential window film in Queen Creek runs $8–$18 per square foot installed. Most homes average $800–$2,500 depending on film type and window count. Ceramic film runs $13–$18/sq ft. Free on-site estimates."}},{"@type":"Question","name":"Is window film recommended for new construction homes in Queen Creek?","acceptedAnswer":{"@type":"Answer","text":"Yes — especially for Queen Creek new builds with large window packages on south and west elevations. New construction glass is clean and smooth, making it ideal for film installation. Ceramic film from day one maximizes energy savings and UV protection throughout the home's life."}},{"@type":"Question","name":"Does window film comply with HOA rules in Queen Creek communities?","acceptedAnswer":{"@type":"Answer","text":"Most Queen Creek HOAs allow ceramic and spectrally selective window film that maintains a natural glass appearance. We review HOA guidelines during your free estimate and specify films that meet exterior appearance requirements — no reflective or dark tints that would conflict with HOA standards."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Residential Window Tinting","item":{"@id":"https://arizonahouseoffilm.com/residential-window-tinting","name":"Residential Window Tinting"}},{"@type":"ListItem","position":3,"name":"Residential Window Tinting Queen Creek","item":{"@id":"https://arizonahouseoffilm.com/residential-window-tinting-queen-creek","name":"Residential Window Tinting Queen Creek"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-950 min-h-screen"><section class="relative flex items-center pt-24 pb-16 bg-slate-950"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="max-w-4xl"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Licensed • Bonded • ROC #<!-- -->314088</span><h1 class="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Residential Window Tinting Queen Creek AZ — Licensed Installer Since 2017</h1><p class="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">Ceramic, solar, and privacy window film for Queen Creek homes and new construction. Heat rejection, UV protection, and HOA-compatible options. Licensed ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Get Free Home Quote</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Residential Window Tinting Services in Queen Creek AZ</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-4">Queen Creek is one of the fastest-growing Southeast Valley communities — with extensive new construction, large-lot homes, and HOA-managed neighborhoods throughout. New builds with large window packages on south and west elevations face extreme Arizona solar exposure that heats interiors, spikes utility bills, fades furnishings, and degrades comfort from day one.</p><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">Arizona House of Film installs residential window tinting throughout Queen Creek and San Tan Valley — ceramic, solar control, privacy, decorative, and security film for new construction and existing homes. Licensed, bonded, insured — ROC #<!-- -->314088<!-- -->. Free on-site estimates with glass assessment and film recommendations tailored to your home&#x27;s orientation and needs.</p></div></section><section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">Home Window Film Queen Creek</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">Solar Heat Rejection</h3></div><p class="text-slate-600 text-sm leading-relaxed">Queen Creek homes face significant afternoon heat load — the Southeast Valley gets intense west-facing sun exposure. Nano-ceramic film rejects up to 84% of solar heat — reducing AC load, lowering utility bills, and eliminating uncomfortable hot zones in living rooms and bedrooms.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">UV Protection</h3></div><p class="text-slate-600 text-sm leading-relaxed">Residential window film blocks 99.9% of UV radiation — protecting hardwood floors, furniture, artwork, and window treatments from sun damage and fading. Critical for Queen Creek homes with large window packages and open floor plans.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg><h3 class="text-base font-black text-slate-950 uppercase">Privacy Film</h3></div><p class="text-slate-600 text-sm leading-relaxed">Daytime one-way privacy, frosted, and decorative film for Queen Creek homes. Popular for bathrooms, sidelights, front-door glass, and street-facing windows. See out while blocking visibility in — without blackout blinds.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><h3 class="text-base font-black text-slate-950 uppercase">Safety &amp; Security</h3></div><p class="text-slate-600 text-sm leading-relaxed">8–12 mil safety film holds glass together on impact — protecting against break-ins, monsoon debris, and accidental breakage. Crystal clear with no tint or color shift. Popular for entry doors, sidelights, and ground-floor windows.</p></div></div></div></section><section class="py-24 bg-slate-950 border-y border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">Window Film for Queen Creek New Construction</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div></div><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mx-auto mb-8">Queen Creek&#x27;s rapid residential growth means new homes going up throughout the community. New construction glass is clean and smooth — ideal for window film installation. Installing ceramic film from day one maximizes energy savings and UV protection throughout the home&#x27;s life, and eliminates the need to retrofit later.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"><div class="bg-slate-900 border border-slate-800 p-8"><div class="text-xl font-black text-white mb-1">$13–$18 / sq ft</div><h3 class="text-green-400 font-black text-sm uppercase tracking-widest mb-3">Ceramic Solar Film</h3><p class="text-slate-400 text-sm leading-relaxed">Maximum heat rejection. HOA-safe neutral appearance. Lifetime warranty. Best for south and west glass.</p></div><div class="bg-slate-900 border border-slate-800 p-8"><div class="text-xl font-black text-white mb-1">$8–$12 / sq ft</div><h3 class="text-green-400 font-black text-sm uppercase tracking-widest mb-3">Standard Solar Film</h3><p class="text-slate-400 text-sm leading-relaxed">Good heat and UV rejection at lower cost. Slight exterior tint. Suitable for non-HOA or flexible HOA homes.</p></div><div class="bg-slate-900 border border-slate-800 p-8"><div class="text-xl font-black text-white mb-1">$8–$12 / sq ft</div><h3 class="text-green-400 font-black text-sm uppercase tracking-widest mb-3">Privacy / Frosted Film</h3><p class="text-slate-400 text-sm leading-relaxed">Bathroom, sidelight, and entry glass. Diffused natural light with full daytime privacy.</p></div></div><p class="text-center text-slate-500 text-sm mt-6">All pricing is per square foot installed. Most Queen Creek homes average $800–$2,500 total. Free on-site estimates.</p></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">HOA-Compatible Film Queen Creek</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-4">Most Queen Creek communities are HOA-managed with exterior appearance restrictions. We specify ceramic and spectrally selective films that maintain a natural glass appearance with exterior reflectance under 15% — no reflective or dark tints that would conflict with HOA standards.</p><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We review your HOA guidelines during the free estimate and provide manufacturer spec sheets documenting reflectivity and appearance properties. Licensed ROC #<!-- -->314088<!-- --> — full accountability for every installation.</p></div></section><section class="py-24 bg-white"><div class="max-w-4xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl font-black text-slate-950 uppercase tracking-tight mb-4">Residential Window Tinting FAQs — Queen Creek</h2><div class="w-24 h-2 bg-green-500 mx-auto"></div></div><div class="space-y-8"><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">Do you install residential window film in Queen Creek AZ?</h3><p class="text-slate-600 leading-relaxed">Yes. Arizona House of Film installs residential window tinting throughout Queen Creek and San Tan Valley for new construction and existing homes. Licensed ROC #314088. Call (480) 788-1591 for a free home estimate.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">How much does home window tinting cost in Queen Creek?</h3><p class="text-slate-600 leading-relaxed">Residential window film in Queen Creek runs $8–$18 per square foot installed. Most homes average $800–$2,500 depending on film type and window count. Ceramic film runs $13–$18/sq ft. Free on-site estimates.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">Is window film recommended for new construction homes in Queen Creek?</h3><p class="text-slate-600 leading-relaxed">Yes — especially for Queen Creek new builds with large window packages on south and west elevations. New construction glass is clean and smooth, making it ideal for film installation. Ceramic film from day one maximizes energy savings and UV protection throughout the home&#x27;s life.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">Does window film comply with HOA rules in Queen Creek communities?</h3><p class="text-slate-600 leading-relaxed">Most Queen Creek HOAs allow ceramic and spectrally selective window film that maintains a natural glass appearance. We review HOA guidelines during your free estimate and specify films that meet exterior appearance requirements — no reflective or dark tints that would conflict with HOA standards.</p></div></div><div class="mt-10 text-center text-slate-500 text-sm">Also see:<!-- --> <a class="text-green-600 hover:underline" href="/residential-window-tinting">Residential Window Tinting</a> · <a class="text-green-600 hover:underline" href="/residential-window-tinting-phoenix">Phoenix Residential</a> · <a class="text-green-600 hover:underline" href="/window-tinting-queen-creek">Window Tinting Queen Creek</a></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Service Area</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We serve residential properties throughout Queen Creek, San Tan Valley, and the Southeast Valley — including Gilbert, Chandler, Mesa, Apache Junction, and the full Phoenix metro. Same-day estimates available for most Queen Creek locations. Licensed, bonded, insured. ROC #<!-- -->314088<!-- -->.</p></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">Get a Queen Creek Residential Window Tinting Quote</h2><p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">Free on-site assessment. We evaluate your glass orientation, HOA requirements, and film compatibility — then recommend the right spec. ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Request Free Home Assessment</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001"/></div></div><div><label class="industrial-label">Project Type *</label><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></div><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."></textarea></div><div class="relative group p-8 border-2 border-dashed border-slate-200 bg-slate-50 hover:border-green-600 transition-all cursor-pointer"><input type="file" name="attachment" multiple="" accept="image/*,.pdf" class="absolute inset-0 opacity-0 cursor-pointer z-10"/><div class="flex flex-col items-center justify-center text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-600 transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg><p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Upload Project Photos</p><p class="text-[8px] text-slate-400 mt-1 uppercase">PNG, JPG, PDF (MAX 10MB)</p></div></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

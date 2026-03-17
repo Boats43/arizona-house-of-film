@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CDFMzPXl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Hotels &amp; Hospitality Window Tinting | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Specialized window tinting for hotels &amp; hospitality in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591."/><meta data-rh="true" property="og:title" content="Hotels &amp; Hospitality Window Tinting | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Specialized window tinting for hotels &amp; hospitality in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/industries/hotels-hospitality"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Hotels &amp; Hospitality Window Tinting | Arizona House of Film"/><meta data-rh="true" name="twitter:description" content="Specialized window tinting for hotels &amp; hospitality in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/industries/hotels-hospitality"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Hotels & Hospitality Window Tinting | Arizona House of Film","description":"Specialized window tinting for hotels & hospitality in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591.","url":"https://arizonahouseoffilm.com/industries/hotels-hospitality","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can film be installed without disturbing hotel guests?","acceptedAnswer":{"@type":"Answer","text":"Yes. We phase installation room by room, typically during checkout hours or with advance notification to affected guests. Common area film — lobby, restaurant, fitness center — is handled overnight to avoid any service disruption."}},{"@type":"Question","name":"What film is best for west-facing guest rooms in Arizona?","acceptedAnswer":{"@type":"Answer","text":"We recommend high-rejection ceramic films in the 40–55% SHGC range for west-facing Arizona hotel rooms. These block up to 74% of solar heat while maintaining the views and natural light that guests expect."}},{"@type":"Question","name":"Do decorative films work for spa and bathroom glass?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Frosted and etched-pattern films are a popular solution for spa treatment rooms, bathroom partitions, and pool enclosures. They provide complete privacy while maintaining natural light and a high-end appearance."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Industries","item":{"@id":"https://arizonahouseoffilm.com/industries","name":"Industries"}},{"@type":"ListItem","position":3,"name":"Hotels & Hospitality","item":{"@id":"https://arizonahouseoffilm.com/industries/hotels-hospitality","name":"Hotels & Hospitality"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-gray-50 py-20"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div style="opacity:0;transform:translateY(20px) translateZ(0)"><div class="mb-4 text-center"><a class="text-blue-600 hover:underline flex items-center justify-center" href="/industries"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> All Industries</a></div><div class="text-center"><div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-white"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"></path><path d="m9 16 .348-.24c1.465-1.013 3.84-1.013 5.304 0L15 16"></path><path d="M8 7h.01"></path><path d="M16 7h.01"></path><path d="M12 7h.01"></path><path d="M12 11h.01"></path><path d="M16 11h.01"></path><path d="M8 11h.01"></path><path d="M10 22v-6.5m4 0V22"></path></svg></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Solutions for Every Industry: <!-- -->Hotels &amp; Hospitality</h1><p class="text-lg text-gray-600 mb-12 whitespace-pre-line leading-relaxed text-left">Arizona&#x27;s extreme summer heat — regularly exceeding 115°F — makes west and south-facing hotel rooms uncomfortable for guests without the right solar protection. Arizona House of Film provides commercial-grade ceramic window film for hotels, resorts, and hospitality properties across Phoenix, Scottsdale, and the broader Arizona market.
+
+Our solar control films reduce room temperatures by 10–15°F on sun-facing exposures, eliminating guest complaints about heat and glare without requiring blackout curtains that block the premium views guests expect. HVAC systems run less frequently, and SRP and APS utility rebate programs may be available for qualifying hotel installations, improving your overall return on investment.
+
+For spa facilities, bathrooms, fitness centers, and glass-walled amenity spaces, our decorative frosted and etched films create privacy and a luxury aesthetic while maintaining natural light. Custom patterns can be matched to your existing décor for seamless integration across the property.
+
+We schedule installation around your occupancy — working room by room with advance notification — to minimize any disruption to guests. After-hours scheduling handles common areas, lobbies, and restaurants. UV-blocking films also protect your furniture, carpet, and interior finishes from Arizona sun damage, extending their lifespan between costly refurbishments. Licensed ROC #314088.</p></div><div class="my-12 bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500"><p class="text-gray-600 italic">&quot;<!-- -->&quot;Our west-facing rooms used to be unbearable in summer. After the ceramic film install, guest complaints dropped to zero and our HVAC costs dropped 22%.&quot; - Scottsdale Hotel Operations Director<!-- -->&quot;</p></div><div class="my-12"><h2 class="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg border border-gray-200"><h3 class="font-bold text-gray-900 mb-2">Can film be installed without disturbing hotel guests?</h3><p class="text-gray-600 leading-relaxed">Yes. We phase installation room by room, typically during checkout hours or with advance notification to affected guests. Common area film — lobby, restaurant, fitness center — is handled overnight to avoid any service disruption.</p></div><div class="bg-white p-6 rounded-lg border border-gray-200"><h3 class="font-bold text-gray-900 mb-2">What film is best for west-facing guest rooms in Arizona?</h3><p class="text-gray-600 leading-relaxed">We recommend high-rejection ceramic films in the 40–55% SHGC range for west-facing Arizona hotel rooms. These block up to 74% of solar heat while maintaining the views and natural light that guests expect.</p></div><div class="bg-white p-6 rounded-lg border border-gray-200"><h3 class="font-bold text-gray-900 mb-2">Do decorative films work for spa and bathroom glass?</h3><p class="text-gray-600 leading-relaxed">Absolutely. Frosted and etched-pattern films are a popular solution for spa treatment rooms, bathroom partitions, and pool enclosures. They provide complete privacy while maintaining natural light and a high-end appearance.</p></div></div></div><div class="text-center"><h2 class="text-2xl font-bold text-gray-800 mb-6">Recommended Film Types</h2><div class="flex justify-center gap-4 flex-wrap"><a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/energy-saving-window-films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>Solar Films</a><a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/safety"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>Security Films</a><a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/decorative-window-films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>Decorative Films</a></div></div><div class="mt-16 bg-blue-50 p-8 rounded-lg text-center"><h3 class="text-2xl font-bold text-blue-800">Get a Tailored Quote</h3><p class="mt-2 text-blue-700">Contact us for a free consultation on the best window film solution for your <!-- -->hotels &amp; hospitality<!-- -->.</p><a class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 mt-6" href="/contact">Request My Free Estimate</a><p class="mt-4 text-sm text-blue-600 font-medium">Licensed · Bonded · ROC #314088 |<!-- --> <a href="tel:4807881591" class="hover:underline font-bold">(480) 788-1591</a></p></div></div></div></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

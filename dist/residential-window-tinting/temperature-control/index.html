@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CDFMzPXl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Home Temperature Control | Window Film for Hot Spots in Arizona</title>
+  <meta data-rh="true" name="description" content="Eliminate hot spots and balance temperatures in your Arizona home with solar control window film. Create a consistently comfortable environment year-round and reduce HVAC strain."/><meta data-rh="true" property="og:title" content="Home Temperature Control | Window Film for Hot Spots in Arizona"/><meta data-rh="true" property="og:description" content="Eliminate hot spots and balance temperatures in your Arizona home with solar control window film. Create a consistently comfortable environment year-round and reduce HVAC strain."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/residential-window-tinting/temperature-control"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Home Temperature Control | Window Film for Hot Spots in Arizona"/><meta data-rh="true" name="twitter:description" content="Eliminate hot spots and balance temperatures in your Arizona home with solar control window film. Create a consistently comfortable environment year-round and reduce HVAC strain."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/residential-window-tinting/temperature-control"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Residential Services","item":"https://arizonahouseoffilm.com/residential-window-tinting"},{"@type":"ListItem","position":3,"name":"Home Temperature Control","item":"https://arizonahouseoffilm.com/residential-window-tinting/temperature-control"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"My west-facing rooms are the hottest. Should I only film those windows?","acceptedAnswer":{"@type":"Answer","text":"While filming only the west-facing windows will help, for the best results and most balanced temperature, we recommend treating all windows. This creates a uniform thermal envelope around your home, providing the most consistent comfort and maximum energy savings."}},{"@type":"Question","name":"Will window film make my house too cold in the winter?","acceptedAnswer":{"@type":"Answer","text":"No. Solar control films are primarily designed to reject solar heat. While they have minor insulating properties that help retain some heat in winter, they will not make your home feel noticeably colder. The primary effect is a much cooler home in the summer."}},{"@type":"Question","name":"Can you measure the temperature difference after film is installed?","acceptedAnswer":{"@type":"Answer","text":"Yes! We can use a BTU meter to demonstrate the amount of solar energy passing through your untreated glass versus a glass sample with film applied. Customers are often shocked to see how much heat our films block in a live demonstration."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Home Temperature Control | Window Film for Hot Spots in Arizona","description":"Eliminate hot spots and balance temperatures in your Arizona home with solar control window film. Create a consistently comfortable environment year-round and reduce HVAC strain.","brand":{"@type":"Brand","name":"Arizona House of Film"},"url":"https://arizonahouseoffilm.com/residential-window-tinting/temperature-control","offers":{"@type":"Offer","priceCurrency":"USD","price":"0.00","priceValidUntil":"2027-12-31","availability":"https://schema.org/InStock","url":"https://arizonahouseoffilm.com/residential-window-tinting/temperature-control"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"18"}}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-white"><header class="relative py-20 text-white bg-gradient-to-br from-orange-600 to-red-700"><div class="absolute inset-0 bg-black/40"></div><div class="relative z-10 max-w-4xl mx-auto px-4 text-center"><div class="mb-4"><a class="text-white hover:underline flex items-center justify-center text-sm" href="/residential-window-tinting"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to <!-- -->Residential Services</a></div><h1 class="text-4xl md:text-5xl font-bold text-white" style="opacity:0;transform:translateY(20px) translateZ(0)">Consistent Comfort in Every Room</h1><p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Solar window film is the key to eliminating frustrating hot spots and maintaining stable temperatures throughout your home.</p></div></header><main class="py-16 md:py-24"><div class="max-w-4xl mx-auto px-4"><div class="prose lg:prose-lg max-w-none text-gray-800" style="opacity:0;transform:translateY(20px) translateZ(0)"><div>
+      <h2>Take Control of Your Home's Climate</h2>
+      <p class="lead">Does your home suffer from dramatic temperature swings? Are some rooms unbearably hot in the afternoon while others remain cool? These "hot spots" are a common problem in Arizona homes, caused by uneven solar heat gain through windows. Solar control window film is the most effective way to solve this problem, creating a balanced and comfortable environment in every room, all year long.</p>
+      <h3>How Window Film Balances Temperatures</h3>
+      <p>Untreated windows, especially those facing east or west, allow massive amounts of solar heat to pour into your home. This overwhelms your air conditioning system, which struggles to keep up, resulting in inconsistent temperatures. Window film works by rejecting solar heat at the source—the glass itself.</p>
+      <ul>
+        <li><strong>Reduces Heat Gain:</strong> By blocking a significant portion of the sun's infrared heat, the film prevents rooms from overheating in the first place.</li>
+        <li><strong>Creates Uniformity:</strong> When all your windows are treated, the heat load is evenly distributed, allowing your HVAC system to maintain a consistent temperature from room to room.</li>
+        <li><strong>Improves HVAC Efficiency:</strong> Your air conditioner no longer has to run constantly to fight extreme heat in certain areas. This leads to better efficiency and <a href="/residential-window-tinting/energy-savings">lower energy bills</a>.</li>
+      </ul>
+      <h3>Year-Round Comfort, Day and Night</h3>
+      <p>While the benefits are most obvious during Arizona's scorching summers, the effects of temperature control are felt all year. In the winter, the same film can help retain a small amount of interior heat, making your home feel cozier. The result is a more stable, predictable, and comfortable living environment, regardless of the season or time of day.</p>
+      <p>Imagine a home where you can comfortably use every room, any time of day, without fiddling with the thermostat or closing the blinds. That's the comfort that professional window film installation provides. It's a foundational improvement that enhances your quality of life at home.</p>
+      <p>Stop the battle with hot spots. <a href="/contact">Contact us today</a> to learn how we can bring balanced temperature control to your home.</p>
+    </div></div></div></main><section class="py-16 md:py-24 bg-gray-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">My west-facing rooms are the hottest. Should I only film those windows?</h3><p class="text-gray-700">While filming only the west-facing windows will help, for the best results and most balanced temperature, we recommend treating all windows. This creates a uniform thermal envelope around your home, providing the most consistent comfort and maximum energy savings.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Will window film make my house too cold in the winter?</h3><p class="text-gray-700">No. Solar control films are primarily designed to reject solar heat. While they have minor insulating properties that help retain some heat in winter, they will not make your home feel noticeably colder. The primary effect is a much cooler home in the summer.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Can you measure the temperature difference after film is installed?</h3><p class="text-gray-700">Yes! We can use a BTU meter to demonstrate the amount of solar energy passing through your untreated glass versus a glass sample with film applied. Customers are often shocked to see how much heat our films block in a live demonstration.</p></div></div></div></section><section class="py-20 bg-blue-600 text-white"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Property?</h2><p class="text-lg text-blue-100 mb-8">Contact Arizona House of Film today for a free, no-obligation estimate.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-gray-200 font-semibold" href="/contact">Request Your Free Quote</a><a href="tel:480-788-1591" class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-11 rounded-md px-8 border-white text-white hover:bg-white hover:text-blue-600 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now</a></div></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

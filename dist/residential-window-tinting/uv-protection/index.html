@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CDFMzPXl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0p6Jjao.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">UV Protection Window Film | Protect Your Arizona Home &amp; Family</title>
+  <meta data-rh="true" name="description" content="Block 99% of harmful UV rays with residential window film. Prevent furniture fading, protect your skin, and preserve your home&#x27;s interior with our expert installation services in Phoenix, Scottsdale, and more."/><meta data-rh="true" property="og:title" content="UV Protection Window Film | Protect Your Arizona Home &amp; Family"/><meta data-rh="true" property="og:description" content="Block 99% of harmful UV rays with residential window film. Prevent furniture fading, protect your skin, and preserve your home&#x27;s interior with our expert installation services in Phoenix, Scottsdale, and more."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/residential-window-tinting/uv-protection"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="UV Protection Window Film | Protect Your Arizona Home &amp; Family"/><meta data-rh="true" name="twitter:description" content="Block 99% of harmful UV rays with residential window film. Prevent furniture fading, protect your skin, and preserve your home&#x27;s interior with our expert installation services in Phoenix, Scottsdale, and more."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/residential-window-tinting/uv-protection"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Residential Services","item":"https://arizonahouseoffilm.com/residential-window-tinting"},{"@type":"ListItem","position":3,"name":"UV Protection Window Film","item":"https://arizonahouseoffilm.com/residential-window-tinting/uv-protection"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How effective is window film at blocking UV rays?","acceptedAnswer":{"@type":"Answer","text":"Our professional-grade residential window films block over 99% of UVA and UVB radiation. This level of protection is recommended by the Skin Cancer Foundation and is one of the most effective ways to prevent sun damage indoors."}},{"@type":"Question","name":"Will UV window film make my windows dark?","acceptedAnswer":{"@type":"Answer","text":"No. We offer a range of films, including options that are virtually clear. These spectrally-selective films are designed to block UV and infrared (heat) rays without significantly reducing visible light, so your home stays bright and natural-looking."}},{"@type":"Question","name":"How long does UV protection film last?","acceptedAnswer":{"@type":"Answer","text":"Our high-quality residential window films are incredibly durable and come with a lifetime manufacturer warranty for residential applications. You can expect your film to provide consistent UV protection for many years without peeling, bubbling, or discoloring."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"UV Protection Window Film | Protect Your Arizona Home & Family","description":"Block 99% of harmful UV rays with residential window film. Prevent furniture fading, protect your skin, and preserve your home's interior with our expert installation services in Phoenix, Scottsdale, and more.","brand":{"@type":"Brand","name":"Arizona House of Film"},"url":"https://arizonahouseoffilm.com/residential-window-tinting/uv-protection","offers":{"@type":"Offer","priceCurrency":"USD","price":"0.00","priceValidUntil":"2027-12-31","availability":"https://schema.org/InStock","url":"https://arizonahouseoffilm.com/residential-window-tinting/uv-protection"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"18"}}</script>
+</head>
+
+<body>
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-white"><header class="relative py-20 text-white bg-gradient-to-br from-indigo-500 to-purple-600"><div class="absolute inset-0 bg-black/40"></div><div class="relative z-10 max-w-4xl mx-auto px-4 text-center"><div class="mb-4"><a class="text-white hover:underline flex items-center justify-center text-sm" href="/residential-window-tinting"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to <!-- -->Residential Services</a></div><h1 class="text-4xl md:text-5xl font-bold text-white" style="opacity:0;transform:translateY(20px) translateZ(0)">Ultimate UV Ray Protection</h1><p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Safeguard your family, furniture, and flooring from the damaging effects of the sun with 99% UV-blocking window film.</p></div></header><main class="py-16 md:py-24"><div class="max-w-4xl mx-auto px-4"><div class="prose lg:prose-lg max-w-none text-gray-800" style="opacity:0;transform:translateY(20px) translateZ(0)"><div>
+      <h2>Preserve Your Home and Protect Your Health with UV-Blocking Window Film</h2>
+      <p class="lead">The intense Arizona sun brings beautiful natural light into our homes, but it also carries invisible dangers. Ultraviolet (UV) radiation is a leading cause of fading in furniture, flooring, and artwork, and it poses significant health risks. Our residential UV protection window films block over 99% of these harmful rays, providing an invisible shield for your home and family.</p>
+      <h3>Stop Costly Sun Damage in Its Tracks</h3>
+      <p>Have you ever noticed how a vibrant rug or a cherished piece of art fades when exposed to sunlight? That's the destructive power of UV rays at work. Over time, UV radiation breaks down the chemical bonds in dyes and materials, causing irreversible fading and degradation. This can drastically shorten the lifespan of your valuable interiors.</p>
+      <p>UV-blocking window film acts like sunscreen for your house, offering comprehensive protection for:</p>
+      <ul>
+          <li><strong>Hardwood Floors & Carpets:</strong> Prevent discoloration and maintain the rich, original color of your flooring.</li>
+          <li><strong>Furniture & Upholstery:</strong> Keep your sofas, chairs, and fabrics looking new and vibrant for years.</li>
+          <li><strong>Artwork & Photographs:</strong> Preserve priceless memories and valuable art from fading and damage.</li>
+          <li><strong>Window Treatments:</strong> Extend the life of your curtains, blinds, and drapes by shielding them from constant sun exposure.</li>
+      </ul>
+      <h3>A Healthier Environment for Your Family</h3>
+      <p>The Skin Cancer Foundation recommends window film as part of a comprehensive sun protection program. Just one hour of exposure to the Arizona sun through untreated glass can be enough to cause skin damage. Our films provide an effective barrier against both UVA and UVB rays, the two types of ultraviolet light most harmful to human skin.</p>
+      <p>By installing UV protection film, you're creating a safer indoor environment, reducing the daily, cumulative sun exposure that can contribute to premature aging and increase the risk of skin cancer. It's an essential layer of protection for every member of your family, especially children.</p>
+      <h3>Enjoy Natural Light Without the Worry</h3>
+      <p>One of the greatest advantages of modern UV films is their exceptional clarity. You don't have to sacrifice the beautiful natural light that brightens your home. Our films are virtually invisible, allowing you to enjoy your views and a well-lit space while benefiting from industry-leading UV protection.</p>
+      <p>This solution is far superior to keeping blinds or curtains drawn all day, which darkens your home and disconnects you from the outdoors. With UV window film from top brands like <a href="/brands/3m">3M™</a> and <a href="/brands/huper-optik">Hüper Optik</a>, you get the best of both worlds: bright, beautiful interiors and total peace of mind.</p>
+      <p>Ready to safeguard your home and family? <a href="/contact">Contact Arizona House of Film today</a> for a free consultation and learn more about our UV protection film options.</p>
+    </div></div></div></main><section class="py-16 md:py-24 bg-gray-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">How effective is window film at blocking UV rays?</h3><p class="text-gray-700">Our professional-grade residential window films block over 99% of UVA and UVB radiation. This level of protection is recommended by the Skin Cancer Foundation and is one of the most effective ways to prevent sun damage indoors.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Will UV window film make my windows dark?</h3><p class="text-gray-700">No. We offer a range of films, including options that are virtually clear. These spectrally-selective films are designed to block UV and infrared (heat) rays without significantly reducing visible light, so your home stays bright and natural-looking.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">How long does UV protection film last?</h3><p class="text-gray-700">Our high-quality residential window films are incredibly durable and come with a lifetime manufacturer warranty for residential applications. You can expect your film to provide consistent UV protection for many years without peeling, bubbling, or discoloring.</p></div></div></div></section><section class="py-20 bg-blue-600 text-white"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Property?</h2><p class="text-lg text-blue-100 mb-8">Contact Arizona House of Film today for a free, no-obligation estimate.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-gray-200 font-semibold" href="/contact">Request Your Free Quote</a><a href="tel:480-788-1591" class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-11 rounded-md px-8 border-white text-white hover:bg-white hover:text-blue-600 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now</a></div></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

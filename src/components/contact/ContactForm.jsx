@@ -89,38 +89,38 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="industrial-label">First Name *</label>
-          <input name="First Name" required className="industrial-input" placeholder="JOHN" disabled={isSubmitting} />
+          <input name="First Name" required className="industrial-input" placeholder="JOHN" disabled={isSubmitting} aria-label="First Name" />
         </div>
         <div>
           <label className="industrial-label">Last Name *</label>
-          <input name="Last Name" required className="industrial-input" placeholder="SMITH" disabled={isSubmitting} />
+          <input name="Last Name" required className="industrial-input" placeholder="SMITH" disabled={isSubmitting} aria-label="Last Name" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="industrial-label">Email Address *</label>
-          <input name="Email" type="email" required className="industrial-input" placeholder="J.SMITH@COMPANY.COM" disabled={isSubmitting} />
+          <input name="Email" type="email" required className="industrial-input" placeholder="J.SMITH@COMPANY.COM" disabled={isSubmitting} aria-label="Email Address" />
         </div>
         <div>
           <label className="industrial-label">Phone Number *</label>
-          <input name="Phone" type="tel" required className="industrial-input" placeholder="480-000-0000" disabled={isSubmitting} />
+          <input name="Phone" type="tel" required className="industrial-input" placeholder="480-000-0000" disabled={isSubmitting} aria-label="Phone Number" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="industrial-label">Project City *</label>
-          <input name="City" required className="industrial-input" placeholder="PHOENIX" disabled={isSubmitting} />
+          <input name="City" required className="industrial-input" placeholder="PHOENIX" disabled={isSubmitting} aria-label="City" />
         </div>
         <div>
           <label className="industrial-label">Zip Code *</label>
-          <input name="Zip Code" required className="industrial-input" placeholder="85001" disabled={isSubmitting} />
+          <input name="Zip Code" required className="industrial-input" placeholder="85001" disabled={isSubmitting} aria-label="Zip Code" />
         </div>
       </div>
 
-      <div>
-        <label className="industrial-label">Project Type *</label>
+      <fieldset>
+        <legend className="industrial-label">Project Type *</legend>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2">
           {['Commercial', 'Residential', 'Decorative', 'Safety'].map((type) => (
             <label key={type} className="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50">
@@ -129,7 +129,7 @@ const ContactForm = () => {
             </label>
           ))}
         </div>
-      </div>
+      </fieldset>
 
       <div>
         <label className="industrial-label">Project Details *</label>
@@ -140,6 +140,7 @@ const ContactForm = () => {
           className="industrial-input min-h-[120px] resize-none"
           placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..."
           disabled={isSubmitting}
+          aria-label="Message"
         />
       </div>
 

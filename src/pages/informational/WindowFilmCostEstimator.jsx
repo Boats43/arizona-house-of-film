@@ -198,27 +198,30 @@ export default function WindowFilmCostEstimator() {
       return;
     }
     setFormError('');
-    const body = new URLSearchParams({
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email,
-      address: formData.address,
-      notes: formData.notes,
-      propertyType: propertyType,
-      windowCount: windowCount,
-      windowSize: selectedSize?.label || '',
-      films: selectedFilms.map(f => f.name).join(', '),
-      estimateLow: combinedEstimate?.low || '',
-      estimateHigh: combinedEstimate?.high || '',
-      source: 'cost-estimator',
-    });
     try {
-      await fetch('https://formsubmit.co/arizonahouseoffilm@gmail.com', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address,
+          notes: formData.notes,
+          propertyType,
+          windowCount,
+          windowSize: selectedSize?.label || '',
+          films: selectedFilms.map(f => f.name).join(', '),
+          estimateRange: `${combinedEstimate?.low?.toLocaleString()}–${combinedEstimate?.high?.toLocaleString()}`,
+          source: 'cost-estimator',
+        }),
       });
-      setFormSubmitted(true);
+
+      if (response.ok) {
+        setFormSubmitted(true);
+      } else {
+        setFormError('Something went wrong. Please call (480) 788-1591 directly.');
+      }
     } catch(e) {
       setFormError('Something went wrong. Please call (480) 788-1591 directly.');
     }

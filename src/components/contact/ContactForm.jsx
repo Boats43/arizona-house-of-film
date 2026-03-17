@@ -27,15 +27,21 @@ const ContactForm = () => {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/arizonahouseoffilm@gmail.com", {
-        method: "POST",
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: (formData.get('First Name') || '') + ' ' + (formData.get('Last Name') || ''),
+          phone: formData.get('Phone') || '',
+          email: formData.get('Email') || '',
+          address: (formData.get('City') || '') + ', ' + (formData.get('Zip Code') || ''),
+          message: formData.get('Message') || '',
+          propertyType: formData.get('Project Type') || '',
+          source: 'contact-form',
+        }),
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (response.ok) {
         form.reset();
         toast({
           title: "Audit Request Received ✓",
@@ -47,7 +53,7 @@ const ContactForm = () => {
           navigate('/thank-you');
         }, 1500);
       } else {
-        throw new Error(data.message || 'Form submission failed');
+        throw new Error('Form submission failed');
       }
     } catch (error) {
       toast({

@@ -32,9 +32,9 @@ Source: ${d.source || 'website'}
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: 'noreply@arizonahouseoffilm.com',
         to: 'arizonahouseoffilm@gmail.com',
-        reply_to: d.email || 'noreply@arizonahouseoffilm.com',
+        reply_to: d.email || 'arizonahouseoffilm@gmail.com',
         subject: `🏠 New Inquiry — ${d.name || 'Unknown'} — ${d.propertyType || 'Website Contact'}`,
         text,
       }),

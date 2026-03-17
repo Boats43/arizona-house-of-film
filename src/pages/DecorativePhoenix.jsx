@@ -199,6 +199,12 @@ const DecorativePhoenix = () => {
           </div>
         </section>
 
+        {/* INTENT REFRAME */}
+        <section className="bg-blue-950 border-l-4 border-blue-500 p-6 mb-10 rounded-r-lg">
+          <h2 className="text-xl font-bold text-white mb-2">Looking for Decorative Window Tinting in Phoenix?</h2>
+          <p className="text-gray-300 text-sm leading-relaxed">Many Phoenix homeowners and businesses search for "decorative window tinting" — what they're looking for is professional decorative window film installation. Arizona House of Film installs frosted, patterned, etched, and custom decorative glass films that provide privacy, style, and lasting performance. Licensed ROC #314088. No DIY — professional installation only.</p>
+        </section>
+
         {/* SECTION 1 */}
         <section className="py-16 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

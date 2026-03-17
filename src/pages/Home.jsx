@@ -58,7 +58,7 @@ const Home = () => {
       { "@type": "Question", name: "Is window film worth it in Arizona?", acceptedAnswer: { "@type": "Answer", text: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." } },
       { "@type": "Question", name: "How much does window tinting cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Residential projects typically range from $600 to $2,500 depending on film type and window count. Commercial projects are quoted by square footage — ROI typically covers installation cost within 2-4 years through energy savings alone." } },
       { "@type": "Question", name: "Is ceramic film worth it in Arizona?", acceptedAnswer: { "@type": "Answer", text: "Yes — more than anywhere else in the country. In a 115°F climate, ceramic film is the only technology that blocks up to 84% of infrared heat without interfering with GPS signals or darkening glass. The payback period in Phoenix is 2-4 years versus 8-12 years in northern climates." } },
-      { "@type": "Question", name: "Do you help with SRP or APS rebates?", acceptedAnswer: { "@type": "Answer", text: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We identify qualifying films and assist with the paperwork during your free estimate." } },
+      { "@type": "Question", name: "Do you help with SRP or APS rebates?", acceptedAnswer: { "@type": "Answer", text: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We provide NFRC-rated data sheets required for SRP and APS rebate applications. Customers submit directly to their utility provider." } },
     ],
   };
 
@@ -191,7 +191,7 @@ const Home = () => {
       <section className="bg-white py-12 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8">
           {[
-            { icon: Star, text: "Top Rated Google", sub: "15+ Local Reviews" },
+            { icon: Star, text: "Top Rated Google", sub: "17 Google Reviews" },
             { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
             { icon: Server, text: "500,000+ Sq Ft Installed", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },
@@ -407,7 +407,7 @@ const Home = () => {
               { q: "Is window film worth it in Arizona?", a: "For most Arizona properties, window film pays for itself within 2–4 years through reduced cooling costs alone — before counting UV protection and security benefits." },
               { q: "How much does window tinting cost in Phoenix?", a: "Residential projects typically range from $600 to $2,500 depending on film type and window count. Commercial projects are quoted by square footage — ROI typically covers installation cost within 2-4 years through energy savings alone." },
               { q: "Is ceramic film worth it in Arizona?", a: "Yes — more than anywhere else in the country. In a 115°F climate, ceramic film is the only technology that blocks up to 84% of infrared heat without interfering with GPS signals or darkening glass. The payback period in Phoenix is 2-4 years versus 8-12 years in northern climates." },
-              { q: "Do you help with SRP or APS rebates?", a: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We identify qualifying films and assist with the paperwork during your free estimate." },
+              { q: "Do you help with SRP or APS rebates?", a: "Yes. We provide the NFRC-rated technical data sheets required for SRP Business Solutions and APS energy-efficiency rebate applications. We provide NFRC-rated data sheets required for SRP and APS rebate applications. Customers submit directly to their utility provider." },
               { q: "Is window tinting safe for dual-pane windows?", a: "Yes — we use Arizona-engineered ceramic and spectrally selective films designed for high thermal load. We assess your glass type before recommending a film to ensure no risk of thermal stress cracking." },
               { q: "What is the difference between ceramic and regular window film?", a: "Ceramic films block heat through infrared rejection rather than darkness, maintaining natural light while rejecting up to 84% of solar heat. Standard dyed films fade over time and work primarily through light reduction. We recommend ceramic for Arizona conditions." },
             ].map((faq, i) => (

@@ -84,13 +84,36 @@ const PROPERTY_TYPES = [
   { id: "government", label: "Government / Institutional", description: "Schools, municipal, federal, military" },
 ];
 
-const WINDOW_SIZES = [
-  { id: "small", label: "Small (2×3)", sqFt: 6, example: "Bathroom, sidelight" },
-  { id: "medium", label: "Medium (3×4)", sqFt: 12, example: "Bedroom, office" },
-  { id: "standard", label: "Standard (4×5)", sqFt: 20, example: "Living room" },
-  { id: "large", label: "Large (5×5)", sqFt: 25, example: "Sliding door, picture window" },
-  { id: "xlarge", label: "XL (6×6)", sqFt: 36, example: "Commercial, floor-to-ceiling" },
-];
+const getWindowSizes = (propertyType) => {
+  if (propertyType === "residential") {
+    return [
+      { id: "small", label: "Small (2×3)", sqFt: 6, example: "Bathroom, sidelight" },
+      { id: "medium", label: "Medium (3×4)", sqFt: 12, example: "Bedroom, hallway" },
+      { id: "standard", label: "Standard (4×5)", sqFt: 20, example: "Living room, kitchen" },
+      { id: "large", label: "Large (5×5)", sqFt: 25, example: "Sliding door, picture window" },
+      { id: "xlarge", label: "XL (6×6)", sqFt: 36, example: "Floor-to-ceiling, large slider" },
+    ];
+  }
+  if (propertyType === "commercial") {
+    return [
+      { id: "standard", label: "Standard (4×5)", sqFt: 20, example: "Office window, retail panel" },
+      { id: "large", label: "Large (5×6)", sqFt: 30, example: "Storefront, office suite" },
+      { id: "xlarge", label: "XL (6×8)", sqFt: 48, example: "Large commercial pane" },
+      { id: "floor", label: "Floor-to-Ceiling (6×10)", sqFt: 60, example: "Glass office wall, retail front" },
+      { id: "curtainwall", label: "Curtain Wall Panel (6×12)", sqFt: 72, example: "High-rise, multi-story facade" },
+    ];
+  }
+  if (propertyType === "government") {
+    return [
+      { id: "standard", label: "Standard (4×5)", sqFt: 20, example: "Office, classroom window" },
+      { id: "large", label: "Large (5×6)", sqFt: 30, example: "Conference room, admin area" },
+      { id: "xlarge", label: "XL (6×8)", sqFt: 48, example: "Government building pane" },
+      { id: "floor", label: "Floor-to-Ceiling (6×10)", sqFt: 60, example: "Lobby, public-facing glass" },
+      { id: "blast", label: "Large Blast Zone Panel (6×12)", sqFt: 72, example: "Federal/military rated glass" },
+    ];
+  }
+  return [];
+};
 
 const btnStyle = (bg, color = "#fff") => ({
   background: bg,
@@ -116,7 +139,7 @@ const statCard = {
 export default function WindowFilmCostEstimator() {
   const [step, setStep] = useState(1);
   const [windowCount, setWindowCount] = useState(14);
-  const [selectedSize, setSelectedSize] = useState(WINDOW_SIZES[2]);
+  const [selectedSize, setSelectedSize] = useState(null);
   const [selectedFilms, setSelectedFilms] = useState([]);
   const [propertyType, setPropertyType] = useState("residential");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 640 : false);
@@ -127,7 +150,12 @@ export default function WindowFilmCostEstimator() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const totalSqFt = windowCount * selectedSize.sqFt;
+  useEffect(() => {
+    const sizes = getWindowSizes(propertyType);
+    setSelectedSize(sizes[2] || sizes[0]);
+  }, [propertyType]);
+
+  const totalSqFt = selectedSize ? windowCount * selectedSize.sqFt : 0;
 
   const toggleFilm = (film) => {
     setSelectedFilms((prev) =>
@@ -164,13 +192,13 @@ export default function WindowFilmCostEstimator() {
   const estimateQueryParam = combinedEstimate ? `${combinedEstimate.low}-${combinedEstimate.high}` : "";
 
   const sliderMax =
-    propertyType === "residential" ? 30 : propertyType === "commercial" ? 100 : 60;
-  const windowHint =
+    propertyType === "residential" ? 30 : propertyType === "commercial" ? 200 : 500;
+  const windowCountLabel =
     propertyType === "residential"
-      ? "home has 12–16"
-      : propertyType === "government"
-        ? "facility has 30–50"
-        : "office floor has 20–40";
+      ? "Average home has 12–16 windows."
+      : propertyType === "commercial"
+        ? "Average office floor has 20–40 panels."
+        : "Include entry vestibules and public-facing glass.";
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -385,7 +413,7 @@ export default function WindowFilmCostEstimator() {
                 How many windows?
               </h2>
               <p style={{ color: "#888", marginBottom: "36px", fontSize: "15px" }}>
-                Count all glass pieces to be filmed. Average {windowHint}.
+                Count all glass pieces to be filmed. {windowCountLabel}
               </p>
 
               {/* Window count slider */}
@@ -422,16 +450,16 @@ export default function WindowFilmCostEstimator() {
                   Typical window size (use your largest)
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "8px" }}>
-                  {WINDOW_SIZES.map((size) => (
+                  {getWindowSizes(propertyType).map((size) => (
                     <button
                       key={size.id}
                       onClick={() => setSelectedSize(size)}
                       style={{
                         padding: "14px 16px",
-                        background: selectedSize.id === size.id ? "#1a2a1e" : "#12121a",
-                        border: `1px solid ${selectedSize.id === size.id ? "#6b8f71" : "#2a2a35"}`,
+                        background: selectedSize?.id === size.id ? "#1a2a1e" : "#12121a",
+                        border: `1px solid ${selectedSize?.id === size.id ? "#6b8f71" : "#2a2a35"}`,
                         borderRadius: "6px",
-                        color: selectedSize.id === size.id ? "#6b8f71" : "#888",
+                        color: selectedSize?.id === size.id ? "#6b8f71" : "#888",
                         cursor: "pointer",
                         textAlign: "left",
                         transition: "all 0.2s",
@@ -797,7 +825,7 @@ export default function WindowFilmCostEstimator() {
                   Call (480) 788-1591 — Get Exact Quote
                 </a>
                 <a
-                  href={`/contact?windows=${windowCount}&size=${selectedSize.label}&film=${encodeURIComponent(filmQueryParam)}&estimate=${estimateQueryParam}`}
+                  href={`/contact?windows=${windowCount}&size=${selectedSize?.label || ""}&film=${encodeURIComponent(filmQueryParam)}&estimate=${estimateQueryParam}`}
                   style={{
                     ...btnStyle("#1e1e2a", "#aaa"),
                     textDecoration: "none",

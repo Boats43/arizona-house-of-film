@@ -9,16 +9,17 @@ import {
 import { Button } from '@/components/ui/button';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const Welcome = () => {
-  const pageTitle = 'About Arizona House of Film | Licensed Since 2017';
-  const metaDescription = 'Arizona House of Film — licensed, bonded window film contractor since 2017. ROC #314088. 700+ projects. $1.16M in completed work. Serving Phoenix, Scottsdale, and the full Arizona metro.';
+  const pageTitle = 'About Arizona House of Film | Licensed Window Film Contractor | ROC #314088';
+  const metaDescription = 'Arizona House of Film — licensed window film contractor since 2017. 700+ projects, $2M+ in completed work. Commercial, residential, government. ROC #314088. Phoenix, AZ.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/welcome';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';
 
   const stats = [
     { value: '700+',        label: 'Projects Completed' },
-    { value: '$1.16M',      label: 'In Completed Work' },
+    { value: '$2M+',         label: 'In Completed Work' },
     { value: 'ROC #314088', label: 'Licensed & Bonded' },
     { value: 'Since 2017',  label: 'Serving Arizona' },
   ];
@@ -52,7 +53,7 @@ const Welcome = () => {
   ];
 
   const clients = [
-    'Grand Canyon University',    'U.S. Navy Recruitment Center',
+    'Grand Canyon University',    'U.S. Navy Recruitment Centers',
     'Skechers USA',               'AutoZone',
     'Banner Health',              'Boeing',
     'Arizona State University',   'Valley Metro',
@@ -61,6 +62,10 @@ const Welcome = () => {
     'Starbucks',                  'Isagenix International',
     'NAPA Auto Parts',            'Frank Lloyd Wright Foundation',
     'Willmeng Construction',      'City of Phoenix',
+    'FCI Constructors',           'Glendale Fire Station 152',
+    'On Q Financial',             'Camden Development',
+    'City of Mesa',               'City of Buckeye',
+    'DMC Builders',               'Coventry Design and Build',
   ];
 
   const areaCities = [
@@ -75,8 +80,8 @@ const Welcome = () => {
     ['Bonded & Insured',  'Yes — all project types'],
     ['Founded',           '2017'],
     ['Projects',          '700+ completed'],
-    ['Documented Revenue','$1.16M in verified work'],
-    ['Film Brands',       '3M, XPEL, Madico, Solar Gard, Eastman'],
+    ['Documented Revenue','$2M+ in verified work'],
+    ['Film Brands',       '3M, LLumar, Madico, Solar Gard, Huper Optik, Solyx'],
     ['Headquarters',      'Phoenix, AZ 85033'],
     ['Service Area',      'Statewide Arizona'],
   ];
@@ -96,10 +101,36 @@ const Welcome = () => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'Is Arizona House of Film licensed in Arizona?',
+              acceptedAnswer: { '@type': 'Answer', text: 'Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088. We are fully bonded and insured for commercial, residential, government, and institutional projects across Arizona.' },
+            },
+            {
+              '@type': 'Question',
+              name: 'How many projects has Arizona House of Film completed?',
+              acceptedAnswer: { '@type': 'Answer', text: 'Arizona House of Film has completed 700+ projects since 2017, with over $2 million in completed work across commercial, residential, government, and institutional clients throughout Arizona.' },
+            },
+            {
+              '@type': 'Question',
+              name: 'What window film brands does Arizona House of Film install?',
+              acceptedAnswer: { '@type': 'Answer', text: 'We install film from 3M, LLumar (Eastman), Madico, Solar Gard, Huper Optik, and Solyx. Film is specified per project based on glass type, orientation, thermal load, and performance requirements.' },
+            },
+            {
+              '@type': 'Question',
+              name: 'Where does Arizona House of Film operate?',
+              acceptedAnswer: { '@type': 'Answer', text: 'Arizona House of Film is based in Phoenix, AZ and serves the full Arizona metro including Scottsdale, Mesa, Chandler, Gilbert, Tempe, Glendale, Peoria, Queen Creek, and statewide Arizona. Licensed ROC #314088.' },
+            },
+          ],
+        })}</script>
       </Helmet>
       <BreadcrumbSchema items={[
-        { name: 'Home', path: '/' },
-        { name: 'About Arizona House of Film', path: '/welcome' },
+        { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+        { name: 'About Arizona House of Film', url: 'https://arizonahouseoffilm.com/welcome' },
       ]} />
 
       <main id="main-content" className="bg-slate-950 min-h-screen text-white">
@@ -117,11 +148,10 @@ const Welcome = () => {
                 Licensed · Bonded · ROC #314088 · Since 2017
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase leading-[0.9] tracking-tighter">
-                About Arizona<br /><span className="text-green-500">House of Film</span>
+                Arizona House of Film —<br /><span className="text-green-500">Licensed Window Film Contractor Since 2017</span>
               </h1>
-              <p className="text-xl text-slate-300 max-w-2xl leading-relaxed font-medium">
-                Phoenix's licensed window film contractor. 700+ completed projects. $1.16M in documented work
-                across commercial, residential, government, and institutional clients throughout Arizona since 2017.
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                700 projects. Over $2 million in completed work. Eight years installing performance window film across Arizona — commercial, residential, government, and institutional.
               </p>
             </motion.div>
 
@@ -152,20 +182,20 @@ const Welcome = () => {
                 </h2>
                 <div className="space-y-5 text-slate-700 font-medium leading-relaxed text-lg">
                   <p>
-                    Arizona House of Film was founded in Phoenix in 2017 by a licensed contractor who saw that
-                    most window film companies in Arizona prioritized sales volume over film specification. We built
-                    the business on a different premise: identify the right film for the glass, the orientation, and
-                    the climate — then install it correctly the first time.
+                    We don't sell tint. We specify and install performance window film for commercial buildings,
+                    residential properties, government facilities, and institutional clients across Arizona. The
+                    difference matters — the wrong film on the wrong glass in 115°F heat fails. Arizona House of
+                    Film has been getting this right since 2017.
                   </p>
                   <p>
                     Seven years later, we have completed over 700 projects across Maricopa, Pima, Yavapai, and
-                    Pinal counties, documented more than $1.16 million in completed work, and built relationships
+                    Pinal counties, documented more than $2 million+ in completed work, and built relationships
                     with some of Arizona's most demanding clients — from general contractors like Wespac and
                     Willmeng to institutional clients like Grand Canyon University and the U.S. Navy.
                   </p>
                   <p>
                     We hold Arizona Registrar of Contractors license ROC #314088, are fully bonded and insured,
-                    and are installers of leading window film brands including Madico, Solar Gard, Eastman, 3M, and XPEL series — sourced and specified per project requirements.
+                    and are installers of leading window film brands including 3M, LLumar (Eastman), Madico, Solar Gard, Huper Optik, and Solyx — sourced and specified per project requirements.
                   </p>
                 </div>
               </div>
@@ -255,8 +285,7 @@ const Welcome = () => {
               </h2>
               <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
               <p className="text-slate-600 font-medium max-w-2xl mx-auto">
-                700+ projects completed since 2017. The following organizations represent a cross-section of our
-                verified commercial work across Arizona.
+                The following organizations represent a cross-section of 700+ completed projects and $2M+ in documented work since 2017.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
@@ -292,6 +321,8 @@ const Welcome = () => {
           </div>
         </section>
 
+        <EstimatorCTA />
+
         {/* CTA */}
         <section className="py-20 bg-green-600">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
@@ -301,20 +332,12 @@ const Welcome = () => {
             <p className="text-white/90 text-lg font-medium mb-10 max-w-2xl mx-auto">
               Free on-site assessment. No obligation. Licensed ROC #314088. We respond within one business day.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                asChild size="lg"
-                className="bg-white text-green-900 hover:bg-gray-100 px-10 h-16 text-xl font-black rounded-none"
-              >
-                <Link to="/contact">Request Free Estimate</Link>
-              </Button>
-              <a
-                href="tel:480-788-1591"
-                className="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-green-800 transition-all text-lg"
-              >
-                (480) 788-1591
-              </a>
-            </div>
+            <Button
+              asChild size="lg"
+              className="bg-white text-green-900 hover:bg-gray-100 px-10 h-16 text-xl font-black rounded-none"
+            >
+              <Link to="/contact">Request Free Estimate</Link>
+            </Button>
           </div>
         </section>
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -21,25 +21,6 @@ const Home = () => {
   const HERO_IMAGE = "/images/phoenix-window-tinting.webp";
   const LOGO_IMAGE = "/images/Arizona-House-of-Film.webp";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
-
-  useEffect(() => {
-    const loadDeferredScripts = () => {
-      if (window.scriptsLoaded) return;
-      const gtmScript = document.createElement("script");
-      gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MC2PDPFR";
-      gtmScript.async = true;
-      document.head.appendChild(gtmScript);
-      window.scriptsLoaded = true;
-    };
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(() => setTimeout(loadDeferredScripts, 3500));
-    } else {
-      setTimeout(loadDeferredScripts, 3500);
-    }
-    const trigger = () => loadDeferredScripts();
-    window.addEventListener("scroll", trigger, { once: true, passive: true });
-    return () => window.removeEventListener("scroll", trigger);
-  }, []);
 
   const services = [
     { name: "Residential Window Tinting", icon: HomeIcon, path: "/residential-window-tinting", cta: "Explore Residential Tinting", description: "Advanced home tinting using ceramic films that block 84% of solar heat and 99.9% of UV rays." },

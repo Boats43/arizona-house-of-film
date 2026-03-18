@@ -2,10 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  Shield, Building, Home as HomeIcon, Palette, Zap,
-  ArrowRight, CheckCircle,
-} from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
@@ -19,53 +16,57 @@ const Welcome = () => {
 
   const stats = [
     { value: '700+',        label: 'Projects Completed' },
-    { value: '$2M+',         label: 'In Completed Work' },
+    { value: '$2M+',        label: 'Completed Work' },
     { value: 'ROC #314088', label: 'Licensed & Bonded' },
     { value: 'Since 2017',  label: 'Serving Arizona' },
   ];
 
   const values = [
     {
+      title: 'Film-First Specification',
+      body: 'We spec the right film for your glass type, orientation, and thermal load. Not the film with the best margin. The right film. Every time.',
+    },
+    {
       title: 'Transparent Pricing',
-      body: 'Every quote is itemized by film type, glass access, and scope. No hidden charges. No bait-and-switch. You know exactly what you are buying before we start.',
+      body: 'Every quote is itemized — film type, scope, access difficulty. You know exactly what you\'re buying before we schedule.',
     },
     {
       title: 'Licensed for Every Job',
-      body: 'ROC #314088. Bonded and insured for commercial and residential. Government, school, and institutional projects require documentation — we provide it.',
-    },
-    {
-      title: 'Film-First Specification',
-      body: 'We recommend the right film for your glass type, orientation, and climate exposure — not the film with the best margin. Most competitors skip this step.',
+      body: 'ROC #314088. Bonded and insured. Government, institutional, and school projects require documentation. We\'ve done it before. We have what\'s needed.',
     },
     {
       title: 'No-Disruption Scheduling',
-      body: 'Most commercial installs happen after hours or on weekends. Residential installs fit your schedule. We have never missed a confirmed project start date.',
+      body: 'Commercial installs happen after hours or weekends. Residential installs fit your schedule. We have not missed a confirmed project start date.',
     },
   ];
 
-  const services = [
-    { name: 'Commercial Window Tinting',  link: '/commercial-window-tinting',  icon: Building  },
-    { name: 'Residential Window Tinting', link: '/residential-window-tinting', icon: HomeIcon  },
-    { name: 'Decorative Window Films',    link: '/decorative-window-films',    icon: Palette   },
-    { name: 'Safety & Security Film',     link: '/safety',                     icon: Shield    },
-    { name: 'Energy-Saving Films',        link: '/energy-saving-window-films', icon: Zap       },
-    { name: 'All Solutions',              link: '/solutions',                  icon: CheckCircle },
+  const filmCategories = [
+    'Solar Control & Ceramic Film',
+    'Dual Reflective & Spectrally Selective Film',
+    'Security & Safety Film (4 mil to 21 mil)',
+    'Decorative, Frosted & Privacy Film',
+    'Anti-Graffiti & Surface Protection Film',
+    'Cloaking Film (Casper by Designtex, Quantum Cloaking Film\u00AE)',
+    'Countertop & Surface Protection Film',
+    'Low-E & Energy-Saving Film',
   ];
 
   const clients = [
-    'Grand Canyon University',    'U.S. Navy Recruitment Centers',
-    'Skechers USA',               'AutoZone',
-    'Banner Health',              'Boeing',
-    'Arizona State University',   'Valley Metro',
-    'Coca-Cola',                  'Renaissance Hotels',
-    'Wespac Construction',        'LA Fitness',
-    'Starbucks',                  'Isagenix International',
-    'NAPA Auto Parts',            'Frank Lloyd Wright Foundation',
-    'Willmeng Construction',      'City of Phoenix',
-    'FCI Constructors',           'Glendale Fire Station 152',
-    'On Q Financial',             'Camden Development',
-    'City of Mesa',               'City of Buckeye',
-    'DMC Builders',               'Coventry Design and Build',
+    'Coca-Cola',                    'U.S. Navy Recruitment Centers',
+    'Frank Lloyd Wright Foundation', 'Grand Canyon University',
+    'Wespac Construction',          'Willmeng Construction',
+    'FCI Constructors',             'Skechers USA',
+    'Boeing',                       'Arizona State University',
+    'Valley Metro',                 'City of Phoenix',
+    'Glendale Fire Station 152',    'On Q Financial',
+    'Camden Development',           'Renaissance Hotels',
+    'Banner Health',                'LA Fitness',
+    'Starbucks',                    'AutoZone',
+    'NAPA Auto Parts',              'Isagenix International',
+    'City of Mesa',                 'City of Buckeye',
+    'DMC Builders',                 'Coventry Design and Build',
+    '2nd Swing Scottsdale',         'AutoNation',
+    'Dignity Health',
   ];
 
   const areaCities = [
@@ -76,14 +77,14 @@ const Welcome = () => {
   ];
 
   const credentials = [
-    ['License',           'Arizona ROC #314088'],
-    ['Bonded & Insured',  'Yes — all project types'],
-    ['Founded',           '2017'],
-    ['Projects',          '700+ completed'],
-    ['Documented Revenue','$2M+ in verified work'],
-    ['Film Brands',       '3M, LLumar, Madico, Solar Gard, Huper Optik, Solyx'],
-    ['Headquarters',      'Phoenix, AZ 85033'],
-    ['Service Area',      'Statewide Arizona'],
+    ['License',            'Arizona ROC #314088'],
+    ['Bonded & Insured',   'All project types — commercial, residential, government'],
+    ['Founded',            'Phoenix, AZ — 2017'],
+    ['Projects Completed', '700+'],
+    ['Documented Work',    '$2M+ gross revenue'],
+    ['Film Brands',        '3M, LLumar, Madico, Solar Gard, Huper Optik, Solyx'],
+    ['Headquarters',       '7007 W Flower St, Phoenix, AZ 85033'],
+    ['Service Area',       'Statewide Arizona — Phoenix metro primary'],
   ];
 
   return (
@@ -108,22 +109,22 @@ const Welcome = () => {
             {
               '@type': 'Question',
               name: 'Is Arizona House of Film licensed in Arizona?',
-              acceptedAnswer: { '@type': 'Answer', text: 'Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088. We are fully bonded and insured for commercial, residential, government, and institutional projects across Arizona.' },
+              acceptedAnswer: { '@type': 'Answer', text: 'Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088. Fully bonded and insured for commercial, residential, government, and institutional projects.' },
             },
             {
               '@type': 'Question',
-              name: 'How many projects has Arizona House of Film completed?',
-              acceptedAnswer: { '@type': 'Answer', text: 'Arizona House of Film has completed 700+ projects since 2017, with over $2 million in completed work across commercial, residential, government, and institutional clients throughout Arizona.' },
+              name: 'What is the background of Arizona House of Film?',
+              acceptedAnswer: { '@type': 'Answer', text: 'Arizona House of Film was founded in Phoenix in 2017 by a U.S. Navy veteran with nearly twenty years of professional window film installation experience. The company has completed 700+ projects and over $2 million in documented work across commercial, residential, government, and institutional clients throughout Arizona.' },
             },
             {
               '@type': 'Question',
               name: 'What window film brands does Arizona House of Film install?',
-              acceptedAnswer: { '@type': 'Answer', text: 'We install film from 3M, LLumar (Eastman), Madico, Solar Gard, Huper Optik, and Solyx. Film is specified per project based on glass type, orientation, thermal load, and performance requirements.' },
+              acceptedAnswer: { '@type': 'Answer', text: 'We install film from 3M, LLumar (Eastman), Madico, Solar Gard, Huper Optik, Solyx, Vista, EnerLogic, and Quantum Cloaking Film\u00AE. Film is specified per project based on glass type, orientation, thermal load, and performance requirements.' },
             },
             {
               '@type': 'Question',
               name: 'Where does Arizona House of Film operate?',
-              acceptedAnswer: { '@type': 'Answer', text: 'Arizona House of Film is based in Phoenix, AZ and serves the full Arizona metro including Scottsdale, Mesa, Chandler, Gilbert, Tempe, Glendale, Peoria, Queen Creek, and statewide Arizona. Licensed ROC #314088.' },
+              acceptedAnswer: { '@type': 'Answer', text: 'Based in Phoenix, AZ. Full Arizona metro coverage \u2014 Scottsdale, Mesa, Chandler, Gilbert, Tempe, Glendale, Peoria, Queen Creek, and statewide. Licensed ROC #314088.' },
             },
           ],
         })}</script>
@@ -145,13 +146,14 @@ const Welcome = () => {
               className="max-w-4xl"
             >
               <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">
-                Licensed · Bonded · ROC #314088 · Since 2017
+                Licensed · Bonded · ROC #314088 · U.S. Navy Veteran Owned · Since 2017
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase leading-[0.9] tracking-tighter">
-                Arizona House of Film —<br /><span className="text-green-500">Licensed Window Film Contractor Since 2017</span>
+                Arizona House of Film<br />
+                <span className="text-green-500">Licensed Window Film Contractor — Phoenix, Arizona</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                700 projects. Over $2 million in completed work. Eight years installing performance window film across Arizona — commercial, residential, government, and institutional.
+              <p className="text-xl text-slate-300 max-w-3xl leading-relaxed font-medium">
+                Nearly a decade of field experience. Over 700 completed projects. $2M+ in documented work across commercial, residential, government, and institutional clients throughout Arizona.
               </p>
             </motion.div>
 
@@ -172,50 +174,63 @@ const Welcome = () => {
           </div>
         </section>
 
-        {/* STORY + CREDENTIALS */}
+        {/* WHAT WE DO */}
         <section className="py-24 bg-white text-slate-950">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">
-                  Who We Are
-                </h2>
-                <div className="space-y-5 text-slate-700 font-medium leading-relaxed text-lg">
-                  <p>
-                    We don't sell tint. We specify and install performance window film for commercial buildings,
-                    residential properties, government facilities, and institutional clients across Arizona. The
-                    difference matters — the wrong film on the wrong glass in 115°F heat fails. Arizona House of
-                    Film has been getting this right since 2017.
-                  </p>
-                  <p>
-                    Seven years later, we have completed over 700 projects across Maricopa, Pima, Yavapai, and
-                    Pinal counties, documented more than $2 million+ in completed work, and built relationships
-                    with some of Arizona's most demanding clients — from general contractors like Wespac and
-                    Willmeng to institutional clients like Grand Canyon University and the U.S. Navy.
-                  </p>
-                  <p>
-                    We hold Arizona Registrar of Contractors license ROC #314088, are fully bonded and insured,
-                    and are installers of leading window film brands including 3M, LLumar (Eastman), Madico, Solar Gard, Huper Optik, and Solyx — sourced and specified per project requirements.
-                  </p>
-                </div>
+            <div className="max-w-3xl">
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">
+                What We Do
+              </h2>
+              <div className="space-y-5 text-slate-700 font-medium leading-relaxed text-lg">
+                <p>
+                  Arizona House of Film installs performance window film. Not tint. Not a cosmetic upgrade. Film that is specified for the glass, the orientation, and the climate — then installed correctly the first time.
+                </p>
+                <p>
+                  We operate across every film category: solar control, security and safety, decorative and privacy, anti-graffiti, cloaking, and surface protection. Every project is custom-quoted. Every specification is documented. Every install is backed by ROC #314088.
+                </p>
               </div>
-              <div>
-                <h3 className="text-xl font-black uppercase tracking-tighter mb-6 text-slate-950">
-                  Credentials at a Glance
-                </h3>
-                <table className="w-full text-sm">
-                  <tbody>
-                    {credentials.map(([label, value], i) => (
-                      <tr key={i} className="border-b border-slate-200">
-                        <td className="py-3 pr-4 font-black text-slate-500 uppercase text-xs tracking-widest w-44">
-                          {label}
-                        </td>
-                        <td className="py-3 font-semibold text-slate-900">{value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            </div>
+          </div>
+        </section>
+
+        {/* THE EXPERIENCE BEHIND THE WORK */}
+        <section className="py-24 bg-slate-950 border-y border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-8">
+                The Experience Behind the Work
+              </h2>
+              <div className="space-y-5 text-slate-400 font-medium leading-relaxed text-lg">
+                <p>
+                  The owner of Arizona House of Film has been installing window film professionally for nearly twenty years — starting before the company existed, carrying that experience through every project since 2017. U.S. Navy veteran. Field-trained. Technically precise.
+                </p>
+                <p>
+                  That background shows in how we operate. We don't guess at specifications. We don't substitute products without authorization. We don't cut corners on preparation. The work is done right because the person who built this company knows what wrong looks like — and won't accept it.
+                </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CREDENTIALS */}
+        <section className="py-24 bg-white text-slate-950">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-10">
+              Credentials
+            </h2>
+            <div className="max-w-2xl">
+              <table className="w-full text-sm">
+                <tbody>
+                  {credentials.map(([label, value], i) => (
+                    <tr key={i} className="border-b border-slate-200">
+                      <td className="py-3 pr-4 font-black text-slate-500 uppercase text-xs tracking-widest w-48">
+                        {label}
+                      </td>
+                      <td className="py-3 font-semibold text-slate-900">{value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -247,45 +262,44 @@ const Welcome = () => {
           </div>
         </section>
 
-        {/* WHAT WE INSTALL */}
+        {/* FILMS WE INSTALL */}
         <section className="py-24 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">
-                What We Install
-              </h2>
-              <div className="w-24 h-2 bg-green-500 mx-auto" />
+            <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-8">
+              Films We Install
+            </h2>
+            <div className="max-w-3xl mb-12">
+              <p className="text-slate-400 font-medium leading-relaxed text-lg">
+                We have installed every major film category on the market — across all leading manufacturers. That includes everything from entry-level solar control to blast-rated government security film to Casper and Quantum cloaking film for glass-walled offices.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {services.map((svc, i) => (
-                <Link
+            <div className="grid md:grid-cols-2 gap-3 mb-12">
+              {filmCategories.map((cat, i) => (
+                <div
                   key={i}
-                  to={svc.link}
-                  className="flex items-center justify-between bg-slate-800 border border-slate-700 hover:border-green-500 p-6 transition-all group"
+                  className="flex items-center gap-3 bg-slate-800 border border-slate-700 px-6 py-4"
                 >
-                  <div className="flex items-center gap-4">
-                    <svc.icon className="w-6 h-6 text-green-500 shrink-0" />
-                    <span className="font-black text-white uppercase text-sm tracking-tight group-hover:text-green-400 transition-colors">
-                      {svc.name}
-                    </span>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-green-500 transition-colors shrink-0" />
-                </Link>
+                  <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                  <span className="font-bold text-white text-sm uppercase tracking-tight">{cat}</span>
+                </div>
               ))}
             </div>
+            <p className="text-slate-500 font-bold text-sm uppercase tracking-widest">
+              Manufacturers: 3M · LLumar (Eastman) · Madico · Solar Gard · Huper Optik · Solyx · Vista · EnerLogic · Quantum Cloaking Film®
+            </p>
           </div>
         </section>
 
-        {/* CLIENT PORTFOLIO */}
+        {/* VERIFIED CLIENT PORTFOLIO */}
         <section className="py-24 bg-white text-slate-950">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">
-                Selected Client Portfolio
+                Verified Client Portfolio
               </h2>
               <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
               <p className="text-slate-600 font-medium max-w-2xl mx-auto">
-                The following organizations represent a cross-section of 700+ completed projects and $2M+ in documented work since 2017.
+                700+ projects completed since 2017 across these organizations and hundreds more.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
@@ -301,11 +315,11 @@ const Welcome = () => {
           </div>
         </section>
 
-        {/* SERVICE AREAS */}
+        {/* SERVICE COVERAGE */}
         <section className="py-20 bg-slate-950 border-t border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.3em] mb-10">
-              Arizona Service Coverage
+              Service Coverage
             </h2>
             <div className="flex flex-wrap justify-center gap-2">
               {areaCities.map((city) => (
@@ -323,14 +337,14 @@ const Welcome = () => {
 
         <EstimatorCTA />
 
-        {/* CTA */}
+        {/* START YOUR PROJECT */}
         <section className="py-20 bg-green-600">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">
               Start Your Project
             </h2>
             <p className="text-white/90 text-lg font-medium mb-10 max-w-2xl mx-auto">
-              Free on-site assessment. No obligation. Licensed ROC #314088. We respond within one business day.
+              Free on-site assessment. We identify the right film for your glass, your exposure, and your budget — then provide a documented quote. Licensed ROC #314088. Response within one business day.
             </p>
             <Button
               asChild size="lg"

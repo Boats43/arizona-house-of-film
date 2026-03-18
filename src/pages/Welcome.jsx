@@ -299,7 +299,7 @@ const Welcome = () => {
               </h2>
               <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
               <p className="text-slate-600 font-medium max-w-2xl mx-auto">
-                700+ projects completed since 2017 across these organizations and hundreds more.
+                Projects completed since 2017 across these organizations and hundreds more.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">

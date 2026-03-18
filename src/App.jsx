@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import FloatingContactButton from "@/components/FloatingContactButton";
+const FloatingContactButton = lazy(() => import("@/components/FloatingContactButton"));
 import { Toaster } from "@/components/ui/toaster";
 import LegacyRedirect from "@/components/LegacyRedirect";
 
@@ -415,7 +415,7 @@ function App() {
         </div>
         <Footer />
         <Toaster />
-        <FloatingContactButton />
+        <Suspense fallback={null}><FloatingContactButton /></Suspense>
         <FloatingEstimator />
       </div>
     </>

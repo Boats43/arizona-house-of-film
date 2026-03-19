@@ -50,6 +50,7 @@ const BrandsHub = lazy(() => import("@/pages/BrandsHub"));
 const BrandPage = lazy(() => import("@/pages/BrandPage"));
 const FlexfilmPage = lazy(() => import("@/pages/brands/FlexfilmPage"));
 const LlumarPage = lazy(() => import("@/pages/brands/LlumarPage"));
+const FilmQuoteRequest = lazy(() => import("@/pages/FilmQuoteRequest"));
 const Store = lazy(() => import("@/pages/Store"));
 const SupportingPage = lazy(() => import("@/pages/SupportingPage"));
 const AntiGraffiti = lazy(() => import("@/pages/AntiGraffiti"));
@@ -321,6 +322,7 @@ function AppRoutes() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/get-a-quote" element={<FilmQuoteRequest />} />
           <Route path="/book-now" element={<BookNow />} />
           <Route path="/book" element={<BookNow />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

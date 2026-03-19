@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-D0BGwJqy.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-DlmMyXOu.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-DK6RK281.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-IDLUZdFn.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-DHWHRyNJ.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-XZVX2P3E.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Get a Window Film Quote | Arizona House of Film | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Request a window film quote from Arizona House of Film. Select your film type, enter measurements, and get a detailed quote within 24 hours. ROC #314088."/><meta data-rh="true" property="og:title" content="Get a Window Film Quote | Arizona House of Film | ROC #314088"/><meta data-rh="true" property="og:description" content="Request a window film quote from Arizona House of Film. Select your film type, enter measurements, and get a detailed quote within 24 hours. ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/get-a-quote"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Get a Window Film Quote | Arizona House of Film | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Request a window film quote from Arizona House of Film. Select your film type, enter measurements, and get a detailed quote within 24 hours. ROC #314088."/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/get-a-quote"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does it take to get a quote?","acceptedAnswer":{"@type":"Answer","text":"We review all quote requests and respond within 24 hours with detailed pricing based on your film selection and measurements."}},{"@type":"Question","name":"Do I need exact measurements?","acceptedAnswer":{"@type":"Answer","text":"Approximate measurements are fine for an initial quote. We confirm exact dimensions during the free on-site assessment before installation."}},{"@type":"Question","name":"Can I request a specific film brand?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install 3M, LLumar, Madico, Solar Gard, Huper Optik, Solyx, and more. If you have a specific film in mind, note it in your request or select it from the film dropdown."}},{"@type":"Question","name":"Is the quote free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All quotes from Arizona House of Film are free with no obligation. Licensed ROC #314088."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Get a Quote","item":{"@id":"https://arizonahouseoffilm.com/get-a-quote","name":"Get a Quote"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-50 min-h-screen"><section class="py-20 bg-slate-950 border-b border-slate-800"><div class="max-w-4xl mx-auto px-6 lg:px-8 text-center"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Free Quote • No Obligation • ROC #314088</span><h1 class="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">Get a Window Film Quote</h1><p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">Select your film type, enter your measurements, and receive a detailed quote within 24 hours. All quotes are free with no obligation.</p></div></section><section class="bg-gray-900 border-t-4 border-green-500 py-10 px-6"><div class="max-w-3xl mx-auto text-center"><div class="flex justify-center mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 w-8 h-8"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><h2 class="text-xl font-black text-white uppercase tracking-tight mb-2">Want a quick ballpark first?</h2><p class="text-gray-400 mb-4 text-sm">Use our instant cost estimator for a rough price range before submitting a detailed quote request.</p><a href="/window-film-cost-estimator" class="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-6 py-3 rounded-lg text-base transition-colors">Use the Cost Estimator</a></div></section><section class="py-16"><div class="max-w-4xl mx-auto px-6 lg:px-8"><form class="space-y-12"><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8"><h2 class="text-xl font-black text-slate-950 uppercase tracking-tight mb-6 border-b border-slate-200 pb-3">1. Contact Information</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div><label class="block text-sm font-bold text-slate-800 mb-1">First Name *</label><input name="firstName" type="text" required="" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"/></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Last Name *</label><input name="lastName" type="text" required="" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"/></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Phone *</label><input name="phone" type="tel" required="" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"/></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Email *</label><input name="email" type="email" required="" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"/></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Company (optional)</label><input name="company" type="text" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"/></div><div><label class="block text-sm font-bold text-slate-800 mb-1">City / Location *</label><input name="city" type="text" required="" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" placeholder="e.g. Scottsdale, Phoenix"/></div><div class="md:col-span-2"><label class="block text-sm font-bold text-slate-800 mb-1">Property Type *</label><select name="propertyType" required="" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="">Select property type</option><option value="Residential">Residential</option><option value="Commercial">Commercial</option><option value="Government">Government</option><option value="New Construction">New Construction</option></select></div></div></div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8"><h2 class="text-xl font-black text-slate-950 uppercase tracking-tight mb-6 border-b border-slate-200 pb-3">2. Film Selection</h2><label class="block text-sm font-bold text-slate-800 mb-1 mb-3">Film Category *</label><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6"><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Solar Control</div><div class="text-xs text-slate-500 mt-1">Heat rejection, glare reduction</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Dual Reflective</div><div class="text-xs text-slate-500 mt-1">Daytime privacy + solar control</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Security / Safety (4–21 mil)</div><div class="text-xs text-slate-500 mt-1">Break-in deterrence, blast mitigation</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Decorative / Frosted</div><div class="text-xs text-slate-500 mt-1">Privacy, branding, aesthetic</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Anti-Graffiti</div><div class="text-xs text-slate-500 mt-1">Sacrificial surface protection</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Cloaking (Casper/Quantum)</div><div class="text-xs text-slate-500 mt-1">Screen privacy for conference rooms</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Countertop Protection</div><div class="text-xs text-slate-500 mt-1">Surface protection film</div></button><button type="button" class="text-left border rounded-lg p-3 transition-all border-slate-200 hover:border-slate-400"><div class="font-bold text-slate-900 text-sm">Not sure — need recommendation</div><div class="text-xs text-slate-500 mt-1">We&#x27;ll help you choose</div></button></div></div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8"><h2 class="text-xl font-black text-slate-950 uppercase tracking-tight mb-6 border-b border-slate-200 pb-3">3. Window Measurements</h2><p class="text-sm text-slate-500 mb-4">Approximate measurements are fine. We confirm exact dimensions on-site.</p><div class="space-y-4"><div class="flex flex-wrap items-end gap-3 bg-slate-50 border border-slate-200 rounded-lg p-4"><div class="flex-1 min-w-[140px]"><label class="text-xs font-bold text-slate-600">Description</label><input type="text" placeholder="e.g. Living room west wall" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" value=""/></div><div class="w-20"><label class="text-xs font-bold text-slate-600">Width (in)</label><input type="number" min="1" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" value=""/></div><div class="w-20"><label class="text-xs font-bold text-slate-600">Height (in)</label><input type="number" min="1" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" value=""/></div><div class="w-16"><label class="text-xs font-bold text-slate-600">Qty</label><input type="number" min="1" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" value="1"/></div></div></div><button type="button" class="mt-4 flex items-center gap-2 text-sm font-bold text-green-700 hover:text-green-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg> Add another window</button><div class="mt-6"><label class="block text-sm font-bold text-slate-800 mb-1">Preferred Roll Width</label><select name="rollWidth" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none max-w-xs"><option value="No preference">No preference</option><option value="48 inches">48&quot;</option><option value="60 inches">60&quot;</option><option value="72 inches">72&quot;</option></select></div></div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8"><h2 class="text-xl font-black text-slate-950 uppercase tracking-tight mb-6 border-b border-slate-200 pb-3">4. Project Details</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div><label class="block text-sm font-bold text-slate-800 mb-1">Glass Type</label><select name="glassType" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="Unknown">Unknown</option><option value="Single pane">Single pane</option><option value="Dual pane">Dual pane</option><option value="Tempered">Tempered</option><option value="Low-E">Low-E</option></select></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Existing film to remove?</label><select name="existingFilm" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="Unknown">Unknown</option><option value="Yes">Yes</option><option value="No">No</option></select></div><div><label class="block text-sm font-bold text-slate-800 mb-1">HOA restrictions?</label><select name="hoaRestrictions" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Timeline</label><select name="timeline" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="ASAP">ASAP</option><option value="Within 30 days">Within 30 days</option><option value="60-90 days">60–90 days</option><option value="Planning ahead">Planning ahead</option></select></div><div><label class="block text-sm font-bold text-slate-800 mb-1">Preferred contact method</label><select name="preferredContact" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="Phone call">Phone call</option><option value="Text">Text</option><option value="Email">Email</option></select></div><div><label class="block text-sm font-bold text-slate-800 mb-1">How did you hear about us?</label><select name="heardAboutUs" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"><option value="">Select</option><option value="Google">Google</option><option value="Google Maps">Google Maps</option><option value="Referral">Referral</option><option value="Yelp">Yelp</option><option value="Returning customer">Returning customer</option><option value="Other">Other</option></select></div><div class="md:col-span-2"><label class="block text-sm font-bold text-slate-800 mb-1">Additional Notes</label><textarea name="notes" rows="4" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" placeholder="Any additional details about your project..."></textarea></div></div></div><div class="text-center"><button class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none py-2 bg-green-600 hover:bg-green-700 text-white px-12 h-16 text-xl font-black rounded-none transition-all shadow-xl disabled:opacity-50" type="submit" disabled="">Submit Quote Request</button><p class="text-slate-500 text-sm mt-3">Free quote. No obligation. We respond within 24 hours.</p></div></form></div></section><section class="py-16 bg-white border-t border-slate-200"><div class="max-w-4xl mx-auto px-6 lg:px-8"><h2 class="text-2xl font-black text-slate-950 uppercase tracking-tight mb-8">Frequently Asked Questions</h2><div class="space-y-6"><div class="border-b border-slate-200 pb-4"><h3 class="font-bold text-slate-900 mb-2">How long does it take to get a quote?</h3><p class="text-slate-600 text-sm">We review all quote requests and respond within 24 hours with detailed pricing based on your film selection and measurements.</p></div><div class="border-b border-slate-200 pb-4"><h3 class="font-bold text-slate-900 mb-2">Do I need exact measurements?</h3><p class="text-slate-600 text-sm">Approximate measurements are fine for an initial quote. We confirm exact dimensions during the free on-site assessment before installation.</p></div><div class="border-b border-slate-200 pb-4"><h3 class="font-bold text-slate-900 mb-2">Can I request a specific film brand?</h3><p class="text-slate-600 text-sm">Yes. We install 3M, LLumar, Madico, Solar Gard, Huper Optik, Solyx, and more. If you have a specific film in mind, note it in your request or select it from the film dropdown.</p></div><div class="border-b border-slate-200 pb-4"><h3 class="font-bold text-slate-900 mb-2">Is the quote free?</h3><p class="text-slate-600 text-sm">Yes. All quotes from Arizona House of Film are free with no obligation. Licensed ROC #314088.</p></div></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

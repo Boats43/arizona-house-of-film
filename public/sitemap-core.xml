@@ -109,6 +109,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://arizonahouseoffilm.com/get-a-quote</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://arizonahouseoffilm.com/book-now</loc>
     <lastmod>2025-10-27</lastmod>
     <priority>0.9</priority>

@@ -112,6 +112,7 @@ const mobileSections = [
       { name: "About Us", path: "/welcome" },
       { name: "Careers", path: "/careers" },
       { name: "Contact", path: "/contact" },
+      { name: "Get a Quote", path: "/get-a-quote" },
     ],
   },
 ];
@@ -288,6 +289,10 @@ const Header = () => {
 
               <NavLink to="/contact" className={navLinkClass}>
                 Contact
+              </NavLink>
+
+              <NavLink to="/get-a-quote" className={navLinkClass}>
+                Get a Quote
               </NavLink>
             </nav>
 

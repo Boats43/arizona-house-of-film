@@ -49,6 +49,7 @@ const FilmProductPage = lazy(() => import("@/pages/FilmProductPage"));
 const BrandsHub = lazy(() => import("@/pages/BrandsHub"));
 const BrandPage = lazy(() => import("@/pages/BrandPage"));
 const FlexfilmPage = lazy(() => import("@/pages/brands/FlexfilmPage"));
+const LlumarPage = lazy(() => import("@/pages/brands/LlumarPage"));
 const Store = lazy(() => import("@/pages/Store"));
 const SupportingPage = lazy(() => import("@/pages/SupportingPage"));
 const AntiGraffiti = lazy(() => import("@/pages/AntiGraffiti"));
@@ -280,6 +281,7 @@ function AppRoutes() {
           {/* FILMS */}
           <Route path="/films" element={<FilmsHub />} />
           <Route path="/films/security" element={<SecurityFilmPage />} />
+          <Route path="/films/security-films" element={<SecurityFilmPage />} />
           <Route
             path="/films/casper-cloaking"
             element={<CasperCloakingPage />}
@@ -293,6 +295,7 @@ function AppRoutes() {
           {/* BRANDS */}
           <Route path="/brands" element={<BrandsHub />} />
           <Route path="/brands/flexfilm" element={<FlexfilmPage />} />
+          <Route path="/brands/llumar" element={<LlumarPage />} />
           <Route path="/brands/:slug" element={<BrandPage />} />
 
           {/* INFORMATIONAL */}

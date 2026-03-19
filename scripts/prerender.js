@@ -25,7 +25,7 @@ const ROUTES = [
   '/decorative-window-films', '/safety', '/energy-saving-window-films',
   '/solutions', '/gallery', '/service-areas', '/films', '/brands',
   '/contact', '/book-now', '/careers', '/industries', '/blog',
-  '/films/security', '/films/casper-cloaking', '/brands/flexfilm',
+  '/films/security', '/films/security-films', '/films/casper-cloaking', '/brands/flexfilm', '/brands/llumar',
   '/window-tinting-phoenix', '/window-tinting-chandler', '/window-tinting-gilbert',
   '/window-tinting-mesa', '/window-tinting-tempe', '/window-tinting-glendale',
   '/window-tinting-peoria', '/window-tinting-queen-creek',

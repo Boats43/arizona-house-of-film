@@ -248,6 +248,18 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://arizonahouseoffilm.com/films/security-films</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://arizonahouseoffilm.com/brands/llumar</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://arizonahouseoffilm.com/films/casper-cloaking</loc>
     <lastmod>2026-03-11</lastmod>
     <priority>0.8</priority>

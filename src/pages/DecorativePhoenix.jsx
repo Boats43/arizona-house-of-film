@@ -273,6 +273,52 @@ const DecorativePhoenix = () => {
           </div>
         </section>
 
+        {/* PATTERN GALLERY */}
+        <section className="py-24 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                618+ Decorative Film Patterns — Installed in Phoenix
+              </h2>
+              <div className="w-24 h-2 bg-green-500 mx-auto mb-6" />
+              <p className="text-slate-400 text-lg font-medium max-w-3xl mx-auto">
+                Arizona House of Film installs the full Solyx and 3M Fasara decorative film catalog. Select a style below to request a quote.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { name: 'Frosted & Sandblast', desc: 'Clean, diffused privacy without visible pattern.', examples: ['Dusted Crystal', 'Clear Sandblast', 'Fine Cast Sandblast'], param: 'Frosted' },
+                { name: 'Geometric Patterns', desc: 'Structured lines, grids, dots, and repeating shapes.', examples: ['Gotham', 'Wire Glass', 'Dot Screen 16'], param: 'Geometric' },
+                { name: 'Organic & Textured', desc: 'Natural textures — linen, cotton, bamboo, leaf.', examples: ['Organic Cotton', 'Dusted Leaf', 'Rattan Matte'], param: 'Organic' },
+                { name: 'Gradient & Fade', desc: 'Top-to-bottom or dual fade for conference glass and partitions.', examples: ['Horizon Ether', 'Feather Gradient', 'Dual Feather Gradient'], param: 'Gradient' },
+                { name: 'Simulated Art Glass', desc: 'Reeded, ribbed, wavy — architectural glass looks without replacement.', examples: ['Reeded Glass 1/2"', 'Wavy Glass', 'Ribbed Glass Clear'], param: 'ArtGlass' },
+                { name: 'Stained Glass & Color', desc: 'Decorative color film for feature glass, doors, and accent panels.', examples: ['Persian Stained Glass', 'Venetian Stained Glass', 'Azure Blue'], param: 'StainedGlass' },
+                { name: 'Etched & Acid Etch', desc: 'Precise etched patterns for corporate and architectural applications.', examples: ['Sateen Etch', 'Asian Grass Etch', 'Crosshatch Etch'], param: 'Etched' },
+                { name: 'Cloaking & Specialty', desc: 'Screen-blocking privacy for conference rooms and glass offices.', examples: ['Casper Cloaking', 'Clear Holographic', 'One Way Perforated'], param: 'Cloaking' },
+              ].map((cat) => (
+                <div key={cat.name} className="bg-slate-800 border border-slate-700 hover:border-green-500/50 p-8 transition-all flex flex-col">
+                  <h3 className="text-base font-black text-white uppercase mb-3 leading-tight">{cat.name}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed font-medium mb-4">{cat.desc}</p>
+                  <ul className="text-slate-500 text-xs space-y-1 mb-6">
+                    {cat.examples.map((ex) => (
+                      <li key={ex}>• {ex}</li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white font-black rounded-none w-full">
+                      <Link to={`/contact?film=${cat.param}`}>Get Quote for This Style</Link>
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-slate-400 text-sm mt-10">
+              Don't see what you're looking for?{' '}
+              <Link to="/films" className="text-green-400 hover:underline font-bold">Browse all 618 films →</Link>
+            </p>
+          </div>
+        </section>
+
         {/* COST */}
         <section className="py-24 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

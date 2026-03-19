@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Commercial Window Tinting Scottsdale AZ | Licensed Installer | ROC #314088';
-  const metaDescription = 'Scottsdale commercial window film. Verified projects: Chipotle, Renaissance Companies, 2nd Swing, Frank Lloyd Wright Foundation. ROC #314088. (480) 788-1591.';
+  const pageTitle = 'Commercial Window Film Scottsdale AZ | Installation | ROC #314088';
+  const metaDescription = 'Commercial window film installation in Scottsdale AZ. Solar control, security, decorative film for offices, retail, and hospitality. Verified projects. ROC #314088. Free estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =
@@ -98,6 +98,38 @@ const ScottsdaleCommercial = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Yes. We have completed multiple commercial installations in Old Town Scottsdale including the Chipotle location at 8099 E McDowell Rd and several mixed-use retail properties in the Old Town corridor. Old Town projects often require decorative or low-reflectivity solar film to comply with design standards.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does commercial window tinting cost in Scottsdale AZ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Commercial window tinting in Scottsdale AZ runs $8–$25 per square foot installed depending on film specification and glass area. Small storefront or office projects start around $3,500. Large commercial perimeters run $25,000+. All Scottsdale commercial projects are custom-quoted on-site. Free estimates — call (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What commercial areas in Scottsdale do you serve?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Arizona House of Film installs commercial window film throughout Scottsdale including Old Town, Scottsdale Quarter, Kierland Commons, DC Ranch Village, McCormick Ranch, Gainey Ranch, Scottsdale Airpark, the North Scottsdale medical and professional corridor, and SkySong. Licensed ROC #314088.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you install commercial window film for Scottsdale restaurants and hospitality?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Arizona House of Film installs commercial window film for Scottsdale restaurants, hotels, and hospitality properties. Solar control film eliminates heat in dining rooms, decorative and privacy film creates aesthetic transitions, and anti-graffiti film protects storefront glass. Free commercial estimate — (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does commercial window film in Scottsdale qualify for SRP or APS rebates?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Qualifying commercial window film installations in Scottsdale meet SRP Business Solutions and APS energy efficiency rebate requirements. Arizona House of Film provides NFRC-rated data sheets required for rebate applications. Customers submit directly to their utility provider.',
         },
       },
     ],
@@ -266,6 +298,14 @@ const ScottsdaleCommercial = () => {
               installations across all Scottsdale submarkets.
             </p>
           </div>
+          <div className="prose max-w-none mb-10 mt-8">
+            <p className="text-lg text-slate-300 mb-4">
+              Scottsdale's commercial corridor — from the Scottsdale Quarter and Kierland Commons to the Old Town district and the 101 commercial spine — represents some of the most demanding commercial glass in Arizona. Floor-to-ceiling storefronts, glass-walled conference rooms, south and west-facing office towers, and high-end hospitality properties all require film specifications that perform under sustained 115°F exposure without compromising the architectural aesthetic Scottsdale properties demand.
+            </p>
+            <p className="text-lg text-slate-300 mb-4">
+              Arizona House of Film has completed commercial window film installations across Scottsdale since 2017 — from single-story retail to multi-story professional office buildings. Licensed ROC #314088. Every project custom-quoted, documented, and installed by certified technicians.
+            </p>
+          </div>
         </section>
 
         {/* SECTION 2 — VERIFIED PROJECTS */}
@@ -297,6 +337,32 @@ const ScottsdaleCommercial = () => {
                       {project.value}
                     </p>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICE AREAS */}
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-2xl font-black uppercase tracking-tight mb-6">Scottsdale Commercial Window Film — Service Areas</h2>
+            <p className="text-slate-700 mb-6">We install commercial window film throughout the Scottsdale commercial market including:</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+              {[
+                { area: 'Old Town Scottsdale', desc: 'Storefronts, galleries, restaurants' },
+                { area: 'Scottsdale Quarter', desc: 'Retail, office, hospitality' },
+                { area: 'Kierland Commons', desc: 'Retail and commercial properties' },
+                { area: 'DC Ranch Village', desc: 'Professional office and medical' },
+                { area: 'McCormick Ranch', desc: 'Office parks and commercial centers' },
+                { area: 'Gainey Ranch', desc: 'Corporate and hospitality properties' },
+                { area: 'Scottsdale Airpark', desc: 'Industrial, warehouse, office' },
+                { area: 'North Scottsdale Corridor', desc: 'Medical, professional, retail' },
+                { area: 'SkySong Innovation Center', desc: 'Tech campus and office buildings' },
+              ].map(({ area, desc }) => (
+                <div key={area} className="border border-slate-200 rounded-lg p-3">
+                  <div className="font-bold text-slate-900 text-sm">{area}</div>
+                  <div className="text-xs text-slate-500 mt-1">{desc}</div>
                 </div>
               ))}
             </div>
@@ -358,6 +424,32 @@ const ScottsdaleCommercial = () => {
         </section>
 
         <EstimatorCTA />
+
+        {/* PRICING & SPECIFICATIONS */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-2xl font-black uppercase tracking-tight mb-6">Scottsdale Commercial Window Film — Pricing & Specifications</h2>
+            <p className="text-slate-700 mb-4">All Scottsdale commercial window film projects are custom-quoted based on glass area, film specification, and access requirements. These ranges reflect installed costs across completed Scottsdale-area commercial jobs:</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="border border-slate-200 rounded-lg p-4">
+                <div className="font-black text-xl mb-1">$3,500–$8,000</div>
+                <div className="font-bold text-slate-800 mb-2">Small Commercial</div>
+                <div className="text-sm text-slate-600">Single-story storefront or office suite. 200–600 sq ft glass. Solar control or decorative film.</div>
+              </div>
+              <div className="border border-slate-200 rounded-lg p-4">
+                <div className="font-black text-xl mb-1">$8,000–$25,000</div>
+                <div className="font-bold text-slate-800 mb-2">Mid-Size Commercial</div>
+                <div className="text-sm text-slate-600">Multi-suite office, retail anchor, restaurant. 600–2,000 sq ft glass perimeter.</div>
+              </div>
+              <div className="border border-slate-200 rounded-lg p-4">
+                <div className="font-black text-xl mb-1">$25,000+</div>
+                <div className="font-bold text-slate-800 mb-2">Large Commercial</div>
+                <div className="text-sm text-slate-600">Multi-story office, full building perimeter, hospitality properties. Custom specification required.</div>
+              </div>
+            </div>
+            <p className="text-slate-600 text-sm">SRP Business Solutions and APS energy efficiency rebates available for qualifying Scottsdale commercial installations. We provide NFRC documentation. Customers submit directly to their utility provider.</p>
+          </div>
+        </section>
 
         {/* SECTION 5 — CTA */}
         <section className="py-20 bg-slate-950 border-t border-slate-800">

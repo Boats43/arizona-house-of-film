@@ -10,9 +10,9 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ScottsdaleResidential = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Residential Window Tinting Scottsdale AZ | Home Solar Film | Arizona House of Film';
+  const pageTitle = 'Residential Window Film Scottsdale AZ | Installation | ROC #314088';
   const metaDescription =
-    "Scottsdale's residential window film authority. Ceramic solar films for North Scottsdale estates, DC Ranch, McCormick Ranch, and Gainey Ranch homes. Licensed ROC #314088. Call (480) 788-1591.";
+    "Residential window film installation in Scottsdale AZ. Ceramic, dual reflective, privacy, and security film for North Scottsdale homes. HOA compliant. ROC #314088. Free estimates — (480) 788-1591.";
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =
@@ -111,6 +111,38 @@ const ScottsdaleResidential = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Scottsdale residential window film typically runs $8–$18 per square foot installed. A standard 2,000 sq ft Scottsdale home with 12–18 windows averages $1,200–$3,500. North Scottsdale estate properties with large glass elevations run $4,000–$12,000+. All quotes are free and based on on-site glass measurement. Call (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does residential window film cost in Scottsdale AZ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Residential window film installation in Scottsdale AZ runs $8–$18 per square foot installed depending on film specification. Solar control film averages $8–$12 per square foot. Nano-ceramic film runs $12–$18 per square foot. Most Scottsdale homes average $1,400–$3,200 for a complete installation. Custom-quoted after free on-site assessment. ROC #314088. Call (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What window film is best for North Scottsdale homes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Nano-ceramic film is the top specification for North Scottsdale custom homes. It rejects up to 84% of solar heat without the reflective appearance that most Scottsdale HOAs restrict. Leading specifications include Huper Optik Ceramic, 3M Crystalline, and LLumar CTX. Film is selected based on your glass type, exposure, and HOA requirements. Free on-site assessment — call (480) 788-1591. Licensed ROC #314088.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is window film HOA compliant in Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most Scottsdale HOAs permit window film with restrictions on visible reflectance and color. Nano-ceramic and spectrally selective films are approved in most DC Ranch, McCormick Ranch, Gainey Ranch, and Silverleaf communities because they have a neutral, non-reflective appearance. Arizona House of Film reviews HOA guidelines before specifying film. We have completed HOA-compliant installations across all major Scottsdale master-planned communities. Licensed ROC #314088.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you install residential window film in all Scottsdale neighborhoods?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Arizona House of Film installs residential window film throughout Scottsdale including North Scottsdale, Old Town, DC Ranch, Silverleaf, McCormick Ranch, Gainey Ranch, Troon, Pinnacle Peak, Grayhawk, Desert Mountain, and all surrounding communities. Licensed ROC #314088. Free estimates — call (480) 788-1591.',
         },
       },
     ],
@@ -298,6 +330,14 @@ const ScottsdaleResidential = () => {
                 HOA requirements before every Scottsdale installation. No assumptions. No guesswork.
               </p>
             </div>
+            <div className="mt-10 max-w-4xl">
+              <p className="text-lg text-slate-700 mb-4">
+                Scottsdale residential window film installation requires a different approach than standard Phoenix metro work. North Scottsdale custom homes — many built with floor-to-ceiling glass on south and west exposures — need film specifications that balance maximum heat rejection with the aesthetic requirements of high-end architecture. HOA color restrictions in communities like DC Ranch, Silverleaf, Gainey Ranch, and McCormick Ranch add another layer of specification complexity.
+              </p>
+              <p className="text-lg text-slate-700 mb-4">
+                Arizona House of Film has completed residential window film installations across Scottsdale since 2017. Every project is assessed on-site. Film is specified for the glass type, the orientation, the HOA requirements, and the homeowner's performance goals. No defaults. No one-size-fits-all specifications.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -333,6 +373,38 @@ const ScottsdaleResidential = () => {
                 </Link>
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* ── RESIDENTIAL PRICING GRID ────────────────────────────────── */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">
+              Residential Window Film Pricing — Scottsdale AZ
+            </h2>
+            <p className="text-slate-700 mb-6 text-base leading-relaxed font-medium max-w-4xl">
+              All Scottsdale residential window film projects are custom-quoted after on-site assessment. These ranges reflect actual installed costs across completed Scottsdale residential jobs:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="border border-slate-200 rounded-lg p-6">
+                <div className="font-black text-xl mb-1 text-green-700">$8–$12/sq ft</div>
+                <div className="font-bold text-slate-800 mb-2">Solar Control Film</div>
+                <div className="text-sm text-slate-600">Standard solar control for Scottsdale residential. Blocks 50–65% of heat. Clear to lightly tinted appearance. HOA compliant in most Scottsdale communities.</div>
+              </div>
+              <div className="border border-slate-200 rounded-lg p-6">
+                <div className="font-black text-xl mb-1 text-green-700">$12–$18/sq ft</div>
+                <div className="font-bold text-slate-800 mb-2">Nano-Ceramic Film</div>
+                <div className="text-sm text-slate-600">Premium specification for North Scottsdale custom homes. Rejects up to 84% of heat with no reflective appearance. Huper Optik, 3M Crystalline, LLumar CTX.</div>
+              </div>
+              <div className="border border-slate-200 rounded-lg p-6">
+                <div className="font-black text-xl mb-1 text-green-700">$15–$28/sq ft</div>
+                <div className="font-bold text-slate-800 mb-2">Security + Solar Combo</div>
+                <div className="text-sm text-slate-600">8–12 mil security film with solar control properties. Entry doors, ground-floor windows, and sidelight glass. Full installation in one visit.</div>
+              </div>
+            </div>
+            <p className="text-slate-600 text-sm">
+              SRP and APS residential energy rebates available for qualifying Scottsdale film installations. We provide NFRC documentation. Customers submit directly to their utility provider.
+            </p>
           </div>
         </section>
 
@@ -626,10 +698,15 @@ const ScottsdaleResidential = () => {
         <section className="py-14 bg-slate-900 border-t border-slate-800">
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-6">More Scottsdale Window Film Services</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link to="/commercial-window-tinting-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Commercial Window Film Scottsdale →</Link>
               <Link to="/decorative-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Decorative Window Film Scottsdale →</Link>
               <Link to="/solar-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Solar Window Film Scottsdale →</Link>
               <Link to="/security-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Security Window Film Scottsdale →</Link>
+              <Link to="/residential-window-tinting" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Residential Window Film Phoenix →</Link>
+              <Link to="/window-tinting-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Window Tinting Scottsdale →</Link>
+              <Link to="/window-film-cost-estimator" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Window Film Cost Estimator →</Link>
+              <Link to="/get-a-quote" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Get a Film Quote →</Link>
             </div>
           </div>
         </section>

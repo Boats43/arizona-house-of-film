@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
@@ -8,6 +8,8 @@ const BookNow = () => {
   const metaDescription = "Schedule your free window tinting consultation in Arizona. Same-week appointments available. Licensed ROC #314088 — (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/book-now";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
+  const [showCalendly, setShowCalendly] = useState(false);
+  const calendlyRef = useRef(null);
 
   const schema = {
     "@context": "https://schema.org",
@@ -24,12 +26,23 @@ const BookNow = () => {
   };
 
   useEffect(() => {
+    if (!showCalendly) return;
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
     return () => { document.body.removeChild(script); };
-  }, []);
+  }, [showCalendly]);
+
+  useEffect(() => {
+    if (showCalendly || !calendlyRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setShowCalendly(true); observer.disconnect(); } },
+      { rootMargin: '200px' }
+    );
+    observer.observe(calendlyRef.current);
+    return () => observer.disconnect();
+  }, [showCalendly]);
 
   return (
     <>
@@ -95,9 +108,21 @@ const BookNow = () => {
         </div>
       </section>
 
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-white" ref={calendlyRef}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="calendly-inline-widget" data-url="https://calendly.com/arizonahouseoffilm" style={{ minWidth: '320px', height: '700px' }}></div>
+          {showCalendly ? (
+            <div className="calendly-inline-widget" data-url="https://calendly.com/arizonahouseoffilm" style={{ minWidth: '320px', height: '700px' }}></div>
+          ) : (
+            <div className="text-center py-16">
+              <button
+                onClick={() => setShowCalendly(true)}
+                className="bg-teal-700 hover:bg-teal-800 text-white font-black uppercase tracking-wide px-10 py-4 text-lg transition-colors"
+              >
+                Load Calendar to Book Now
+              </button>
+              <p className="text-sm text-gray-500 mt-3">Or call directly: <a href="tel:480-788-1591" className="text-teal-700 font-bold">(480) 788-1591</a></p>
+            </div>
+          )}
         </div>
       </section>
     </>

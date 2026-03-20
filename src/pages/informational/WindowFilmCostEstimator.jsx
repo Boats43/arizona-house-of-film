@@ -355,9 +355,9 @@ export default function WindowFilmCostEstimator() {
             >
               Arizona House of Film
             </div>
-            <div style={{ fontSize: "20px", fontWeight: "bold", letterSpacing: "-0.5px" }}>
-              Window Film Cost Estimator
-            </div>
+            <h1 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-6" style={{ fontSize: "20px", fontWeight: "bold", letterSpacing: "-0.5px", margin: 0 }}>
+              Window Film Cost Estimator — Arizona Pricing Calculator
+            </h1>
           </div>
           <div style={{ fontSize: "11px", color: "#555", letterSpacing: "2px", display: isMobile ? "none" : "block" }}>
             ROC #314088 · (480) 788-1591

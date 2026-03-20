@@ -112,14 +112,14 @@ const Home = () => {
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
                 Arizona <span className="text-blue-500 italic">Window Film</span> & Tinting Experts — Phoenix, Scottsdale, and Beyond
               </h1>
-              <p className="mt-8 text-xl md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
+              <p className="mt-8 text-base sm:text-lg md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
                 Arizona House of Film installs commercial window tinting, residential window film, security film, decorative glass film, and solar control film across Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088 — serving contractors, enterprises, and homeowners since 2017.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" asChild className="bg-blue-600 text-white font-black h-16 px-10 rounded-none">
+                <Button size="lg" asChild className="bg-blue-600 text-white font-black w-full sm:w-auto h-16 px-10 rounded-none">
                   <Link to="/contact">Schedule Free Glass Assessment</Link>
                 </Button>
-                <Button size="lg" asChild variant="outline" className="border-2 border-white text-white font-black h-16 px-10 rounded-none hover:bg-white hover:text-slate-900">
+                <Button size="lg" asChild variant="outline" className="border-2 border-white text-white font-black w-full sm:w-auto h-16 px-10 rounded-none hover:bg-white hover:text-slate-900">
                   <Link to="/get-a-quote">Get a Film Quote</Link>
                 </Button>
               </div>

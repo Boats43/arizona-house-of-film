@@ -9,8 +9,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 import EstimatorCTA from '../components/EstimatorCTA';
 
 const rocNumber = 'ROC #314088';
-const pageTitle = 'Security Window Film Phoenix | Forced Entry & Safety Film';
-const metaDescription = 'Phoenix security window film installer. 4–21 mil safety film for homes, businesses, and government facilities. Holds glass on impact. ROC #314088. Free estimates — (480) 788-1591.';
+const pageTitle = 'Security Window Film Phoenix AZ | All Brands | 4–21 Mil | ROC #314088';
+const metaDescription = 'Security window film installation Phoenix AZ. 3M, LLumar, Madico, Vista, Solar Gard — 4 to 21 mil. Residential, commercial, government. Smash-and-grab, blast mitigation, shatter protection. ROC #314088.';
 const canonicalUrl = 'https://arizonahouseoffilm.com/security-window-film-phoenix';
 const heroImageUrl = '/images/security-film-hero.jpg';
 
@@ -82,6 +82,30 @@ const faqSchema = {
         text: 'Yes. Arizona House of Film installs security window film for Phoenix commercial buildings including retail stores, office buildings, schools, government facilities, medical offices, and warehouses. Commercial security film installation in Phoenix is quoted on a per-project basis. We have completed security film installations for national retailers, Phoenix municipal facilities, and private commercial developers. Call (480) 788-1591 for a free commercial assessment.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What security film brands do you install?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Arizona House of Film installs security and safety film from 3M (Safety Series S40–S600), LLumar ArmorCoat (Eastman), Madico SafetyShield, Vista Safety Film, Solar Gard Armorzone, and EWF Safety & Security series. Film specification is determined per project based on glass type, application, and performance requirements — not brand preference. Licensed ROC #314088.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you install blast-rated security film in Phoenix?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Arizona House of Film installs blast-mitigation grade window film including 3M S600 and 21 mil specifications for government, municipal, and institutional facilities in Phoenix and across Arizona. Blast-rated installations require mechanical attachment systems and NFRC-rated documentation — we provide both. Past projects include City of Phoenix and U.S. Navy facilities. Licensed ROC #314088.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can security film be combined with solar control or privacy film?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Dual-performance films combine safety or security grade thickness with solar heat rejection and UV blocking. This is one of the most common specifications in Arizona — the heat load requires solar control, and the security requirement is addressed simultaneously. We specify dual-performance films from 3M, LLumar, and Vista for residential and commercial applications. Licensed ROC #314088.',
+      },
+    },
   ],
 };
 
@@ -141,6 +165,12 @@ const milGuide = [
     color: 'border-red-600',
     use: 'Government, schools, banks, jewelry, dispensaries. Maximum forced-entry resistance. Blast-rated options available.',
   },
+  {
+    mil: '21 mil',
+    label: 'Blast Mitigation Grade',
+    color: 'border-purple-600',
+    use: 'Government, federal, and high-security institutional. Tested to GSA/ANSI blast standards. Specified for courthouses, military facilities, and critical infrastructure. Custom quoted per project.',
+  },
 ];
 
 const applications = [
@@ -175,6 +205,101 @@ const proofPoints = [
     label: 'Verified clients',
     detail: '2nd Swing Scottsdale, Renaissance Companies, City of Phoenix facilities, national retail.',
   },
+];
+
+const brandSpecs = [
+  {
+    brand: '3M Safety Series',
+    films: 'S40 (4 mil), S70 (8 mil), S140 (14 mil), S600 (21 mil)',
+    bestFor: 'Residential entry points, retail storefronts, government facilities',
+    note: 'S600 with mechanical attachment system is the standard for blast-rated government installations.',
+  },
+  {
+    brand: 'LLumar ArmorCoat',
+    films: 'SC40, SC70, SC140 series',
+    bestFor: 'Commercial storefronts, schools, medical facilities',
+    note: "ArmorCoat is Eastman's professional security film line — specified for forced-entry deterrence and UV rejection simultaneously.",
+  },
+  {
+    brand: 'Madico Safety Series',
+    films: 'SafetyShield 4 mil, 8 mil, 12 mil',
+    bestFor: 'Residential and light commercial applications',
+    note: 'Strong adhesive system — good performance on older single-pane glass common in Phoenix residential stock.',
+  },
+  {
+    brand: 'Vista Safety Film',
+    films: 'VS4, VS8, VS12',
+    bestFor: 'Residential and commercial across Phoenix metro',
+    note: 'Safety and security performance with neutral appearance — frequently specified for HOA-sensitive properties.',
+  },
+  {
+    brand: 'Solar Gard Safety Series',
+    films: 'Armorzone 4, 8, 14 mil',
+    bestFor: 'Commercial and institutional',
+    note: 'Saint-Gobain manufactured — strong thermal + safety combination.',
+  },
+  {
+    brand: 'EWF Safety & Security',
+    films: 'EWF safety line 4–21 mil',
+    bestFor: 'Commercial and custom specifications',
+    note: 'Custom cut available — ideal for non-standard glass dimensions.',
+  },
+];
+
+const buildingTypes = [
+  {
+    type: 'Residential',
+    threats: 'burglary, storm damage, accidents',
+    spec: '8 mil on entry doors, sidelights, and ground-floor windows. Solar-control + safety combo films available for dual performance. HOA color restrictions accommodated.',
+    link: '/residential-window-tinting',
+    linkText: 'Residential Window Film →',
+  },
+  {
+    type: 'Retail & Storefronts',
+    threats: 'smash-and-grab, vandalism, forced entry',
+    spec: '8–12 mil on storefront glass. Anti-graffiti sacrificial overlay available for glass-adjacent surfaces. After-hours installation standard.',
+    link: '/commercial-window-tinting',
+    linkText: 'Commercial Window Film →',
+  },
+  {
+    type: 'Schools & Universities',
+    threats: 'forced entry, blast events, vandalism',
+    spec: '12–14 mil with mechanical attachment. Documentation for district compliance provided. We have installed security film at Grand Canyon University and U.S. Navy facilities.',
+    link: '/window-film-for-schools-arizona',
+    linkText: 'Window Film for Schools →',
+  },
+  {
+    type: 'Medical Facilities',
+    threats: 'patient privacy, forced entry, HIPAA considerations',
+    spec: '8–12 mil security with privacy overlay options. We have completed installations at Banner Health facilities.',
+    link: '/window-film-for-medical-facilities-arizona',
+    linkText: 'Window Film for Medical Facilities →',
+  },
+  {
+    type: 'Government & Municipal',
+    threats: 'blast, forced entry, ballistic',
+    spec: '14–21 mil blast-rated with GSA-compliant attachment system. NFRC documentation provided. Security clearance coordination available. Past clients include City of Phoenix and U.S. Navy Recruitment Centers.',
+    link: '/safety/government-facilities',
+    linkText: 'Government Security Film →',
+  },
+  {
+    type: 'Restaurants & Hospitality',
+    threats: 'smash-and-grab, vandalism, UV damage to interior',
+    spec: '8 mil security + solar control combo. Minimal aesthetic impact — film appearance approved for premium environments including Renaissance Hotels.',
+    link: '/window-film-for-restaurants-arizona',
+    linkText: 'Window Film for Restaurants →',
+  },
+];
+
+const relatedLinks = [
+  { text: 'Shatterproof Window Film — what the term means and when to use it', href: '/shatterproof-window-film' },
+  { text: 'Security Film vs Tempered Glass — full comparison', href: '/security-film-vs-tempered-glass' },
+  { text: 'Window Film for Schools Arizona', href: '/window-film-for-schools-arizona' },
+  { text: 'Window Film for Medical Facilities Arizona', href: '/window-film-for-medical-facilities-arizona' },
+  { text: 'Government Security Film Phoenix', href: '/safety/government-facilities' },
+  { text: 'Commercial Window Tinting Phoenix', href: '/commercial-window-tinting' },
+  { text: 'Anti-Graffiti Film Phoenix', href: '/anti-graffiti-film-phoenix' },
+  { text: 'Window Film Cost Estimator', href: '/window-film-cost-estimator' },
 ];
 
 export default function SecurityPhoenix() {
@@ -216,8 +341,8 @@ export default function SecurityPhoenix() {
               Security Window Film<br />
               <span className="text-red-400">Phoenix, AZ</span>
             </h1>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Forced-entry resistance, shatter protection, and blast mitigation for homes and businesses across the Phoenix metro. Installed by certified professionals.
+            <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+              4 mil to 21 mil safety and security film for residential, commercial, government, and institutional glass. We install every major security film specification on the market — specified for your glass, your threat level, and your budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-10 h-14 font-black rounded-none transition-all">
@@ -240,12 +365,15 @@ export default function SecurityPhoenix() {
         </div>
       </section>
 
-      {/* BENEFITS */}
+      {/* BENEFITS — What Security Film Does */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
             What Security Film Does
           </h2>
+          <p className="text-slate-600 text-center mb-12 max-w-3xl mx-auto">
+            Arizona House of Film installs safety and security window film across every thickness available — 4 mil, 8 mil, 12 mil, 14 mil, and 21 mil — from every leading manufacturer including 3M, LLumar, Madico, Solar Gard, Vista, and EWF. Every project is specified to the glass type, the threat level, and the application. We don't default to one brand or one thickness — we specify what the job actually requires.
+          </p>
           <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((b) => {
               const Icon = b.icon;
@@ -296,7 +424,7 @@ export default function SecurityPhoenix() {
           <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
             Not all security film is equal. Thickness (mil) determines resistance level. We recommend the right spec for your threat model and budget.
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {milGuide.map((m) => (
               <div key={m.mil} className={`border-t-4 ${m.color} bg-slate-800 rounded-xl p-8`}>
                 <div className="text-2xl font-bold text-white mb-1">{m.mil}</div>
@@ -328,6 +456,37 @@ export default function SecurityPhoenix() {
         </div>
       </section>
 
+      {/* SECURITY FILM SPECIFICATIONS WE INSTALL */}
+      <section className="bg-slate-900 py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-white text-center mb-4">
+            Security Film Specifications We Install
+          </h2>
+          <p className="text-slate-400 text-center mb-12 max-w-3xl mx-auto">
+            Arizona House of Film installs security and safety film from all leading manufacturers. Film is selected based on your glass type, building use, threat environment, and budget — not brand preference or margin.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {brandSpecs.map((b) => (
+              <div key={b.brand} className="bg-slate-800 rounded-xl p-8 border border-slate-700">
+                <h3 className="text-xl font-bold text-white mb-3">{b.brand}</h3>
+                <div className="mb-3">
+                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Films:</span>
+                  <p className="text-slate-300 text-sm mt-1">{b.films}</p>
+                </div>
+                <div className="mb-3">
+                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Best for:</span>
+                  <p className="text-slate-300 text-sm mt-1">{b.bestFor}</p>
+                </div>
+                <p className="text-slate-500 text-sm italic">{b.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-500 text-sm text-center mt-10 max-w-3xl mx-auto">
+            Film specification is determined after on-site assessment. We do not default to one manufacturer. The right film for your glass and your threat environment is what gets installed. Licensed {rocNumber}.
+          </p>
+        </div>
+      </section>
+
       {/* COST TRANSPARENCY */}
       <section className="bg-slate-950 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -356,8 +515,30 @@ export default function SecurityPhoenix() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* SECURITY FILM BY BUILDING TYPE */}
       <section className="bg-white py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            Security Film by Building Type
+          </h2>
+          <p className="text-slate-600 text-center mb-12 max-w-3xl mx-auto">
+            Every building type has different glass configurations, different threat profiles, and different code requirements. Here's how we approach each:
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {buildingTypes.map((bt) => (
+              <div key={bt.type} className="border border-slate-200 rounded-xl p-6 hover:border-red-400 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{bt.type}</h3>
+                <p className="text-sm text-slate-500 mb-3"><strong>Primary threats:</strong> {bt.threats}</p>
+                <p className="text-sm text-slate-600 mb-4"><strong>Standard spec:</strong> {bt.spec}</p>
+                <Link to={bt.link} className="text-red-600 font-semibold text-sm hover:underline">{bt.linkText}</Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-slate-50 py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
             Security Film FAQs
@@ -394,6 +575,26 @@ export default function SecurityPhoenix() {
       </section>
 
       <EstimatorCTA />
+
+      {/* RELATED RESOURCES */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
+            Related Resources
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedLinks.map((rl) => (
+              <Link
+                key={rl.href}
+                to={rl.href}
+                className="border border-slate-200 rounded-lg p-4 text-sm font-medium text-slate-700 hover:border-red-400 hover:text-red-600 transition-colors"
+              >
+                → {rl.text}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="bg-slate-950 py-20 px-6">

@@ -287,7 +287,9 @@ const Home = () => {
           <div className="text-center mb-10">
             <p className="text-gray-300 text-sm">
               We serve <Link to="/commercial-window-tinting" className="text-green-400 hover:text-green-300 underline">commercial properties</Link> and <Link to="/residential-window-tinting" className="text-green-400 hover:text-green-300 underline">residential homes</Link> across the Valley.{' '}
-              <Link to="/films" className="text-green-400 hover:text-green-300 underline">Browse our full film catalog</Link> or <Link to="/service-areas" className="text-green-400 hover:text-green-300 underline">find coverage near you</Link>.
+              <Link to="/films" className="text-green-400 hover:text-green-300 underline">Browse our full film catalog</Link> or <Link to="/service-areas" className="text-green-400 hover:text-green-300 underline">find coverage near you</Link>.{' '}
+              <Link to="/gallery" className="text-green-400 hover:text-green-300 underline">Project Gallery</Link> ·{' '}
+              <Link to="/book-now" className="text-green-400 hover:text-green-300 underline">Book a Consultation</Link>.
             </p>
           </div>
 

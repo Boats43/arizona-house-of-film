@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/contact", "has": [{ "type": "query", "key": "film" }], "destination": "/contact", "permanent": true },
     { "source": "/", "has": [{ "type": "query", "key": "a" }], "destination": "/contact", "permanent": true },
     { "source": "/", "has": [{ "type": "query", "key": "zhHant" }], "destination": "/contact", "permanent": true },
     {

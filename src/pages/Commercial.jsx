@@ -780,7 +780,9 @@ const Commercial = () => {
               or explore{" "}
               <Link to="/safety" className="text-blue-700 underline">safety &amp; security films</Link>{" "}
               for your building.{" "}
-              <Link to="/store" className="text-blue-700 underline">Browse Window Film Catalog</Link> →
+              <Link to="/store" className="text-blue-700 underline">Browse Window Film Catalog</Link> →{" "}
+              <Link to="/commercial-window-tinting/anti-graffiti" className="text-blue-700 underline">Commercial Anti-Graffiti Film</Link>{" "}
+              <Link to="/commercial-window-tinting/enhanced-privacy" className="text-blue-700 underline">Commercial Privacy Film</Link>
             </p>
             <div className="mt-6">
               <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Commercial Tinting by Location</p>

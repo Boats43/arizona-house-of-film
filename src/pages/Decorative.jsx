@@ -567,6 +567,19 @@ const Decorative = () => {
 
         <EstimatorCTA />
 
+        <section className="mt-12 mb-8 border-t border-slate-200 pt-8">
+          <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Related Decorative Film Resources</p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/decorative-window-film-phoenix" className="text-green-700 underline text-sm">Decorative Window Film Phoenix</Link>
+            <Link to="/decorative-window-films/aesthetic-appeal" className="text-green-700 underline text-sm">Aesthetic Appeal Films</Link>
+            <Link to="/decorative-window-films/design-flexibility" className="text-green-700 underline text-sm">Design Flexibility Films</Link>
+            <Link to="/decorative-window-films/easy-maintenance" className="text-green-700 underline text-sm">Easy Maintenance Films</Link>
+            <Link to="/decorative-window-films/enhanced-privacy" className="text-green-700 underline text-sm">Enhanced Privacy Films</Link>
+            <Link to="/films" className="text-green-700 underline text-sm">Full Film Catalog</Link>
+            <Link to="/store" className="text-green-700 underline text-sm">Order Film Direct</Link>
+          </div>
+        </section>
+
         {/* DECORATIVE FAQ */}
         <section className="py-20 bg-white border-t border-slate-100">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Search, X, ShoppingCart, Trash2, Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -561,6 +562,18 @@ const Store = () => {
                 We confirm pricing and availability within 24 hours. Questions? Call <a href="tel:4807881591" className="text-green-600 font-bold">(480) 788-1591</a>.
               </p>
             </form>
+          </section>
+
+          <section className="mt-10 border-t border-slate-200 pt-6 pb-4">
+            <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Related Resources</p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              <Link to="/films" className="text-green-700 underline">Film Catalog</Link>
+              <Link to="/get-a-quote" className="text-green-700 underline">Get Installation Quote</Link>
+              <Link to="/commercial-window-tinting" className="text-green-700 underline">Commercial Film</Link>
+              <Link to="/residential-window-tinting" className="text-green-700 underline">Residential Film</Link>
+              <Link to="/decorative-window-films" className="text-green-700 underline">Decorative Films</Link>
+              <Link to="/contact" className="text-green-700 underline">Contact Us</Link>
+            </div>
           </section>
         </main>
       </div>

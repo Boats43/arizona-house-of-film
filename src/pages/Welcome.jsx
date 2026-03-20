@@ -335,6 +335,22 @@ const Welcome = () => {
           </div>
         </section>
 
+        <section className="mt-10 mb-6 border-t border-slate-200 pt-6">
+          <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Our Services</p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/commercial-window-tinting" className="text-green-700 underline text-sm">Commercial Window Film</Link>
+            <Link to="/residential-window-tinting" className="text-green-700 underline text-sm">Residential Window Film</Link>
+            <Link to="/safety" className="text-green-700 underline text-sm">Security Film</Link>
+            <Link to="/decorative-window-films" className="text-green-700 underline text-sm">Decorative Films</Link>
+            <Link to="/energy-saving-window-films" className="text-green-700 underline text-sm">Energy Saving Films</Link>
+            <Link to="/anti-graffiti-film-phoenix" className="text-green-700 underline text-sm">Anti-Graffiti Film</Link>
+            <Link to="/films" className="text-green-700 underline text-sm">Film Catalog</Link>
+            <Link to="/store" className="text-green-700 underline text-sm">Order Film</Link>
+            <Link to="/get-a-quote" className="text-green-700 underline text-sm">Get a Quote</Link>
+            <Link to="/window-film-cost-estimator" className="text-green-700 underline text-sm">Cost Estimator</Link>
+          </div>
+        </section>
+
         <EstimatorCTA />
 
         {/* START YOUR PROJECT */}

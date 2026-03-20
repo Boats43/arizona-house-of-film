@@ -479,6 +479,18 @@ const ScottsdaleCommercial = () => {
           </div>
         </section>
 
+        {/* SCOTTSDALE CROSS-LINKS */}
+        <section className="py-14 bg-slate-900 border-t border-slate-800">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
+            <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-6">More Scottsdale Window Film Services</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/decorative-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Decorative Window Film Scottsdale →</Link>
+              <Link to="/solar-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Solar Window Film Scottsdale →</Link>
+              <Link to="/security-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Security Window Film Scottsdale →</Link>
+            </div>
+          </div>
+        </section>
+
         <ContactFormSection />
       </main>
     </>

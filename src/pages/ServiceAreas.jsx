@@ -6,6 +6,7 @@ import { MapPin, Phone, Search, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cities } from '@/data/cities';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema';
 
 const ArrowRight = ({ className }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,6 +59,10 @@ const ServiceAreas = () => {
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+        { name: 'Service Areas', url: 'https://arizonahouseoffilm.com/service-areas' },
+      ]} />
 
       <main className="bg-slate-950 min-h-screen">
         <section className="relative py-32 text-white border-b border-white/10 overflow-hidden">

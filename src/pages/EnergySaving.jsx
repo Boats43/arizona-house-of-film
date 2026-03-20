@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { DollarSign, Thermometer, Shield, Activity, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const EnergySaving = () => {
   const rocNumber = "314088";
@@ -247,6 +248,8 @@ const EnergySaving = () => {
             </div>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* ENERGY FAQ */}
         <section className="py-20 bg-white border-t border-slate-100">

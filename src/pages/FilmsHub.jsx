@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Search, Phone, ExternalLink } from 'lucide-react';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema';
 import { solyxCategories, solyxProducts } from '@/data/solyxFilms';
 
 function toSlug(str) {
@@ -69,6 +70,10 @@ export default function FilmsHub() {
           }
         })}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+        { name: 'Window Film Catalog', url: 'https://arizonahouseoffilm.com/films' },
+      ]} />
 
       <div className="bg-slate-900 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">

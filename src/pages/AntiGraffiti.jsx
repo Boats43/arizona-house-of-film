@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactFormSection from '@/components/contact/ContactFormSection';
+import EstimatorCTA from '../components/EstimatorCTA';
+import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 
 const AntiGraffiti = () => {
   const rocNumber = "314088";
@@ -157,6 +159,10 @@ const AntiGraffiti = () => {
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+        { name: 'Anti-Graffiti Window Film Phoenix', url: 'https://arizonahouseoffilm.com/anti-graffiti-film-phoenix' },
+      ]} />
 
       <main className="bg-slate-950">
 
@@ -355,6 +361,8 @@ const AntiGraffiti = () => {
             </Button>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* SECTION 7 — FAQ */}
         <section className="py-20 bg-white">

@@ -7,6 +7,7 @@ import { Shield, AlertTriangle, Building, Eye, ArrowRight, Wind, CheckCircle2 } 
 import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
 import ContactFormSection from '@/components/contact/ContactFormSection';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const Safety = () => {
   const rocNumber = "314088";
@@ -368,6 +369,8 @@ const Safety = () => {
             </div>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* SAFETY FAQ */}
         <section className="py-20 bg-white">

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { brands } from '@/data/brands';
 import { ArrowRight, MapPin, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema';
 
 const canonicalUrl = "https://arizonahouseoffilm.com/brands";
 
@@ -141,6 +142,10 @@ const BrandsHub = () => (
       <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
     </Helmet>
+    <BreadcrumbSchema items={[
+      { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
+      { name: 'Window Film Brands', url: 'https://arizonahouseoffilm.com/brands' },
+    ]} />
 
     {/* ── HERO ────────────────────────────────────────────────────────────── */}
     <header className="relative py-24 sm:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-black">

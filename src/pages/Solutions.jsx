@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Sun, Lock, Shield, PenTool, SprayCan, ArrowRight, DollarSign, Eye, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const solutionsData = [
   {
@@ -448,6 +449,8 @@ const Solutions = () => {
             </p>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* SECTION 7: CTA */}
         <section className="py-24 border-t border-slate-800">

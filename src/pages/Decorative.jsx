@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cities } from '@/data/cities';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const Decorative = () => {
   const rocNumber = "314088";
@@ -563,6 +564,8 @@ const Decorative = () => {
             </div>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         {/* DECORATIVE FAQ */}
         <section className="py-20 bg-white border-t border-slate-100">

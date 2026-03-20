@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-B0QLfGU-.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-C2t44vyj.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-BCUo7vIx.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-B2oDfe5U.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-CE_ECyL0.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-DogJ0OJ-.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Security Film vs Tempered Glass Arizona | Cost &amp; Protection Comparison</title>
+  <meta data-rh="true" name="description" content="Security window film vs tempered glass — cost, protection, and retrofit options for Phoenix homes and businesses. Licensed installer ROC #314088."/><meta data-rh="true" property="og:title" content="Security Film vs Tempered Glass Arizona | Cost &amp; Protection"/><meta data-rh="true" property="og:description" content="Security film costs $15–$22/sq ft vs tempered glass at $50–$150+. Compare protection, cost, and retrofit options for Phoenix properties."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/security-film-vs-tempered-glass"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Security Film vs Tempered Glass Arizona | Cost &amp; Protection"/><meta data-rh="true" name="twitter:description" content="Security film costs $15–$22/sq ft vs tempered glass at $50–$150+. Compare protection, cost, and retrofit options for Phoenix properties."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/security-film-vs-tempered-glass"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is security film as effective as tempered glass?","acceptedAnswer":{"@type":"Answer","text":"For forced entry deterrence, security film often outperforms tempered glass. Tempered glass shatters into small pieces on impact — security film holds shattered glass in place, maintaining a barrier and slowing forced entry by 45–90 seconds. For blast retention, security film with wet-glaze anchoring is the preferred specification."}},{"@type":"Question","name":"How much does security window film cost vs replacing glass?","acceptedAnswer":{"@type":"Answer","text":"Security film runs $15–$22 per sq ft installed — significantly less than tempered glass replacement at $50–$150+ per sq ft. For retrofitting existing windows on commercial properties, security film delivers better ROI."}},{"@type":"Question","name":"Can security film be added to existing windows in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's the primary advantage. Security film retrofits to existing glass without removing or replacing window frames. We assess your current glass, specify the correct mil thickness, and install with optional C-Bond nano-technology primer for maximum adhesion in Arizona's extreme heat."}},{"@type":"Question","name":"What mil thickness security film do you recommend for Arizona?","acceptedAnswer":{"@type":"Answer","text":"For commercial smash-and-grab deterrence, 8-mil film is the standard specification. For high-security applications — dispensaries, schools, government buildings — we specify 12-mil film with Dow 995 wet-glaze anchoring. We assess your threat profile and recommend the appropriate specification during your free security consultation."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Security Film vs Tempered Glass","item":{"@id":"https://arizonahouseoffilm.com/security-film-vs-tempered-glass","name":"Security Film vs Tempered Glass"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">Security Film vs Tempered Glass — Which Is Right for Your Arizona Property?</h1><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">What Is Security Window Film?</h2><p class="text-lg text-slate-700 mb-4">Security window film is a thick polyester laminate — typically <strong>8 to 12 mil</strong> — applied to existing glass. When glass breaks, the film holds the shattered pieces in place, maintaining a physical barrier against forced entry. Optional C-Bond nano-technology primer increases adhesion strength, and wet-glaze anchoring (Dow 995 structural silicone) bonds the film directly to the window frame for maximum security.</p><p class="text-lg text-slate-700">Security film is a retrofit solution — it installs on your existing glass without replacement.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">What Is Tempered Glass?</h2><p class="text-lg text-slate-700 mb-4">Tempered glass is heat-treated to be 4–5× stronger than standard annealed glass. When it breaks, it shatters into small, relatively safe pieces rather than sharp shards. However, once broken, tempered glass <strong>does not maintain a barrier</strong> — it falls away from the frame, leaving an open entry point.</p><p class="text-lg text-slate-700">Replacing existing glass with tempered glass requires removing the entire window unit — significantly more expensive and disruptive than film installation.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Cost Comparison</h2><div class="overflow-x-auto"><table class="w-full border-collapse border border-slate-300 text-left"><thead><tr class="bg-slate-100"><th class="border border-slate-300 px-4 py-3 font-black uppercase text-sm">Option</th><th class="border border-slate-300 px-4 py-3 font-black uppercase text-sm">Cost per Sq Ft</th></tr></thead><tbody class="text-slate-700"><tr><td class="border border-slate-300 px-4 py-3">Security Film (8–12 mil)</td><td class="border border-slate-300 px-4 py-3">$15–$22 installed</td></tr><tr><td class="border border-slate-300 px-4 py-3">Tempered Glass Replacement</td><td class="border border-slate-300 px-4 py-3">$50–$150+ installed</td></tr></tbody></table></div></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Protection Comparison</h2><ul class="list-disc pl-6 text-lg text-slate-700 space-y-2"><li><strong>Security film</strong> — holds shattered glass together, maintains barrier, slows forced entry by 45–90 seconds, blast retention capable with wet-glaze anchoring</li><li><strong>Tempered glass</strong> — breaks safely into small pieces but does not retain in frame, leaving an open entry point after impact</li></ul><p class="text-lg text-slate-700 mt-4">For forced entry deterrence and blast mitigation, security film with wet-glaze anchoring is the preferred specification.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">When to Choose Security Film</h2><ul class="list-disc pl-6 text-lg text-slate-700 space-y-2"><li>Retrofitting existing glass without full window replacement</li><li>Budget-conscious security upgrades ($15–$22/sq ft vs $50–$150+)</li><li>Schools and educational facilities requiring active shooter protection</li><li>Dispensaries and high-value retail needing smash-and-grab deterrence</li><li>Government and military facilities requiring blast mitigation</li><li>Commercial properties needing combined security + solar benefits</li></ul></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">When to Choose Tempered Glass</h2><ul class="list-disc pl-6 text-lg text-slate-700 space-y-2"><li>New construction where building code requires tempered glass</li><li>Shower enclosures, glass doors, and other code-mandated locations</li><li>When the existing glass is damaged and needs full replacement regardless</li></ul></section><section class="bg-slate-100 p-8 rounded-lg mb-16"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Free Security Consultation</h2><p class="text-lg text-slate-700 mb-4">We assess your property&#x27;s glass, threat profile, and budget to recommend the right security specification. Licensed ROC #314088.</p><p class="text-lg font-bold">Call <a href="tel:4807881591" class="text-blue-600 hover:underline">(480) 788-1591</a> or <a class="text-blue-600 hover:underline" href="/contact">schedule online</a>.</p></section><section><h2 class="text-2xl font-black uppercase tracking-tight mb-6">Frequently Asked Questions</h2><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Is security film as effective as tempered glass?</h3><p class="text-slate-700">For forced entry deterrence, security film often outperforms tempered glass. Tempered glass shatters into small pieces on impact — security film holds shattered glass in place, maintaining a barrier and slowing forced entry by 45–90 seconds. For blast retention, security film with wet-glaze anchoring is the preferred specification.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">How much does security window film cost vs replacing glass?</h3><p class="text-slate-700">Security film runs $15–$22 per sq ft installed — significantly less than tempered glass replacement at $50–$150+ per sq ft. For retrofitting existing windows on commercial properties, security film delivers better ROI.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Can security film be added to existing windows in Arizona?</h3><p class="text-slate-700">Yes — that&#x27;s the primary advantage. Security film retrofits to existing glass without removing or replacing window frames. We assess your current glass, specify the correct mil thickness, and install with optional C-Bond nano-technology primer for maximum adhesion in Arizona&#x27;s extreme heat.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">What mil thickness security film do you recommend for Arizona?</h3><p class="text-slate-700">For commercial smash-and-grab deterrence, 8-mil film is the standard specification. For high-security applications — dispensaries, schools, government buildings — we specify 12-mil film with Dow 995 wet-glaze anchoring. We assess your threat profile and recommend the appropriate specification during your free security consultation.</p></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

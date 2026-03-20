@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Search, X, ShoppingCart, Trash2, Plus, Minus } from 'lucide-react';
@@ -144,6 +144,8 @@ const Store = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [orderItems, setOrderItems] = useState([]);
   const [submitting, setSubmitting] = useState(false);
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 24;
 
   const [form, setForm] = useState({
     name: '', phone: '', email: '', company: '',
@@ -165,6 +167,11 @@ const Store = () => {
     }
     return items;
   }, [activeCategory, searchQuery]);
+
+  useEffect(() => { setPage(1); }, [activeCategory, searchQuery]);
+
+  const paginatedProducts = filteredProducts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  const totalPages = Math.ceil(filteredProducts.length / PER_PAGE);
 
   const addToOrder = useCallback((item) => {
     setOrderItems(prev => {
@@ -333,13 +340,35 @@ const Store = () => {
             )}
           </div>
 
-          <p className="text-sm text-gray-500 mb-4">{filteredProducts.length} films shown</p>
+          <p className="text-sm text-gray-500 mb-4">Showing {Math.min((page-1)*PER_PAGE+1, filteredProducts.length)}–{Math.min(page*PER_PAGE, filteredProducts.length)} of {filteredProducts.length} films</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredProducts.map(product => (
+            {paginatedProducts.map(product => (
               <ProductCard key={product.sku} product={product} onAdd={addToOrder} />
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button
+                type="button"
+                onClick={() => { setPage(p => Math.max(1, p - 1)); window.scrollTo({top: 0, behavior: 'smooth'}); }}
+                disabled={page === 1}
+                className="px-5 py-2 rounded border border-gray-300 text-sm font-semibold text-gray-700 hover:border-green-400 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                ← Previous
+              </button>
+              <span className="text-sm text-gray-600 font-medium">Page {page} of {totalPages}</span>
+              <button
+                type="button"
+                onClick={() => { setPage(p => Math.min(totalPages, p + 1)); window.scrollTo({top: 0, behavior: 'smooth'}); }}
+                disabled={page === totalPages}
+                className="px-5 py-2 rounded border border-gray-300 text-sm font-semibold text-gray-700 hover:border-green-400 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Next →
+              </button>
+            </div>
+          )}
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-16 text-gray-500">

@@ -10,8 +10,9 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/components/ui/use-toast';
 import EstimatorCTA from '@/components/EstimatorCTA';
 import { solyxCategories, solyxProducts } from '../data/solyxFilms';
+import { ewfCategories, ewfProducts } from '../data/ewfFilms';
 
-const CATEGORY_LABELS = {
+const SOLYX_CATEGORY_LABELS = {
   'casper-designtex': 'Casper Cloaking',
   'frosted-etched': 'Frosted & Etched',
   'stained-glass': 'Stained Glass',
@@ -72,15 +73,44 @@ const faqSchema = {
   ]
 };
 
+function SelectorRow({ label, options, value, onChange }) {
+  return (
+    <div className="mt-2 flex items-center gap-2">
+      <Label className="text-xs text-gray-600 shrink-0">{label}:</Label>
+      <div className="flex flex-wrap gap-1">
+        {options.map(o => (
+          <button
+            key={o}
+            type="button"
+            onClick={() => onChange(o)}
+            className={`px-2 py-1 text-xs rounded border transition-colors ${
+              value === o
+                ? 'bg-green-600 text-white border-green-600'
+                : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
+            }`}
+          >
+            {o}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ProductCard({ product, onAdd }) {
-  const [width, setWidth] = useState('60"');
+  const widths = product.widthOptions || ROLL_WIDTHS;
+  const [width, setWidth] = useState(widths.includes('60"') ? '60"' : widths[0]);
   const [qty, setQty] = useState(1);
   const [imgError, setImgError] = useState(false);
+  const [vlt, setVlt] = useState(product.vltOptions?.[0] || '');
+  const [length, setLength] = useState(product.lengthOptions?.[0] || '');
+
+  const hasImage = product.img && product.img.length > 0;
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col">
       <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
-        {!imgError ? (
+        {hasImage && !imgError ? (
           <img
             src={product.img}
             alt={product.name}
@@ -89,31 +119,31 @@ function ProductCard({ product, onAdd }) {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">No image</div>
+          <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm px-4 text-center">
+            {product.description || 'No image'}
+          </div>
         )}
       </div>
       <div className="p-4 flex flex-col flex-1">
         <h3 className="font-bold text-gray-900 text-sm leading-tight">{product.name}</h3>
         <p className="text-xs text-gray-500 mt-1">{product.sku}</p>
-        <div className="mt-3 flex items-center gap-2">
-          <Label className="text-xs text-gray-600 shrink-0">Width:</Label>
-          <div className="flex gap-1">
-            {ROLL_WIDTHS.map(w => (
-              <button
-                key={w}
-                type="button"
-                onClick={() => setWidth(w)}
-                className={`px-2 py-1 text-xs rounded border transition-colors ${
-                  width === w
-                    ? 'bg-green-600 text-white border-green-600'
-                    : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
-                }`}
-              >
-                {w}
-              </button>
-            ))}
-          </div>
-        </div>
+        {product.priceRange && (
+          <span className="text-xs font-bold text-green-700 mt-1 block">{product.priceRange}</span>
+        )}
+        {product.warranty && (
+          <p className="text-xs text-gray-400 mt-0.5">{product.warranty}</p>
+        )}
+
+        <SelectorRow label="Width" options={widths} value={width} onChange={setWidth} />
+
+        {product.vltOptions && product.vltOptions.length > 0 && (
+          <SelectorRow label="VLT" options={product.vltOptions} value={vlt} onChange={setVlt} />
+        )}
+
+        {product.lengthOptions && product.lengthOptions.length > 1 && (
+          <SelectorRow label="Length" options={product.lengthOptions} value={length} onChange={setLength} />
+        )}
+
         <div className="mt-2 flex items-center gap-2">
           <Label className="text-xs text-gray-600 shrink-0">Qty:</Label>
           <div className="flex items-center border border-gray-300 rounded">
@@ -128,7 +158,7 @@ function ProductCard({ product, onAdd }) {
         </div>
         <Button
           type="button"
-          onClick={() => onAdd({ ...product, width, qty })}
+          onClick={() => onAdd({ ...product, width, qty, vlt: vlt || undefined, length: length || undefined })}
           className="mt-3 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-bold"
         >
           <ShoppingCart className="w-4 h-4 mr-1" /> Add to Order
@@ -140,6 +170,7 @@ function ProductCard({ product, onAdd }) {
 
 const Store = () => {
   const { toast } = useToast();
+  const [activeCatalog, setActiveCatalog] = useState('solyx');
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [orderItems, setOrderItems] = useState([]);
@@ -154,8 +185,11 @@ const Store = () => {
     notes: '',
   });
 
+  const currentCategories = activeCatalog === 'solyx' ? solyxCategories : ewfCategories;
+  const currentLabels = activeCatalog === 'solyx' ? SOLYX_CATEGORY_LABELS : {};
+
   const filteredProducts = useMemo(() => {
-    let items = solyxProducts;
+    let items = activeCatalog === 'solyx' ? solyxProducts : ewfProducts;
     if (activeCategory !== 'all') {
       items = items.filter(p => p.category === activeCategory);
     }
@@ -166,27 +200,31 @@ const Store = () => {
       );
     }
     return items;
-  }, [activeCategory, searchQuery]);
+  }, [activeCatalog, activeCategory, searchQuery]);
 
-  useEffect(() => { setPage(1); }, [activeCategory, searchQuery]);
+  useEffect(() => { setPage(1); }, [activeCategory, searchQuery, activeCatalog]);
 
   const paginatedProducts = filteredProducts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
   const totalPages = Math.ceil(filteredProducts.length / PER_PAGE);
 
   const addToOrder = useCallback((item) => {
     setOrderItems(prev => {
-      const key = `${item.sku}-${item.width}`;
-      const existing = prev.find(i => `${i.sku}-${i.width}` === key);
+      const key = `${item.sku}-${item.width}-${item.vlt || ''}-${item.length || ''}`;
+      const existing = prev.find(i => `${i.sku}-${i.width}-${i.vlt || ''}-${i.length || ''}` === key);
       if (existing) {
         return prev.map(i =>
-          `${i.sku}-${i.width}` === key ? { ...i, qty: i.qty + item.qty } : i
+          `${i.sku}-${i.width}-${i.vlt || ''}-${i.length || ''}` === key ? { ...i, qty: i.qty + item.qty } : i
         );
       }
       return [...prev, item];
     });
+    let desc = `${item.width}`;
+    if (item.vlt) desc += ` · VLT ${item.vlt}`;
+    if (item.length) desc += ` · ${item.length}`;
+    desc += ` × ${item.qty}`;
     toast({
       title: `${item.name} added`,
-      description: `${item.width} × ${item.qty}`,
+      description: desc,
       className: 'bg-green-600 border-none text-white font-bold rounded-none',
     });
   }, [toast]);
@@ -212,7 +250,13 @@ const Store = () => {
     }
 
     setSubmitting(true);
-    const filmsFormatted = orderItems.map(i => `${i.name} (${i.sku}) — ${i.width} × ${i.qty}`).join('\n');
+    const filmsFormatted = orderItems.map(i => {
+      let line = `${i.name} (${i.sku}) — ${i.width}`;
+      if (i.vlt) line += ` — VLT ${i.vlt}`;
+      if (i.length) line += ` — ${i.length}`;
+      line += ` × Qty ${i.qty}`;
+      return line;
+    }).join('\n');
 
     try {
       const response = await fetch('/api/contact', {
@@ -289,6 +333,36 @@ const Store = () => {
           </div>
         </motion.section>
 
+        {/* Catalog tabs */}
+        <div className="container mx-auto px-4 pt-4 pb-0">
+          <div className="flex gap-3 mb-0">
+            <button
+              type="button"
+              onClick={() => { setActiveCatalog('solyx'); setActiveCategory('all'); setPage(1); }}
+              className={`px-6 py-2.5 rounded-t-lg font-bold text-sm border-b-2 transition-colors ${
+                activeCatalog === 'solyx'
+                  ? 'bg-white text-green-700 border-green-600'
+                  : 'bg-gray-100 text-gray-600 border-transparent hover:bg-gray-200'
+              }`}
+            >
+              Solyx Decorative Films
+              <span className="ml-2 text-xs font-normal opacity-70">618 SKUs</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => { setActiveCatalog('ewf'); setActiveCategory('all'); setPage(1); }}
+              className={`px-6 py-2.5 rounded-t-lg font-bold text-sm border-b-2 transition-colors ${
+                activeCatalog === 'ewf'
+                  ? 'bg-white text-green-700 border-green-600'
+                  : 'bg-gray-100 text-gray-600 border-transparent hover:bg-gray-200'
+              }`}
+            >
+              EWF Architectural Films
+              <span className="ml-2 text-xs font-normal opacity-70">Performance</span>
+            </button>
+          </div>
+        </div>
+
         {/* SECTION 2 — Category filter bar */}
         <div className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
           <div className="container mx-auto px-4 py-3">
@@ -302,9 +376,9 @@ const Store = () => {
                     : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
                 }`}
               >
-                All ({solyxProducts.length})
+                All ({(activeCatalog === 'solyx' ? solyxProducts : ewfProducts).length})
               </button>
-              {solyxCategories.map(cat => (
+              {currentCategories.map(cat => (
                 <button
                   key={cat.slug}
                   type="button"
@@ -315,7 +389,7 @@ const Store = () => {
                       : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
                   }`}
                 >
-                  {CATEGORY_LABELS[cat.slug] || cat.name}
+                  {currentLabels[cat.slug] || cat.name}
                 </button>
               ))}
             </div>
@@ -388,10 +462,15 @@ const Store = () => {
               </h2>
               <div className="divide-y divide-gray-100">
                 {orderItems.map((item, i) => (
-                  <div key={`${item.sku}-${item.width}-${i}`} className="flex items-center justify-between py-3">
+                  <div key={`${item.sku}-${item.width}-${item.vlt || ''}-${i}`} className="flex items-center justify-between py-3">
                     <div>
                       <p className="font-semibold text-gray-900 text-sm">{item.name}</p>
-                      <p className="text-xs text-gray-500">{item.sku} · {item.width} · Qty {item.qty}</p>
+                      <p className="text-xs text-gray-500">
+                        {item.sku} · {item.width}
+                        {item.vlt && ` · VLT ${item.vlt}`}
+                        {item.length && ` · ${item.length}`}
+                        {` · Qty ${item.qty}`}
+                      </p>
                     </div>
                     <button type="button" onClick={() => removeItem(i)} className="text-red-500 hover:text-red-700 p-1">
                       <Trash2 className="w-4 h-4" />

@@ -83,6 +83,9 @@ export default function FilmsHub() {
           <h1 className="text-4xl md:text-5xl font-black mb-4">
             Decorative Window Film Catalog
           </h1>
+          <Link to="/store" className="inline-block bg-green-600 hover:bg-green-500 text-white font-black text-sm uppercase tracking-wider px-6 py-2.5 rounded-lg transition-colors mb-4">
+            Order Film Direct — Browse 618+ SKUs →
+          </Link>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
             {solyxProducts.length}+ Solyx films — frosted, etched, stained glass, privacy patterns,
             gradients, and Casper cloaking. We install every film in this catalog.

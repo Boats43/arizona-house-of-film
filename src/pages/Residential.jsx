@@ -572,7 +572,8 @@ const Residential = () => {
               <Link to="/commercial-window-tinting" className="text-green-600 underline font-bold">Explore commercial tinting</Link>,{" "}
               <Link to="/solutions" className="text-green-600 underline font-bold">view all film solutions</Link>, or{" "}
               <Link to="/service-areas" className="text-green-600 underline font-bold">check our service areas</Link>{" "}
-              to confirm coverage in your city.
+              to confirm coverage in your city.{" "}
+              <Link to="/store" className="text-green-600 underline font-bold">Browse Window Film Catalog</Link> →
             </p>
             <div className="mt-6">
               <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Residential Specialties</p>

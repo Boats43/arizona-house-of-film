@@ -574,6 +574,35 @@ const Residential = () => {
               <Link to="/service-areas" className="text-green-600 underline font-bold">check our service areas</Link>{" "}
               to confirm coverage in your city.
             </p>
+            <div className="mt-6">
+              <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Residential Specialties</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { to: '/glare-reduction-window-film-phoenix', label: 'Glare Reduction' },
+                  { to: '/privacy-window-film-phoenix-homes', label: 'Privacy Film' },
+                  { to: '/uv-protection-window-film-phoenix', label: 'UV Protection' },
+                  { to: '/countertop-protection-film-arizona', label: 'Countertop Protection' },
+                ].map(({ to, label }) => (
+                  <Link key={to} to={to} className="px-3 py-1 bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 hover:border-green-500 hover:text-green-600 transition-all rounded-full">
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">More Locations</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { to: '/window-tinting-fountain-hills', label: 'Fountain Hills' },
+                  { to: '/window-tinting-avondale', label: 'Avondale' },
+                  { to: '/window-tinting-tolleson', label: 'Tolleson' },
+                ].map(({ to, label }) => (
+                  <Link key={to} to={to} className="px-3 py-1 bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 hover:border-green-500 hover:text-green-600 transition-all rounded-full">
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

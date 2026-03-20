@@ -117,7 +117,7 @@ export const supportingPagesData = {
   // Residential Benefits
   "residential-window-tinting/uv-protection": {
     title: "UV Protection Window Film | Protect Your Arizona Home & Family",
-    metaDescription: "Block 99% of harmful UV rays with residential window film. Prevent furniture fading, protect your skin, and preserve your home's interior with our expert installation services in Phoenix, Scottsdale, and more.",
+    metaDescription: "Block 99% of UV rays with residential window film. Prevent furniture fading and protect your family. Phoenix and Scottsdale installation. ROC #314088.",
     canonicalUrl: "https://arizonahouseoffilm.com/residential-window-tinting/uv-protection",
     hero: {
         parent: "Residential Services", parentLink: "/residential-window-tinting", title: "Ultimate UV Ray Protection",
@@ -186,7 +186,7 @@ export const supportingPagesData = {
   },
   "residential-window-tinting/enhanced-privacy": {
     title: "Residential Privacy Film | Frosted & Oneway Films for Homes",
-    metaDescription: "Gain privacy without sacrificing light with residential privacy films. Ideal for front doors, bathrooms, and overlooked windows in Phoenix, AZ. Explore frosted, decorative, and one-way mirror options.",
+    metaDescription: "Residential privacy window film for Phoenix homes. Frosted, decorative, and one-way options for doors, bathrooms, and windows. Free estimate.",
     canonicalUrl: "https://arizonahouseoffilm.com/residential-window-tinting/enhanced-privacy",
     hero: {
         parent: "Residential Services", parentLink: "/residential-window-tinting", title: "Privacy, Perfected for Your Home",
@@ -389,7 +389,7 @@ export const supportingPagesData = {
   },
   "decorative-window-films/design-flexibility": {
     title: "Design Flexibility with Custom Window Film | Arizona House of Film",
-    metaDescription: "Enjoy unmatched design flexibility with decorative window film. From temporary branding to permanent architectural finishes, film is a versatile and removable solution for homes and businesses.",
+    metaDescription: "Design flexibility with decorative window film. Temporary branding to permanent architectural finishes — versatile, removable solutions for any space.",
     canonicalUrl: "https://arizonahouseoffilm.com/decorative-window-films/design-flexibility",
     hero: {
         parent: "Decorative Films", parentLink: "/decorative-window-films", title: "Style That Adapts to You",
@@ -822,7 +822,7 @@ export const supportingPagesData = {
   },
   "safety/government-facilities": {
     title: "Government Facility Security Film | Blast Mitigation & GSA-Compliant",
-    metaDescription: "Protect government buildings and personnel with GSA-compliant security film. Our films are tested for blast mitigation, forced entry, and spall protection. Serving federal, state, and local facilities in Arizona.",
+    metaDescription: "GSA-compliant security film for government buildings. Blast mitigation, forced entry protection, and spall resistance. Arizona licensed ROC #314088.",
     canonicalUrl: "https://arizonahouseoffilm.com/safety/government-facilities",
     hero: {
         parent: "Safety & Security Films", parentLink: "/safety", title: "Security for Government Facilities",

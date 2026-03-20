@@ -119,6 +119,9 @@ const Home = () => {
                 <Button size="lg" asChild className="bg-blue-600 text-white font-black h-16 px-10 rounded-none">
                   <Link to="/contact">Schedule Free Glass Assessment</Link>
                 </Button>
+                <Button size="lg" asChild variant="outline" className="border-2 border-white text-white font-black h-16 px-10 rounded-none hover:bg-white hover:text-slate-900">
+                  <Link to="/get-a-quote">Get a Film Quote</Link>
+                </Button>
               </div>
             </motion.div>
           </div>

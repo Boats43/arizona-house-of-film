@@ -781,6 +781,40 @@ const Commercial = () => {
               <Link to="/safety" className="text-blue-700 underline">safety &amp; security films</Link>{" "}
               for your building.
             </p>
+            <div className="mt-6">
+              <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Commercial Tinting by Location</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { to: '/commercial-window-tinting-mesa', label: 'Mesa' },
+                  { to: '/commercial-window-tinting-chandler', label: 'Chandler' },
+                  { to: '/commercial-window-tinting-gilbert', label: 'Gilbert' },
+                  { to: '/commercial-window-tinting-tempe', label: 'Tempe' },
+                  { to: '/commercial-window-tinting-glendale', label: 'Glendale' },
+                  { to: '/commercial-window-tinting-peoria', label: 'Peoria' },
+                  { to: '/commercial-window-tinting-queen-creek', label: 'Queen Creek' },
+                ].map(({ to, label }) => (
+                  <Link key={to} to={to} className="px-3 py-1 bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 hover:border-green-500 hover:text-green-600 transition-all">
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Commercial Services by Industry</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { to: '/high-rise-commercial-window-tinting-phoenix', label: 'High-Rise Tinting' },
+                  { to: '/window-film-for-restaurants-arizona', label: 'Restaurants' },
+                  { to: '/window-film-for-medical-facilities-arizona', label: 'Medical Facilities' },
+                  { to: '/window-film-for-schools-arizona', label: 'Schools' },
+                  { to: '/window-film-for-warehouses-arizona', label: 'Warehouses' },
+                ].map(({ to, label }) => (
+                  <Link key={to} to={to} className="px-3 py-1 bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 hover:border-green-500 hover:text-green-600 transition-all">
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

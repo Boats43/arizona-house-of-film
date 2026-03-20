@@ -161,6 +161,10 @@ const ROUTES = [
   '/window-film-for-schools-arizona', '/window-film-for-medical-facilities-arizona',
   '/window-film-for-restaurants-arizona', '/window-film-for-warehouses-arizona',
   '/window-film-cost-estimator',
+  '/best-window-film-arizona-heat', '/window-film-energy-rebates-arizona',
+  '/ceramic-vs-dual-reflective-film', '/window-film-cost-arizona',
+  '/security-film-vs-tempered-glass', '/how-long-does-window-film-last',
+  '/store', '/welcome',
 ]
 
 const PATTERN_MAP = [
@@ -242,6 +246,12 @@ const PATTERN_MAP = [
   ['/window-film-for-restaurants-arizona',  '/src/pages/informational/WindowFilmForRestaurantsArizona.jsx'],
   ['/window-film-for-warehouses-arizona',   '/src/pages/informational/WindowFilmForWarehousesArizona.jsx'],
   ['/window-film-cost-estimator',           '/src/pages/informational/WindowFilmCostEstimator.jsx'],
+  ['/best-window-film-arizona-heat',        '/src/pages/informational/BestWindowFilmArizonaHeat.jsx'],
+  ['/window-film-energy-rebates-arizona',   '/src/pages/informational/WindowFilmEnergyRebatesArizona.jsx'],
+  ['/ceramic-vs-dual-reflective-film',      '/src/pages/informational/CeramicVsDualReflectiveFilm.jsx'],
+  ['/window-film-cost-arizona',             '/src/pages/informational/WindowFilmCostArizona.jsx'],
+  ['/security-film-vs-tempered-glass',      '/src/pages/informational/SecurityFilmVsTemperedGlass.jsx'],
+  ['/how-long-does-window-film-last',       '/src/pages/informational/HowLongDoesWindowFilmLast.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/get-a-quote',                           '/src/pages/FilmQuoteRequest.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],

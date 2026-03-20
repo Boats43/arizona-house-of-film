@@ -10,7 +10,7 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const rocNumber = 'ROC #314088';
 const pageTitle = 'Security Window Film Phoenix | Forced Entry & Safety Film';
-const metaDescription = 'Phoenix security window film installer. Forced-entry resistance, shatter protection & UV block for homes and businesses. 700+ projects. Licensed ROC #314088. Free quote.';
+const metaDescription = 'Phoenix security window film installer. 4–21 mil safety film for homes, businesses, and government facilities. Holds glass on impact. ROC #314088. Free estimates — (480) 788-1591.';
 const canonicalUrl = 'https://arizonahouseoffilm.com/security-window-film-phoenix';
 const heroImageUrl = '/images/security-film-hero.jpg';
 

@@ -165,6 +165,7 @@ const ROUTES = [
   '/ceramic-vs-dual-reflective-film', '/window-film-cost-arizona',
   '/security-film-vs-tempered-glass', '/how-long-does-window-film-last',
   '/store', '/welcome',
+  '/shatterproof-window-film',
 ]
 
 const PATTERN_MAP = [
@@ -252,6 +253,7 @@ const PATTERN_MAP = [
   ['/window-film-cost-arizona',             '/src/pages/informational/WindowFilmCostArizona.jsx'],
   ['/security-film-vs-tempered-glass',      '/src/pages/informational/SecurityFilmVsTemperedGlass.jsx'],
   ['/how-long-does-window-film-last',       '/src/pages/informational/HowLongDoesWindowFilmLast.jsx'],
+  ['/shatterproof-window-film',            '/src/pages/informational/ShatterproofWindowFilm.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/get-a-quote',                           '/src/pages/FilmQuoteRequest.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],

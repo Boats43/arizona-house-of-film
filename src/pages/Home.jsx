@@ -110,7 +110,7 @@ const Home = () => {
           <div className="text-center max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
-                Arizona <span className="text-blue-500 italic">Window Film</span> & Tinting Experts — Phoenix, Scottsdale, and Beyond
+                Arizona <span className="text-blue-500 italic">House of Film</span> — Licensed Window Film Contractor Phoenix AZ
               </h1>
               <p className="mt-8 text-base sm:text-lg md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
                 Arizona House of Film installs commercial window tinting, residential window film, security film, decorative glass film, and solar control film across Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088 — serving contractors, enterprises, and homeowners since 2017.

@@ -107,34 +107,10 @@ const ScottsdaleResidential = () => {
       },
       {
         '@type': 'Question',
-        name: 'How much does residential window tinting cost in Scottsdale?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Scottsdale residential window film typically runs $8–$18 per square foot installed. A standard 2,000 sq ft Scottsdale home with 12–18 windows averages $1,200–$3,500. North Scottsdale estate properties with large glass elevations run $4,000–$12,000+. All quotes are free and based on on-site glass measurement. Call (480) 788-1591.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How much does residential window film cost in Scottsdale AZ?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Residential window film installation in Scottsdale AZ runs $8–$18 per square foot installed depending on film specification. Solar control film averages $8–$12 per square foot. Nano-ceramic film runs $12–$18 per square foot. Most Scottsdale homes average $1,400–$3,200 for a complete installation. Custom-quoted after free on-site assessment. ROC #314088. Call (480) 788-1591.',
-        },
-      },
-      {
-        '@type': 'Question',
         name: 'What window film is best for North Scottsdale homes?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: "Nano-ceramic film is the top specification for North Scottsdale custom homes. It rejects up to 84% of solar heat without the reflective appearance that most Scottsdale HOAs restrict. Leading specifications include Huper Optik Ceramic, 3M Crystalline, and LLumar CTX. Film is selected based on your glass type, exposure, and HOA requirements. Free on-site assessment — call (480) 788-1591. Licensed ROC #314088.",
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is window film HOA compliant in Scottsdale?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Most Scottsdale HOAs permit window film with restrictions on visible reflectance and color. Nano-ceramic and spectrally selective films are approved in most DC Ranch, McCormick Ranch, Gainey Ranch, and Silverleaf communities because they have a neutral, non-reflective appearance. Arizona House of Film reviews HOA guidelines before specifying film. We have completed HOA-compliant installations across all major Scottsdale master-planned communities. Licensed ROC #314088.',
         },
       },
       {

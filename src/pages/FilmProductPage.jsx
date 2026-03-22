@@ -457,6 +457,12 @@ export default function FilmProductPage() {
                   <Phone className="w-4 h-4" /> (480) 788-1591
                 </a>
               </div>
+              <p className="text-sm text-slate-400 mt-3">
+                Want to purchase this film directly?{" "}
+                <Link to="/store" className="text-green-700 underline">
+                  Order from our film catalog →
+                </Link>
+              </p>
             </div>
           </div>
         </div>

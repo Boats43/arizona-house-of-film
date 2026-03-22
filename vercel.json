@@ -60,7 +60,11 @@
 
     { "source": "/blog/:slug(.*)-:num([0-9]{1,2})", "destination": "/blog/:slug", "permanent": true },
 
-    { "source": "/:city((?!service-areas|commercial|residential|decorative|safety|energy-saving|films|brands|blog|industries|gallery|contact|book-now|careers|anti-graffiti|solutions|store|privacy-policy)[a-z][a-z0-9-]*)-window-tinting", "destination": "/service-areas/:city", "permanent": true }
+    { "source": "/:city((?!service-areas|commercial|residential|decorative|safety|energy-saving|films|brands|blog|industries|gallery|contact|book-now|careers|anti-graffiti|solutions|store|privacy-policy)[a-z][a-z0-9-]*)-window-tinting", "destination": "/service-areas/:city", "permanent": true },
+
+    { "source": "/brands/v-kool", "destination": "/brands", "permanent": true },
+    { "source": "/pricing", "destination": "/window-film-cost-estimator", "permanent": true },
+    { "source": "/pages/:path*", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

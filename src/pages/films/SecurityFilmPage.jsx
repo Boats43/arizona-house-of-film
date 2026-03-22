@@ -11,14 +11,22 @@ const SecurityFilmPage = () => {
   const canonicalUrl = "https://arizonahouseoffilm.com/films/security";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 
-  const productSchema = {
-    "@context": "https://schema.org", "@type": "Product",
-    name: "Security Window Film",
-    description: "Professional-grade security window film designed to protect against break-ins, accidents, and natural disasters by holding shattered glass together.",
-    brand: { "@type": "Brand", name: "Arizona House of Film" },
-    image: "https://arizonahouseoffilm.com/og-image.jpg",
-    offers: { "@type": "Offer", price: "0.00", priceCurrency: "USD", priceValidUntil: "2027-12-31", availability: "https://schema.org/InStock", url: canonicalUrl },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "15" }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Security Window Film Phoenix AZ",
+    "description": "Licensed security window film installation in Phoenix AZ. 4–21 mil safety film for homes, businesses, schools, and government facilities. ROC #314088.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Arizona House of Film",
+      "url": "https://arizonahouseoffilm.com",
+      "@id": "https://arizonahouseoffilm.com/#business"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Arizona"
+    },
+    "url": "https://arizonahouseoffilm.com/films/security"
   };
 
   const faqSchema = {
@@ -45,7 +53,7 @@ const SecurityFilmPage = () => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
-        <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <div className="bg-gray-50">

@@ -36,7 +36,8 @@
       "Bash(do if:*)",
       "Bash(then echo:*)",
       "Bash(fi)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(python -c \":*)"
     ]
   }
 }

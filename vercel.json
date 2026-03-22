@@ -53,6 +53,7 @@
     { "source": "/cities/:slug", "destination": "/service-areas/:slug", "permanent": true },
     { "source": "/services", "destination": "/commercial-window-tinting", "permanent": true },
     { "source": "/films/ceramic-films", "destination": "/films", "permanent": true },
+    { "source": "/films/pattern-films", "destination": "/films", "permanent": true },
     { "source": "/blog/ceramic-vs-dual-reflective-film", "destination": "/blog", "permanent": true },
 
     { "source": "/industries/government", "destination": "/industries/government-buildings", "permanent": true },

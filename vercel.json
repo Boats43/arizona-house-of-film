@@ -62,6 +62,7 @@
 
     { "source": "/:city((?!service-areas|commercial|residential|decorative|safety|energy-saving|films|brands|blog|industries|gallery|contact|book-now|careers|anti-graffiti|solutions|store|privacy-policy)[a-z][a-z0-9-]*)-window-tinting", "destination": "/service-areas/:city", "permanent": true },
 
+    { "source": "/films/decorative-films", "destination": "/decorative-window-films", "permanent": true },
     { "source": "/brands/v-kool", "destination": "/brands", "permanent": true },
     { "source": "/pricing", "destination": "/window-film-cost-estimator", "permanent": true },
     { "source": "/pages/:path*", "destination": "/", "permanent": true }

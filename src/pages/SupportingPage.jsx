@@ -81,26 +81,22 @@ const SupportingPage = () => {
         }
       : null;
 
-  const productSchema = {
-    '@context': 'https://schema.org/',
-    '@type': 'Product',
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
     name: title,
     description: metaDescription,
-    brand: { '@type': 'Brand', name: 'Arizona House of Film' },
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Arizona House of Film',
+      url: 'https://arizonahouseoffilm.com',
+      '@id': 'https://arizonahouseoffilm.com/#business',
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Arizona',
+    },
     url: canonicalUrl,
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'USD',
-      price: '0.00',
-      priceValidUntil: '2027-12-31',
-      availability: 'https://schema.org/InStock',
-      url: canonicalUrl,
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '18',
-    },
   };
 
   /* ============================================================
@@ -136,7 +132,7 @@ const SupportingPage = () => {
         )}
 
         <script type="application/ld+json">
-          {JSON.stringify(productSchema)}
+          {JSON.stringify(serviceSchema)}
         </script>
       </Helmet>
 

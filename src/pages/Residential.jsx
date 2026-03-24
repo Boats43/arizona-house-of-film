@@ -9,8 +9,8 @@ import { cities } from '@/data/cities';
 import EstimatorCTA from '../components/EstimatorCTA';
 
 const Residential = () => {
-  const pageTitle = "Residential Window Tinting Phoenix AZ | Ceramic Solar Films | Arizona House of Film";
-  const metaDescription = "Ceramic window tinting for Phoenix homes. Block 84% heat, cut energy bills 20–30%. HOA compliant. Scottsdale and Paradise Valley specialists. ROC #314088.";
+  const pageTitle = "Residential Window Tinting Phoenix AZ | Licensed Installer | ROC #314088";
+  const metaDescription = "Licensed residential window tinting in Phoenix AZ. Ceramic solar film, dual reflective, security and decorative film for homes. Free estimates. ROC #314088 — (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/residential-window-tinting";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
@@ -195,7 +195,7 @@ const Residential = () => {
                 Residential Specialists
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                Residential Window Tinting Phoenix | Home Solar Control Films
+                Residential Window Tinting Phoenix AZ | Licensed Window Film Contractor
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Arizona House of Film installs residential window tinting throughout Phoenix, Scottsdale, and the Arizona metro. Ceramic, solar control, privacy, and security window film for homes — licensed ROC #314088, serving Phoenix homeowners since 2017.

@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
-import { brands } from '@/data/brands';
 import { Calculator, Plus, Trash2, Loader2 } from 'lucide-react';
 
 const filmCategories = [
@@ -18,16 +17,6 @@ const filmCategories = [
   { id: 'unsure', label: 'Not sure — need recommendation', desc: 'We\'ll help you choose' },
 ];
 
-const categoryToFilmMap = {
-  'solar': ['3M Prestige Series', '3M Scotchtint Series', 'LLumar Commercial Series', 'Vista Premium Residential', 'Solar Gard Panorama Series', 'Solar Gard Quantum Series', 'XPEL PRIME Series', 'XPEL VISION Series', 'Madico Sunscape Series', 'Hüper Optik Ceramic Series'],
-  'dual-reflective': ['Hüper Optik Dual Reflective', 'LLumar Commercial Series', 'Vista Premium Residential', 'Solar Gard Panorama Series'],
-  'security': ['3M Scotchshield Ultra', 'LLumar Safety Series', 'Hanita Safety Shield Series', 'Hanita Solar Series', 'XPEL VISION Series'],
-  'decorative': ['3M Fasara Series', 'Madico Decorative Series', 'Solyx Decorative Films'],
-  'anti-graffiti': ['3M Anti-Graffiti Film', 'Madico AG Series'],
-  'cloaking': ['Casper Cloaking Film', 'Casper Graphic Film'],
-  'countertop': ['Countertop Protection Film'],
-  'unsure': [],
-};
 
 const emptyWindow = () => ({ id: Date.now(), description: '', width: '', height: '', quantity: '1' });
 
@@ -104,7 +93,6 @@ const FilmQuoteRequest = () => {
       address: fd.get('city') || '',
       propertyType: fd.get('propertyType') || '',
       filmCategory: selectedCategory || '',
-      specificFilm: fd.get('specificFilm') || '',
       rollWidth: fd.get('rollWidth') || '',
       glassType: fd.get('glassType') || '',
       existingFilm: fd.get('existingFilm') || '',
@@ -116,7 +104,7 @@ const FilmQuoteRequest = () => {
       windowMeasurements: windowSummary,
       totalWindows: windows.length,
       source: 'film-quote-request',
-      message: `Film Quote Request\n\nCategory: ${selectedCategory}\nFilm: ${fd.get('specificFilm') || 'Not specified'}\nProperty: ${fd.get('propertyType')}\nGlass: ${fd.get('glassType')}\nExisting film: ${fd.get('existingFilm')}\nHOA: ${fd.get('hoaRestrictions')}\nTimeline: ${fd.get('timeline')}\nRoll width: ${fd.get('rollWidth')}\nHeard about us: ${fd.get('heardAboutUs')}\n\nWindows:\n${windowSummary}\n\nNotes: ${fd.get('notes') || 'None'}`,
+      message: `Film Quote Request\n\nCategory: ${selectedCategory}\nProperty: ${fd.get('propertyType')}\nGlass: ${fd.get('glassType')}\nExisting film: ${fd.get('existingFilm')}\nHOA: ${fd.get('hoaRestrictions')}\nTimeline: ${fd.get('timeline')}\nRoll width: ${fd.get('rollWidth')}\nHeard about us: ${fd.get('heardAboutUs')}\n\nWindows:\n${windowSummary}\n\nNotes: ${fd.get('notes') || 'None'}`,
     };
 
     try {
@@ -153,7 +141,6 @@ const FilmQuoteRequest = () => {
 
   const inputClass = 'w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none';
   const labelClass = 'block text-sm font-bold text-slate-800 mb-1';
-  const availableFilms = categoryToFilmMap[selectedCategory] || [];
 
   return (
     <>
@@ -216,6 +203,7 @@ const FilmQuoteRequest = () => {
         <section className="py-16">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <form onSubmit={handleSubmit} className="space-y-12">
+              <input type="text" name="website_url" style={{display:'none'}} tabIndex={-1} autoComplete="off" />
 
               {/* SECTION 1 — Contact Info */}
               <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
@@ -284,18 +272,7 @@ const FilmQuoteRequest = () => {
                   ))}
                 </div>
 
-                {selectedCategory && availableFilms.length > 0 && (
-                  <div>
-                    <label className={labelClass}>Do you have a specific film in mind? (optional)</label>
-                    <select name="specificFilm" className={inputClass}>
-                      <option value="">No preference</option>
-                      {availableFilms.map((film) => (
-                        <option key={film} value={film}>{film}</option>
-                      ))}
-                    </select>
-                  </div>
-                )}
-                {selectedCategory && availableFilms.length === 0 && (
+                {selectedCategory && (
                   <p className="text-sm text-slate-500 italic">We'll recommend the best film for your project during the on-site assessment.</p>
                 )}
               </div>

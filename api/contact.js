@@ -1,6 +1,16 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
 
+  const honeypot = req.body.website_url || req.body.url || req.body.company_website;
+  if (honeypot) {
+    return res.status(200).json({ success: true });
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (req.body.email && !emailRegex.test(req.body.email)) {
+    return res.status(400).json({ error: 'Invalid email' });
+  }
+
   const d = req.body;
 
   const text = `

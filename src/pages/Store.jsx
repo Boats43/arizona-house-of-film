@@ -489,6 +489,7 @@ const Store = () => {
           <section className="mt-8 bg-white rounded-lg border border-gray-200 p-6 md:p-8" id="order-form">
             <h2 className="text-xl font-extrabold text-gray-900 mb-6">Shipping & Contact Information</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="text" name="website_url" style={{display:'none'}} tabIndex={-1} autoComplete="off" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="name" className="text-gray-700">Name *</Label>

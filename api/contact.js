@@ -11,6 +11,28 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid email' });
   }
 
+  // Name validation — reject gibberish / bot names
+  const nameStr = (req.body.name || '').trim();
+  if (nameStr.length > 80 || /[^a-zA-Z\s\-'.]/.test(nameStr)) {
+    return res.status(200).json({ success: true }); // silent accept
+  }
+
+  // Phone validation — reject if contains letters
+  const phoneStr = (req.body.phone || '').trim();
+  if (phoneStr && /[a-zA-Z]/.test(phoneStr)) {
+    return res.status(200).json({ success: true }); // silent accept
+  }
+
+  // Message entropy check — reject random character strings
+  const msgStr = (req.body.message || req.body.notes || '').trim();
+  if (msgStr.length > 0) {
+    const words = msgStr.split(/\s+/);
+    const avgWordLength = msgStr.replace(/\s/g, '').length / words.length;
+    if (avgWordLength > 12) {
+      return res.status(200).json({ success: true }); // silent accept
+    }
+  }
+
   const d = req.body;
 
   const text = `

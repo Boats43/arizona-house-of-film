@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import BreadcrumbSchema from "../../components/SEO/BreadcrumbSchema";
 import { Link } from "react-router-dom";
 
-const FILM_TYPES = [
+export const FILM_TYPES = [
   {
     id: "solar-standard",
     name: "Solar Control Film",

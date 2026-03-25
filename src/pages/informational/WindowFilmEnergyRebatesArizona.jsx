@@ -278,7 +278,7 @@ export default function WindowFilmEnergyRebatesArizona() {
                       key={dir}
                       className={`flex items-center gap-2 border rounded-lg px-4 py-3 cursor-pointer transition-all ${
                         isNorth
-                          ? "border-slate-200 bg-slate-50 text-slate-400"
+                          ? "border-slate-200 bg-slate-50 text-slate-400 opacity-50"
                           : checked
                           ? "border-green-500 bg-green-50 text-green-800"
                           : "border-slate-200 bg-white text-slate-700 hover:border-slate-400"
@@ -291,7 +291,10 @@ export default function WindowFilmEnergyRebatesArizona() {
                         onChange={() => toggleOrientation(dir)}
                         className="accent-green-600"
                       />
-                      <span className="font-semibold capitalize">{dir}-facing</span>
+                      <span className="font-semibold">
+                        {dir.charAt(0).toUpperCase() + dir.slice(1)}-facing
+                        {isNorth && <span className="text-xs font-normal ml-1">(does not qualify)</span>}
+                      </span>
                     </label>
                   );
                 })}

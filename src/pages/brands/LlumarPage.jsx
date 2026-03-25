@@ -62,6 +62,22 @@ const LlumarPage = () => {
           text: 'LLumar window film installation in Phoenix runs $8–$18 per square foot for residential solar control film. Commercial projects are quoted by scope and square footage. All projects are custom-quoted on-site. Free estimates — call (480) 788-1591.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'Which LLumar film is best for Arizona heat?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'For Arizona\'s intense solar load, LLumar Dual Reflective and Spectrally Selective films perform best. Dual Reflective rejects up to 79% of solar heat — ideal for west and south-facing commercial glass. Spectrally Selective is the top choice for residential properties where a non-reflective appearance is required. Both block 99%+ of UV rays.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between LLumar film thicknesses for security?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'LLumar security films range from 4 mil (anti-shatter) to 13 mil (maximum anti-intrusion). The PS4 at 4 mil holds glass on impact and suits residential and retail applications. PS7 at 7 mil resists forced entry for commercial and school installations. PS8 at 8 mil meets blast mitigation requirements for government facilities. PS13 at 13 mil provides maximum forced-entry resistance for high-security applications.',
+        },
+      },
     ],
   };
 
@@ -138,6 +154,7 @@ const LlumarPage = () => {
             <p className="text-slate-700 text-lg leading-relaxed max-w-4xl">
               LLumar is an Eastman Chemical Company brand — one of the most specified window film brands in North America. LLumar architectural window film is available in solar control, safety, security, decorative, and specialty categories. Arizona House of Film installs LLumar film on commercial and residential properties throughout Phoenix, Scottsdale, and Arizona. Licensed ROC #314088.
             </p>
+            <p className="text-slate-700 mb-4">Arizona House of Film installs the complete LLumar architectural film lineup for residential and commercial properties across Phoenix, Scottsdale, Chandler, Gilbert, Mesa, and the greater Valley. LLumar is manufactured by Eastman — one of the largest specialty film manufacturers in the world — and carries some of the strongest warranties in the industry. Verified installations include commercial properties for Coca-Cola, AutoZone, LA Fitness, City of Buckeye, and City of Mesa.</p>
           </div>
         </section>
 
@@ -152,6 +169,24 @@ const LlumarPage = () => {
                 <div key={name} className="bg-white border-l-4 border-green-500 p-6">
                   <h3 className="font-black text-slate-950 text-sm uppercase mb-2">{name}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 mb-8">
+              {[
+                { name: "Dual Reflective", tag: "Most Popular Commercial", desc: "Reflective exterior, neutral interior. 24-hour privacy with maximum solar control. Best for west and south-facing commercial glass.", specs: "Heat rejection: up to 79% · UV block: 99%+" },
+                { name: "Spectrally Selective", tag: "Best for Residential", desc: "Maximum heat rejection with minimal tint. Preserves natural light and views. Ideal for HOA-restricted properties.", specs: "Heat rejection: up to 65% · UV block: 99%+" },
+                { name: "Neutral Solar", tag: "Low Profile", desc: "Non-reflective gray appearance. Solar benefits with minimal change to glass aesthetics.", specs: "Heat rejection: up to 55% · UV block: 99%+" },
+                { name: "Low-E", tag: "Year-Round Performance", desc: "Dual-season film — blocks heat in summer, retains warmth in winter. Non-reflective warm appearance.", specs: "Heat rejection: up to 46% · UV block: 99%+" },
+                { name: "Reflective", tag: "Maximum Privacy", desc: "Mirror-like exterior. Maximum daytime privacy and heat rejection for residential and commercial.", specs: "Heat rejection: up to 82% · UV block: 99%+" },
+                { name: "Exterior (Helios / NHE / RHE)", tag: "Exterior Application", desc: "Applied to outside glass surface. NHE 20, NHE 35 neutral and RHE 20, RHE 35, RHE 50 reflective options.", specs: "UV block: 99%+ · Single and double pane compatible" },
+              ].map((film, i) => (
+                <div key={i} className="border border-slate-200 rounded-lg p-4 bg-white">
+                  <span className="text-xs font-black text-green-700 uppercase tracking-widest">{film.tag}</span>
+                  <h3 className="font-black text-slate-900 text-lg mt-1 mb-2">LLumar {film.name}</h3>
+                  <p className="text-slate-600 text-sm mb-3">{film.desc}</p>
+                  <p className="text-xs text-slate-500 font-medium">{film.specs}</p>
                 </div>
               ))}
             </div>
@@ -179,6 +214,21 @@ const LlumarPage = () => {
             <p className="text-slate-300 text-lg leading-relaxed max-w-4xl">
               LLumar Safety S Series provides 4–8 mil protection for residential and light commercial glass — holding shattered glass in place during impacts, storms, and accidents. LLumar ArmorCoat Security Series delivers 8–14 mil forced-entry resistance rated for commercial, government, and high-security applications. Arizona House of Film installs both series across Arizona.
             </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 mb-8">
+              {[
+                { thickness: "4 mil (PS4)", label: "Anti-Shatter", desc: "Holds glass fragments on impact. Retail storefronts, residential sliding doors and skylights. Clear, neutral, or tinted options." },
+                { thickness: "7 mil (PS7)", label: "Anti-Intrusion", desc: "Resists forced entry — slows intruder significantly. Recommended for ground-floor commercial, schools, and medical facilities." },
+                { thickness: "8 mil (PS8)", label: "Blast Mitigation", desc: "Engineered for blast pressure resistance. Government and high-security facility standard." },
+                { thickness: "13 mil (PS13)", label: "Anti-Intrusion+", desc: "Maximum forced entry resistance. High-security commercial, detention facilities, embassy-grade protection." },
+              ].map((film, i) => (
+                <div key={i} className="border border-slate-200 rounded-lg p-4 bg-white">
+                  <span className="text-xs font-black text-blue-700 uppercase tracking-widest">{film.thickness}</span>
+                  <h3 className="font-black text-slate-900 text-lg mt-1 mb-2">{film.label}</h3>
+                  <p className="text-slate-600 text-sm">{film.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -191,6 +241,20 @@ const LlumarPage = () => {
             <p className="text-slate-700 text-lg leading-relaxed max-w-4xl">
               LLumar decorative film includes frosted, patterned, and etched options for privacy, branding, and aesthetic applications. Commonly installed in Scottsdale and Phoenix offices, medical facilities, conference rooms, and storefront glass. Custom-cut to any pattern or dimension.
             </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 mb-8">
+              {[
+                { name: "Frosted & Etched", desc: "Mimics sandblasted or acid-etched glass at a fraction of the cost. Conference rooms, office partitions, bathroom glass, and shower doors." },
+                { name: "Gradient", desc: "Frosted-to-clear transition film. Architectural accent for conference rooms, reception areas, and interior partitions." },
+                { name: "Colored & Tinted", desc: "Architectural color accents and branding applications. Available in multiple colors and opacities." },
+                { name: "Custom Cut / Logos", desc: "Privacy patterns, company logos, and custom designs cut to specification. Installed on glass partitions, storefronts, and entry doors." },
+              ].map((film, i) => (
+                <div key={i} className="border border-slate-200 rounded-lg p-4 bg-white">
+                  <h3 className="font-black text-slate-900 text-lg mb-2">LLumar {film.name}</h3>
+                  <p className="text-slate-600 text-sm">{film.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -219,6 +283,21 @@ const LlumarPage = () => {
               >
                 (480) 788-1591
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-10 border-t border-slate-200 pt-6 pb-4">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Related Resources</p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              <Link to="/residential-window-tinting" className="text-green-700 underline">Residential Window Film</Link>
+              <Link to="/commercial-window-tinting" className="text-green-700 underline">Commercial Window Film</Link>
+              <Link to="/security-window-film-phoenix" className="text-green-700 underline">Security Film Phoenix</Link>
+              <Link to="/window-film-energy-rebates-arizona" className="text-green-700 underline">SRP Rebate Calculator</Link>
+              <Link to="/decorative-window-films" className="text-green-700 underline">Decorative Films</Link>
+              <Link to="/brands" className="text-green-700 underline">All Film Brands</Link>
+              <Link to="/get-a-quote" className="text-green-700 underline">Get a Quote</Link>
             </div>
           </div>
         </section>

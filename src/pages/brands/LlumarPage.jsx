@@ -258,6 +258,28 @@ const LlumarPage = () => {
           </div>
         </section>
 
+        {/* WHY AZHOF */}
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">
+              Why Arizona House of Film for LLumar Installation
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { title: 'Licensed', desc: 'ROC #314088 — Arizona licensed window film contractor since 2017.' },
+                { title: '700+ Projects', desc: 'Verified installations for Coca-Cola, City of Mesa, LA Fitness, and commercial clients across Maricopa County.' },
+                { title: 'NFRC Documentation', desc: 'We provide all technical documentation required for SRP rebate applications and architect specifications.' },
+                { title: 'Free Assessment', desc: 'On-site measurement, glass compatibility check, and film recommendation — no obligation.' },
+              ].map((item, i) => (
+                <div key={i} className="border-l-4 border-green-500 p-6 bg-white">
+                  <h3 className="font-black text-slate-950 text-sm uppercase mb-2">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <EstimatorCTA />
 
         {/* CTA */}

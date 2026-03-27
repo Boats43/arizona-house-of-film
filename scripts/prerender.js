@@ -70,7 +70,7 @@ const ROUTES = [
   '/blog/why-phoenix-residents-swear-by-window-tinting',
   '/blog/the-secret-to-scottsdale-luxury-high-end-window-films',
   '/brands/3m', '/brands/eastman', '/brands/solar-gard', '/brands/avery-dennison',
-  '/brands/xpel', '/brands/madico', '/brands/huper-optik', '/brands/johnson',
+  '/brands/xpel', '/brands/madico', '/brands/suntek', '/brands/huper-optik', '/brands/johnson',
   '/brands/geoshield', '/brands/rayno', '/brands/global', '/brands/terminax',
   '/brands/motoshield', '/brands/gila', '/brands/artscape', '/brands/enerlogic',
   '/brands/concord', '/brands/bdf', '/brands/rockrose', '/brands/vkool',

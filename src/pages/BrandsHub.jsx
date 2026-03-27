@@ -6,11 +6,12 @@ import { brands } from '@/data/brands';
 import { ArrowRight, MapPin, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema';
+import EstimatorCTA from '../components/EstimatorCTA';
 
 const canonicalUrl = "https://arizonahouseoffilm.com/brands";
 
-const pageTitle = "Window Film Manufacturers & Technology Partners | Arizona House of Film";
-const metaDescription = "Certified installer for 3M, Huper Optik, Madico, LLumar, Solyx, Solar Gard and 25+ window film brands. Licensed ROC #314088.";
+const pageTitle = "Window Film Brands Phoenix AZ | 30+ Manufacturers | Licensed Installer | ROC #314088";
+const metaDescription = "Arizona House of Film installs 30+ window film brands — LLumar, XPEL, SunTek, Madico, 3M, Huper Optik, Solar Gard, Solyx and more. Licensed ROC #314088. Free estimates across Phoenix, Scottsdale, and the Valley.";
 
 // ── Helper: look up a brand slug from brands.js by name fragment ──────────────
 const findSlug = (nameFragment) => {
@@ -35,6 +36,7 @@ const categories = [
       { display: 'Madico', slug: 'madico' },
       { display: 'EnerLogic', slug: 'enerlogic' },
       { display: 'Solar Gard (Saint-Gobain)', slug: 'solar-gard' },
+      { display: 'LLumar', slug: 'llumar' },
     ],
   },
   {
@@ -79,6 +81,7 @@ const categories = [
       { display: 'EnerLogic', slug: 'enerlogic' },
       { display: 'Rockrose', slug: 'rockrose' },
       { display: 'TERMINAX', slug: 'terminax' },
+      { display: 'SunTek', slug: 'suntek' },
     ],
   },
 ];
@@ -124,6 +127,61 @@ const reviewSchema = {
   "reviewBody": "Great selection of top-tier brands. They helped us choose the perfect film for our needs."
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What window film brands does Arizona House of Film install?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arizona House of Film installs 30+ window film brands including LLumar, XPEL, SunTek, Madico, 3M, Huper Optik, Solar Gard, Solyx, Flexfilm, EnerLogic, and more. We select film based on your project's SHGC requirements, glass type, and aesthetic preferences — not brand loyalty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Arizona House of Film install 3M window film?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arizona House of Film works with 3M window film products for residential and commercial installations across Phoenix and Scottsdale. Contact us to discuss your project requirements and film specifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between ceramic and reflective window film?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ceramic window film uses nano-ceramic particles to block infrared heat without a mirror appearance and without interfering with WiFi, cellular, or GPS signals. Reflective film uses sputtered metal to reflect solar energy — delivering higher heat rejection but with a mirror-like exterior appearance. Arizona House of Film installs both types and recommends based on your glass orientation, HOA requirements, and performance targets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which window film brands qualify for the SRP rebate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any window film with an NFRC-rated SHGC of 0.45 or lower qualifies for the SRP residential rebate of $1 per square foot. Qualifying products are available across multiple brands we install including LLumar, XPEL, SunTek, Madico, and Solar Gard. Arizona House of Film provides all required NFRC documentation for rebate submissions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Arizona House of Film source specialty or custom window film?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. With access to 30+ manufacturers including Contra Vision, Garware, Global Window Films, Rockrose, and specialty decorative suppliers, Arizona House of Film can source custom film specifications for non-standard applications, architect specifications, and custom projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Arizona House of Film select which brand to install?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We evaluate every project based on glass type, solar exposure, SHGC targets, structural requirements, HOA appearance standards, and budget. We are not locked into any single manufacturer relationship — our access to 30+ brands means we select the optimal film for each application."
+      }
+    }
+  ]
+};
+
 // ── Component ─────────────────────────────────────────────────────────────────
 const BrandsHub = () => (
   <div className="bg-white text-gray-900">
@@ -141,6 +199,7 @@ const BrandsHub = () => (
       <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>
     <BreadcrumbSchema items={[
       { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
@@ -157,7 +216,7 @@ const BrandsHub = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Certified Film Manufacturers &amp; Technology Partners
+          30+ Window Film Brands — Phoenix &amp; Arizona
         </motion.h1>
         <motion.p
           className="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-gray-300 font-medium leading-relaxed"
@@ -165,7 +224,7 @@ const BrandsHub = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          We evaluate every project independently and select film based on glass type, solar exposure, SHGC targets, and structural requirements — not brand loyalty. Our access to 30+ manufacturers means the right film for every application.
+          Arizona House of Film installs film from 30+ manufacturers. We evaluate every project independently — selecting film based on glass type, solar exposure, SHGC targets, and structural requirements. Not brand loyalty.
         </motion.p>
       </div>
     </header>
@@ -280,6 +339,29 @@ const BrandsHub = () => (
         </Button>
       </motion.section>
 
+      {/* ── FEATURED BRAND PAGES ────────────────────────────────────────── */}
+      <section className="mt-12 mb-8">
+        <h2 className="text-2xl font-black text-slate-900 mb-2">Featured Brand Pages</h2>
+        <p className="text-slate-600 mb-6">We've built comprehensive product guides for our most-installed brands — covering every product line, NFRC specs, and SRP rebate eligibility.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { brand: 'LLumar', slug: 'llumar', desc: 'Dual Reflective, Spectrally Selective, Low-E, Exterior, PS4\u2013PS13 Security, and Decorative lines. Eastman / LLumar professional installer.', tag: 'Solar \u00B7 Security \u00B7 Decorative' },
+            { brand: 'XPEL', slug: 'xpel', desc: 'VISION Clear View Ceramic, Alloy, and Clear View Plus solar. Security Clear, 8mil Silver, Neutral. White Frost, White Out, Black Out decorative.', tag: 'Solar \u00B7 Security \u00B7 Decorative' },
+            { brand: 'Madico', slug: 'madico', desc: 'Nova, Optivision, Reflective Silver, Solar Bronze, Solar Grey series. Anti-graffiti 4M and 6M. UV Gard specialty film.', tag: 'Solar \u00B7 Anti-Graffiti \u00B7 Decorative' },
+            { brand: 'SunTek', slug: 'suntek', desc: 'Ultra-Vision, Symphony, Infinity, Silver DS, Dual-Reflective \u2014 20+ SKUs with exact NFRC specs. 10 SRP-eligible films listed.', tag: 'Solar \u00B7 Specialty' },
+            { brand: 'Flexfilm', slug: 'flexfilm', desc: 'Architectural decorative and specialty films. Pattern, frosted, gradient, and privacy applications.', tag: 'Decorative \u00B7 Privacy' },
+          ].map((b, i) => (
+            <Link key={i} to={`/brands/${b.slug}`} className="border border-slate-200 rounded-lg p-4 bg-white hover:border-green-500 hover:shadow-md transition-all group">
+              <span className="text-xs font-black text-green-700 uppercase tracking-widest">{b.tag}</span>
+              <h3 className="font-black text-slate-900 text-lg mt-1 mb-2 group-hover:text-green-700">{b.brand} Window Film &rarr;</h3>
+              <p className="text-slate-600 text-sm">{b.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <EstimatorCTA />
+
       {/* ── EXISTING CTA ──────────────────────────────────────────────────── */}
       <section className="bg-gray-900 text-white p-8 sm:p-12 rounded-xl">
         <div className="max-w-4xl mx-auto text-center">
@@ -294,6 +376,20 @@ const BrandsHub = () => (
               Request a Film <ArrowRight className="inline-block ml-2 w-4 h-4" />
             </Link>
           </Button>
+        </div>
+      </section>
+
+      {/* ── INTERNAL LINKS ──────────────────────────────────────────────── */}
+      <section className="mt-10 border-t border-slate-200 pt-6 pb-4">
+        <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Explore By Service</p>
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link to="/residential-window-tinting" className="text-green-700 underline">Residential Window Film</Link>
+          <Link to="/commercial-window-tinting" className="text-green-700 underline">Commercial Window Film</Link>
+          <Link to="/security-window-film-phoenix" className="text-green-700 underline">Security Film</Link>
+          <Link to="/decorative-window-films" className="text-green-700 underline">Decorative Films</Link>
+          <Link to="/anti-graffiti-film-phoenix" className="text-green-700 underline">Anti-Graffiti Film</Link>
+          <Link to="/window-film-energy-rebates-arizona" className="text-green-700 underline">SRP Rebate Calculator</Link>
+          <Link to="/get-a-quote" className="text-green-700 underline">Get a Quote</Link>
         </div>
       </section>
 

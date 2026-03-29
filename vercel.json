@@ -55,8 +55,7 @@
     { "source": "/films/pattern-films", "destination": "/films", "permanent": true },
     { "source": "/films/anti-graffiti-films", "destination": "/anti-graffiti-film-phoenix", "permanent": true },
     { "source": "/films/exterior-films/exterior-safety", "destination": "/safety", "permanent": true },
-    { "source": "/brands/suntek", "destination": "/brands", "permanent": true },
-    { "source": "/blog/ceramic-vs-dual-reflective-film", "destination": "/blog", "permanent": true },
+    { "source": "/blog/ceramic-vs-dual-reflective-film", "destination": "/ceramic-vs-dual-reflective-film", "permanent": true },
 
     { "source": "/industries/government", "destination": "/industries/government-buildings", "permanent": true },
     { "source": "/industries/museums-libraries", "destination": "/industries", "permanent": true },

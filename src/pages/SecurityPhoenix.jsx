@@ -9,8 +9,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 import EstimatorCTA from '../components/EstimatorCTA';
 
 const rocNumber = 'ROC #314088';
-const pageTitle = 'Security Window Film Phoenix AZ | All Brands | 4–21 Mil | ROC #314088';
-const metaDescription = 'Security window film installation Phoenix AZ. 3M, LLumar, Madico, Vista, Solar Gard — 4 to 21 mil. Residential, commercial, government. Smash-and-grab, blast mitigation, shatter protection. ROC #314088.';
+const pageTitle = 'Security Window Film Installers Phoenix AZ | 4–21 Mil | ROC #314088';
+const metaDescription = 'Licensed security window film installers in Phoenix AZ. LLumar, Madico, SunTek, XPEL — 4 to 21 mil. Smash-and-grab, blast mitigation, shatter protection. Residential & commercial. ROC #314088. Free estimate.';
 const canonicalUrl = 'https://arizonahouseoffilm.com/security-window-film-phoenix';
 const heroImageUrl = '/images/security-film-hero.jpg';
 
@@ -71,7 +71,7 @@ const faqSchema = {
       name: 'What security window film brands do you install in Phoenix?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We install 3M Safety Series (S40, S70, S140, S600), Eastman LLumar Safety Series, Vista Safety Film, and Madico Safety Series on Phoenix properties. For forced entry deterrence industry-standard specifications include 3M Safety S140 or S600 with attachment system. For blast mitigation on Phoenix government and commercial buildings top specifications include 3M S600 and LLumar ArmorCoat series. All films are installed by ROC #314088 licensed technicians.',
+        text: 'We install LLumar ArmorCoat, Madico SafetyShield, SunTek Safety & Security, and XPEL Vision Security series on Phoenix properties. For forced entry deterrence industry-standard specifications include 12–14 mil film with mechanical attachment system. For blast mitigation on Phoenix government and commercial buildings top specifications include LLumar ArmorCoat and Madico SafetyShield series. All films are installed by ROC #314088 licensed technicians.',
       },
     },
     {
@@ -87,7 +87,7 @@ const faqSchema = {
       name: 'What security film brands do you install?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Arizona House of Film installs security and safety film from 3M (Safety Series S40–S600), LLumar ArmorCoat (Eastman), Madico SafetyShield, Vista Safety Film, Solar Gard Armorzone, and EWF Safety & Security series. Film specification is determined per project based on glass type, application, and performance requirements — not brand preference. Licensed ROC #314088.',
+        text: 'Arizona House of Film installs security and safety film from LLumar ArmorCoat (Eastman), Madico SafetyShield, SunTek Safety & Security, XPEL Vision Security, Vista Safety Film, Solar Gard Armorzone, and EWF Safety & Security series. Film specification is determined per project based on glass type, application, and performance requirements — not brand preference. Licensed ROC #314088.',
       },
     },
     {
@@ -95,7 +95,7 @@ const faqSchema = {
       name: 'Do you install blast-rated security film in Phoenix?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Arizona House of Film installs blast-mitigation grade window film including 3M S600 and 21 mil specifications for government, municipal, and institutional facilities in Phoenix and across Arizona. Blast-rated installations require mechanical attachment systems and NFRC-rated documentation — we provide both. Past projects include City of Phoenix and U.S. Navy facilities. Licensed ROC #314088.',
+        text: 'Yes. Arizona House of Film installs blast-mitigation grade window film including 21 mil specifications from LLumar, Madico, and SunTek for government, municipal, and institutional facilities in Phoenix and across Arizona. Blast-rated installations require mechanical attachment systems and NFRC-rated documentation — we provide both. Past projects include City of Phoenix and U.S. Navy facilities. Licensed ROC #314088.',
       },
     },
     {
@@ -103,7 +103,7 @@ const faqSchema = {
       name: 'Can security film be combined with solar control or privacy film?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Dual-performance films combine safety or security grade thickness with solar heat rejection and UV blocking. This is one of the most common specifications in Arizona — the heat load requires solar control, and the security requirement is addressed simultaneously. We specify dual-performance films from 3M, LLumar, and Vista for residential and commercial applications. Licensed ROC #314088.',
+        text: 'Yes. Dual-performance films combine safety or security grade thickness with solar heat rejection and UV blocking. This is one of the most common specifications in Arizona — the heat load requires solar control, and the security requirement is addressed simultaneously. We specify dual-performance films from LLumar, Madico, SunTek, and XPEL for residential and commercial applications. Licensed ROC #314088.',
       },
     },
   ],
@@ -209,10 +209,10 @@ const proofPoints = [
 
 const brandSpecs = [
   {
-    brand: '3M Safety Series',
-    films: 'S40 (4 mil), S70 (8 mil), S140 (14 mil), S600 (21 mil)',
-    bestFor: 'Residential entry points, retail storefronts, government facilities',
-    note: 'S600 with mechanical attachment system is the standard for blast-rated government installations.',
+    brand: 'SunTek Safety & Security',
+    films: 'SunTek Safety 4 mil, 8 mil, 14 mil',
+    bestFor: 'Residential entry points, retail storefronts, commercial facilities',
+    note: 'Eastman-manufactured safety and security line — strong optical clarity with high-performance adhesive system.',
   },
   {
     brand: 'LLumar ArmorCoat',
@@ -372,7 +372,7 @@ export default function SecurityPhoenix() {
             What Security Film Does
           </h2>
           <p className="text-slate-600 text-center mb-12 max-w-3xl mx-auto">
-            Arizona House of Film installs safety and security window film across every thickness available — 4 mil, 8 mil, 12 mil, 14 mil, and 21 mil — from every leading manufacturer including 3M, LLumar, Madico, Solar Gard, Vista, and EWF. Every project is specified to the glass type, the threat level, and the application. We don't default to one brand or one thickness — we specify what the job actually requires.
+            Arizona House of Film installs safety and security window film across every thickness available — 4 mil, 8 mil, 12 mil, 14 mil, and 21 mil — from every leading manufacturer including LLumar, Madico, SunTek, XPEL, Solar Gard, Vista, and EWF. Every project is specified to the glass type, the threat level, and the application. We don't default to one brand or one thickness — we specify what the job actually requires.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((b) => {

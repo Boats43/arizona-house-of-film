@@ -11,7 +11,7 @@ import EstimatorCTA from '../components/EstimatorCTA';
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
   const pageTitle = 'Commercial Window Film Scottsdale AZ | Installation | ROC #314088';
-  const metaDescription = 'Commercial window film installation in Scottsdale AZ. Solar control, security, decorative film for offices, retail, and hospitality. Verified projects. ROC #314088. Free estimate.';
+  const metaDescription = 'Licensed commercial window film installation in Scottsdale AZ — solar control, security & decorative film for offices, retail & hospitality. ROC #314088. Free estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =
@@ -49,7 +49,7 @@ const ScottsdaleCommercial = () => {
         name: 'What commercial window film brands do you install in Scottsdale?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We install LLumar, 3M, Solyx, Huper Optik, Madico, SolarGard, and Vista films for Scottsdale commercial properties. Film selection depends on glass type, building orientation, and HOA or design standard requirements.',
+          text: 'We install 3M, Huper Optik, Vista, Solar Gard, LLumar, Madico, and Eastman films on Scottsdale commercial properties. For Old Town storefronts we typically specify 3M Fasara decorative series. North Scottsdale office corridors use Huper Optik Ceramic or Vista IS-series dual-reflective solar film for heat rejection without exterior mirror appearance. Film selection depends on glass type, building orientation, and HOA or design standard requirements.',
         },
       },
       {
@@ -66,14 +66,6 @@ const ScottsdaleCommercial = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Yes. We select films based on Visible Light Reflectance (VLR) and appearance specifications required by Scottsdale HOAs and property managers. We provide spec sheets and can coordinate approvals with property management before installation.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What window film brands do you install for Scottsdale commercial projects?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'We install 3M, Huper Optik, Vista, Solar Gard, and Eastman films on Scottsdale commercial properties. For Old Town storefronts we typically specify 3M Fasara decorative series. North Scottsdale office corridors typically use Huper Optik Ceramic or Vista IS-series dual-reflective solar film for heat rejection without exterior mirror appearance.',
         },
       },
       {
@@ -98,14 +90,6 @@ const ScottsdaleCommercial = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Yes. We have completed multiple commercial installations in Old Town Scottsdale including the Chipotle location at 8099 E McDowell Rd and several mixed-use retail properties in the Old Town corridor. Old Town projects often require decorative or low-reflectivity solar film to comply with design standards.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How much does commercial window tinting cost in Scottsdale AZ?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Commercial window tinting in Scottsdale AZ runs $8–$25 per square foot installed depending on film specification and glass area. Small storefront or office projects start around $3,500. Large commercial perimeters run $25,000+. All Scottsdale commercial projects are custom-quoted on-site. Free estimates — call (480) 788-1591.',
         },
       },
       {

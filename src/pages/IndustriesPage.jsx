@@ -149,6 +149,24 @@ const faqsBySlug = {
   ],
 };
 
+const seoOverrides = {
+  'government-buildings': {
+    pageTitle: 'Government Building Window Film Phoenix AZ | Blast Mitigation | GSA Spec | ROC #314088',
+    metaDescription: 'Licensed window film installation for government buildings in Arizona. Blast mitigation, GSA/UFC compliance, LEED energy efficiency, privacy film. Serving Phoenix, Scottsdale, Mesa. ROC #314088. Free estimate.',
+    h1: 'Government Building Window Film — Blast Mitigation & GSA Compliance',
+  },
+  'office-buildings': {
+    pageTitle: 'Office Building Window Film Phoenix AZ | Conference Room Privacy | ROC #314088',
+    metaDescription: 'Window film installation for Phoenix office buildings — solar control, Casper cloaking for conference rooms, glare reduction, privacy film. Licensed & insured. ROC #314088. Free estimate.',
+    h1: 'Office Building Window Film Phoenix AZ — Solar Control & Conference Room Privacy',
+  },
+  'retail-stores': {
+    pageTitle: 'Retail Store Window Film Phoenix AZ | Smash-and-Grab Protection | ROC #314088',
+    metaDescription: 'Window film for retail stores in Phoenix AZ — smash-and-grab security, UV merch protection, anti-graffiti film. Serving strip malls, storefronts, chain retail. ROC #314088. Free estimate.',
+    h1: 'Retail Store Window Film Phoenix AZ — Security & Merchandise Protection',
+  },
+};
+
 const IndustriesPage = () => {
   const { slug } = useParams();
   const industry = industriesData[slug];
@@ -156,8 +174,10 @@ const IndustriesPage = () => {
   if (!industry) return <NotFound />;
 
   const { title, icon: Icon, content, testimonial } = industry;
-  const pageTitle = `${title} Window Tinting | Arizona House of Film`;
-  const metaDescription = `Specialized window tinting for ${title.toLowerCase()} in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591.`;
+  const seo = seoOverrides[slug];
+  const pageTitle = seo?.pageTitle || `${title} Window Tinting | Arizona House of Film`;
+  const metaDescription = seo?.metaDescription || `Specialized window tinting for ${title.toLowerCase()} in Arizona. Comfort, security, and energy efficiency. ROC #314088. Free estimates: (480) 788-1591.`;
+  const h1 = seo?.h1 || `Solutions for Every Industry: ${title}`;
   const canonicalUrl = `https://arizonahouseoffilm.com/industries/${slug}`;
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 
@@ -225,7 +245,7 @@ const IndustriesPage = () => {
               <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon className="w-12 h-12 text-white" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Solutions for Every Industry: {title}</h1>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">{h1}</h1>
               <p className="text-lg text-gray-600 mb-12 whitespace-pre-line leading-relaxed text-left">{content}</p>
             </div>
             {testimonial && (

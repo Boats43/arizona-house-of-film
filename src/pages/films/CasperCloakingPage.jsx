@@ -5,7 +5,7 @@ import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 
 const CasperCloakingPage = () => {
   const pageTitle = "Casper Cloaking Film Arizona | Screen Privacy for Phoenix Offices | ROC #314088";
-  const metaDescription = "Casper cloaking film installation Phoenix AZ. Digital privacy film for conference rooms and glass offices — screens go dark from outside while maintaining visibility. Pricing and free estimates. ROC #314088.";
+  const metaDescription = "Casper cloaking film & Quantum Cloaking Film installation Phoenix AZ — preferred installer. Screen privacy for conference rooms & glass offices. $20–$35/sq ft installed. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/casper-cloaking";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 
@@ -26,7 +26,7 @@ const CasperCloakingPage = () => {
       { "@type": "Question", name: "How does Casper cloaking film work?", acceptedAnswer: { "@type": "Answer", text: "Casper film uses a micro-louver optical technology that controls the angle at which light passes through the film. Light traveling straight through — from a person inside looking at a screen — passes normally. Light reflecting off the screen at an angle — visible from outside the glass — is blocked. The result is that screens are invisible from outside while remaining fully visible from inside." } },
       { "@type": "Question", name: "Does Casper film affect screen brightness or color from inside?", acceptedAnswer: { "@type": "Answer", text: "No. Casper cloaking film has zero measurable impact on screen visibility, color accuracy, or brightness for people inside the office. It does not require any adjustment to screen brightness settings." } },
       { "@type": "Question", name: "What types of screens does Casper film work with?", acceptedAnswer: { "@type": "Answer", text: "Casper film works with LED and OLED screens — the standard in modern commercial environments. It is effective on monitors, presentation screens, video walls, and laptop displays. It is not designed for older fluorescent backlit LCD screens." } },
-      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is priced at a premium over standard privacy film — typically $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } },
+      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film typically runs $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Quantum Cloaking Film is also available as a preferred-partner alternative at comparable pricing. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } },
       { "@type": "Question", name: "Do you install Quantum Cloaking Film in Phoenix and Scottsdale?", acceptedAnswer: { "@type": "Answer", text: "Yes. Arizona House of Film installs Quantum Cloaking Film® as an alternative cloaking film specification. Quantum Cloaking is used by Wells Fargo, Chase Bank, hospitals, police stations, and government buildings. Both Quantum Cloaking and Casper by Designtex achieve identical results — screens appear completely black from outside while remaining fully visible inside. Specification is determined per project. Call (480) 788-1591 for a free commercial estimate." } }
     ]
   };
@@ -136,8 +136,34 @@ const CasperCloakingPage = () => {
         </section>
 
         <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Quantum Cloaking Film — Preferred Installer</h2>
+          <p className="text-lg text-slate-700 mb-4">Arizona House of Film is a preferred installation partner for Quantum Cloaking Film®. Quantum Cloaking delivers the same screen-blackout performance as Casper with a specification built for commercial durability and fire compliance.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="border border-slate-200 rounded-lg p-4">
+              <div className="font-bold text-slate-800 mb-2">Technical Specifications</div>
+              <ul className="text-sm text-slate-600 space-y-1 list-disc pl-4">
+                <li>7 mil film thickness</li>
+                <li>Class A fire rating (ASTM E84)</li>
+                <li>41% visible light transmission</li>
+                <li>54% glare reduction</li>
+                <li>UV transmission less than 1%</li>
+              </ul>
+            </div>
+            <div className="border border-slate-200 rounded-lg p-4">
+              <div className="font-bold text-slate-800 mb-2">Availability & Warranty</div>
+              <ul className="text-sm text-slate-600 space-y-1 list-disc pl-4">
+                <li>Available widths: 48″, 56.25″, 59.25″, 70.25″</li>
+                <li>3-year material warranty when installed to manufacturer specs</li>
+                <li>Recommended for horizontally mounted LCD/LED displays 40″ or greater</li>
+                <li>Preferred installer: Arizona House of Film — ROC #314088</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Installation Cost — Phoenix & Scottsdale</h2>
-          <p className="text-lg text-slate-700 mb-4">Casper cloaking film runs $20–$35 per square foot installed — priced at a premium over standard privacy film due to the specialty optical technology. Most single conference room installations (40–120 sq ft of glass) run $1,500–$4,000. Full office floor projects are quoted by scope.</p>
+          <p className="text-lg text-slate-700 mb-4">Cloaking film (Casper and Quantum) runs $20–$35 per square foot installed — priced at a premium over standard privacy film due to the specialty optical technology. Most single conference room installations (40–120 sq ft of glass) run $1,500–$4,000. Full office floor projects are quoted by scope.</p>
           <p className="text-lg text-slate-700">All installations include a site assessment to confirm glass type compatibility and screen placement angles. Call <a href="tel:4807881591" className="text-blue-600 hover:underline">(480) 788-1591</a> for a free commercial estimate.</p>
         </section>
 
@@ -156,7 +182,7 @@ const CasperCloakingPage = () => {
           <p className="text-slate-700 mb-4">Casper cloaking film installation in Phoenix and Scottsdale is custom-quoted per project. Pricing is based on glass square footage, access difficulty, and project scope. These ranges reflect completed Arizona installations:</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div className="border border-slate-200 rounded-lg p-4">
-              <div className="font-black text-xl mb-1 text-green-700">$25–$45/sq ft</div>
+              <div className="font-black text-xl mb-1 text-green-700">$20–$35/sq ft</div>
               <div className="font-bold text-slate-800 mb-2">Conference Room Glass</div>
               <div className="text-sm text-slate-600">Single conference room, 100–300 sq ft of glass. Most common Casper installation.</div>
             </div>

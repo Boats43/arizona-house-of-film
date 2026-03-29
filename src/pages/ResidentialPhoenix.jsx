@@ -11,7 +11,7 @@ import EstimatorCTA from '../components/EstimatorCTA';
 const ResidentialPhoenix = () => {
   const rocNumber = '314088';
   const pageTitle = 'Residential Window Tinting Phoenix AZ | ROC #314088';
-  const metaDescription = 'Phoenix residential window tinting. Heat rejection, UV protection, privacy & security film for Phoenix homes. 700+ projects completed since 2017. ROC #314088. Free quote.';
+  const metaDescription = 'Licensed residential window tinting in Phoenix AZ — heat rejection, UV protection, privacy & security film for homes. LLumar, Madico, SunTek, XPEL. 700+ projects. ROC #314088. Free quote.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =
@@ -74,6 +74,14 @@ const ResidentialPhoenix = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Quality residential window film in Arizona typically lasts 10-15 years with proper installation. Arizona intensity UV exposure can shorten lifespan of lower-grade films. We install commercial-grade film with manufacturer warranties — typically 10 years on residential applications.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What window film brands do you install for Phoenix homes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We install LLumar, Madico, SunTek, and XPEL window films for residential projects in Phoenix. Each brand offers ceramic, solar, privacy, and security options — we match the right film to your home\'s needs and budget.',
         },
       },
     ],
@@ -314,6 +322,10 @@ const ResidentialPhoenix = () => {
               <Link to="/residential-window-tinting-scottsdale" className="text-green-600 hover:underline">Scottsdale Residential</Link>
               {' · '}
               <Link to="/security-window-film-phoenix" className="text-green-600 hover:underline">Security Window Film</Link>
+              {' · '}
+              <Link to="/films/ceramic" className="text-green-600 hover:underline">Ceramic Window Film</Link>
+              {' · '}
+              <Link to="/brands/llumar" className="text-green-600 hover:underline">LLumar Window Film</Link>
             </div>
           </div>
         </section>

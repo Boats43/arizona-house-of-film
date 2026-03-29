@@ -165,6 +165,31 @@ const seoOverrides = {
     metaDescription: 'Window film for retail stores in Phoenix AZ — smash-and-grab security, UV merch protection, anti-graffiti film. Serving strip malls, storefronts, chain retail. ROC #314088. Free estimate.',
     h1: 'Retail Store Window Film Phoenix AZ — Security & Merchandise Protection',
   },
+  'restaurants': {
+    pageTitle: 'Restaurant Window Film Phoenix AZ | Heat & Glare Control | ROC #314088',
+    metaDescription: 'Window film installation for Phoenix restaurants — ceramic solar control for dining rooms, decorative films for partitions and bar fronts, after-hours scheduling. ROC #314088. Free estimate.',
+    h1: 'Restaurant Window Film Phoenix AZ — Comfort & Ambiance Without the Heat',
+  },
+  'medical-facilities': {
+    pageTitle: 'Medical Facility Window Film Phoenix AZ | HIPAA Privacy Film | ROC #314088',
+    metaDescription: 'Window film for Arizona medical facilities — HIPAA-supporting privacy film, safety glazing, UV blocking for patient areas. Phased installation in occupied clinical environments. ROC #314088. Free estimate.',
+    h1: 'Medical Facility Window Film Phoenix AZ — Privacy, Safety & Patient Comfort',
+  },
+  'educational-institutions': {
+    pageTitle: 'School Window Film Phoenix AZ | Safety & Security Film | ANSI Z97.1 | ROC #314088',
+    metaDescription: 'Window film for Arizona schools and universities — ANSI Z97.1 safety film, anti-glare for smartboards, 20–30% cooling cost reduction. Summer break installation available. ROC #314088. Free estimate.',
+    h1: 'School & University Window Film Phoenix AZ — Safety, Glare Control & Energy Savings',
+  },
+  'hotels-hospitality': {
+    pageTitle: 'Hotel Window Film Phoenix AZ | Guest Comfort & Energy Savings | ROC #314088',
+    metaDescription: 'Window film for Arizona hotels — 10–15°F room temperature reduction, decorative spa and amenity films, SRP/APS rebate eligible, phased installation around occupancy. ROC #314088. Free estimate.',
+    h1: 'Hotel & Hospitality Window Film Phoenix AZ — Guest Comfort Without Blackout Curtains',
+  },
+  'warehouses': {
+    pageTitle: 'Warehouse Window Film Phoenix AZ | 84% Heat Rejection | OSHA Compliant | ROC #314088',
+    metaDescription: 'Window film for Arizona warehouses — 84% solar heat gain blocked, $8K–$20K annual savings for 50K sq ft, OSHA 29 CFR 1910.23 compliant, inventory protection. ROC #314088. Free estimate.',
+    h1: 'Warehouse Window Film Phoenix AZ — Heat Rejection, OSHA Compliance & ROI',
+  },
 };
 
 const IndustriesPage = () => {

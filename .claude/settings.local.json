@@ -37,7 +37,11 @@
       "Bash(then echo:*)",
       "Bash(fi)",
       "Bash(done)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(wc:*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/matam/OneDrive/Desktop/AZHOF/horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)/**)"
     ]
   }
 }

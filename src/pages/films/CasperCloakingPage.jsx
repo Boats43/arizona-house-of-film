@@ -5,7 +5,7 @@ import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 
 const CasperCloakingPage = () => {
   const pageTitle = "Casper Cloaking Film Arizona | Screen Privacy for Phoenix Offices | ROC #314088";
-  const metaDescription = "Casper cloaking film & Quantum Cloaking Film installation Phoenix AZ — preferred installer. Screen privacy for conference rooms & glass offices. $20–$35/sq ft installed. ROC #314088.";
+  const metaDescription = "Casper cloaking film installation Phoenix AZ — plus Quantum Cloaking Film, our preferred partner brand. Screen privacy for conference rooms & glass offices. $20–$35/sq ft. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/casper-cloaking";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 
@@ -26,7 +26,7 @@ const CasperCloakingPage = () => {
       { "@type": "Question", name: "How does Casper cloaking film work?", acceptedAnswer: { "@type": "Answer", text: "Casper film uses a micro-louver optical technology that controls the angle at which light passes through the film. Light traveling straight through — from a person inside looking at a screen — passes normally. Light reflecting off the screen at an angle — visible from outside the glass — is blocked. The result is that screens are invisible from outside while remaining fully visible from inside." } },
       { "@type": "Question", name: "Does Casper film affect screen brightness or color from inside?", acceptedAnswer: { "@type": "Answer", text: "No. Casper cloaking film has zero measurable impact on screen visibility, color accuracy, or brightness for people inside the office. It does not require any adjustment to screen brightness settings." } },
       { "@type": "Question", name: "What types of screens does Casper film work with?", acceptedAnswer: { "@type": "Answer", text: "Casper film works with LED and OLED screens — the standard in modern commercial environments. It is effective on monitors, presentation screens, video walls, and laptop displays. It is not designed for older fluorescent backlit LCD screens." } },
-      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film typically runs $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Quantum Cloaking Film is also available as a preferred-partner alternative at comparable pricing. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } },
+      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper and Quantum Cloaking Film both run $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Quantum Cloaking Film is our preferred partner brand. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } },
       { "@type": "Question", name: "Do you install Quantum Cloaking Film in Phoenix and Scottsdale?", acceptedAnswer: { "@type": "Answer", text: "Yes. Arizona House of Film installs Quantum Cloaking Film® as an alternative cloaking film specification. Quantum Cloaking is used by Wells Fargo, Chase Bank, hospitals, police stations, and government buildings. Both Quantum Cloaking and Casper by Designtex achieve identical results — screens appear completely black from outside while remaining fully visible inside. Specification is determined per project. Call (480) 788-1591 for a free commercial estimate." } }
     ]
   };
@@ -136,29 +136,9 @@ const CasperCloakingPage = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Quantum Cloaking Film — Preferred Installer</h2>
-          <p className="text-lg text-slate-700 mb-4">Arizona House of Film is a preferred installation partner for Quantum Cloaking Film®. Quantum Cloaking delivers the same screen-blackout performance as Casper with a specification built for commercial durability and fire compliance.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div className="border border-slate-200 rounded-lg p-4">
-              <div className="font-bold text-slate-800 mb-2">Technical Specifications</div>
-              <ul className="text-sm text-slate-600 space-y-1 list-disc pl-4">
-                <li>7 mil film thickness</li>
-                <li>Class A fire rating (ASTM E84)</li>
-                <li>41% visible light transmission</li>
-                <li>54% glare reduction</li>
-                <li>UV transmission less than 1%</li>
-              </ul>
-            </div>
-            <div className="border border-slate-200 rounded-lg p-4">
-              <div className="font-bold text-slate-800 mb-2">Availability & Warranty</div>
-              <ul className="text-sm text-slate-600 space-y-1 list-disc pl-4">
-                <li>Available widths: 48″, 56.25″, 59.25″, 70.25″</li>
-                <li>3-year material warranty when installed to manufacturer specs</li>
-                <li>Recommended for horizontally mounted LCD/LED displays 40″ or greater</li>
-                <li>Preferred installer: Arizona House of Film — ROC #314088</li>
-              </ul>
-            </div>
-          </div>
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Also Installing Quantum Cloaking Film — Our Preferred Partner</h2>
+          <p className="text-lg text-slate-700 mb-4">Quantum Cloaking Film is our preferred partner brand for screen privacy installations. Engineered with Cellulose Triacetate chemistry, 7 mil thickness, Class A ASTM E84 fire rating, and less than 1% UV transmission. Available in four widths (48″, 56.25″, 59.25″, 70.25″) and backed by a 3-year material warranty when installed to spec.</p>
+          <p className="text-lg text-slate-700 font-medium">Casper vs Quantum — both deliver screen privacy for glass offices. We carry and install both. Ask us which is right for your space.</p>
         </section>
 
         <section className="mb-12">

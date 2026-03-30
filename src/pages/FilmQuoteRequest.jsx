@@ -115,6 +115,13 @@ const FilmQuoteRequest = () => {
       });
 
       if (response.ok) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          form_source: 'film-quote-request',
+          page_path: window.location.pathname,
+        });
+
         form.reset();
         setWindows([emptyWindow()]);
         setSelectedCategory('');

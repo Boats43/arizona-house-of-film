@@ -278,6 +278,13 @@ const Store = () => {
 
       if (!response.ok) throw new Error('Request failed');
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'generate_lead',
+        form_source: 'film-store-order',
+        page_path: window.location.pathname,
+      });
+
       toast({
         title: 'Order received',
         description: "We'll confirm pricing and availability within 24 hours. Questions: (480) 788-1591",

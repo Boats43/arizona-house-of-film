@@ -42,6 +42,13 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          form_source: 'contact-form',
+          page_path: window.location.pathname,
+        });
+
         form.reset();
         toast({
           title: "Audit Request Received ✓",

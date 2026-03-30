@@ -386,6 +386,20 @@ function FloatingEstimator() {
 }
 
 /* ---------------- APP ---------------- */
+function PageViewTracker() {
+  const location = useLocation();
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'page_view',
+        page_path: location.pathname,
+        page_title: document.title,
+      });
+    }
+  }, [location.pathname]);
+  return null;
+}
+
 function App() {
   const location = useLocation();
   const canonicalUrl = `https://arizonahouseoffilm.com${location.pathname}`;
@@ -393,6 +407,7 @@ function App() {
 
   return (
     <>
+      <PageViewTracker />
       {isProduction && (
         <>
           <Analytics />

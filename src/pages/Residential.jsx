@@ -9,7 +9,7 @@ import { cities } from '@/data/cities';
 import EstimatorCTA from '../components/EstimatorCTA';
 
 const Residential = () => {
-  const pageTitle = "Residential Window Tinting Phoenix AZ | Licensed Installer | ROC #314088";
+  const pageTitle = "Residential Window Tinting Phoenix AZ | Licensed Installer";
   const metaDescription = "Licensed residential window tinting in Phoenix AZ. Ceramic solar film, dual reflective, security and decorative film for homes. Free estimates. ROC #314088 — (480) 788-1591.";
   const canonicalUrl = "https://arizonahouseoffilm.com/residential-window-tinting";
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
@@ -78,6 +78,13 @@ const Residential = () => {
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,
     url: canonicalUrl,
+    priceRange: "$300-$3000",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.6",
+      reviewCount: "21",
+      bestRating: "5",
+    },
   };
 
   const faqSchema = {
@@ -195,7 +202,7 @@ const Residential = () => {
                 Residential Specialists
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                Residential Window Tinting Phoenix AZ | Licensed Window Film Contractor
+                Residential Window Tinting in Phoenix AZ
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Arizona House of Film installs residential window tinting throughout Phoenix, Scottsdale, and the Arizona metro. Ceramic, solar control, privacy, and security window film for homes — licensed ROC #314088, serving Phoenix homeowners since 2017.
@@ -642,14 +649,14 @@ const Residential = () => {
                 { city: 'Peoria', slug: 'peoria', desc: 'Ceramic film for Vistancia and Westwing Mountain' },
                 { city: 'Queen Creek', slug: 'queen-creek', desc: 'New construction and HOA-compliant film' },
               ].map(({ city, slug, desc }) => (
-                <a
+                <Link
                   key={slug}
-                  href={`/residential-window-tinting-${slug}`}
+                  to={`/residential-window-tinting-${slug}`}
                   className="block bg-slate-800 border border-slate-700 rounded-lg p-3 hover:border-green-500 transition-colors"
                 >
                   <div className="font-bold text-white text-sm">{city}</div>
                   <div className="text-xs text-gray-400 mt-1">{desc}</div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

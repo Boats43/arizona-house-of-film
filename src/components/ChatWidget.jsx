@@ -73,6 +73,11 @@ export default function ChatWidget() {
     setInput('');
     setLoading(true);
 
+    // If user typed an email address, show lead form immediately
+    if (!leadCaptured && !showLeadForm && text.includes('@') && text.includes('.')) {
+      setTimeout(() => setShowLeadForm(true), 500);
+    }
+
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -110,8 +115,14 @@ export default function ChatWidget() {
         }
       }
 
-      if (!leadCaptured && assistantText.toLowerCase().includes('name and email')) {
-        setTimeout(() => setShowLeadForm(true), 1000);
+      // Show lead form when: Claude asks for contact info, OR after 4+ exchanges, OR user typed an email
+      if (!leadCaptured && !showLeadForm) {
+        const lower = assistantText.toLowerCase();
+        const askingForInfo = lower.includes('name') && (lower.includes('email') || lower.includes('phone'));
+        const enoughMessages = newMessages.length + 1 >= 8; // 4 user + 4 assistant
+        if (askingForInfo || enoughMessages) {
+          setTimeout(() => setShowLeadForm(true), 1000);
+        }
       }
 
     } catch (error) {
@@ -299,6 +310,20 @@ export default function ChatWidget() {
             )}
             <div ref={bottomRef}/>
           </div>
+
+          {!showLeadForm && !leadCaptured && (
+            <button
+              onClick={() => setShowLeadForm(true)}
+              style={{
+                background:'none', border:'none', cursor:'pointer',
+                color:'#22c55e', fontSize:'12px', fontWeight:600,
+                padding:'6px 16px', textAlign:'center',
+                borderTop:'1px solid rgba(255,255,255,0.06)',
+              }}
+            >
+              Get Free Estimate
+            </button>
+          )}
 
           <div style={{
             borderTop:'1px solid rgba(255,255,255,0.06)',

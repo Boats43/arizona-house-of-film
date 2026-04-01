@@ -169,6 +169,7 @@ const ROUTES = [
   '/office-partition-window-film',
   '/restaurant-window-film',
   '/university-window-film',
+  '/window-film-phoenix',
 ]
 
 const PATTERN_MAP = [
@@ -209,6 +210,7 @@ const PATTERN_MAP = [
   ['/security-window-film-phoenix',         '/src/pages/SecurityPhoenix.jsx'],
   ['/anti-graffiti-film-phoenix',           '/src/pages/AntiGraffitiPhoenix.jsx'],
   ['/window-tinting-phoenix',               '/src/pages/WindowTintingPhoenix.jsx'],
+  ['/window-film-phoenix',                  '/src/pages/WindowFilmPhoenix.jsx'],
   ['/solutions',                            '/src/pages/Solutions.jsx'],
   ['/bathroom-privacy-window-film',         '/src/pages/solutions/BathroomPrivacyFilm.jsx'],
   ['/office-privacy-window-film',           '/src/pages/solutions/OfficePrivacyFilm.jsx'],

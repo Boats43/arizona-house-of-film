@@ -78,6 +78,7 @@ const ResidentialPhoenix = lazy(() => import("@/pages/ResidentialPhoenix"));
 const SolarPhoenix = lazy(() => import("@/pages/SolarPhoenix"));
 const AntiGraffitiPhoenix = lazy(() => import("@/pages/AntiGraffitiPhoenix"));
 const WindowTintingPhoenix = lazy(() => import("@/pages/WindowTintingPhoenix"));
+const WindowFilmPhoenix = lazy(() => import("@/pages/WindowFilmPhoenix"));
 const BathroomPrivacyFilm = lazy(() => import("@/pages/solutions/BathroomPrivacyFilm"));
 const OfficePrivacyFilm = lazy(() => import("@/pages/solutions/OfficePrivacyFilm"));
 const StorefrontWindowFilm = lazy(() => import("@/pages/solutions/StorefrontWindowFilm"));
@@ -244,6 +245,7 @@ function AppRoutes() {
           <Route path="/security-window-film-phoenix" element={<SecurityPhoenix />} />
           <Route path="/anti-graffiti-film-phoenix" element={<AntiGraffitiPhoenix />} />
           <Route path="/window-tinting-phoenix" element={<WindowTintingPhoenix />} />
+          <Route path="/window-film-phoenix" element={<WindowFilmPhoenix />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/bathroom-privacy-window-film" element={<BathroomPrivacyFilm />} />
           <Route path="/office-privacy-window-film" element={<OfficePrivacyFilm />} />

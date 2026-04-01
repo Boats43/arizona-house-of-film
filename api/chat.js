@@ -248,25 +248,24 @@ export default async function handler(req, res) {
 
   const { messages, leadData } = req.body;
 
-  // Lead email handler — uses raw fetch to match working api/contact.js pattern
+  // Lead email handler — mirrors working api/contact.js pattern exactly
   if (leadData) {
     console.log('Lead received:', JSON.stringify(leadData));
-
-    const resendHeaders = {
-      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    };
 
     // Test mode — send a test email and return full Resend response for debugging
     if (leadData.test === true) {
       try {
         const r = await fetch('https://api.resend.com/emails', {
           method: 'POST',
-          headers: resendHeaders,
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify({
             from: 'noreply@arizonahouseoffilm.com',
             to: 'arizonahouseoffilm@gmail.com',
             subject: 'TEST — Chat Lead Email Debug',
+            text: 'This is a test email from the chat lead handler. If you received this, Resend is working correctly.',
             html: '<h2>This is a test email from the chat lead handler.</h2><p>If you received this, Resend is working correctly.</p>',
           }),
         });
@@ -279,61 +278,125 @@ export default async function handler(req, res) {
       }
     }
 
+    // Build plain text version (mirrors contact.js pattern — always send text + html)
+    const leadText = `
+NEW CHAT LEAD — ARIZONA HOUSE OF FILM
+=====================================
+Name: ${leadData.name || 'Not provided'}
+Email: ${leadData.email || 'Not provided'}
+Phone: ${leadData.phone || 'Not provided'}
+
+--- CONVERSATION SUMMARY ---
+${leadData.summary || 'No summary'}
+
+Source: chat widget
+`.trim();
+
     try {
-      // Email 1 — internal lead notification to AHOF
-      const r1 = await fetch('https://api.resend.com/emails', {
+      // Email 1 — internal lead notification to AHOF (matches contact.js structure exactly)
+      const r = await fetch('https://api.resend.com/emails', {
         method: 'POST',
-        headers: resendHeaders,
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           from: 'noreply@arizonahouseoffilm.com',
           to: 'arizonahouseoffilm@gmail.com',
           reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
           subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
+          text: leadText,
           html: `
-            <h2>New Lead from Chat Widget</h2>
-            <p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
-            <p><strong>Email:</strong> ${leadData.email || 'Not provided'}</p>
-            <p><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</p>
-            <p><strong>Project:</strong> ${leadData.project || 'Not provided'}</p>
-            <p><strong>Summary:</strong> ${leadData.summary || 'No summary'}</p>
-            <hr/>
-            <p><em>Sent from arizonahouseoffilm.com chat widget</em></p>
-          `
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
+  <div style="background: #0a0a1a; padding: 24px; border-radius: 8px; margin-bottom: 20px;">
+    <h1 style="color: #6b8f71; margin: 0; font-size: 20px;">NEW CHAT LEAD — ARIZONA HOUSE OF FILM</h1>
+    <p style="color: #888; margin: 4px 0 0 0; font-size: 13px;">arizonahouseoffilm.com · ROC #314088</p>
+  </div>
+
+  <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+    <h2 style="color: #333; font-size: 16px; margin: 0 0 16px 0; border-bottom: 2px solid #6b8f71; padding-bottom: 8px;">CONTACT DETAILS</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 8px 0; color: #888; font-size: 13px; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;">${leadData.name || '—'}</td></tr>
+      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Phone</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;"><a href="tel:${leadData.phone}" style="color: #6b8f71;">${leadData.phone || '—'}</a></td></tr>
+      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Email</td><td style="padding: 8px 0; font-size: 14px;"><a href="mailto:${leadData.email}" style="color: #6b8f71;">${leadData.email || '—'}</a></td></tr>
+    </table>
+  </div>
+
+  <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+    <h2 style="color: #333; font-size: 16px; margin: 0 0 12px 0;">CONVERSATION SUMMARY</h2>
+    <p style="color: #555; font-size: 14px; line-height: 1.6; margin: 0;">${leadData.summary || 'No summary'}</p>
+  </div>
+
+  <div style="background: white; padding: 16px 24px; border-radius: 8px;">
+    <p style="color: #aaa; font-size: 11px; margin: 0;">Source: chat widget · Sent via arizonahouseoffilm.com</p>
+  </div>
+</body>
+</html>
+`,
         }),
       });
-      const r1Text = await r1.text();
-      console.log('Lead email (AHOF) response:', r1.status, r1Text);
+
+      if (!r.ok) {
+        const err = await r.text();
+        console.error('Resend error (lead):', err);
+        return res.status(500).json({ error: 'Email failed', detail: err });
+      }
+
+      const r1Result = await r.json();
+      console.log('Lead email sent:', JSON.stringify(r1Result));
 
       // Email 2 — confirmation email to the customer
-      let r2Text = 'skipped';
+      let confirmResult = 'skipped — no email';
       if (leadData.email) {
         const r2 = await fetch('https://api.resend.com/emails', {
           method: 'POST',
-          headers: resendHeaders,
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify({
             from: 'noreply@arizonahouseoffilm.com',
             to: leadData.email,
             subject: 'Your Arizona House of Film Estimate Request',
+            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nWe received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.\n\nYour project details:\n${leadData.summary || 'We will discuss details when we reach out.'}\n\nIn the meantime, feel free to explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
             html: `
-              <h2>Thanks for reaching out, ${leadData.name || 'there'}!</h2>
-              <p>We received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.</p>
-              <p><strong>Your project details:</strong><br/>${leadData.summary || 'We\'ll discuss details when we reach out.'}</p>
-              <p>In the meantime, feel free to explore our work at <a href="https://arizonahouseoffilm.com">arizonahouseoffilm.com</a></p>
-              <hr/>
-              <p>Arizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ</p>
-            `
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
+  <div style="background: #0a0a1a; padding: 24px; border-radius: 8px; margin-bottom: 20px;">
+    <h1 style="color: #6b8f71; margin: 0; font-size: 20px;">ARIZONA HOUSE OF FILM</h1>
+    <p style="color: #888; margin: 4px 0 0 0; font-size: 13px;">arizonahouseoffilm.com · ROC #314088</p>
+  </div>
+
+  <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+    <h2 style="color: #333; font-size: 18px; margin: 0 0 16px 0;">Thanks for reaching out, ${leadData.name || 'there'}!</h2>
+    <p style="color: #555; font-size: 14px; line-height: 1.6;">We received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.</p>
+    <p style="color: #555; font-size: 14px; line-height: 1.6;"><strong>Your project details:</strong><br/>${leadData.summary || 'We will discuss details when we reach out.'}</p>
+    <p style="color: #555; font-size: 14px; line-height: 1.6;">In the meantime, feel free to explore our work at <a href="https://arizonahouseoffilm.com" style="color: #6b8f71;">arizonahouseoffilm.com</a></p>
+  </div>
+
+  <div style="background: white; padding: 16px 24px; border-radius: 8px;">
+    <p style="color: #aaa; font-size: 11px; margin: 0;">Arizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ</p>
+  </div>
+</body>
+</html>
+`,
           }),
         });
-        r2Text = await r2.text();
-        console.log('Confirmation email (customer) response:', r2.status, r2Text);
+
+        if (!r2.ok) {
+          const err2 = await r2.text();
+          console.error('Resend error (confirm):', err2);
+          confirmResult = `failed: ${err2}`;
+        } else {
+          confirmResult = await r2.json();
+          console.log('Confirmation email sent:', JSON.stringify(confirmResult));
+        }
       }
 
-      if (!r1.ok) {
-        console.error('Lead email failed:', r1.status, r1Text);
-        return res.status(500).json({ error: 'Lead email failed', detail: r1Text });
-      }
-
-      return res.status(200).json({ success: true, leadEmail: r1.status, confirmEmail: r2Text });
+      return res.status(200).json({ success: true, lead: r1Result, confirm: confirmResult });
     } catch (e) {
       console.error('Resend exception:', e);
       return res.status(500).json({ error: 'Email failed', detail: e.message });

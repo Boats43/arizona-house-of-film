@@ -6,14 +6,15 @@ const OPENING_MESSAGE = {
 };
 
 function formatMessage(text) {
-  const URL_RE = /(https?:\/\/[^\s),]+)/g;
+  const URL_RE = /(https?:\/\/[^\s),]+|arizonahouseoffilm\.com\/[^\s),]*)/g;
   const BOLD_RE = /\*\*(.+?)\*\*/g;
   // Split on URLs first, then handle bold within each segment
   const parts = text.split(URL_RE);
   return parts.map((part, i) => {
     if (URL_RE.test(part)) {
+      const href = part.startsWith('http') ? part : `https://${part}`;
       return (
-        <a key={i} href={part} target="_blank" rel="noopener noreferrer"
+        <a key={i} href={href} target="_blank" rel="noopener noreferrer"
           style={{ color: '#22c55e', textDecoration: 'underline' }}>{part}</a>
       );
     }
@@ -127,12 +128,15 @@ export default function ChatWidget() {
   const submitLead = async () => {
     if (!leadForm.name || !leadForm.email) return;
     const summary = messages.filter(m => m.role === 'user').map(m => m.content).join(' | ');
+    const payload = { leadData: { ...leadForm, summary } };
+    console.log('Submitting lead:', JSON.stringify(payload));
     try {
-      await fetch('/api/chat', {
+      const resp = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ leadData: { ...leadForm, summary } }),
+        body: JSON.stringify(payload),
       });
+      console.log('Lead submit response:', resp.status, resp.statusText);
       setLeadCaptured(true);
       setShowLeadForm(false);
       setMessages(prev => [...prev, {

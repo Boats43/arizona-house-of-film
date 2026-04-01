@@ -104,8 +104,13 @@ LEAD QUALIFICATION — ask these in order:
 4. City/location?
 5. Timeline?
 
-LEAD CAPTURE — when ready to quote say:
-"I'd love to get you a free estimate. Can I get your name, email, and phone number so a specialist can reach out directly?"
+LEAD CAPTURE — CRITICAL:
+Never tell users to go to book-now or call us to schedule.
+When any user wants to schedule, book, or get an estimate — YOU collect their info directly.
+Say: 'I can get that set up for you — what's your name, email, and phone number?'
+Once you have name + email + phone — the lead form will appear automatically.
+Never redirect to book-now for scheduling — always collect info in chat first.
+Only mention book-now as a secondary option AFTER you have tried to collect their info.
 
 SITE NAVIGATION — when customers ask about specific films, services, or locations, direct them to the relevant page on arizonahouseoffilm.com:
 
@@ -245,6 +250,7 @@ export default async function handler(req, res) {
 
   // Lead email handler — uses raw fetch to match working api/contact.js pattern
   if (leadData) {
+    console.log('Lead received:', JSON.stringify(leadData));
     try {
       const r = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -270,10 +276,12 @@ export default async function handler(req, res) {
         }),
       });
 
+      const responseText = await r.text();
+      console.log('Resend response status:', r.status, responseText);
+
       if (!r.ok) {
-        const err = await r.text();
-        console.error('Resend error:', r.status, err);
-        return res.status(500).json({ error: 'Email failed', detail: err });
+        console.error('Resend error:', r.status, responseText);
+        return res.status(500).json({ error: 'Email failed', detail: responseText });
       }
 
       return res.status(200).json({ success: true });

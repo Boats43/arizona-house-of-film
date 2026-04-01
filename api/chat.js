@@ -1,5 +1,5 @@
-const Anthropic = require('@anthropic-ai/sdk');
-const { Resend } = require('resend');
+import Anthropic from '@anthropic-ai/sdk';
+import { Resend } from 'resend';
 
 const SYSTEM_PROMPT = `You are the Arizona House of Film assistant — a knowledgeable, professional representative for Arizona's premier licensed window film contractor.
 
@@ -56,7 +56,7 @@ GUARDRAILS:
 - Keep responses to 2-4 sentences unless explaining specs
 - Always professional tone`;
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -123,4 +123,4 @@ module.exports = async (req, res) => {
       res.status(500).json({ error: 'Chat unavailable' });
     }
   }
-};
+}

@@ -302,8 +302,8 @@ Source: chat widget
         },
         body: JSON.stringify({
           from: 'noreply@arizonahouseoffilm.com',
-          to: 'arizonahouseoffilm@gmail.com',
-          reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
+          to: 'boatsbaron@gmail.com',
+          reply_to: leadData.email || 'boatsbaron@gmail.com',
           subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
           text: leadText,
           html: `

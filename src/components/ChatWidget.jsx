@@ -5,6 +5,27 @@ const OPENING_MESSAGE = {
   content: "Hi! I'm the Arizona House of Film assistant. What can I help you with today?"
 };
 
+function formatMessage(text) {
+  const URL_RE = /(https?:\/\/[^\s),]+)/g;
+  const BOLD_RE = /\*\*(.+?)\*\*/g;
+  // Split on URLs first, then handle bold within each segment
+  const parts = text.split(URL_RE);
+  return parts.map((part, i) => {
+    if (URL_RE.test(part)) {
+      return (
+        <a key={i} href={part} target="_blank" rel="noopener noreferrer"
+          style={{ color: '#22c55e', textDecoration: 'underline' }}>{part}</a>
+      );
+    }
+    // Handle **bold** within non-URL segments
+    const boldParts = part.split(BOLD_RE);
+    if (boldParts.length === 1) return part;
+    return boldParts.map((bp, j) =>
+      j % 2 === 1 ? <strong key={`${i}-${j}`}>{bp}</strong> : bp
+    );
+  });
+}
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([OPENING_MESSAGE]);
@@ -201,7 +222,7 @@ export default function ChatWidget() {
                   border: msg.role==='assistant' ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   whiteSpace:'pre-wrap',
                 }}>
-                  {msg.content}
+                  {msg.role === 'assistant' ? formatMessage(msg.content) : msg.content}
                 </div>
               </div>
             ))}

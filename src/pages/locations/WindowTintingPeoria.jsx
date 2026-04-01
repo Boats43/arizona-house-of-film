@@ -104,7 +104,7 @@ export default function WindowTintingPeoria() {
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <span className="text-gray-300 text-sm">4.5 Google Rating · ROC #314088 · Since 2017</span>
+            <span className="text-gray-300 text-sm">4.6 Google Rating · ROC #314088 · Since 2017</span>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contact" className="bg-green-600 hover:bg-green-500 text-white font-bold px-7 py-3 rounded-lg transition-colors">

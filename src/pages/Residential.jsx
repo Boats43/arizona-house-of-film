@@ -78,13 +78,20 @@ const Residential = () => {
     areaServed: { "@type": "State", name: "Arizona" },
     description: metaDescription,
     url: canonicalUrl,
-    priceRange: "$300-$3000",
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://arizonahouseoffilm.com",
+    name: "Arizona House of Film",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.6",
       reviewCount: "21",
       bestRating: "5",
     },
+    priceRange: "$300-$3000",
   };
 
   const faqSchema = {
@@ -183,6 +190,7 @@ const Residential = () => {
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[

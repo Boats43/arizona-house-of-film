@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 const FloatingContactButton = lazy(() => import("@/components/FloatingContactButton"));
+import ChatWidget from './components/ChatWidget';
 import { Toaster } from "@/components/ui/toaster";
 import LegacyRedirect from "@/components/LegacyRedirect";
 
@@ -455,6 +456,7 @@ function AppWrapper() {
   return (
     <Router>
       <App />
+      <ChatWidget />
     </Router>
   );
 }

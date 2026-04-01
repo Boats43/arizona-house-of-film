@@ -28,6 +28,9 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 const Home = lazy(() => import("@/pages/Home"));
 const Commercial = lazy(() => import("@/pages/Commercial"));
 const ScottsdaleCommercial = lazy(() => import("@/pages/ScottsdaleCommercial"));
+const RestaurantWindowFilm = lazy(() => import("@/pages/RestaurantWindowFilm"));
+const OfficePartitionFilm = lazy(() => import("@/pages/OfficePartitionFilm"));
+const UniversityWindowFilm = lazy(() => import("@/pages/UniversityWindowFilm"));
 const Residential = lazy(() => import("@/pages/Residential"));
 const Decorative = lazy(() => import("@/pages/Decorative"));
 const Safety = lazy(() => import("@/pages/Safety"));
@@ -205,6 +208,9 @@ function AppRoutes() {
           />
           <Route path="/commercial-window-tinting" element={<Commercial />} />
           <Route path="/commercial-window-tinting-scottsdale" element={<ScottsdaleCommercial />} />
+          <Route path="/restaurant-window-film" element={<RestaurantWindowFilm />} />
+          <Route path="/office-partition-window-film" element={<OfficePartitionFilm />} />
+          <Route path="/university-window-film" element={<UniversityWindowFilm />} />
           <Route path="/residential-window-tinting-scottsdale" element={<ScottsdaleResidential />} />
           <Route path="/commercial-window-film-phoenix" element={<CommercialPhoenix />} />
           <Route path="/decorative-window-film-phoenix" element={<DecorativePhoenix />} />

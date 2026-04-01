@@ -166,6 +166,9 @@ const ROUTES = [
   '/security-film-vs-tempered-glass', '/how-long-does-window-film-last',
   '/store', '/welcome',
   '/shatterproof-window-film',
+  '/office-partition-window-film',
+  '/restaurant-window-film',
+  '/university-window-film',
 ]
 
 const PATTERN_MAP = [
@@ -257,6 +260,9 @@ const PATTERN_MAP = [
   ['/security-film-vs-tempered-glass',      '/src/pages/informational/SecurityFilmVsTemperedGlass.jsx'],
   ['/how-long-does-window-film-last',       '/src/pages/informational/HowLongDoesWindowFilmLast.jsx'],
   ['/shatterproof-window-film',            '/src/pages/informational/ShatterproofWindowFilm.jsx'],
+  ['/office-partition-window-film',       '/src/pages/OfficePartitionFilm.jsx'],
+  ['/restaurant-window-film',             '/src/pages/RestaurantWindowFilm.jsx'],
+  ['/university-window-film',             '/src/pages/UniversityWindowFilm.jsx'],
   ['/gallery',                              '/src/pages/Gallery.jsx'],
   ['/get-a-quote',                           '/src/pages/FilmQuoteRequest.jsx'],
   ['/contact',                              '/src/pages/Contact.jsx'],

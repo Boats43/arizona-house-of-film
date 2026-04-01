@@ -89,7 +89,7 @@ const ThankYou = () => {
           <p className="text-gray-600 text-lg">Quick reviews help Arizona homeowners and businesses find trusted installers. Takes 30 seconds.</p>
           <div>
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-6 rounded-lg text-lg">
-              <a href="https://share.google/JZrk48SKVY1K9juN1" target="_blank" rel="noopener noreferrer">
+              <a href="https://g.page/r/CYL5MUtPTH4eEBM/review" target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-5 w-5" />
                 Leave a Google Review
               </a>

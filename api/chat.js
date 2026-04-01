@@ -1,8 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { Resend } from 'resend';
-
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const tools = [
   {
@@ -246,28 +243,44 @@ export default async function handler(req, res) {
 
   const { messages, leadData } = req.body;
 
-  // Lead email handler
+  // Lead email handler — uses raw fetch to match working api/contact.js pattern
   if (leadData) {
     try {
-      await resend.emails.send({
-        from: 'AHOF Chat <noreply@arizonahouseoffilm.com>',
-        to: 'arizonahouseoffilm@gmail.com',
-        subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
-        html: `
-          <h2>New Lead from Chat Widget</h2>
-          <p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
-          <p><strong>Email:</strong> ${leadData.email || 'Not provided'}</p>
-          <p><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</p>
-          <p><strong>Project:</strong> ${leadData.project || 'Not provided'}</p>
-          <p><strong>Summary:</strong> ${leadData.summary || 'No summary'}</p>
-          <hr/>
-          <p><em>Sent from arizonahouseoffilm.com chat widget</em></p>
-        `
+      const r = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'noreply@arizonahouseoffilm.com',
+          to: 'arizonahouseoffilm@gmail.com',
+          reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
+          subject: `💬 Chat Lead — ${leadData.name || 'Unknown'}`,
+          html: `
+            <h2>New Lead from Chat Widget</h2>
+            <p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
+            <p><strong>Email:</strong> ${leadData.email || 'Not provided'}</p>
+            <p><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</p>
+            <p><strong>Project:</strong> ${leadData.project || 'Not provided'}</p>
+            <p><strong>Summary:</strong> ${leadData.summary || 'No summary'}</p>
+            <hr/>
+            <p><em>Sent from arizonahouseoffilm.com chat widget</em></p>
+          `
+        }),
       });
+
+      if (!r.ok) {
+        const err = await r.text();
+        console.error('Resend error:', r.status, err);
+        return res.status(500).json({ error: 'Email failed', detail: err });
+      }
+
+      return res.status(200).json({ success: true });
     } catch (e) {
-      console.error('Resend error:', e);
+      console.error('Resend exception:', e);
+      return res.status(500).json({ error: 'Email failed', detail: e.message });
     }
-    return res.status(200).json({ success: true });
   }
 
   if (!messages || !Array.isArray(messages) || messages.length === 0) {

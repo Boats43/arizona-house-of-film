@@ -1,6 +1,67 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { Resend } from 'resend';
 
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const tools = [
+  {
+    name: "web_search",
+    description: "Search the web for current information about window film products, specifications, manufacturer details, rebate programs, building codes, or any topic relevant to the customer's question. Use this when you need current pricing from manufacturers, rebate program details, product specs not in your knowledge base, or competitor comparisons.",
+    input_schema: {
+      type: "object",
+      properties: {
+        query: {
+          type: "string",
+          description: "The search query"
+        }
+      },
+      required: ["query"]
+    }
+  },
+  {
+    name: "search_films",
+    description: "Search Arizona House of Film's catalog of 618+ Solyx decorative and specialty films by name, SKU, category, or description. Use when customer asks about specific film patterns, colors, or types.",
+    input_schema: {
+      type: "object",
+      properties: {
+        query: {
+          type: "string",
+          description: "Film name, SKU, category or description to search for"
+        }
+      },
+      required: ["query"]
+    }
+  }
+];
+
+// Film catalog data — top categories for search
+const FILM_CATALOG = {
+  casper: { name: "Casper Cloaking Film", sku: "PF001-801-48", url: "/films/casper-cloaking", price: "$25-45/sqft installed", description: "Makes screens invisible from outside while maintaining visibility from inside. Perfect for conference rooms and glass offices." },
+  frosted: { name: "Frosted & Etched Films", url: "/films/frosted-etched-films", price: "$10-20/sqft installed", description: "Privacy films for bathrooms, offices, sidelights. 200+ patterns available." },
+  gradient: { name: "Gradient Fading Films", url: "/films/gradient-fading-films", price: "$12-25/sqft installed", description: "Ombre fade from clear to frosted. Popular for conference rooms and storefronts." },
+  stained: { name: "Stained Glass Films", url: "/films/stained-glass-films", price: "$15-30/sqft installed", description: "Decorative colored glass appearance without replacement." },
+  solar: { name: "Solar Control Films", url: "/films", price: "$8-18/sqft installed", description: "Ceramic and spectrally selective films blocking 50-84% solar heat." },
+  security: { name: "Security & Safety Films", url: "/safety", price: "$12-25/sqft installed", description: "4-21 mil thickness. Blast mitigation, forced entry protection, shatter resistance." },
+  antigraffiti: { name: "Anti-Graffiti Film", url: "/anti-graffiti", price: "$8-15/sqft installed", description: "Sacrificial surface protection for storefronts and transit." },
+  decorative: { name: "Decorative Films", url: "/decorative-window-films", price: "$10-20/sqft installed", description: "600+ Solyx patterns for residential and commercial." },
+  reflective: { name: "Reflective & One-Way Films", url: "/films", price: "$8-15/sqft installed", description: "Daytime privacy with maximum solar heat rejection." },
+  quantum: { name: "Quantum Cloaking Film", url: "/films/casper-cloaking", price: "$20-35/sqft installed", description: "Preferred partner brand for screen privacy. 7 mil, Class A fire rated." }
+};
+
+function searchFilms(query) {
+  const q = query.toLowerCase();
+  const results = [];
+  for (const [key, film] of Object.entries(FILM_CATALOG)) {
+    if (film.name.toLowerCase().includes(q) ||
+        film.description.toLowerCase().includes(q) ||
+        key.includes(q)) {
+      results.push(film);
+    }
+  }
+  return results.length > 0 ? results : [{ name: "Film Catalog", url: "/store", description: "Browse our full catalog of 618+ films at our store." }];
+}
+
 const SYSTEM_PROMPT = `You are the Arizona House of Film assistant — a knowledgeable, professional representative for Arizona's premier licensed window film contractor.
 
 COMPANY INFO:
@@ -164,10 +225,9 @@ export default async function handler(req, res) {
 
   const { messages, leadData } = req.body;
 
-  // Lead email notification
+  // Lead email handler
   if (leadData) {
     try {
-      const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: 'AHOF Chat <onboarding@resend.dev>',
         to: 'arizonahouseoffilm@gmail.com',
@@ -177,6 +237,7 @@ export default async function handler(req, res) {
           <p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
           <p><strong>Email:</strong> ${leadData.email || 'Not provided'}</p>
           <p><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</p>
+          <p><strong>Project:</strong> ${leadData.project || 'Not provided'}</p>
           <p><strong>Summary:</strong> ${leadData.summary || 'No summary'}</p>
           <hr/>
           <p><em>Sent from arizonahouseoffilm.com chat widget</em></p>
@@ -193,30 +254,91 @@ export default async function handler(req, res) {
   }
 
   try {
-    const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
 
-    const stream = await client.messages.stream({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      system: SYSTEM_PROMPT,
-      messages: messages.slice(-10),
-    });
+    let currentMessages = [...messages.slice(-10)];
+    let finalResponse = '';
 
-    for await (const chunk of stream) {
-      if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
-        res.write(`data: ${JSON.stringify({ text: chunk.delta.text })}\n\n`);
+    // Agentic loop — handles tool calls
+    while (true) {
+      const response = await client.messages.create({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1024,
+        system: SYSTEM_PROMPT,
+        tools: tools,
+        messages: currentMessages,
+      });
+
+      // Process content blocks
+      for (const block of response.content) {
+        if (block.type === 'text') {
+          finalResponse += block.text;
+        }
       }
+
+      // Check if we need to handle tool calls
+      if (response.stop_reason === 'tool_use') {
+        const toolUseBlocks = response.content.filter(b => b.type === 'tool_use');
+        const toolResults = [];
+
+        for (const toolUse of toolUseBlocks) {
+          let result = '';
+
+          if (toolUse.name === 'search_films') {
+            const films = searchFilms(toolUse.input.query);
+            result = JSON.stringify(films);
+          } else if (toolUse.name === 'web_search') {
+            // Web search via Anthropic's built-in capability
+            try {
+              const searchResult = await client.messages.create({
+                model: 'claude-sonnet-4-20250514',
+                max_tokens: 512,
+                tools: [{ type: "web_search_20250305", name: "web_search" }],
+                messages: [{ role: 'user', content: `Search for: ${toolUse.input.query}. Return only the key facts in 2-3 sentences.` }]
+              });
+              const textContent = searchResult.content.find(b => b.type === 'text');
+              result = textContent ? textContent.text : 'No results found.';
+            } catch (e) {
+              result = 'Web search unavailable. Using knowledge base.';
+            }
+          }
+
+          toolResults.push({
+            type: 'tool_result',
+            tool_use_id: toolUse.id,
+            content: result
+          });
+        }
+
+        // Continue the loop with tool results
+        currentMessages = [
+          ...currentMessages,
+          { role: 'assistant', content: response.content },
+          { role: 'user', content: toolResults }
+        ];
+        finalResponse = ''; // Reset — we'll get the final answer next iteration
+        continue;
+      }
+
+      // End of agentic loop — stream the final response
+      break;
+    }
+
+    // Stream the final response
+    const words = finalResponse.split(' ');
+    for (let i = 0; i < words.length; i++) {
+      const chunk = words[i] + (i < words.length - 1 ? ' ' : '');
+      res.write(`data: ${JSON.stringify({ text: chunk })}\n\n`);
+      await new Promise(r => setTimeout(r, 15));
     }
 
     res.write('data: [DONE]\n\n');
     res.end();
 
   } catch (error) {
-    console.error('Chat error:', error);
+    console.error('Chat API error:', error);
     if (!res.headersSent) {
       res.status(500).json({ error: 'Chat unavailable' });
     }

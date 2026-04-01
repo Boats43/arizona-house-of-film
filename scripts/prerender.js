@@ -183,6 +183,7 @@ const PATTERN_MAP = [
   ['/brands/suntek',                        '/src/pages/brands/SunTekPage.jsx'],
   ['/brands/xpel',                          '/src/pages/brands/XPELPage.jsx'],
   ['/brands/madico',                        '/src/pages/brands/MadicoPage.jsx'],
+  ['/brands/huper-optik',                   '/src/pages/brands/HuperOptikPage.jsx'],
   ['/brands/:slug',                         '/src/pages/BrandPage.jsx'],
   ['/brands',                               '/src/pages/BrandsHub.jsx'],
   ['/service-areas/:slug',                  '/src/pages/CityPage.jsx'],

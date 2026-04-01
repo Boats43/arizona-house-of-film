@@ -77,7 +77,17 @@ SERVICES:
 - Countertop protection film
 
 BRANDS INSTALLED:
-LLumar, Madico, SunTek, XPEL, Solyx, Flexfilm, Solar Gard, Huper Optik, EnerLogic, Casper by Designtex, Quantum Cloaking Film. For 3M specifically — we work with a certified 3M partner installer.
+LLumar, Madico, SunTek, XPEL, Solyx, Flexfilm, Solar Gard, H\u00fcper Optik, EnerLogic, Casper by Designtex, Quantum Cloaking Film. For 3M specifically — we work with a certified 3M partner installer.
+
+H\u00dcPER OPTIK KEY SPECS (authorized dealer):
+- German-engineered multi-layer nano-ceramic — no metal content, no signal interference
+- Ceramic 20-70 series: 20% to 73% VLT, all 99% UV rejection
+- Klar 85: nearly clear at 82% VLT, 28% TSER
+- Select DREI: maximum rejection at 67% TSER, 35% VLT
+- Select SECH: balanced at 51% TSER, 61% VLT
+- PSA adhesive safe for dual-pane glass
+- NFRC certified — SRP/APS rebate eligible
+- Brand page: arizonahouseoffilm.com/brands/huper-optik
 
 SERVICE AREAS:
 Phoenix, Scottsdale, Mesa, Chandler, Gilbert, Peoria, Glendale, Tempe, Queen Creek, Fountain Hills, Avondale, Tolleson, and all of Arizona.
@@ -168,6 +178,7 @@ Brands:
 - Madico → /brands/madico
 - SunTek → /brands/suntek
 - XPEL → /brands/xpel
+- H\u00fcper Optik → /brands/huper-optik
 - 3M → /brands/3m
 - Solar Gard → /brands/solar-gard
 - Flexfilm → /brands/flexfilm

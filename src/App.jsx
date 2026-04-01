@@ -57,6 +57,7 @@ const LlumarPage = lazy(() => import("@/pages/brands/LlumarPage"));
 const XPELPage = lazy(() => import("@/pages/brands/XPELPage"));
 const MadicoPage = lazy(() => import("@/pages/brands/MadicoPage"));
 const SunTekPage = lazy(() => import("@/pages/brands/SunTekPage"));
+const HuperOptikPage = lazy(() => import("@/pages/brands/HuperOptikPage"));
 const FilmQuoteRequest = lazy(() => import("@/pages/FilmQuoteRequest"));
 const Store = lazy(() => import("@/pages/Store"));
 const SupportingPage = lazy(() => import("@/pages/SupportingPage"));
@@ -311,6 +312,7 @@ function AppRoutes() {
           <Route path="/brands/xpel" element={<XPELPage />} />
           <Route path="/brands/madico" element={<MadicoPage />} />
           <Route path="/brands/suntek" element={<SunTekPage />} />
+          <Route path="/brands/huper-optik" element={<HuperOptikPage />} />
           <Route path="/brands/:slug" element={<BrandPage />} />
 
           {/* INFORMATIONAL */}

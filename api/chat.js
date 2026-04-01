@@ -285,6 +285,7 @@ NEW CHAT LEAD — ARIZONA HOUSE OF FILM
 Name: ${leadData.name || 'Not provided'}
 Email: ${leadData.email || 'Not provided'}
 Phone: ${leadData.phone || 'Not provided'}
+Location: ${leadData.location || 'Not provided'}
 
 --- CONVERSATION SUMMARY ---
 ${leadData.summary || 'No summary'}
@@ -302,8 +303,8 @@ Source: chat widget
         },
         body: JSON.stringify({
           from: 'noreply@arizonahouseoffilm.com',
-          to: 'boatsbaron@gmail.com',
-          reply_to: leadData.email || 'boatsbaron@gmail.com',
+          to: 'arizonahouseoffilm@gmail.com',
+          reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
           subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
           text: leadText,
           html: `
@@ -321,6 +322,7 @@ Source: chat widget
       <tr><td style="padding: 8px 0; color: #888; font-size: 13px; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;">${leadData.name || '—'}</td></tr>
       <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Phone</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;"><a href="tel:${leadData.phone}" style="color: #6b8f71;">${leadData.phone || '—'}</a></td></tr>
       <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Email</td><td style="padding: 8px 0; font-size: 14px;"><a href="mailto:${leadData.email}" style="color: #6b8f71;">${leadData.email || '—'}</a></td></tr>
+      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Location</td><td style="padding: 8px 0; font-size: 14px;">${leadData.location || '—'}</td></tr>
     </table>
   </div>
 

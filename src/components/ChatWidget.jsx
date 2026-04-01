@@ -33,7 +33,7 @@ export default function ChatWidget() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
-  const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
+  const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '', location: '' });
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [pulse, setPulse] = useState(true);
   const bottomRef = useRef(null);
@@ -138,7 +138,7 @@ export default function ChatWidget() {
 
   const submitLead = async () => {
     if (!leadForm.name || !leadForm.email) return;
-    const summary = messages.filter(m => m.role === 'user').map(m => m.content).join(' | ');
+    const summary = messages.map(m => `${m.role === 'user' ? 'Customer' : 'Assistant'}: ${m.content}`).join('\n\n');
     const payload = { leadData: { ...leadForm, summary } };
     console.log('Submitting lead:', JSON.stringify(payload));
     try {
@@ -278,11 +278,11 @@ export default function ChatWidget() {
                 <div style={{ color:'#22c55e', fontSize:'12px', fontWeight:700, marginBottom:'4px' }}>
                   GET YOUR FREE ESTIMATE
                 </div>
-                {['name','email','phone'].map(field => (
+                {['name','email','phone','location'].map(field => (
                   <input
                     key={field}
                     type={field==='email' ? 'email' : 'text'}
-                    placeholder={field==='name' ? 'Your name *' : field==='email' ? 'Email address *' : 'Phone number'}
+                    placeholder={field==='name' ? 'Your name *' : field==='email' ? 'Email address *' : field==='phone' ? 'Phone number' : 'City or address'}
                     value={leadForm[field]}
                     onChange={e => setLeadForm(prev => ({ ...prev, [field]: e.target.value }))}
                     style={{

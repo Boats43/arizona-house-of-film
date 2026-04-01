@@ -109,7 +109,7 @@ export default function ChatWidget() {
       setShowLeadForm(false);
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: `Thanks ${leadForm.name}! Jimmy will reach out to you at ${leadForm.email} within 24 hours. You can also call (480) 788-1591 for immediate assistance.`
+        content: `Thanks ${leadForm.name}! A specialist will contact you at ${leadForm.email} within 24 hours. You can also call (480) 788-1591 for immediate assistance.`
       }]);
     } catch (e) { console.error('Lead error:', e); }
   };

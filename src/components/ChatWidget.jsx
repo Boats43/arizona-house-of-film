@@ -55,7 +55,13 @@ export default function ChatWidget() {
   }, [messages, loading]);
 
   useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 100);
+    if (open) {
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => inputRef.current?.focus(), 100);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
   }, [open]);
 
   const sendMessage = async (text) => {
@@ -114,6 +120,7 @@ export default function ChatWidget() {
       }]);
     } finally {
       setLoading(false);
+      setTimeout(() => inputRef.current?.focus(), 50);
     }
   };
 

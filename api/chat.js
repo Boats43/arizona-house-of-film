@@ -250,7 +250,7 @@ export default async function handler(req, res) {
   if (leadData) {
     try {
       await resend.emails.send({
-        from: 'AHOF Chat <onboarding@resend.dev>',
+        from: 'AHOF Chat <noreply@arizonahouseoffilm.com>',
         to: 'arizonahouseoffilm@gmail.com',
         subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
         html: `

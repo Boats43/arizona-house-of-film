@@ -123,7 +123,7 @@ const reviewSchema = {
     "name": "Arizona House of Film"
   },
   "author": { "@type": "Person", "name": "Verified Customer" },
-  "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.6", "bestRating": "5" },
   "reviewBody": "Great selection of top-tier brands. They helped us choose the perfect film for our needs."
 };
 

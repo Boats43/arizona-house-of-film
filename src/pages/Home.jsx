@@ -175,7 +175,7 @@ const Home = () => {
       <section className="bg-white py-12 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8">
           {[
-            { icon: Star, text: "Top Rated Google", sub: "17 Google Reviews" },
+            { icon: Star, text: "Top Rated Google", sub: "21 Google Reviews" },
             { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
             { icon: Server, text: "500,000+ Sq Ft Installed", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },

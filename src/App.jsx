@@ -160,8 +160,8 @@ const globalLocalBusinessSchema = {
   },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.5",
-    reviewCount: "17",
+    ratingValue: "4.6",
+    reviewCount: "21",
     bestRating: "5",
   },
   sameAs: [

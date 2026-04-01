@@ -350,6 +350,9 @@ Source: chat widget
       console.log('Lead email sent:', JSON.stringify(r1Result));
 
       // Email 2 — confirmation email to the customer
+      const userMessages = (leadData.summary || '').split('\n\n').filter(m => m.startsWith('Customer:')).map(m => m.replace('Customer: ', '')).join(', ');
+      const projectDetails = userMessages || 'We will discuss details when we reach out.';
+
       let confirmResult = 'skipped — no email';
       if (leadData.email) {
         const r2 = await fetch('https://api.resend.com/emails', {
@@ -362,7 +365,7 @@ Source: chat widget
             from: 'noreply@arizonahouseoffilm.com',
             to: leadData.email,
             subject: 'Your Arizona House of Film Estimate Request',
-            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nWe received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.\n\nYour project details:\n${leadData.summary || 'We will discuss details when we reach out.'}\n\nIn the meantime, feel free to explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
+            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nWe received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.\n\nYour project details:\n${projectDetails}\n\nIn the meantime, feel free to explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
             html: `
 <!DOCTYPE html>
 <html>
@@ -375,7 +378,7 @@ Source: chat widget
   <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
     <h2 style="color: #333; font-size: 18px; margin: 0 0 16px 0;">Thanks for reaching out, ${leadData.name || 'there'}!</h2>
     <p style="color: #555; font-size: 14px; line-height: 1.6;">We received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.</p>
-    <p style="color: #555; font-size: 14px; line-height: 1.6;"><strong>Your project details:</strong><br/>${leadData.summary || 'We will discuss details when we reach out.'}</p>
+    <p style="color: #555; font-size: 14px; line-height: 1.6;"><strong>Your project details:</strong><br/>${projectDetails}</p>
     <p style="color: #555; font-size: 14px; line-height: 1.6;">In the meantime, feel free to explore our work at <a href="https://arizonahouseoffilm.com" style="color: #6b8f71;">arizonahouseoffilm.com</a></p>
   </div>
 

@@ -251,18 +251,44 @@ export default async function handler(req, res) {
   // Lead email handler — uses raw fetch to match working api/contact.js pattern
   if (leadData) {
     console.log('Lead received:', JSON.stringify(leadData));
+
+    const resendHeaders = {
+      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    };
+
+    // Test mode — send a test email and return full Resend response for debugging
+    if (leadData.test === true) {
+      try {
+        const r = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: resendHeaders,
+          body: JSON.stringify({
+            from: 'noreply@arizonahouseoffilm.com',
+            to: 'arizonahouseoffilm@gmail.com',
+            subject: 'TEST — Chat Lead Email Debug',
+            html: '<h2>This is a test email from the chat lead handler.</h2><p>If you received this, Resend is working correctly.</p>',
+          }),
+        });
+        const responseText = await r.text();
+        console.log('Test email response:', r.status, responseText);
+        return res.status(200).json({ test: true, status: r.status, response: responseText, apiKeyPrefix: process.env.RESEND_API_KEY?.slice(0, 8) + '...' });
+      } catch (e) {
+        console.error('Test email exception:', e);
+        return res.status(500).json({ test: true, error: e.message });
+      }
+    }
+
     try {
-      const r = await fetch('https://api.resend.com/emails', {
+      // Email 1 — internal lead notification to AHOF
+      const r1 = await fetch('https://api.resend.com/emails', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
+        headers: resendHeaders,
         body: JSON.stringify({
           from: 'noreply@arizonahouseoffilm.com',
           to: 'arizonahouseoffilm@gmail.com',
           reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
-          subject: `💬 Chat Lead — ${leadData.name || 'Unknown'}`,
+          subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
           html: `
             <h2>New Lead from Chat Widget</h2>
             <p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
@@ -275,16 +301,39 @@ export default async function handler(req, res) {
           `
         }),
       });
+      const r1Text = await r1.text();
+      console.log('Lead email (AHOF) response:', r1.status, r1Text);
 
-      const responseText = await r.text();
-      console.log('Resend response status:', r.status, responseText);
-
-      if (!r.ok) {
-        console.error('Resend error:', r.status, responseText);
-        return res.status(500).json({ error: 'Email failed', detail: responseText });
+      // Email 2 — confirmation email to the customer
+      let r2Text = 'skipped';
+      if (leadData.email) {
+        const r2 = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: resendHeaders,
+          body: JSON.stringify({
+            from: 'noreply@arizonahouseoffilm.com',
+            to: leadData.email,
+            subject: 'Your Arizona House of Film Estimate Request',
+            html: `
+              <h2>Thanks for reaching out, ${leadData.name || 'there'}!</h2>
+              <p>We received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.</p>
+              <p><strong>Your project details:</strong><br/>${leadData.summary || 'We\'ll discuss details when we reach out.'}</p>
+              <p>In the meantime, feel free to explore our work at <a href="https://arizonahouseoffilm.com">arizonahouseoffilm.com</a></p>
+              <hr/>
+              <p>Arizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ</p>
+            `
+          }),
+        });
+        r2Text = await r2.text();
+        console.log('Confirmation email (customer) response:', r2.status, r2Text);
       }
 
-      return res.status(200).json({ success: true });
+      if (!r1.ok) {
+        console.error('Lead email failed:', r1.status, r1Text);
+        return res.status(500).json({ error: 'Lead email failed', detail: r1Text });
+      }
+
+      return res.status(200).json({ success: true, leadEmail: r1.status, confirmEmail: r2Text });
     } catch (e) {
       console.error('Resend exception:', e);
       return res.status(500).json({ error: 'Email failed', detail: e.message });

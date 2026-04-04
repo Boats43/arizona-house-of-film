@@ -9,8 +9,8 @@ import ContactFormSection from '@/components/contact/ContactFormSection';
 import EstimatorCTA from '../components/EstimatorCTA';
 
 const rocNumber = 'ROC #314088';
-const pageTitle = 'Security Window Film Installers Phoenix AZ | 4–21 Mil | ROC #314088';
-const metaDescription = 'Licensed security window film installers in Phoenix AZ. LLumar, Madico, SunTek, XPEL — 4 to 21 mil. Smash-and-grab, blast mitigation, shatter protection. Residential & commercial. ROC #314088. Free estimate.';
+const pageTitle = 'Security Window Film Phoenix AZ | 4–21 Mil | ROC #314088';
+const metaDescription = 'Licensed security window film installers in Phoenix AZ. 4-21 mil thickness, blast mitigation, forced entry protection. Trusted by U.S. Navy. Free estimate.';
 const canonicalUrl = 'https://arizonahouseoffilm.com/security-window-film-phoenix';
 const heroImageUrl = '/images/security-film-hero.jpg';
 

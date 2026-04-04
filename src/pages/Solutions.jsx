@@ -53,6 +53,15 @@ const solutionsData = [
     cta: "Explore Anti-Graffiti Films",
     note: "Sacrificial film layer that takes the damage — peel and replace at fraction of glass replacement cost."
   },
+  {
+    icon: Shield,
+    title: "Countertop Protection",
+    description: "Clear bra film for quartz, marble, granite, and laminate — prevents scratches, stains, and heat damage.",
+    link: "/countertop-protection-film-arizona",
+    color: "from-teal-500 to-cyan-600",
+    cta: "Explore Countertop Film",
+    note: "Invisible protection layer for kitchen and bathroom surfaces. Professional installation across Arizona."
+  },
 ];
 
 const problemCards = [

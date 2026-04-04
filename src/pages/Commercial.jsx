@@ -21,8 +21,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 const Commercial = () => {
   const rocNumber = "314088";
   const pageTitle =
-    "Commercial Window Tinting Phoenix AZ | 713 Projects | ROC #314088";
-  const metaDescription = "Phoenix commercial window tinting — solar control, security, decorative film. Trusted by Coca-Cola, U.S. Navy, Frank Lloyd Wright Foundation. Free estimate. ROC #314088.";
+    "Commercial Window Tinting Phoenix AZ | ROC #314088";
+  const metaDescription = "Licensed commercial window film contractor in Phoenix & Scottsdale. Solar control, security & decorative film for offices, retail & government. Free estimate.";
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
@@ -782,7 +782,8 @@ const Commercial = () => {
               for your building.{" "}
               <Link to="/store" className="text-blue-700 underline">Browse Window Film Catalog</Link> →{" "}
               <Link to="/commercial-window-tinting/anti-graffiti" className="text-blue-700 underline">Commercial Anti-Graffiti Film</Link>{" "}
-              <Link to="/commercial-window-tinting/enhanced-privacy" className="text-blue-700 underline">Commercial Privacy Film</Link>
+              <Link to="/commercial-window-tinting/enhanced-privacy" className="text-blue-700 underline">Commercial Privacy Film</Link>{" "}
+              <Link to="/countertop-protection-film-arizona" className="text-blue-700 underline">Countertop Protection Film</Link>
             </p>
             <div className="mt-6">
               <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Commercial Tinting by Location</p>

@@ -84,8 +84,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Arizona House of Film | Licensed Window Film Contractor Phoenix AZ</title>
-        <meta name="description" content="Licensed window film contractor serving Phoenix, Scottsdale, and Arizona since 2017. Commercial, residential, government. 700+ projects. ROC #314088. Free estimate — (480) 788-1591." />
+        <title>Arizona House of Film | Window Film Phoenix AZ</title>
+        <meta name="description" content="Arizona's licensed window film contractor — commercial, residential, security & decorative film across Phoenix, Scottsdale & all Arizona. ROC #314088. Free estimate." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Arizona Window Film | Phoenix's #1 Rated Installer Since 2017" />
         <meta property="og:description" content="Arizona's trusted window film installer since 2017. 713+ projects. Residential, commercial, security & decorative film. Phoenix, Scottsdale & all AZ. Licensed ROC #314088." />

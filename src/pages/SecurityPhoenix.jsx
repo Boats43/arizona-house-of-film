@@ -100,6 +100,14 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Is security window film better than tempered glass?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Security film and tempered glass serve different purposes. Tempered glass shatters into small pieces on impact but doesn\'t hold together — security film holds shattered glass in place, preventing penetration and injury. For existing windows, security film is significantly more cost-effective at $12-25/sq ft installed versus full tempered glass replacement. Many government and school installations use both — tempered glass with security film overlay for maximum protection. Arizona House of Film installs 4-21 mil security film on both standard and tempered glass.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Can security film be combined with solar control or privacy film?',
       acceptedAnswer: {
         '@type': 'Answer',

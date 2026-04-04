@@ -198,6 +198,7 @@ export default function ChatWidget() {
   const [open, setOpen] = useState(restoredRef.current);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [analyzingImage, setAnalyzingImage] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '', location: '' });
   const [showLeadForm, setShowLeadForm] = useState(false);
@@ -256,6 +257,7 @@ export default function ChatWidget() {
     setPendingImage(null);
     setInput('');
     setLoading(true);
+    if (imageToSend) setAnalyzingImage(true);
 
     // Extract contact info from the new message and pre-populate form
     const detected = extractContactInfo(newMessages);
@@ -342,6 +344,7 @@ export default function ChatWidget() {
       }]);
     } finally {
       setLoading(false);
+      setAnalyzingImage(false);
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   };
@@ -371,25 +374,35 @@ export default function ChatWidget() {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input); }
   };
 
-  const handleImageSelect = (e) => {
+  const compressImage = (file) => {
+    return new Promise((resolve) => {
+      const canvas = document.createElement('canvas');
+      const img = new Image();
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        img.onload = () => {
+          const maxWidth = 1200;
+          const scale = Math.min(1, maxWidth / img.width);
+          canvas.width = img.width * scale;
+          canvas.height = img.height * scale;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          const compressed = canvas.toDataURL('image/jpeg', 0.8);
+          resolve(compressed.split(',')[1]);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleImageSelect = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    // 1.5MB raw file limit (base64 will be ~33% larger)
-    if (file.size > 1.5 * 1024 * 1024) {
-      setMessages(prev => [...prev, {
-        role: 'assistant',
-        content: 'That image is too large — please use a photo under 1.5 MB, or take a new one at lower resolution.'
-      }]);
-      e.target.value = '';
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64 = reader.result.split(',')[1]; // strip data:image/...;base64,
-      setPendingImage({ data: base64, mediaType: file.type, preview: reader.result });
-    };
-    reader.readAsDataURL(file);
-    e.target.value = ''; // reset so same file can be re-selected
+    e.target.value = '';
+    const base64 = await compressImage(file);
+    const preview = `data:image/jpeg;base64,${base64}`;
+    setPendingImage({ data: base64, mediaType: 'image/jpeg', preview });
   };
 
   return (
@@ -500,8 +513,11 @@ export default function ChatWidget() {
                   padding:'10px 14px', borderRadius:'16px 16px 16px 4px',
                   background:'rgba(255,255,255,0.06)',
                   border:'1px solid rgba(255,255,255,0.08)',
-                  display:'flex', gap:'4px', alignItems:'center',
+                  display:'flex', gap:'6px', alignItems:'center',
                 }}>
+                  {analyzingImage && (
+                    <span style={{ color:'#9ca3af', fontSize:'12px', marginRight:'2px' }}>Analyzing your window photo</span>
+                  )}
                   {[0,1,2].map(i => (
                     <span key={i} style={{
                       width:'6px', height:'6px', borderRadius:'50%',

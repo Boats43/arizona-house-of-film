@@ -132,6 +132,53 @@ function formatMessage(text) {
   });
 }
 
+function extractContactInfo(messages) {
+  const info = {};
+  for (let i = messages.length - 1; i >= 0; i--) {
+    const msg = messages[i];
+    if (msg.role !== 'user') continue;
+    const text = msg.content.trim();
+
+    // Email: contains @ and .
+    if (!info.email) {
+      const emailMatch = text.match(/[\w.+-]+@[\w-]+\.[\w.]+/);
+      if (emailMatch) info.email = emailMatch[0];
+    }
+
+    // Phone: 10+ digits (strip formatting)
+    if (!info.phone) {
+      const digits = text.replace(/\D/g, '');
+      if (digits.length >= 10) {
+        info.phone = text.match(/[\d().\-+\s]{10,}/)?.[0]?.trim() || digits;
+      }
+    }
+
+    // Name: 1-3 words, no @, no digits, no special chars — only if prior assistant message asked for name
+    if (!info.name && i > 0) {
+      const prior = messages[i - 1];
+      const priorAsked = prior?.role === 'assistant' &&
+        /\bname\b/i.test(prior.content) &&
+        /\b(what|who|may|can|could|your)\b/i.test(prior.content);
+      if (priorAsked && /^[A-Za-z]+(?:\s[A-Za-z]+){0,2}$/.test(text) && text.length <= 40) {
+        info.name = text;
+      }
+    }
+  }
+
+  // Fallback name detection: last user message that's 1-3 words with no @ or digits
+  if (!info.name) {
+    for (let i = messages.length - 1; i >= 0; i--) {
+      if (messages[i].role !== 'user') continue;
+      const text = messages[i].content.trim();
+      if (/^[A-Za-z]+(?:\s[A-Za-z]+){0,2}$/.test(text) && text.length <= 40 && !/@/.test(text)) {
+        info.name = text;
+        break;
+      }
+    }
+  }
+  return info;
+}
+
 export default function ChatWidget() {
   const restoredRef = useRef(false);
   const [messages, setMessages] = useState(() => {
@@ -203,6 +250,17 @@ export default function ChatWidget() {
     setInput('');
     setLoading(true);
 
+    // Extract contact info from the new message and pre-populate form
+    const detected = extractContactInfo(newMessages);
+    if (detected.name || detected.email || detected.phone) {
+      setLeadForm(prev => ({
+        ...prev,
+        ...(detected.name && !prev.name ? { name: detected.name } : {}),
+        ...(detected.email && !prev.email ? { email: detected.email } : {}),
+        ...(detected.phone && !prev.phone ? { phone: detected.phone } : {}),
+      }));
+    }
+
     // If user typed an email address, show lead form immediately
     if (!leadCaptured && !showLeadForm && text.includes('@') && text.includes('.')) {
       setTimeout(() => setShowLeadForm(true), 500);
@@ -251,6 +309,17 @@ export default function ChatWidget() {
         const askingForInfo = lower.includes('name') && (lower.includes('email') || lower.includes('phone'));
         const enoughMessages = newMessages.length + 1 >= 8; // 4 user + 4 assistant
         if (askingForInfo || enoughMessages) {
+          // Pre-populate form from conversation history before showing
+          const allMsgs = [...newMessages, { role: 'assistant', content: assistantText }];
+          const detected = extractContactInfo(allMsgs);
+          if (detected.name || detected.email || detected.phone) {
+            setLeadForm(prev => ({
+              ...prev,
+              ...(detected.name && !prev.name ? { name: detected.name } : {}),
+              ...(detected.email && !prev.email ? { email: detected.email } : {}),
+              ...(detected.phone && !prev.phone ? { phone: detected.phone } : {}),
+            }));
+          }
           setTimeout(() => setShowLeadForm(true), 1000);
         }
       }

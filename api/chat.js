@@ -97,6 +97,18 @@ const categoryPricing = {
   'decorative': '$10-20/sq ft installed',
 };
 
+// Maps solyxFilms category slugs → actual site routes
+const categoryRoutes = {
+  'casper-designtex': '/films/casper-films',
+  'frosted-etched': '/films/frosted-etched-films',
+  'stained-glass': '/films/stained-glass-films',
+  'gradient': '/films/gradient-films',
+  'colored-films': '/films/colored-films',
+  'patterned-privacy': '/films/patterned-privacy-films',
+  'reflective-mirror': '/films/reflective-films',
+  'decorative': '/store?category=decorative',
+};
+
 const intentMap = {
   'casper': 'casper-designtex',
   'cloaking': 'casper-designtex',
@@ -159,18 +171,21 @@ function searchFilms(query) {
     };
   }
 
+  const resultCategory = targetCategory || results[0].category;
+  const route = categoryRoutes[resultCategory] || `/store?category=${resultCategory}`;
+
   return {
     found: true,
     count: results.length,
-    category: categoryInfo?.name || targetCategory,
+    category: categoryInfo?.name || resultCategory,
     pricing: categoryPricing[results[0].category] || '$10-20/sq ft installed',
     films: results.map(f => ({
       sku: f.sku,
       name: f.name,
       category: f.category,
-      link: `https://arizonahouseoffilm.com/store?category=${f.category}`,
+      link: `https://arizonahouseoffilm.com${categoryRoutes[f.category] || `/store?category=${f.category}`}`,
     })),
-    categoryPage: `https://arizonahouseoffilm.com/films/${targetCategory || results[0].category}`,
+    categoryPage: `https://arizonahouseoffilm.com${route}`,
   };
 }
 
@@ -344,11 +359,22 @@ When any user asks about a specific film, color, pattern, or SKU:
 5. Never just say 'check our store' — always return specific results first
 6. If 3+ results found, show top 3 with SKUs and links
 
-When linking to store pages — always link to the category page, not a specific SKU search. The user should be able to browse all options in that category. Describe the top 2-3 specific films in your message, then link to the full category for browsing.
+When linking to film categories — always link to the category browse page, not a specific SKU search. Describe the top 2-3 specific films in your message, then link to the full category for browsing.
 Never use markdown link format [text](url) — always write the full URL on the same line so the widget can detect and hyperlink it.
 
+Category links:
+- Casper/cloaking → https://arizonahouseoffilm.com/films/casper-films
+- Frosted/etched → https://arizonahouseoffilm.com/films/frosted-etched-films
+- Stained glass → https://arizonahouseoffilm.com/films/stained-glass-films
+- Gradient → https://arizonahouseoffilm.com/films/gradient-films
+- Colored → https://arizonahouseoffilm.com/films/colored-films
+- Patterned privacy → https://arizonahouseoffilm.com/films/patterned-privacy-films
+- Reflective/mirror → https://arizonahouseoffilm.com/films/reflective-films
+- Decorative → https://arizonahouseoffilm.com/store?category=decorative
+- All films → https://arizonahouseoffilm.com/store
+
 Example response:
-'We have several frosted options — Sateen Etch (SD-FS728-E) and Sateen Frost (SD-FS728-WF) are popular choices. Browse all frosted films here: https://arizonahouseoffilm.com/store?category=frosted-etched
+'We have several frosted options — Sateen Etch (SD-FS728-E) and Sateen Frost (SD-FS728-WF) are popular choices. Browse all frosted films here: https://arizonahouseoffilm.com/films/frosted-etched-films
 Pricing runs $10-20/sq ft installed. Want me to get you a free estimate?'
 
 FILM INTENT MAP:

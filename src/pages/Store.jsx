@@ -207,7 +207,7 @@ function ProductCard({ product, onAdd }) {
 
 const Store = () => {
   const { toast } = useToast();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const gridRef = useRef(null);
   const [activeCatalog, setActiveCatalog] = useState('solyx');
   const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all');
@@ -252,6 +252,15 @@ const Store = () => {
   }, [activeCatalog, activeCategory, searchQuery]);
 
   useEffect(() => { setPage(1); }, [activeCategory, searchQuery, activeCatalog]);
+
+  // Sync filters to URL so filtered views are bookmarkable/linkable
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (activeCategory !== 'all') params.set('category', activeCategory);
+    if (searchQuery.trim()) params.set('search', searchQuery.trim());
+    const str = params.toString();
+    setSearchParams(str ? params : {}, { replace: true });
+  }, [activeCategory, searchQuery, setSearchParams]);
 
   const paginatedProducts = filteredProducts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
   const totalPages = Math.ceil(filteredProducts.length / PER_PAGE);

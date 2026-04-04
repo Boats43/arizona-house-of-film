@@ -28,17 +28,22 @@ function formatMessage(text) {
 }
 
 export default function ChatWidget() {
-  const [open, setOpen] = useState(false);
+  const restoredRef = useRef(false);
   const [messages, setMessages] = useState(() => {
     try {
       const saved = sessionStorage.getItem('ahof_chat');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 1) return parsed;
+        if (Array.isArray(parsed) && parsed.length > 1) {
+          console.log('Restored chat:', parsed.length, 'messages');
+          restoredRef.current = true;
+          return parsed;
+        }
       }
     } catch {}
     return [OPENING_MESSAGE];
   });
+  const [open, setOpen] = useState(restoredRef.current);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);

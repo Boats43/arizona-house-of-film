@@ -414,7 +414,18 @@ Example of RIGHT response:
 - Never promise scheduling dates
 - Always mention free estimate and ROC #314088
 - For government or blast mitigation say: let me connect you with our team directly at (480) 788-1591
-- Always professional tone`;
+- Always professional tone
+
+WINDOW PHOTO ANALYSIS:
+When a customer shares a photo:
+- Identify window type, size, and orientation
+- Assess sun exposure and glare situation
+- Identify residential vs commercial
+- Spot any existing film or glass issues
+- Recommend specific film category and 2-3 options
+- Estimate square footage if visible
+- Always end with offer for free estimate
+Be specific and confident in your assessment.`;
 
 export default async function handler(req, res) {
   // ── CORS — restrict to allowed origins ────────────────────────────
@@ -429,9 +440,9 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  // ── Request size validation (10 KB limit) ─────────────────────────
+  // ── Request size validation (2.5 MB limit — increased for image uploads) ──
   const contentLength = parseInt(req.headers['content-length'] || '0', 10);
-  if (contentLength > 10240) {
+  if (contentLength > 2.5 * 1024 * 1024) {
     return res.status(413).json({ error: 'Payload too large' });
   }
 
@@ -447,7 +458,7 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Request rejected' });
   }
 
-  const { messages, leadData } = req.body;
+  const { messages, leadData, image } = req.body;
 
   // Lead email handler — mirrors working api/contact.js pattern exactly
   if (leadData) {
@@ -595,6 +606,42 @@ ${summary}`.trim();
   const trimmedMessages = messages.length > 20
     ? messages.slice(-10)
     : messages;
+
+  // ── Image handling — convert last user message to vision content ──
+  if (image && image.data && image.mediaType) {
+    // Validate base64 size (1.5 MB decoded ≈ 2 MB base64)
+    if (image.data.length > 2 * 1024 * 1024) {
+      return res.status(413).json({ error: 'Image too large. Please use a photo under 1.5 MB.' });
+    }
+    // Find last user message and convert to vision array
+    for (let i = trimmedMessages.length - 1; i >= 0; i--) {
+      if (trimmedMessages[i].role === 'user') {
+        const userText = typeof trimmedMessages[i].content === 'string'
+          ? trimmedMessages[i].content
+          : '';
+        trimmedMessages[i] = {
+          role: 'user',
+          content: [
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: image.mediaType,
+                data: image.data,
+              },
+            },
+            {
+              type: 'text',
+              text: userText && userText !== '📷 Sent a photo'
+                ? userText
+                : 'What window film would you recommend for this window?',
+            },
+          ],
+        };
+        break;
+      }
+    }
+  }
 
   try {
     res.setHeader('Content-Type', 'text/event-stream');

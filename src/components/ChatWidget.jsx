@@ -202,8 +202,10 @@ export default function ChatWidget() {
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '', location: '' });
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [pulse, setPulse] = useState(true);
+  const [pendingImage, setPendingImage] = useState(null); // { data, mediaType, preview }
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
+  const imageInputRef = useRef(null);
 
   // Persist conversation across page navigations
   useEffect(() => {
@@ -243,10 +245,15 @@ export default function ChatWidget() {
   }, [open]);
 
   const sendMessage = async (text) => {
-    if (!text.trim() || loading) return;
-    const userMessage = { role: 'user', content: text };
+    if ((!text.trim() && !pendingImage) || loading) return;
+    const displayContent = pendingImage
+      ? (text.trim() ? text : '📷 Sent a photo')
+      : text;
+    const userMessage = { role: 'user', content: displayContent, ...(pendingImage ? { image: pendingImage.preview } : {}) };
     const newMessages = [...messages, userMessage];
     setMessages(newMessages);
+    const imageToSend = pendingImage;
+    setPendingImage(null);
     setInput('');
     setLoading(true);
 
@@ -267,10 +274,14 @@ export default function ChatWidget() {
     }
 
     try {
+      const payload = { messages: newMessages.map(m => ({ role: m.role, content: m.content })) };
+      if (imageToSend) {
+        payload.image = { data: imageToSend.data, mediaType: imageToSend.mediaType };
+      }
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) throw new Error('API error');
@@ -358,6 +369,27 @@ export default function ChatWidget() {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input); }
+  };
+
+  const handleImageSelect = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    // 1.5MB raw file limit (base64 will be ~33% larger)
+    if (file.size > 1.5 * 1024 * 1024) {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'That image is too large — please use a photo under 1.5 MB, or take a new one at lower resolution.'
+      }]);
+      e.target.value = '';
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = reader.result.split(',')[1]; // strip data:image/...;base64,
+      setPendingImage({ data: base64, mediaType: file.type, preview: reader.result });
+    };
+    reader.readAsDataURL(file);
+    e.target.value = ''; // reset so same file can be re-selected
   };
 
   return (
@@ -452,6 +484,11 @@ export default function ChatWidget() {
                   border: msg.role==='assistant' ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   whiteSpace:'pre-wrap',
                 }}>
+                  {msg.image && (
+                    <img src={msg.image} alt="Uploaded photo" style={{
+                      maxWidth:'100%', maxHeight:'160px', borderRadius:'8px', marginBottom:'6px', display:'block',
+                    }} />
+                  )}
                   {msg.role === 'assistant' ? formatMessage(msg.content) : msg.content}
                 </div>
               </div>
@@ -533,6 +570,36 @@ export default function ChatWidget() {
             </button>
           )}
 
+          <input
+            ref={imageInputRef}
+            type="file"
+            accept="image/*"
+            capture="environment"
+            onChange={handleImageSelect}
+            style={{ display:'none' }}
+          />
+
+          {pendingImage && (
+            <div style={{
+              borderTop:'1px solid rgba(255,255,255,0.06)',
+              padding:'8px 12px', background:'#0f0f1a',
+              display:'flex', alignItems:'center', gap:'8px',
+            }}>
+              <img src={pendingImage.preview} alt="Preview" style={{
+                width:'48px', height:'48px', objectFit:'cover', borderRadius:'6px',
+                border:'1px solid rgba(34,197,94,0.3)',
+              }} />
+              <span style={{ color:'#9ca3af', fontSize:'12px', flex:1 }}>Photo ready to send</span>
+              <button
+                onClick={() => setPendingImage(null)}
+                style={{
+                  background:'none', border:'none', color:'#ef4444',
+                  cursor:'pointer', fontSize:'16px', padding:'2px 6px',
+                }}
+              >×</button>
+            </div>
+          )}
+
           <div style={{
             borderTop:'1px solid rgba(255,255,255,0.06)',
             padding:'12px', display:'flex', gap:'8px', background:'#0f0f1a',
@@ -542,7 +609,7 @@ export default function ChatWidget() {
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about window film..."
+              placeholder={pendingImage ? "Add a message or tap send..." : "Ask about window film..."}
               disabled={loading}
               style={{
                 flex:1, background:'rgba(255,255,255,0.06)',
@@ -552,19 +619,36 @@ export default function ChatWidget() {
               }}
             />
             <button
-              onClick={() => sendMessage(input)}
-              disabled={!input.trim() || loading}
+              onClick={() => imageInputRef.current?.click()}
+              disabled={loading}
+              aria-label="Upload photo"
               style={{
-                background: input.trim() && !loading ? '#22c55e' : 'rgba(34,197,94,0.2)',
+                background:'none', border:'1px solid rgba(255,255,255,0.1)',
+                borderRadius:'10px', width:'38px', height:'38px',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                display:'flex', alignItems:'center', justifyContent:'center',
+                flexShrink:0, opacity: loading ? 0.4 : 1,
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+            </button>
+            <button
+              onClick={() => sendMessage(input)}
+              disabled={(!input.trim() && !pendingImage) || loading}
+              style={{
+                background: (input.trim() || pendingImage) && !loading ? '#22c55e' : 'rgba(34,197,94,0.2)',
                 border:'none', borderRadius:'10px',
                 width:'38px', height:'38px',
-                cursor: input.trim() && !loading ? 'pointer' : 'not-allowed',
+                cursor: (input.trim() || pendingImage) && !loading ? 'pointer' : 'not-allowed',
                 display:'flex', alignItems:'center', justifyContent:'center',
                 transition:'background 0.2s', flexShrink:0,
               }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke={input.trim() && !loading ? '#000' : '#22c55e'} strokeWidth="2.5">
+                stroke={(input.trim() || pendingImage) && !loading ? '#000' : '#22c55e'} strokeWidth="2.5">
                 <line x1="22" y1="2" x2="11" y2="13"/>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"/>
               </svg>

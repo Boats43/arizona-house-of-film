@@ -5,6 +5,9 @@ Disallow: /thank-you
 Disallow: /index.php?
 Disallow: /index.php
 Disallow: /lander
+Disallow: /api/
+Disallow: /dist/
+Disallow: /.vercel/
 Disallow: /sv/
 Disallow: /sv
 Disallow: /pages/

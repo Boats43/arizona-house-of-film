@@ -42,7 +42,6 @@ const ROUTES = [
   '/residential-window-tinting/uv-protection',
   '/residential-window-tinting/energy-savings',
   '/residential-window-tinting/enhanced-privacy',
-  '/residential-window-tinting/temperature-control',
   '/residential-window-tinting/glare-reduction',
   '/residential-window-tinting/increased-comfort',
   '/decorative-window-films/enhanced-privacy',
@@ -164,7 +163,7 @@ const ROUTES = [
   '/best-window-film-arizona-heat', '/window-film-energy-rebates-arizona',
   '/ceramic-vs-dual-reflective-film', '/window-film-cost-arizona',
   '/security-film-vs-tempered-glass', '/how-long-does-window-film-last',
-  '/store', '/welcome',
+  '/store', '/welcome', '/404',
   '/shatterproof-window-film',
   '/office-partition-window-film',
   '/restaurant-window-film',
@@ -274,6 +273,7 @@ const PATTERN_MAP = [
   ['/careers',                              '/src/pages/Careers.jsx'],
   ['/store',                                '/src/pages/Store.jsx'],
   ['/welcome',                              '/src/pages/Welcome.jsx'],
+  ['/404',                                  '/src/pages/NotFound.jsx'],
   ['/:category/:slug',                      '/src/pages/SupportingPage.jsx'],
 ]
 
@@ -383,6 +383,15 @@ async function main() {
   }
 
   await vite.close()
+
+  // Copy 404 page to dist/404.html — Vercel serves this with HTTP 404 status
+  const notFoundSrc = path.join(distDir, '404', 'index.html')
+  const notFoundDest = path.join(distDir, '404.html')
+  if (fs.existsSync(notFoundSrc)) {
+    fs.copyFileSync(notFoundSrc, notFoundDest)
+    console.log('✓ Copied 404/index.html → 404.html')
+  }
+
   console.log(`\nDone: ${ok} prerendered, ${fail} failed of ${total}`)
   if (fail > 0) process.exit(1)
 }

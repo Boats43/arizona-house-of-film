@@ -1,8 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
-import Replicate from 'replicate';
 import { solyxProducts, solyxCategories } from '../src/data/solyxFilms.js';
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 
 // ── Rate limiting (in-memory, per serverless instance) ──────────────
 const rateMap = new Map();          // IP → { count, resetAt }
@@ -11,25 +9,7 @@ const RATE_LIMIT  = 20;             // max requests per window
 const IMAGE_RATE_LIMIT = 10;        // max image uploads per window
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour in ms
 
-const aiPreviewRateMap = new Map();  // IP → { count, resetAt } — AI previews
-const AI_PREVIEW_LIMIT = 5;          // max AI previews per window
-
 const ALLOWED_IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif']);
-
-const FILM_PROMPTS = {
-  'frosted-full': 'the exact same window with professional frosted privacy window film applied, white translucent diffused glass, soft even light diffusion, clean professional installation, photorealistic',
-  'mirror-silver': 'the exact same window with silver reflective mirror window film, highly reflective exterior mirror finish, professional window tint, photorealistic',
-  'mirror-bronze': 'the exact same window with bronze reflective window film, warm amber mirror finish, professional tint, photorealistic',
-  'mirror-neutral': 'the exact same window with neutral gray reflective window film, cool dark reflective finish, professional tint, photorealistic',
-  'ceramic-clear': 'the exact same window with nearly clear ceramic window film, slight blue-cool tint, barely visible professional film, photorealistic',
-  'ceramic-medium': 'the exact same window with medium ceramic solar film, light blue-gray tint, professional installation, photorealistic',
-  'tinted-charcoal': 'the exact same window with dark charcoal window tint, deep dark privacy film professionally installed, photorealistic',
-  'frosted-light': 'the exact same window with light frosted window film, subtle white diffusion, semi-transparent, photorealistic',
-  'gradient-top': 'the exact same window with gradient frosted film, white frosted at top fading to clear at bottom, decorative privacy, photorealistic',
-  'stained-amber': 'the exact same window with warm amber stained glass film, yellow-amber color cast, decorative architectural film, photorealistic',
-  'stained-blue': 'the exact same window with blue stained glass film, cool blue color cast, decorative architectural film, photorealistic',
-  'stained-green': 'the exact same window with green stained glass film, natural green color cast, decorative architectural film, photorealistic',
-};
 
 function isRateLimited(ip) {
   const now = Date.now();
@@ -53,16 +33,6 @@ function isImageRateLimited(ip) {
   return entry.count > IMAGE_RATE_LIMIT;
 }
 
-function isAiPreviewLimited(ip) {
-  const now = Date.now();
-  let entry = aiPreviewRateMap.get(ip);
-  if (!entry || now > entry.resetAt) {
-    entry = { count: 0, resetAt: now + RATE_WINDOW };
-    aiPreviewRateMap.set(ip, entry);
-  }
-  entry.count++;
-  return entry.count > AI_PREVIEW_LIMIT;
-}
 
 // Periodic cleanup so the Map doesn't grow unbounded
 setInterval(() => {
@@ -72,9 +42,6 @@ setInterval(() => {
   }
   for (const [ip, entry] of imageRateMap) {
     if (now > entry.resetAt) imageRateMap.delete(ip);
-  }
-  for (const [ip, entry] of aiPreviewRateMap) {
-    if (now > entry.resetAt) aiPreviewRateMap.delete(ip);
   }
 }, RATE_WINDOW);
 
@@ -610,20 +577,25 @@ When a customer sends multiple window photos and asks for an estimate:
 - Always end with lead capture offer — ask for name, email, phone
 - Format the estimate clearly with each line item on its own line
 
-VISUAL FILM PREVIEW:
-When a customer has uploaded a photo, tell them:
-'Tap a finish below to see it on your window — then use the slider to choose how light or dark. Once you find the look you want, tap I want this look to get your exact quote.'
+PHOTO ANALYSIS — SIMPLE OUTPUT:
+When photos are uploaded — identify windows, estimate sqft, give two price options (in-stock fast vs premium order-in), total range, then ask for contact info.
 
-Available preview finishes (mention by name when recommending):
-- Mirror Silver, Mirror Bronze, Neutral Gray — reflective, 15-35% VLT
-- Ceramic Clear — nearly invisible, 50-70% VLT
-- Ceramic Medium — subtle tint, 35-50% VLT
-- Charcoal Tint — dark tint look, 10-25% VLT
-- Frosted / Light Frosted — privacy, opaque
-- Gradient — top frosted fading to clear
-- Amber Glass, Blue Glass, Green Glass — decorative stained glass
+Format your estimate like this:
+"Here's what I see:
+[area description] — ~[X] sqft
 
-When recommending, say which preview finish matches your recommendation so they can try it.`;
+Fast option (in stock — same week):
+[brand/type] — $[range]
+
+Premium option (order in — 1-2 weeks):
+[brand/type] — $[range]
+
+Total range: $[low] - $[high]
+
+Want me to set up your free on-site estimate? Just need your name, email, and phone."
+
+Always give TWO options — in-stock for speed, order-in for premium.
+Always end with lead capture.`;
 
 export default async function handler(req, res) {
   // ── CORS — restrict to allowed origins ────────────────────────────
@@ -656,46 +628,7 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Request rejected' });
   }
 
-  const { messages, leadData, image, photos, projectEstimate, generatePreview } = req.body;
-
-  // ── AI Film Preview via Replicate FLUX.2 Pro ─────────────────────
-  if (generatePreview) {
-    const { photoBase64, filmType, vltLevel } = req.body;
-    if (!photoBase64 || !filmType) {
-      return res.status(400).json({ error: 'Missing photo or film type' });
-    }
-    if (isAiPreviewLimited(ip)) {
-      return res.status(429).json({ error: 'AI preview limit reached (5/hour). Use the instant Canvas preview instead.' });
-    }
-    try {
-      const vltDesc = vltLevel < 20 ? 'very dark' :
-                      vltLevel < 40 ? 'medium dark' :
-                      vltLevel < 60 ? 'medium light' : 'light';
-      const filmPrompt = FILM_PROMPTS[filmType] || FILM_PROMPTS['ceramic-clear'];
-      const prompt = `Professional window film installation photo. ${filmPrompt}. Film darkness: ${vltDesc} at ${vltLevel || 50}% VLT. Keep all room details, furniture, and surroundings exactly the same. Only the glass surface changes. High quality architectural photography.`;
-
-      const output = await replicate.run(
-        'black-forest-labs/flux-2-pro',
-        {
-          input: {
-            prompt,
-            input_images: [`data:image/jpeg;base64,${photoBase64}`],
-            resolution: '1 MP',
-            aspect_ratio: '1:1',
-            output_format: 'webp',
-            output_quality: 85,
-            safety_tolerance: 2,
-          },
-        }
-      );
-
-      const previewUrl = Array.isArray(output) ? output[0] : output;
-      return res.status(200).json({ previewUrl });
-    } catch (error) {
-      console.error('Replicate error:', error);
-      return res.status(500).json({ error: 'AI preview generation failed. Try the instant Canvas preview.' });
-    }
-  }
+  const { messages, leadData, image, photos, projectEstimate } = req.body;
 
   // ── Image validation — file type + rate limit ────────────────────
   const hasImage = (image && image.data) || (Array.isArray(photos) && photos.length > 0);
@@ -750,11 +683,9 @@ export default async function handler(req, res) {
     // Build structured lead data
     const userMessages = (leadData.summary || '').split('\n\n').filter(m => m.startsWith('Customer:')).map(m => m.replace('Customer: ', '')).join(', ');
     const needs = userMessages || 'Not specified';
-    const fs = leadData.filmSelection;
-    const filmLine = fs ? `${fs.filmLabel}${fs.vlt ? ` at ${fs.vlt}% VLT` : ''} — ${fs.price || 'TBD'} — ${fs.stock || 'TBD'}` : 'Not selected';
     const photoCount = leadData.photoCount || 0;
     const city = leadData.location || 'Not provided';
-    const subjectLine = `New estimate — ${leadData.name || 'Website visitor'}${fs ? ` — ${fs.filmLabel}` : ''} in ${city}`;
+    const subjectLine = `New estimate — ${leadData.name || 'Website visitor'} in ${city}${photoCount ? ` — ${photoCount} photos` : ''}`;
 
     const leadText = `NEW ESTIMATE REQUEST
 
@@ -763,7 +694,6 @@ Phone: ${leadData.phone || 'Not provided'}
 Email: ${leadData.email || 'Not provided'}
 Location: ${city}
 
-FILM SELECTED: ${filmLine}
 Photos submitted: ${photoCount}
 
 What they need: ${needs}
@@ -792,8 +722,7 @@ ${(leadData.summary || 'No summary')}`.trim();
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Phone</td><td style="padding:6px 8px;">${leadData.phone || 'Not provided'}</td></tr>
   <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Email</td><td style="padding:6px 8px;">${leadData.email || 'Not provided'}</td></tr>
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Location</td><td style="padding:6px 8px;">${city}</td></tr>
-  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Film Selected</td><td style="padding:6px 8px;color:#16a34a;font-weight:bold;">${filmLine}</td></tr>
-  <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted</td></tr>
+  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted</td></tr>
 </table>
 <h3 style="color:#333;margin:20px 0 8px;">What they need</h3>
 <p style="color:#555;font-size:14px;">${needs}</p>
@@ -813,9 +742,6 @@ ${(leadData.summary || 'No summary')}`.trim();
       console.log('Lead email sent:', JSON.stringify(r1Result));
 
       // Email 2 — confirmation email to the customer
-      const filmSummaryHtml = fs
-        ? `<p style="color:#555;font-size:14px;"><strong>Film selected:</strong> ${fs.filmLabel}${fs.vlt ? ` at ${fs.vlt}% VLT` : ''}<br/><strong>Estimated:</strong> ${fs.price || 'Custom quote'}<br/><strong>Availability:</strong> ${fs.stock === 'In stock' ? 'In stock — same week install' : 'Order in — 1-2 week lead time'}</p>`
-        : '';
       const photoSummaryHtml = photoCount > 0
         ? `<p style="color:#555;font-size:14px;">You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.</p>`
         : '';
@@ -831,8 +757,8 @@ ${(leadData.summary || 'No summary')}`.trim();
           body: JSON.stringify({
             from: 'noreply@arizonahouseoffilm.com',
             to: leadData.email,
-            subject: `Your Arizona House of Film Estimate — ${fs ? fs.filmLabel : 'Custom Quote'}`,
-            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nJimmy will contact you within 24 hours to schedule your free on-site estimate.\n\n${fs ? `Film selected: ${fs.filmLabel}${fs.vlt ? ` at ${fs.vlt}% VLT` : ''}\nEstimated: ${fs.price || 'Custom quote'}\nAvailability: ${fs.stock || 'TBD'}\n\n` : ''}${photoCount > 0 ? `You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.\n\n` : ''}In the meantime, explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
+            subject: 'Your Arizona House of Film Estimate Request',
+            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nJimmy will contact you within 24 hours to schedule your free on-site estimate.\n\n${photoCount > 0 ? `You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.\n\n` : ''}In the meantime, explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
             html: `
 <!DOCTYPE html>
 <html>
@@ -844,7 +770,6 @@ ${(leadData.summary || 'No summary')}`.trim();
   <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
     <h2 style="color: #333; font-size: 18px; margin: 0 0 16px 0;">Thanks for reaching out, ${leadData.name || 'there'}!</h2>
     <p style="color: #555; font-size: 14px; line-height: 1.6;">Jimmy will contact you within 24 hours to schedule your free on-site estimate.</p>
-    ${filmSummaryHtml}
     ${photoSummaryHtml}
     <p style="color: #555; font-size: 14px; line-height: 1.6;">In the meantime, explore our work at <a href="https://arizonahouseoffilm.com" style="color: #6b8f71;">arizonahouseoffilm.com</a></p>
   </div>

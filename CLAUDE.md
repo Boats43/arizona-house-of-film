@@ -12,7 +12,7 @@
 ## Prerendering
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
 - **Trigger**: `"postbuild": "node scripts/prerender.js"` in package.json
-- **Result**: 314 routes prerendered (~50KB each vs 6KB SPA shell)
+- **Result**: 317 routes prerendered (~50KB each vs 6KB SPA shell)
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
 
@@ -30,11 +30,11 @@
 - `vercel.json` — 70 redirects + SPA rewrite fallback + security headers
 
 ## Page Counts
-- **Total prerendered**: 314
-- **Sitemap URLs**: 332 (across 6 sitemap files)
-- **Page JSX files**: 99 (46 root + 27 locations + 18 informational + 6 solutions + 6 brands + 2 films)
+- **Total prerendered**: 317
+- **Sitemap URLs**: 335 (across 7 sitemap files)
+- **Page JSX files**: 100 (46 root + 27 locations + 18 informational + 6 solutions + 7 brands + 2 films)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
-- **Brand pages**: 34 (6 dedicated + 28 dynamic)
+- **Brand pages**: 35 (7 dedicated + 28 dynamic)
 - **Service area pages**: 100+ (dynamic via CityPage)
 - **Film SKUs**: 618 Solyx + EWF catalog
 
@@ -50,4 +50,12 @@
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
-- Build must pass 314/314 prerender before pushing
+- Build must pass 317/317 prerender before pushing
+
+## Open Items (as of April 4, 2026)
+- `/residential-window-tinting-phoenix` now internally linked from Home, Residential, and WindowFilmPhoenix — verify GSC pickup
+- Solar Gard dedicated brand page added at `/brands/solar-gard` — monitor indexing
+- 3 new blog posts targeting GSC query gaps: SRP rebate 2026, window tinting cost Phoenix, best film for Arizona heat 2026
+- Location pages (Chandler, Gilbert, Glendale, Mesa, Peoria, Queen Creek, Tempe) had stale rating data (4.4/100+ reviews) — corrected to 4.6/21 reviews
+- No "17 reviews" instances found — all review counts now consistent at 21
+- Last updated: April 4, 2026

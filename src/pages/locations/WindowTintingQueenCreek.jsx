@@ -151,7 +151,7 @@ export default function WindowTintingQueenCreek() {
               'Licensed ROC #314088 — bonded & insured',
               'Films we install: Solyx, LLumar, 3M, Huper Optik, Madico, Solar Gard',
               'Named clients: Coca-Cola, Starbucks, LA Fitness, AutoZone',
-              '4.4 Google rating across 100+ reviews',
+              '4.6 Google rating across 21 reviews',
               'Commercial and residential — same licensed crew',
               'No subcontractors — direct install by our team',
               'Same-week scheduling available',

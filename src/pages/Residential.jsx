@@ -633,6 +633,7 @@ const Residential = () => {
             <p className="text-gray-300 mb-6">Arizona House of Film installs residential window tinting across the full Phoenix metro. Find coverage for your city:</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {[
+                { city: 'Phoenix', slug: 'phoenix', desc: 'Ceramic and solar film for Phoenix homes' },
                 { city: 'Scottsdale', slug: 'scottsdale', desc: 'HOA-compliant ceramic film for luxury homes' },
                 { city: 'Mesa', slug: 'mesa', desc: 'Ceramic and solar film for East Valley homes' },
                 { city: 'Chandler', slug: 'chandler', desc: 'Residential film for Chandler and Ocotillo' },

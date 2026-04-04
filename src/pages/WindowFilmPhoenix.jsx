@@ -471,6 +471,7 @@ const WindowFilmPhoenix = () => {
             <div className="flex flex-wrap gap-3 text-sm">
               <Link to="/commercial-window-tinting" className="text-green-700 underline">Commercial Window Tinting</Link>
               <Link to="/residential-window-tinting" className="text-green-700 underline">Residential Window Tinting</Link>
+              <Link to="/residential-window-tinting-phoenix" className="text-green-700 underline">Residential Window Tinting Phoenix</Link>
               <Link to="/safety" className="text-green-700 underline">Safety &amp; Security Film</Link>
               <Link to="/decorative-window-films" className="text-green-700 underline">Decorative Films</Link>
               <Link to="/films" className="text-green-700 underline">Film Catalog</Link>

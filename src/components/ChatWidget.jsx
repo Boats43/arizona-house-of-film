@@ -133,29 +133,111 @@ function formatMessage(text) {
 }
 
 const FILM_EFFECTS = {
-  'reflective-silver': { label: 'Silver Reflective', color: 'rgba(192,192,220,0.45)', blend: 'screen', defaultVlt: 20 },
-  'reflective-bronze': { label: 'Bronze Reflective', color: 'rgba(180,140,80,0.40)', blend: 'multiply', defaultVlt: 25 },
-  'reflective-neutral': { label: 'Neutral', color: 'rgba(160,160,160,0.35)', blend: 'multiply', defaultVlt: 35 },
-  'ceramic-clear': { label: 'Ceramic Clear', color: 'rgba(220,235,255,0.20)', blend: 'screen', defaultVlt: 70 },
-  'ceramic-medium': { label: 'Ceramic Medium', color: 'rgba(180,195,210,0.35)', blend: 'multiply', defaultVlt: 40 },
-  'frosted': { label: 'Frosted', color: 'rgba(255,255,255,0.70)', blend: 'normal', defaultVlt: 0 },
-  'frosted-light': { label: 'Light Frosted', color: 'rgba(255,255,255,0.45)', blend: 'normal', defaultVlt: 0 },
-  'gradient-top': { label: 'Gradient', gradient: true, from: 'rgba(255,255,255,0.75)', to: 'rgba(255,255,255,0.05)', defaultVlt: 50 },
-  'tinted-dark': { label: 'Dark Tint', color: 'rgba(20,20,20,0.55)', blend: 'multiply', defaultVlt: 10 },
-  'tinted-medium': { label: 'Medium Tint', color: 'rgba(40,40,40,0.35)', blend: 'multiply', defaultVlt: 30 },
+  'mirror-silver': {
+    label: 'Mirror Silver', defaultVlt: 20, price: '$8-13/sqft', stock: 'In stock',
+    desc: 'High reflectivity exterior mirror finish. Maximum daytime privacy — neighbors see their reflection. Strong heat rejection.',
+    passes: [
+      { blend: 'saturation', color: 'rgba(128,128,128,0.60)' },
+      { blend: 'screen', color: 'rgba(192,192,220,0.50)' },
+      { blend: 'screen', color: 'rgba(200,210,230,0.15)' },
+    ],
+  },
+  'mirror-bronze': {
+    label: 'Mirror Bronze', defaultVlt: 25, price: '$8-13/sqft', stock: 'In stock',
+    desc: 'Classic warm bronze reflective look. Strong daytime privacy with a rich amber tone. Popular for commercial storefronts.',
+    passes: [
+      { blend: 'saturation', color: 'rgba(128,128,128,0.50)' },
+      { blend: 'multiply', color: 'rgba(160,100,40,0.50)' },
+      { blend: 'screen', color: 'rgba(180,140,60,0.12)' },
+    ],
+  },
+  'mirror-neutral': {
+    label: 'Neutral Gray', defaultVlt: 30, price: '$8-13/sqft', stock: 'In stock',
+    desc: 'Cool dark neutral reflective finish. Professional look for offices and commercial buildings. Moderate privacy.',
+    passes: [
+      { blend: 'saturation', color: 'rgba(128,128,128,0.40)' },
+      { blend: 'multiply', color: 'rgba(100,105,110,0.45)' },
+    ],
+  },
+  'ceramic-clear': {
+    label: 'Ceramic Clear', defaultVlt: 70, price: '$10-18/sqft', stock: 'In stock',
+    desc: 'Nearly invisible film. Blocks IR heat and 99% UV without changing your glass appearance. HOA-friendly.',
+    passes: [
+      { blend: 'screen', color: 'rgba(210,225,255,0.12)' },
+    ],
+  },
+  'ceramic-medium': {
+    label: 'Ceramic Medium', defaultVlt: 40, price: '$10-18/sqft', stock: 'In stock',
+    desc: 'Subtle gray-blue tint with clear outward visibility. Best balance of heat rejection and natural light.',
+    passes: [
+      { blend: 'saturation', color: 'rgba(128,128,128,0.15)' },
+      { blend: 'multiply', color: 'rgba(180,190,210,0.30)' },
+    ],
+  },
+  'tinted-charcoal': {
+    label: 'Charcoal Tint', defaultVlt: 15, price: '$8-12/sqft', stock: 'In stock',
+    desc: 'Dark charcoal window tint. Strong privacy and glare reduction. Classic dark tint look.',
+    passes: [
+      { blend: 'multiply', color: 'rgba(30,30,35,0.50)' },
+    ],
+  },
+  'frosted-full': {
+    label: 'Frosted', defaultVlt: 0, price: '$10-20/sqft', stock: 'Order in',
+    desc: 'Complete privacy day and night. Diffused natural light maintained. Perfect for bathrooms, sidelights, office partitions.',
+    passes: [
+      { blend: 'normal', color: 'rgba(255,255,255,0.82)' },
+      { blend: 'normal', color: 'rgba(240,242,245,0.08)' },
+    ],
+    skipVlt: true,
+  },
+  'frosted-light': {
+    label: 'Light Frosted', defaultVlt: 0, price: '$10-20/sqft', stock: 'Order in',
+    desc: 'Soft privacy — shapes visible but details obscured. Great for entryways and conference rooms.',
+    passes: [
+      { blend: 'normal', color: 'rgba(255,255,255,0.50)' },
+    ],
+    skipVlt: true,
+  },
+  'gradient-top': {
+    label: 'Gradient', defaultVlt: 50, price: '$12-20/sqft', stock: 'Order in',
+    desc: 'Top 60% frosted fading to clear at the bottom. Privacy at eye level, open view below. Modern architectural look.',
+    passes: [],
+    gradient: { from: 'rgba(255,255,255,0.78)', to: 'rgba(255,255,255,0.03)', stop: 0.6 },
+  },
+  'stained-amber': {
+    label: 'Amber Glass', defaultVlt: 45, price: '$12-22/sqft', stock: 'Order in',
+    desc: 'Warm yellow-amber stained glass effect. Decorative and artistic. Adds warm color cast to natural light.',
+    passes: [
+      { blend: 'multiply', color: 'rgba(255,180,40,0.45)' },
+    ],
+  },
+  'stained-blue': {
+    label: 'Blue Glass', defaultVlt: 40, price: '$12-22/sqft', stock: 'Order in',
+    desc: 'Cool blue stained glass effect. Modern decorative look. Filters light into a calming blue tone.',
+    passes: [
+      { blend: 'multiply', color: 'rgba(40,100,200,0.45)' },
+    ],
+  },
+  'stained-green': {
+    label: 'Green Glass', defaultVlt: 45, price: '$12-22/sqft', stock: 'Order in',
+    desc: 'Green stained glass effect. Natural, organic feel. Pairs well with garden views and plant-filled spaces.',
+    passes: [
+      { blend: 'multiply', color: 'rgba(40,160,80,0.40)' },
+    ],
+  },
 };
 
 const VLT_PRESETS = [
-  { label: 'Very Dark', range: '5-15%', value: 10 },
-  { label: 'Medium', range: '20-35%', value: 28 },
-  { label: 'Light', range: '40-60%', value: 50 },
-  { label: 'Near Clear', range: '65-80%', value: 72 },
+  { label: 'Very Dark', range: '15%', value: 15 },
+  { label: 'Medium', range: '30%', value: 30 },
+  { label: 'Light', range: '50%', value: 50 },
+  { label: 'Clear', range: '70%', value: 70 },
 ];
 
 function vltDescription(v) {
   if (v <= 15) return 'Very dark — maximum privacy and heat rejection';
   if (v <= 35) return 'Medium — good heat rejection, some privacy';
-  if (v <= 60) return 'Light tint — minimal privacy, moderate heat';
+  if (v <= 60) return 'Light tint — moderate heat rejection';
   return 'Nearly clear — UV protection only, no visible tint';
 }
 
@@ -167,26 +249,38 @@ function applyFilmOverlay(photoBase64, filmType, vltLevel) {
       canvas.width = img.width;
       canvas.height = img.height;
       const ctx = canvas.getContext('2d');
+
+      // Draw original photo
       ctx.drawImage(img, 0, 0);
+
       const effect = FILM_EFFECTS[filmType] || FILM_EFFECTS['ceramic-clear'];
+
+      // Apply gradient effect
       if (effect.gradient) {
         const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        grad.addColorStop(0, effect.from);
-        grad.addColorStop(1, effect.to);
+        grad.addColorStop(0, effect.gradient.from);
+        grad.addColorStop(effect.gradient.stop || 0.6, effect.gradient.to);
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
         ctx.globalCompositeOperation = 'normal';
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-      } else {
-        ctx.globalCompositeOperation = effect.blend;
-        ctx.fillStyle = effect.color;
+      }
+
+      // Apply multi-pass film effect
+      for (const pass of effect.passes || []) {
+        ctx.globalCompositeOperation = pass.blend;
+        ctx.fillStyle = pass.color;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
-      if (vltLevel !== undefined && !effect.gradient && filmType !== 'frosted' && filmType !== 'frosted-light') {
+
+      // Apply VLT darkening (skip for frosted and gradient-only types)
+      if (!effect.skipVlt && vltLevel !== undefined) {
         ctx.globalCompositeOperation = 'multiply';
-        const darkness = (100 - vltLevel) / 100 * 0.6;
+        const darkness = (100 - vltLevel) / 100 * 0.65;
         ctx.fillStyle = `rgba(0,0,0,${darkness})`;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
+
       ctx.globalCompositeOperation = 'source-over';
       resolve(canvas.toDataURL('image/jpeg', 0.85));
     };
@@ -438,7 +532,8 @@ export default function ChatWidget() {
   const submitLead = async () => {
     if (!leadForm.name || !leadForm.email) return;
     const summary = messages.map(m => `${m.role === 'user' ? 'Customer' : 'Assistant'}: ${m.content}`).join('\n\n');
-    const filmInfo = filmSelection ? `\n\nFILM SELECTION: ${filmSelection.filmLabel} at ${filmSelection.vlt}% VLT` : '';
+    const selEffect = filmSelection ? FILM_EFFECTS[filmSelection.filmType] : null;
+    const filmInfo = filmSelection ? `\n\nFILM SELECTION: ${filmSelection.filmLabel}${selEffect?.skipVlt ? '' : ` at ${filmSelection.vlt}% VLT`}\nEstimated: ${selEffect?.price || 'TBD'}\nAvailability: ${selEffect?.stock || 'TBD'}` : '';
     const payload = { leadData: { ...leadForm, summary: summary + filmInfo } };
     console.log('Submitting lead:', JSON.stringify(payload));
     try {
@@ -640,11 +735,11 @@ export default function ChatWidget() {
                 background:'rgba(255,255,255,0.04)', border:'1px solid rgba(34,197,94,0.2)',
                 borderRadius:'12px', padding:'10px', marginTop:'4px',
               }}>
-                {/* Film type selector — horizontal scroll */}
-                <div style={{ overflowX:'auto', display:'flex', gap:'6px', paddingBottom:'8px', scrollbarWidth:'none' }}>
+                {/* Finish selector — horizontal scroll */}
+                <div style={{ overflowX:'auto', display:'flex', gap:'5px', paddingBottom:'8px', scrollbarWidth:'none' }}>
                   {Object.entries(FILM_EFFECTS).map(([key, ef]) => (
                     <button key={key} onClick={() => handleFilmSelect(key)} style={{
-                      flexShrink:0, padding:'5px 10px', borderRadius:'14px', fontSize:'11px', fontWeight:600,
+                      flexShrink:0, padding:'4px 9px', borderRadius:'14px', fontSize:'10px', fontWeight:600,
                       cursor:'pointer', whiteSpace:'nowrap', transition:'all 0.15s',
                       background: filmPreview?.filmType === key ? '#22c55e' : 'rgba(255,255,255,0.08)',
                       color: filmPreview?.filmType === key ? '#000' : '#ccc',
@@ -653,10 +748,12 @@ export default function ChatWidget() {
                   ))}
                 </div>
 
-                {/* Preview image + Before/After */}
-                {filmPreview && (
+                {filmPreview && (() => {
+                  const activeEffect = FILM_EFFECTS[filmPreview.filmType];
+                  return (
                   <>
-                    <div style={{ position:'relative', marginBottom:'8px' }}>
+                    {/* Live preview + Before/After */}
+                    <div style={{ position:'relative', marginBottom:'6px' }}>
                       <img
                         src={filmPreview.showBefore ? filmPreview.sourcePreview : filmPreview.overlayUrl}
                         alt={filmPreview.showBefore ? 'Original window' : 'Film preview'}
@@ -664,50 +761,76 @@ export default function ChatWidget() {
                       />
                       <button onClick={() => setFilmPreview(prev => ({ ...prev, showBefore: !prev.showBefore }))} style={{
                         position:'absolute', top:'6px', right:'6px',
-                        background:'rgba(0,0,0,0.7)', color:'#fff', border:'none',
-                        borderRadius:'6px', padding:'4px 8px', fontSize:'10px',
-                        fontWeight:700, cursor:'pointer',
-                      }}>{filmPreview.showBefore ? 'After' : 'Before'}</button>
+                        background:'rgba(0,0,0,0.75)', color:'#fff', border:'none',
+                        borderRadius:'6px', padding:'4px 10px', fontSize:'10px',
+                        fontWeight:700, cursor:'pointer', letterSpacing:'0.5px',
+                      }}>{filmPreview.showBefore ? '▸ AFTER' : '◂ BEFORE'}</button>
                     </div>
 
-                    {/* VLT slider — skip for frosted types */}
-                    {filmPreview.filmType !== 'frosted' && filmPreview.filmType !== 'frosted-light' && (
-                      <div style={{ marginBottom:'8px' }}>
-                        <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'4px' }}>
-                          <span style={{ color:'#9ca3af', fontSize:'10px' }}>Light level: VLT {filmPreview.vlt}%</span>
-                          <span style={{ color:'#6b7280', fontSize:'9px' }}>{vltDescription(filmPreview.vlt)}</span>
+                    {/* VLT slider — skip for frosted/skipVlt types */}
+                    {!activeEffect?.skipVlt && (
+                      <div style={{ marginBottom:'6px' }}>
+                        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:'3px' }}>
+                          <span style={{ color:'#e5e7eb', fontSize:'11px', fontWeight:600 }}>Light transmission: {filmPreview.vlt}%</span>
                         </div>
-                        <input type="range" min="5" max="80" value={filmPreview.vlt}
+                        <input type="range" min="5" max="88" value={filmPreview.vlt}
                           onChange={e => handleVltChange(Number(e.target.value))}
                           style={{ width:'100%', accentColor:'#22c55e', height:'4px' }}
                         />
+                        <div style={{ display:'flex', justifyContent:'space-between', marginTop:'1px' }}>
+                          <span style={{ color:'#6b7280', fontSize:'9px' }}>Dark 5%</span>
+                          <span style={{ color:'#6b7280', fontSize:'9px' }}>Clear 88%</span>
+                        </div>
                         <div style={{ display:'flex', gap:'4px', marginTop:'4px' }}>
                           {VLT_PRESETS.map(p => (
                             <button key={p.value} onClick={() => handleVltChange(p.value)} style={{
-                              flex:1, padding:'3px 0', borderRadius:'6px', fontSize:'9px', fontWeight:600,
+                              flex:1, padding:'4px 0', borderRadius:'6px', fontSize:'10px', fontWeight:600,
                               cursor:'pointer', border:'1px solid rgba(255,255,255,0.1)',
-                              background: Math.abs(filmPreview.vlt - p.value) < 8 ? 'rgba(34,197,94,0.2)' : 'rgba(255,255,255,0.04)',
-                              color: Math.abs(filmPreview.vlt - p.value) < 8 ? '#22c55e' : '#9ca3af',
-                            }}>{p.label}<br/><span style={{ fontSize:'8px', opacity:0.7 }}>{p.range}</span></button>
+                              background: Math.abs(filmPreview.vlt - p.value) < 10 ? 'rgba(34,197,94,0.2)' : 'rgba(255,255,255,0.04)',
+                              color: Math.abs(filmPreview.vlt - p.value) < 10 ? '#22c55e' : '#9ca3af',
+                            }}>{p.label} {p.range}</button>
                           ))}
+                        </div>
+                        <div style={{ color:'#9ca3af', fontSize:'10px', marginTop:'4px', textAlign:'center' }}>
+                          {vltDescription(filmPreview.vlt)}
                         </div>
                       </div>
                     )}
 
-                    {/* Get Quote button */}
+                    {/* Film description card */}
+                    <div style={{
+                      background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)',
+                      borderRadius:'8px', padding:'8px 10px', marginBottom:'6px',
+                    }}>
+                      <div style={{ color:'#fff', fontSize:'11px', fontWeight:700, marginBottom:'2px' }}>
+                        {activeEffect?.label}{!activeEffect?.skipVlt ? ` at ${filmPreview.vlt}% VLT` : ''}
+                      </div>
+                      <div style={{ color:'#9ca3af', fontSize:'10px', lineHeight:'1.5', marginBottom:'4px' }}>
+                        {activeEffect?.desc}
+                      </div>
+                      <div style={{ display:'flex', gap:'8px', fontSize:'10px' }}>
+                        <span style={{ color:'#22c55e', fontWeight:600 }}>{activeEffect?.price}</span>
+                        <span style={{ color: activeEffect?.stock === 'In stock' ? '#22c55e' : '#f59e0b', fontWeight:600 }}>
+                          {activeEffect?.stock === 'In stock' ? '● In stock — same week' : '○ Order in — 1-2 weeks'}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* CTA */}
                     {!leadCaptured && (
                       <button onClick={handleSelectFilmForQuote} style={{
                         width:'100%', background:'#22c55e', color:'#000', border:'none',
-                        borderRadius:'8px', padding:'8px', fontWeight:700,
+                        borderRadius:'8px', padding:'9px', fontWeight:700,
                         fontSize:'12px', cursor:'pointer',
                       }}>I want this look → Get Exact Quote</button>
                     )}
                   </>
-                )}
+                  );
+                })()}
 
                 {!filmPreview && (
                   <p style={{ color:'#6b7280', fontSize:'11px', textAlign:'center', margin:'4px 0 0' }}>
-                    Tap a film type above to preview it on your window
+                    Tap a finish above to preview it on your window
                   </p>
                 )}
               </div>

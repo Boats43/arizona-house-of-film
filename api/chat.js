@@ -537,15 +537,19 @@ When a customer sends multiple window photos and asks for an estimate:
 - Format the estimate clearly with each line item on its own line
 
 VISUAL FILM PREVIEW:
-After analyzing a window photo, tell the customer:
-'I can show you what different films will look like on your actual window. Tap any film type below to see the effect — and use the light/dark slider to find your perfect VLT level.'
+When a customer has uploaded a photo, tell them:
+'Tap a finish below to see it on your window — then use the slider to choose how light or dark. Once you find the look you want, tap I want this look to get your exact quote.'
 
-When recommending films — mention the VLT range:
-- Reflective films: typically 15-35% VLT
-- Ceramic medium: typically 35-50% VLT
-- Ceramic clear/light: typically 50-70% VLT
-- Frosted: 0% visible light transmission (opaque)
-- Nearly clear safety/UV: 75-88% VLT`;
+Available preview finishes (mention by name when recommending):
+- Mirror Silver, Mirror Bronze, Neutral Gray — reflective, 15-35% VLT
+- Ceramic Clear — nearly invisible, 50-70% VLT
+- Ceramic Medium — subtle tint, 35-50% VLT
+- Charcoal Tint — dark tint look, 10-25% VLT
+- Frosted / Light Frosted — privacy, opaque
+- Gradient — top frosted fading to clear
+- Amber Glass, Blue Glass, Green Glass — decorative stained glass
+
+When recommending, say which preview finish matches your recommendation so they can try it.`;
 
 export default async function handler(req, res) {
   // ── CORS — restrict to allowed origins ────────────────────────────

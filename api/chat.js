@@ -1,6 +1,58 @@
 import Anthropic from '@anthropic-ai/sdk';
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
+// ── Rate limiting (in-memory, per serverless instance) ──────────────
+const rateMap = new Map();          // IP → { count, resetAt }
+const RATE_LIMIT  = 20;             // max requests per window
+const RATE_WINDOW = 60 * 60 * 1000; // 1 hour in ms
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  let entry = rateMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    entry = { count: 0, resetAt: now + RATE_WINDOW };
+    rateMap.set(ip, entry);
+  }
+  entry.count++;
+  return entry.count > RATE_LIMIT;
+}
+
+// Periodic cleanup so the Map doesn't grow unbounded
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of rateMap) {
+    if (now > entry.resetAt) rateMap.delete(ip);
+  }
+}, RATE_WINDOW);
+
+// ── Bot / honeypot detection ────────────────────────────────────────
+const BOT_PATTERNS = [
+  /\bignore previous instructions\b/i,
+  /\byou are now\b/i,
+  /\bact as\b/i,
+  /\bsystem prompt\b/i,
+  /\brepeat after me\b/i,
+  /\bDAN\b/,
+  /\bjailbreak\b/i,
+  /\bdisregard\b.*\binstructions\b/i,
+];
+
+function looksLikeBot(body) {
+  const raw = JSON.stringify(body);
+  // Honeypot: if a hidden field "website" is filled in, it's a bot
+  if (body.website) return true;
+  return BOT_PATTERNS.some(p => p.test(raw));
+}
+
+// ── Allowed origins ─────────────────────────────────────────────────
+const ALLOWED_ORIGINS = [
+  'https://arizonahouseoffilm.com',
+  'https://www.arizonahouseoffilm.com',
+];
+if (process.env.VERCEL_ENV !== 'production') {
+  ALLOWED_ORIGINS.push('http://localhost:5173', 'http://localhost:4173');
+}
+
 const tools = [
   {
     name: "web_search",
@@ -250,12 +302,35 @@ Example of RIGHT response:
 - Always professional tone`;
 
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // ── CORS — restrict to allowed origins ────────────────────────────
+  const origin = req.headers.origin || '';
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Vary', 'Origin');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+
+  // ── Request size validation (10 KB limit) ─────────────────────────
+  const contentLength = parseInt(req.headers['content-length'] || '0', 10);
+  if (contentLength > 10240) {
+    return res.status(413).json({ error: 'Payload too large' });
+  }
+
+  // ── Rate limiting by IP ───────────────────────────────────────────
+  const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim()
+            || req.socket?.remoteAddress || 'unknown';
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Too many requests. Please try again later.' });
+  }
+
+  // ── Bot / honeypot check ──────────────────────────────────────────
+  if (looksLikeBot(req.body)) {
+    return res.status(429).json({ error: 'Request rejected' });
+  }
 
   const { messages, leadData } = req.body;
 
@@ -282,7 +357,7 @@ export default async function handler(req, res) {
         });
         const responseText = await r.text();
         console.log('Test email response:', r.status, responseText);
-        return res.status(200).json({ test: true, status: r.status, response: responseText, apiKeyPrefix: process.env.RESEND_API_KEY?.slice(0, 8) + '...' });
+        return res.status(200).json({ test: true, status: r.status, response: responseText });
       } catch (e) {
         console.error('Test email exception:', e);
         return res.status(500).json({ test: true, error: e.message });
@@ -423,12 +498,17 @@ Source: chat widget
     return res.status(400).json({ error: 'Invalid request' });
   }
 
+  // ── Spend protection — cap conversation length ────────────────────
+  const trimmedMessages = messages.length > 20
+    ? messages.slice(-10)
+    : messages;
+
   try {
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
 
-    let currentMessages = [...messages.slice(-10)];
+    let currentMessages = [...trimmedMessages.slice(-10)];
     let finalResponse = '';
 
     // Agentic loop — handles tool calls

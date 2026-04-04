@@ -375,6 +375,8 @@ export default function ChatWidget() {
   const [showPhotoConsent, setShowPhotoConsent] = useState(false);
   const [filmPreview, setFilmPreview] = useState(null); // { sourceBase64, filmType, vlt, overlayUrl, showBefore }
   const [filmSelection, setFilmSelection] = useState(null); // saved choice for lead
+  const [aiPreview, setAiPreview] = useState(null); // { url, filmType, showBefore, originalPreview }
+  const [aiLoading, setAiLoading] = useState(false);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const imageInputRef = useRef(null);
@@ -602,6 +604,34 @@ export default function ChatWidget() {
     const effect = FILM_EFFECTS[filmPreview.filmType];
     setFilmSelection({ filmType: filmPreview.filmType, filmLabel: effect?.label, vlt: filmPreview.vlt, overlayUrl: filmPreview.overlayUrl });
     setShowLeadForm(true);
+  };
+
+  const handleAiPreview = async () => {
+    const lastPhoto = photoHistory[photoHistory.length - 1];
+    if (!lastPhoto || !filmPreview || aiLoading) return;
+    setAiLoading(true);
+    try {
+      const resp = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          generatePreview: true,
+          photoBase64: lastPhoto.data,
+          filmType: filmPreview.filmType,
+          vltLevel: filmPreview.vlt,
+        }),
+      });
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({}));
+        throw new Error(err.error || 'AI preview failed');
+      }
+      const { previewUrl } = await resp.json();
+      setAiPreview({ url: previewUrl, filmType: filmPreview.filmType, showBefore: false, originalPreview: lastPhoto.preview });
+    } catch (e) {
+      setMessages(prev => [...prev, { role: 'assistant', content: `AI preview unavailable: ${e.message}. The instant Canvas preview above is still accurate for color and darkness.` }]);
+    } finally {
+      setAiLoading(false);
+    }
   };
 
   const compressImage = (file) => {
@@ -842,13 +872,41 @@ export default function ChatWidget() {
                       </div>
                     </div>
 
-                    {/* CTA */}
-                    {!leadCaptured && (
-                      <button onClick={handleSelectFilmForQuote} style={{
-                        width:'100%', background:'#22c55e', color:'#000', border:'none',
-                        borderRadius:'8px', padding:'9px', fontWeight:700,
-                        fontSize:'12px', cursor:'pointer',
-                      }}>I want this look → Get Exact Quote</button>
+                    {/* AI Preview + CTA */}
+                    <div style={{ display:'flex', gap:'6px', marginBottom: aiPreview ? '6px' : '0' }}>
+                      <button onClick={handleAiPreview} disabled={aiLoading} style={{
+                        flex:1, background: aiLoading ? 'rgba(139,92,246,0.3)' : 'rgba(139,92,246,0.15)',
+                        color: aiLoading ? '#a78bfa' : '#c4b5fd', border:'1px solid rgba(139,92,246,0.3)',
+                        borderRadius:'8px', padding:'8px', fontWeight:700,
+                        fontSize:'11px', cursor: aiLoading ? 'wait' : 'pointer',
+                      }}>{aiLoading ? 'Generating AI preview...' : '✨ AI Preview'}</button>
+                      {!leadCaptured && (
+                        <button onClick={handleSelectFilmForQuote} style={{
+                          flex:1, background:'#22c55e', color:'#000', border:'none',
+                          borderRadius:'8px', padding:'8px', fontWeight:700,
+                          fontSize:'11px', cursor:'pointer',
+                        }}>Get Exact Quote →</button>
+                      )}
+                    </div>
+
+                    {/* AI Preview result */}
+                    {aiPreview && (
+                      <div style={{ position:'relative', marginTop:'2px' }}>
+                        <div style={{ color:'#c4b5fd', fontSize:'9px', fontWeight:700, marginBottom:'3px', letterSpacing:'0.5px' }}>
+                          ✨ AI-GENERATED PREVIEW
+                        </div>
+                        <img
+                          src={aiPreview.showBefore ? aiPreview.originalPreview : aiPreview.url}
+                          alt={aiPreview.showBefore ? 'Original' : 'AI film preview'}
+                          style={{ width:'100%', borderRadius:'8px', display:'block', border:'1px solid rgba(139,92,246,0.3)' }}
+                        />
+                        <button onClick={() => setAiPreview(prev => ({ ...prev, showBefore: !prev.showBefore }))} style={{
+                          position:'absolute', top:'20px', right:'6px',
+                          background:'rgba(0,0,0,0.75)', color:'#fff', border:'none',
+                          borderRadius:'6px', padding:'4px 10px', fontSize:'10px',
+                          fontWeight:700, cursor:'pointer',
+                        }}>{aiPreview.showBefore ? '▸ AI' : '◂ ORIGINAL'}</button>
+                      </div>
                     )}
                   </>
                   );

@@ -1,6 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
+import Replicate from 'replicate';
 import { solyxProducts, solyxCategories } from '../src/data/solyxFilms.js';
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 
 // ── Rate limiting (in-memory, per serverless instance) ──────────────
 const rateMap = new Map();          // IP → { count, resetAt }
@@ -9,7 +11,25 @@ const RATE_LIMIT  = 20;             // max requests per window
 const IMAGE_RATE_LIMIT = 10;        // max image uploads per window
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour in ms
 
+const aiPreviewRateMap = new Map();  // IP → { count, resetAt } — AI previews
+const AI_PREVIEW_LIMIT = 5;          // max AI previews per window
+
 const ALLOWED_IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif']);
+
+const FILM_PROMPTS = {
+  'frosted-full': 'the exact same window with professional frosted privacy window film applied, white translucent diffused glass, soft even light diffusion, clean professional installation, photorealistic',
+  'mirror-silver': 'the exact same window with silver reflective mirror window film, highly reflective exterior mirror finish, professional window tint, photorealistic',
+  'mirror-bronze': 'the exact same window with bronze reflective window film, warm amber mirror finish, professional tint, photorealistic',
+  'mirror-neutral': 'the exact same window with neutral gray reflective window film, cool dark reflective finish, professional tint, photorealistic',
+  'ceramic-clear': 'the exact same window with nearly clear ceramic window film, slight blue-cool tint, barely visible professional film, photorealistic',
+  'ceramic-medium': 'the exact same window with medium ceramic solar film, light blue-gray tint, professional installation, photorealistic',
+  'tinted-charcoal': 'the exact same window with dark charcoal window tint, deep dark privacy film professionally installed, photorealistic',
+  'frosted-light': 'the exact same window with light frosted window film, subtle white diffusion, semi-transparent, photorealistic',
+  'gradient-top': 'the exact same window with gradient frosted film, white frosted at top fading to clear at bottom, decorative privacy, photorealistic',
+  'stained-amber': 'the exact same window with warm amber stained glass film, yellow-amber color cast, decorative architectural film, photorealistic',
+  'stained-blue': 'the exact same window with blue stained glass film, cool blue color cast, decorative architectural film, photorealistic',
+  'stained-green': 'the exact same window with green stained glass film, natural green color cast, decorative architectural film, photorealistic',
+};
 
 function isRateLimited(ip) {
   const now = Date.now();
@@ -33,6 +53,17 @@ function isImageRateLimited(ip) {
   return entry.count > IMAGE_RATE_LIMIT;
 }
 
+function isAiPreviewLimited(ip) {
+  const now = Date.now();
+  let entry = aiPreviewRateMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    entry = { count: 0, resetAt: now + RATE_WINDOW };
+    aiPreviewRateMap.set(ip, entry);
+  }
+  entry.count++;
+  return entry.count > AI_PREVIEW_LIMIT;
+}
+
 // Periodic cleanup so the Map doesn't grow unbounded
 setInterval(() => {
   const now = Date.now();
@@ -41,6 +72,9 @@ setInterval(() => {
   }
   for (const [ip, entry] of imageRateMap) {
     if (now > entry.resetAt) imageRateMap.delete(ip);
+  }
+  for (const [ip, entry] of aiPreviewRateMap) {
+    if (now > entry.resetAt) aiPreviewRateMap.delete(ip);
   }
 }, RATE_WINDOW);
 
@@ -622,7 +656,46 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Request rejected' });
   }
 
-  const { messages, leadData, image, photos, projectEstimate } = req.body;
+  const { messages, leadData, image, photos, projectEstimate, generatePreview } = req.body;
+
+  // ── AI Film Preview via Replicate FLUX.2 Pro ─────────────────────
+  if (generatePreview) {
+    const { photoBase64, filmType, vltLevel } = req.body;
+    if (!photoBase64 || !filmType) {
+      return res.status(400).json({ error: 'Missing photo or film type' });
+    }
+    if (isAiPreviewLimited(ip)) {
+      return res.status(429).json({ error: 'AI preview limit reached (5/hour). Use the instant Canvas preview instead.' });
+    }
+    try {
+      const vltDesc = vltLevel < 20 ? 'very dark' :
+                      vltLevel < 40 ? 'medium dark' :
+                      vltLevel < 60 ? 'medium light' : 'light';
+      const filmPrompt = FILM_PROMPTS[filmType] || FILM_PROMPTS['ceramic-clear'];
+      const prompt = `Professional window film installation photo. ${filmPrompt}. Film darkness: ${vltDesc} at ${vltLevel || 50}% VLT. Keep all room details, furniture, and surroundings exactly the same. Only the glass surface changes. High quality architectural photography.`;
+
+      const output = await replicate.run(
+        'black-forest-labs/flux-2-pro',
+        {
+          input: {
+            prompt,
+            input_images: [`data:image/jpeg;base64,${photoBase64}`],
+            resolution: '1 MP',
+            aspect_ratio: '1:1',
+            output_format: 'webp',
+            output_quality: 85,
+            safety_tolerance: 2,
+          },
+        }
+      );
+
+      const previewUrl = Array.isArray(output) ? output[0] : output;
+      return res.status(200).json({ previewUrl });
+    } catch (error) {
+      console.error('Replicate error:', error);
+      return res.status(500).json({ error: 'AI preview generation failed. Try the instant Canvas preview.' });
+    }
+  }
 
   // ── Image validation — file type + rate limit ────────────────────
   const hasImage = (image && image.data) || (Array.isArray(photos) && photos.length > 0);

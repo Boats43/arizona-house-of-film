@@ -479,23 +479,25 @@ export default async function handler(req, res) {
       }
     }
 
-    // Build plain text version (mirrors contact.js pattern — always send text + html)
-    const leadText = `
-NEW CHAT LEAD — ARIZONA HOUSE OF FILM
-=====================================
+    // Build conversation details for email body
+    const userMessages = (leadData.summary || '').split('\n\n').filter(m => m.startsWith('Customer:')).map(m => m.replace('Customer: ', '')).join(', ');
+    const needs = userMessages || 'Not specified';
+    const summary = (leadData.summary || 'No summary').replace(/\n/g, '\n');
+
+    const leadText = `You have a new inquiry from your website chat.
+
 Name: ${leadData.name || 'Not provided'}
-Email: ${leadData.email || 'Not provided'}
 Phone: ${leadData.phone || 'Not provided'}
+Email: ${leadData.email || 'Not provided'}
 Location: ${leadData.location || 'Not provided'}
 
---- CONVERSATION SUMMARY ---
-${leadData.summary || 'No summary'}
+What they need: ${needs}
 
-Source: chat widget
-`.trim();
+Full conversation:
+${summary}`.trim();
 
     try {
-      // Email 1 — internal lead notification to AHOF (matches contact.js structure exactly)
+      // Email 1 — internal lead notification to AHOF
       const r = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -506,38 +508,15 @@ Source: chat widget
           from: 'noreply@arizonahouseoffilm.com',
           to: 'arizonahouseoffilm@gmail.com',
           reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
-          subject: `New Chat Lead — ${leadData.name || 'Unknown'}`,
+          subject: `New inquiry from ${leadData.name || 'a website visitor'}`,
           text: leadText,
-          html: `
-<!DOCTYPE html>
-<html>
-<body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
-  <div style="background: #0a0a1a; padding: 24px; border-radius: 8px; margin-bottom: 20px;">
-    <h1 style="color: #6b8f71; margin: 0; font-size: 20px;">NEW CHAT LEAD — ARIZONA HOUSE OF FILM</h1>
-    <p style="color: #888; margin: 4px 0 0 0; font-size: 13px;">arizonahouseoffilm.com · ROC #314088</p>
-  </div>
-
-  <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
-    <h2 style="color: #333; font-size: 16px; margin: 0 0 16px 0; border-bottom: 2px solid #6b8f71; padding-bottom: 8px;">CONTACT DETAILS</h2>
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr><td style="padding: 8px 0; color: #888; font-size: 13px; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;">${leadData.name || '—'}</td></tr>
-      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Phone</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;"><a href="tel:${leadData.phone}" style="color: #6b8f71;">${leadData.phone || '—'}</a></td></tr>
-      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Email</td><td style="padding: 8px 0; font-size: 14px;"><a href="mailto:${leadData.email}" style="color: #6b8f71;">${leadData.email || '—'}</a></td></tr>
-      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Location</td><td style="padding: 8px 0; font-size: 14px;">${leadData.location || '—'}</td></tr>
-    </table>
-  </div>
-
-  <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
-    <h2 style="color: #333; font-size: 16px; margin: 0 0 12px 0;">CONVERSATION SUMMARY</h2>
-    <p style="color: #555; font-size: 14px; line-height: 1.6; margin: 0;">${leadData.summary || 'No summary'}</p>
-  </div>
-
-  <div style="background: white; padding: 16px 24px; border-radius: 8px;">
-    <p style="color: #aaa; font-size: 11px; margin: 0;">Source: chat widget · Sent via arizonahouseoffilm.com</p>
-  </div>
-</body>
-</html>
-`,
+          html: `<p>You have a new inquiry from your website chat.</p>
+<p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
+<p><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</p>
+<p><strong>Email:</strong> ${leadData.email || 'Not provided'}</p>
+<p><strong>Location:</strong> ${leadData.location || 'Not provided'}</p>
+<p><strong>What they need:</strong> ${needs}</p>
+<p><strong>Full conversation:</strong><br>${(leadData.summary || 'No summary').replace(/\n/g, '<br>')}</p>`,
         }),
       });
 
@@ -551,8 +530,7 @@ Source: chat widget
       console.log('Lead email sent:', JSON.stringify(r1Result));
 
       // Email 2 — confirmation email to the customer
-      const userMessages = (leadData.summary || '').split('\n\n').filter(m => m.startsWith('Customer:')).map(m => m.replace('Customer: ', '')).join(', ');
-      const projectDetails = userMessages || 'We will discuss details when we reach out.';
+      const projectDetails = needs !== 'Not specified' ? needs : 'We will discuss details when we reach out.';
 
       let confirmResult = 'skipped — no email';
       if (leadData.email) {

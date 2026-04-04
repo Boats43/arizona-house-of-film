@@ -29,7 +29,16 @@ function formatMessage(text) {
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([OPENING_MESSAGE]);
+  const [messages, setMessages] = useState(() => {
+    try {
+      const saved = sessionStorage.getItem('ahof_chat');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 1) return parsed;
+      }
+    } catch {}
+    return [OPENING_MESSAGE];
+  });
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
@@ -38,6 +47,13 @@ export default function ChatWidget() {
   const [pulse, setPulse] = useState(true);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
+
+  // Persist conversation across page navigations
+  useEffect(() => {
+    if (messages.length > 1) {
+      sessionStorage.setItem('ahof_chat', JSON.stringify(messages));
+    }
+  }, [messages]);
 
   useEffect(() => {
     const isQuotePage = window.location.pathname.includes('quote') ||

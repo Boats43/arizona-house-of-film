@@ -7,6 +7,51 @@ const OPENING_MESSAGE = { role: 'assistant', content: DEFAULT_OPENER };
 function getPageContext() {
   const path = window.location.pathname;
 
+  // ── Informational pages (must be before generic /security, /commercial, /residential) ──
+  if (path.includes('/window-film-cost') || path.includes('/cost-estimator')) return {
+    trigger: 'auto', delay: 10000,
+    opener: "Want a faster estimate? Tell me your square footage and film type — I can give you a ballpark right now without filling out a form.",
+  };
+  if (path.includes('/energy-rebates')) return {
+    trigger: 'auto', delay: 12000,
+    opener: "The SRP rebate deadline is April 30, 2026. Are you an SRP customer? I can tell you exactly which films qualify.",
+  };
+  if (path.includes('/security-film-vs-tempered') || path.includes('/shatterproof')) return {
+    trigger: 'auto', delay: 15000,
+    opener: "Comparing security options? I can walk you through the difference between 4mil, 8mil, and 14mil film and what's right for your situation.",
+  };
+  if (path.includes('/best-window-film-arizona') || path.includes('/ceramic')) return {
+    trigger: 'auto', delay: 15000,
+    opener: "Looking for the best film for Arizona heat? The answer depends on your glass type and priorities. What matters most — heat rejection, visibility, or price?",
+  };
+  if (path.includes('/blog/')) return {
+    trigger: 'auto', delay: 30000,
+    opener: "Have questions about what you're reading? I can go deeper on any window film topic or help you figure out what's right for your project.",
+  };
+  if (path.includes('/gallery')) return {
+    trigger: 'auto', delay: 20000,
+    opener: "See something you like? I can tell you exactly what film that is and get you a free estimate for your project.",
+  };
+
+  // ── Location pages (must be before generic /commercial, /residential) ──
+  if (path.includes('/commercial-window-tinting-') || path.includes('/residential-window-tinting-')) {
+    const parts = path.replace(/^\//, '').split('-');
+    const city = parts[parts.length - 1].replace(/\b\w/g, l => l.toUpperCase());
+    return {
+      trigger: 'auto', delay: 20000,
+      opener: `Looking for window film in ${city}? We do projects there regularly. What type of property are we talking about?`,
+    };
+  }
+  if (path.includes('/service-areas/') || path.includes('/window-tinting-')) {
+    const citySlug = path.split('/').pop();
+    const cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    return {
+      trigger: 'auto', delay: 20000,
+      opener: `We service ${cityName} regularly — usually within 2-3 days for most projects. Are you looking for residential or commercial window film?`,
+    };
+  }
+
+  // ── Film pages ──
   if (path.includes('/films/casper')) return {
     trigger: 'auto', delay: 15000,
     opener: "I see you're looking at Casper Cloaking Film — it makes screens invisible from outside while staying clear from inside. Is this for a conference room or office space?",
@@ -15,6 +60,8 @@ function getPageContext() {
     trigger: 'auto', delay: 20000,
     opener: "Looking for privacy film? I can help you find the right opacity and pattern for your space. Is this for a bathroom, office, or entryway?",
   };
+
+  // ── Service pages ──
   if (path.includes('/safety') || path.includes('/security')) return {
     trigger: 'auto', delay: 15000,
     opener: "Security film questions? I can walk you through our 4-21 mil options and what's right for your property type. Residential or commercial?",
@@ -27,6 +74,8 @@ function getPageContext() {
     trigger: 'auto', delay: 20000,
     opener: "Looking to tint your home? I can help find the right film for Arizona heat. What's your main goal — heat reduction, privacy, or UV protection?",
   };
+
+  // ── Brand pages ──
   if (path.includes('/brands/huper-optik')) return {
     trigger: 'auto', delay: 15000,
     opener: "Hüper Optik is our newest brand — German nano-ceramic technology, no signal interference, 99% UV rejection. Which series are you interested in — Ceramic, Select, or Safety?",
@@ -35,6 +84,8 @@ function getPageContext() {
     trigger: 'auto', delay: 20000,
     opener: "Have questions about this film brand? I can compare specs, pricing ranges, and help you pick the right product for your project.",
   };
+
+  // ── Industry pages ──
   if (path.includes('/industries/government')) return {
     trigger: 'auto', delay: 10000,
     opener: "Government or institutional project? We handle compliance documentation, security clearances, and blast mitigation specs. What facility type are you working with?",
@@ -43,10 +94,14 @@ function getPageContext() {
     trigger: 'auto', delay: 20000,
     opener: "Have questions about window film for your industry? I can recommend specific films and connect you with our team for a free estimate.",
   };
+
+  // ── Store ──
   if (path.includes('/store')) return {
     trigger: 'manual_only',
     opener: "Need help finding a specific film? Tell me what you're looking for — pattern, opacity, application — and I'll find the right SKU from our 618-film catalog.",
   };
+
+  // ── Contact / booking ──
   if (path.includes('/contact') || path.includes('/book-now')) return {
     trigger: 'auto', delay: 8000,
     opener: "I can help get your estimate started right now — no form needed. What type of project are you looking at?",

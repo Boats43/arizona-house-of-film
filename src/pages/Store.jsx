@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Search, X, ShoppingCart, Trash2, Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -98,6 +98,35 @@ function SelectorRow({ label, options, value, onChange }) {
   );
 }
 
+function ImageLightbox({ src, alt, onClose }) {
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-4 right-4 text-white hover:text-gray-300 z-50"
+      >
+        <X className="w-8 h-8" />
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-full max-h-[90vh] object-contain rounded-lg"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
 function ProductCard({ product, onAdd }) {
   const widths = product.widthOptions || ROLL_WIDTHS;
   const [width, setWidth] = useState(widths.includes('60"') ? '60"' : widths[0]);
@@ -105,17 +134,24 @@ function ProductCard({ product, onAdd }) {
   const [imgError, setImgError] = useState(false);
   const [vlt, setVlt] = useState(product.vltOptions?.[0] || '');
   const [length, setLength] = useState(product.lengthOptions?.[0] || '');
+  const [lightbox, setLightbox] = useState(false);
 
   const hasImage = product.img && product.img.length > 0;
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-      <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
+      {lightbox && hasImage && (
+        <ImageLightbox src={product.img} alt={product.name} onClose={() => setLightbox(false)} />
+      )}
+      <div
+        className={`aspect-[4/3] bg-gray-100 overflow-hidden ${hasImage && !imgError ? 'cursor-pointer' : ''}`}
+        onClick={() => { if (hasImage && !imgError) setLightbox(true); }}
+      >
         {hasImage && !imgError ? (
           <img
             src={product.img}
             alt={product.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             loading="lazy"
             onError={() => setImgError(true)}
           />
@@ -171,13 +207,25 @@ function ProductCard({ product, onAdd }) {
 
 const Store = () => {
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
+  const gridRef = useRef(null);
   const [activeCatalog, setActiveCatalog] = useState('solyx');
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all');
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
   const [orderItems, setOrderItems] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const [page, setPage] = useState(1);
   const PER_PAGE = 24;
+
+  // Auto-scroll to film grid when arriving with search params (e.g. from chat)
+  useEffect(() => {
+    if (searchParams.get('search') || searchParams.get('category')) {
+      const timer = setTimeout(() => {
+        gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [form, setForm] = useState({
     name: '', phone: '', email: '', company: '',
@@ -406,7 +454,7 @@ const Store = () => {
 
         <main className="container mx-auto px-4 py-8">
           {/* SECTION 3 — Search + Product grid */}
-          <div className="relative mb-6">
+          <div ref={gridRef} className="relative mb-6">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <Input
               type="text"

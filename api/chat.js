@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { solyxProducts, solyxCategories } from '../src/data/solyxFilms.js';
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // ── Rate limiting (in-memory, per serverless instance) ──────────────
@@ -84,31 +85,93 @@ const tools = [
   }
 ];
 
-// Film catalog data — top categories for search
-const FILM_CATALOG = {
-  casper: { name: "Casper Cloaking Film", sku: "PF001-801-48", url: "/films/casper-cloaking", price: "$25-45/sqft installed", description: "Makes screens invisible from outside while maintaining visibility from inside. Perfect for conference rooms and glass offices." },
-  frosted: { name: "Frosted & Etched Films", url: "/films/frosted-etched-films", price: "$10-20/sqft installed", description: "Privacy films for bathrooms, offices, sidelights. 200+ patterns available." },
-  gradient: { name: "Gradient Fading Films", url: "/films/gradient-fading-films", price: "$12-25/sqft installed", description: "Ombre fade from clear to frosted. Popular for conference rooms and storefronts." },
-  stained: { name: "Stained Glass Films", url: "/films/stained-glass-films", price: "$15-30/sqft installed", description: "Decorative colored glass appearance without replacement." },
-  solar: { name: "Solar Control Films", url: "/films", price: "$8-18/sqft installed", description: "Ceramic and spectrally selective films blocking 50-84% solar heat." },
-  security: { name: "Security & Safety Films", url: "/safety", price: "$12-25/sqft installed", description: "4-21 mil thickness. Blast mitigation, forced entry protection, shatter resistance." },
-  antigraffiti: { name: "Anti-Graffiti Film", url: "/anti-graffiti", price: "$8-15/sqft installed", description: "Sacrificial surface protection for storefronts and transit." },
-  decorative: { name: "Decorative Films", url: "/decorative-window-films", price: "$10-20/sqft installed", description: "600+ Solyx patterns for residential and commercial." },
-  reflective: { name: "Reflective & One-Way Films", url: "/films", price: "$8-15/sqft installed", description: "Daytime privacy with maximum solar heat rejection." },
-  quantum: { name: "Quantum Cloaking Film", url: "/films/casper-cloaking", price: "$20-35/sqft installed", description: "Preferred partner brand for screen privacy. 7 mil, Class A fire rated." }
+// ── Film catalog search (618 SKUs from solyxFilms.js) ───────────────
+const categoryPricing = {
+  'casper-designtex': '$25-45/sq ft installed',
+  'frosted-etched': '$10-20/sq ft installed',
+  'stained-glass': '$12-22/sq ft installed',
+  'gradient': '$12-20/sq ft installed',
+  'colored-films': '$10-18/sq ft installed',
+  'patterned-privacy': '$10-18/sq ft installed',
+  'reflective-mirror': '$8-15/sq ft installed',
+  'decorative': '$10-20/sq ft installed',
+};
+
+const intentMap = {
+  'casper': 'casper-designtex',
+  'cloaking': 'casper-designtex',
+  'quantum': 'casper-designtex',
+  'frosted': 'frosted-etched',
+  'etched': 'frosted-etched',
+  'matte': 'frosted-etched',
+  'white frost': 'frosted-etched',
+  'privacy': 'frosted-etched',
+  'stained': 'stained-glass',
+  'stained glass': 'stained-glass',
+  'gradient': 'gradient',
+  'ombre': 'gradient',
+  'fade': 'gradient',
+  'colored': 'colored-films',
+  'color': 'colored-films',
+  'tinted': 'colored-films',
+  'patterned': 'patterned-privacy',
+  'pattern': 'patterned-privacy',
+  'decorative': 'decorative',
+  'reflective': 'reflective-mirror',
+  'mirror': 'reflective-mirror',
+  'one way': 'reflective-mirror',
+  'one-way': 'reflective-mirror',
+  'silver': 'reflective-mirror',
+  'bronze': 'reflective-mirror',
 };
 
 function searchFilms(query) {
   const q = query.toLowerCase();
-  const results = [];
-  for (const [key, film] of Object.entries(FILM_CATALOG)) {
-    if (film.name.toLowerCase().includes(q) ||
-        film.description.toLowerCase().includes(q) ||
-        key.includes(q)) {
-      results.push(film);
+
+  // Find category match via intent keywords
+  let targetCategory = null;
+  for (const [keyword, cat] of Object.entries(intentMap)) {
+    if (q.includes(keyword)) {
+      targetCategory = cat;
+      break;
     }
   }
-  return results.length > 0 ? results : [{ name: "Film Catalog", url: "/store", description: "Browse our full catalog of 618+ films at our store." }];
+
+  // Search films by name/SKU match first
+  const nameMatches = solyxProducts.filter(f =>
+    f.name.toLowerCase().includes(q) ||
+    f.sku.toLowerCase().includes(q)
+  ).slice(0, 5);
+
+  // Fall back to category matches
+  const categoryMatches = targetCategory
+    ? solyxProducts.filter(f => f.category === targetCategory).slice(0, 5)
+    : [];
+
+  const results = nameMatches.length > 0 ? nameMatches : categoryMatches;
+  const categoryInfo = solyxCategories.find(c => c.slug === targetCategory);
+
+  if (results.length === 0) {
+    return {
+      found: false,
+      message: 'No exact match found',
+      suggestion: 'Browse full catalog at arizonahouseoffilm.com/store',
+    };
+  }
+
+  return {
+    found: true,
+    count: results.length,
+    category: categoryInfo?.name || targetCategory,
+    pricing: categoryPricing[results[0].category] || '$10-20/sq ft installed',
+    films: results.map(f => ({
+      sku: f.sku,
+      name: f.name,
+      category: f.category,
+      link: `https://arizonahouseoffilm.com/store?category=${f.category}&search=${encodeURIComponent(f.name)}`,
+    })),
+    categoryPage: `https://arizonahouseoffilm.com/films/${targetCategory || results[0].category}`,
+  };
 }
 
 const SYSTEM_PROMPT = `You are the Arizona House of Film assistant — a knowledgeable, professional representative for Arizona's premier licensed window film contractor.
@@ -271,6 +334,31 @@ City / Location Pages (major):
 - Any other AZ city → /service-areas/{city-slug}
 
 When a customer asks about a specific film, service, brand, or location, provide a brief answer AND include the relevant link so they can explore further. Format links as: arizonahouseoffilm.com{path}
+
+FILM SEARCH — CRITICAL:
+When any user asks about a specific film, color, pattern, or SKU:
+1. Use the search_films tool immediately
+2. Return the specific film names and SKUs found
+3. Include the direct store link for each film
+4. Include the installed price range for that category
+5. Never just say 'check our store' — always return specific results first
+6. If 3+ results found, show top 3 with SKUs and links
+
+Example response format:
+'We have [X] options matching that — here are the closest matches:
+- [Film Name] (SKU: [SKU]) — [link]
+- [Film Name] (SKU: [SKU]) — [link]
+Pricing for this category runs [price range] installed. Want me to get you a free estimate?'
+
+FILM INTENT MAP:
+- Hot room / heat / solar → recommend ceramic solar films → search 'ceramic'
+- Privacy / neighbors / bathroom → frosted-etched category
+- Conference room / office screen → casper-designtex category
+- Decorative / design / art → decorative or stained-glass category
+- One way / mirror / reflective → reflective-mirror category
+- Pattern / texture → patterned-privacy category
+- Gradient / fade / ombre → gradient category
+- Budget → frosted-etched starting $10/sq ft
 
 GUARDRAILS:
 

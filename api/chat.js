@@ -534,7 +534,18 @@ When a customer sends multiple window photos and asks for an estimate:
 - Give total project range (low end to high end)
 - Always note "free on-site estimate for exact pricing"
 - Always end with lead capture offer — ask for name, email, phone
-- Format the estimate clearly with each line item on its own line`;
+- Format the estimate clearly with each line item on its own line
+
+VISUAL FILM PREVIEW:
+After analyzing a window photo, tell the customer:
+'I can show you what different films will look like on your actual window. Tap any film type below to see the effect — and use the light/dark slider to find your perfect VLT level.'
+
+When recommending films — mention the VLT range:
+- Reflective films: typically 15-35% VLT
+- Ceramic medium: typically 35-50% VLT
+- Ceramic clear/light: typically 50-70% VLT
+- Frosted: 0% visible light transmission (opaque)
+- Nearly clear safety/UV: 75-88% VLT`;
 
 export default async function handler(req, res) {
   // ── CORS — restrict to allowed origins ────────────────────────────

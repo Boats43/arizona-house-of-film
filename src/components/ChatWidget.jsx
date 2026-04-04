@@ -132,6 +132,68 @@ function formatMessage(text) {
   });
 }
 
+const FILM_EFFECTS = {
+  'reflective-silver': { label: 'Silver Reflective', color: 'rgba(192,192,220,0.45)', blend: 'screen', defaultVlt: 20 },
+  'reflective-bronze': { label: 'Bronze Reflective', color: 'rgba(180,140,80,0.40)', blend: 'multiply', defaultVlt: 25 },
+  'reflective-neutral': { label: 'Neutral', color: 'rgba(160,160,160,0.35)', blend: 'multiply', defaultVlt: 35 },
+  'ceramic-clear': { label: 'Ceramic Clear', color: 'rgba(220,235,255,0.20)', blend: 'screen', defaultVlt: 70 },
+  'ceramic-medium': { label: 'Ceramic Medium', color: 'rgba(180,195,210,0.35)', blend: 'multiply', defaultVlt: 40 },
+  'frosted': { label: 'Frosted', color: 'rgba(255,255,255,0.70)', blend: 'normal', defaultVlt: 0 },
+  'frosted-light': { label: 'Light Frosted', color: 'rgba(255,255,255,0.45)', blend: 'normal', defaultVlt: 0 },
+  'gradient-top': { label: 'Gradient', gradient: true, from: 'rgba(255,255,255,0.75)', to: 'rgba(255,255,255,0.05)', defaultVlt: 50 },
+  'tinted-dark': { label: 'Dark Tint', color: 'rgba(20,20,20,0.55)', blend: 'multiply', defaultVlt: 10 },
+  'tinted-medium': { label: 'Medium Tint', color: 'rgba(40,40,40,0.35)', blend: 'multiply', defaultVlt: 30 },
+};
+
+const VLT_PRESETS = [
+  { label: 'Very Dark', range: '5-15%', value: 10 },
+  { label: 'Medium', range: '20-35%', value: 28 },
+  { label: 'Light', range: '40-60%', value: 50 },
+  { label: 'Near Clear', range: '65-80%', value: 72 },
+];
+
+function vltDescription(v) {
+  if (v <= 15) return 'Very dark — maximum privacy and heat rejection';
+  if (v <= 35) return 'Medium — good heat rejection, some privacy';
+  if (v <= 60) return 'Light tint — minimal privacy, moderate heat';
+  return 'Nearly clear — UV protection only, no visible tint';
+}
+
+function applyFilmOverlay(photoBase64, filmType, vltLevel) {
+  return new Promise((resolve) => {
+    const canvas = document.createElement('canvas');
+    const img = new Image();
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      const effect = FILM_EFFECTS[filmType] || FILM_EFFECTS['ceramic-clear'];
+      if (effect.gradient) {
+        const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        grad.addColorStop(0, effect.from);
+        grad.addColorStop(1, effect.to);
+        ctx.globalCompositeOperation = 'normal';
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      } else {
+        ctx.globalCompositeOperation = effect.blend;
+        ctx.fillStyle = effect.color;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      if (vltLevel !== undefined && !effect.gradient && filmType !== 'frosted' && filmType !== 'frosted-light') {
+        ctx.globalCompositeOperation = 'multiply';
+        const darkness = (100 - vltLevel) / 100 * 0.6;
+        ctx.fillStyle = `rgba(0,0,0,${darkness})`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      resolve(canvas.toDataURL('image/jpeg', 0.85));
+    };
+    img.src = 'data:image/jpeg;base64,' + photoBase64;
+  });
+}
+
 function extractContactInfo(messages) {
   const info = {};
   for (let i = messages.length - 1; i >= 0; i--) {
@@ -206,6 +268,8 @@ export default function ChatWidget() {
   const [pendingImage, setPendingImage] = useState(null); // { data, mediaType, preview }
   const [photoHistory, setPhotoHistory] = useState([]); // [{ data, mediaType, preview, label }]
   const [showPhotoConsent, setShowPhotoConsent] = useState(false);
+  const [filmPreview, setFilmPreview] = useState(null); // { sourceBase64, filmType, vlt, overlayUrl, showBefore }
+  const [filmSelection, setFilmSelection] = useState(null); // saved choice for lead
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const imageInputRef = useRef(null);
@@ -374,7 +438,8 @@ export default function ChatWidget() {
   const submitLead = async () => {
     if (!leadForm.name || !leadForm.email) return;
     const summary = messages.map(m => `${m.role === 'user' ? 'Customer' : 'Assistant'}: ${m.content}`).join('\n\n');
-    const payload = { leadData: { ...leadForm, summary } };
+    const filmInfo = filmSelection ? `\n\nFILM SELECTION: ${filmSelection.filmLabel} at ${filmSelection.vlt}% VLT` : '';
+    const payload = { leadData: { ...leadForm, summary: summary + filmInfo } };
     console.log('Submitting lead:', JSON.stringify(payload));
     try {
       const resp = await fetch('/api/chat', {
@@ -394,6 +459,28 @@ export default function ChatWidget() {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input); }
+  };
+
+  const handleFilmSelect = async (filmType) => {
+    const lastPhoto = photoHistory[photoHistory.length - 1];
+    if (!lastPhoto) return;
+    const effect = FILM_EFFECTS[filmType];
+    const vlt = effect?.defaultVlt ?? 40;
+    const overlayUrl = await applyFilmOverlay(lastPhoto.data, filmType, vlt);
+    setFilmPreview({ sourceBase64: lastPhoto.data, sourcePreview: lastPhoto.preview, filmType, vlt, overlayUrl, showBefore: false });
+  };
+
+  const handleVltChange = async (newVlt) => {
+    if (!filmPreview) return;
+    const overlayUrl = await applyFilmOverlay(filmPreview.sourceBase64, filmPreview.filmType, newVlt);
+    setFilmPreview(prev => ({ ...prev, vlt: newVlt, overlayUrl }));
+  };
+
+  const handleSelectFilmForQuote = () => {
+    if (!filmPreview) return;
+    const effect = FILM_EFFECTS[filmPreview.filmType];
+    setFilmSelection({ filmType: filmPreview.filmType, filmLabel: effect?.label, vlt: filmPreview.vlt, overlayUrl: filmPreview.overlayUrl });
+    setShowLeadForm(true);
   };
 
   const compressImage = (file) => {
@@ -546,6 +633,85 @@ export default function ChatWidget() {
                 </div>
               </div>
             ))}
+
+            {/* FILM OVERLAY PREVIEW PANEL */}
+            {!loading && photoHistory.length > 0 && messages.length > 1 && messages[messages.length - 1]?.role === 'assistant' && messages.some(m => m.image) && (
+              <div style={{
+                background:'rgba(255,255,255,0.04)', border:'1px solid rgba(34,197,94,0.2)',
+                borderRadius:'12px', padding:'10px', marginTop:'4px',
+              }}>
+                {/* Film type selector — horizontal scroll */}
+                <div style={{ overflowX:'auto', display:'flex', gap:'6px', paddingBottom:'8px', scrollbarWidth:'none' }}>
+                  {Object.entries(FILM_EFFECTS).map(([key, ef]) => (
+                    <button key={key} onClick={() => handleFilmSelect(key)} style={{
+                      flexShrink:0, padding:'5px 10px', borderRadius:'14px', fontSize:'11px', fontWeight:600,
+                      cursor:'pointer', whiteSpace:'nowrap', transition:'all 0.15s',
+                      background: filmPreview?.filmType === key ? '#22c55e' : 'rgba(255,255,255,0.08)',
+                      color: filmPreview?.filmType === key ? '#000' : '#ccc',
+                      border: filmPreview?.filmType === key ? '1px solid #22c55e' : '1px solid rgba(255,255,255,0.1)',
+                    }}>{ef.label}</button>
+                  ))}
+                </div>
+
+                {/* Preview image + Before/After */}
+                {filmPreview && (
+                  <>
+                    <div style={{ position:'relative', marginBottom:'8px' }}>
+                      <img
+                        src={filmPreview.showBefore ? filmPreview.sourcePreview : filmPreview.overlayUrl}
+                        alt={filmPreview.showBefore ? 'Original window' : 'Film preview'}
+                        style={{ width:'100%', borderRadius:'8px', display:'block' }}
+                      />
+                      <button onClick={() => setFilmPreview(prev => ({ ...prev, showBefore: !prev.showBefore }))} style={{
+                        position:'absolute', top:'6px', right:'6px',
+                        background:'rgba(0,0,0,0.7)', color:'#fff', border:'none',
+                        borderRadius:'6px', padding:'4px 8px', fontSize:'10px',
+                        fontWeight:700, cursor:'pointer',
+                      }}>{filmPreview.showBefore ? 'After' : 'Before'}</button>
+                    </div>
+
+                    {/* VLT slider — skip for frosted types */}
+                    {filmPreview.filmType !== 'frosted' && filmPreview.filmType !== 'frosted-light' && (
+                      <div style={{ marginBottom:'8px' }}>
+                        <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'4px' }}>
+                          <span style={{ color:'#9ca3af', fontSize:'10px' }}>Light level: VLT {filmPreview.vlt}%</span>
+                          <span style={{ color:'#6b7280', fontSize:'9px' }}>{vltDescription(filmPreview.vlt)}</span>
+                        </div>
+                        <input type="range" min="5" max="80" value={filmPreview.vlt}
+                          onChange={e => handleVltChange(Number(e.target.value))}
+                          style={{ width:'100%', accentColor:'#22c55e', height:'4px' }}
+                        />
+                        <div style={{ display:'flex', gap:'4px', marginTop:'4px' }}>
+                          {VLT_PRESETS.map(p => (
+                            <button key={p.value} onClick={() => handleVltChange(p.value)} style={{
+                              flex:1, padding:'3px 0', borderRadius:'6px', fontSize:'9px', fontWeight:600,
+                              cursor:'pointer', border:'1px solid rgba(255,255,255,0.1)',
+                              background: Math.abs(filmPreview.vlt - p.value) < 8 ? 'rgba(34,197,94,0.2)' : 'rgba(255,255,255,0.04)',
+                              color: Math.abs(filmPreview.vlt - p.value) < 8 ? '#22c55e' : '#9ca3af',
+                            }}>{p.label}<br/><span style={{ fontSize:'8px', opacity:0.7 }}>{p.range}</span></button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Get Quote button */}
+                    {!leadCaptured && (
+                      <button onClick={handleSelectFilmForQuote} style={{
+                        width:'100%', background:'#22c55e', color:'#000', border:'none',
+                        borderRadius:'8px', padding:'8px', fontWeight:700,
+                        fontSize:'12px', cursor:'pointer',
+                      }}>I want this look → Get Exact Quote</button>
+                    )}
+                  </>
+                )}
+
+                {!filmPreview && (
+                  <p style={{ color:'#6b7280', fontSize:'11px', textAlign:'center', margin:'4px 0 0' }}>
+                    Tap a film type above to preview it on your window
+                  </p>
+                )}
+              </div>
+            )}
 
             {loading && (
               <div style={{ display:'flex', justifyContent:'flex-start' }}>

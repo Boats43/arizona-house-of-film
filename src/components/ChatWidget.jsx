@@ -6,7 +6,7 @@ const OPENING_MESSAGE = {
 };
 
 function formatMessage(text) {
-  const URL_RE = /(https?:\/\/[^\s),]+|arizonahouseoffilm\.com\/[^\s),]*)/g;
+  const URL_RE = /(https?:\/\/[^\s"<>]+|arizonahouseoffilm\.com\/[^\s"<>]*)/g;
   const BOLD_RE = /\*\*(.+?)\*\*/g;
   // Split on URLs first, then handle bold within each segment
   const parts = text.split(URL_RE);

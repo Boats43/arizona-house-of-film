@@ -56,6 +56,14 @@ const PrivacyPolicy = () => {
               <li>To monitor the usage of the Service</li>
               <li>To detect, prevent and address technical issues</li>
             </ul>
+            <h2>AI Chat and Photo Analysis</h2>
+            <p>Our website features an AI-powered chat assistant. Conversations may be used to improve customer service. When you upload a photo through our chat for window film recommendations:</p>
+            <ul>
+              <li>Photos are transmitted to Anthropic's API for analysis and are not stored on our servers.</li>
+              <li>Images are discarded after analysis and never used for any other purpose.</li>
+              <li>Photo uploads require your explicit consent before the first upload in each session.</li>
+              <li>We do not retain, sell, or share any images you upload.</li>
+            </ul>
             <h2>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us:</p>
             <ul>

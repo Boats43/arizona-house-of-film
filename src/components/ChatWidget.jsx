@@ -205,6 +205,7 @@ export default function ChatWidget() {
   const [pulse, setPulse] = useState(true);
   const [pendingImage, setPendingImage] = useState(null); // { data, mediaType, preview }
   const [photoHistory, setPhotoHistory] = useState([]); // [{ data, mediaType, preview, label }]
+  const [showPhotoConsent, setShowPhotoConsent] = useState(false);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const imageInputRef = useRef(null);
@@ -676,7 +677,13 @@ export default function ChatWidget() {
               }}
             />
             <button
-              onClick={() => imageInputRef.current?.click()}
+              onClick={() => {
+                if (sessionStorage.getItem('ahof_photo_consent')) {
+                  imageInputRef.current?.click();
+                } else {
+                  setShowPhotoConsent(true);
+                }
+              }}
               disabled={loading}
               aria-label="Upload photo"
               style={{
@@ -710,6 +717,49 @@ export default function ChatWidget() {
                 <polygon points="22 2 15 22 11 13 2 9 22 2"/>
               </svg>
             </button>
+          </div>
+        </div>
+      )}
+
+      {showPhotoConsent && (
+        <div style={{
+          position:'fixed', inset:0, zIndex:10000,
+          background:'rgba(0,0,0,0.6)', display:'flex',
+          alignItems:'center', justifyContent:'center',
+        }}>
+          <div style={{
+            background:'#1a1a2e', border:'1px solid rgba(34,197,94,0.3)',
+            borderRadius:'12px', padding:'20px', maxWidth:'300px', width:'90%',
+            fontFamily:'system-ui,-apple-system,sans-serif',
+          }}>
+            <div style={{ fontSize:'16px', marginBottom:'8px' }}>
+              <span role="img" aria-label="camera">📷</span> Photo Analysis
+            </div>
+            <p style={{ color:'#9ca3af', fontSize:'13px', lineHeight:'1.5', margin:'0 0 16px' }}>
+              Your photo will be analyzed by AI to recommend window film. Images are not stored and are deleted after analysis.
+            </p>
+            <div style={{ display:'flex', gap:'8px' }}>
+              <button
+                onClick={() => {
+                  sessionStorage.setItem('ahof_photo_consent', 'true');
+                  setShowPhotoConsent(false);
+                  imageInputRef.current?.click();
+                }}
+                style={{
+                  flex:1, background:'#22c55e', color:'#000', border:'none',
+                  borderRadius:'8px', padding:'10px', fontWeight:700,
+                  fontSize:'13px', cursor:'pointer',
+                }}
+              >Got it</button>
+              <button
+                onClick={() => setShowPhotoConsent(false)}
+                style={{
+                  flex:1, background:'rgba(255,255,255,0.1)', color:'#fff', border:'none',
+                  borderRadius:'8px', padding:'10px', fontWeight:600,
+                  fontSize:'13px', cursor:'pointer',
+                }}
+              >Cancel</button>
+            </div>
           </div>
         </div>
       )}

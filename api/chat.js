@@ -4,8 +4,12 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // ── Rate limiting (in-memory, per serverless instance) ──────────────
 const rateMap = new Map();          // IP → { count, resetAt }
+const imageRateMap = new Map();     // IP → { count, resetAt } — image uploads
 const RATE_LIMIT  = 20;             // max requests per window
+const IMAGE_RATE_LIMIT = 10;        // max image uploads per window
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour in ms
+
+const ALLOWED_IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif']);
 
 function isRateLimited(ip) {
   const now = Date.now();
@@ -18,11 +22,25 @@ function isRateLimited(ip) {
   return entry.count > RATE_LIMIT;
 }
 
+function isImageRateLimited(ip) {
+  const now = Date.now();
+  let entry = imageRateMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    entry = { count: 0, resetAt: now + RATE_WINDOW };
+    imageRateMap.set(ip, entry);
+  }
+  entry.count++;
+  return entry.count > IMAGE_RATE_LIMIT;
+}
+
 // Periodic cleanup so the Map doesn't grow unbounded
 setInterval(() => {
   const now = Date.now();
   for (const [ip, entry] of rateMap) {
     if (now > entry.resetAt) rateMap.delete(ip);
+  }
+  for (const [ip, entry] of imageRateMap) {
+    if (now > entry.resetAt) imageRateMap.delete(ip);
   }
 }, RATE_WINDOW);
 
@@ -471,6 +489,26 @@ export default async function handler(req, res) {
 
   const { messages, leadData, image, photos, projectEstimate } = req.body;
 
+  // ── Image validation — file type + rate limit ────────────────────
+  const hasImage = (image && image.data) || (Array.isArray(photos) && photos.length > 0);
+  if (hasImage) {
+    if (isImageRateLimited(ip)) {
+      return res.status(429).json({ error: 'Too many image uploads. Please try again later.' });
+    }
+    // Validate single image mediaType
+    if (image && image.mediaType && !ALLOWED_IMAGE_TYPES.has(image.mediaType)) {
+      return res.status(400).json({ error: 'Unsupported image format. Please use JPEG, PNG, WebP, or GIF.' });
+    }
+    // Validate multi-photo mediaTypes
+    if (Array.isArray(photos)) {
+      for (const photo of photos) {
+        if (photo.mediaType && !ALLOWED_IMAGE_TYPES.has(photo.mediaType)) {
+          return res.status(400).json({ error: 'Unsupported image format. Please use JPEG, PNG, WebP, or GIF.' });
+        }
+      }
+    }
+  }
+
   // Lead email handler — mirrors working api/contact.js pattern exactly
   if (leadData) {
     console.log('Lead received:', JSON.stringify(leadData));
@@ -772,6 +810,10 @@ ${summary}`.trim();
 
     res.write('data: [DONE]\n\n');
     res.end();
+
+    // Scrub image data from memory after response completes
+    if (req.body.image) req.body.image = null;
+    if (req.body.photos) req.body.photos = null;
 
   } catch (error) {
     console.error('Chat API error:', error);

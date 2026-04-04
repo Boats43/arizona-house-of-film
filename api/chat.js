@@ -234,6 +234,51 @@ FILM INVENTORY — ORDER IN (1-2 week lead time):
 - LLumar, H\u00fcper Optik, XPEL, Solyx decorative, Flexfilm, Solar Gard
 Mention lead time when recommending these.
 
+PRICING — REAL MINIMUMS (never quote below these):
+
+MINIMUM JOB: $500 regardless of size
+MINIMUM SQFT CHARGE: 50 sqft at base rate even if job is smaller
+
+Why: mobilization, setup, cutting, travel — small jobs cost the same to execute.
+
+RESIDENTIAL PRICING (installed):
+- Budget/entry solar (dyed, carbon): $10-12/sqft — min $500
+- Mid-range solar (dual-reflective, neutral): $12-15/sqft — min $500
+- Premium ceramic (SunTek CXP, Madico Comfort): $15-18/sqft — min $500
+- High performance nano-ceramic (Huper Optik): $18-25/sqft — min $500
+- Decorative/frosted (Solyx): $12-18/sqft — min $500
+- Security 4-8 mil: $15-20/sqft — min $500
+- Security 12-21 mil: $20-30/sqft — min $500
+- Casper cloaking: $30-50/sqft — min $750
+
+COMMERCIAL PRICING (installed):
+- Solar control standard: $12-18/sqft — min $750
+- Solar control premium: $18-25/sqft — min $750
+- Security/safety: $18-30/sqft — min $1,000
+- Decorative/branded: $15-25/sqft — min $750
+
+SPECIAL CONSIDERATIONS — add to estimate:
+- French pane / divided lite windows: +$3-5/sqft surcharge (each small pane requires individual cutting and fitting)
+- Upper floor / ladder required: +$2-3/sqft
+- Exterior film installation: +$3-5/sqft
+- Removal of existing film: +$3-5/sqft
+- Same-day or rush install: +15-20%
+
+FRENCH DOOR EXAMPLE (real pricing):
+- 2 french pane doors, ~40 sqft total
+- Base: 50 sqft minimum x $12/sqft = $600
+- French pane surcharge: 40 sqft x $4 = $160
+- Total range: $600-$800 installed
+- Never quote under $500 for any job
+
+PRICING COMMUNICATION RULES:
+- Always present as a RANGE not a fixed price
+- Always say 'free on-site estimate for exact pricing'
+- Always mention the $500 minimum upfront for small jobs
+- Never go below $500 — ever
+- For French pane / divided lite — always mention the surcharge
+- For jobs under 50 sqft — charge 50 sqft minimum rate
+
 FILM FRAMEWORK — always explain by category not brand first:
 
 REFLECTIVE FILMS (dual-reflective, bronze, silver, neutral):
@@ -241,7 +286,6 @@ REFLECTIVE FILMS (dual-reflective, bronze, silver, neutral):
 - Maximum privacy during daylight hours
 - Strong heat rejection 50-70%
 - Best for: west/south-facing offices, storefronts, privacy-first applications
-- Price range: $8-13/sqft installed
 - In stock: Madico Bronze/Silver, SunTek dual-reflective, MaxPro reflective
 
 NON-REFLECTIVE SOLAR (ceramic, carbon, spectrally selective):
@@ -249,7 +293,6 @@ NON-REFLECTIVE SOLAR (ceramic, carbon, spectrally selective):
 - Blocks heat through infrared rejection not darkness
 - No mirror look — maintains natural appearance
 - Best for: residential, HOA-restricted, high-end commercial
-- Price range: $10-18/sqft installed
 - In stock: SunTek CXP ceramic, Madico Comfort ceramic, MaxPro carbon
 - Order in: LLumar ATC, H\u00fcper Optik ceramic series
 
@@ -257,7 +300,6 @@ NEUTRAL FILMS (lightly tinted, balanced):
 - Middle ground — some reflectivity, moderate heat rejection
 - Most popular residential choice
 - Best for: bedrooms, living rooms, general use
-- Price range: $8-12/sqft installed
 - In stock: Madico Neutral, SunTek neutral, MaxPro neutral
 
 DECORATIVE & PRIVACY (frosted, etched, gradient, pattern):
@@ -265,7 +307,6 @@ DECORATIVE & PRIVACY (frosted, etched, gradient, pattern):
 - Full privacy day and night
 - 618 Solyx patterns available
 - Best for: bathrooms, sidelights, office partitions, storefronts
-- Price range: $10-20/sqft installed
 - Order in: full Solyx catalog (1-2 week lead)
 
 SECURITY FILM (4-21 mil):
@@ -273,13 +314,11 @@ SECURITY FILM (4-21 mil):
 - Holds glass together on impact
 - 4-8 mil: residential safety, retail
 - 12-21 mil: commercial, government, blast mitigation
-- Price range: $12-25/sqft installed
 - In stock: Madico safety series, SunTek safety
 
 CASPER CLOAKING:
 - Makes LED screens invisible from outside
 - Conference rooms, boardrooms only
-- Price range: $25-45/sqft installed
 - Order in: 2 week lead time
 
 PHOTO PROMPTING — CRITICAL:
@@ -312,18 +351,11 @@ FILM RECOMMENDATION PROTOCOL:
 6. Give sq footage estimate and price range for each option
 7. Capture lead with full project brief
 
-ESTIMATION SQFT REFERENCE:
-- Standard window: 12-15 sqft
-- Sliding glass door: 35-45 sqft
-- French doors: 20-30 sqft
-- Floor-to-ceiling panel: 50-80 sqft
-- Sidelight: 6-10 sqft
-- Storefront panel: 40-60 sqft
-- Standard office window: 15-20 sqft
-
 ALWAYS present options across price points.
 NEVER assume budget.
+NEVER quote below $500 minimum.
 ALWAYS mention in-stock availability as a benefit.
+ALWAYS mention surcharges for french pane, upper floor, or film removal.
 
 SERVICE AREAS:
 Phoenix, Scottsdale, Mesa, Chandler, Gilbert, Peoria, Glendale, Tempe, Queen Creek, Fountain Hills, Avondale, Tolleson, and all of Arizona.
@@ -528,8 +560,8 @@ Be specific and confident in your assessment.
 MULTI-PHOTO PROJECT ASSESSMENT:
 When a customer sends multiple window photos and asks for an estimate:
 - Track each area separately (living room, bedroom, bathroom, etc)
-- Estimate sq footage: standard window ~15 sqft, sliding door ~40 sqft, floor-to-ceiling ~60-80 sqft, sidelight ~8 sqft
-- Apply standard pricing: residential ceramic $8-15/sqft, decorative/frosted $10-20/sqft, security $12-25/sqft
+- Estimate sq footage: standard window ~12-15 sqft, sliding door ~35-45 sqft, french door ~15-20 sqft, floor-to-ceiling ~50-80 sqft, sidelight ~6-10 sqft, storefront ~40-60 sqft
+- Apply current pricing from PRICING section above — never below $500 minimum
 - Give itemized breakdown per area with photo reference (Photo 1, Photo 2, etc)
 - Give total project range (low end to high end)
 - Always note "free on-site estimate for exact pricing"
@@ -634,22 +666,29 @@ export default async function handler(req, res) {
       }
     }
 
-    // Build conversation details for email body
+    // Build structured lead data
     const userMessages = (leadData.summary || '').split('\n\n').filter(m => m.startsWith('Customer:')).map(m => m.replace('Customer: ', '')).join(', ');
     const needs = userMessages || 'Not specified';
-    const summary = (leadData.summary || 'No summary').replace(/\n/g, '\n');
+    const fs = leadData.filmSelection;
+    const filmLine = fs ? `${fs.filmLabel}${fs.vlt ? ` at ${fs.vlt}% VLT` : ''} — ${fs.price || 'TBD'} — ${fs.stock || 'TBD'}` : 'Not selected';
+    const photoCount = leadData.photoCount || 0;
+    const city = leadData.location || 'Not provided';
+    const subjectLine = `New estimate — ${leadData.name || 'Website visitor'}${fs ? ` — ${fs.filmLabel}` : ''} in ${city}`;
 
-    const leadText = `You have a new inquiry from your website chat.
+    const leadText = `NEW ESTIMATE REQUEST
 
 Name: ${leadData.name || 'Not provided'}
 Phone: ${leadData.phone || 'Not provided'}
 Email: ${leadData.email || 'Not provided'}
-Location: ${leadData.location || 'Not provided'}
+Location: ${city}
+
+FILM SELECTED: ${filmLine}
+Photos submitted: ${photoCount}
 
 What they need: ${needs}
 
 Full conversation:
-${summary}`.trim();
+${(leadData.summary || 'No summary')}`.trim();
 
     try {
       // Email 1 — internal lead notification to AHOF
@@ -663,15 +702,23 @@ ${summary}`.trim();
           from: 'noreply@arizonahouseoffilm.com',
           to: 'arizonahouseoffilm@gmail.com',
           reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
-          subject: `New inquiry from ${leadData.name || 'a website visitor'}`,
+          subject: subjectLine,
           text: leadText,
-          html: `<p>You have a new inquiry from your website chat.</p>
-<p><strong>Name:</strong> ${leadData.name || 'Not provided'}</p>
-<p><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</p>
-<p><strong>Email:</strong> ${leadData.email || 'Not provided'}</p>
-<p><strong>Location:</strong> ${leadData.location || 'Not provided'}</p>
-<p><strong>What they need:</strong> ${needs}</p>
-<p><strong>Full conversation:</strong><br>${(leadData.summary || 'No summary').replace(/\n/g, '<br>')}</p>`,
+          html: `<div style="font-family:Arial,sans-serif;max-width:600px;">
+<h2 style="color:#1a1a2e;margin:0 0 16px;">New Estimate Request</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;">
+  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;width:120px;">Name</td><td style="padding:6px 8px;">${leadData.name || 'Not provided'}</td></tr>
+  <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Phone</td><td style="padding:6px 8px;">${leadData.phone || 'Not provided'}</td></tr>
+  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Email</td><td style="padding:6px 8px;">${leadData.email || 'Not provided'}</td></tr>
+  <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Location</td><td style="padding:6px 8px;">${city}</td></tr>
+  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Film Selected</td><td style="padding:6px 8px;color:#16a34a;font-weight:bold;">${filmLine}</td></tr>
+  <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted</td></tr>
+</table>
+<h3 style="color:#333;margin:20px 0 8px;">What they need</h3>
+<p style="color:#555;font-size:14px;">${needs}</p>
+<h3 style="color:#333;margin:20px 0 8px;">Full Conversation</h3>
+<pre style="background:#f5f5f5;padding:12px;border-radius:6px;font-size:12px;white-space:pre-wrap;color:#444;">${(leadData.summary || 'No summary').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+</div>`,
         }),
       });
 
@@ -685,7 +732,12 @@ ${summary}`.trim();
       console.log('Lead email sent:', JSON.stringify(r1Result));
 
       // Email 2 — confirmation email to the customer
-      const projectDetails = needs !== 'Not specified' ? needs : 'We will discuss details when we reach out.';
+      const filmSummaryHtml = fs
+        ? `<p style="color:#555;font-size:14px;"><strong>Film selected:</strong> ${fs.filmLabel}${fs.vlt ? ` at ${fs.vlt}% VLT` : ''}<br/><strong>Estimated:</strong> ${fs.price || 'Custom quote'}<br/><strong>Availability:</strong> ${fs.stock === 'In stock' ? 'In stock — same week install' : 'Order in — 1-2 week lead time'}</p>`
+        : '';
+      const photoSummaryHtml = photoCount > 0
+        ? `<p style="color:#555;font-size:14px;">You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.</p>`
+        : '';
 
       let confirmResult = 'skipped — no email';
       if (leadData.email) {
@@ -698,24 +750,23 @@ ${summary}`.trim();
           body: JSON.stringify({
             from: 'noreply@arizonahouseoffilm.com',
             to: leadData.email,
-            subject: 'Your Arizona House of Film Estimate Request',
-            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nWe received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.\n\nYour project details:\n${projectDetails}\n\nIn the meantime, feel free to explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
+            subject: `Your Arizona House of Film Estimate — ${fs ? fs.filmLabel : 'Custom Quote'}`,
+            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nJimmy will contact you within 24 hours to schedule your free on-site estimate.\n\n${fs ? `Film selected: ${fs.filmLabel}${fs.vlt ? ` at ${fs.vlt}% VLT` : ''}\nEstimated: ${fs.price || 'Custom quote'}\nAvailability: ${fs.stock || 'TBD'}\n\n` : ''}${photoCount > 0 ? `You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.\n\n` : ''}In the meantime, explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
             html: `
 <!DOCTYPE html>
 <html>
 <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
   <div style="background: #0a0a1a; padding: 24px; border-radius: 8px; margin-bottom: 20px;">
     <h1 style="color: #6b8f71; margin: 0; font-size: 20px;">ARIZONA HOUSE OF FILM</h1>
-    <p style="color: #888; margin: 4px 0 0 0; font-size: 13px;">arizonahouseoffilm.com · ROC #314088</p>
+    <p style="color: #888; margin: 4px 0 0 0; font-size: 13px;">arizonahouseoffilm.com &middot; ROC #314088</p>
   </div>
-
   <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
     <h2 style="color: #333; font-size: 18px; margin: 0 0 16px 0;">Thanks for reaching out, ${leadData.name || 'there'}!</h2>
-    <p style="color: #555; font-size: 14px; line-height: 1.6;">We received your request and a specialist will contact you within 24 hours to schedule your free on-site estimate.</p>
-    <p style="color: #555; font-size: 14px; line-height: 1.6;"><strong>Your project details:</strong><br/>${projectDetails}</p>
-    <p style="color: #555; font-size: 14px; line-height: 1.6;">In the meantime, feel free to explore our work at <a href="https://arizonahouseoffilm.com" style="color: #6b8f71;">arizonahouseoffilm.com</a></p>
+    <p style="color: #555; font-size: 14px; line-height: 1.6;">Jimmy will contact you within 24 hours to schedule your free on-site estimate.</p>
+    ${filmSummaryHtml}
+    ${photoSummaryHtml}
+    <p style="color: #555; font-size: 14px; line-height: 1.6;">In the meantime, explore our work at <a href="https://arizonahouseoffilm.com" style="color: #6b8f71;">arizonahouseoffilm.com</a></p>
   </div>
-
   <div style="background: white; padding: 16px 24px; border-radius: 8px;">
     <p style="color: #aaa; font-size: 11px; margin: 0;">Arizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ</p>
   </div>

@@ -533,8 +533,23 @@ export default function ChatWidget() {
     if (!leadForm.name || !leadForm.email) return;
     const summary = messages.map(m => `${m.role === 'user' ? 'Customer' : 'Assistant'}: ${m.content}`).join('\n\n');
     const selEffect = filmSelection ? FILM_EFFECTS[filmSelection.filmType] : null;
-    const filmInfo = filmSelection ? `\n\nFILM SELECTION: ${filmSelection.filmLabel}${selEffect?.skipVlt ? '' : ` at ${filmSelection.vlt}% VLT`}\nEstimated: ${selEffect?.price || 'TBD'}\nAvailability: ${selEffect?.stock || 'TBD'}` : '';
-    const payload = { leadData: { ...leadForm, summary: summary + filmInfo } };
+    const payload = {
+      leadData: {
+        name: leadForm.name,
+        email: leadForm.email,
+        phone: leadForm.phone,
+        location: leadForm.location,
+        filmSelection: filmSelection ? {
+          filmType: filmSelection.filmType,
+          filmLabel: filmSelection.filmLabel,
+          vlt: filmSelection.vlt,
+          price: selEffect?.price || null,
+          stock: selEffect?.stock || null,
+        } : null,
+        photoCount: photoHistory.length,
+        summary,
+      },
+    };
     console.log('Submitting lead:', JSON.stringify(payload));
     try {
       const resp = await fetch('/api/chat', {
@@ -547,7 +562,7 @@ export default function ChatWidget() {
       setShowLeadForm(false);
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: `Thanks ${leadForm.name}! A specialist will contact you at ${leadForm.email} within 24 hours. You can also call (480) 788-1591 for immediate assistance.`
+        content: `Thanks ${leadForm.name}! Jimmy will reach out to ${leadForm.email} within 24 hours to schedule your free on-site estimate. You can also call (480) 788-1591 for immediate assistance.`
       }]);
     } catch (e) { console.error('Lead error:', e); }
   };

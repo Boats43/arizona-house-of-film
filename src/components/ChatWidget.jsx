@@ -288,6 +288,17 @@ function applyFilmOverlay(photoBase64, filmType, vltLevel) {
   });
 }
 
+const NOT_A_NAME = /\b(estimate|quote|film|window|tint|heat|privacy|cost|install|need|want|help|looking|getting|price|pricing|ballpark|photo|send|ceramic|frosted|security|decorative|residential|commercial)\b/i;
+const TRIVIAL_WORDS = /^(yes|no|ok|okay|sure|hello|hi|hey|thanks|thank you|yep|nope|yeah|nah)$/i;
+
+function looksLikeName(text) {
+  if (!text || text.length > 40) return false;
+  if (!/^[A-Za-z]+(?:\s[A-Za-z]+){0,2}$/.test(text)) return false;
+  if (NOT_A_NAME.test(text)) return false;
+  if (TRIVIAL_WORDS.test(text)) return false;
+  return true;
+}
+
 function extractContactInfo(messages) {
   const info = {};
   for (let i = messages.length - 1; i >= 0; i--) {
@@ -309,24 +320,24 @@ function extractContactInfo(messages) {
       }
     }
 
-    // Name: 1-3 words, no @, no digits, no special chars — only if prior assistant message asked for name
+    // Name: 1-3 words, passes exclusion check — only if prior assistant message asked for name
     if (!info.name && i > 0) {
       const prior = messages[i - 1];
       const priorAsked = prior?.role === 'assistant' &&
         /\bname\b/i.test(prior.content) &&
         /\b(what|who|may|can|could|your)\b/i.test(prior.content);
-      if (priorAsked && /^[A-Za-z]+(?:\s[A-Za-z]+){0,2}$/.test(text) && text.length <= 40) {
+      if (priorAsked && looksLikeName(text)) {
         info.name = text;
       }
     }
   }
 
-  // Fallback name detection: last user message that's 1-3 words with no @ or digits
+  // Fallback name detection: last user message that passes exclusion check
   if (!info.name) {
     for (let i = messages.length - 1; i >= 0; i--) {
       if (messages[i].role !== 'user') continue;
       const text = messages[i].content.trim();
-      if (/^[A-Za-z]+(?:\s[A-Za-z]+){0,2}$/.test(text) && text.length <= 40 && !/@/.test(text)) {
+      if (looksLikeName(text) && !/@/.test(text)) {
         info.name = text;
         break;
       }

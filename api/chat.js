@@ -557,6 +557,14 @@ When a customer shares a photo:
 - Always end with offer for free estimate
 Be specific and confident in your assessment.
 
+When you identify French pane / divided lite doors or windows in a photo:
+ALWAYS mention:
+1. French pane surcharge applies (+$3-5/sqft)
+2. Each small pane requires individual cutting
+3. Minimum job $500
+4. Example: '2 French doors at ~35 sqft = $500-600 base + French pane surcharge = $600-750 total range'
+Never skip the surcharge mention for French pane windows.
+
 MULTI-PHOTO PROJECT ASSESSMENT:
 When a customer sends multiple window photos and asks for an estimate:
 - Track each area separately (living room, bedroom, bathroom, etc)

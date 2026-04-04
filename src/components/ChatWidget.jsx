@@ -204,6 +204,7 @@ export default function ChatWidget() {
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [pulse, setPulse] = useState(true);
   const [pendingImage, setPendingImage] = useState(null); // { data, mediaType, preview }
+  const [photoHistory, setPhotoHistory] = useState([]); // [{ data, mediaType, preview, label }]
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const imageInputRef = useRef(null);
@@ -245,19 +246,35 @@ export default function ChatWidget() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  const ESTIMATE_RE = /\b(estimate|quote|how much|ballpark|cost|price|pricing)\b/i;
+
   const sendMessage = async (text) => {
     if ((!text.trim() && !pendingImage) || loading) return;
+
+    // Track photo in history when sending an image
+    const imageToSend = pendingImage;
+    let updatedPhotoHistory = photoHistory;
+    if (imageToSend) {
+      const label = `Photo ${photoHistory.length + 1}`;
+      const newPhoto = { data: imageToSend.data, mediaType: imageToSend.mediaType, preview: imageToSend.preview, label };
+      updatedPhotoHistory = [...photoHistory, newPhoto];
+      setPhotoHistory(updatedPhotoHistory);
+    }
+
+    // Detect multi-photo estimate trigger
+    const isEstimateTrigger = !imageToSend && ESTIMATE_RE.test(text) && updatedPhotoHistory.length >= 2;
+
     const displayContent = pendingImage
-      ? (text.trim() ? text : '📷 Sent a photo')
+      ? (text.trim() ? text : `📷 ${updatedPhotoHistory[updatedPhotoHistory.length - 1]?.label || 'Sent a photo'}`)
       : text;
-    const userMessage = { role: 'user', content: displayContent, ...(pendingImage ? { image: pendingImage.preview } : {}) };
+    const photoLabel = imageToSend ? updatedPhotoHistory[updatedPhotoHistory.length - 1]?.label : undefined;
+    const userMessage = { role: 'user', content: displayContent, ...(imageToSend ? { image: imageToSend.preview, photoLabel } : {}) };
     const newMessages = [...messages, userMessage];
     setMessages(newMessages);
-    const imageToSend = pendingImage;
     setPendingImage(null);
     setInput('');
     setLoading(true);
-    if (imageToSend) setAnalyzingImage(true);
+    if (imageToSend || isEstimateTrigger) setAnalyzingImage(true);
 
     // Extract contact info from the new message and pre-populate form
     const detected = extractContactInfo(newMessages);
@@ -277,7 +294,11 @@ export default function ChatWidget() {
 
     try {
       const payload = { messages: newMessages.map(m => ({ role: m.role, content: m.content })) };
-      if (imageToSend) {
+      if (isEstimateTrigger) {
+        // Send all session photos for multi-photo project assessment
+        payload.photos = updatedPhotoHistory.map(p => ({ data: p.data, mediaType: p.mediaType, label: p.label }));
+        payload.projectEstimate = true;
+      } else if (imageToSend) {
         payload.image = { data: imageToSend.data, mediaType: imageToSend.mediaType };
       }
       const response = await fetch('/api/chat', {
@@ -498,11 +519,29 @@ export default function ChatWidget() {
                   whiteSpace:'pre-wrap',
                 }}>
                   {msg.image && (
-                    <img src={msg.image} alt="Uploaded photo" style={{
-                      maxWidth:'100%', maxHeight:'160px', borderRadius:'8px', marginBottom:'6px', display:'block',
-                    }} />
+                    <div style={{ marginBottom:'6px' }}>
+                      <img src={msg.image} alt="Uploaded photo" style={{
+                        maxWidth:'100%', maxHeight:'160px', borderRadius:'8px', display:'block',
+                      }} />
+                      {msg.photoLabel && (
+                        <span style={{ fontSize:'10px', color:'rgba(255,255,255,0.6)', marginTop:'2px', display:'block' }}>{msg.photoLabel}</span>
+                      )}
+                    </div>
                   )}
                   {msg.role === 'assistant' ? formatMessage(msg.content) : msg.content}
+                  {msg.role === 'assistant' && msg.content && /\btotal.*\$[\d,]+/i.test(msg.content) && photoHistory.length >= 2 && !leadCaptured && (
+                    <button
+                      onClick={() => setShowLeadForm(true)}
+                      style={{
+                        marginTop:'8px', display:'block', width:'100%',
+                        background:'#22c55e', color:'#000', border:'none',
+                        borderRadius:'8px', padding:'8px 12px', fontWeight:700,
+                        fontSize:'12px', cursor:'pointer',
+                      }}
+                    >
+                      Get Exact Quote →
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -516,7 +555,9 @@ export default function ChatWidget() {
                   display:'flex', gap:'6px', alignItems:'center',
                 }}>
                   {analyzingImage && (
-                    <span style={{ color:'#9ca3af', fontSize:'12px', marginRight:'2px' }}>Analyzing your window photo</span>
+                    <span style={{ color:'#9ca3af', fontSize:'12px', marginRight:'2px' }}>
+                      {photoHistory.length >= 2 ? `Analyzing ${photoHistory.length} photos for estimate` : 'Analyzing your window photo'}
+                    </span>
                   )}
                   {[0,1,2].map(i => (
                     <span key={i} style={{

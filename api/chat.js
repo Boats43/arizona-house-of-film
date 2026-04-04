@@ -425,7 +425,18 @@ When a customer shares a photo:
 - Recommend specific film category and 2-3 options
 - Estimate square footage if visible
 - Always end with offer for free estimate
-Be specific and confident in your assessment.`;
+Be specific and confident in your assessment.
+
+MULTI-PHOTO PROJECT ASSESSMENT:
+When a customer sends multiple window photos and asks for an estimate:
+- Track each area separately (living room, bedroom, bathroom, etc)
+- Estimate sq footage: standard window ~15 sqft, sliding door ~40 sqft, floor-to-ceiling ~60-80 sqft, sidelight ~8 sqft
+- Apply standard pricing: residential ceramic $8-15/sqft, decorative/frosted $10-20/sqft, security $12-25/sqft
+- Give itemized breakdown per area with photo reference (Photo 1, Photo 2, etc)
+- Give total project range (low end to high end)
+- Always note "free on-site estimate for exact pricing"
+- Always end with lead capture offer — ask for name, email, phone
+- Format the estimate clearly with each line item on its own line`;
 
 export default async function handler(req, res) {
   // ── CORS — restrict to allowed origins ────────────────────────────
@@ -440,9 +451,9 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  // ── Request size validation (2.5 MB limit — increased for image uploads) ──
+  // ── Request size validation (10 MB limit — supports multi-photo project estimates) ──
   const contentLength = parseInt(req.headers['content-length'] || '0', 10);
-  if (contentLength > 2.5 * 1024 * 1024) {
+  if (contentLength > 10 * 1024 * 1024) {
     return res.status(413).json({ error: 'Payload too large' });
   }
 
@@ -458,7 +469,7 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Request rejected' });
   }
 
-  const { messages, leadData, image } = req.body;
+  const { messages, leadData, image, photos, projectEstimate } = req.body;
 
   // Lead email handler — mirrors working api/contact.js pattern exactly
   if (leadData) {
@@ -607,8 +618,42 @@ ${summary}`.trim();
     ? messages.slice(-10)
     : messages;
 
-  // ── Image handling — convert last user message to vision content ──
-  if (image && image.data && image.mediaType) {
+  // ── Multi-photo project estimate — send all session photos in one call ──
+  if (projectEstimate && Array.isArray(photos) && photos.length >= 2) {
+    const imageBlocks = [];
+    for (const photo of photos.slice(0, 8)) { // cap at 8 photos
+      if (photo.data && photo.mediaType) {
+        imageBlocks.push({
+          type: 'image',
+          source: { type: 'base64', media_type: photo.mediaType, data: photo.data },
+        });
+        imageBlocks.push({
+          type: 'text',
+          text: photo.label || 'Window photo',
+        });
+      }
+    }
+    // Find last user message and convert to multi-image vision array
+    for (let i = trimmedMessages.length - 1; i >= 0; i--) {
+      if (trimmedMessages[i].role === 'user') {
+        const userText = typeof trimmedMessages[i].content === 'string'
+          ? trimmedMessages[i].content : '';
+        trimmedMessages[i] = {
+          role: 'user',
+          content: [
+            ...imageBlocks,
+            {
+              type: 'text',
+              text: `The customer has shared ${photos.length} photos of their project. ${userText}\n\nAnalyze all photos together and provide:\n1. Estimated total square footage of glass visible\n2. Window types identified in each photo\n3. Recommended film for each area\n4. Itemized ballpark estimate with ranges\n5. Total project range\n6. Offer to connect them with our team for exact pricing`,
+            },
+          ],
+        };
+        break;
+      }
+    }
+  }
+  // ── Single image handling — convert last user message to vision content ──
+  else if (image && image.data && image.mediaType) {
     // Validate base64 size (1.5 MB decoded ≈ 2 MB base64)
     if (image.data.length > 2 * 1024 * 1024) {
       return res.status(413).json({ error: 'Image too large. Please use a photo under 1.5 MB.' });
@@ -650,12 +695,13 @@ ${summary}`.trim();
 
     let currentMessages = [...trimmedMessages.slice(-10)];
     let finalResponse = '';
+    const maxTokens = projectEstimate ? 2048 : 1024;
 
     // Agentic loop — handles tool calls
     while (true) {
       const response = await client.messages.create({
         model: 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
+        max_tokens: maxTokens,
         system: SYSTEM_PROMPT,
         tools: tools,
         messages: currentMessages,

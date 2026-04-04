@@ -159,6 +159,9 @@ const CityPage = () => {
             src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20240727_093255-hCWXg.jpg"
             alt={`${name} Arizona landscape`}
             className="w-full h-full object-cover"
+            width="1600"
+            height="1066"
+            style={{ aspectRatio: '1600/1066' }}
           />
         </div>
 

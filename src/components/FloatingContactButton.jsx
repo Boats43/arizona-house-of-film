@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 const FloatingContactButton = () => {
   return (
     <motion.div
-      initial={{ y: 100 }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, delay: 0.5 }}
       className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
     >
       <div className="bg-gray-900/95 backdrop-blur-sm p-2 flex justify-around items-center border-t border-gray-700">

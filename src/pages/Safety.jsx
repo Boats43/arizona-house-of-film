@@ -97,7 +97,7 @@ const Safety = () => {
         {/* HERO */}
         <section className="relative min-h-[75vh] flex items-center pt-20 overflow-hidden text-white">
           <div className="absolute inset-0 z-0">
-            <img alt="Security Window Film Phoenix AZ" className="w-full h-full object-cover opacity-40 grayscale" src="/images/Security Window Film Phoenix AZ.webp" fetchpriority="high" />
+            <img alt="Security Window Film Phoenix AZ" className="w-full h-full object-cover opacity-40 grayscale" src="/images/Security Window Film Phoenix AZ.webp" fetchpriority="high" width="1600" height="1066" style={{ aspectRatio: '1600/1066' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">

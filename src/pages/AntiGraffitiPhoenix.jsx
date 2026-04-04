@@ -96,7 +96,7 @@ const AntiGraffitiPhoenix = () => {
 
         <section className="relative min-h-[75vh] flex items-center pt-24 bg-slate-950 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img alt="Anti-graffiti window film Phoenix AZ" className="w-full h-full object-cover opacity-40" src={heroImageUrl} fetchpriority="high" />
+            <img alt="Anti-graffiti window film Phoenix AZ" className="w-full h-full object-cover opacity-40" src={heroImageUrl} fetchpriority="high" width="1600" height="1066" style={{ aspectRatio: '1600/1066' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">

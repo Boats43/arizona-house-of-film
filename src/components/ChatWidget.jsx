@@ -1,9 +1,59 @@
 import { useState, useEffect, useRef } from 'react';
 
-const OPENING_MESSAGE = {
-  role: 'assistant',
-  content: "Hi! I'm the Arizona House of Film assistant. What can I help you with today?"
-};
+const DEFAULT_OPENER = "Hi! I'm the Arizona House of Film assistant. What can I help you with today?";
+
+const OPENING_MESSAGE = { role: 'assistant', content: DEFAULT_OPENER };
+
+function getPageContext() {
+  const path = window.location.pathname;
+
+  if (path.includes('/films/casper')) return {
+    trigger: 'auto', delay: 15000,
+    opener: "I see you're looking at Casper Cloaking Film — it makes screens invisible from outside while staying clear from inside. Is this for a conference room or office space?",
+  };
+  if (path.includes('/films/frosted') || path.includes('/films/etched')) return {
+    trigger: 'auto', delay: 20000,
+    opener: "Looking for privacy film? I can help you find the right opacity and pattern for your space. Is this for a bathroom, office, or entryway?",
+  };
+  if (path.includes('/safety') || path.includes('/security')) return {
+    trigger: 'auto', delay: 15000,
+    opener: "Security film questions? I can walk you through our 4-21 mil options and what's right for your property type. Residential or commercial?",
+  };
+  if (path.includes('/commercial')) return {
+    trigger: 'auto', delay: 20000,
+    opener: "Looking at commercial window film? We work with GCs and property managers across Arizona. What type of building are we talking about?",
+  };
+  if (path.includes('/residential')) return {
+    trigger: 'auto', delay: 20000,
+    opener: "Looking to tint your home? I can help find the right film for Arizona heat. What's your main goal — heat reduction, privacy, or UV protection?",
+  };
+  if (path.includes('/brands/huper-optik')) return {
+    trigger: 'auto', delay: 15000,
+    opener: "Hüper Optik is our newest brand — German nano-ceramic technology, no signal interference, 99% UV rejection. Which series are you interested in — Ceramic, Select, or Safety?",
+  };
+  if (path.includes('/brands/')) return {
+    trigger: 'auto', delay: 20000,
+    opener: "Have questions about this film brand? I can compare specs, pricing ranges, and help you pick the right product for your project.",
+  };
+  if (path.includes('/industries/government')) return {
+    trigger: 'auto', delay: 10000,
+    opener: "Government or institutional project? We handle compliance documentation, security clearances, and blast mitigation specs. What facility type are you working with?",
+  };
+  if (path.includes('/industries/')) return {
+    trigger: 'auto', delay: 20000,
+    opener: "Have questions about window film for your industry? I can recommend specific films and connect you with our team for a free estimate.",
+  };
+  if (path.includes('/store')) return {
+    trigger: 'manual_only',
+    opener: "Need help finding a specific film? Tell me what you're looking for — pattern, opacity, application — and I'll find the right SKU from our 618-film catalog.",
+  };
+  if (path.includes('/contact') || path.includes('/book-now')) return {
+    trigger: 'auto', delay: 8000,
+    opener: "I can help get your estimate started right now — no form needed. What type of project are you looking at?",
+  };
+
+  return { trigger: 'manual_only', opener: DEFAULT_OPENER };
+}
 
 function formatMessage(text) {
   const URL_RE = /(https?:\/\/[^\s"<>]+|arizonahouseoffilm\.com\/[^\s"<>]*)/g;
@@ -60,12 +110,16 @@ export default function ChatWidget() {
     }
   }, [messages]);
 
+  // Auto-open with contextual opener on relevant pages (skip if conversation restored)
   useEffect(() => {
-    const isQuotePage = window.location.pathname.includes('quote') ||
-      window.location.pathname.includes('estimate') ||
-      window.location.pathname.includes('rebate');
-    if (isQuotePage) {
-      const timer = setTimeout(() => setOpen(true), 30000);
+    if (restoredRef.current) return;
+    const context = getPageContext();
+    if (context.trigger === 'auto' && !sessionStorage.getItem('ahof_chat_opened')) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        setMessages([{ role: 'assistant', content: context.opener }]);
+        sessionStorage.setItem('ahof_chat_opened', 'true');
+      }, context.delay);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -185,7 +239,16 @@ export default function ChatWidget() {
   return (
     <>
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={() => {
+          if (!open) {
+            const context = getPageContext();
+            if (messages.length === 1 && messages[0].content === DEFAULT_OPENER) {
+              setMessages([{ role: 'assistant', content: context.opener }]);
+            }
+            sessionStorage.setItem('ahof_chat_opened', 'true');
+          }
+          setOpen(o => !o);
+        }}
         aria-label="Open chat"
         style={{
           position:'fixed', bottom:'24px', right:'24px', zIndex:9999,

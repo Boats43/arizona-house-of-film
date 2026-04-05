@@ -685,6 +685,14 @@ export default async function handler(req, res) {
     const userMessages = (leadData.summary || '').split('\n\n').filter(m => m.startsWith('Customer:')).map(m => m.replace('Customer: ', '')).join(', ');
     const needs = userMessages || 'Not specified';
     const photoCount = leadData.photoCount || 0;
+
+    // Extract photos for email attachments (cap at 5)
+    const leadPhotos = Array.isArray(leadData.photos) ? leadData.photos.slice(0, 5) : [];
+    const attachments = leadPhotos.map((p, i) => ({
+      filename: `project-photo-${i + 1}.jpg`,
+      content: p.data,
+      content_type: p.mediaType || 'image/jpeg',
+    }));
     const city = leadData.location || 'Not provided';
     const budget = leadData.budget || 'Not specified';
     const callTime = leadData.callTime || 'Not specified';
@@ -720,6 +728,7 @@ ${(leadData.summary || 'No summary')}`.trim();
           reply_to: leadData.email || 'arizonahouseoffilm@gmail.com',
           subject: subjectLine,
           text: leadText,
+          ...(attachments.length > 0 ? { attachments } : {}),
           html: `<div style="font-family:Arial,sans-serif;max-width:600px;">
 <h2 style="color:#1a1a2e;margin:0 0 16px;">New Estimate Request</h2>
 <table style="width:100%;border-collapse:collapse;font-size:14px;">
@@ -729,7 +738,7 @@ ${(leadData.summary || 'No summary')}`.trim();
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Location</td><td style="padding:6px 8px;">${city}</td></tr>
   <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Budget</td><td style="padding:6px 8px;color:#16a34a;font-weight:bold;">${budget}</td></tr>
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Best time to call</td><td style="padding:6px 8px;">${callTime}</td></tr>
-  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted</td></tr>
+  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted${attachments.length > 0 ? ' — see attachments' : ''}</td></tr>
 </table>
 <h3 style="color:#333;margin:20px 0 8px;">What they need</h3>
 <p style="color:#555;font-size:14px;">${needs}</p>
@@ -799,9 +808,13 @@ ${(leadData.summary || 'No summary')}`.trim();
         }
       }
 
+      // Scrub photo data from memory
+      if (leadData.photos) leadData.photos = null;
+
       return res.status(200).json({ success: true, lead: r1Result, confirm: confirmResult });
     } catch (e) {
       console.error('Resend exception:', e);
+      if (leadData.photos) leadData.photos = null;
       return res.status(500).json({ error: 'Email failed', detail: e.message });
     }
   }

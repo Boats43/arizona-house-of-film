@@ -266,11 +266,14 @@ export default function ChatWidget() {
   const submitLead = async () => {
     if (!leadForm.name || !leadForm.email) return;
     const summary = messages.map(m => `${m.role === 'user' ? 'Customer' : 'Assistant'}: ${m.content}`).join('\n\n');
+    const photoPayload = photoHistory.slice(0, 5).map(p => ({
+      data: p.data, mediaType: p.mediaType || 'image/jpeg', label: p.label,
+    }));
     const payload = {
       leadData: {
         name: leadForm.name, email: leadForm.email, phone: leadForm.phone, location: leadForm.location,
         budget: leadForm.budget, callTime: leadForm.callTime,
-        photoCount: photoHistory.length, summary,
+        photoCount: photoHistory.length, photos: photoPayload, summary,
       },
     };
     try {

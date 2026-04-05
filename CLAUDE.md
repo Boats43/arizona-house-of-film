@@ -12,7 +12,7 @@
 ## Prerendering
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
 - **Trigger**: `"postbuild": "node scripts/prerender.js"` in package.json
-- **Result**: 318 routes prerendered (~50KB each vs 6KB SPA shell)
+- **Result**: 319 routes prerendered (~50KB each vs 6KB SPA shell)
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
 
@@ -30,9 +30,9 @@
 - `vercel.json` — 70 redirects + SPA rewrite fallback + security headers
 
 ## Page Counts
-- **Total prerendered**: 318
-- **Sitemap URLs**: 336 (across 7 sitemap files)
-- **Page JSX files**: 107 (47 root + 27 locations + 18 informational + 6 solutions + 7 brands + 2 films)
+- **Total prerendered**: 319
+- **Sitemap URLs**: 337 (across 7 sitemap files)
+- **Page JSX files**: 108 (48 root + 27 locations + 18 informational + 6 solutions + 7 brands + 2 films)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
 - **Brand pages**: 35 (7 dedicated + 28 dynamic)
 - **Service area pages**: 100+ (dynamic via CityPage)
@@ -50,7 +50,7 @@
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
-- Build must pass 318/318 prerender before pushing
+- Build must pass 319/319 prerender before pushing
 
 ## Open Items (as of April 4, 2026)
 - `/residential-window-tinting-phoenix` now internally linked from Home, Residential, and WindowFilmPhoenix — verify GSC pickup
@@ -59,4 +59,5 @@
 - Location pages (Chandler, Gilbert, Glendale, Mesa, Peoria, Queen Creek, Tempe) had stale rating data (4.4/100+ reviews) — corrected to 4.6/21 reviews
 - No "17 reviews" instances found — all review counts now consistent at 21
 - `/ai-window-film-estimator` added — dedicated SEO page for AI estimator with auto-open chat, FAQPage + Service schema, sample estimates — monitor indexing + conversion
+- `/window-film-faq` added — 33 FAQs across 8 sections targeting GSC featured snippets, FAQPage schema, 25+ internal links — monitor indexing + snippet acquisition
 - Last updated: April 4, 2026

@@ -130,6 +130,9 @@ const WindowFilmForRestaurantsArizona = lazy(() => import("@/pages/informational
 const WindowFilmForWarehousesArizona = lazy(() => import("@/pages/informational/WindowFilmForWarehousesArizona"));
 const WindowFilmCostEstimator = lazy(() => import("@/pages/informational/WindowFilmCostEstimator"));
 const ShatterproofWindowFilm = lazy(() => import("@/pages/informational/ShatterproofWindowFilm"));
+const DayAndNightPrivacyFilm = lazy(() => import("@/pages/informational/DayAndNightPrivacyFilm"));
+const ElectricPrivacyFilm = lazy(() => import("@/pages/informational/ElectricPrivacyFilm"));
+const PrivacyFilmSlidingGlassDoor = lazy(() => import("@/pages/informational/PrivacyFilmSlidingGlassDoor"));
 const AIWindowFilmEstimator = lazy(() => import("@/pages/AIWindowFilmEstimator"));
 const WindowFilmFAQ = lazy(() => import("@/pages/WindowFilmFAQ"));
 
@@ -316,6 +319,9 @@ function AppRoutes() {
           <Route path="/window-film-for-warehouses-arizona" element={<WindowFilmForWarehousesArizona />} />
           <Route path="/window-film-cost-estimator" element={<WindowFilmCostEstimator />} />
           <Route path="/shatterproof-window-film" element={<ShatterproofWindowFilm />} />
+          <Route path="/day-and-night-privacy-window-film" element={<DayAndNightPrivacyFilm />} />
+          <Route path="/electric-privacy-film-arizona" element={<ElectricPrivacyFilm />} />
+          <Route path="/privacy-film-sliding-glass-door" element={<PrivacyFilmSlidingGlassDoor />} />
           <Route path="/ai-window-film-estimator" element={<AIWindowFilmEstimator />} />
           <Route path="/window-film-faq" element={<WindowFilmFAQ />} />
 

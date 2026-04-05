@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   useLocation,
-  Navigate,
 } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -206,10 +205,6 @@ function AppRoutes() {
           <Route path="/" element={<Home />} />
 
           {/* MAIN SERVICES */}
-          <Route
-            path="/commercial"
-            element={<Navigate to="/commercial-window-tinting" replace />}
-          />
           <Route path="/commercial-window-tinting" element={<Commercial />} />
           <Route path="/commercial-window-tinting-scottsdale" element={<ScottsdaleCommercial />} />
           <Route path="/restaurant-window-film" element={<RestaurantWindowFilm />} />
@@ -220,29 +215,10 @@ function AppRoutes() {
           <Route path="/decorative-window-film-phoenix" element={<DecorativePhoenix />} />
           <Route path="/residential-window-tinting-phoenix" element={<ResidentialPhoenix />} />
           <Route path="/solar-window-film-phoenix" element={<SolarPhoenix />} />
-          <Route
-            path="/residential"
-            element={<Navigate to="/residential-window-tinting" replace />}
-          />
           <Route path="/residential-window-tinting" element={<Residential />} />
-          <Route
-            path="/decorative"
-            element={<Navigate to="/decorative-window-films" replace />}
-          />
           <Route path="/decorative-window-films" element={<Decorative />} />
-          <Route
-            path="/safety-film"
-            element={<Navigate to="/safety" replace />}
-          />
           <Route path="/safety" element={<Safety />} />
-          <Route
-            path="/energy-saving"
-            element={<Navigate to="/energy-saving-window-films" replace />}
-          />
-          <Route
-            path="/energy-saving-window-films"
-            element={<EnergySaving />}
-          />
+          <Route path="/energy-saving-window-films" element={<EnergySaving />} />
           <Route path="/anti-graffiti" element={<AntiGraffiti />} />
           <Route path="/security-window-film-phoenix" element={<SecurityPhoenix />} />
           <Route path="/anti-graffiti-film-phoenix" element={<AntiGraffitiPhoenix />} />
@@ -347,7 +323,6 @@ function AppRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/get-a-quote" element={<FilmQuoteRequest />} />
           <Route path="/book-now" element={<BookNow />} />
-          <Route path="/book" element={<BookNow />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />

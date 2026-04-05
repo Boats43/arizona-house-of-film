@@ -28,6 +28,7 @@ const solutionsLinks = [
   { name: "Security Film Phoenix", path: "/security-window-film-phoenix" },
   { name: "Decorative Film Phoenix", path: "/decorative-window-film-phoenix" },
   { name: "AI Window Film Estimator", path: "/ai-window-film-estimator" },
+  { name: "Window Film FAQ", path: "/window-film-faq" },
 ];
 
 const industriesLinks = [
@@ -60,6 +61,7 @@ const mobileSections = [
       { name: "Energy Saving Films", path: "/energy-saving-window-films" },
       { name: "All Solutions", path: "/solutions" },
       { name: "AI Window Film Estimator", path: "/ai-window-film-estimator" },
+      { name: "Window Film FAQ", path: "/window-film-faq" },
     ],
   },
   {

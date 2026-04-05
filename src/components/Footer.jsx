@@ -55,6 +55,7 @@ const Footer = () => {
     { name: 'Get a Quote', path: '/get-a-quote' },
     { name: 'AI Estimator', path: '/ai-window-film-estimator' },
     { name: 'Window Film Cost', path: '/window-film-cost-arizona' },
+    { name: 'Window Film FAQ', path: '/window-film-faq' },
   ];
 
   const industriesLinks = [

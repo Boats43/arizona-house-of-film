@@ -131,6 +131,7 @@ const WindowFilmForWarehousesArizona = lazy(() => import("@/pages/informational/
 const WindowFilmCostEstimator = lazy(() => import("@/pages/informational/WindowFilmCostEstimator"));
 const ShatterproofWindowFilm = lazy(() => import("@/pages/informational/ShatterproofWindowFilm"));
 const AIWindowFilmEstimator = lazy(() => import("@/pages/AIWindowFilmEstimator"));
+const WindowFilmFAQ = lazy(() => import("@/pages/WindowFilmFAQ"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -316,6 +317,7 @@ function AppRoutes() {
           <Route path="/window-film-cost-estimator" element={<WindowFilmCostEstimator />} />
           <Route path="/shatterproof-window-film" element={<ShatterproofWindowFilm />} />
           <Route path="/ai-window-film-estimator" element={<AIWindowFilmEstimator />} />
+          <Route path="/window-film-faq" element={<WindowFilmFAQ />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

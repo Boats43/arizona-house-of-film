@@ -278,6 +278,7 @@ export default function ChatWidget() {
         name: leadForm.name, email: leadForm.email, phone: leadForm.phone, location: leadForm.location,
         budget: leadForm.budget, callTime: leadForm.callTime,
         photoCount: photoHistory.length, photos: photoPayload, summary,
+        sourcePage: window.location.pathname,
       },
     };
     try {

@@ -711,6 +711,7 @@ Email: ${leadData.email || 'Not provided'}
 Location: ${city}
 Budget: ${budget}
 Best time to call: ${callTime}
+Source page: ${leadData.sourcePage || 'Not provided'}
 
 Photos submitted: ${photoCount}
 
@@ -744,6 +745,7 @@ ${(leadData.summary || 'No summary')}`.trim();
   <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Budget</td><td style="padding:6px 8px;color:#16a34a;font-weight:bold;">${budget}</td></tr>
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Best time to call</td><td style="padding:6px 8px;">${callTime}</td></tr>
   <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted${attachments.length > 0 ? ' — see attachments' : ''}</td></tr>
+  <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Source page</td><td style="padding:6px 8px;">${leadData.sourcePage || 'Not provided'}</td></tr>
 </table>
 <h3 style="color:#333;margin:20px 0 8px;">What they need</h3>
 <p style="color:#555;font-size:14px;">${needs}</p>

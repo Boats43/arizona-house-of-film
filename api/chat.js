@@ -237,8 +237,9 @@ Mention lead time when recommending these.
 
 PRICING — REAL MINIMUMS (never quote below these):
 
-MINIMUM JOB: $500 regardless of size
-MINIMUM SQFT CHARGE: 50 sqft at base rate even if job is smaller
+MINIMUM JOB: $500 — this equals 50 sqft at $10/sqft base rate.
+Any job under 50 sqft is still charged as 50 sqft minimum.
+Never quote below $500 for any job regardless of size.
 
 Why: mobilization, setup, cutting, travel — small jobs cost the same to execute.
 
@@ -685,6 +686,8 @@ export default async function handler(req, res) {
     const needs = userMessages || 'Not specified';
     const photoCount = leadData.photoCount || 0;
     const city = leadData.location || 'Not provided';
+    const budget = leadData.budget || 'Not specified';
+    const callTime = leadData.callTime || 'Not specified';
     const subjectLine = `New estimate — ${leadData.name || 'Website visitor'} in ${city}${photoCount ? ` — ${photoCount} photos` : ''}`;
 
     const leadText = `NEW ESTIMATE REQUEST
@@ -693,6 +696,8 @@ Name: ${leadData.name || 'Not provided'}
 Phone: ${leadData.phone || 'Not provided'}
 Email: ${leadData.email || 'Not provided'}
 Location: ${city}
+Budget: ${budget}
+Best time to call: ${callTime}
 
 Photos submitted: ${photoCount}
 
@@ -722,6 +727,8 @@ ${(leadData.summary || 'No summary')}`.trim();
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Phone</td><td style="padding:6px 8px;">${leadData.phone || 'Not provided'}</td></tr>
   <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Email</td><td style="padding:6px 8px;">${leadData.email || 'Not provided'}</td></tr>
   <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Location</td><td style="padding:6px 8px;">${city}</td></tr>
+  <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Budget</td><td style="padding:6px 8px;color:#16a34a;font-weight:bold;">${budget}</td></tr>
+  <tr style="background:#f9fafb;"><td style="padding:6px 8px;font-weight:bold;color:#333;">Best time to call</td><td style="padding:6px 8px;">${callTime}</td></tr>
   <tr><td style="padding:6px 8px;font-weight:bold;color:#333;">Photos</td><td style="padding:6px 8px;">${photoCount} photo${photoCount !== 1 ? 's' : ''} submitted</td></tr>
 </table>
 <h3 style="color:#333;margin:20px 0 8px;">What they need</h3>
@@ -758,7 +765,7 @@ ${(leadData.summary || 'No summary')}`.trim();
             from: 'noreply@arizonahouseoffilm.com',
             to: leadData.email,
             subject: 'Your Arizona House of Film Estimate Request',
-            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nJimmy will contact you within 24 hours to schedule your free on-site estimate.\n\n${photoCount > 0 ? `You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.\n\n` : ''}In the meantime, explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
+            text: `Thanks for reaching out, ${leadData.name || 'there'}!\n\nOur team will contact you within 24 hours to schedule your free on-site estimate.${callTime !== 'Not specified' ? ` We'll reach out ${callTime.toLowerCase()}.` : ''}\n\n${photoCount > 0 ? `You submitted ${photoCount} photo${photoCount !== 1 ? 's' : ''} for analysis.\n\n` : ''}In the meantime, explore our work at https://arizonahouseoffilm.com\n\nArizona House of Film | ROC #314088 | (480) 788-1591 | Phoenix, AZ`,
             html: `
 <!DOCTYPE html>
 <html>
@@ -769,7 +776,7 @@ ${(leadData.summary || 'No summary')}`.trim();
   </div>
   <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
     <h2 style="color: #333; font-size: 18px; margin: 0 0 16px 0;">Thanks for reaching out, ${leadData.name || 'there'}!</h2>
-    <p style="color: #555; font-size: 14px; line-height: 1.6;">Jimmy will contact you within 24 hours to schedule your free on-site estimate.</p>
+    <p style="color: #555; font-size: 14px; line-height: 1.6;">Our team will contact you within 24 hours to schedule your free on-site estimate.${callTime !== 'Not specified' ? ` We'll reach out <strong>${callTime.toLowerCase()}</strong>.` : ''}</p>
     ${photoSummaryHtml}
     <p style="color: #555; font-size: 14px; line-height: 1.6;">In the meantime, explore our work at <a href="https://arizonahouseoffilm.com" style="color: #6b8f71;">arizonahouseoffilm.com</a></p>
   </div>

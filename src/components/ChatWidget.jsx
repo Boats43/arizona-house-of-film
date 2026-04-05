@@ -128,7 +128,7 @@ export default function ChatWidget() {
   const [loading, setLoading] = useState(false);
   const [analyzingImage, setAnalyzingImage] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
-  const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '', location: '' });
+  const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '', location: '', budget: '', callTime: '' });
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [pulse, setPulse] = useState(true);
   const [pendingImage, setPendingImage] = useState(null);
@@ -138,7 +138,12 @@ export default function ChatWidget() {
   const inputRef = useRef(null);
   const imageInputRef = useRef(null);
 
-  useEffect(() => { if (messages.length > 1) sessionStorage.setItem('ahof_chat', JSON.stringify(messages)); }, [messages]);
+  useEffect(() => {
+    if (messages.length > 1) sessionStorage.setItem('ahof_chat', JSON.stringify(messages));
+  }, [messages]);
+  useEffect(() => {
+    if (photoHistory.length > 0) sessionStorage.setItem('ahof_photos', JSON.stringify(photoHistory.map(p => ({ label: p.label, mediaType: p.mediaType }))));
+  }, [photoHistory]);
 
   useEffect(() => {
     if (restoredRef.current) return;
@@ -264,6 +269,7 @@ export default function ChatWidget() {
     const payload = {
       leadData: {
         name: leadForm.name, email: leadForm.email, phone: leadForm.phone, location: leadForm.location,
+        budget: leadForm.budget, callTime: leadForm.callTime,
         photoCount: photoHistory.length, summary,
       },
     };
@@ -272,7 +278,8 @@ export default function ChatWidget() {
       console.log('Lead submit response:', resp.status);
       setLeadCaptured(true);
       setShowLeadForm(false);
-      setMessages(prev => [...prev, { role: 'assistant', content: `Thanks ${leadForm.name}! Jimmy will reach out to ${leadForm.email} within 24 hours to schedule your free on-site estimate. You can also call (480) 788-1591 for immediate assistance.` }]);
+      const timeMsg = leadForm.callTime ? ` Our team will contact you ${leadForm.callTime.toLowerCase()}.` : '';
+      setMessages(prev => [...prev, { role: 'assistant', content: `Thanks ${leadForm.name}! Our team will reach out to ${leadForm.email} within 24 hours to schedule your free on-site estimate.${timeMsg} You can also call (480) 788-1591 for immediate assistance.` }]);
     } catch (e) { console.error('Lead error:', e); }
   };
 
@@ -299,26 +306,81 @@ export default function ChatWidget() {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
     e.target.value = '';
-    // Compress and queue first file as pending (multi-select: send all sequentially)
-    for (const file of files) {
-      const base64 = await compressImage(file);
-      const preview = `data:image/jpeg;base64,${base64}`;
-      const label = `Photo ${photoHistory.length + 1}`;
-      const photo = { data: base64, mediaType: 'image/jpeg', preview, label };
-      // Add directly to history and send as message
-      setPhotoHistory(prev => [...prev, photo]);
-      const userMsg = { role: 'user', content: `📷 ${label}`, image: preview, photoLabel: label };
-      setMessages(prev => [...prev, userMsg]);
-    }
-    // After all photos added, prompt user
-    if (files.length > 1) {
-      setMessages(prev => [...prev, { role: 'assistant', content: `Got ${files.length} photos! Send more or type "estimate" when you're ready for pricing.` }]);
-    } else {
-      // Single photo — send to API for analysis
+
+    if (files.length === 1) {
+      // Single photo — set as pending, let sendMessage handle everything
       const base64 = await compressImage(files[0]);
       const preview = `data:image/jpeg;base64,${base64}`;
       setPendingImage({ data: base64, mediaType: 'image/jpeg', preview });
+      return;
     }
+
+    // Batch: compress all first, then update state once with correct labels
+    const compressed = [];
+    for (const file of files) {
+      compressed.push(await compressImage(file));
+    }
+
+    // Build new photos with correct sequential labels
+    const batchPhotos = [];
+    setPhotoHistory(prev => {
+      const newPhotos = compressed.map((base64, i) => ({
+        data: base64, mediaType: 'image/jpeg',
+        preview: `data:image/jpeg;base64,${base64}`,
+        label: `Photo ${prev.length + i + 1}`,
+      }));
+      batchPhotos.push(...newPhotos);
+      return [...prev, ...newPhotos];
+    });
+
+    // Add all thumbnails to chat
+    // Use setTimeout to let setPhotoHistory flush first
+    setTimeout(async () => {
+      const thumbMsgs = batchPhotos.map(p => ({
+        role: 'user', content: `📷 ${p.label}`, image: p.preview, photoLabel: p.label,
+      }));
+      setMessages(prev => [...prev, ...thumbMsgs]);
+
+      // Auto-analyze batch — send all photos to Claude immediately
+      setLoading(true);
+      setAnalyzingImage(true);
+      try {
+        const payload = {
+          messages: [{ role: 'user', content: `I've uploaded ${batchPhotos.length} window photos. Please analyze them.` }],
+          photos: batchPhotos.map(p => ({ data: p.data, mediaType: p.mediaType, label: p.label })),
+          projectEstimate: true,
+        };
+        const response = await fetch('/api/chat', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!response.ok) throw new Error('API error');
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let assistantText = '';
+        setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          for (const line of decoder.decode(value).split('\n')) {
+            if (line.startsWith('data: ') && line !== 'data: [DONE]') {
+              try {
+                const d = JSON.parse(line.slice(6));
+                if (d.text) {
+                  assistantText += d.text;
+                  setMessages(prev => { const u = [...prev]; u[u.length - 1] = { role: 'assistant', content: assistantText }; return u; });
+                }
+              } catch {}
+            }
+          }
+        }
+      } catch {
+        setMessages(prev => [...prev, { role: 'assistant', content: "I had trouble analyzing those photos. You can send them one at a time, or type your question and I'll help." }]);
+      } finally {
+        setLoading(false);
+        setAnalyzingImage(false);
+      }
+    }, 50);
   };
 
   return (
@@ -428,6 +490,32 @@ export default function ChatWidget() {
                     style={{ background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.12)', borderRadius:'8px', padding:'8px 12px', color:'#fff', fontSize:'13px', outline:'none', width:'100%' }}
                   />
                 ))}
+                <div>
+                  <div style={{ color:'#9ca3af', fontSize:'11px', marginBottom:'4px' }}>Budget range</div>
+                  <div style={{ display:'flex', gap:'4px' }}>
+                    {['Under $1,000', '$1,000-$3,000', '$3,000+'].map(opt => (
+                      <button key={opt} onClick={() => setLeadForm(prev => ({ ...prev, budget: opt }))} style={{
+                        flex:1, padding:'6px 4px', borderRadius:'6px', fontSize:'10px', fontWeight:600, cursor:'pointer',
+                        background: leadForm.budget === opt ? 'rgba(34,197,94,0.25)' : 'rgba(255,255,255,0.06)',
+                        color: leadForm.budget === opt ? '#22c55e' : '#9ca3af',
+                        border: leadForm.budget === opt ? '1px solid #22c55e' : '1px solid rgba(255,255,255,0.12)',
+                      }}>{opt}</button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <div style={{ color:'#9ca3af', fontSize:'11px', marginBottom:'4px' }}>Best time to call</div>
+                  <div style={{ display:'flex', gap:'4px' }}>
+                    {['Morning (8-12)', 'Afternoon (12-5)', 'Evening (5-8)'].map(opt => (
+                      <button key={opt} onClick={() => setLeadForm(prev => ({ ...prev, callTime: opt }))} style={{
+                        flex:1, padding:'6px 4px', borderRadius:'6px', fontSize:'10px', fontWeight:600, cursor:'pointer',
+                        background: leadForm.callTime === opt ? 'rgba(34,197,94,0.25)' : 'rgba(255,255,255,0.06)',
+                        color: leadForm.callTime === opt ? '#22c55e' : '#9ca3af',
+                        border: leadForm.callTime === opt ? '1px solid #22c55e' : '1px solid rgba(255,255,255,0.12)',
+                      }}>{opt}</button>
+                    ))}
+                  </div>
+                </div>
                 <button onClick={submitLead} disabled={!leadForm.name || !leadForm.email} style={{
                   background:'#22c55e', color:'#000', border:'none', borderRadius:'8px', padding:'9px', fontWeight:700, fontSize:'13px',
                   cursor: leadForm.name && leadForm.email ? 'pointer' : 'not-allowed', opacity: leadForm.name && leadForm.email ? 1 : 0.5,
@@ -444,7 +532,7 @@ export default function ChatWidget() {
             }}>Get Free Estimate</button>
           )}
 
-          <input ref={imageInputRef} type="file" accept="image/*" capture="environment" multiple onChange={handleImageSelect} style={{ display:'none' }} />
+          <input ref={imageInputRef} type="file" accept="image/*" multiple onChange={handleImageSelect} style={{ display:'none' }} />
 
           {pendingImage && (
             <div style={{ borderTop:'1px solid rgba(255,255,255,0.06)', padding:'8px 12px', background:'#0f0f1a', display:'flex', alignItems:'center', gap:'8px' }}>

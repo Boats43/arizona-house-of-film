@@ -596,7 +596,12 @@ Total range: $[low] - $[high]
 Want me to set up your free on-site estimate? Just need your name, email, and phone."
 
 Always give TWO options — in-stock for speed, order-in for premium.
-Always end with lead capture.`;
+Always end with lead capture.
+
+PAGE-SPECIFIC BEHAVIOR — /ai-window-film-estimator:
+When user is on /ai-window-film-estimator, the chat auto-opens ready for photo upload.
+Opening message: "Ready to analyze your windows. Tap the camera icon to upload photos and I will give you an instant estimate."
+This page is a dedicated AI estimator landing page — be extra responsive to photo uploads and give detailed, itemized estimates immediately.`;
 
 export default async function handler(req, res) {
   // ── CORS — restrict to allowed origins ────────────────────────────

@@ -29,15 +29,18 @@
   <link
     rel="preload"
     as="style"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
     onload="this.onload=null;this.rel='stylesheet'"
   />
   <noscript>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
     />
   </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
 
   <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
   <link
@@ -52,12 +55,12 @@
 
   <!-- Vite entry (Dev Mode) -->
 
-  <script type="module" crossorigin src="/assets/index-x9YbfB5E.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/vendor-D3D9tS8n.js">
-  <link rel="modulepreload" crossorigin href="/assets/react-vendor-CAwpzU7l.js">
-  <link rel="modulepreload" crossorigin href="/assets/router-C0TY8KwS.js">
-  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-CDRJKgRw.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-ptvJD6e6.css">
+  <script type="module" crossorigin src="/assets/index-C088TE53.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-CQcy84tN.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-zloSmxFt.css">
   <script type="module">
 window.onerror = (message, source, lineno, colno, errorObj) => {
 	const errorDetails = errorObj ? JSON.stringify({

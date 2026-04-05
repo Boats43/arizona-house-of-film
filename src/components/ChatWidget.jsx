@@ -7,6 +7,10 @@ const OPENING_MESSAGE = { role: 'assistant', content: DEFAULT_OPENER };
 function getPageContext() {
   const path = window.location.pathname;
 
+  if (path.includes('/ai-window-film-estimator')) return {
+    trigger: 'auto', delay: 3000,
+    opener: "Ready to analyze your windows — tap the camera icon to upload your photos and I'll give you an instant estimate with in-stock and premium pricing options.",
+  };
   if (path.includes('/window-film-cost') || path.includes('/cost-estimator')) return {
     trigger: 'auto', delay: 10000,
     opener: "Want a faster estimate? Tell me your square footage and film type — I can give you a ballpark right now without filling out a form.",

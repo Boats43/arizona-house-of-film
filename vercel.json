@@ -1,5 +1,29 @@
 {
   "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "windowtintingphoenix.com" }],
+      "destination": "https://arizonahouseoffilm.com/residential-window-tinting-phoenix",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.windowtintingphoenix.com" }],
+      "destination": "https://arizonahouseoffilm.com/residential-window-tinting-phoenix",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "windowtintingphoenix.com" }],
+      "destination": "https://arizonahouseoffilm.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.windowtintingphoenix.com" }],
+      "destination": "https://arizonahouseoffilm.com/:path*",
+      "permanent": true
+    },
     { "source": "/", "has": [{ "type": "query", "key": "a" }], "destination": "/contact", "permanent": true },
     { "source": "/", "has": [{ "type": "query", "key": "zhHant" }], "destination": "/contact", "permanent": true },
     {

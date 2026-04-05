@@ -52,6 +52,9 @@ const Footer = () => {
     { name: 'Book Now', path: '/book-now' },
     { name: 'Store', path: '/store' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Get a Quote', path: '/get-a-quote' },
+    { name: 'AI Estimator', path: '/ai-window-film-estimator' },
+    { name: 'Window Film Cost', path: '/window-film-cost-arizona' },
   ];
 
   const industriesLinks = [
@@ -73,6 +76,8 @@ const Footer = () => {
     { name: 'Entryway & Door Film', path: '/entryway-window-film' },
     { name: 'Sidelight Window Film', path: '/sidelight-window-film' },
     { name: 'One-Way Mirror Film', path: '/one-way-mirror-window-film' },
+    { name: 'Office Partition Film', path: '/office-partition-window-film' },
+    { name: 'Restaurant Window Film', path: '/restaurant-window-film' },
   ];
 
   const companyLinks = [

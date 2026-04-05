@@ -27,6 +27,7 @@ const solutionsLinks = [
   { name: "Solar Film Phoenix", path: "/solar-window-film-phoenix" },
   { name: "Security Film Phoenix", path: "/security-window-film-phoenix" },
   { name: "Decorative Film Phoenix", path: "/decorative-window-film-phoenix" },
+  { name: "AI Window Film Estimator", path: "/ai-window-film-estimator" },
 ];
 
 const industriesLinks = [
@@ -58,6 +59,7 @@ const mobileSections = [
       { name: "Decorative Window Films", path: "/decorative-window-films" },
       { name: "Energy Saving Films", path: "/energy-saving-window-films" },
       { name: "All Solutions", path: "/solutions" },
+      { name: "AI Window Film Estimator", path: "/ai-window-film-estimator" },
     ],
   },
   {
@@ -102,6 +104,7 @@ const mobileSections = [
       { name: "Gallery", path: "/gallery" },
       { name: "Book Now", path: "/book-now" },
       { name: "Store", path: "/store" },
+      { name: "Window Film Cost Arizona", path: "/window-film-cost-arizona" },
     ],
   },
   {

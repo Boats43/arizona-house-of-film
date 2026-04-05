@@ -460,6 +460,8 @@ const WindowFilmPhoenix = () => {
               <Link to="/security-window-film-phoenix" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Security Window Film Phoenix &rarr;</Link>
               <Link to="/decorative-window-film-phoenix" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Decorative Window Film Phoenix &rarr;</Link>
               <Link to="/anti-graffiti-film-phoenix" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Anti-Graffiti Film Phoenix &rarr;</Link>
+              <Link to="/commercial-window-tinting-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Commercial Window Film Scottsdale &rarr;</Link>
+              <Link to="/residential-window-tinting-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Residential Window Tinting Scottsdale &rarr;</Link>
             </div>
           </div>
         </section>

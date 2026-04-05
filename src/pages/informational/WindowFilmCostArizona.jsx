@@ -63,7 +63,7 @@ export default function WindowFilmCostArizona() {
         <section className="mb-12">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Commercial Window Film Cost in Arizona</h2>
           <p className="text-lg text-slate-700 mb-4">Commercial window film projects range from <strong>$3,500 for small retail or office installs</strong> to <strong>$15,000–$45,000+</strong> for large commercial perimeters including multi-story buildings and campus installations. Commercial projects are quoted per square foot based on scope, film specification, and SHGC/NFRC documentation requirements.</p>
-          <p className="text-lg text-slate-700">All commercial estimates include NFRC documentation for COMcheck compliance and energy rebate applications.</p>
+          <p className="text-lg text-slate-700">All commercial estimates include NFRC documentation for COMcheck compliance and energy rebate applications. See <Link to="/commercial-window-tinting-scottsdale" className="text-blue-700 underline hover:text-blue-900">Scottsdale commercial window film pricing</Link> for project-specific ranges in the Scottsdale market.</p>
         </section>
 
         <section className="mb-12">

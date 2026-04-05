@@ -10,7 +10,7 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Commercial Window Film Scottsdale AZ | Installation | ROC #314088';
+  const pageTitle = 'Commercial Window Film Scottsdale AZ | ROC #314088';
   const metaDescription = 'Licensed commercial window film installation in Scottsdale AZ — solar control, security & decorative film for offices, retail & hospitality. ROC #314088. Free estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
@@ -467,10 +467,15 @@ const ScottsdaleCommercial = () => {
         <section className="py-14 bg-slate-900 border-t border-slate-800">
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-6">More Scottsdale Window Film Services</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4 mb-4">
               <Link to="/decorative-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Decorative Window Film Scottsdale →</Link>
               <Link to="/solar-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Solar Window Film Scottsdale →</Link>
               <Link to="/security-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Security Window Film Scottsdale →</Link>
+            </div>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/commercial-window-tinting" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Commercial Window Tinting Arizona →</Link>
+              <Link to="/industries/office-buildings" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Office Building Window Film →</Link>
+              <Link to="/window-film-cost-arizona" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Window Film Cost Arizona →</Link>
             </div>
           </div>
         </section>

@@ -599,7 +599,7 @@ const Commercial = () => {
             <h2 className="text-sm font-black text-slate-500 mb-10 uppercase tracking-[0.3em]">
               Commercial Service Areas
             </h2>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {cities.map((city) => (
                 <Link
                   key={city.slug}
@@ -609,6 +609,10 @@ const Commercial = () => {
                   {city.name}
                 </Link>
               ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/commercial-window-tinting-scottsdale" className="px-5 py-2 bg-slate-900 text-white text-xs font-black uppercase rounded hover:bg-green-600 transition-colors">Scottsdale Commercial Window Tinting &rarr;</Link>
+              <Link to="/commercial-window-film-phoenix" className="px-5 py-2 bg-slate-900 text-white text-xs font-black uppercase rounded hover:bg-green-600 transition-colors">Phoenix Commercial Window Film &rarr;</Link>
             </div>
           </div>
         </section>

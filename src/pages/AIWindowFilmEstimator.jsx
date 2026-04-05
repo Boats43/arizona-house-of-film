@@ -362,7 +362,7 @@ export default function AIWindowFilmEstimator() {
             Sample AI Estimates
           </h2>
           <p className="text-center text-gray-600 mb-12">
-            Here's what our AI identified for recent projects:
+            Here's what our AI identified for recent projects — including <a href="/commercial-window-tinting-scottsdale" className="text-blue-600 underline hover:text-blue-800">Scottsdale office window film</a> installations:
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {sampleEstimates.map((est, i) => (

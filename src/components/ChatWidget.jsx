@@ -140,7 +140,9 @@ export default function ChatWidget() {
   const [showPhotoConsent, setShowPhotoConsent] = useState(false);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
-  const imageInputRef = useRef(null);
+  const cameraInputRef = useRef(null);
+  const galleryInputRef = useRef(null);
+  const pendingInputRef = useRef(null);
 
   useEffect(() => {
     if (messages.length > 1) sessionStorage.setItem('ahof_chat', JSON.stringify(messages));
@@ -540,7 +542,8 @@ export default function ChatWidget() {
             }}>Get Free Estimate</button>
           )}
 
-          <input ref={imageInputRef} type="file" accept="image/*" multiple onChange={handleImageSelect} style={{ display:'none' }} />
+          <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" onChange={handleImageSelect} style={{ display:'none' }} />
+          <input ref={galleryInputRef} type="file" accept="image/*" multiple onChange={handleImageSelect} style={{ display:'none' }} />
 
           {pendingImage && (
             <div style={{ borderTop:'1px solid rgba(255,255,255,0.06)', padding:'8px 12px', background:'#0f0f1a', display:'flex', alignItems:'center', gap:'8px' }}>
@@ -557,11 +560,17 @@ export default function ChatWidget() {
               disabled={loading}
               style={{ flex:1, background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', padding:'9px 14px', color:'#fff', fontSize:'13px', outline:'none' }}
             />
-            <button onClick={() => { if (sessionStorage.getItem('ahof_photo_consent')) imageInputRef.current?.click(); else setShowPhotoConsent(true); }}
-              disabled={loading} aria-label="Upload photo"
+            <button onClick={() => { pendingInputRef.current = cameraInputRef; if (sessionStorage.getItem('ahof_photo_consent')) cameraInputRef.current?.click(); else setShowPhotoConsent(true); }}
+              disabled={loading} aria-label="Take photo" title="Take photo"
               style={{ background:'none', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', width:'38px', height:'38px', cursor: loading ? 'not-allowed' : 'pointer', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, opacity: loading ? 0.4 : 1 }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </button>
+            <button onClick={() => { pendingInputRef.current = galleryInputRef; if (sessionStorage.getItem('ahof_photo_consent')) galleryInputRef.current?.click(); else setShowPhotoConsent(true); }}
+              disabled={loading} aria-label="Choose from gallery" title="Choose from gallery"
+              style={{ background:'none', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', width:'38px', height:'38px', cursor: loading ? 'not-allowed' : 'pointer', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, opacity: loading ? 0.4 : 1 }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             </button>
             <button onClick={() => sendMessage(input)} disabled={(!input.trim() && !pendingImage) || loading}
               style={{
@@ -585,7 +594,7 @@ export default function ChatWidget() {
             <div style={{ fontSize:'16px', marginBottom:'8px' }}><span role="img" aria-label="camera">📷</span> Photo Analysis</div>
             <p style={{ color:'#9ca3af', fontSize:'13px', lineHeight:'1.5', margin:'0 0 16px' }}>Your photo will be analyzed by AI to recommend window film. Images are not stored and are deleted after analysis.</p>
             <div style={{ display:'flex', gap:'8px' }}>
-              <button onClick={() => { sessionStorage.setItem('ahof_photo_consent', 'true'); setShowPhotoConsent(false); imageInputRef.current?.click(); }}
+              <button onClick={() => { sessionStorage.setItem('ahof_photo_consent', 'true'); setShowPhotoConsent(false); pendingInputRef.current?.current?.click(); }}
                 style={{ flex:1, background:'#22c55e', color:'#000', border:'none', borderRadius:'8px', padding:'10px', fontWeight:700, fontSize:'13px', cursor:'pointer' }}>Got it</button>
               <button onClick={() => setShowPhotoConsent(false)}
                 style={{ flex:1, background:'rgba(255,255,255,0.1)', color:'#fff', border:'none', borderRadius:'8px', padding:'10px', fontWeight:600, fontSize:'13px', cursor:'pointer' }}>Cancel</button>

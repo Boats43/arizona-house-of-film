@@ -12,7 +12,9 @@ const BlogPost = () => {
 
   if (!post) return <NotFound />;
 
-  const canonicalUrl = `https://arizonahouseoffilm.com/blog/${post.slug}`;
+  const canonicalUrl = post.canonicalUrl
+    ? `https://arizonahouseoffilm.com${post.canonicalUrl}`
+    : `https://arizonahouseoffilm.com/blog/${post.slug}`;
   const { title, date, content, blogSchema, faqPageSchema, excerpt } = post;
 
   const pageTitle = `${title} | Arizona House of Film`;

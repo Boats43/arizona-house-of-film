@@ -48,7 +48,13 @@
       "WebFetch(domain:www.google.com)",
       "WebFetch(domain:horizons-cdn.hostinger.com)",
       "WebFetch(domain:srpnet.com)",
-      "WebFetch(domain:www.transparenttextures.com)"
+      "WebFetch(domain:www.transparenttextures.com)",
+      "Bash(npx vercel:*)",
+      "Bash(curl:*)",
+      "Bash(grep -c '<loc>' public/sitemap-*.xml)",
+      "Bash(grep -v \":0$\")",
+      "Bash(xargs grep:*)",
+      "Bash(grep -l \"window-film-phoenix\" \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\\\\src\\\\pages\"/*.jsx)"
     ]
   }
 }

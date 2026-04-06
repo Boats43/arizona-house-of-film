@@ -8,3 +8,5 @@ build/
 *.dll
 *.exe
 *.bin
+
+.vercel

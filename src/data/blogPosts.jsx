@@ -2,6 +2,7 @@ const allBlogData = [
   {
     slug: 'ultimate-guide-to-window-tinting-benefits-in-arizona',
     title: 'Ultimate Guide to Window Tinting Benefits in Arizona',
+    excerpt: 'Everything you need to know about window tinting benefits in Arizona — UV protection, energy savings, and privacy for Phoenix-area homes.',
     date: '2025-10-21',
     alt: 'A beautiful Arizona home with tinted windows reflecting the sun.',
     keywords: 'arizona window tinting benefits, residential window film Arizona, home window tinting Phoenix',
@@ -27,6 +28,7 @@ const allBlogData = [
   {
     slug: 'slashing-your-energy-bills-with-window-film',
     title: 'Slashing Your Energy Bills: How Window Film Works',
+    excerpt: 'How energy saving window film cuts cooling costs up to 30%. Solar film technology explained for Arizona homeowners in Phoenix and Tucson.',
     date: '2025-10-20',
     alt: 'An energy meter showing reduced consumption after window film installation.',
     keywords: 'energy saving window film Arizona, reduce AC bills Phoenix, solar film Tucson',
@@ -52,6 +54,7 @@ const allBlogData = [
   {
     slug: 'decorative-vs-privacy-film-which-is-right-for-you',
     title: 'Decorative vs. Privacy Film: Which Is Right for You?',
+    excerpt: 'Decorative window film vs privacy film — features, costs, and best uses compared. Find the right frosted glass option for your Scottsdale home.',
     date: '2025-10-19',
     alt: 'A side-by-side comparison of elegant decorative film and functional privacy film.',
     keywords: 'decorative window film Arizona, privacy film Phoenix, frosted glass Scottsdale',
@@ -77,6 +80,7 @@ const allBlogData = [
   {
     slug: 'top-5-mistakes-to-avoid-when-tinting-your-home',
     title: 'Top 5 Mistakes to Avoid When Tinting Your Home',
+    excerpt: 'Avoid costly home window tint mistakes — from DIY tinting fails to wrong film choices. Professional tips for Arizona homeowners in Mesa and Phoenix.',
     date: '2025-10-18',
     alt: 'A window with peeling, bubbly DIY tint, illustrating a common mistake.',
     keywords: 'home window tint mistakes Arizona, DIY tinting Phoenix, professional window film Mesa',
@@ -102,6 +106,7 @@ const allBlogData = [
   {
     slug: 'commercial-window-film-case-study-fedex-yuma',
     title: 'Case Study: How We Helped FedEx in Yuma Save on Cooling',
+    excerpt: 'Commercial window tint case study — how warehouse window film cut cooling costs at a FedEx facility in Yuma, Arizona. Real results and ROI data.',
     date: '2025-10-17',
     alt: 'A FedEx facility in Yuma with newly installed energy-saving commercial window film.',
     keywords: 'commercial window tint Yuma, energy savings Yuma business, warehouse window film',
@@ -127,6 +132,7 @@ const allBlogData = [
   {
     slug: 'car-vs-home-window-tinting-whats-the-difference',
     title: 'Car vs. Home Window Tinting: What\'s the Difference?',
+    excerpt: 'Car vs home window tint — why automotive film can crack house windows and what residential film does differently. A guide for Arizona homeowners.',
     date: '2025-10-16',
     alt: 'A split image showing a tinted car window next to a tinted residential window.',
     keywords: 'car vs home window tint, automotive vs residential tint Arizona, Glendale window film',
@@ -152,6 +158,7 @@ const allBlogData = [
   {
     slug: 'faq-can-window-film-really-lower-my-ac-bill',
     title: 'FAQ: Can Window Film Really Lower My AC Bill?',
+    excerpt: 'Yes — window film can lower your AC bill up to 30% in Phoenix. See how energy saving tint reduces Arizona cooling costs with real ROI numbers.',
     date: '2025-10-15',
     alt: 'An air conditioning unit with a large dollar sign, symbolizing cost savings.',
     keywords: 'window film lower AC bill, Phoenix energy saving tint, Arizona cooling costs',
@@ -177,6 +184,7 @@ const allBlogData = [
   {
     slug: 'a-business-owners-guide-to-security-window-films',
     title: 'A Business Owner\'s Guide to Security Window Films',
+    excerpt: 'Security window film for Arizona businesses — anti-intrusion protection, smash-and-grab deterrence, and safety glazing for Phoenix and Tempe storefronts.',
     date: '2025-10-14',
     alt: 'A secure commercial storefront in Tempe protected by safety and security window film.',
     keywords: 'security window film Arizona, commercial safety tint Phoenix, anti-intrusion film Tempe',
@@ -202,6 +210,7 @@ const allBlogData = [
   {
     slug: 'why-phoenix-residents-swear-by-window-tinting',
     title: 'Why Phoenix Residents Swear By Window Tinting',
+    excerpt: 'Why window tint is a must-have for Phoenix homeowners — heat rejection, UV protection, and lower AC bills in the hottest metro in Arizona.',
     date: '2025-10-13',
     alt: 'The Phoenix skyline with bright sun rays, illustrating the need for window tint.',
     keywords: 'window tint Phoenix, residential tinting Phoenix, Phoenix home comfort',
@@ -227,6 +236,7 @@ const allBlogData = [
   {
     slug: 'the-secret-to-scottsdale-luxury-high-end-window-films',
     title: 'The Secret to Scottsdale Luxury: High-End Window Films',
+    excerpt: 'Luxury window film options for high-end Scottsdale homes — 3M Prestige, decorative glass, and solar control that preserves Arizona architecture.',
     date: '2025-10-12',
     alt: 'A luxurious Scottsdale home with large, elegantly tinted windows overlooking a pool.',
     keywords: 'luxury window film Scottsdale, high end residential tint Arizona, decorative films Scottsdale',
@@ -252,6 +262,7 @@ const allBlogData = [
   {
     slug: 'srp-rebate-window-film-2026',
     title: 'SRP Window Film Rebate 2026 — What Qualifies and How to Apply',
+    excerpt: 'SRP window film rebate 2026 — eligibility, qualifying films, and step-by-step application guide for Phoenix and Arizona homeowners. Up to $1/sqft.',
     date: '2026-04-04',
     alt: 'SRP rebate application form with window film installation documentation.',
     keywords: 'SRP window film rebate 2026, SRP rebate window tinting, APS window film rebate Arizona',
@@ -499,6 +510,7 @@ const allBlogData = [
   {
     slug: 'best-window-film-arizona-heat-2026',
     title: 'Best Window Film for Arizona Heat in 2026 — Ceramic vs Dual Reflective',
+    excerpt: 'Best window film for Arizona heat in 2026 — ceramic vs dual reflective compared on TSER, clarity, cost, and durability for Phoenix-area homes.',
     date: '2026-04-04',
     alt: 'Comparison of ceramic and dual reflective window film on Arizona home windows.',
     keywords: 'best window film Arizona heat 2026, ceramic vs dual reflective window film, Arizona window film comparison',

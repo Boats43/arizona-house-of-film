@@ -15,7 +15,7 @@ const BlogPost = () => {
   const canonicalUrl = `https://arizonahouseoffilm.com/blog/${post.slug}`;
   const { title, date, content, blogSchema, faqPageSchema, excerpt } = post;
 
-  const pageTitle = `${title} | Arizona House of Film Blog`;
+  const pageTitle = `${title} | Arizona House of Film`;
   const metaDescription = excerpt || "Learn expert insights, case studies, and window film tips from Arizona House of Film.";
   
   const ogImageUrl = `https://arizonahouseoffilm.com/og-images/blog/${slug}.jpg`;

@@ -1155,6 +1155,325 @@ const allBlogData = [
     <p>Arizona House of Film serves Queen Creek, San Tan Valley, Gilbert, Mesa, and the full East Valley. ROC #314088. Free on-site assessments. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
     <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
   `
+  },
+  {
+    slug: 'window-tinting-scottsdale-az-guide',
+    title: 'Window Tinting in Scottsdale, AZ — Residential & Commercial Guide (2026)',
+    excerpt: 'Window tinting services in Scottsdale AZ — residential film, commercial installation, and energy savings. Licensed ROC #314088 contractor serving Scottsdale.',
+    date: '2026-04-06',
+    alt: 'Professional window tinting on a luxury Scottsdale residence with desert landscape.',
+    keywords: 'commercial window film Scottsdale AZ, residential window film Scottsdale AZ, commercial window tinting Scottsdale AZ',
+    serviceLink: '/commercial-window-tinting-scottsdale',
+    cityLink: '/residential-window-tinting-scottsdale',
+    brandMentions: '3M Prestige, Hüper Optik',
+    faqs: [
+      {
+        question: 'How much does window tinting cost in Scottsdale AZ?',
+        answer: 'Residential window tinting in Scottsdale typically costs $8–$18 per square foot installed depending on film type and glass size. Most Scottsdale homes run $1,200–$4,000 for ceramic solar film. Luxury homes in Gainey Ranch, Silverleaf, and Desert Mountain with extensive glass often run $4,000–$10,000+. Commercial projects are quoted by scope — storefronts, office suites, and restaurants are measured on-site. Arizona House of Film (ROC #314088) provides free estimates across all Scottsdale neighborhoods.'
+      },
+      {
+        question: 'What is the best window film for Scottsdale homes?',
+        answer: 'For most Scottsdale residential applications, ceramic window film is the best choice — it rejects 50–84% of solar heat, blocks 99% of UV, does not interfere with electronics, and is HOA-compliant. For luxury properties where maximum clarity is essential, spectrally selective film (Hüper Optik Select DREI or 3M Prestige) offers the highest heat rejection with near-invisible appearance. For homes requiring privacy, dual-reflective ceramic provides heat rejection and daytime privacy in a single product.'
+      },
+      {
+        question: 'Do Scottsdale HOAs allow window tinting?',
+        answer: 'Most Scottsdale HOAs allow neutral-tone solar window film that does not alter the exterior appearance of the home. Reflective, mirrored, and dark-tinted films may require HOA approval or may be restricted. Ceramic and spectrally selective films are the most HOA-friendly because they maintain a neutral, clear appearance from the outside. Arizona House of Film advises clients on HOA-compliant options before installation and can provide specification sheets for HOA submission.'
+      },
+      {
+        question: 'How long does commercial window film last in Arizona heat?',
+        answer: 'Quality commercial window film from manufacturers like 3M, Hüper Optik, and LLumar lasts 15–25 years in Arizona heat when professionally installed. Manufacturer warranties typically cover 10–15 years for commercial applications. Cheap dyed films degrade in 3–5 years in Phoenix-area UV — we only install ceramic and spectrally selective commercial films with documented Arizona-heat warranties.'
+      }
+    ],
+    ctaCity: 'Scottsdale',
+    customContent: `
+    <h1>Window Tinting in Scottsdale, AZ — Residential & Commercial Film Guide 2026</h1>
+
+    <p class="lead">Scottsdale properties face a unique combination of challenges: extreme solar heat, HOA restrictions on appearance, high-value interiors vulnerable to UV damage, and large glass elevations designed for views. The right window film addresses all four without compromising aesthetics. Arizona House of Film (ROC #314088) has installed residential and commercial window film across Scottsdale — from McCormick Ranch townhomes to Silverleaf estates to Old Town retail storefronts — since 2017. This guide covers what Scottsdale property owners need to know about window film options, costs, and installation in 2026.</p>
+
+    <h2>Why Scottsdale Properties Need Window Film</h2>
+    <p>Scottsdale sits in the same heat zone as Phoenix — 115°F+ summers, 299+ sun days per year, and UV levels that destroy furnishings within years. But Scottsdale properties have three additional considerations that make film selection more nuanced:</p>
+    <ul>
+      <li><strong>HOA compliance</strong> — Communities like Scottsdale Ranch, McCormick Ranch, Gainey Ranch, DC Ranch, and Grayhawk have exterior appearance standards. Reflective and dark-tinted films are often restricted. Ceramic and spectrally selective films pass HOA review because they maintain a neutral, clear exterior appearance.</li>
+      <li><strong>High-value interiors</strong> — Scottsdale homes contain high-value furnishings, art, and finishes that degrade rapidly under Arizona UV. Window film blocking 99%+ of UV is the single most effective protection — more effective than window treatments, which only work when closed.</li>
+      <li><strong>Large glass elevations</strong> — Scottsdale architecture favors expansive glass for mountain and desert views. More glass means more solar heat gain, higher cooling costs, and greater UV exposure. Window film is the most cost-effective intervention on these large glass surfaces.</li>
+    </ul>
+
+    <h2>Residential Window Film in Scottsdale — Options & Cost</h2>
+    <p>Residential window film in Scottsdale serves three primary functions: heat rejection, UV protection, and privacy. The films we install most frequently on Scottsdale homes:</p>
+    <ul>
+      <li><strong>Ceramic solar film</strong> — Hüper Optik Select or LLumar CTX. Rejects 50–84% of solar heat, blocks 99% UV, no signal interference. HOA-compliant. $10–$18/sq ft installed. The default recommendation for most Scottsdale homes.</li>
+      <li><strong>Spectrally selective film</strong> — 3M Prestige or Hüper Optik Klar. Maximum heat rejection with near-invisible appearance. For luxury homes where any visible tint is unacceptable. $14–$22/sq ft installed.</li>
+      <li><strong>Dual-reflective ceramic</strong> — Daytime privacy plus heat rejection. Popular in McCormick Ranch and Scottsdale Ranch where homes sit close together. $12–$18/sq ft installed.</li>
+      <li><strong>Decorative and privacy film</strong> — Frosted, etched, and gradient films for bathrooms, sidelights, and bedroom windows. $8–$14/sq ft installed.</li>
+    </ul>
+    <table>
+      <tr><th>Home Type</th><th>Typical Film</th><th>Window Count</th><th>Cost Range</th></tr>
+      <tr><td>Townhome / patio home</td><td>Ceramic</td><td>8–12</td><td>$1,200–$2,500</td></tr>
+      <tr><td>Single-family (standard)</td><td>Ceramic</td><td>12–20</td><td>$2,000–$4,000</td></tr>
+      <tr><td>Custom / luxury home</td><td>Spectrally selective</td><td>20–40+</td><td>$4,000–$12,000+</td></tr>
+    </table>
+    <p>SRP rebates of $1.00/sq ft are available for qualifying films. See our <a href="/residential-window-tinting-scottsdale">Scottsdale residential service page</a> for full details.</p>
+
+    <h2>Commercial Window Film Installation in Scottsdale</h2>
+    <p>Scottsdale's commercial film market spans Old Town retail, Scottsdale Quarter restaurants, Scottsdale Airpark offices, and Scottsdale Healthcare facilities. Common <a href="/commercial-window-tinting-scottsdale">commercial window film projects in Scottsdale</a> include:</p>
+    <ul>
+      <li><strong>Retail storefronts</strong> — Solar control film reduces interior heat and glare while keeping merchandise visible. Security film provides smash-and-grab protection for jewelry stores, galleries, and boutiques.</li>
+      <li><strong>Restaurants and hospitality</strong> — Heat rejection on west-facing dining areas improves guest comfort. Glare reduction protects the dining experience during sunset service — critical for Scottsdale's patio dining culture.</li>
+      <li><strong>Office buildings</strong> — Scottsdale Airpark and SkySong offices install solar film for energy savings and glare reduction. Conference room privacy film is increasingly common in glass-walled modern offices.</li>
+      <li><strong>Medical and dental</strong> — Privacy film on exam rooms, solar film on waiting areas, and UV protection for medical equipment and pharmaceuticals.</li>
+    </ul>
+    <p>Commercial film typically costs $8–$22/sq ft installed depending on film type and access requirements. Multi-story and high-rise projects require specialized access and are custom quoted.</p>
+
+    <h2>Best Films for Scottsdale's West and South-Facing Glass</h2>
+    <p>West and south-facing windows in Scottsdale receive the most intense solar exposure. These elevations drive 60–70% of a home's cooling load. The best films for these windows by TSER (Total Solar Energy Rejected):</p>
+    <ul>
+      <li><strong>Hüper Optik Select DREI</strong> — 67% TSER at 35% VLT. Maximum heat rejection. Best for west-facing glass where heat is the primary concern.</li>
+      <li><strong>LLumar CTX 30</strong> — 59% TSER at 32% VLT. Strong commercial-grade option with proven Arizona track record.</li>
+      <li><strong>Hüper Optik Select SECH</strong> — 51% TSER at 61% VLT. Best balance of heat rejection and natural light. Ideal for south-facing living spaces.</li>
+      <li><strong>3M Prestige 40</strong> — 55% TSER at 39% VLT. Premium clarity with strong heat rejection. The luxury residential standard.</li>
+    </ul>
+    <p>For a full technical comparison, see our <a href="/blog/best-window-film-arizona-heat-2026">ceramic vs dual reflective comparison</a>.</p>
+
+    <h2>Luxury Home Window Film — High-End Scottsdale Options</h2>
+    <p>Scottsdale luxury homes in Silverleaf, Desert Mountain, Estancia, and Paradise Valley require window film that performs without compromising architectural aesthetics. The 3M Prestige series and Hüper Optik Select line are designed specifically for this market — they reject significant heat while remaining virtually invisible on the glass.</p>
+    <p>Common luxury applications include whole-home spectrally selective film, custom decorative film on wine cellars and shower glass, and Casper cloaking film on home office conference rooms. For more on high-end options, see our <a href="/blog/the-secret-to-scottsdale-luxury-high-end-window-films">Scottsdale luxury window film guide</a>.</p>
+
+    <h2>Energy Savings: What Scottsdale Homeowners Actually See</h2>
+    <p>Scottsdale homeowners with ceramic solar film on west and south-facing glass typically see 15–30% reduction in cooling costs. On homes with extensive glass (20+ windows), the annual savings range from $400–$1,200/year depending on home size, glass orientation, and thermostat habits. Combined with the SRP rebate ($1.00/sq ft), most residential installations pay for themselves in 2–4 years.</p>
+    <p>Commercial buildings see similar returns — often faster due to larger glass surface areas and higher baseline cooling costs. We document pre- and post-installation energy performance for clients who want to track ROI.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does window tinting cost in Scottsdale AZ?</h3>
+        <p>Residential: $8–$18/sq ft installed. Standard homes run $1,200–$4,000. Luxury homes with extensive glass run $4,000–$12,000+. Commercial is quoted by scope. Free estimates available.</p>
+      </div>
+      <div>
+        <h3>What is the best window film for Scottsdale homes?</h3>
+        <p>Ceramic window film for most homes — 50–84% heat rejection, 99% UV block, HOA-compliant. Spectrally selective (3M Prestige, Hüper Optik Select) for luxury homes requiring near-invisible appearance.</p>
+      </div>
+      <div>
+        <h3>Do Scottsdale HOAs allow window tinting?</h3>
+        <p>Most allow neutral-tone ceramic and spectrally selective films. Reflective and dark-tinted films may be restricted. We advise on compliant options and provide spec sheets for HOA submission.</p>
+      </div>
+      <div>
+        <h3>How long does commercial window film last in Arizona heat?</h3>
+        <p>Quality ceramic and spectrally selective films last 15–25 years professionally installed. Manufacturer warranties cover 10–15 years for commercial applications.</p>
+      </div>
+    </div>
+
+    <h2>Get a Scottsdale Window Film Estimate</h2>
+    <p>Arizona House of Film serves all Scottsdale neighborhoods — McCormick Ranch, Scottsdale Ranch, Gainey Ranch, DC Ranch, Old Town, Scottsdale Airpark, and beyond. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'solar-window-film-phoenix-az',
+    title: 'Solar Window Film in Phoenix, AZ — Best Options for Heat Rejection (2026)',
+    excerpt: 'Solar window film for Phoenix homes — blocks up to 80% of heat, cuts AC costs, and protects interiors from UV. Best films for Arizona\'s extreme summer heat.',
+    date: '2026-04-06',
+    alt: 'Solar window film installed on a Phoenix home reducing heat and glare.',
+    keywords: 'solar window film Phoenix, window film Phoenix, home window tinting Phoenix',
+    serviceLink: '/residential-window-tinting',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'Hüper Optik, LLumar',
+    faqs: [
+      {
+        question: 'What is the best solar window film for Phoenix homes?',
+        answer: 'For most Phoenix homes, ceramic solar film offers the best balance of heat rejection, clarity, and durability. Top performers in 2026: Hüper Optik Select DREI (67% TSER), LLumar CTX 30 (59% TSER), and Solar Gard Panorama CX 30 (61% TSER). For homes where near-invisible film is required, spectrally selective options like Hüper Optik Klar 85 provide 28% TSER at 82% visible light. Arizona House of Film (ROC #314088) assesses your glass orientation and recommends the optimal film during a free on-site estimate.'
+      },
+      {
+        question: 'Does solar window film really reduce heat in Arizona?',
+        answer: 'Yes. Quality ceramic solar film rejects 50–84% of solar heat gain through infrared blocking. In Phoenix, where summer temperatures exceed 115°F and homes receive 299+ days of direct sun, solar film measurably reduces interior temperatures and AC runtime. Most Phoenix homeowners see 15–30% reduction in cooling costs on filmed elevations. The effect is strongest on west and south-facing glass, which receive the most intense afternoon heat.'
+      },
+      {
+        question: 'How much does solar window film cost in Phoenix?',
+        answer: 'Solar window film in Phoenix costs $8–$18 per square foot installed for ceramic film. A typical Phoenix home with 10–15 windows averages $1,200–$3,000. Spectrally selective (premium) film runs $14–$22/sq ft. Dual reflective film offers lower cost at $8–$14/sq ft but has a reflective exterior appearance. Commercial projects are quoted by scope. Arizona House of Film provides free on-site estimates and handles SRP rebate documentation.'
+      },
+      {
+        question: 'Will solar film qualify for the SRP rebate?',
+        answer: 'Most ceramic and spectrally selective solar films qualify for the SRP rebate of $1.00 per square foot for residential customers. The film must have an NFRC-rated SHGC of 0.45 or lower. Nearly-clear films with high VLT (like Hüper Optik Klar 85) typically do not qualify because their SHGC exceeds 0.45. Arizona House of Film confirms rebate eligibility before installation and submits the application on your behalf.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+    <h1>Solar Window Film in Phoenix, AZ — Best Options for Heat Rejection in 2026</h1>
+
+    <p class="lead">Phoenix summers push past 115°F for weeks at a time. Air conditioning accounts for 50–70% of a typical Phoenix home's electric bill from May through September. Solar window film is the single most cost-effective retrofit to reduce that load — it blocks 50–84% of solar heat at the glass before it enters your home, reducing AC runtime and lowering your bill. Arizona House of Film (ROC #314088) has installed solar film on 700+ Phoenix-area properties since 2017. This guide covers what solar film does, which films perform best in Phoenix heat, how they compare to window replacement, and what you'll actually pay in 2026.</p>
+
+    <h2>What Solar Window Film Actually Does</h2>
+    <p>Solar window film is a thin, multi-layer polyester film applied to the interior surface of existing glass. It works by selectively filtering the solar spectrum — blocking infrared radiation (heat) and ultraviolet radiation (UV damage) while transmitting visible light. The result: your windows look and function normally, but significantly less heat and UV passes through.</p>
+    <p>Modern ceramic solar films use nano-ceramic particles instead of metals or dyes. This means no signal interference (WiFi, GPS, Bluetooth pass through unaffected), no color shift, and no degradation in Arizona's extreme UV. Ceramic films last 15–25 years versus 3–5 years for older dyed films.</p>
+
+    <h2>How Much Heat Does Solar Film Block in Phoenix?</h2>
+    <p>Heat rejection is measured by TSER (Total Solar Energy Rejected). Higher TSER = more heat blocked. Here's what the best films achieve:</p>
+    <ul>
+      <li><strong>67% TSER</strong> — Hüper Optik Select DREI. Blocks two-thirds of all solar energy. The highest-performing ceramic film available. Best for west-facing glass.</li>
+      <li><strong>61% TSER</strong> — Solar Gard Panorama CX 30. Strong performer at competitive pricing.</li>
+      <li><strong>59% TSER</strong> — LLumar CTX 30. Proven track record with excellent Arizona warranty support.</li>
+      <li><strong>51% TSER</strong> — Hüper Optik Select SECH. Best balance of heat rejection and natural light (61% VLT). Ideal for living rooms and kitchens.</li>
+      <li><strong>28% TSER</strong> — Hüper Optik Klar 85. Nearly invisible film for north-facing or low-priority windows.</li>
+    </ul>
+    <p>On a west-facing window in Phoenix receiving direct afternoon sun, the difference between unfilmed glass and 67% TSER film is dramatic — interior surface temperatures drop 20–30°F, and the AC runs significantly less during peak hours.</p>
+
+    <h2>Best Solar Films for Phoenix Homes (by TSER Rating)</h2>
+    <table>
+      <tr><th>Film</th><th>TSER</th><th>VLT</th><th>UV Block</th><th>Cost/Sq Ft</th><th>Best For</th></tr>
+      <tr><td>Hüper Optik DREI</td><td>67%</td><td>35%</td><td>99.9%</td><td>$14–$18</td><td>West/south glass, max heat rejection</td></tr>
+      <tr><td>Solar Gard CX 30</td><td>61%</td><td>32%</td><td>99%</td><td>$12–$16</td><td>Commercial, value-focused residential</td></tr>
+      <tr><td>LLumar CTX 30</td><td>59%</td><td>32%</td><td>99%</td><td>$12–$16</td><td>Commercial and residential, proven warranty</td></tr>
+      <tr><td>Hüper Optik SECH</td><td>51%</td><td>61%</td><td>99.9%</td><td>$14–$18</td><td>Living rooms, kitchens, max natural light</td></tr>
+      <tr><td>3M Prestige 40</td><td>55%</td><td>39%</td><td>99.9%</td><td>$16–$22</td><td>Luxury homes, near-invisible appearance</td></tr>
+      <tr><td>Hüper Optik Klar 85</td><td>28%</td><td>82%</td><td>99%</td><td>$14–$18</td><td>North glass, minimal appearance change</td></tr>
+    </table>
+    <p>For a deeper comparison of ceramic vs dual reflective technologies, see our <a href="/blog/best-window-film-arizona-heat-2026">ceramic vs dual reflective film guide</a>.</p>
+
+    <h2>Solar Film vs Window Replacement — Cost Comparison</h2>
+    <p>Some Phoenix homeowners consider replacing windows with low-e glass instead of adding film. Here's the cost comparison:</p>
+    <table>
+      <tr><th>Option</th><th>Cost per Window</th><th>15-Window Home</th><th>TSER</th><th>Lifespan</th></tr>
+      <tr><td>Solar window film</td><td>$150–$350</td><td>$1,500–$3,500</td><td>50–67%</td><td>15–25 years</td></tr>
+      <tr><td>Low-e window replacement</td><td>$800–$1,500</td><td>$12,000–$22,500</td><td>25–40%</td><td>20–30 years</td></tr>
+    </table>
+    <p>Solar film costs 75–85% less than window replacement and often provides better heat rejection (50–67% TSER vs 25–40% for standard low-e glass). Film is the clear winner for existing homes where the windows are structurally sound. Window replacement only makes sense when the glass or frames are failing.</p>
+
+    <h2>SRP Rebate: Does Solar Film Qualify?</h2>
+    <p>Yes — most ceramic and spectrally selective films qualify for the <a href="/blog/srp-rebate-window-film-2026">SRP rebate of $1.00 per square foot</a> for residential customers. The film must have an NFRC-rated SHGC of 0.45 or lower. Nearly-clear films with high VLT (Hüper Optik Klar 85) typically do not qualify. Arizona House of Film confirms eligibility before installation and submits the rebate application on your behalf.</p>
+    <p>For full rebate eligibility details, see our <a href="/window-film-energy-rebates-arizona">energy rebates page</a>.</p>
+
+    <h2>Cost of Solar Window Film Installation in Phoenix</h2>
+    <table>
+      <tr><th>Home Size</th><th>Window Count</th><th>Film Type</th><th>Cost Range</th></tr>
+      <tr><td>Small home / condo</td><td>6–10</td><td>Ceramic</td><td>$800–$1,800</td></tr>
+      <tr><td>Standard home</td><td>10–15</td><td>Ceramic</td><td>$1,200–$3,000</td></tr>
+      <tr><td>Large home</td><td>15–25</td><td>Ceramic</td><td>$2,500–$5,000</td></tr>
+      <tr><td>Luxury / custom</td><td>25–40+</td><td>Spectrally selective</td><td>$5,000–$12,000+</td></tr>
+    </table>
+    <p>All pricing includes professional installation, manufacturer warranty documentation, and SRP rebate processing. ROC #314088. See our <a href="/residential-window-tinting">residential window tinting service page</a> for full details.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>What is the best solar window film for Phoenix homes?</h3>
+        <p>Ceramic solar film — specifically Hüper Optik Select DREI (67% TSER), LLumar CTX 30 (59% TSER), or Solar Gard Panorama CX 30 (61% TSER). For near-invisible film, spectrally selective options like 3M Prestige or Hüper Optik Klar.</p>
+      </div>
+      <div>
+        <h3>Does solar window film really reduce heat in Arizona?</h3>
+        <p>Yes. Ceramic film rejects 50–84% of solar heat. Phoenix homeowners see 15–30% cooling cost reduction on filmed elevations. The effect is strongest on west and south-facing glass.</p>
+      </div>
+      <div>
+        <h3>How much does solar window film cost in Phoenix?</h3>
+        <p>$8–$18/sq ft for ceramic film. A typical 10–15 window home runs $1,200–$3,000. Spectrally selective runs $14–$22/sq ft. Free estimates available.</p>
+      </div>
+      <div>
+        <h3>Will solar film qualify for the SRP rebate?</h3>
+        <p>Most ceramic and spectrally selective films qualify for $1.00/sq ft from SRP. The film needs NFRC-rated SHGC ≤ 0.45. We confirm eligibility and handle the application.</p>
+      </div>
+    </div>
+
+    <h2>Get a Solar Film Estimate</h2>
+    <p>Arizona House of Film installs solar window film across Phoenix, Scottsdale, Mesa, Chandler, Gilbert, Tempe, and all of Arizona. ROC #314088. Free on-site assessments with energy savings estimates. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'enerlogic-window-film-arizona-review',
+    title: 'EnerLogic Window Film in Arizona — Performance Review & Installation Guide',
+    excerpt: 'EnerLogic window film reviewed for Arizona homes — low-e technology, heat rejection, winter insulation, and real installation costs in Phoenix.',
+    date: '2026-04-06',
+    alt: 'EnerLogic low-e window film installed on a Phoenix residential window.',
+    keywords: 'EnerLogic window film, EnerLogic window film review, EnerLogic low-e film Arizona',
+    serviceLink: '/residential-window-tinting',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'EnerLogic, Hüper Optik',
+    faqs: [
+      {
+        question: 'What is EnerLogic window film?',
+        answer: 'EnerLogic is a patented low-e (low emissivity) window film manufactured by Eastman Chemical Company. Unlike standard solar films that only block incoming heat, EnerLogic uses a sputtered metallic low-e coating to both reject solar heat in summer AND retain interior heat in winter. It effectively upgrades existing single-pane or older double-pane windows to near-low-e performance without window replacement. The film blocks 99% of UV rays and rejects up to 70% of solar heat.'
+      },
+      {
+        question: 'Is EnerLogic window film good for Arizona heat?',
+        answer: 'EnerLogic performs well for solar heat rejection in Arizona — up to 70% TSER depending on the product variant. However, its primary advantage over standard ceramic film is winter insulation, which provides less value in Phoenix where heating costs are minimal (typically $50–$150/year). For Arizona homes where cooling is the dominant cost, ceramic film from Hüper Optik or LLumar often provides equal or better heat rejection at lower cost. EnerLogic is the better choice for Arizona mountain communities (Flagstaff, Prescott, Payson) where winter heating is a significant expense.'
+      },
+      {
+        question: 'How much does EnerLogic window film cost installed?',
+        answer: 'EnerLogic window film typically costs $16–$28 per square foot installed in Phoenix, depending on product variant and glass accessibility. EnerLogic 35 (35% VLT, maximum heat rejection) runs $18–$28/sq ft. EnerLogic 60 (60% VLT, more natural light) runs $16–$24/sq ft. A typical 15-window Phoenix home runs $2,500–$5,000. This is a premium over standard ceramic film ($10–$18/sq ft) — the premium is justified when winter insulation value matters.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+    <h1>EnerLogic Window Film in Arizona — Is It Worth It? (2026 Review)</h1>
+
+    <p class="lead">EnerLogic is the only window film with a legitimate low-e coating — the same technology used in high-performance replacement windows. It rejects solar heat in summer and retains interior heat in winter. On paper, that makes it the ultimate window film for year-round energy savings. But does that dual-season value translate to Arizona, where cooling dominates 8 months of the year? Arizona House of Film (ROC #314088) has installed EnerLogic and competing ceramic films on hundreds of Phoenix-area properties. This is our honest assessment of EnerLogic's performance, cost, and value for Arizona homeowners in 2026.</p>
+
+    <h2>What Is EnerLogic Window Film?</h2>
+    <p>EnerLogic is manufactured by Eastman Chemical Company (the same company behind LLumar and SunTek films). It uses a sputtered metallic low-e coating — a thin layer of metal oxide deposited on the film at the molecular level. This coating does two things standard solar films cannot:</p>
+    <ul>
+      <li><strong>Reflects infrared heat from outside</strong> (summer mode) — similar to ceramic film, blocking solar heat gain through the glass.</li>
+      <li><strong>Reflects infrared heat from inside</strong> (winter mode) — the low-e coating keeps radiant heat from your heating system inside the building instead of letting it escape through the glass.</li>
+    </ul>
+    <p>Standard ceramic films only do the first function. They block incoming solar heat but do nothing to retain interior heat in winter. EnerLogic does both, which is why Eastman markets it as an "all-season" energy film.</p>
+
+    <h2>How Low-E Technology Works in Arizona Heat</h2>
+    <p>In Phoenix during summer, EnerLogic works exactly like high-performance ceramic film — it rejects 55–70% of total solar energy (TSER depending on variant) and blocks 99% of UV. On this metric alone, EnerLogic is competitive with the best ceramic films. The glass stays cooler, less heat enters the building, and the AC runs less.</p>
+    <p>In Phoenix during winter, the low-e coating reflects radiant heat back into the room instead of letting it escape through the glass. This reduces heating costs — but in Phoenix, heating costs are typically $50–$150 per year (compared to $1,500–$3,000+ for cooling). The winter benefit is real but small in dollar terms for Valley homes.</p>
+    <p>The winter insulation value becomes significant for Arizona properties at higher elevations — Flagstaff ($800–$1,500/year heating), Prescott ($500–$1,000/year), Payson ($400–$800/year), and Show Low. For these communities, EnerLogic's dual-season performance delivers meaningful year-round savings that ceramic film alone cannot match.</p>
+
+    <h2>EnerLogic vs Ceramic Film — Arizona Performance Comparison</h2>
+    <table>
+      <tr><th>Metric</th><th>EnerLogic 35</th><th>Hüper Optik DREI (Ceramic)</th><th>LLumar CTX 30 (Ceramic)</th></tr>
+      <tr><td>TSER (heat rejected)</td><td>70%</td><td>67%</td><td>59%</td></tr>
+      <tr><td>VLT (visible light)</td><td>35%</td><td>35%</td><td>32%</td></tr>
+      <tr><td>UV rejection</td><td>99%</td><td>99.9%</td><td>99%</td></tr>
+      <tr><td>Winter insulation</td><td>Yes (low-e)</td><td>No</td><td>No</td></tr>
+      <tr><td>Signal interference</td><td>Minor (metallic)</td><td>None (ceramic)</td><td>None (ceramic)</td></tr>
+      <tr><td>Cost/sq ft installed</td><td>$18–$28</td><td>$14–$18</td><td>$12–$16</td></tr>
+      <tr><td>Best Arizona use</td><td>Mountain communities</td><td>Phoenix metro residential</td><td>Commercial + residential</td></tr>
+    </table>
+    <p>Key takeaway: EnerLogic's TSER is competitive or superior to the best ceramic films. The premium cost ($4–$12/sq ft more) buys you winter insulation. In Phoenix where heating costs are minimal, that premium is harder to justify on ROI alone. In Flagstaff, Prescott, or Payson, the premium pays for itself. For a full technology comparison, see our <a href="/blog/best-window-film-arizona-heat-2026">ceramic vs dual reflective film guide</a>.</p>
+
+    <h2>Winter Performance: Does It Actually Insulate?</h2>
+    <p>Yes. EnerLogic's low-e coating reduces the U-factor of single-pane glass by approximately 40% and double-pane glass by approximately 25%. In practical terms, a single-pane window with EnerLogic performs closer to a standard double-pane window. A double-pane window with EnerLogic approaches low-e double-pane performance — without window replacement.</p>
+    <p>For Phoenix metro homes, this translates to $30–$80/year in heating savings. For Flagstaff homes, $200–$500/year. The insulation value is real — the question is whether it justifies the price premium over ceramic film in your specific climate zone.</p>
+
+    <h2>EnerLogic Installation Cost in Phoenix</h2>
+    <table>
+      <tr><th>Product</th><th>VLT</th><th>TSER</th><th>Cost/Sq Ft</th><th>15-Window Home</th></tr>
+      <tr><td>EnerLogic 35</td><td>35%</td><td>70%</td><td>$18–$28</td><td>$3,500–$5,000</td></tr>
+      <tr><td>EnerLogic 60</td><td>60%</td><td>55%</td><td>$16–$24</td><td>$2,500–$4,200</td></tr>
+      <tr><td>EnerLogic 70</td><td>70%</td><td>48%</td><td>$16–$22</td><td>$2,500–$3,800</td></tr>
+    </table>
+    <p>All pricing includes professional installation, manufacturer warranty, and SRP rebate processing (qualifying variants). ROC #314088.</p>
+
+    <h2>Which Arizona Homes Benefit Most from EnerLogic?</h2>
+    <ul>
+      <li><strong>Mountain communities</strong> — Flagstaff, Prescott, Payson, Show Low, Pinetop-Lakeside. Winter heating costs are significant. EnerLogic's dual-season performance delivers the highest ROI here.</li>
+      <li><strong>Older homes with single-pane glass</strong> — EnerLogic upgrades single-pane windows to near-double-pane performance. If window replacement isn't in the budget, EnerLogic is the next best option.</li>
+      <li><strong>Homes with north-facing glass</strong> — North windows lose heat in winter without gaining much solar heat in summer. EnerLogic on north glass provides insulation value that solar-only film does not.</li>
+      <li><strong>Historic or architectural homes</strong> — Properties where window replacement would compromise architectural integrity. EnerLogic preserves the original windows while adding modern energy performance.</li>
+    </ul>
+    <p>For standard Phoenix metro homes with double-pane glass, ceramic film from Hüper Optik or LLumar typically provides better value. We assess your home's specific conditions during the free estimate. See our <a href="/residential-window-tinting">residential window tinting service page</a> for all options.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>What is EnerLogic window film?</h3>
+        <p>A low-e window film by Eastman that rejects solar heat in summer and retains interior heat in winter. It upgrades existing windows to near-low-e performance without replacement.</p>
+      </div>
+      <div>
+        <h3>Is EnerLogic window film good for Arizona heat?</h3>
+        <p>EnerLogic rejects up to 70% TSER — competitive with top ceramic films. Its winter insulation advantage matters most in Arizona mountain communities. For Phoenix metro, ceramic film often provides equal heat rejection at lower cost.</p>
+      </div>
+      <div>
+        <h3>How much does EnerLogic window film cost installed?</h3>
+        <p>$16–$28/sq ft installed in Phoenix. EnerLogic 35 (max heat rejection) runs $18–$28/sq ft. A typical 15-window home runs $2,500–$5,000. Premium over ceramic film is $4–$12/sq ft.</p>
+      </div>
+    </div>
+
+    <h2>Get an EnerLogic Estimate</h2>
+    <p>Arizona House of Film installs EnerLogic, ceramic, and spectrally selective window film across Phoenix, Scottsdale, Flagstaff, Prescott, and all of Arizona. ROC #314088. Free on-site assessments with product comparison. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
   }
 ];
 

@@ -637,6 +637,524 @@ const allBlogData = [
     <h2>Schedule Your Free Assessment</h2>
     <p>Arizona House of Film installs ceramic, dual reflective, and spectrally selective window film across Phoenix, Scottsdale, Mesa, Chandler, Gilbert, and all of Arizona. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
   `
+  },
+  {
+    slug: 'security-window-film-phoenix-cost-guide',
+    title: 'Security Window Film in Phoenix: Cost, Types & What to Expect in 2026',
+    excerpt: 'Security window film for Phoenix homes and businesses — smash-and-grab protection, blast resistance, and safety glazing. Real costs and ROI for Arizona.',
+    date: '2026-04-06',
+    alt: 'Security window film installed on a Phoenix commercial storefront.',
+    keywords: 'security window film Phoenix, security film installation Phoenix, phoenix window security film installers',
+    serviceLink: '/security-window-film-phoenix',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'Madico SafetyShield, 3M Safety',
+    faqs: [
+      {
+        question: 'How much does security window film cost in Phoenix?',
+        answer: 'Security window film in Phoenix typically costs $10–$25 per square foot installed depending on film thickness and glass accessibility. 4 mil safety film for residential starts around $10/sq ft. 8 mil anti-intrusion film for commercial storefronts runs $14–$20/sq ft. 12 mil blast-rated film for government and high-security applications runs $18–$25/sq ft. Most residential projects total $500–$2,500 and commercial projects $2,500–$15,000+. Arizona House of Film (ROC #314088) provides free on-site estimates.'
+      },
+      {
+        question: 'Does security film work on tempered glass?',
+        answer: 'Yes. Security film adheres to tempered glass and holds the fragments together on impact instead of allowing them to scatter. This is especially important in Arizona where tempered glass is common in sliding doors, shower enclosures, and commercial storefronts. The film does not weaken the tempered glass — it adds a retention layer that keeps shattered pieces in the frame.'
+      },
+      {
+        question: 'How thick should security window film be?',
+        answer: '4 mil film provides basic safety glazing — holds glass together during accidental breakage or storms. 8 mil film is the standard for smash-and-grab deterrence on retail storefronts and ground-floor residential. 12 mil and above is specified for blast resistance, government buildings, and high-security facilities. Arizona House of Film assesses your threat profile and recommends the appropriate thickness during the free assessment.'
+      },
+      {
+        question: 'How long does security film installation take?',
+        answer: 'A typical residential security film installation in Phoenix takes 4–8 hours depending on window count. Commercial storefronts average 1–2 days. Government and multi-story projects are scheduled by scope. We work around business hours for commercial installs to minimize disruption.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+    <h1>Security Window Film Installation in Phoenix, AZ — 2026 Cost & Types Guide</h1>
+
+    <p class="lead">Break-ins, storm damage, and accidental glass injuries cost Phoenix property owners thousands every year. Security window film is the most cost-effective retrofit to protect existing glass — no window replacement required. Arizona House of Film (ROC #314088) has installed security film on retail storefronts, schools, government buildings, and homes across the Phoenix metro since 2017. This guide covers what security film actually does, how thick you need, what it costs in Phoenix, and whether it's worth it for your property.</p>
+
+    <h2>What Security Film Does</h2>
+    <p>Security window film is a thick, optically clear polyester film laminated to the interior surface of existing glass. When the glass is struck — by a rock, a burglar's tool, a storm projectile, or a blast wave — the film holds the shattered fragments in the frame instead of allowing them to scatter into the building. The glass breaks, but it doesn't fall apart.</p>
+    <p>This is fundamentally different from window tint. Solar control films are 1.5–2 mil thick and designed for heat rejection. Security films start at 4 mil and go up to 21 mil for blast-rated applications. The thicker the film, the more force required to penetrate the glass. On a typical Phoenix storefront, 8 mil anti-intrusion film can delay a break-in attempt by 30–90 seconds — enough to trigger an alarm, capture video, and deter most smash-and-grab criminals.</p>
+
+    <h2>4 Mil vs 8 Mil vs 12 Mil — Which Thickness Do You Need?</h2>
+    <p>Film thickness determines protection level. Here's how we spec projects in Phoenix:</p>
+    <ul>
+      <li><strong>4 mil safety film</strong> — Basic safety glazing. Holds glass together during accidental breakage, monsoon debris, or seismic events. Best for: residential windows, bathroom glass, and sliding doors where injury prevention is the primary concern. Cost: $10–$14/sq ft installed.</li>
+      <li><strong>8 mil anti-intrusion film</strong> — The standard for commercial smash-and-grab protection. Significantly delays forced entry through glass. Best for: retail storefronts, restaurants, jewelry stores, dispensaries, ground-floor offices. Cost: $14–$20/sq ft installed.</li>
+      <li><strong>12 mil+ blast-rated film</strong> — Engineered to meet GSA and ASTM blast resistance standards. Required for government facilities, military installations, and high-security commercial buildings. Best for: courthouses, schools in high-risk zones, data centers, embassies. Cost: $18–$25/sq ft installed.</li>
+    </ul>
+    <p>Most Phoenix residential projects use 4 mil. Most commercial projects use 8 mil. We assess your specific threat profile, glass type, and frame condition before recommending a thickness.</p>
+
+    <h2>Security Window Film Cost in Phoenix — 2026 Pricing</h2>
+    <p>Real pricing from Arizona House of Film projects in the Phoenix metro:</p>
+    <table>
+      <tr><th>Application</th><th>Film Thickness</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
+      <tr><td>Residential (10–15 windows)</td><td>4 mil</td><td>$10–$14</td><td>$500–$2,500</td></tr>
+      <tr><td>Retail storefront</td><td>8 mil</td><td>$14–$20</td><td>$2,500–$8,000</td></tr>
+      <tr><td>School / institutional</td><td>8–12 mil</td><td>$16–$22</td><td>$5,000–$15,000+</td></tr>
+      <tr><td>Government / blast-rated</td><td>12+ mil</td><td>$18–$25</td><td>Custom quoted</td></tr>
+    </table>
+    <p>All pricing includes professional installation, manufacturer warranty documentation, and post-install inspection. ROC #314088.</p>
+
+    <h2>Residential vs Commercial Security Film</h2>
+    <p><strong>Residential:</strong> Most Phoenix homeowners install 4 mil safety film on sliding glass doors, large picture windows, and bathroom glass. The primary goal is injury prevention — keeping shattered glass in the frame during monsoon storms or accidental impact. Ground-floor homes in areas with higher break-in rates may opt for 8 mil on accessible windows and doors.</p>
+    <p><strong>Commercial:</strong> Phoenix retail storefronts, restaurants, and dispensaries typically require 8 mil anti-intrusion film. The ROI case is straightforward: one smash-and-grab costs $5,000–$20,000+ in merchandise, glass replacement, and business interruption. Security film for the same storefront costs $3,000–$8,000 and lasts 10–15 years. Schools and government buildings in Phoenix and Tempe are increasingly specifying 8–12 mil film as part of active shooter preparedness and blast mitigation programs.</p>
+
+    <h2>Why Tempered Glass Isn't Enough</h2>
+    <p>Tempered glass is stronger than annealed glass — it takes more force to break. But when tempered glass does break, it shatters into thousands of small cubes that fall out of the frame entirely. This is by design (to prevent large jagged shards) but it means tempered glass provides zero barrier after the first impact. A burglar breaks through tempered glass in one hit with a spring-loaded center punch.</p>
+    <p>Security film applied to tempered glass holds those cubes together in the frame. The glass breaks but stays in place, creating a barrier that requires sustained effort to penetrate. This is why <a href="/security-window-film-phoenix">security film on tempered glass</a> is one of our most common Phoenix installations. See also our <a href="/shatterproof-window-film">shatterproof window film guide</a> for a deeper comparison.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does security window film cost in Phoenix?</h3>
+        <p>Security window film in Phoenix costs $10–$25 per square foot installed depending on thickness. 4 mil safety film starts around $10/sq ft. 8 mil anti-intrusion runs $14–$20/sq ft. 12 mil blast-rated runs $18–$25/sq ft. Most residential projects total $500–$2,500.</p>
+      </div>
+      <div>
+        <h3>Does security film work on tempered glass?</h3>
+        <p>Yes. Security film holds tempered glass fragments together in the frame on impact. Tempered glass alone shatters and falls out — film keeps it in place, creating a sustained barrier against forced entry.</p>
+      </div>
+      <div>
+        <h3>How thick should security window film be?</h3>
+        <p>4 mil for basic safety glazing (residential). 8 mil for smash-and-grab protection (commercial storefronts). 12 mil+ for blast resistance (government, schools). We assess your threat profile during the free assessment.</p>
+      </div>
+      <div>
+        <h3>How long does security film installation take?</h3>
+        <p>Residential takes 4–8 hours. Commercial storefronts average 1–2 days. Government and multi-story projects are scheduled by scope. We work around business hours for commercial installs.</p>
+      </div>
+    </div>
+
+    <h2>Get a Free Security Film Assessment</h2>
+    <p>Arizona House of Film installs security film on homes, storefronts, schools, and government buildings across Phoenix, Scottsdale, Tempe, Mesa, and all of Arizona. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'privacy-decorative-window-film-phoenix',
+    title: 'Privacy & Decorative Window Film in Phoenix — Options, Cost & Installation',
+    excerpt: 'Privacy and decorative window film for Phoenix homes and offices — frosted, one-way mirror, Casper cloaking, and custom designs. Cost and install guide for AZ.',
+    date: '2026-04-06',
+    alt: 'Frosted privacy window film installed on a Phoenix office conference room.',
+    keywords: 'privacy window film Phoenix, decorative window film Phoenix, commercial privacy window film phoenix',
+    serviceLink: '/privacy-window-film-phoenix-homes',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'Solyx, 3M Fasara',
+    faqs: [
+      {
+        question: 'What is the best privacy window film for Phoenix homes?',
+        answer: 'For daytime privacy with natural light, dual-reflective film is the most popular choice — it creates a one-way mirror effect during daylight hours. For 24/7 privacy, frosted or etched films block sightlines completely without darkening the room. For bathrooms and sidelights, decorative frost patterns add both privacy and style. Arizona House of Film carries 600+ Solyx patterns plus 3M Fasara and custom options. The best choice depends on your privacy needs, light goals, and HOA requirements.'
+      },
+      {
+        question: 'Can you see through one-way mirror film at night?',
+        answer: 'One-way mirror film works by reflecting light off the brighter side. During the day, exterior sunlight creates the mirror effect and you cannot see in. At night, when interior lights are on and it is dark outside, the effect reverses — people outside can see in. For 24/7 privacy, frosted, etched, or opaque films are the better choice. We explain this during every consultation so clients choose the right film for their actual privacy needs.'
+      },
+      {
+        question: 'How much does decorative window film cost in Phoenix?',
+        answer: 'Decorative window film in Phoenix typically costs $8–$18 per square foot installed depending on pattern complexity and film type. Simple frosted films run $8–$12/sq ft. Custom patterns, gradients, and branded graphics run $12–$18/sq ft. Most residential bathroom and sidelight projects total $300–$1,200. Commercial office privacy projects run $1,500–$8,000. Arizona House of Film (ROC #314088) provides free on-site estimates.'
+      },
+      {
+        question: 'Does privacy film block heat too?',
+        answer: 'Some privacy films provide heat rejection and some do not. Dual-reflective privacy films reject 45–65% of solar heat — they serve double duty. Standard frosted and etched films provide minimal heat rejection because they are designed for aesthetics and privacy, not solar control. If you need both privacy and heat rejection, we can layer a solar control film with a decorative film or recommend a dual-purpose product during your assessment.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+    <h1>Privacy & Decorative Window Film in Phoenix — 2026 Options and Cost Guide</h1>
+
+    <p class="lead">Phoenix homes and offices share a common problem: large windows designed for natural light also eliminate privacy. New construction neighborhoods have tight lot spacing. Commercial offices have glass-walled conference rooms. Whether you need to block a neighbor's sightline, brand a storefront, or hide screens in a conference room, there's a film for that. Arizona House of Film (ROC #314088) carries 600+ decorative patterns and has completed privacy film installations across Phoenix, Scottsdale, Tempe, and Mesa since 2017. This guide covers every privacy and decorative film option available in 2026, what each costs, and which works best for your application.</p>
+
+    <h2>Types of Privacy Film</h2>
+    <p>Privacy films fall into four categories based on how they block visibility:</p>
+    <ul>
+      <li><strong>Frosted / Etched film</strong> — Diffuses light uniformly, blocking sightlines completely in both directions. Available in hundreds of patterns, textures, and opacities. Works 24/7 regardless of lighting conditions. The most popular residential privacy film in Phoenix.</li>
+      <li><strong>One-way mirror (dual reflective) film</strong> — Creates a mirror effect on the brighter side. During daytime, people outside see their own reflection. You see out clearly. At night the effect reverses. Best for offices and living rooms where daytime privacy is the primary need.</li>
+      <li><strong>Gradient film</strong> — Transitions from opaque at the bottom to clear at the top (or vice versa). Popular for conference rooms, medical offices, and street-level retail where you want partial privacy without total obstruction.</li>
+      <li><strong>Casper cloaking film</strong> — Specialty film that makes LED screens invisible from outside a glass wall while remaining fully visible from inside. Designed for conference rooms with sensitive content. <a href="/films/casper-cloaking">See our Casper cloaking page</a> for details.</li>
+    </ul>
+
+    <h2>Decorative Film for Phoenix Homes</h2>
+    <p>Decorative window film transforms plain glass into a design element. Popular residential applications in Phoenix include:</p>
+    <ul>
+      <li><strong>Bathroom windows</strong> — Frosted patterns replace blinds, provide permanent privacy, and let light through. Stained glass patterns add color to master bath windows.</li>
+      <li><strong>Sidelights and transoms</strong> — Etched designs on entryway glass add curb appeal while preventing visibility into the home. One of our most requested residential installations.</li>
+      <li><strong>Sliding glass doors</strong> — Privacy bands, gradient films, or full frost prevent neighbors from seeing into living areas through large glass panels.</li>
+      <li><strong>Custom designs</strong> — Geometric patterns, nature scenes, and custom graphics printed on film for unique residential applications.</li>
+    </ul>
+    <p>For full residential options, see our <a href="/decorative-window-films">decorative window films service page</a>.</p>
+
+    <h2>Office Privacy Film in Phoenix</h2>
+    <p>Commercial privacy film serves different functions than residential. The most common Phoenix office applications:</p>
+    <ul>
+      <li><strong>Conference room glass walls</strong> — Frosted bands at eye level maintain an open feel while blocking visibility of whiteboards and screens. Casper cloaking film hides LED displays from outside the room.</li>
+      <li><strong>Medical and legal offices</strong> — HIPAA and client confidentiality requirements drive full-coverage frosted film on exam rooms, consultation rooms, and intake areas.</li>
+      <li><strong>Executive suites</strong> — Gradient or partial-frost films provide privacy without completely enclosing the space.</li>
+      <li><strong>Branded graphics</strong> — Company logos, mission statements, and design elements printed on film and applied to lobby glass, storefronts, and partition walls.</li>
+    </ul>
+
+    <h2>One-Way Mirror Film — How It Really Works</h2>
+    <p>One-way mirror film is the most misunderstood privacy product. Here's the truth: it works by reflecting light off the brighter side. During the day in Phoenix — with intense exterior sunlight — the film creates a strong mirror effect on the outside. People outside see their reflection. You see out clearly from inside. At night, when your interior lights are on and it's dark outside, the effect reverses. People outside can see in.</p>
+    <p>This isn't a defect — it's physics. For 24/7 privacy, we recommend frosted or etched films instead. For daytime-only privacy (offices, living rooms used primarily during the day), one-way mirror film is excellent and also provides significant heat rejection. See our <a href="/privacy-window-film-phoenix-homes">privacy film page</a> for more details.</p>
+
+    <h2>Frosted vs Etched vs Gradient — Comparison</h2>
+    <table>
+      <tr><th>Feature</th><th>Frosted</th><th>Etched</th><th>Gradient</th></tr>
+      <tr><td>Privacy Level</td><td>Full</td><td>Full</td><td>Partial</td></tr>
+      <tr><td>Light Transmission</td><td>High (diffused)</td><td>High (diffused)</td><td>Varies by zone</td></tr>
+      <tr><td>24/7 Privacy</td><td>Yes</td><td>Yes</td><td>Partial</td></tr>
+      <tr><td>Pattern Options</td><td>100+</td><td>50+</td><td>3 standard</td></tr>
+      <tr><td>Cost (installed)</td><td>$8–$12/sq ft</td><td>$10–$14/sq ft</td><td>$12–$16/sq ft</td></tr>
+      <tr><td>Best For</td><td>Bathrooms, sidelights</td><td>Offices, conference rooms</td><td>Medical, executive suites</td></tr>
+    </table>
+
+    <h2>Cost Breakdown — Privacy & Decorative Film in Phoenix</h2>
+    <table>
+      <tr><th>Application</th><th>Film Type</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
+      <tr><td>Bathroom windows (2–4)</td><td>Frosted</td><td>$8–$12</td><td>$300–$800</td></tr>
+      <tr><td>Sidelights + transom</td><td>Etched/decorative</td><td>$10–$14</td><td>$400–$1,200</td></tr>
+      <tr><td>Conference room (1–3 walls)</td><td>Frosted band / Casper</td><td>$12–$22</td><td>$1,500–$5,000</td></tr>
+      <tr><td>Full office suite</td><td>Mixed</td><td>$10–$18</td><td>$3,000–$8,000</td></tr>
+      <tr><td>Branded storefront</td><td>Custom printed</td><td>$14–$20</td><td>$2,000–$6,000</td></tr>
+    </table>
+    <p>All pricing includes professional installation and manufacturer warranty. ROC #314088.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>What is the best privacy window film for Phoenix homes?</h3>
+        <p>For daytime privacy, dual-reflective film creates a one-way mirror effect. For 24/7 privacy, frosted or etched films block sightlines completely. We carry 600+ patterns. The best choice depends on your privacy needs and light goals.</p>
+      </div>
+      <div>
+        <h3>Can you see through one-way mirror film at night?</h3>
+        <p>Yes. One-way mirror film reflects light off the brighter side. At night with interior lights on, the effect reverses. For 24/7 privacy, frosted or etched films are the better choice.</p>
+      </div>
+      <div>
+        <h3>How much does decorative window film cost in Phoenix?</h3>
+        <p>Decorative film costs $8–$18 per square foot installed. Simple frosted runs $8–$12/sq ft. Custom patterns and branded graphics run $12–$18/sq ft. Most residential projects total $300–$1,200.</p>
+      </div>
+      <div>
+        <h3>Does privacy film block heat too?</h3>
+        <p>Dual-reflective privacy films reject 45–65% of solar heat. Standard frosted and etched films provide minimal heat rejection. We can recommend dual-purpose products during your assessment.</p>
+      </div>
+    </div>
+
+    <h2>Get a Quote for Privacy or Decorative Film</h2>
+    <p>Arizona House of Film installs privacy and decorative window film across Phoenix, Scottsdale, Tempe, Mesa, Chandler, and all of Arizona. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'countertop-protection-film-arizona-guide',
+    title: 'Countertop Protection Film in Arizona: Cost, Process & What to Expect',
+    excerpt: 'Countertop protection film installation in Arizona — protect marble, quartz, and granite from scratches and UV. Cost breakdown and process for Phoenix-area installs.',
+    date: '2026-04-06',
+    alt: 'Clear countertop protection film being installed on a marble kitchen counter in Phoenix.',
+    keywords: 'countertop protection film Arizona, countertop clear bra coating Glendale, countertop film installation Phoenix',
+    serviceLink: '/countertop-protection-film-arizona',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'TuffSkin, 3M Anti-Graffiti',
+    faqs: [
+      {
+        question: 'How much does countertop protection film cost in Arizona?',
+        answer: 'Countertop protection film in Arizona typically costs $12–$28 per square foot installed depending on surface complexity, edge treatment, and film type. Most residential kitchen countertop projects run $800–$2,500. Commercial kitchen and hospitality projects are quoted by scope. TuffSkin branded film with 10-year warranty runs at the higher end. Standard anti-graffiti clear film runs $12–$18/sq ft. Arizona House of Film (ROC #314088) provides free on-site estimates across Phoenix, Scottsdale, Glendale, and Mesa.'
+      },
+      {
+        question: 'Does countertop film hold up in Arizona heat?',
+        answer: 'Yes. Quality countertop protection film uses UV-stabilized polyester that resists yellowing, bubbling, and adhesive breakdown in Arizona heat. Hot pots and pans should still use trivets — direct contact above 200°F can mark the film — but ambient Arizona temperatures (even in kitchens near windows with direct sun) do not affect the film. We recommend UV-stabilized films specifically for Arizona installations.'
+      },
+      {
+        question: 'Can you put protection film on quartz countertops?',
+        answer: 'Yes. Protection film adheres well to quartz, marble, granite, laminate, and solid-surface countertops. For quartz specifically, the film prevents staining from oils, wine, and turmeric — common complaints from Arizona homeowners. The film is optically clear and does not alter the appearance of the stone. It is removable and replaceable without adhesive residue when replaced within the recommended 3–5 year cycle.'
+      },
+      {
+        question: 'How long does countertop film last?',
+        answer: 'Standard countertop protection film lasts 3–5 years with normal kitchen use. TuffSkin branded film carries a 10-year manufacturer warranty. In Arizona, UV exposure through kitchen windows can accelerate degradation if the countertop receives direct sun — we recommend pairing countertop film with window film on kitchen glass for maximum longevity. Replacement is fast and cost-effective compared to refinishing or resealing stone.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+    <h1>Countertop Protection Film Installation in Arizona — Cost, Process & FAQs</h1>
+
+    <p class="lead">Arizona kitchens take a beating — intense UV through large windows, hot pan transfers from the range, kids doing homework on marble islands. Countertop protection film is a clear, sacrificial layer that absorbs scratches, stains, and UV damage so your stone doesn't. Arizona House of Film (ROC #314088) installs countertop protection film across Phoenix, Scottsdale, Glendale, and Mesa. This guide covers what the film is, which surfaces it works on, what it costs in Arizona, and how the installation process works step by step.</p>
+
+    <h2>What Is Countertop Protection Film?</h2>
+    <p>Countertop protection film — sometimes called "clear bra for countertops" — is a 4 mil clear polyester or polyurethane film applied directly to the countertop surface. It works like paint protection film on a car: the film takes the damage instead of the surface underneath. When the film gets scratched, stained, or worn after 3–5 years, it peels off cleanly and is replaced with a fresh layer. The stone beneath stays pristine.</p>
+    <p>The film is optically clear — visitors won't know it's there. It doesn't change the feel or appearance of marble, quartz, or granite. The pressure-sensitive adhesive is time-calibrated to release cleanly within the recommended replacement window.</p>
+
+    <h2>Which Surfaces Work with Countertop Protection Film?</h2>
+    <p>Countertop film adheres to most hard, non-porous and semi-porous surfaces:</p>
+    <ul>
+      <li><strong>Quartz</strong> — Excellent adhesion. Prevents staining from oils, wine, coffee, and turmeric. The most popular surface we protect in Arizona.</li>
+      <li><strong>Marble</strong> — Prevents etching from acidic liquids (lemon, vinegar, tomato sauce). Especially valuable in Arizona where UV through kitchen windows accelerates marble yellowing.</li>
+      <li><strong>Granite</strong> — Adds scratch resistance and eliminates the need for periodic resealing. The film creates a continuous barrier that outperforms sealant.</li>
+      <li><strong>Laminate</strong> — Extends the life of budget-friendly countertops. Prevents knife marks, heat damage, and edge wear.</li>
+      <li><strong>Solid surface (Corian, etc.)</strong> — Prevents scratching and staining on solid surface materials without affecting their seamless appearance.</li>
+    </ul>
+
+    <h2>Countertop Protection Film Cost in Arizona — 2026 Pricing</h2>
+    <table>
+      <tr><th>Surface Type</th><th>Film Type</th><th>Cost/Sq Ft</th><th>Typical Kitchen Total</th></tr>
+      <tr><td>Quartz / Granite</td><td>Standard clear</td><td>$12–$18</td><td>$800–$1,800</td></tr>
+      <tr><td>Marble</td><td>UV-stabilized</td><td>$14–$22</td><td>$1,000–$2,200</td></tr>
+      <tr><td>Any surface</td><td>TuffSkin (10-yr warranty)</td><td>$18–$28</td><td>$1,500–$2,500</td></tr>
+      <tr><td>Commercial kitchen</td><td>Heavy-duty</td><td>$14–$22</td><td>Custom quoted</td></tr>
+    </table>
+    <p>Pricing includes surface preparation, precision cutting, professional installation, and manufacturer warranty documentation. ROC #314088. Serving Phoenix, Scottsdale, Glendale, Mesa, and all Arizona communities.</p>
+
+    <h2>Installation Process — Step by Step</h2>
+    <ol>
+      <li><strong>Assessment</strong> — We measure the countertop, assess edge profiles, seam locations, sink cutouts, and surface condition. Any existing damage is documented.</li>
+      <li><strong>Surface preparation</strong> — The countertop is cleaned with isopropyl alcohol to remove oils, residue, and contaminants. The surface must be completely clean for proper adhesion.</li>
+      <li><strong>Precision cutting</strong> — Film is cut to exact dimensions on-site, including cutouts for sinks, cooktops, and faucet holes. Edge treatment is trimmed to match the countertop profile.</li>
+      <li><strong>Wet application</strong> — Film is applied using a slip solution to allow positioning, then squeegeed to remove water and air bubbles. Edges are sealed with a heat gun for a clean finish.</li>
+      <li><strong>Cure time</strong> — Full adhesion takes 24–48 hours. Light use is fine immediately; heavy use (cutting, hot pans with trivets) after 48 hours.</li>
+    </ol>
+    <p>Most residential kitchen installations take 2–4 hours. The kitchen is fully usable within 24 hours.</p>
+
+    <h2>Heat Durability in Arizona</h2>
+    <p>Arizona homeowners rightly ask: does countertop film survive our heat? The answer is yes, with one caveat. Ambient temperatures — even Phoenix summers at 115°F+ — do not affect the film. UV exposure through kitchen windows can accelerate yellowing on non-UV-stabilized films, which is why we specify UV-stabilized polyester for every Arizona installation. Direct contact with hot cookware above 200°F can mark the film, so trivets are still recommended (just as they are for bare stone).</p>
+    <p>For kitchens with south or west-facing windows, we recommend pairing countertop film with <a href="/countertop-protection-film-arizona">solar control window film on kitchen glass</a> for maximum protection.</p>
+
+    <h2>DIY vs Professional Installation</h2>
+    <p>DIY countertop film kits exist but present significant challenges in Arizona:</p>
+    <ul>
+      <li>Arizona's low humidity causes the slip solution to dry faster, reducing working time for positioning</li>
+      <li>Precision cutting around sinks, cooktops, and edges requires professional tools and experience</li>
+      <li>Air bubbles trapped under the film are difficult to remove once the adhesive begins to set</li>
+      <li>Improper edge sealing leads to peeling, especially on countertop edges that get frequent hand contact</li>
+    </ul>
+    <p>Professional installation costs 20–30% more than DIY materials but eliminates waste, ensures proper adhesion, and includes a warranty. For surfaces worth $5,000–$30,000+, the professional premium is minimal insurance.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does countertop protection film cost in Arizona?</h3>
+        <p>$12–$28 per square foot installed. Standard clear film runs $12–$18/sq ft. TuffSkin with 10-year warranty runs $18–$28/sq ft. Most residential kitchens total $800–$2,500.</p>
+      </div>
+      <div>
+        <h3>Does countertop film hold up in Arizona heat?</h3>
+        <p>Yes. UV-stabilized polyester resists yellowing and adhesive breakdown in Arizona heat. Direct contact above 200°F can mark the film — use trivets as you would on bare stone.</p>
+      </div>
+      <div>
+        <h3>Can you put protection film on quartz countertops?</h3>
+        <p>Yes. Film adheres well to quartz and prevents staining from oils, wine, and turmeric. It is optically clear and removable without residue within the 3–5 year replacement cycle.</p>
+      </div>
+      <div>
+        <h3>How long does countertop film last?</h3>
+        <p>Standard film lasts 3–5 years. TuffSkin carries a 10-year warranty. Pairing with window film on kitchen glass maximizes longevity in Arizona UV.</p>
+      </div>
+    </div>
+
+    <h2>Get a Quote for Countertop Protection Film</h2>
+    <p>Arizona House of Film installs countertop protection film across Phoenix, Scottsdale, Glendale, Mesa, and all of Arizona. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'casper-cloaking-film-cost-phoenix',
+    title: 'Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide',
+    excerpt: 'Casper cloaking film makes screens invisible from outside while staying clear inside. 2026 pricing, glass compatibility, and Phoenix install process explained.',
+    date: '2026-04-06',
+    alt: 'Casper cloaking film on a Phoenix office conference room making screens invisible from outside.',
+    keywords: 'Casper cloaking film cost, Casper cloaking film price, Casper cloaking film Phoenix',
+    serviceLink: '/films/casper-cloaking',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'Designtex Casper, Solyx',
+    faqs: [
+      {
+        question: 'How much does Casper cloaking film cost?',
+        answer: 'Casper cloaking film typically costs $25–$45 per square foot installed in Phoenix, depending on glass size, accessibility, and project scope. A single conference room (2–3 glass walls) averages $3,000–$8,000. Multi-room executive suites and law office buildouts run $8,000–$25,000+. The film itself is a specialty product — there is no generic equivalent, which drives the premium over standard privacy films. Arizona House of Film (ROC #314088) provides free on-site estimates.'
+      },
+      {
+        question: 'What glass does Casper cloaking film work on?',
+        answer: 'Casper cloaking film works on standard clear glass, tempered glass, and most commercial interior glass partitions. It does not work on tinted, low-e, or laminated glass — the cloaking effect requires clear glass to function properly. For exterior glass walls, the film can be applied but performance depends on ambient light conditions. We assess glass type compatibility during the free site survey.'
+      },
+      {
+        question: 'Is Casper cloaking film worth it?',
+        answer: 'For organizations where screen content confidentiality matters — law firms, financial services, healthcare with patient data, executive boardrooms — the ROI is clear. A single data breach or disclosed confidential presentation costs orders of magnitude more than cloaking film. For general offices without sensitive screen content, frosted privacy bands at $8–$14/sq ft achieve visual privacy at a lower price point. We help clients determine which solution matches their actual confidentiality requirements.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+    <h1>Casper Cloaking Film Cost in Phoenix — What You'll Pay in 2026</h1>
+
+    <p class="lead">Glass-walled conference rooms look modern. They also broadcast every slide deck, financial model, and patient record to anyone walking by. Casper cloaking film solves this — it makes LED and OLED screens appear black from outside the glass while remaining fully visible from inside. No frosting, no blinds, no loss of transparency. Arizona House of Film (ROC #314088) is a certified Casper cloaking installer serving Phoenix, Scottsdale, Tempe, and the metro area. This guide covers how the film works, what it costs in 2026, which glass types are compatible, and whether it's worth the premium for your office.</p>
+
+    <h2>What Is Casper Cloaking Film?</h2>
+    <p>Casper cloaking film is a patented architectural film made by Designtex (a Steelcase company). It uses micro-optic technology tuned to the specific light wavelengths emitted by LED and OLED screens. The film blocks those wavelengths from passing through the glass while allowing all other visible light through normally. The result: people inside the room see screens clearly. People outside the glass wall see the screens as solid black rectangles. Everything else — people, furniture, whiteboards — remains fully visible from both sides.</p>
+    <p>This is not frosted film. This is not tint. Casper cloaking is wavelength-selective — it only blocks screen light. The glass remains completely transparent for everything else.</p>
+
+    <h2>How Casper Cloaking Film Works</h2>
+    <p>LED and OLED screens emit light in a narrow band of wavelengths. Casper cloaking film contains a micro-louver layer tuned to absorb those specific wavelengths at wide viewing angles (the angles at which someone outside the room would see the screen). From directly in front of the screen (inside the room), the image passes through normally. From oblique angles (outside the glass), the screen wavelengths are absorbed and the display appears black.</p>
+    <p>The film is applied to the interior surface of the glass partition, just like standard window film. It does not require electricity, connectivity, or maintenance. Once installed, it works passively and permanently.</p>
+
+    <h2>2026 Phoenix Pricing for Casper Cloaking Film</h2>
+    <table>
+      <tr><th>Application</th><th>Scope</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
+      <tr><td>Single conference room (2–3 walls)</td><td>60–120 sq ft</td><td>$25–$35</td><td>$3,000–$5,000</td></tr>
+      <tr><td>Executive boardroom (3–4 walls)</td><td>100–200 sq ft</td><td>$25–$35</td><td>$4,000–$8,000</td></tr>
+      <tr><td>Multi-room suite (4–8 rooms)</td><td>300–600 sq ft</td><td>$22–$30</td><td>$8,000–$18,000</td></tr>
+      <tr><td>Full-floor buildout</td><td>1,000+ sq ft</td><td>$20–$28</td><td>$20,000+</td></tr>
+    </table>
+    <p>Volume pricing available for multi-floor and tenant improvement projects. All pricing includes professional installation and Designtex product warranty. ROC #314088.</p>
+
+    <h2>Compatible Glass Types</h2>
+    <p>Casper cloaking film requires clear glass to function correctly. Compatibility:</p>
+    <ul>
+      <li><strong>Clear float glass</strong> — Full compatibility. Optimal performance.</li>
+      <li><strong>Clear tempered glass</strong> — Full compatibility. Most common in Phoenix commercial interiors.</li>
+      <li><strong>Frosted or etched glass</strong> — Not compatible. The diffusion layer disrupts the micro-optic effect.</li>
+      <li><strong>Tinted glass</strong> — Not compatible. Tint absorbs wavelengths the film needs to selectively block.</li>
+      <li><strong>Low-e glass</strong> — Not compatible. The metallic low-e coating interferes with the cloaking layer.</li>
+      <li><strong>Laminated glass</strong> — Limited compatibility. Performance varies — we test on-site before committing.</li>
+    </ul>
+    <p>We verify glass type during the free site survey. If your glass is incompatible, we recommend alternative privacy solutions (frosted bands, gradient film, or switchable smart glass).</p>
+
+    <h2>Casper vs Frosted vs One-Way — When to Use Each</h2>
+    <table>
+      <tr><th>Feature</th><th>Casper Cloaking</th><th>Frosted Band</th><th>One-Way Mirror</th></tr>
+      <tr><td>Screens hidden</td><td>Yes</td><td>Only if covered</td><td>Daytime only</td></tr>
+      <tr><td>Glass stays clear</td><td>Yes</td><td>No (opaque zone)</td><td>Reflective exterior</td></tr>
+      <tr><td>24/7 privacy</td><td>Screens only</td><td>Yes (in frosted zone)</td><td>No (reverses at night)</td></tr>
+      <tr><td>Cost/sq ft</td><td>$25–$45</td><td>$8–$14</td><td>$10–$18</td></tr>
+      <tr><td>Best for</td><td>Confidential screens</td><td>General visual privacy</td><td>Daytime offices</td></tr>
+    </table>
+    <p>Many Phoenix offices combine Casper cloaking with frosted bands — cloaking on the glass panels facing screens, frosted bands at eye level on remaining glass. This gives both screen confidentiality and general visual privacy at a blended cost.</p>
+
+    <h2>Best Use Cases for Casper Cloaking in Phoenix</h2>
+    <ul>
+      <li><strong>Law firms</strong> — Client matters displayed on conference room screens are protected from hallway and reception visibility. Attorney-client privilege extends to visual confidentiality.</li>
+      <li><strong>Financial services</strong> — Trading floors, portfolio reviews, and M&A presentations visible through glass walls present compliance and competitive risks. Cloaking eliminates casual screen exposure.</li>
+      <li><strong>Healthcare</strong> — HIPAA requires reasonable safeguards for patient data. Glass-walled consultation rooms displaying patient records on screens need either blinds, frosting, or cloaking. Cloaking preserves the open aesthetic.</li>
+      <li><strong>Executive suites</strong> — Board presentations, compensation discussions, and strategic planning displayed on screens are shielded from the wider office floor.</li>
+      <li><strong>Government and defense</strong> — Classified and sensitive-but-unclassified information displayed on screens in glass-walled SCIFs and briefing rooms requires physical screening. Cloaking film meets many facility security requirements.</li>
+    </ul>
+    <p>See our <a href="/films/casper-cloaking">Casper cloaking film product page</a> for technical specifications and installation photos.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does Casper cloaking film cost?</h3>
+        <p>$25–$45 per square foot installed in Phoenix. A single conference room averages $3,000–$8,000. Multi-room suites run $8,000–$25,000+. Volume pricing available for large buildouts.</p>
+      </div>
+      <div>
+        <h3>What glass does Casper cloaking film work on?</h3>
+        <p>Clear float and clear tempered glass. Not compatible with tinted, low-e, frosted, or etched glass. We verify compatibility during the free site survey.</p>
+      </div>
+      <div>
+        <h3>Is Casper cloaking film worth it?</h3>
+        <p>For law firms, financial services, healthcare, and executive boardrooms where screen confidentiality matters — yes. For general offices, frosted bands at $8–$14/sq ft achieve visual privacy at lower cost.</p>
+      </div>
+    </div>
+
+    <h2>Get an Estimate for Casper Cloaking Film</h2>
+    <p>Arizona House of Film is a certified Casper cloaking installer serving Phoenix, Scottsdale, Tempe, Mesa, and all of Arizona. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'window-tinting-queen-creek-guide',
+    title: 'Window Tinting in Queen Creek, AZ — Residential, Privacy & Commercial (2026)',
+    excerpt: 'Window tinting in Queen Creek AZ — privacy film, heat rejection, residential and commercial installs. Licensed ROC #314088 contractor serving the East Valley.',
+    date: '2026-04-06',
+    alt: 'Residential window tinting installation on a new construction home in Queen Creek AZ.',
+    keywords: 'window tinting Queen Creek AZ, privacy window films Queen Creek, architectural window tinting Queen Creek',
+    serviceLink: '/window-tinting-queen-creek',
+    cityLink: '/window-tinting-queen-creek',
+    brandMentions: 'Hüper Optik, LLumar',
+    faqs: [
+      {
+        question: 'How much does window tinting cost in Queen Creek AZ?',
+        answer: 'Residential window tinting in Queen Creek typically costs $8–$18 per square foot installed depending on film type and glass size. A typical Queen Creek home with 10–20 windows averages $1,200–$3,000 for ceramic solar film. New construction homes in Hastings Farms, Ironwood Crossing, and Cortina with large glass elevations may run higher. Commercial projects are custom quoted. Arizona House of Film (ROC #314088) provides free on-site estimates.'
+      },
+      {
+        question: 'What privacy film options are available in Queen Creek?',
+        answer: 'Queen Creek homes with tight lot spacing are ideal candidates for privacy film. Options include frosted film (24/7 privacy, diffused light), dual-reflective film (daytime mirror effect, see-out clarity), gradient film (partial privacy for bathrooms and sidelights), and decorative patterns (etched, stained glass, geometric). The most popular in Queen Creek developments is dual-reflective ceramic film — it provides both daytime privacy and significant heat rejection in a single product.'
+      },
+      {
+        question: 'Does window film qualify for SRP rebates in Queen Creek?',
+        answer: 'Yes. Queen Creek is in the SRP service territory. SRP offers $1.00 per square foot for residential customers who install qualifying solar control window film with an NFRC-rated SHGC of 0.45 or lower. Most ceramic and spectrally selective films qualify. Arizona House of Film handles the rebate documentation and submits the application on your behalf. See our <a href="/blog/srp-rebate-window-film-2026">SRP rebate guide</a> for full details.'
+      }
+    ],
+    ctaCity: 'Queen Creek',
+    customContent: `
+    <h1>Window Tinting in Queen Creek, AZ — Residential, Privacy & Commercial Film Guide</h1>
+
+    <p class="lead">Queen Creek is one of the fastest-growing communities in the East Valley — and one of the hottest. New construction homes in Hastings Farms, Ironwood Crossing, Cortina, Meridian, and Encanterra come with large windows, open floor plans, and tight lot spacing. That means maximum heat gain, minimal privacy, and rising energy bills from day one. Arizona House of Film (ROC #314088) has been installing window film on Queen Creek properties since 2017 — solar control, privacy, commercial, and turf protection film. This guide covers what Queen Creek homeowners and businesses need to know in 2026.</p>
+
+    <h2>Why Queen Creek Homes Need Window Film</h2>
+    <p>Queen Creek's rapid growth created three specific window film needs that don't exist in older Phoenix neighborhoods:</p>
+    <ul>
+      <li><strong>New construction heat gain</strong> — Production builders in Queen Creek do not include solar control window film as standard. Large windows and open floor plans allow massive solar heat gain, especially on south and west-facing elevations. Window film is one of the first upgrades Queen Creek homeowners add after move-in.</li>
+      <li><strong>Privacy from neighbors</strong> — Developments like Pecan Creek, Meridian, and Sossaman Estates have tight lot spacing. Large windows with open floor plans offer little natural privacy. Frosted, etched, and one-way privacy films are extremely popular in these communities.</li>
+      <li><strong>Turf protection</strong> — Dual-pane low-e windows in many Queen Creek homes concentrate reflected sunlight and melt artificial turf in neighboring yards. Turf protection film (anti-reflective exterior film) eliminates the reflection pattern without reducing interior light. This is increasingly common in Queen Creek HOA communities.</li>
+    </ul>
+
+    <h2>Privacy Film Options for Queen Creek</h2>
+    <p>Privacy film is our #1 request from Queen Creek homeowners. Options by privacy level:</p>
+    <ul>
+      <li><strong>Dual-reflective ceramic film</strong> — The most popular in Queen Creek. Provides daytime privacy (mirror effect from outside) plus 50–65% heat rejection. You see out clearly; neighbors see their reflection. Note: effect reverses at night when interior lights are on.</li>
+      <li><strong>Frosted film</strong> — 24/7 privacy in both directions. Diffuses light without darkening the room. Ideal for bathrooms, sidelights, and bedroom windows facing neighboring homes. Available in 100+ patterns.</li>
+      <li><strong>Decorative etched film</strong> — Adds design elements (geometric, organic, custom patterns) while providing full privacy. Popular on entryway sidelights and transoms in Queen Creek homes.</li>
+      <li><strong>Gradient film</strong> — Transitions from opaque to clear. Blocks sightlines at eye level while allowing light above. Used in master baths and home offices.</li>
+    </ul>
+    <p>See our <a href="/privacy-window-film-phoenix-homes">privacy film service page</a> for specifications and examples.</p>
+
+    <h2>Residential Window Tinting in Queen Creek</h2>
+    <p>Most Queen Creek residential projects include ceramic solar film on south and west-facing windows plus privacy film on windows facing neighboring properties. The typical project scope:</p>
+    <ul>
+      <li>10–20 windows filmed (partial or whole-home)</li>
+      <li>Ceramic film on sun-facing elevations (Hüper Optik Select or LLumar CTX)</li>
+      <li>Privacy film on side elevations facing neighbors</li>
+      <li>Optional turf protection film on reflected-problem windows</li>
+      <li>Installation time: 4–8 hours for a typical Queen Creek home</li>
+      <li>Total cost: $1,200–$3,000 for most homes</li>
+    </ul>
+    <p>SRP rebates of $1.00/sq ft are available for qualifying ceramic film — we handle the documentation. See our <a href="/blog/srp-rebate-window-film-2026">SRP rebate guide</a> for eligibility details.</p>
+
+    <h2>Commercial Window Tinting in Queen Creek</h2>
+    <p>Queen Creek's commercial growth along Rittenhouse Road, Ellsworth Road, and the Queen Creek Marketplace has driven demand for commercial window film. Common projects include:</p>
+    <ul>
+      <li><strong>Retail storefronts</strong> — Solar control film reduces interior heat and glare while keeping merchandise visible. Security film provides smash-and-grab protection.</li>
+      <li><strong>Restaurant glass</strong> — Heat rejection on west-facing dining areas improves guest comfort during afternoon and evening service. Glare reduction on TVs and screens.</li>
+      <li><strong>Medical and dental offices</strong> — Privacy film on exam room glass, solar film on waiting areas, and decorative branding on storefront partitions.</li>
+      <li><strong>Office spaces</strong> — Conference room privacy, glare reduction on workstations, and energy savings across the building envelope.</li>
+    </ul>
+
+    <h2>Turf Protection Film — A Queen Creek Specialty</h2>
+    <p>Low-e dual-pane windows in many Queen Creek homes act like concave mirrors — they concentrate reflected sunlight into narrow beams that reach temperatures high enough to melt artificial turf, vinyl siding, and patio furniture in neighboring yards. This is not a defect — it's a physics problem with certain window coatings and angles of incidence.</p>
+    <p>Turf protection film (anti-reflective exterior film) is applied to the exterior glass surface. It diffuses the reflected sunlight into a wide, low-intensity pattern that cannot concentrate enough heat to cause damage. The film does not noticeably reduce interior light or change the window's appearance. It's the only permanent solution — moving the turf or adding shade structures are the only alternatives.</p>
+    <p>If your Queen Creek HOA or neighbor has flagged a turf melting issue, call us for a free assessment.</p>
+
+    <h2>Window Tinting Cost in Queen Creek — 2026</h2>
+    <table>
+      <tr><th>Service</th><th>Film Type</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
+      <tr><td>Whole-home solar film</td><td>Ceramic</td><td>$10–$18</td><td>$1,200–$3,000</td></tr>
+      <tr><td>Privacy film (bathrooms, sides)</td><td>Frosted/etched</td><td>$8–$14</td><td>$300–$1,200</td></tr>
+      <tr><td>Turf protection film</td><td>Anti-reflective exterior</td><td>$12–$20</td><td>$400–$1,500</td></tr>
+      <tr><td>Commercial storefront</td><td>Solar + security</td><td>$10–$22</td><td>$2,500–$10,000</td></tr>
+    </table>
+    <p>All pricing includes professional installation and manufacturer warranty. <a href="/window-tinting-queen-creek">See our Queen Creek service page</a> for full details. ROC #314088.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does window tinting cost in Queen Creek AZ?</h3>
+        <p>Residential window tinting in Queen Creek costs $8–$18 per square foot installed. A typical home with 10–20 windows averages $1,200–$3,000 for ceramic solar film. Commercial projects are custom quoted.</p>
+      </div>
+      <div>
+        <h3>What privacy film options are available in Queen Creek?</h3>
+        <p>Dual-reflective ceramic (daytime mirror + heat rejection), frosted (24/7 full privacy), decorative etched (design + privacy), and gradient (partial privacy). Dual-reflective ceramic is the most popular in Queen Creek developments.</p>
+      </div>
+      <div>
+        <h3>Does window film qualify for SRP rebates in Queen Creek?</h3>
+        <p>Yes. Queen Creek is in SRP territory. SRP offers $1.00/sq ft for qualifying solar control film with SHGC ≤ 0.45. We handle the rebate documentation. See our <a href="/blog/srp-rebate-window-film-2026">SRP rebate guide</a>.</p>
+      </div>
+    </div>
+
+    <h2>Get a Queen Creek Estimate</h2>
+    <p>Arizona House of Film serves Queen Creek, San Tan Valley, Gilbert, Mesa, and the full East Valley. ROC #314088. Free on-site assessments. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
   }
 ];
 
@@ -683,7 +1201,7 @@ function generateAllBlogPosts(count) {
       ...basePost,
       slug: basePost.slug,
       title: basePost.title,
-      excerpt: `Explore ${basePost.title.toLowerCase()}. Learn how to improve comfort and save money with expert insights on ${basePost.keywords.split(',')[0]}.`,
+      excerpt: basePost.excerpt || `Explore ${basePost.title.toLowerCase()}. Learn how to improve comfort and save money with expert insights on ${basePost.keywords.split(',')[0]}.`,
       content: basePost.customContent || generateBlogContent(basePost),
       blogSchema: {
         "@context": "https://schema.org",

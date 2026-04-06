@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-VCKscHvC.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BWVO6Ro3.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Casper cloaking film makes screens invisible from outside while staying clear inside. 2026 pricing, glass compatibility, and Phoenix install process explained."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Casper cloaking film makes screens invisible from outside while staying clear inside. 2026 pricing, glass compatibility, and Phoenix install process explained."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/casper-cloaking-film-cost-phoenix"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/casper-cloaking-film-cost-phoenix.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/casper-cloaking-film-cost-phoenix"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide","description":"An in-depth guide to Casper cloaking film cost. Learn about the benefits, costs, and top brands like Designtex Casper, Solyx.","datePublished":"2026-04-06","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-casper-cloaking-film-cost-phoenix.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/casper-cloaking-film-cost-phoenix"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does Casper cloaking film cost?","acceptedAnswer":{"@type":"Answer","text":"Casper cloaking film typically costs $25–$45 per square foot installed in Phoenix, depending on glass size, accessibility, and project scope. A single conference room (2–3 glass walls) averages $3,000–$8,000. Multi-room executive suites and law office buildouts run $8,000–$25,000+. The film itself is a specialty product — there is no generic equivalent, which drives the premium over standard privacy films. Arizona House of Film (ROC #314088) provides free on-site estimates."}},{"@type":"Question","name":"What glass does Casper cloaking film work on?","acceptedAnswer":{"@type":"Answer","text":"Casper cloaking film works on standard clear glass, tempered glass, and most commercial interior glass partitions. It does not work on tinted, low-e, or laminated glass — the cloaking effect requires clear glass to function properly. For exterior glass walls, the film can be applied but performance depends on ambient light conditions. We assess glass type compatibility during the free site survey."}},{"@type":"Question","name":"Is Casper cloaking film worth it?","acceptedAnswer":{"@type":"Answer","text":"For organizations where screen content confidentiality matters — law firms, financial services, healthcare with patient data, executive boardrooms — the ROI is clear. A single data breach or disclosed confidential presentation costs orders of magnitude more than cloaking film. For general offices without sensitive screen content, frosted privacy bands at $8–$14/sq ft achieve visual privacy at a lower price point. We help clients determine which solution matches their actual confidentiality requirements."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide","item":"https://arizonahouseoffilm.com/blog/casper-cloaking-film-cost-phoenix"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->April 5, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+    <h1>Casper Cloaking Film Cost in Phoenix — What You'll Pay in 2026</h1>
+
+    <p class="lead">Glass-walled conference rooms look modern. They also broadcast every slide deck, financial model, and patient record to anyone walking by. Casper cloaking film solves this — it makes LED and OLED screens appear black from outside the glass while remaining fully visible from inside. No frosting, no blinds, no loss of transparency. Arizona House of Film (ROC #314088) is a certified Casper cloaking installer serving Phoenix, Scottsdale, Tempe, and the metro area. This guide covers how the film works, what it costs in 2026, which glass types are compatible, and whether it's worth the premium for your office.</p>
+
+    <h2>What Is Casper Cloaking Film?</h2>
+    <p>Casper cloaking film is a patented architectural film made by Designtex (a Steelcase company). It uses micro-optic technology tuned to the specific light wavelengths emitted by LED and OLED screens. The film blocks those wavelengths from passing through the glass while allowing all other visible light through normally. The result: people inside the room see screens clearly. People outside the glass wall see the screens as solid black rectangles. Everything else — people, furniture, whiteboards — remains fully visible from both sides.</p>
+    <p>This is not frosted film. This is not tint. Casper cloaking is wavelength-selective — it only blocks screen light. The glass remains completely transparent for everything else.</p>
+
+    <h2>How Casper Cloaking Film Works</h2>
+    <p>LED and OLED screens emit light in a narrow band of wavelengths. Casper cloaking film contains a micro-louver layer tuned to absorb those specific wavelengths at wide viewing angles (the angles at which someone outside the room would see the screen). From directly in front of the screen (inside the room), the image passes through normally. From oblique angles (outside the glass), the screen wavelengths are absorbed and the display appears black.</p>
+    <p>The film is applied to the interior surface of the glass partition, just like standard window film. It does not require electricity, connectivity, or maintenance. Once installed, it works passively and permanently.</p>
+
+    <h2>2026 Phoenix Pricing for Casper Cloaking Film</h2>
+    <table>
+      <tr><th>Application</th><th>Scope</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
+      <tr><td>Single conference room (2–3 walls)</td><td>60–120 sq ft</td><td>$25–$35</td><td>$3,000–$5,000</td></tr>
+      <tr><td>Executive boardroom (3–4 walls)</td><td>100–200 sq ft</td><td>$25–$35</td><td>$4,000–$8,000</td></tr>
+      <tr><td>Multi-room suite (4–8 rooms)</td><td>300–600 sq ft</td><td>$22–$30</td><td>$8,000–$18,000</td></tr>
+      <tr><td>Full-floor buildout</td><td>1,000+ sq ft</td><td>$20–$28</td><td>$20,000+</td></tr>
+    </table>
+    <p>Volume pricing available for multi-floor and tenant improvement projects. All pricing includes professional installation and Designtex product warranty. ROC #314088.</p>
+
+    <h2>Compatible Glass Types</h2>
+    <p>Casper cloaking film requires clear glass to function correctly. Compatibility:</p>
+    <ul>
+      <li><strong>Clear float glass</strong> — Full compatibility. Optimal performance.</li>
+      <li><strong>Clear tempered glass</strong> — Full compatibility. Most common in Phoenix commercial interiors.</li>
+      <li><strong>Frosted or etched glass</strong> — Not compatible. The diffusion layer disrupts the micro-optic effect.</li>
+      <li><strong>Tinted glass</strong> — Not compatible. Tint absorbs wavelengths the film needs to selectively block.</li>
+      <li><strong>Low-e glass</strong> — Not compatible. The metallic low-e coating interferes with the cloaking layer.</li>
+      <li><strong>Laminated glass</strong> — Limited compatibility. Performance varies — we test on-site before committing.</li>
+    </ul>
+    <p>We verify glass type during the free site survey. If your glass is incompatible, we recommend alternative privacy solutions (frosted bands, gradient film, or switchable smart glass).</p>
+
+    <h2>Casper vs Frosted vs One-Way — When to Use Each</h2>
+    <table>
+      <tr><th>Feature</th><th>Casper Cloaking</th><th>Frosted Band</th><th>One-Way Mirror</th></tr>
+      <tr><td>Screens hidden</td><td>Yes</td><td>Only if covered</td><td>Daytime only</td></tr>
+      <tr><td>Glass stays clear</td><td>Yes</td><td>No (opaque zone)</td><td>Reflective exterior</td></tr>
+      <tr><td>24/7 privacy</td><td>Screens only</td><td>Yes (in frosted zone)</td><td>No (reverses at night)</td></tr>
+      <tr><td>Cost/sq ft</td><td>$25–$45</td><td>$8–$14</td><td>$10–$18</td></tr>
+      <tr><td>Best for</td><td>Confidential screens</td><td>General visual privacy</td><td>Daytime offices</td></tr>
+    </table>
+    <p>Many Phoenix offices combine Casper cloaking with frosted bands — cloaking on the glass panels facing screens, frosted bands at eye level on remaining glass. This gives both screen confidentiality and general visual privacy at a blended cost.</p>
+
+    <h2>Best Use Cases for Casper Cloaking in Phoenix</h2>
+    <ul>
+      <li><strong>Law firms</strong> — Client matters displayed on conference room screens are protected from hallway and reception visibility. Attorney-client privilege extends to visual confidentiality.</li>
+      <li><strong>Financial services</strong> — Trading floors, portfolio reviews, and M&A presentations visible through glass walls present compliance and competitive risks. Cloaking eliminates casual screen exposure.</li>
+      <li><strong>Healthcare</strong> — HIPAA requires reasonable safeguards for patient data. Glass-walled consultation rooms displaying patient records on screens need either blinds, frosting, or cloaking. Cloaking preserves the open aesthetic.</li>
+      <li><strong>Executive suites</strong> — Board presentations, compensation discussions, and strategic planning displayed on screens are shielded from the wider office floor.</li>
+      <li><strong>Government and defense</strong> — Classified and sensitive-but-unclassified information displayed on screens in glass-walled SCIFs and briefing rooms requires physical screening. Cloaking film meets many facility security requirements.</li>
+    </ul>
+    <p>See our <a href="/films/casper-cloaking">Casper cloaking film product page</a> for technical specifications and installation photos.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does Casper cloaking film cost?</h3>
+        <p>$25–$45 per square foot installed in Phoenix. A single conference room averages $3,000–$8,000. Multi-room suites run $8,000–$25,000+. Volume pricing available for large buildouts.</p>
+      </div>
+      <div>
+        <h3>What glass does Casper cloaking film work on?</h3>
+        <p>Clear float and clear tempered glass. Not compatible with tinted, low-e, frosted, or etched glass. We verify compatibility during the free site survey.</p>
+      </div>
+      <div>
+        <h3>Is Casper cloaking film worth it?</h3>
+        <p>For law firms, financial services, healthcare, and executive boardrooms where screen confidentiality matters — yes. For general offices, frosted bands at $8–$14/sq ft achieve visual privacy at lower cost.</p>
+      </div>
+    </div>
+
+    <h2>Get an Estimate for Casper Cloaking Film</h2>
+    <p>Arizona House of Film is a certified Casper cloaking installer serving Phoenix, Scottsdale, Tempe, Mesa, and all of Arizona. ROC #314088. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  </div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/service-areas/phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

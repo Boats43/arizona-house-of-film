@@ -9,8 +9,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
 const WindowFilmPhoenix = () => {
-  const pageTitle = 'Window Film Phoenix AZ | Licensed Installer | ROC #314088';
-  const metaDescription = 'Window film installation in Phoenix AZ — solar control, security, decorative and privacy film. Licensed ROC #314088. 713+ projects. Free estimate.';
+  const pageTitle = 'Window Film Phoenix AZ | Residential & Commercial | ROC #314088';
+  const metaDescription = 'Window film installation in Phoenix AZ. Solar control, privacy, security & decorative film. In-stock options available same week. Free estimate. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/window-film-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';
 

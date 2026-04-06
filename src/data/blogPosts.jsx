@@ -371,7 +371,8 @@ const allBlogData = [
   },
   {
     slug: 'how-much-does-window-tinting-cost-phoenix',
-    title: 'How Much Does Window Tinting Cost in Phoenix? 2026 Pricing Guide',
+    title: 'How Much Does Window Tinting Cost in Phoenix? [2026 Pricing Guide]',
+    excerpt: 'Window tinting costs $8-15/sqft in Phoenix. Average home $800-$2,500. Get an instant AI estimate with photos. Licensed installer ROC #314088.',
     date: '2026-04-04',
     alt: 'Phoenix home with professional window tinting installation in progress.',
     keywords: 'window tinting cost Phoenix, how much does window tinting cost, Phoenix window film pricing 2026',

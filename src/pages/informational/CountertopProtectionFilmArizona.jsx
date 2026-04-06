@@ -52,8 +52,8 @@ export default function CountertopProtectionFilmArizona() {
   return (
     <>
       <Helmet>
-        <title>Countertop Protection Film Arizona | Clear Bra | ROC #314088</title>
-        <meta name="description" content="Professional countertop protection film in Phoenix & Arizona. Clear bra coating for countertops, cabinets & surfaces. Licensed ROC #314088. Free estimate." />
+        <title>Countertop Protection Film Arizona | Clear Bra Coating | ROC #314088</title>
+        <meta name="description" content="Countertop protection film installed across Arizona. Clear bra coating for kitchens, commercial surfaces, and high-traffic areas. Free estimate. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/countertop-protection-film-arizona" />
         <meta property="og:title" content="Countertop Protection Film Arizona | Clear Bra | ROC #314088" />
         <meta property="og:description" content="Protect quartz, marble, and granite countertops with professional protection film. Phoenix & Scottsdale installation. Licensed ROC #314088." />

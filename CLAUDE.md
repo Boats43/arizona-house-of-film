@@ -11,7 +11,8 @@
 
 ## Prerendering
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
-- **Trigger**: `"postbuild": "node scripts/prerender.js"` in package.json
+- **Trigger**: `"postbuild": "node scripts/prerender.js && node scripts/generate-sitemaps.js"` in package.json — `generate-sitemaps.js` runs automatically on every build
+- **Sitemap generation**: `scripts/generate-sitemaps.js` dynamically writes `public/sitemap-films.xml` (and `dist/sitemap-films.xml`) with all 618 Solyx SKU URLs + 8 category hubs (626 total) — never hand-edit sitemap-films.xml
 - **Result**: 956 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
@@ -33,7 +34,8 @@
 
 ## Page Counts
 - **Total prerendered**: 956
-- **Sitemap URLs**: 340 (across 7 sitemap files)
+- **Sitemap URLs**: 929 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
+- **Ahrefs health score**: 97
 - **Page JSX files**: 111 (48 root + 27 locations + 21 informational + 6 solutions + 7 brands + 2 films)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
 - **Brand pages**: 35 (7 dedicated + 28 dynamic)

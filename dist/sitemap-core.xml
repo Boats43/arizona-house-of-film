@@ -553,6 +553,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://arizonahouseoffilm.com/brands/panorama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://arizonahouseoffilm.com/window-film-cost-estimator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -584,5 +584,24 @@ export const brands = [
       { name: "SimGlas Decorative Series", description: "Specialty decorative film simulating high-end glass aesthetics." }
     ],
     faqs: []
+  },
+  {
+    name: "Panorama",
+    slug: "panorama",
+    category: "Commercial & Architectural",
+    description: "Solar Gard's flagship spectrally selective architectural film line — high visible light transmission with aggressive solar heat gain rejection for commercial glazing.",
+    url: "https://www.solargard.com/architectural-films/panorama/",
+    relatedFilms: ["commercial", "energy-saving", "solar"],
+    arizonaNote: "Panorama is our go-to spectrally selective film for Phoenix and Scottsdale commercial perimeters where tenants demand maximum daylight without the heat. Carries full NFRC certification for COMcheck compliance and SRP/APS energy rebate documentation.",
+    bestFor: ["Commercial perimeter glazing", "High-VLT solar control", "NFRC-rated installs", "Energy rebate compliance"],
+    filmSeries: [
+      { name: "Panorama Solar Bronze", description: "Bronze-tinted spectrally selective film for hot Arizona facades requiring aggressive heat rejection." },
+      { name: "Panorama Solar Neutral", description: "Neutral-tone spectrally selective film preserving exterior glass aesthetics on Class A office buildings." },
+      { name: "Panorama Sentinel", description: "High-performance spectrally selective film engineered for extreme solar loads on south- and west-facing commercial glass." }
+    ],
+    faqs: [
+      { question: "Is Panorama window film made by Solar Gard?", answer: "Yes — Panorama is Solar Gard's premium spectrally selective architectural film line, manufactured by Saint-Gobain Performance Plastics. Arizona House of Film is an authorized Solar Gard installer in Phoenix and Scottsdale." },
+      { question: "Does Panorama film qualify for SRP and APS energy rebates?", answer: "Yes. Panorama films carry NFRC certification with documented SHGC and U-factor values that meet SRP and APS commercial energy rebate requirements. We provide all compliance documentation with every install." }
+    ]
   }
 ];

@@ -34,6 +34,7 @@ const ROUTES = [
   '/solutions', '/gallery', '/service-areas', '/films', '/brands',
   '/contact', '/get-a-quote', '/book-now', '/careers', '/industries', '/blog',
   '/films/security', '/films/security-films', '/films/casper-cloaking', '/brands/flexfilm', '/brands/llumar',
+  '/brands/panorama',
   '/window-tinting-phoenix', '/window-tinting-chandler', '/window-tinting-gilbert',
   '/window-tinting-mesa', '/window-tinting-tempe', '/window-tinting-glendale',
   '/window-tinting-peoria', '/window-tinting-queen-creek',

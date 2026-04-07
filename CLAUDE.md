@@ -12,9 +12,11 @@
 ## Prerendering
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
 - **Trigger**: `"postbuild": "node scripts/prerender.js"` in package.json
-- **Result**: 322 routes prerendered (~50KB each vs 6KB SPA shell)
+- **Result**: 948 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug`
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
+- **SKU routes**: `scripts/prerender.js` imports `solyxProducts` + `solyxToFilmsCategory` from `src/data/solyxFilms.js` and spreads generated SKU URLs into `ROUTES` — never hand-list SKUs
+- **SPA fallback**: `vercel.json` has `"rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]` as a safety net for any route that escapes prerender
 
 ## Key Files
 - `src/App.jsx` — All routes (95 explicit + 5 dynamic patterns)
@@ -22,7 +24,7 @@
 - `api/chat.js` — AI chat endpoint with rate limiting, CORS, bot detection, 618-SKU film search
 - `api/contact.js` — Contact form endpoint
 - `src/components/ChatWidget.jsx` — AI chat widget with page-context awareness
-- `src/data/solyxFilms.js` — 618 Solyx film SKUs (sku, name, img, category)
+- `src/data/solyxFilms.js` — 618 Solyx film SKUs + `solyxToFilmsCategory` map (shared export, single source of truth used by FilmsHub.jsx and prerender.js)
 - `src/data/ewfFilms.js` — EWF architectural film catalog
 - `src/data/films.js` — Film category definitions with FAQs
 - `src/data/brands.js` — Brand data for dynamic BrandPage
@@ -30,7 +32,7 @@
 - `vercel.json` — 70 redirects + SPA rewrite fallback + security headers
 
 ## Page Counts
-- **Total prerendered**: 322
+- **Total prerendered**: 948
 - **Sitemap URLs**: 340 (across 7 sitemap files)
 - **Page JSX files**: 111 (48 root + 27 locations + 21 informational + 6 solutions + 7 brands + 2 films)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
@@ -50,7 +52,7 @@
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
-- Build must pass 322/322 prerender before pushing
+- Build must pass 948/948 prerender before pushing
 
 ## Open Items (as of April 4, 2026)
 - `/residential-window-tinting-phoenix` now internally linked from Home, Residential, and WindowFilmPhoenix — verify GSC pickup

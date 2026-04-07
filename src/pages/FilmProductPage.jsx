@@ -342,8 +342,11 @@ export default function FilmProductPage() {
     return <NotFound />;
   }
 
-  const pageTitle = content.metaTitle(displayName);
-  const pageDesc = content.metaDesc(displayName);
+  const truncatedName = displayName.length > 35
+    ? displayName.substring(0, 35).trim() + '...'
+    : displayName;
+  const pageTitle = `${truncatedName} | Window Film Phoenix AZ`;
+  const pageDesc = `${truncatedName} window film available in Arizona. Professional installation by licensed ROC #314088. Free estimate — call (480) 788-1591.`;
 
   const faqSchema = {
     "@context": "https://schema.org",

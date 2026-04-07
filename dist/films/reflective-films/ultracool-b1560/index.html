@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-Be0b0-sp.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BWVO6Ro3.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">ULTRACOOL-B1560 Blue/Silver | Reflective Window Film Phoenix | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="ULTRACOOL-B1560 Blue/Silver — one-way mirror and reflective window films for daytime privacy and solar control. Installed in Phoenix &amp; Scottsdale AZ. ROC #314088. Free quote."/><meta data-rh="true" name="keywords" content="reflective window film phoenix, one way mirror film arizona, mirror window film scottsdale, solar reflective film installation arizona"/><meta data-rh="true" property="og:title" content="ULTRACOOL-B1560 Blue/Silver | Reflective Window Film Phoenix | Arizona House of Film"/><meta data-rh="true" property="og:description" content="ULTRACOOL-B1560 Blue/Silver — one-way mirror and reflective window films for daytime privacy and solar control. Installed in Phoenix &amp; Scottsdale AZ. ROC #314088. Free quote."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/films/reflective-films/ultracool-b1560"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="ULTRACOOL-B1560 Blue/Silver | Reflective Window Film Phoenix | Arizona House of Film"/><meta data-rh="true" name="twitter:description" content="ULTRACOOL-B1560 Blue/Silver — one-way mirror and reflective window films for daytime privacy and solar control. Installed in Phoenix &amp; Scottsdale AZ. ROC #314088. Free quote."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/films/reflective-films/ultracool-b1560"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does one-way mirror film work at night?","acceptedAnswer":{"@type":"Answer","text":"No. One-way mirror effect requires more light on the reflective side than inside. At night when interior lights are on, the effect reverses — people can see in. For night privacy, combine with interior shades or choose a frosted film."}},{"@type":"Question","name":"How much heat does reflective film reject in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Quality reflective films reject 50–80% of solar heat gain. In Phoenix summers, this can reduce cooling costs by 20–30% on heavily glazed elevations. We can provide energy savings estimates for your specific glass."}},{"@type":"Question","name":"Will reflective film make my house look commercial?","acceptedAnswer":{"@type":"Answer","text":"Residential-grade reflective films (bronze, pewter, light silver) have a subtle finish that reads as tinted glass rather than commercial mirror. We help you select the right film for your aesthetic."}},{"@type":"Question","name":"What does reflective window film cost in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Reflective film installation runs $8–$15 per square foot depending on film spec and glass size. Call (480) 788-1591 for a free site assessment and quote."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ULTRACOOL-B1560 Blue/Silver","description":"ULTRACOOL-B1560 Blue/Silver — one-way mirror and reflective window films for daytime privacy and solar control. Installed in Phoenix & Scottsdale AZ. ROC #314088. Free quote.","brand":{"@type":"Brand","name":"Solyx"},"offers":{"@type":"Offer","seller":{"@type":"LocalBusiness","name":"Arizona House of Film","telephone":"+14807881591","address":{"@type":"PostalAddress","streetAddress":"7007 W Flower St","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85033"}},"areaServed":"Phoenix, Scottsdale, Chandler, Mesa, Tempe, Arizona","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","description":"Custom quoted per project"}}}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="max-w-5xl mx-auto px-4 py-10"><nav class="flex items-center gap-2 text-sm text-gray-400 mb-6"><a class="flex items-center gap-1 hover:text-blue-600 transition-colors" href="/films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> Film Catalog</a><span>/</span><a class="text-gray-600 capitalize hover:text-blue-600 transition-colors" href="/films/reflective-films">reflective films</a><span>/</span><span class="text-gray-800 font-medium">ULTRACOOL-B1560 Blue/Silver</span></nav><div class="grid md:grid-cols-2 gap-10 mb-12"><div class="rounded-2xl overflow-hidden bg-gray-50 aspect-square"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/UltraCool%20B1560.jpg" alt="ULTRACOOL-B1560 Blue/Silver — Reflective &amp; Mirror Window Film | Arizona House of Film" class="w-full h-full object-cover"/></div><div class="flex flex-col justify-center"><div class="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-3 py-1 text-green-700 text-xs font-semibold mb-3 w-fit">AUTHORIZED SOLYX INSTALLER · ROC #314088</div><h1 class="text-3xl font-black text-gray-900 mb-1">ULTRACOOL-B1560 Blue/Silver</h1><p class="text-sm text-gray-400 font-mono mb-3">ULTRACOOL-B1560</p><p class="text-gray-500 text-sm mb-6 leading-relaxed">Reflective and mirror window films provide one-way daytime privacy — you see out, they can&#x27;t see in. In Arizona&#x27;s intense sun, reflective films are also highly effective solar control products, reject<!-- -->...</p><div class="bg-green-50 border border-green-200 rounded-xl p-5"><p class="font-bold text-gray-800 mb-1">We install this film.</p><p class="text-sm text-gray-500 mb-4">Arizona House of Film — authorized Solyx installer serving Phoenix, Scottsdale, and all Arizona.</p><div class="flex flex-col sm:flex-row gap-3"><a class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg text-center transition-colors" href="/contact">Get Installation Quote</a><a href="tel:4807881591" class="flex items-center justify-center gap-2 border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-6 py-3 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> (480) 788-1591</a></div><p class="text-sm text-slate-400 mt-3">Want to purchase this film directly?<!-- --> <a class="text-green-700 underline" href="/store">Order from our film catalog →</a></p></div></div></div><section class="mb-12"><p class="text-gray-600 leading-relaxed text-base">Reflective and mirror window films provide one-way daytime privacy — you see out, they can&#x27;t see in. In Arizona&#x27;s intense sun, reflective films are also highly effective solar control products, rejecting 50–80% of solar heat gain. Arizona House of Film installs silver, bronze, gold, and chrome reflective films for residential homes and commercial buildings across Phoenix, Scottsdale, Tempe, and Chandler.</p></section><section class="mb-12"><h2 class="text-2xl font-bold text-gray-900 mb-6">Where Arizona Clients Use <!-- -->Reflective &amp; Mirror Window Film</h2><div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4"><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Residential Street-Facing Windows</h3><p class="text-gray-500 text-sm leading-relaxed">Daytime privacy on front-facing windows — no blinds, full view from inside.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Commercial Office Buildings</h3><p class="text-gray-500 text-sm leading-relaxed">Reduce solar heat gain by up to 80% while creating a professional exterior.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Retail Storefronts</h3><p class="text-gray-500 text-sm leading-relaxed">Mirror finish on storefront glass — solar control plus visual impact.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Apartments &amp; Condos</h3><p class="text-gray-500 text-sm leading-relaxed">Privacy for ground-floor and street-level units in dense urban environments.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">West &amp; South-Facing Glass</h3><p class="text-gray-500 text-sm leading-relaxed">Maximum heat rejection on the most solar-exposed elevations.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Glass Balconies &amp; Railings</h3><p class="text-gray-500 text-sm leading-relaxed">Privacy and solar control for balcony enclosures and patio glass.</p></div></div></section><section class="mb-12 bg-slate-900 rounded-2xl p-8"><h2 class="text-xl font-bold text-white mb-6">Why Choose <!-- -->Reflective &amp; Mirror Window Film<!-- --> for Your Arizona Property</h2><div class="grid sm:grid-cols-2 gap-3"><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">One-way daytime privacy — see out, no one sees in</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Rejects up to 80% of solar heat gain</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Reduces glare on screens and work surfaces</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">99% UV blocking — protects interiors from sun damage</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Available in silver, bronze, gold, pewter, and chrome finishes</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Reduces cooling costs — measurable energy savings in Arizona heat</span></div></div></section><section class="mb-12"><h2 class="text-2xl font-bold text-gray-900 mb-2">Reflective &amp; Mirror Window Film<!-- --> — Available Patterns &amp; Styles</h2><p class="text-gray-400 text-sm mb-6">12<!-- --> films available in this category — we install all of them.</p><div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3"><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sgc-06"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SGC-06_GoldFusion_Model_Web.jpg" alt="SGC-06 Gold Fusion — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SGC-06 Gold Fusion</p><p class="text-xs text-gray-400 font-mono">SGC-06</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-1800-60"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-1800_BronzeRandomLines.jpg" alt="SX-1800 Bronze Random Lines — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-1800 Bronze Random Lines</p><p class="text-xs text-gray-400 font-mono">SX-1800-60</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-1975-71w"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/SX-1975_ReflectProtect_Interior_FullWindow_Web_1000x806_2.jpg" alt="SX-1975 Reflect Protect — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-1975 Reflect Protect</p><p class="text-xs text-gray-400 font-mono">SX-1975-71W</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-6030"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-6030_AntiqueOneWayViewingSee-ThroughSide.jpg" alt="SX-6030 Antique One Way Mirror — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-6030 Antique One Way Mirror</p><p class="text-xs text-gray-400 font-mono">SX-6030</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-6040-53"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-6040_AntiqueMirror.jpg" alt="SX-6040 Antique Mirror — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-6040 Antique Mirror</p><p class="text-xs text-gray-400 font-mono">SX-6040-53</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-6059"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-6059_%20Reversed%20Silver%20AntiqueMirror.jpg" alt="SX-6059 Antique Mirror - REVERSED — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-6059 Antique Mirror - REVERSED</p><p class="text-xs text-gray-400 font-mono">SX-6059</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-7000"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-7000_GoldVintageOnClear_Model_Web.jpg" alt="SX-7000 Vintage Gold on Clear — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-7000 Vintage Gold on Clear</p><p class="text-xs text-gray-400 font-mono">SX-7000</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-7001"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-7001_GoldVintageOnGold_Web.jpg" alt="SX-7001 Vintage Gold on Gold Mirror — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-7001 Vintage Gold on Gold Mirror</p><p class="text-xs text-gray-400 font-mono">SX-7001</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-7002"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-7002_GoldVintageOnSilver_Rev2_Web.jpg" alt="SX-7002 Vintage Gold on Silver Mirror — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-7002 Vintage Gold on Silver Mirror</p><p class="text-xs text-gray-400 font-mono">SX-7002</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-sc696"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/SX-0000_New%20Cut%20Glass%2003_Web.jpg" alt="SX-SC696 Reflections Static Cling — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-SC696 Reflections Static Cling</p><p class="text-xs text-gray-400 font-mono">SX-SC696</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/sx-sg09-60"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/SX-SG09_Silver_Gray_OneWay_MirrorSide.jpg" alt="SX-SG09 Silver/Grey One Way — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">SX-SG09 Silver/Grey One Way</p><p class="text-xs text-gray-400 font-mono">SX-SG09-60</p></div></a><a class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all" href="/films/reflective-films/ultracool-b1560"><div class="aspect-square overflow-hidden bg-gray-50"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/UltraCool%20B1560.jpg" alt="ULTRACOOL-B1560 Blue/Silver — Reflective &amp; Mirror Window Film" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"/></div><div class="p-2"><p class="text-xs font-semibold text-gray-700 line-clamp-2 leading-snug">ULTRACOOL-B1560 Blue/Silver</p><p class="text-xs text-gray-400 font-mono">ULTRACOOL-B1560</p></div></a></div><div class="mt-4 text-center"><a class="text-sm text-blue-600 hover:underline" href="/films">View all 618 films in catalog →</a></div></section><section class="mb-12"><h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions — <!-- -->Reflective &amp; Mirror Window Film<!-- --> in Arizona</h2><div class="space-y-4"><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">Does one-way mirror film work at night?</h3><p class="text-gray-500 text-sm leading-relaxed">No. One-way mirror effect requires more light on the reflective side than inside. At night when interior lights are on, the effect reverses — people can see in. For night privacy, combine with interior shades or choose a frosted film.</p></div><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">How much heat does reflective film reject in Arizona?</h3><p class="text-gray-500 text-sm leading-relaxed">Quality reflective films reject 50–80% of solar heat gain. In Phoenix summers, this can reduce cooling costs by 20–30% on heavily glazed elevations. We can provide energy savings estimates for your specific glass.</p></div><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">Will reflective film make my house look commercial?</h3><p class="text-gray-500 text-sm leading-relaxed">Residential-grade reflective films (bronze, pewter, light silver) have a subtle finish that reads as tinted glass rather than commercial mirror. We help you select the right film for your aesthetic.</p></div><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">What does reflective window film cost in Phoenix?</h3><p class="text-gray-500 text-sm leading-relaxed">Reflective film installation runs $8–$15 per square foot depending on film spec and glass size. Call (480) 788-1591 for a free site assessment and quote.</p></div></div></section><section class="mb-12 bg-blue-50 border border-blue-100 rounded-2xl p-8"><div class="flex items-start gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg><h2 class="text-lg font-bold text-gray-800">Reflective &amp; Mirror Window Film<!-- --> Installation — Phoenix Metro &amp; All Arizona</h2></div><p class="text-gray-600 text-sm leading-relaxed mb-4">Arizona House of Film installs <!-- -->reflective &amp; mirror window film<!-- --> for residential and commercial properties across the Phoenix metro area and all of Arizona. Service areas include Phoenix, Scottsdale, Chandler, Mesa, Tempe, Gilbert, Glendale, Peoria, Surprise, Goodyear, Avondale, and surrounding communities. Licensed ROC #314088. Bonded and insured.</p><div class="flex flex-wrap gap-2"><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Phoenix</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Scottsdale</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Chandler</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Mesa</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Tempe</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Gilbert</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Glendale</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Peoria</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Surprise</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Goodyear</span></div></section><section class="bg-slate-900 rounded-2xl p-10 text-center"><h2 class="text-2xl font-bold text-white mb-2">Ready to Install <!-- -->ULTRACOOL-B1560 Blue/Silver<!-- -->?</h2><p class="text-gray-300 text-sm mb-6">Arizona House of Film — licensed, bonded, ROC #314088. Serving Phoenix, Scottsdale, and all Arizona since 2017. 713+ projects completed.</p><div class="flex flex-wrap gap-3 justify-center"><a class="bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-4 rounded-lg text-base transition-colors" href="/contact">Request Free Quote</a><a href="tel:4807881591" class="flex items-center gap-2 border border-white/20 text-white font-semibold px-6 py-4 rounded-lg hover:border-white/40 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> (480) 788-1591</a></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

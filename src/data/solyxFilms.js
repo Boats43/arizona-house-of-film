@@ -629,3 +629,17 @@ export const solyxProducts = [
   { sku: "ULTRASAFE-860-60", name: "ULTRASAFE-860 Clear Safety Film 8 mil", img: "https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/safety.jpg", category: "decorative" },
   { sku: "ULTRASAFE-WMMAX", name: "ULTRASAFE-WMMAX White Matte Max Safety Film 5 mil", img: "https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/UltraSafe-WMmax_1000x653.jpg", category: "frosted-etched" }
 ];
+
+// Maps a solyxProducts `category` value to the URL slug used under /films/:categorySlug.
+// Imported by FilmsHub.jsx and scripts/prerender.js — single source of truth.
+export const solyxToFilmsCategory = {
+  'casper-designtex': 'casper-films',
+  'frosted-etched': 'frosted-etched-films',
+  'stained-glass': 'stained-glass-films',
+  'gradient': 'gradient-films',
+  'colored-films': 'colored-films',
+  'patterned-privacy': 'patterned-privacy-films',
+  'reflective-mirror': 'reflective-films',
+  'decorative': 'specialty-films',
+  'specialty': 'specialty-films',
+};

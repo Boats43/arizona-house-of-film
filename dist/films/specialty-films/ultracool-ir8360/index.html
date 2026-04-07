@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-Be0b0-sp.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BWVO6Ro3.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film | Specialty Window Film Arizona | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film — specialty window films including smart, switchable, squid, and unique film technologies. Arizona House of Film — licensed installer ROC #314088."/><meta data-rh="true" name="keywords" content="specialty window film phoenix, smart window film arizona, squid film installer scottsdale, switchable privacy film arizona"/><meta data-rh="true" property="og:title" content="ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film | Specialty Window Film Arizona | Arizona House of Film"/><meta data-rh="true" property="og:description" content="ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film — specialty window films including smart, switchable, squid, and unique film technologies. Arizona House of Film — licensed installer ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/films/specialty-films/ultracool-ir8360"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film | Specialty Window Film Arizona | Arizona House of Film"/><meta data-rh="true" name="twitter:description" content="ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film — specialty window films including smart, switchable, squid, and unique film technologies. Arizona House of Film — licensed installer ROC #314088."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/films/specialty-films/ultracool-ir8360"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Squid window film?","acceptedAnswer":{"@type":"Answer","text":"Squid is a textile-substrate window film from Solyx — a woven fabric bonded to an optical adhesive layer. It creates a soft, fabric-like appearance on glass with privacy and light diffusion properties."}},{"@type":"Question","name":"How does switchable smart film work?","acceptedAnswer":{"@type":"Answer","text":"Smart film contains a PDLC (Polymer Dispersed Liquid Crystal) layer. In the off state, crystals are randomly oriented and the film appears opaque. Apply voltage and crystals align — the film turns clear instantly."}},{"@type":"Question","name":"Is specialty film more expensive than standard film?","acceptedAnswer":{"@type":"Answer","text":"Yes. Specialty films carry a premium price — typically $25–$80+ per square foot depending on technology. Contact us for project-specific pricing at (480) 788-1591."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ULTRACOOL-IR8360 IR & UV Blocking Solar Film","description":"ULTRACOOL-IR8360 IR & UV Blocking Solar Film — specialty window films including smart, switchable, squid, and unique film technologies. Arizona House of Film — licensed installer ROC #314088.","brand":{"@type":"Brand","name":"Solyx"},"offers":{"@type":"Offer","seller":{"@type":"LocalBusiness","name":"Arizona House of Film","telephone":"+14807881591","address":{"@type":"PostalAddress","streetAddress":"7007 W Flower St","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85033"}},"areaServed":"Phoenix, Scottsdale, Chandler, Mesa, Tempe, Arizona","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","description":"Custom quoted per project"}}}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="max-w-5xl mx-auto px-4 py-10"><nav class="flex items-center gap-2 text-sm text-gray-400 mb-6"><a class="flex items-center gap-1 hover:text-blue-600 transition-colors" href="/films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> Film Catalog</a><span>/</span><a class="text-gray-600 capitalize hover:text-blue-600 transition-colors" href="/films/specialty-films">specialty films</a><span>/</span><span class="text-gray-800 font-medium">ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film</span></nav><div class="grid md:grid-cols-2 gap-10 mb-12"><div class="rounded-2xl overflow-hidden bg-gray-50 aspect-square"><img src="https://solyxfilms.com/tag/33/salesorder/customers/c_425668/item_images/0002113_ultrablock-ultracool-ir8360-ir-and-uv-blocking-solar-film-60-wide.jpg" alt="ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film — Specialty Window Film | Arizona House of Film" class="w-full h-full object-cover"/></div><div class="flex flex-col justify-center"><div class="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-3 py-1 text-green-700 text-xs font-semibold mb-3 w-fit">AUTHORIZED SOLYX INSTALLER · ROC #314088</div><h1 class="text-3xl font-black text-gray-900 mb-1">ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film</h1><p class="text-sm text-gray-400 font-mono mb-3">ULTRACOOL-IR8360</p><p class="text-gray-500 text-sm mb-6 leading-relaxed">Specialty window films represent the cutting edge of architectural glass technology — smart switchable films, Squid textile films, and unique optical technologies that go beyond standard privacy and s<!-- -->...</p><div class="bg-green-50 border border-green-200 rounded-xl p-5"><p class="font-bold text-gray-800 mb-1">We install this film.</p><p class="text-sm text-gray-500 mb-4">Arizona House of Film — authorized Solyx installer serving Phoenix, Scottsdale, and all Arizona.</p><div class="flex flex-col sm:flex-row gap-3"><a class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg text-center transition-colors" href="/contact">Get Installation Quote</a><a href="tel:4807881591" class="flex items-center justify-center gap-2 border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-6 py-3 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> (480) 788-1591</a></div><p class="text-sm text-slate-400 mt-3">Want to purchase this film directly?<!-- --> <a class="text-green-700 underline" href="/store">Order from our film catalog →</a></p></div></div></div><section class="mb-12"><p class="text-gray-600 leading-relaxed text-base">Specialty window films represent the cutting edge of architectural glass technology — smart switchable films, Squid textile films, and unique optical technologies that go beyond standard privacy and solar control. Arizona House of Film installs specialty films for high-end residential, commercial, and architectural applications across Phoenix and Scottsdale.</p></section><section class="mb-12"><h2 class="text-2xl font-bold text-gray-900 mb-6">Where Arizona Clients Use <!-- -->Specialty Window Film</h2><div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4"><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Smart Office Glass</h3><p class="text-gray-500 text-sm leading-relaxed">Switchable privacy that goes from clear to opaque on demand.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Luxury Residential</h3><p class="text-gray-500 text-sm leading-relaxed">High-tech privacy and light control for custom home builds and remodels.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Hospitality &amp; Hotels</h3><p class="text-gray-500 text-sm leading-relaxed">Switchable bathroom and bedroom privacy glass — premium guest experience.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Automotive &amp; Marine</h3><p class="text-gray-500 text-sm leading-relaxed">Specialty films for vehicle and boat glass applications.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Architectural Installations</h3><p class="text-gray-500 text-sm leading-relaxed">Unique optical films for award-winning commercial and residential design.</p></div><div class="bg-gray-50 rounded-xl p-5 border border-gray-100"><h3 class="font-bold text-gray-800 mb-1 text-sm">Healthcare Facilities</h3><p class="text-gray-500 text-sm leading-relaxed">Instant privacy glass for examination rooms and patient spaces.</p></div></div></section><section class="mb-12 bg-slate-900 rounded-2xl p-8"><h2 class="text-xl font-bold text-white mb-6">Why Choose <!-- -->Specialty Window Film<!-- --> for Your Arizona Property</h2><div class="grid sm:grid-cols-2 gap-3"><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Switchable technology — clear to opaque at the touch of a button</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Squid textile films: unique fabric-substrate window covering</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Advanced optical properties not available in standard films</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Custom specification available for project-specific requirements</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Professional installation required — Arizona House of Film certified</span></div><div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="text-gray-200 text-sm">Manufacturer warranty on all specialty film installations</span></div></div></section><section class="mb-12"><h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions — <!-- -->Specialty Window Film<!-- --> in Arizona</h2><div class="space-y-4"><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">What is Squid window film?</h3><p class="text-gray-500 text-sm leading-relaxed">Squid is a textile-substrate window film from Solyx — a woven fabric bonded to an optical adhesive layer. It creates a soft, fabric-like appearance on glass with privacy and light diffusion properties.</p></div><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">How does switchable smart film work?</h3><p class="text-gray-500 text-sm leading-relaxed">Smart film contains a PDLC (Polymer Dispersed Liquid Crystal) layer. In the off state, crystals are randomly oriented and the film appears opaque. Apply voltage and crystals align — the film turns clear instantly.</p></div><div class="border border-gray-100 rounded-xl p-6"><h3 class="font-bold text-gray-800 mb-2">Is specialty film more expensive than standard film?</h3><p class="text-gray-500 text-sm leading-relaxed">Yes. Specialty films carry a premium price — typically $25–$80+ per square foot depending on technology. Contact us for project-specific pricing at (480) 788-1591.</p></div></div></section><section class="mb-12 bg-blue-50 border border-blue-100 rounded-2xl p-8"><div class="flex items-start gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg><h2 class="text-lg font-bold text-gray-800">Specialty Window Film<!-- --> Installation — Phoenix Metro &amp; All Arizona</h2></div><p class="text-gray-600 text-sm leading-relaxed mb-4">Arizona House of Film installs <!-- -->specialty window film<!-- --> for residential and commercial properties across the Phoenix metro area and all of Arizona. Service areas include Phoenix, Scottsdale, Chandler, Mesa, Tempe, Gilbert, Glendale, Peoria, Surprise, Goodyear, Avondale, and surrounding communities. Licensed ROC #314088. Bonded and insured.</p><div class="flex flex-wrap gap-2"><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Phoenix</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Scottsdale</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Chandler</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Mesa</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Tempe</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Gilbert</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Glendale</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Peoria</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Surprise</span><span class="bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Goodyear</span></div></section><section class="bg-slate-900 rounded-2xl p-10 text-center"><h2 class="text-2xl font-bold text-white mb-2">Ready to Install <!-- -->ULTRACOOL-IR8360 IR &amp; UV Blocking Solar Film<!-- -->?</h2><p class="text-gray-300 text-sm mb-6">Arizona House of Film — licensed, bonded, ROC #314088. Serving Phoenix, Scottsdale, and all Arizona since 2017. 713+ projects completed.</p><div class="flex flex-wrap gap-3 justify-center"><a class="bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-4 rounded-lg text-base transition-colors" href="/contact">Request Free Quote</a><a href="tel:4807881591" class="flex items-center gap-2 border border-white/20 text-white font-semibold px-6 py-4 rounded-lg hover:border-white/40 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> (480) 788-1591</a></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

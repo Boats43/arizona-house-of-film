@@ -92,7 +92,9 @@
     { "source": "/pricing", "destination": "/window-film-cost-estimator", "permanent": true },
     { "source": "/pages/:path*", "destination": "/", "permanent": true }
   ],
-  "rewrites": [],
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

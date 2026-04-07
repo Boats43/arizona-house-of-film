@@ -13,6 +13,14 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server.js'
 import { Routes, Route } from 'react-router-dom'
+import { solyxProducts, solyxToFilmsCategory } from '../src/data/solyxFilms.js'
+
+function _toSlug(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
+const SOLYX_SKU_ROUTES = solyxProducts.map(p =>
+  `/films/${solyxToFilmsCategory[p.category] || 'specialty-films'}/${_toSlug(p.sku)}`
+)
 // HelmetProvider loaded via ssrLoadModule inside main() to share the same
 // module instance as page components (prevents context identity mismatch)
 
@@ -185,6 +193,7 @@ const ROUTES = [
   '/restaurant-window-film',
   '/university-window-film',
   '/window-film-phoenix',
+  ...SOLYX_SKU_ROUTES,
 ]
 
 const PATTERN_MAP = [

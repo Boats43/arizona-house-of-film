@@ -3,23 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Search, Phone, ExternalLink } from 'lucide-react';
 import BreadcrumbSchema from '../components/SEO/BreadcrumbSchema';
-import { solyxCategories, solyxProducts } from '@/data/solyxFilms';
+import { solyxCategories, solyxProducts, solyxToFilmsCategory } from '@/data/solyxFilms';
 
 function toSlug(str) {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
-
-const solyxToFilmsCategory = {
-  'casper-designtex': 'casper-films',
-  'frosted-etched': 'frosted-etched-films',
-  'stained-glass': 'stained-glass-films',
-  'gradient': 'gradient-films',
-  'colored-films': 'colored-films',
-  'patterned-privacy': 'patterned-privacy-films',
-  'reflective-mirror': 'reflective-films',
-  'decorative': 'specialty-films',
-  'specialty': 'specialty-films',
-};
 
 export default function FilmsHub() {
   const [activeCategory, setActiveCategory] = useState('all');

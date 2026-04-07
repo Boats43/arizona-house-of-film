@@ -90,7 +90,33 @@
     { "source": "/films/decorative-films", "destination": "/decorative-window-films", "permanent": true },
     { "source": "/brands/v-kool", "destination": "/brands", "permanent": true },
     { "source": "/pricing", "destination": "/window-film-cost-estimator", "permanent": true },
-    { "source": "/pages/:path*", "destination": "/", "permanent": true }
+    { "source": "/pages/:path*", "destination": "/", "permanent": true },
+
+    { "source": "/window-tinting-scottsdale", "destination": "/service-areas/scottsdale", "permanent": true },
+    { "source": "/safety-window-film", "destination": "/safety", "permanent": true },
+    { "source": "/films/ceramic", "destination": "/energy-saving-window-films", "permanent": true },
+
+    { "source": "/films/elegant-textured-films/sd-fs228-e", "destination": "/films/frosted-etched-films/sd-fs228-e", "permanent": true },
+    { "source": "/films/elegant-textured-films/sd-fs274-e", "destination": "/films/frosted-etched-films/sd-fs274-e", "permanent": true },
+    { "source": "/films/elegant-textured-films/sd-fs728-e", "destination": "/films/frosted-etched-films/sd-fs728-e", "permanent": true },
+    { "source": "/films/elegant-textured-films/sd-fs728-wf", "destination": "/films/frosted-etched-films/sd-fs728-wf", "permanent": true },
+    { "source": "/films/glasslike-distortion-films/sd-fs254-w", "destination": "/films/specialty-films/sd-fs254-w", "permanent": true },
+    { "source": "/films/glasslike-distortion-films/sd-fs2667-wf", "destination": "/films/specialty-films/sd-fs2667-wf", "permanent": true },
+    { "source": "/films/glasslike-distortion-films/sd-fs2764-w", "destination": "/films/specialty-films/sd-fs2764-w", "permanent": true },
+    { "source": "/films/glasslike-distortion-films/sd-fs2765-w", "destination": "/films/specialty-films/sd-fs2765-w", "permanent": true },
+    { "source": "/films/exterior-films/sd-fs254-w", "destination": "/films/specialty-films/sd-fs254-w", "permanent": true },
+    { "source": "/films/exterior-films/sd-fs2667-wf", "destination": "/films/specialty-films/sd-fs2667-wf", "permanent": true },
+    { "source": "/films/exterior-films/sd-fs2764-w", "destination": "/films/specialty-films/sd-fs2764-w", "permanent": true },
+    { "source": "/films/exterior-films/sd-fs2765-w", "destination": "/films/specialty-films/sd-fs2765-w", "permanent": true },
+    { "source": "/films/squid-window-textile/sd-fs254-w", "destination": "/films/specialty-films/sd-fs254-w", "permanent": true },
+    { "source": "/films/squid-window-textile/sd-fs2667-wf", "destination": "/films/specialty-films/sd-fs2667-wf", "permanent": true },
+    { "source": "/films/squid-window-textile/sd-fs2764-w", "destination": "/films/specialty-films/sd-fs2764-w", "permanent": true },
+    { "source": "/films/squid-window-textile/sd-fs2765-w", "destination": "/films/specialty-films/sd-fs2765-w", "permanent": true },
+
+    { "source": "/films/elegant-textured-films", "destination": "/films/frosted-etched-films", "permanent": true },
+    { "source": "/films/glasslike-distortion-films", "destination": "/films/specialty-films", "permanent": true },
+    { "source": "/films/exterior-films", "destination": "/films/specialty-films", "permanent": true },
+    { "source": "/films/squid-window-textile", "destination": "/films/specialty-films", "permanent": true }
   ],
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }

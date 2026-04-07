@@ -323,7 +323,7 @@ const ResidentialPhoenix = () => {
               {' · '}
               <Link to="/security-window-film-phoenix" className="text-green-600 hover:underline">Security Window Film</Link>
               {' · '}
-              <Link to="/films/ceramic" className="text-green-600 hover:underline">Ceramic Window Film</Link>
+              <Link to="/energy-saving-window-films" className="text-green-600 hover:underline">Ceramic Window Film</Link>
               {' · '}
               <Link to="/brands/llumar" className="text-green-600 hover:underline">LLumar Window Film</Link>
             </div>

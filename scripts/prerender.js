@@ -193,6 +193,12 @@ const ROUTES = [
   '/restaurant-window-film',
   '/university-window-film',
   '/window-film-phoenix',
+  // Film category hub pages — render via /films/:categorySlug → FilmCategoryPage
+  '/films/frosted-etched-films', '/films/casper-films', '/films/specialty-films',
+  '/films/gradient-films', '/films/colored-films', '/films/patterned-privacy-films',
+  '/films/reflective-films', '/films/stained-glass-films',
+  // NOTE: elegant-textured-films, exterior-films, glasslike-distortion-films,
+  // squid-window-textile are stale category aliases — 301'd in vercel.json, do not prerender.
   ...SOLYX_SKU_ROUTES,
 ]
 

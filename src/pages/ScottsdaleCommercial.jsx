@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Commercial Window Film Scottsdale AZ | ROC #314088';
-  const metaDescription = 'Licensed commercial window film installation in Scottsdale AZ — solar control, security & decorative film for offices, retail & hospitality. ROC #314088. Free estimate.';
+  const pageTitle = 'Commercial Window Tinting Scottsdale AZ | Free Quote';
+  const metaDescription = 'Commercial window tinting in Scottsdale from $6/sq ft. Offices, retail, hospitality — 3M, Huper Optik, Vista films. Boeing, ASU & State of AZ trust us. Free on-site estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =

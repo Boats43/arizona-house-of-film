@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ResidentialPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Residential Window Tinting Phoenix AZ | ROC #314088';
-  const metaDescription = 'Licensed residential window tinting in Phoenix AZ — heat rejection, UV protection, privacy & security film for homes. LLumar, Madico, SunTek, XPEL. 700+ projects. ROC #314088. Free quote.';
+  const pageTitle = 'Home Window Tinting Phoenix AZ | From $8/sq ft';
+  const metaDescription = 'Home window tinting in Phoenix from $8/sq ft. Blocks 80% of solar heat, cuts AC bills, and protects furniture from UV. 700+ Phoenix homes done. Free estimate — (480) 788-1591.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =

@@ -33,17 +33,17 @@ export default function WindowFilmCostArizona() {
   return (
     <>
       <Helmet>
-        <title>Window Film Cost in Arizona | Phoenix Pricing Guide 2026 | AHOF</title>
-        <meta name="description" content="How much does window film cost in Arizona? Residential runs $8–$18/sq ft. Commercial quoted by scope. Free estimates — ROC #314088." />
+        <title>Window Tinting Cost Arizona 2026 | $8–$18/sq ft</title>
+        <meta name="description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic film from $13/sq ft. SRP rebate eligible. Free on-site estimate — (480) 788-1591." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-film-cost-arizona" />
-        <meta property="og:title" content="Window Film Cost in Arizona | Phoenix Pricing Guide 2026" />
-        <meta property="og:description" content="Residential window film costs $8–$18/sq ft in Phoenix. Commercial from $3,500. Free estimates. Licensed ROC #314088." />
+        <meta property="og:title" content="Window Tinting Cost Arizona 2026 | $8–$18/sq ft" />
+        <meta property="og:description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic from $13/sq ft. SRP rebate eligible. Free estimate." />
         <meta property="og:url" content="https://arizonahouseoffilm.com/window-film-cost-arizona" />
         <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Window Film Cost in Arizona | Phoenix Pricing Guide 2026" />
-        <meta name="twitter:description" content="Residential window film costs $8–$18/sq ft in Phoenix. Commercial from $3,500. Free estimates. Licensed ROC #314088." />
+        <meta name="twitter:title" content="Window Tinting Cost Arizona 2026 | $8–$18/sq ft" />
+        <meta name="twitter:description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic from $13/sq ft. SRP rebate eligible. Free estimate." />
         <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

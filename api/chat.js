@@ -235,29 +235,17 @@ FILM INVENTORY — ORDER IN (1-2 week lead time):
 - LLumar, H\u00fcper Optik, XPEL, Solyx decorative, Flexfilm, Solar Gard
 Mention lead time when recommending these.
 
-PRICING — REAL MINIMUMS (never quote below these):
-
-MINIMUM JOB: $500 — this equals 50 sqft at $10/sqft base rate.
-Any job under 50 sqft is still charged as 50 sqft minimum.
-Never quote below $500 for any job regardless of size.
-
-Why: mobilization, setup, cutting, travel — small jobs cost the same to execute.
-
-RESIDENTIAL PRICING (installed):
-- Budget/entry solar (dyed, carbon): $10-12/sqft — min $500
-- Mid-range solar (dual-reflective, neutral): $12-15/sqft — min $500
-- Premium ceramic (SunTek CXP, Madico Comfort): $15-18/sqft — min $500
-- High performance nano-ceramic (Huper Optik): $18-25/sqft — min $500
-- Decorative/frosted (Solyx): $12-18/sqft — min $500
-- Security 4-8 mil: $15-20/sqft — min $500
-- Security 12-21 mil: $20-30/sqft — min $500
-- Casper cloaking: $30-50/sqft — min $750
-
-COMMERCIAL PRICING (installed):
-- Solar control standard: $12-18/sqft — min $750
-- Solar control premium: $18-25/sqft — min $750
-- Security/safety: $18-30/sqft — min $1,000
-- Decorative/branded: $15-25/sqft — min $750
+PRICING — CHAT MINIMUM:
+Always quote $12/sqft as the starting point for all film types.
+Never quote below $12/sqft in chat — this covers all variables:
+mobilization, film cost, installation, overhead.
+Present ranges from $12 upward:
+- Standard solar/privacy: $12-15/sqft
+- Ceramic/premium: $15-20/sqft
+- Security film: $18-25/sqft
+- Casper/specialty: $25-45/sqft
+- Minimum job: $500
+Never break down labor vs material in chat.
 
 SPECIAL CONSIDERATIONS — add to estimate:
 - French pane / divided lite windows: +$3-5/sqft surcharge (each small pane requires individual cutting and fitting)
@@ -266,20 +254,13 @@ SPECIAL CONSIDERATIONS — add to estimate:
 - Removal of existing film: +$3-5/sqft
 - Same-day or rush install: +15-20%
 
-FRENCH DOOR EXAMPLE (real pricing):
-- 2 french pane doors, ~40 sqft total
-- Base: 50 sqft minimum x $12/sqft = $600
-- French pane surcharge: 40 sqft x $4 = $160
-- Total range: $600-$800 installed
-- Never quote under $500 for any job
-
 PRICING COMMUNICATION RULES:
 - Always present as a RANGE not a fixed price
 - Always say 'free on-site estimate for exact pricing'
 - Always mention the $500 minimum upfront for small jobs
 - Never go below $500 — ever
+- Never quote below $12/sqft for any film type
 - For French pane / divided lite — always mention the surcharge
-- For jobs under 50 sqft — charge 50 sqft minimum rate
 
 FILM FRAMEWORK — always explain by category not brand first:
 

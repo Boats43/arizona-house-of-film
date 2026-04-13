@@ -261,8 +261,8 @@ const allBlogData = [
   },
   {
     slug: 'srp-rebate-window-film-2026',
-    title: 'SRP Window Film Rebate 2026 — What Qualifies and How to Apply',
-    excerpt: 'SRP window film rebate 2026 — eligibility, qualifying films, and step-by-step application guide for Phoenix and Arizona homeowners. Up to $1/sqft.',
+    title: 'SRP Window Film Rebate 2026 | $1/sqft | Arizona Deadline',
+    excerpt: 'SRP offers $1/sqft rebate on qualifying window film installations. Deadline April 30, 2026. Arizona House of Film provides all required NFRC documentation. ROC #314088.',
     date: '2026-04-04',
     alt: 'SRP rebate application form with window film installation documentation.',
     keywords: 'SRP window film rebate 2026, SRP rebate window tinting, APS window film rebate Arizona',
@@ -382,8 +382,8 @@ const allBlogData = [
   },
   {
     slug: 'how-much-does-window-tinting-cost-phoenix',
-    title: 'How Much Does Window Tinting Cost in Phoenix? [2026 Pricing Guide]',
-    excerpt: 'Window tinting costs $8-15/sqft in Phoenix. Average home $800-$2,500. Get an instant AI estimate with photos. Licensed installer ROC #314088.',
+    title: 'Window Tinting Cost Phoenix 2026 | $500-$8,000+ | Free Estimate',
+    excerpt: 'How much does window tinting cost in Phoenix? Single window from $500. Full home $1,500-$8,000+. Commercial from $1,500. Get an instant AI estimate with photos — no sales call needed.',
     date: '2026-04-04',
     alt: 'Phoenix home with professional window tinting installation in progress.',
     keywords: 'window tinting cost Phoenix, how much does window tinting cost, Phoenix window film pricing 2026',
@@ -1472,6 +1472,148 @@ const allBlogData = [
 
     <h2>Get an EnerLogic Estimate</h2>
     <p>Arizona House of Film installs EnerLogic, ceramic, and spectrally selective window film across Phoenix, Scottsdale, Flagstaff, Prescott, and all of Arizona. ROC #314088. Free on-site assessments with product comparison. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  `
+  },
+  {
+    slug: 'residential-window-tinting-scottsdale-az-guide',
+    title: 'Residential Window Tinting Scottsdale AZ | 2026 Guide',
+    excerpt: 'Complete 2026 guide to residential window tinting in Scottsdale AZ — HOA rules, ceramic vs dual-reflective film, SRP rebates, pricing $12–$20/sqft, and free estimates from Arizona House of Film (ROC #314088).',
+    date: '2026-04-11',
+    alt: 'Ceramic window film installed on a Scottsdale AZ residential home with desert mountain views.',
+    keywords: 'residential window tinting scottsdale az, residential window film scottsdale az, residential window film installation scottsdale az',
+    serviceLink: '/residential-window-tinting-scottsdale',
+    cityLink: '/residential-window-tinting-scottsdale',
+    brandMentions: 'Hüper Optik, 3M Prestige',
+    faqs: [
+      {
+        question: 'How much does residential window tinting cost in Scottsdale AZ?',
+        answer: 'Residential window tinting in Scottsdale costs $12–$20 per square foot installed for ceramic and dual-reflective films. A typical 15-window Scottsdale home runs $2,400–$5,000. Luxury homes with 30+ windows or spectrally selective film can run $6,000–$14,000. Pricing depends on film type, glass size, and access. Arizona House of Film (ROC #314088) provides free on-site estimates across all Scottsdale neighborhoods.'
+      },
+      {
+        question: 'Will my Scottsdale HOA approve residential window tinting?',
+        answer: 'Most Scottsdale HOAs — including DC Ranch, Gainey Ranch, McCormick Ranch, Scottsdale Ranch, and Grayhawk — approve ceramic and spectrally selective window film because it maintains a neutral, clear exterior appearance. Reflective, mirrored, and dark-tinted films may be restricted. Arizona House of Film provides manufacturer spec sheets for HOA submission and advises on compliant options before installation.'
+      },
+      {
+        question: 'Is ceramic or dual-reflective film better for Scottsdale homes?',
+        answer: 'Ceramic film (Hüper Optik Select, LLumar CTX) is the default choice — it rejects 50–84% of solar heat, blocks 99% UV, and is HOA-compliant. Dual-reflective film adds daytime privacy by reflecting light outward during the day, making it ideal for homes in close-proximity communities like McCormick Ranch and Scottsdale Ranch. For maximum heat rejection with near-invisible appearance, spectrally selective film (3M Prestige, Hüper Optik Klar) is the premium option.'
+      },
+      {
+        question: 'Do Scottsdale homeowners qualify for SRP window film rebates?',
+        answer: 'Yes. SRP offers rebates of $1.00 per square foot for qualifying solar window film installed on single-family homes in their service territory. Most Scottsdale addresses qualify. The film must meet SRP\'s Solar Heat Gain Coefficient (SHGC) requirements. Arizona House of Film handles SRP rebate paperwork and verifies eligibility during the free estimate. See our SRP rebate guide for full details.'
+      },
+      {
+        question: 'How long does residential window film last in Scottsdale\'s heat?',
+        answer: 'Professional-grade ceramic and spectrally selective window film lasts 15–25 years in Scottsdale\'s extreme heat when installed by a licensed contractor. Manufacturer warranties from Hüper Optik, LLumar, and 3M cover 10–15 years for residential applications. Cheap dyed films from big-box stores degrade in 3–5 years under Arizona UV. Arizona House of Film only installs films with documented Arizona-heat warranties.'
+      }
+    ],
+    ctaCity: 'Scottsdale',
+    customContent: `
+    <h1>Residential Window Tinting in Scottsdale AZ — What Homeowners Need to Know</h1>
+
+    <p class="lead">Scottsdale homeowners deal with 300+ days of direct sun, triple-digit summer heat, strict HOA appearance standards, and high-value interiors vulnerable to UV damage. Residential window tinting solves all four — but only if you choose the right film. This 2026 guide covers what Scottsdale homeowners actually need to know: which films work in desert heat, what HOAs approve, how SRP rebates apply, and what professional installation costs. Arizona House of Film (ROC #314088) has installed residential window film across Scottsdale since 2017 — from McCormick Ranch patio homes to Silverleaf custom estates.</p>
+
+    <h2>Why Scottsdale Homeowners Install Window Film</h2>
+    <p>Scottsdale sits in the hottest metro in the U.S. — 115°F+ summers, UV index 10+ for five months straight, and cooling costs that run $300–$600/month for homes with significant glass. Residential window tinting addresses the three problems Scottsdale homeowners bring to us most:</p>
+    <ul>
+      <li><strong>Solar heat through west and south-facing glass</strong> — These elevations drive 60–70% of your home's cooling load. Ceramic window film rejects 50–84% of that solar energy before it enters your home, reducing AC runtime and leveling room-to-room temperature differences.</li>
+      <li><strong>UV damage to interiors</strong> — Arizona UV destroys hardwood floors, leather furniture, artwork, and cabinetry within 2–5 years of unprotected exposure. Window film blocks 99%+ of UV — more effective than window coverings, which only work when closed.</li>
+      <li><strong>Privacy without losing views</strong> — Scottsdale homes are designed for mountain and desert views. Dual-reflective film provides daytime privacy from the outside while maintaining your view from the inside — no blinds required.</li>
+    </ul>
+
+    <h2>Scottsdale HOA Rules for Window Tinting</h2>
+    <p>HOA compliance is the #1 question Scottsdale homeowners ask before installing window film. Here's what we've learned from working with Scottsdale HOAs since 2017:</p>
+    <ul>
+      <li><strong>Approved film types</strong> — Ceramic and spectrally selective films are approved by virtually every Scottsdale HOA because they maintain a neutral, clear exterior appearance. The glass looks essentially unchanged from the outside.</li>
+      <li><strong>Restricted film types</strong> — Reflective (mirror-look), dark-tinted, and colored films are commonly restricted in communities like DC Ranch, Gainey Ranch, Grayhawk, Scottsdale Ranch, and McCormick Ranch. Some HOAs restrict any film below 40% visible light transmission (VLT).</li>
+      <li><strong>Approval process</strong> — Most Scottsdale HOAs require an architectural modification request before installation. Arizona House of Film provides manufacturer spec sheets showing VLT, reflectivity, and exterior appearance photos for HOA submission. We've never had a properly submitted ceramic film application denied.</li>
+      <li><strong>Existing violations</strong> — If you received an HOA violation for existing reflective or dark film, we remove it and replace it with compliant ceramic film — usually resolving the violation the same week.</li>
+    </ul>
+
+    <h2>Ceramic vs Dual-Reflective Film for Desert Heat</h2>
+    <p>These are the two film categories Scottsdale homeowners choose between most often. Both work in Arizona heat — the right choice depends on your priorities:</p>
+    <table>
+      <tr><th>Feature</th><th>Ceramic Film</th><th>Dual-Reflective Film</th></tr>
+      <tr><td>Heat rejection (TSER)</td><td>50–67%</td><td>55–72%</td></tr>
+      <tr><td>UV blocked</td><td>99%</td><td>99%</td></tr>
+      <tr><td>Daytime privacy</td><td>Minimal</td><td>Strong — mirror effect outward</td></tr>
+      <tr><td>Nighttime privacy</td><td>No</td><td>No — requires window coverings</td></tr>
+      <tr><td>HOA compliance</td><td>Excellent — neutral appearance</td><td>Good — slight exterior reflectivity may require approval</td></tr>
+      <tr><td>Signal interference</td><td>None</td><td>None (ceramic-based)</td></tr>
+      <tr><td>Cost installed</td><td>$12–$18/sq ft</td><td>$14–$20/sq ft</td></tr>
+    </table>
+    <p><strong>Our recommendation:</strong> Ceramic film (Hüper Optik Select or LLumar CTX) is the default for most Scottsdale homes — maximum HOA compliance with strong heat rejection. Dual-reflective is the better choice for homes in close-proximity communities where daytime privacy matters (McCormick Ranch, Scottsdale Ranch townhomes, patio homes). For luxury homes where any visible tint is unacceptable, spectrally selective film (3M Prestige, Hüper Optik Klar) offers maximum clarity at $16–$22/sq ft.</p>
+    <p>For a full technical breakdown, see our <a href="/ceramic-vs-dual-reflective-film">ceramic vs dual-reflective film comparison</a>.</p>
+
+    <h2>SRP Rebate Eligibility for Scottsdale Homeowners</h2>
+    <p>Salt River Project (SRP) offers a <strong>$1.00 per square foot rebate</strong> for qualifying solar window film installed on single-family homes. Key details for Scottsdale homeowners:</p>
+    <ul>
+      <li><strong>Eligibility</strong> — Your home must be in SRP's service territory (most Scottsdale addresses qualify — check your utility bill). The film must meet SRP's Solar Heat Gain Coefficient (SHGC) threshold. Ceramic and dual-reflective films from Hüper Optik, LLumar, and 3M qualify.</li>
+      <li><strong>Rebate amount</strong> — $1.00/sq ft of film installed. A 15-window home with 200 sq ft of glass typically receives a $200 rebate. Larger homes with 400+ sq ft of glass receive $400+.</li>
+      <li><strong>Process</strong> — Arizona House of Film handles the rebate paperwork. We submit the application with proof of installation and qualifying film specifications. SRP processes the rebate within 4–8 weeks.</li>
+      <li><strong>APS customers</strong> — If your Scottsdale address is served by APS instead of SRP, APS does not currently offer a window film rebate. We can still document your energy savings for tax purposes.</li>
+    </ul>
+    <p>Full details in our <a href="/blog/srp-rebate-window-film-2026">2026 SRP rebate guide</a>.</p>
+
+    <h2>Residential Window Tinting Pricing — Scottsdale 2026</h2>
+    <p>Residential window tinting in Scottsdale costs <strong>$12–$20 per square foot installed</strong> for professional-grade ceramic and dual-reflective films. Here's what Scottsdale homeowners typically pay:</p>
+    <table>
+      <tr><th>Home Type</th><th>Typical Film</th><th>Window Count</th><th>Cost Range</th></tr>
+      <tr><td>Townhome / patio home</td><td>Ceramic</td><td>8–12</td><td>$1,800–$3,200</td></tr>
+      <tr><td>Single-family (standard)</td><td>Ceramic</td><td>12–20</td><td>$2,400–$5,000</td></tr>
+      <tr><td>Custom / large home</td><td>Ceramic or dual-reflective</td><td>20–30</td><td>$4,000–$8,000</td></tr>
+      <tr><td>Luxury estate</td><td>Spectrally selective</td><td>30–50+</td><td>$6,000–$14,000+</td></tr>
+    </table>
+    <p>Pricing includes professional installation, manufacturer warranty registration, and cleanup. We provide written quotes after on-site measurement — no ballpark estimates over the phone. SRP rebate ($1.00/sq ft) reduces final cost on qualifying installations.</p>
+    <p>For a quick estimate before scheduling, try our <a href="/ai-window-film-estimator">AI window film estimator</a>.</p>
+
+    <h2>What the Installation Process Looks Like</h2>
+    <p>Residential window film installation in Scottsdale typically takes one day for most homes:</p>
+    <ul>
+      <li><strong>Free estimate</strong> — We measure your glass, assess orientation and existing coatings, review HOA requirements, and provide a written quote. Takes 30–45 minutes on-site.</li>
+      <li><strong>Film selection</strong> — We recommend specific films for each window based on orientation (west-facing gets maximum heat rejection, north-facing may only need UV protection).</li>
+      <li><strong>Installation day</strong> — Most homes take 4–8 hours. We protect flooring and furnishings, apply the film, and clean all glass. The home is fully usable during installation.</li>
+      <li><strong>Cure time</strong> — Window film takes 15–30 days to fully cure in Arizona's dry heat. Small haze or water bubbles during curing are normal and disappear completely.</li>
+    </ul>
+
+    <h2>Scottsdale Neighborhoods We Serve</h2>
+    <p>Arizona House of Film installs residential window film across all Scottsdale neighborhoods, including:</p>
+    <ul>
+      <li>McCormick Ranch, Scottsdale Ranch, Gainey Ranch</li>
+      <li>DC Ranch, Silverleaf, Desert Mountain, Estancia</li>
+      <li>Grayhawk, Kierland, McDowell Mountain Ranch</li>
+      <li>Old Town Scottsdale, South Scottsdale</li>
+      <li>Troon, Pinnacle Peak, North Scottsdale</li>
+      <li>Paradise Valley (bordering Scottsdale)</li>
+    </ul>
+    <p>We also serve the broader Phoenix metro — see our <a href="/residential-window-tinting">residential window tinting service page</a> for full coverage.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does residential window tinting cost in Scottsdale AZ?</h3>
+        <p>$12–$20/sq ft installed for ceramic and dual-reflective film. Standard homes run $2,400–$5,000. Luxury homes with extensive glass run $6,000–$14,000+. Free on-site estimates available.</p>
+      </div>
+      <div>
+        <h3>Will my Scottsdale HOA approve residential window tinting?</h3>
+        <p>Ceramic and spectrally selective films are approved by virtually every Scottsdale HOA. Reflective and dark-tinted films may require approval. We provide spec sheets for HOA submission and advise on compliant options.</p>
+      </div>
+      <div>
+        <h3>Is ceramic or dual-reflective film better for Scottsdale homes?</h3>
+        <p>Ceramic is the default — maximum HOA compliance with 50–84% heat rejection. Dual-reflective adds daytime privacy, ideal for close-proximity neighborhoods. Both block 99% UV and work in Arizona heat.</p>
+      </div>
+      <div>
+        <h3>Do Scottsdale homeowners qualify for SRP window film rebates?</h3>
+        <p>Most Scottsdale addresses in SRP territory qualify for $1.00/sq ft rebates on qualifying solar film. We handle the paperwork. APS customers do not currently have a window film rebate program.</p>
+      </div>
+      <div>
+        <h3>How long does residential window film last in Scottsdale's heat?</h3>
+        <p>Professional-grade ceramic film lasts 15–25 years in Arizona heat. Manufacturer warranties cover 10–15 years. Cheap dyed films degrade in 3–5 years under Arizona UV — we only install warranted ceramic and spectrally selective films.</p>
+      </div>
+    </div>
+
+    <h2>Get Your Scottsdale Residential Window Tinting Estimate</h2>
+    <p>Arizona House of Film serves all Scottsdale neighborhoods — McCormick Ranch, DC Ranch, Gainey Ranch, Grayhawk, Silverleaf, and beyond. Licensed ROC #314088. Free on-site estimates with HOA compliance guidance. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
     <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
   `
   }

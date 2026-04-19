@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-DEQ44f4R.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-ccXj2n5k.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Window Film Distributor Phoenix AZ | Nexfil, Solyx, Madico | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Phoenix window film distributor and installer — authorized dealer for Nexfil USA, Solyx (Decorative Films LLC), Madico, MaxPro, SunTek, and XPEL. Drop-ship, bulk pricing, ROC #314088 licensed installer for contractors, architects, and facility managers."/><meta data-rh="true" property="og:title" content="Window Film Distributor Phoenix AZ | Nexfil, Solyx, Madico | ROC #314088"/><meta data-rh="true" property="og:description" content="Phoenix window film distributor and installer — authorized dealer for Nexfil USA, Solyx (Decorative Films LLC), Madico, MaxPro, SunTek, and XPEL. Drop-ship, bulk pricing, ROC #314088 licensed installer for contractors, architects, and facility managers."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/window-film-distributor-phoenix"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/window-film-distributor-phoenix"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are you an authorized window film distributor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film is an authorized dealer and distributor for Nexfil USA, Solyx (Decorative Films LLC), Madico, MaxPro, SunTek, and XPEL. We stock rolls in Phoenix for same-week drop-ship across Arizona and can order-in any SKU in each line."}},{"@type":"Question","name":"Do you sell wholesale or bulk window film to contractors?","acceptedAnswer":{"@type":"Answer","text":"Yes. We sell rolls at contractor pricing to licensed commercial installers, glass shops, sign fabricators, and general contractors. Pricing is volume-tiered — the more film in the quote, the lower the per-square-foot rate. We require a business license or ROC number on file for wholesale accounts."}},{"@type":"Question","name":"Can you drop-ship window film to a jobsite in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona jobsite drop-ship is the default for contractor accounts. We deliver sealed rolls (48-inch and 60-inch widths are stocked; 72-inch and 84-inch on order-in) with a packing slip, data sheet, and a photo receipt. Same-day drop-ship is available in the Phoenix metro for orders placed before 11am."}},{"@type":"Question","name":"Do you install film purchased from another distributor?","acceptedAnswer":{"@type":"Answer","text":"In limited cases, yes — we install owner-supplied film if the brand and product match what our crews are trained on (Nexfil, Solyx, Madico, MaxPro, SunTek, XPEL). We do not warranty owner-supplied film and install is quoted at a labor-only rate. For full warranty coverage, film and labor should come from the same vendor."}},{"@type":"Question","name":"What is the minimum order for wholesale film?","acceptedAnswer":{"@type":"Answer","text":"For in-stock Nexfil and Solyx rolls, the wholesale minimum is typically one full roll (60 inches by 100 feet = ~500 sqft). For order-in specialty SKUs, minimums follow the manufacturer's standard — usually one full roll. Project-scale orders qualify for volume pricing — request a quote with your annual or per-project volume and we'll return a tiered sheet."}},{"@type":"Question","name":"Is your Phoenix location licensed for distribution and install?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film operates under Arizona ROC #314088 — a licensed residential and commercial contractor for window film. We are located at 7007 W Flower St, Phoenix, AZ 85033. We are bonded, insured, and authorized to both distribute film and perform installations anywhere in Arizona."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Arizona House of Film","alternateName":"AHOF Window Film Distributor","url":"https://arizonahouseoffilm.com/window-film-distributor-phoenix","telephone":"+1-480-788-1591","address":{"@type":"PostalAddress","streetAddress":"7007 W Flower St","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85033","addressCountry":"US"},"areaServed":{"@type":"State","name":"Arizona"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Window Film Distribution — Authorized Lines","itemListElement":[{"@type":"Offer","position":1,"itemOffered":{"@type":"Product","name":"Nexfil USA","category":"Solar / automotive / architectural"}},{"@type":"Offer","position":2,"itemOffered":{"@type":"Product","name":"Solyx — Decorative Films LLC","category":"Decorative / privacy"}},{"@type":"Offer","position":3,"itemOffered":{"@type":"Product","name":"Madico","category":"Commercial solar + security"}},{"@type":"Offer","position":4,"itemOffered":{"@type":"Product","name":"MaxPro","category":"Mid-tier solar + safety"}},{"@type":"Offer","position":5,"itemOffered":{"@type":"Product","name":"SunTek (Eastman Performance Films)","category":"Premium ceramic + PPF"}},{"@type":"Offer","position":6,"itemOffered":{"@type":"Product","name":"XPEL","category":"Premium architectural + PPF"}}]}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Window Film Distributor Phoenix","item":{"@id":"https://arizonahouseoffilm.com/window-film-distributor-phoenix","name":"Window Film Distributor Phoenix"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><section class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20 px-6"><div class="max-w-4xl mx-auto text-center"><p class="text-blue-400 font-bold uppercase tracking-wider text-sm mb-4">Authorized Distributor · Licensed Installer</p><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Arizona House of Film — Window Film Distributor &amp; Installer Phoenix</h1><p class="text-lg text-gray-300 max-w-3xl mx-auto mb-4">Six authorized lines in stock — Nexfil, Solyx, Madico, MaxPro, SunTek, XPEL. Drop-ship across Arizona, bulk pricing for commercial contractors, and full-service install under ROC #314088.</p><p class="text-sm text-gray-400 mb-8">7007 W Flower St · Phoenix, AZ 85033 · Licensed · Bonded · Insured</p><div class="flex flex-wrap justify-center gap-3"><a class="bg-blue-500 hover:bg-blue-400 text-white font-black uppercase tracking-wide px-8 py-4 rounded-lg text-sm" href="/get-a-quote">Request Distributor Pricing →</a><a class="border-2 border-white text-white font-black uppercase px-8 py-4 rounded-lg text-sm hover:bg-white hover:text-slate-900" href="/ai-window-film-estimator">AI Estimator →</a></div></div></section><section class="py-16 px-6 bg-white"><div class="max-w-6xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4 text-center">Authorized Lines We Distribute</h2><p class="text-center text-gray-600 mb-12">Six manufacturers — one Phoenix warehouse. Stock and order-in across every major commercial and decorative category.</p><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-blue-500 transition-colors"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Solar / automotive / architectural</p><h3 class="text-lg font-black text-slate-900 mb-2">Nexfil USA</h3><p class="text-sm text-slate-700 leading-relaxed mb-4">Solar control and automotive-grade architectural film manufactured in South Korea, stocked for Phoenix drop-ship.</p><a class="text-blue-700 underline text-sm font-semibold hover:text-blue-900" href="/brands">Brand details →</a></div><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-blue-500 transition-colors"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Decorative / privacy</p><h3 class="text-lg font-black text-slate-900 mb-2">Solyx — Decorative Films LLC</h3><p class="text-sm text-slate-700 leading-relaxed mb-4">618 SKU decorative catalog: frosted, etched, gradient, colored, patterned privacy, stained-glass, bird-safety, and Casper cloaking films. Full library in stock.</p><a class="text-blue-700 underline text-sm font-semibold hover:text-blue-900" href="/films">Brand details →</a></div><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-blue-500 transition-colors"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Commercial solar + security</p><h3 class="text-lg font-black text-slate-900 mb-2">Madico</h3><p class="text-sm text-slate-700 leading-relaxed mb-4">Commercial-grade solar, safety, and security films. A go-to for spec-driven commercial projects and LEED credit submissions.</p><a class="text-blue-700 underline text-sm font-semibold hover:text-blue-900" href="/brands/madico">Brand details →</a></div><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-blue-500 transition-colors"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Mid-tier solar + safety</p><h3 class="text-lg font-black text-slate-900 mb-2">MaxPro</h3><p class="text-sm text-slate-700 leading-relaxed mb-4">Contractor-pricing solar and safety line — a strong value option when project budgets will not carry premium ceramic.</p><a class="text-blue-700 underline text-sm font-semibold hover:text-blue-900" href="/brands">Brand details →</a></div><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-blue-500 transition-colors"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Premium ceramic + PPF</p><h3 class="text-lg font-black text-slate-900 mb-2">SunTek (Eastman Performance Films)</h3><p class="text-sm text-slate-700 leading-relaxed mb-4">Flagship ceramic solar, safety, and paint-protection film. Widely specified by architects for Class-A commercial glazing.</p><a class="text-blue-700 underline text-sm font-semibold hover:text-blue-900" href="/brands/suntek">Brand details →</a></div><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-blue-500 transition-colors"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Premium architectural + PPF</p><h3 class="text-lg font-black text-slate-900 mb-2">XPEL</h3><p class="text-sm text-slate-700 leading-relaxed mb-4">PRIME series architectural film plus XPEL PPF for hospitality and high-end residential accounts. Factory-direct rolls for qualified volume buyers.</p><a class="text-blue-700 underline text-sm font-semibold hover:text-blue-900" href="/brands/xpel">Brand details →</a></div></div></div></section><section class="py-16 px-6 bg-slate-50"><div class="max-w-5xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-8 text-center">How We Support Contractors &amp; Designers</h2><div class="grid md:grid-cols-3 gap-6"><div class="bg-white border-t-4 border-blue-600 rounded-xl p-6"><p class="text-4xl font-black text-blue-700 mb-2">01</p><h3 class="font-black text-slate-900 mb-2">Order Direct</h3><p class="text-sm text-slate-700">Wholesale rolls at contractor pricing. Stocked 48&quot; and 60&quot; widths, 72&quot; and 84&quot; order-in. Same-week delivery in Phoenix metro, 1–3 day Arizona statewide.</p></div><div class="bg-white border-t-4 border-emerald-600 rounded-xl p-6"><p class="text-4xl font-black text-emerald-700 mb-2">02</p><h3 class="font-black text-slate-900 mb-2">Drop-Ship to Jobsite</h3><p class="text-sm text-slate-700">Sealed rolls delivered direct to your Arizona jobsite with data sheet and photo receipt. Default for commercial contractor accounts — no warehouse pickup required.</p></div><div class="bg-white border-t-4 border-purple-600 rounded-xl p-6"><p class="text-4xl font-black text-purple-700 mb-2">03</p><h3 class="font-black text-slate-900 mb-2">Or Let Us Install</h3><p class="text-sm text-slate-700">ROC #314088 licensed install team. Full commercial and residential coverage — mid-rise, high-rise, retail, hospitality, multi-building. Warranty on film + labor.</p></div></div></div></section><section class="py-16 px-6 bg-white"><div class="max-w-6xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-8 text-center">Who We Serve</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="border border-slate-200 rounded-xl p-6"><h3 class="font-black text-slate-900 mb-2">Commercial Contractors</h3><p class="text-sm text-slate-700 leading-relaxed">Purchase rolls at contractor pricing or subcontract the install to our crews. We supply film, edge-seal, and documentation for LEED/sustainability scopes.</p></div><div class="border border-slate-200 rounded-xl p-6"><h3 class="font-black text-slate-900 mb-2">Architects &amp; Designers</h3><p class="text-sm text-slate-700 leading-relaxed">Spec the right film the first time. We supply sample books, SHGC/VLT data sheets, and submittal packages for commercial glazing specs.</p></div><div class="border border-slate-200 rounded-xl p-6"><h3 class="font-black text-slate-900 mb-2">Interior Designers</h3><p class="text-sm text-slate-700 leading-relaxed">Pull from the 618-SKU Solyx decorative library for hospitality, residential, and workplace projects. Drop-ship to the jobsite or let us install.</p></div><div class="border border-slate-200 rounded-xl p-6"><h3 class="font-black text-slate-900 mb-2">Facility Managers</h3><p class="text-sm text-slate-700 leading-relaxed">Bulk orders for multi-building portfolios — schools, medical, government. Volume pricing, scheduled installs, and a single licensed vendor (ROC #314088).</p></div><div class="border border-slate-200 rounded-xl p-6"><h3 class="font-black text-slate-900 mb-2">Sign &amp; Graphics Shops</h3><p class="text-sm text-slate-700 leading-relaxed">Wholesale Solyx frosted, color, and perforated films for fabricators who sell graphics to end clients but need dependable film supply in Phoenix.</p></div><div class="border border-slate-200 rounded-xl p-6"><h3 class="font-black text-slate-900 mb-2">Glass Shops</h3><p class="text-sm text-slate-700 leading-relaxed">Partner pricing for glaziers who want to offer film without stocking it. We drop-ship matched rolls or install under your brand.</p></div></div></div></section><section class="py-16 px-6 bg-slate-900 text-white"><div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 text-center"><div><p class="text-4xl font-black text-blue-400 mb-2">ROC #314088</p><p class="text-sm text-gray-300">Arizona Registrar of Contractors — residential &amp; commercial.</p></div><div><p class="text-4xl font-black text-blue-400 mb-2">6 lines</p><p class="text-sm text-gray-300">Authorized dealer: Nexfil, Solyx, Madico, MaxPro, SunTek, XPEL.</p></div><div><p class="text-4xl font-black text-blue-400 mb-2">85033</p><p class="text-sm text-gray-300">Phoenix warehouse and install HQ. Arizona-wide drop-ship and install.</p></div></div></section><section class="py-12 px-6 bg-white"><div class="max-w-5xl mx-auto"><h2 class="text-2xl font-black uppercase tracking-tight text-slate-900 mb-6">Related Pages</h2><div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4"><a class="block bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-lg p-5" href="/brands"><p class="font-bold text-slate-900 mb-1">All Brands We Carry</p><p class="text-sm text-slate-600">35 authorized brand pages with product lines and install scope.</p></a><a class="block bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-lg p-5" href="/films"><p class="font-bold text-slate-900 mb-1">Solyx Film Catalog</p><p class="text-sm text-slate-600">618 decorative SKUs available for order or drop-ship.</p></a><a class="block bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-lg p-5" href="/commercial-window-tinting"><p class="font-bold text-slate-900 mb-1">Commercial Install</p><p class="text-sm text-slate-600">Full-service commercial install under ROC #314088.</p></a><a class="block bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-lg p-5" href="/get-a-quote"><p class="font-bold text-slate-900 mb-1">Request a Quote</p><p class="text-sm text-slate-600">Distributor pricing, project bid, or install estimate.</p></a></div></div></section><section class="py-16 px-6 bg-slate-50"><div class="max-w-3xl mx-auto"><h2 class="text-3xl font-black text-center text-slate-900 uppercase tracking-tight mb-12">Frequently Asked Questions</h2><div class="space-y-4"><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Are you an authorized window film distributor?<span class="text-blue-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Yes. Arizona House of Film is an authorized dealer and distributor for Nexfil USA, Solyx (Decorative Films LLC), Madico, MaxPro, SunTek, and XPEL. We stock rolls in Phoenix for same-week drop-ship across Arizona and can order-in any SKU in each line.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Do you sell wholesale or bulk window film to contractors?<span class="text-blue-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Yes. We sell rolls at contractor pricing to licensed commercial installers, glass shops, sign fabricators, and general contractors. Pricing is volume-tiered — the more film in the quote, the lower the per-square-foot rate. We require a business license or ROC number on file for wholesale accounts.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Can you drop-ship window film to a jobsite in Arizona?<span class="text-blue-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Yes. Arizona jobsite drop-ship is the default for contractor accounts. We deliver sealed rolls (48-inch and 60-inch widths are stocked; 72-inch and 84-inch on order-in) with a packing slip, data sheet, and a photo receipt. Same-day drop-ship is available in the Phoenix metro for orders placed before 11am.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Do you install film purchased from another distributor?<span class="text-blue-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">In limited cases, yes — we install owner-supplied film if the brand and product match what our crews are trained on (Nexfil, Solyx, Madico, MaxPro, SunTek, XPEL). We do not warranty owner-supplied film and install is quoted at a labor-only rate. For full warranty coverage, film and labor should come from the same vendor.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">What is the minimum order for wholesale film?<span class="text-blue-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">For in-stock Nexfil and Solyx rolls, the wholesale minimum is typically one full roll (60 inches by 100 feet = ~500 sqft). For order-in specialty SKUs, minimums follow the manufacturer&#x27;s standard — usually one full roll. Project-scale orders qualify for volume pricing — request a quote with your annual or per-project volume and we&#x27;ll return a tiered sheet.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Is your Phoenix location licensed for distribution and install?<span class="text-blue-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Yes. Arizona House of Film operates under Arizona ROC #314088 — a licensed residential and commercial contractor for window film. We are located at 7007 W Flower St, Phoenix, AZ 85033. We are bonded, insured, and authorized to both distribute film and perform installations anywhere in Arizona.</div></details></div></div></section><section class="py-12 px-6 bg-blue-700 text-white text-center"><div class="max-w-3xl mx-auto"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Request Distributor Pricing</h2><p class="text-blue-100 mb-6">Tell us your project volume, brand preference, and Arizona delivery ZIP — we&#x27;ll return a tiered quote within one business day.</p><div class="flex flex-wrap justify-center gap-4"><a class="bg-white text-blue-700 font-black uppercase px-8 py-4 rounded-lg text-lg hover:bg-blue-50" href="/get-a-quote">Request Pricing →</a><a href="tel:4807881591" class="border-2 border-white text-white font-black uppercase px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-blue-700">(480) 788-1591</a></div><p class="text-blue-300 text-xs mt-4">Licensed ROC #314088 · Authorized for Nexfil, Solyx, Madico, MaxPro, SunTek, XPEL</p></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="text" name="website_url" style="display:none" tabindex="-1" autoComplete="off"/><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN" aria-label="First Name"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH" aria-label="Last Name"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM" aria-label="Email Address"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000" aria-label="Phone Number"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX" aria-label="City"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001" aria-label="Zip Code"/></div></div><fieldset><legend class="industrial-label">Project Type *</legend><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></fieldset><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..." aria-label="Message"></textarea></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

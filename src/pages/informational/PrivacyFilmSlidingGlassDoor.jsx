@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
-const pageTitle = 'Privacy Film for Sliding Glass Doors Phoenix AZ | ROC #314088';
-const metaDescription = "Window film for sliding glass doors in Phoenix — frosted, one-way, solar control, and decorative options. Licensed installer ROC #314088. Free estimate.";
+const pageTitle = 'Privacy Film for Sliding Glass Doors | Day & Night | ROC #314088';
+const metaDescription = "Window film for sliding glass doors in Phoenix — frosted for day and night privacy, shatterproof security for patio doors, solar control, and one-way. Licensed installer ROC #314088. Free estimate.";
 const canonicalUrl = 'https://arizonahouseoffilm.com/privacy-film-sliding-glass-door';
 
 const faqSchema = {
@@ -132,9 +132,9 @@ export default function PrivacyFilmSlidingGlassDoor() {
       {/* HERO */}
       <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Privacy Film for Sliding Glass Doors — Phoenix AZ</h1>
-          <p className="text-xl text-blue-300 font-bold mb-4">Frosted, One-Way, Solar, Decorative — We Install All Types</p>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">Sliding glass doors are the largest single pane of glass in most Arizona homes — and the biggest privacy and heat gain problem. Window film solves both without replacing the door or blocking the view.</p>
+          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Window Film for Sliding Glass Doors — Privacy, Security & Solar Control</h1>
+          <p className="text-xl text-blue-300 font-bold mb-4">Frosted (Day &amp; Night), Shatterproof, One-Way, Solar — We Install All Types</p>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">Sliding glass doors (also called patio doors) are the largest single pane of glass in most Arizona homes — and the biggest privacy, heat-gain, and break-in problem. When you tint sliding glass doors with the right film, you solve all three without replacing the door or blocking the view.</p>
           <Link to="/ai-window-film-estimator" className="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-10 py-4 rounded-lg text-lg transition-colors shadow-lg">Get Sliding Door Estimate →</Link>
           <p className="text-gray-400 text-sm mt-4">Standard sliding door: ~35-45 sqft | $350-900 installed</p>
         </div>
@@ -203,6 +203,51 @@ export default function PrivacyFilmSlidingGlassDoor() {
                 <p className="text-sm text-slate-700 leading-relaxed">{c.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FRENCH DOOR VS SLIDING DOOR */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4">French Door vs Sliding Door — Different Install</h2>
+          <p className="text-slate-700 mb-8">Both are called "patio doors" interchangeably, but the installation approach is very different. Here is how we handle each:</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white border-t-4 border-blue-600 rounded-xl p-6">
+              <h3 className="text-xl font-black text-slate-900 mb-3">Sliding Glass Door</h3>
+              <ul className="space-y-2 text-sm text-slate-700">
+                <li>• 1–2 large panes per door (35–45 sqft typical)</li>
+                <li>• Film cut in long continuous sheets — minimal seams</li>
+                <li>• Track and roller untouched — film trimmed 1–2mm from edge</li>
+                <li>• Standard install: 1–2 hours per door</li>
+                <li>• Best frosted choice: full-sheet frost or gradient</li>
+              </ul>
+            </div>
+            <div className="bg-white border-t-4 border-emerald-600 rounded-xl p-6">
+              <h3 className="text-xl font-black text-slate-900 mb-3">French Patio Door</h3>
+              <ul className="space-y-2 text-sm text-slate-700">
+                <li>• Hinged, with divided lites (multiple small panes per door)</li>
+                <li>• Each pane cut and installed individually — 25–40% surcharge</li>
+                <li>• Muntins (dividers) require careful film trimming</li>
+                <li>• Standard install: 2–4 hours for a hinged pair</li>
+                <li>• Best frosted choice: simple frost SX-SF, rice paper, or etched pattern</li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-6 text-sm text-slate-600">Not sure which you have? Send a photo through our <Link to="/ai-window-film-estimator" className="text-blue-700 underline hover:text-blue-900">AI estimator</Link> — it detects door type automatically and prices accordingly.</p>
+        </div>
+      </section>
+
+      {/* SHATTERPROOF CALLOUT */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-white">
+          <p className="text-red-400 font-bold uppercase tracking-wider text-xs mb-2">Security Upgrade</p>
+          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Shatterproof Film for Patio Doors</h2>
+          <p className="text-gray-300 mb-4">Sliding glass doors are the #1 residential break-in point in Arizona — the tempered glass shatters into pellets with a single strike, giving an intruder seconds of access. 8-mil and 14-mil security film bonds the glass so that, even when it shatters, the pane holds together as a single flexible sheet. Testing shows a filmed slider takes 30–90 seconds of sustained impact to defeat — long enough for alarms, dogs, or a phone call.</p>
+          <p className="text-gray-300 mb-6">Security film is clear and can be combined with any frosted or solar film for combined privacy + shatter resistance.</p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/safety" className="bg-red-500 hover:bg-red-400 text-white font-black uppercase px-6 py-3 rounded-lg text-sm">Security Film Details →</Link>
+            <Link to="/shatterproof-window-film" className="border-2 border-white text-white font-black uppercase px-6 py-3 rounded-lg text-sm hover:bg-white hover:text-slate-900">Shatterproof Window Film →</Link>
           </div>
         </div>
       </section>

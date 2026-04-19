@@ -44,8 +44,8 @@ export default function SidelightWindowFilm() {
   return (
     <>
       <Helmet>
-        <title>Sidelight Window Film Phoenix AZ | Door Sidelight Privacy | Arizona House of Film</title>
-        <meta name="description" content="Privacy window film for door sidelights in Phoenix & Scottsdale. Frosted and etched film for narrow glass panels next to front doors. ROC #314088. Free quote." />
+        <title>Sidelight Window Film | Privacy Film for Door Sidelights | ROC #314088</title>
+        <meta name="description" content="Privacy film for door sidelights — frosted, decorative, one-way, and stained-glass styles. Narrow panels flanking your front door, cut precisely and installed Arizona-wide. ROC #314088. Free quote." />
         <meta name="keywords" content="sidelight window film phoenix, door sidelight privacy film arizona, narrow window privacy film scottsdale, front door sidelight film phoenix, sidelight glass frosting arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/sidelight-window-film" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -63,9 +63,9 @@ export default function SidelightWindowFilm() {
           <div className="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/30 rounded-full px-4 py-1.5 text-green-400 text-sm font-semibold mb-4">
             LICENSED ROC #314088 · PHOENIX & SCOTTSDALE
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">Sidelight Window Film</h1>
+          <h1 className="text-4xl md:text-5xl font-black mb-4">Privacy Film for Door Sidelights — Frosted, Decorative &amp; One-Way</h1>
           <p className="text-xl text-gray-300 mb-4 max-w-2xl">
-            Privacy film for the narrow glass panels flanking your front door. Block sightlines into your entryway without replacing glass.
+            Privacy film for the narrow glass panels flanking your front door. Frosted for day-and-night coverage, decorative patterns, one-way mirror, and stained-glass styles — cut precisely to your sidelight dimensions.
           </p>
           <p className="text-gray-400 mb-8">Phoenix · Scottsdale · Chandler · Mesa · All Arizona</p>
           <div className="flex flex-wrap gap-3">
@@ -106,6 +106,28 @@ export default function SidelightWindowFilm() {
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Film Categories */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Four Film Styles for Sidelights</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { title: 'Frosted — Day & Night Privacy', desc: 'Most popular sidelight choice. Diffuses light and obscures views in both directions at all hours — does not reverse at night like reflective films. Looks like etched or sandblasted glass.', link: '/films/frosted-etched-films', linkText: 'Browse frosted catalog →' },
+              { title: 'Decorative / Etched Patterns', desc: 'Geometric, botanical, rice paper, linen, and custom patterns from the 618-SKU Solyx catalog. Privacy through visual complexity plus a designer look that complements the entryway.', link: '/films/patterned-privacy-films', linkText: 'Browse patterned catalog →' },
+              { title: 'One-Way Mirror Film', desc: 'Daytime-only privacy with clear outward views. Creates a mirror on the exterior when sunlight is brighter outside. Reverses after dark — pair with interior treatments for nighttime use.', link: '/one-way-mirror-window-film', linkText: 'One-way film details →' },
+              { title: 'Stained-Glass Style', desc: 'Colored and leaded-glass-look films for traditional or craftsman entryways. Adds character without the cost of replacing the sidelight with custom glass.', link: '/films/stained-glass-films', linkText: 'Stained-glass films →' },
+            ].map((f, i) => (
+              <div key={i} className="border border-gray-100 rounded-xl p-6 bg-white">
+                <h3 className="font-bold text-gray-900 mb-2">{f.title}</h3>
+                <p className="text-gray-500 text-sm mb-3 leading-relaxed">{f.desc}</p>
+                <Link to={f.link} className="text-blue-600 hover:underline text-sm font-semibold">{f.linkText}</Link>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4 text-sm text-gray-700">
+            <strong>Typical sidelight size:</strong> 6–10 sqft each. Our $500 minimum job covers a sidelight pair plus transom — use the whole minimum on one entryway rather than paying for a single 6 sqft panel. <Link to="/ai-window-film-estimator" className="text-blue-700 underline hover:text-blue-900 font-semibold">Try the AI estimator →</Link>
           </div>
         </section>
 

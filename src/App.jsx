@@ -136,6 +136,7 @@ const DayAndNightPrivacyFilm = lazy(() => import("@/pages/informational/DayAndNi
 const ElectricPrivacyFilm = lazy(() => import("@/pages/informational/ElectricPrivacyFilm"));
 const PrivacyFilmSlidingGlassDoor = lazy(() => import("@/pages/informational/PrivacyFilmSlidingGlassDoor"));
 const SolyxBirdSafetyFilm = lazy(() => import("@/pages/informational/SolyxBirdSafetyFilm"));
+const WindowFilmDistributorPhoenix = lazy(() => import("@/pages/informational/WindowFilmDistributorPhoenix"));
 const AIWindowFilmEstimator = lazy(() => import("@/pages/AIWindowFilmEstimator"));
 const WindowFilmFAQ = lazy(() => import("@/pages/WindowFilmFAQ"));
 
@@ -328,6 +329,7 @@ function AppRoutes() {
           <Route path="/electric-privacy-film-arizona" element={<ElectricPrivacyFilm />} />
           <Route path="/privacy-film-sliding-glass-door" element={<PrivacyFilmSlidingGlassDoor />} />
           <Route path="/solyx-bird-safety-film" element={<SolyxBirdSafetyFilm />} />
+          <Route path="/window-film-distributor-phoenix" element={<WindowFilmDistributorPhoenix />} />
           <Route path="/ai-window-film-estimator" element={<AIWindowFilmEstimator />} />
           <Route path="/window-film-faq" element={<WindowFilmFAQ />} />
 

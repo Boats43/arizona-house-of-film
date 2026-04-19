@@ -215,7 +215,7 @@ export default function CountertopProtectionFilmArizona() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Order Countertop Protection Film — Ship Anywhere in the US</h2>
-        <p className="text-gray-700 mb-4">Not in Arizona? Arizona House of Film supplies professional-grade 4 mil anti-graffiti countertop protection film for experienced installers. Note: installation on high-value stone surfaces carries risk — we recommend professional installation for marble, quartzite, and onyx. DIY material supply available for experienced contractors and stone fabricators. Available in standard roll sizes — tell us your countertop dimensions and we'll quote a cut roll shipped directly to you.</p>
+        <p className="text-gray-700 mb-4">Not in Arizona? See our dedicated <a href="/countertop-protection-film-nationwide" className="text-blue-600 font-semibold underline">nationwide countertop protection film page</a> for drop-ship pricing, roll specs, and the contractor supply program. Arizona House of Film supplies professional-grade 4 mil anti-graffiti countertop protection film for experienced installers. Note: installation on high-value stone surfaces carries risk — we recommend professional installation for marble, quartzite, and onyx. DIY material supply available for experienced contractors and stone fabricators. Available in standard roll sizes — tell us your countertop dimensions and we'll quote a cut roll shipped directly to you.</p>
         <div className="overflow-x-auto mb-6">
           <table className="w-full border-collapse border border-gray-200 text-sm">
             <thead className="bg-gray-50">

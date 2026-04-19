@@ -155,6 +155,9 @@ const Safety = () => {
                 </motion.div>
               ))}
             </div>
+            <p className="mt-8 text-center text-sm text-slate-600">
+              Coastal or monsoon-wind concerns? See our <Link to="/hurricane-window-film-arizona" className="text-red-600 font-bold underline hover:text-red-700">hurricane-grade window film for Arizona</Link> page.
+            </p>
           </div>
         </section>
 

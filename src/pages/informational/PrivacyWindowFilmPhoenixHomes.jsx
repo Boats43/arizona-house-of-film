@@ -137,6 +137,10 @@ export default function PrivacyWindowFilmPhoenixHomes() {
           <Link to="/office-privacy-window-film" className="text-green-600 hover:underline">Office Privacy Film</Link>
           {' · '}
           <Link to="/one-way-mirror-window-film" className="text-green-600 hover:underline">One-Way Mirror Film</Link>
+          {' · '}
+          <Link to="/privacy-film-sliding-glass-door" className="text-green-600 hover:underline">Privacy Film for Sliding Glass Doors</Link>
+          {' · '}
+          <Link to="/sidelight-window-film" className="text-green-600 hover:underline">Sidelight Window Film</Link>
         </p>
       </main>
     </>

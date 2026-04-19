@@ -575,6 +575,7 @@ const Decorative = () => {
             <Link to="/decorative-window-films/design-flexibility" className="text-green-700 underline text-sm">Design Flexibility Films</Link>
             <Link to="/decorative-window-films/easy-maintenance" className="text-green-700 underline text-sm">Easy Maintenance Films</Link>
             <Link to="/decorative-window-films/enhanced-privacy" className="text-green-700 underline text-sm">Enhanced Privacy Films</Link>
+            <Link to="/solyx-bird-safety-film" className="text-green-700 underline text-sm">Solyx Bird Safety Window Film</Link>
             <Link to="/films" className="text-green-700 underline text-sm">Full Film Catalog</Link>
             <Link to="/store" className="text-green-700 underline text-sm">Order Film Direct</Link>
           </div>

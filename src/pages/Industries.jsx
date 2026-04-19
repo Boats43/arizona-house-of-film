@@ -147,6 +147,9 @@ const Industries = () => {
                 </Link>
               ))}
             </div>
+            <p className="mt-10 text-center text-sm text-slate-600">
+              Higher-education glazing? See our dedicated <Link to="/university-window-film" className="text-blue-700 font-bold underline hover:text-blue-900">university window film</Link> page for campus-scale spec, dorm window security, and Class-A academic building retrofits.
+            </p>
           </div>
         </section>
 

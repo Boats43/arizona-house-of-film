@@ -518,6 +518,28 @@ const Residential = () => {
         <section className="py-24 bg-slate-50 border-y border-gray-200">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-10 uppercase tracking-tight">Serving Homes Across Arizona</h2>
+
+            <div className="mb-10">
+              <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Residential Tinting by Location</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  { to: '/residential-window-tinting-phoenix', label: 'Phoenix' },
+                  { to: '/residential-window-tinting-scottsdale', label: 'Scottsdale' },
+                  { to: '/residential-window-tinting-mesa', label: 'Mesa' },
+                  { to: '/residential-window-tinting-chandler', label: 'Chandler' },
+                  { to: '/residential-window-tinting-gilbert', label: 'Gilbert' },
+                  { to: '/residential-window-tinting-tempe', label: 'Tempe' },
+                  { to: '/residential-window-tinting-glendale', label: 'Glendale' },
+                  { to: '/residential-window-tinting-peoria', label: 'Peoria' },
+                  { to: '/residential-window-tinting-queen-creek', label: 'Queen Creek' },
+                ].map(({ to, label }) => (
+                  <Link key={to} to={to} className="px-3 py-1 bg-white border border-slate-200 text-xs font-bold text-slate-600 hover:border-green-500 hover:text-green-600 transition-all">
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <div className="flex flex-wrap justify-center gap-3">
               {cities.map(city => (
                 <Link key={city.slug} to={`/service-areas/${city.slug}`} className="px-6 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-slate-600 hover:border-green-500 hover:text-green-600 hover:shadow-md transition-all">

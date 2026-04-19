@@ -19,6 +19,7 @@ const Footer = () => {
 
   const phoenixLinks = [
     { name: 'Window Tinting Phoenix', path: '/window-tinting-phoenix' },
+    { name: 'Window Film Phoenix', path: '/window-film-phoenix' },
     { name: 'Commercial Film Phoenix', path: '/commercial-window-film-phoenix' },
     { name: 'Residential Film Phoenix', path: '/residential-window-tinting-phoenix' },
     { name: 'Solar Film Phoenix', path: '/solar-window-film-phoenix' },
@@ -56,6 +57,7 @@ const Footer = () => {
     { name: 'AI Estimator', path: '/ai-window-film-estimator' },
     { name: 'Window Film Cost', path: '/window-film-cost-arizona' },
     { name: 'Window Film FAQ', path: '/window-film-faq' },
+    { name: 'Window Film Distributor', path: '/window-film-distributor-phoenix' },
   ];
 
   const industriesLinks = [
@@ -76,6 +78,7 @@ const Footer = () => {
     { name: 'Storefront Window Film', path: '/storefront-window-film' },
     { name: 'Entryway & Door Film', path: '/entryway-window-film' },
     { name: 'Sidelight Window Film', path: '/sidelight-window-film' },
+    { name: 'Sliding Glass Door Film', path: '/privacy-film-sliding-glass-door' },
     { name: 'One-Way Mirror Film', path: '/one-way-mirror-window-film' },
     { name: 'Office Partition Film', path: '/office-partition-window-film' },
     { name: 'Restaurant Window Film', path: '/restaurant-window-film' },

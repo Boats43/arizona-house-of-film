@@ -354,7 +354,7 @@ const Header = () => {
             </div>
             <button
               onClick={closeMenu}
-              className="p-2 text-gray-900 hover:bg-gray-100 rounded-md"
+              className="p-3 text-gray-900 hover:bg-gray-100 rounded-md"
               aria-label="Close navigation menu"
             >
               <X size={24} />
@@ -385,7 +385,7 @@ const Header = () => {
                         <Link
                           key={link.path}
                           to={link.path}
-                          className="block px-8 py-3 text-base text-gray-800 hover:text-blue-600 hover:bg-blue-50 border-b border-gray-50"
+                          className="block px-8 py-3.5 text-base text-gray-800 hover:text-blue-600 hover:bg-blue-50 border-b border-gray-50"
                           onClick={closeMenu}
                         >
                           {link.name}
@@ -402,14 +402,14 @@ const Header = () => {
           <div className="flex-shrink-0 bg-white border-t border-gray-200 px-6 py-4 space-y-3">
             <a
               href="tel:4807881591"
-              className="block w-full text-center bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 rounded-lg transition-colors"
+              className="block w-full text-center bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 rounded-lg transition-colors"
               onClick={closeMenu}
             >
               (480) 788-1591
             </a>
             <Link
               to="/contact"
-              className="block w-full text-center border-2 border-blue-800 text-blue-800 font-bold py-3 rounded-lg hover:bg-blue-50 transition-colors"
+              className="block w-full text-center border-2 border-blue-800 text-blue-800 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors"
               onClick={closeMenu}
             >
               Get Free Quote

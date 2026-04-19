@@ -287,8 +287,8 @@ const Home = () => {
           <div className="text-center mb-10">
             <p className="text-gray-300 text-sm">
               We serve <Link to="/commercial-window-tinting" className="text-green-400 hover:text-green-300 underline">commercial properties</Link> and <Link to="/residential-window-tinting" className="text-green-400 hover:text-green-300 underline">residential homes</Link> across the Valley — including <Link to="/residential-window-tinting-phoenix" className="text-green-400 hover:text-green-300 underline">residential window tinting in Phoenix</Link> and <Link to="/commercial-window-tinting-scottsdale" className="text-green-400 hover:text-green-300 underline">commercial window tinting in Scottsdale</Link>.{' '}
-              <Link to="/films" className="text-green-400 hover:text-green-300 underline">Browse our full film catalog</Link> or <Link to="/service-areas" className="text-green-400 hover:text-green-300 underline">find coverage near you</Link>.{' '}
-              <Link to="/gallery" className="text-green-400 hover:text-green-300 underline">Project Gallery</Link> ·{' '}
+              <Link to="/films" className="text-green-400 hover:text-green-300 underline">Browse our full film catalog</Link>, compare the <Link to="/brands" className="text-green-400 hover:text-green-300 underline">film brands we carry</Link>, or <Link to="/service-areas" className="text-green-400 hover:text-green-300 underline">find coverage near you</Link>.{' '}
+              Try the <Link to="/ai-window-film-estimator" className="text-green-400 hover:text-green-300 underline">AI window film estimator</Link> for an instant quote, browse the <Link to="/blog" className="text-green-400 hover:text-green-300 underline">window film resource blog</Link>, or see our <Link to="/gallery" className="text-green-400 hover:text-green-300 underline">project gallery</Link> ·{' '}
               <Link to="/book-now" className="text-green-400 hover:text-green-300 underline">Book a Consultation</Link>.
             </p>
           </div>

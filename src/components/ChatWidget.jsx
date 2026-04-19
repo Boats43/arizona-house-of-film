@@ -161,6 +161,23 @@ export default function ChatWidget() {
   }, []);
 
   useEffect(() => { if (open) setPulse(false); }, [open]);
+
+  // Allow any page to force-open the chat by dispatching a custom event.
+  // Used by /ai-window-film-estimator CTAs — idempotent, never toggles closed.
+  useEffect(() => {
+    const forceOpen = () => {
+      if (!open) {
+        const context = getPageContext();
+        if (messages.length === 1 && messages[0].content === DEFAULT_OPENER) {
+          setMessages([{ role: 'assistant', content: context.opener }]);
+        }
+        sessionStorage.setItem('ahof_chat_opened', 'true');
+        setOpen(true);
+      }
+    };
+    window.addEventListener('ahof:open-chat', forceOpen);
+    return () => window.removeEventListener('ahof:open-chat', forceOpen);
+  }, [open, messages]);
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, loading]);
   useEffect(() => {
     if (open) { document.body.style.overflow = 'hidden'; setTimeout(() => inputRef.current?.focus(), 100); }
@@ -396,6 +413,7 @@ export default function ChatWidget() {
   return (
     <>
       <button
+        data-chat-toggle
         onClick={() => {
           if (!open) {
             const context = getPageContext();
@@ -405,6 +423,7 @@ export default function ChatWidget() {
           setOpen(o => !o);
         }}
         aria-label="Open chat"
+        aria-expanded={open}
         style={{
           position:'fixed', bottom:'24px', right:'24px', zIndex:9999,
           width:'60px', height:'60px', borderRadius:'50%',

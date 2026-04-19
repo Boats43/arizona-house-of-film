@@ -93,31 +93,25 @@ const faqSchema = {
   ],
 };
 
-const organizationSchema = {
+const serviceSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Arizona House of Film',
-  alternateName: 'AHOF Window Film Distributor',
-  url: canonicalUrl,
-  telephone: '+1-480-788-1591',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '7007 W Flower St',
-    addressLocality: 'Phoenix',
-    addressRegion: 'AZ',
-    postalCode: '85033',
-    addressCountry: 'US',
+  '@type': 'Service',
+  name: 'Window Film Distribution Phoenix AZ',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Arizona House of Film',
+    telephone: '480-788-1591',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '7007 W Flower St',
+      addressLocality: 'Phoenix',
+      addressRegion: 'AZ',
+      postalCode: '85033',
+    },
   },
-  areaServed: { '@type': 'State', name: 'Arizona' },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Window Film Distribution — Authorized Lines',
-    itemListElement: brandLines.map((b, i) => ({
-      '@type': 'Offer',
-      position: i + 1,
-      itemOffered: { '@type': 'Product', name: b.brand, category: b.segment },
-    })),
-  },
+  serviceType: 'Window Film Distribution',
+  areaServed: 'Phoenix, AZ',
+  description: 'Authorized distributor for Nexfil USA, Solyx, Madico, MaxPro, SunTek and XPEL window films. Drop-ship available for licensed contractors.',
 };
 
 export default function WindowFilmDistributorPhoenix() {
@@ -131,7 +125,7 @@ export default function WindowFilmDistributorPhoenix() {
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://arizonahouseoffilm.com/' },

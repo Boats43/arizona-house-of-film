@@ -232,7 +232,7 @@ FILM INVENTORY — IN STOCK (fast turnaround, same week):
 These can be installed within days of estimate approval.
 
 FILM INVENTORY — ORDER IN (1-2 week lead time):
-- LLumar, H\u00fcper Optik, XPEL, Solyx decorative, Flexfilm, Solar Gard
+- LLumar, H\u00fcper Optik, XPEL, Solyx decorative, Flexfilm, Solar Gard, Nexfil USA
 Mention lead time when recommending these.
 
 MADICO PRODUCT KNOWLEDGE — IN STOCK, SAME WEEK INSTALL:
@@ -460,6 +460,17 @@ ORDER-IN (1-2 week lead):
 - Flexfilm: budget commercial
 - Solar Gard: spectrally selective, LEED commercial
 - 3M: Prestige residential, Fasara decorative, Scotchshield security
+- Nexfil USA (authorized distributor — Arizona House of Film):
+  - OnyVa IR90: 90% IR rejection nano-ceramic, VLT 05-70%
+    Best for: premium residential, commercial, HOA-friendly
+  - Lux IR80: 80% IR rejection nano-ceramic, VLT 05-50%
+    Best for: residential ceramic alternative
+  - Solar Bronze 20%: 83.5% TSER sputter metalized
+    Best for: maximum solar control commercial
+  - Elegance/Prestigious: sputter metalized neutral/silver
+  - Safety 2-12mil: complete safety range
+  - Decorative: Blackout, Whiteout, White Frost, Silver Matte
+  Lead time: 1-2 weeks ship from Gardena CA
 Always mention lead time when recommending order-in brands.
 
 PHOTO PROMPTING — CRITICAL:

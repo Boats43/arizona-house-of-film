@@ -13,7 +13,7 @@
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
 - **Trigger**: `"postbuild": "node scripts/prerender.js && node scripts/generate-sitemaps.js"` in package.json — `generate-sitemaps.js` runs automatically on every build
 - **Sitemap generation**: `scripts/generate-sitemaps.js` dynamically writes `public/sitemap-films.xml` (and `dist/sitemap-films.xml`) with all 618 Solyx SKU URLs + 8 category hubs (626 total) — never hand-edit sitemap-films.xml
-- **Result**: 962 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
+- **Result**: 963 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
 - **SKU routes**: `scripts/prerender.js` imports `solyxProducts` + `solyxToFilmsCategory` from `src/data/solyxFilms.js` and spreads generated SKU URLs into `ROUTES` — never hand-list SKUs
@@ -27,20 +27,28 @@
 - `src/components/ChatWidget.jsx` — AI chat widget with page-context awareness
 - `src/data/solyxFilms.js` — 618 Solyx film SKUs + `solyxToFilmsCategory` map. **Single source of truth** for category→URL mapping; imported by FilmsHub.jsx and scripts/prerender.js — never duplicate this map.
 - `src/data/ewfFilms.js` — EWF architectural film catalog
+- `src/data/nexfilFilms.js` — Nexfil USA architectural catalog (7 categories, ~38 SKUs: OnyVa IR90, Lux IR80, Centurion/HP Centurion carbon, Solar Bronze, Elegance/Prestigious/Twilight sputter, Silver Reflective, Safety 2-12mil, Anti-Graffiti 4mil, Decorative). Imported by `NexfilPage.jsx`.
 - `src/data/films.js` — Film category definitions with FAQs
 - `src/data/brands.js` — Brand data for dynamic BrandPage
 - `src/data/cities.js` / `citiesData.js` — 100+ Arizona city definitions
 - `vercel.json` — 84 redirects (incl. 16 legacy SKU category 301s + 4 stale category-alias 301s) + SPA rewrite fallback + security headers
 
 ## Page Counts
-- **Total prerendered**: 962
-- **Sitemap URLs**: 934 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
+- **Total prerendered**: 963
+- **Sitemap URLs**: 935 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
 - **Ahrefs health score**: 97
-- **Page JSX files**: 111 (48 root + 27 locations + 21 informational + 6 solutions + 7 brands + 2 films)
+- **Page JSX files**: 113 (49 root + 27 locations + 22 informational + 6 solutions + 8 brands + 2 films)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
-- **Brand pages**: 35 (7 dedicated + 28 dynamic)
+- **Brand pages**: 36 (8 dedicated + 28 dynamic)
 - **Service area pages**: 100+ (dynamic via CityPage)
 - **Film SKUs**: 618 Solyx + EWF catalog
+
+## Nexfil USA — Authorized Distributor
+- **Brand page**: `/brands/nexfil` — dedicated page at `src/pages/brands/NexfilPage.jsx` (matches SolarGardPage pattern: Service + FAQPage schema, hero, brand story, featured products, 7-category overview, nano-ceramic + sputter performance table, safety range, decorative, pricing, FAQ, internal links).
+- **Data source**: `src/data/nexfilFilms.js` — 7 categories, ~38 SKUs. Headline SKUs: OnyVa IR90 (90% IR, 5 VLT levels), Lux IR80 (80% IR, 4 VLT levels), Solar Bronze 20% (83.5% TSER).
+- **brands.js entry**: present with `relatedFilms`, `specs`, `arizonaNote`, `bestFor`, `filmSeries`, `faqs` — matches existing shape so `/brands/:slug` dynamic page is compatible even without the explicit route.
+- **Chat**: `api/chat.js` SYSTEM_PROMPT lists Nexfil under ORDER-IN (1-2 week lead from Gardena CA) with OnyVa/Lux/Solar Bronze/Elegance/Safety/Decorative coverage.
+- **Wired into**: `App.jsx` (explicit `<Route path="/brands/nexfil">` before `:slug` catch-all), `scripts/prerender.js` (ROUTES + PATTERN_MAP), `public/sitemap-brands.xml` (priority 0.8).
 
 ## API Security (api/chat.js)
 - IP rate limiting: 20 req/IP/hour
@@ -54,7 +62,7 @@
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
-- Build must pass 962/962 prerender before pushing
+- Build must pass 963/963 prerender before pushing
 
 ## Open Items (as of April 4, 2026)
 - `/residential-window-tinting-phoenix` now internally linked from Home, Residential, and WindowFilmPhoenix — verify GSC pickup
@@ -71,5 +79,6 @@
 - `/solyx-bird-safety-film` added — dedicated SEO page for Solyx bird-safe collection (7 SKUs: BSFD, BSFV, BSFH, BSFT, BSFAC-01, BSFAC-02, SC672), FAQPage + Service schema, FLAP/ABC 2×4-rule references, LEED Pilot Credit 55 context, commercial + residential applications — monitor indexing for "solyx bird safety film" and "bird safety window film arizona"
 - `/privacy-film-sliding-glass-door` strengthened (existed) — retitled to target "day & night" cluster, H1 rewritten to cover privacy + security + solar control, added French-door vs sliding-door comparison section and shatterproof-patio-door callout; targets 6 GSC query variants incl. "shatterproof film for patio doors" and "tint sliding glass doors"
 - `/sidelight-window-film` strengthened (existed) — retitled and H1 rewritten to cover decorative/one-way/stained-glass styles, added 4-film-options section, minimum-job callout linking to AI estimator; sitemap priority bumped 0.7 → 0.8
-- `/window-film-distributor-phoenix` added — new distributor/wholesale page for 6 authorized lines (Nexfil USA, Solyx, Madico, MaxPro, SunTek, XPEL), FAQPage + Organization/OfferCatalog schema, contractor drop-ship and bulk pricing, 6 buyer segments (GCs, architects, interior designers, facility managers, sign shops, glass shops)
+- `/window-film-distributor-phoenix` added — new distributor/wholesale page for 6 authorized lines (Nexfil USA, Solyx, Madico, MaxPro, SunTek, XPEL), FAQPage + Organization/OfferCatalog schema, contractor drop-ship and bulk pricing, 6 buyer segments (GCs, architects, interior designers, facility managers, sign shops, glass shops). Schema later revised to single Service + LocalBusiness to clear GSC Product-without-offers warning.
+- Nexfil USA full presence added — dedicated `/brands/nexfil` page (NexfilPage.jsx), `src/data/nexfilFilms.js` catalog (7 categories, ~38 SKUs), brands.js entry, and api/chat.js ORDER-IN inventory listing. Monitor indexing for "nexfil", "nexfil usa", "onyva ir90", and "lux ir80".
 - Last updated: April 19, 2026

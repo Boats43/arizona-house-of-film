@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-SfSRDUkI.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-DfBtRgxy.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Nexfil USA Window Film Phoenix AZ | Authorized Distributor | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Authorized Nexfil USA window film distributor and installer in Phoenix AZ. OnyVa IR90 90% IR rejection, Lux IR80 nano-ceramic, Solar Bronze 83.5% TSER, full safety range. ROC #314088. Free estimate."/><meta data-rh="true" property="og:title" content="Nexfil USA Window Film Phoenix AZ | Authorized Distributor | ROC #314088"/><meta data-rh="true" property="og:description" content="Authorized Nexfil USA window film distributor and installer in Phoenix AZ. OnyVa IR90 90% IR rejection, Lux IR80 nano-ceramic, Solar Bronze 83.5% TSER, full safety range. ROC #314088. Free estimate."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/brands/nexfil"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Nexfil USA Window Film Phoenix AZ | Authorized Distributor | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Authorized Nexfil USA window film distributor and installer in Phoenix AZ. OnyVa IR90 90% IR rejection, Lux IR80 nano-ceramic, Solar Bronze 83.5% TSER, full safety range. ROC #314088. Free estimate."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/brands/nexfil"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Nexfil USA Window Film Installation Phoenix AZ","serviceType":"Window Film Installation","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"areaServed":{"@type":"State","name":"Arizona"},"description":"Authorized Nexfil USA window film distributor and installer in Phoenix AZ. OnyVa IR90 90% IR rejection, Lux IR80 nano-ceramic, Solar Bronze 83.5% TSER, full safety range. ROC #314088. Free estimate.","url":"https://arizonahouseoffilm.com/brands/nexfil"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Nexfil OnyVa IR90?","acceptedAnswer":{"@type":"Answer","text":"OnyVa IR90 is Nexfil USA’s flagship nano-ceramic film with 90% IR (infrared) rejection — among the highest in the architectural film market. It is non-metallic, so it does not interfere with GPS, cellular, WiFi, or Bluetooth signals. OnyVa is offered in VLT levels from 5% to 70%, so you can pick the exact darkness while keeping the same 90% IR performance. In Arizona heat, OnyVa IR90 70% is the nearly-invisible option, and 20–35% VLT are the most-specified residential and commercial choices."}},{"@type":"Question","name":"How does Nexfil compare to LLumar and Hüper Optik?","acceptedAnswer":{"@type":"Answer","text":"All three are professional architectural film manufacturers. Nexfil OnyVa IR90 rejects 90% of IR — comparable to Hüper Optik Ceramic and LLumar IRX at a better wholesale price point, which is why we specify it on cost-sensitive commercial jobs. Hüper Optik still leads on optical neutrality for high-end residential, and LLumar has broader NFRC rebate documentation coverage. For most Arizona projects, the three lines are interchangeable by spec — Arizona House of Film picks based on availability, price, and rebate eligibility."}},{"@type":"Question","name":"Is Nexfil available for same-week installation in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Most Nexfil architectural SKUs ship from Gardena, California in 1–2 weeks. We stock the highest-volume OnyVa IR90 and Lux IR80 rolls in Phoenix, so same-week installation is routine for those SKUs. Specialty colors, non-stocked VLT levels, and safety films 7 mil and above are order-in only. We confirm lead time for your selected SKU during the free on-site estimate."}},{"@type":"Question","name":"What is the difference between Lux IR80 and OnyVa IR90?","acceptedAnswer":{"@type":"Answer","text":"Both are non-metallic nano-ceramic films with no signal interference. Lux IR80 rejects 80% of IR and is the value-tier nano-ceramic option — it works well on interior rooms and north/east exposures where heat load is moderate. OnyVa IR90 rejects 90% of IR (a 10-point jump) and is the premium nano-ceramic — the right spec for west- and south-facing glass in Phoenix where IR load is at its worst. OnyVa also holds TSER performance better across the VLT range."}},{"@type":"Question","name":"Does Arizona House of Film install Nexfil film?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film is an authorized Nexfil USA distributor and installer. Every install is performed by our W-2 crews under Arizona ROC #314088. We carry the full Nexfil architectural line — OnyVa IR90, Lux IR80, Centurion and HP Centurion carbon, Solar Bronze, Elegance, Prestigious Silver, Twilight dual reflective, Silver Reflective 05–50%, Safety Film 2–12 mil, Anti-Graffiti 4 mil, and the decorative range (Blackout, Whiteout, White Frost, Silver Matte)."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Brands","item":{"@id":"https://arizonahouseoffilm.com/brands","name":"Brands"}},{"@type":"ListItem","position":3,"name":"Nexfil USA Window Film","item":{"@id":"https://arizonahouseoffilm.com/brands/nexfil","name":"Nexfil USA Window Film"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-950 min-h-screen"><section class="py-24 bg-slate-950 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Authorized Distributor • ROC #314088</span><h1 class="text-5xl md:text-7xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Nexfil USA Window Film — Arizona House of Film Authorized Distributor</h1><p class="text-xl text-slate-300 max-w-3xl mb-10 leading-relaxed font-medium">Professional window film manufactured in Gardena, California. Featuring <strong class="text-green-400">OnyVa IR90 — 90% IR rejection</strong> and <strong class="text-green-400">Lux IR80 — 80% IR rejection</strong> nano-ceramic films. Arizona House of Film is an authorized Nexfil distributor and installer. ROC #314088.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/get-a-quote">Get a Free Estimate →</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">Call (480) 788-1591</a></div></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">About Nexfil USA</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-4">Nexfil USA is a professional window film manufacturer headquartered in Gardena, California. The company produces a full architectural line — sputter metalized, nano-ceramic, carbon color-stable, silver reflective, safety, anti-graffiti, and decorative films — engineered for U.S. climate conditions including the extreme heat and UV load of the Arizona Southwest.</p><p class="text-slate-700 text-lg leading-relaxed max-w-4xl">Arizona House of Film is an authorized Nexfil distributor and installer. We stock the highest-volume OnyVa IR90 and Lux IR80 SKUs in Phoenix for same-week residential and commercial installation, and order-in the full catalog with 1–2 week lead time directly from Gardena.</p></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Featured Nexfil Films</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">Two Nexfil SKUs we specify most often on Arizona projects — one for maximum clarity with top-tier IR rejection, one for maximum solar control on hot exposures.</p><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="border border-slate-200 rounded-lg p-6 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">NF-ONYVA-IR90-20</span><h3 class="font-black text-slate-900 text-2xl mt-1 mb-3">OnyVa IR90 20%</h3><p class="text-slate-600 text-sm mb-4 leading-relaxed">90% IR rejection at 20% VLT. Nearly invisible appearance with premium heat performance. Top residential and commercial choice.</p><div class="grid grid-cols-4 gap-2 text-center text-xs"><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">VLT</p><p class="text-slate-900 font-black">20<!-- -->%</p></div><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">TSER</p><p class="text-slate-900 font-black">77.7<!-- -->%</p></div><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">IRR</p><p class="text-slate-900 font-black">93.3<!-- -->%</p></div><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">UV</p><p class="text-green-700 font-black">99.7<!-- -->%</p></div></div></div><div class="border border-slate-200 rounded-lg p-6 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">NF-SOLAR-BRONZE-20</span><h3 class="font-black text-slate-900 text-2xl mt-1 mb-3">Solar Bronze 20%</h3><p class="text-slate-600 text-sm mb-4 leading-relaxed">Highest TSER in sputter line at 83.5%. Copper construction. Best-in-class solar control with warm bronze exterior.</p><div class="grid grid-cols-4 gap-2 text-center text-xs"><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">VLT</p><p class="text-slate-900 font-black">22<!-- -->%</p></div><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">TSER</p><p class="text-slate-900 font-black">83.5<!-- -->%</p></div><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">IRR</p><p class="text-slate-900 font-black">92.8<!-- -->%</p></div><div class="bg-slate-50 p-2 rounded"><p class="text-slate-400 font-bold">UV</p><p class="text-green-700 font-black">99.9<!-- -->%</p></div></div></div></div></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Seven Nexfil Product Categories</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">The full Nexfil architectural range — from premium OnyVa IR90 nano-ceramic down to the 12 mil safety line and decorative whites/blacks.</p><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Sputter Metalized</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">Premium reflective films — highest heat rejection</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">7<!-- --> SKU<!-- -->s<!-- --> available</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Nano-Ceramic IR</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">Non-reflective ceramic with 80-90% IR rejection</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">9<!-- --> SKU<!-- -->s<!-- --> available</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Carbon / Color Stable</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">Color stable performance films</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">6<!-- --> SKU<!-- -->s<!-- --> available</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Silver Reflective</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">High reflectivity mirror films</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">4<!-- --> SKU<!-- -->s<!-- --> available</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Safety Film</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">2-12 mil safety and security film</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">6<!-- --> SKU<!-- -->s<!-- --> available</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Anti-Graffiti</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">Exterior sacrificial protection</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">1<!-- --> SKU<!-- --> available</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-lg mb-2">Decorative</h3><p class="text-slate-600 text-sm mb-3 leading-relaxed">Privacy and decorative architectural films</p><p class="text-xs font-black text-green-700 uppercase tracking-widest">5<!-- --> SKU<!-- -->s<!-- --> available</p></div></div></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Nexfil Nano-Ceramic &amp; Sputter Performance</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">Published performance specs on the most-specified Nexfil architectural films. All films block 99%+ UV.</p><div class="overflow-x-auto mb-8"><table class="w-full text-sm border-collapse bg-white rounded-lg overflow-hidden"><thead><tr class="bg-slate-900 text-white text-left"><th class="px-4 py-3 font-black uppercase text-xs tracking-wider">Film</th><th class="px-4 py-3 font-black uppercase text-xs tracking-wider">VLT</th><th class="px-4 py-3 font-black uppercase text-xs tracking-wider">TSER</th><th class="px-4 py-3 font-black uppercase text-xs tracking-wider">IR Rejection</th><th class="px-4 py-3 font-black uppercase text-xs tracking-wider">UV</th></tr></thead><tbody class="divide-y divide-slate-100"><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">Prestigious Silver 20%</td><td class="px-4 py-3 text-slate-700">17<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">78.8<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">88.1<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">Prestigious Silver 35%</td><td class="px-4 py-3 text-slate-700">39<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">55.9<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">73.4<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">Twilight 10</td><td class="px-4 py-3 text-slate-700">10<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">69<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">80<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">Elegance 20%</td><td class="px-4 py-3 text-slate-700">20<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">71<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">83<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">Elegance 35%</td><td class="px-4 py-3 text-slate-700">40<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">56.1<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">62.9<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">Solar Bronze 20%</td><td class="px-4 py-3 text-slate-700">22<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">83.5<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">92.8<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">Solar Bronze 35%</td><td class="px-4 py-3 text-slate-700">33<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">63.5<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">84.1<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">Lux IR80 5%</td><td class="px-4 py-3 text-slate-700">5<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">58<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">95.2<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">Lux IR80 20%</td><td class="px-4 py-3 text-slate-700">19<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">81<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">80.6<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">Lux IR80 35%</td><td class="px-4 py-3 text-slate-700">24<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">66<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">66<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">Lux IR80 50%</td><td class="px-4 py-3 text-slate-700">34<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">49<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">55<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">OnyVa IR90 5%</td><td class="px-4 py-3 text-slate-700">5<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">58<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">93.9<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.9<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">OnyVa IR90 20%</td><td class="px-4 py-3 text-slate-700">20<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">77.7<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">93.3<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.7<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">OnyVa IR90 35%</td><td class="px-4 py-3 text-slate-700">27<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">59.6<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">92.1<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.4<!-- -->%</td></tr><tr class="bg-white"><td class="px-4 py-3 font-bold text-slate-900">OnyVa IR90 50%</td><td class="px-4 py-3 text-slate-700">37<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">35<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">93.8<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.6<!-- -->%</td></tr><tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-900">OnyVa IR90 70%</td><td class="px-4 py-3 text-slate-700">42<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">19.4<!-- -->%</td><td class="px-4 py-3 text-slate-700 font-semibold">93.8<!-- -->%</td><td class="px-4 py-3 text-green-700 font-semibold">99.1<!-- -->%</td></tr></tbody></table></div><p class="text-slate-500 text-sm">VLT = Visible Light Transmission • TSER = Total Solar Energy Rejected • IR Rejection = Infrared heat blocked • Higher TSER/IRR = more heat blocked</p></div></section><section class="py-16 bg-slate-950 border-y border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Nexfil Safety &amp; Anti-Graffiti Films</h2><p class="text-slate-300 text-lg leading-relaxed max-w-4xl mb-8">Full safety range from 2 mil entry-level to 12 mil blast mitigation. Plus 4 mil exterior anti-graffiti for tagged glass.</p><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-SAFETY-2MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Safety Film 2mil Clear</h3><p class="text-slate-600 text-sm">Entry-level clear safety film. Holds glass together on impact. Residential windows and doors.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-SAFETY-4MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Safety Film 4mil Clear</h3><p class="text-slate-600 text-sm">Standard 4 mil safety film. Most popular for homes and retail. Significantly slows forced entry.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-SAFETY-7MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Safety Film 7mil Clear</h3><p class="text-slate-600 text-sm">7 mil heavy-duty safety film for schools, government, and commercial.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-SAFETY-8MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Safety Film 8mil Clear</h3><p class="text-slate-600 text-sm">8 mil dual-ply safety film for blast mitigation, schools, and government facilities.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-SAFETY-12MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Safety Film 12mil Clear</h3><p class="text-slate-600 text-sm">12 mil maximum protection film. Blast mitigation, government, military applications.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-DYED-SAFETY-4MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Dyed Safety 4mil Black 50%</h3><p class="text-slate-600 text-sm">Combines security with privacy tinting. 4 mil at 50% VLT.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-blue-700 uppercase tracking-widest">NF-AG-4MIL</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Anti-Graffiti 4mil Exterior</h3><p class="text-slate-600 text-sm">Exterior sacrificial anti-graffiti film. Peel and replace when tagged. Fraction of glass replacement cost.</p></div></div></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Nexfil Decorative Films</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">Privacy and decorative films for office partitions, server rooms, storefronts, and residential glass.</p><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Blackout</h3><p class="text-slate-600 text-sm">Total blackout film. 100% glare reduction. Media rooms, server rooms, complete privacy.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Whiteout</h3><p class="text-slate-600 text-sm">Opaque white film. Privacy with soft light diffusion. Office partitions, sidelights, storefronts.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">White Frost</h3><p class="text-slate-600 text-sm">Frosted white privacy film. Diffuses natural light while providing full privacy day and night.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Interior Film INT 100</h3><p class="text-slate-600 text-sm">Interior surface protection film. Clear base for custom applications.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Silver Matte</h3><p class="text-slate-600 text-sm">Non-reflective silver matte finish with strong heat rejection. Clean professional look.</p></div></div></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Why Nexfil for Arizona Properties</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">OnyVa IR90 — 90% IR</h3><p class="text-slate-600 text-sm leading-relaxed">Among the highest IR rejection rates available in architectural film. Non-metallic — no signal interference. Five VLT levels (5–70%) cover every HOA, commercial, and privacy scenario.</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Lux IR80 Nano-Ceramic</h3><p class="text-slate-600 text-sm leading-relaxed">80% IR rejection at mid price point. The right spec for interior rooms, north/east exposures, and budget-sensitive residential where full OnyVa is over-spec.</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Solar Bronze 83.5% TSER</h3><p class="text-slate-600 text-sm leading-relaxed">Highest TSER in the Nexfil sputter line. Copper construction with warm bronze exterior. Purpose-built for west- and south-facing Arizona commercial glazing.</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Full Safety Range</h3><p class="text-slate-600 text-sm leading-relaxed">2 mil, 4 mil, 7 mil, 8 mil, and 12 mil safety films. Covers everything from retail storefronts to government blast mitigation specifications.</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Authorized Distributor</h3><p class="text-slate-600 text-sm leading-relaxed">Arizona House of Film is an authorized Nexfil distributor — direct-from-manufacturer pricing, drop-ship available to licensed contractors across Arizona.</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Gardena CA Manufacturer</h3><p class="text-slate-600 text-sm leading-relaxed">Made in the U.S. at Nexfil’s Gardena, California facility. 1–2 week lead time on order-in SKUs; stocked OnyVa and Lux ship same-week in Phoenix.</p></div></div></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Nexfil Applications by Property Type</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><span class="text-xs font-black text-green-700 uppercase tracking-widest">OnyVa IR90 35%</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Residential Premium</h3><p class="text-slate-600 text-sm">Clear appearance with 90% IR rejection. HOA-friendly. The right spec for west-facing living rooms, primary bedrooms, and any glass where heat comfort matters more than darkness.</p></div><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Lux IR80 35%</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Residential Value</h3><p class="text-slate-600 text-sm">Non-reflective nano-ceramic at the value tier. 80% IR rejection with no metallic look and no signal interference. Most popular residential SKU in the Nexfil line.</p></div><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Twilight 10 / Solar Bronze 20%</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Commercial High-Rise</h3><p class="text-slate-600 text-sm">Maximum privacy and TSER. Dual reflective grey or copper-based bronze. Purpose-built for high-solar-load west and south perimeters.</p></div><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Safety 8–12 mil</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Schools &amp; Government</h3><p class="text-slate-600 text-sm">Blast mitigation and forced-entry resistance for schools, government facilities, and high-security commercial. 12 mil meets military-grade applications.</p></div></div></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Nexfil Installed Pricing — Phoenix AZ</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">All Nexfil installations are custom-quoted based on glass type, square footage, film selection, and access. Contact us for exact installed pricing.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"><div class="bg-white border-l-4 border-green-500 p-6"><h3 class="font-black text-slate-950 text-sm uppercase mb-1">Lux IR80 Nano-Ceramic</h3><p class="text-green-700 font-black text-lg mb-1">$8–$14/sq ft installed</p><p class="text-slate-500 text-xs">Residential value-tier nano-ceramic</p></div><div class="bg-white border-l-4 border-green-500 p-6"><h3 class="font-black text-slate-950 text-sm uppercase mb-1">OnyVa IR90 Nano-Ceramic</h3><p class="text-green-700 font-black text-lg mb-1">$10–$18/sq ft installed</p><p class="text-slate-500 text-xs">Premium 90% IR rejection — 5 VLT levels</p></div><div class="bg-white border-l-4 border-green-500 p-6"><h3 class="font-black text-slate-950 text-sm uppercase mb-1">Safety 4–12 mil</h3><p class="text-green-700 font-black text-lg mb-1">$10–$25/sq ft installed</p><p class="text-slate-500 text-xs">Clear safety film — blast mitigation optional</p></div></div><p class="text-slate-600 text-sm font-medium">Free on-site estimate for all Nexfil installations. Call <a href="tel:480-788-1591" class="text-green-700 font-bold">(480) 788-1591</a>, <a class="text-green-700 font-bold underline" href="/get-a-quote">request a quote online</a>, or try our <a class="text-green-700 font-bold underline" href="/ai-window-film-estimator">AI window film estimator</a>.</p></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Why Arizona House of Film for Nexfil</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Authorized Distributor</h3><p class="text-slate-600 text-sm leading-relaxed">Direct-from-Gardena pricing. Drop-ship available to licensed Arizona contractors through our distributor program.</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Licensed</h3><p class="text-slate-600 text-sm leading-relaxed">ROC #314088 — Arizona licensed window film contractor. W-2 crews, full workers’ comp, commercial GL.</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Stocked in Phoenix</h3><p class="text-slate-600 text-sm leading-relaxed">OnyVa IR90 and Lux IR80 highest-volume SKUs stocked locally — same-week install. Full catalog order-in at 1–2 weeks.</p></div><div class="border-l-4 border-green-500 p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">AI Estimator</h3><p class="text-slate-600 text-sm leading-relaxed">Upload a photo of your glass — our AI identifies the right Nexfil SKU and returns installed pricing in seconds.</p></div></div></div></section><section class="bg-gray-900 border-t-4 border-green-500 py-12 px-6 my-10 rounded-lg"><div class="max-w-3xl mx-auto text-center"><div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 w-10 h-10"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><h2 class="text-2xl font-black text-white uppercase tracking-tight mb-3">Get Your Instant Window Film Estimate</h2><p class="text-gray-400 mb-6 text-base">Enter your property type, window count, and film preference — get a ballpark cost range in under 2 minutes. No obligation. Free on-site estimate follows.</p><a href="/window-film-cost-estimator" class="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-8 py-4 rounded-lg text-lg transition-colors">Use the Cost Estimator →</a><p class="text-gray-600 text-xs mt-4">Residential · Commercial · Government · All film types</p></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Frequently Asked Questions — Nexfil Window Film</h2><div class="space-y-6 max-w-4xl"><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">What is Nexfil OnyVa IR90?</h3><p class="text-slate-600 leading-relaxed">OnyVa IR90 is Nexfil USA’s flagship nano-ceramic film with 90% IR (infrared) rejection — among the highest in the architectural film market. It is non-metallic, so it does not interfere with GPS, cellular, WiFi, or Bluetooth signals. OnyVa is offered in VLT levels from 5% to 70%, so you can pick the exact darkness while keeping the same 90% IR performance. In Arizona heat, OnyVa IR90 70% is the nearly-invisible option, and 20–35% VLT are the most-specified residential and commercial choices.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">How does Nexfil compare to LLumar and Hüper Optik?</h3><p class="text-slate-600 leading-relaxed">All three are professional architectural film manufacturers. Nexfil OnyVa IR90 rejects 90% of IR — comparable to Hüper Optik Ceramic and LLumar IRX at a better wholesale price point, which is why we specify it on cost-sensitive commercial jobs. Hüper Optik still leads on optical neutrality for high-end residential, and LLumar has broader NFRC rebate documentation coverage. For most Arizona projects, the three lines are interchangeable by spec — Arizona House of Film picks based on availability, price, and rebate eligibility.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">Is Nexfil available for same-week installation in Phoenix?</h3><p class="text-slate-600 leading-relaxed">Most Nexfil architectural SKUs ship from Gardena, California in 1–2 weeks. We stock the highest-volume OnyVa IR90 and Lux IR80 rolls in Phoenix, so same-week installation is routine for those SKUs. Specialty colors, non-stocked VLT levels, and safety films 7 mil and above are order-in only. We confirm lead time for your selected SKU during the free on-site estimate.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">What is the difference between Lux IR80 and OnyVa IR90?</h3><p class="text-slate-600 leading-relaxed">Both are non-metallic nano-ceramic films with no signal interference. Lux IR80 rejects 80% of IR and is the value-tier nano-ceramic option — it works well on interior rooms and north/east exposures where heat load is moderate. OnyVa IR90 rejects 90% of IR (a 10-point jump) and is the premium nano-ceramic — the right spec for west- and south-facing glass in Phoenix where IR load is at its worst. OnyVa also holds TSER performance better across the VLT range.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">Does Arizona House of Film install Nexfil film?</h3><p class="text-slate-600 leading-relaxed">Yes. Arizona House of Film is an authorized Nexfil USA distributor and installer. Every install is performed by our W-2 crews under Arizona ROC #314088. We carry the full Nexfil architectural line — OnyVa IR90, Lux IR80, Centurion and HP Centurion carbon, Solar Bronze, Elegance, Prestigious Silver, Twilight dual reflective, Silver Reflective 05–50%, Safety Film 2–12 mil, Anti-Graffiti 4 mil, and the decorative range (Blackout, Whiteout, White Frost, Silver Matte).</p></div></div></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">Get a Free Nexfil Estimate</h2><p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">Free on-site assessment. Nexfil film specified for your glass type and performance goals. Or try the AI estimator for instant pricing. Licensed ROC #314088.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/get-a-quote">Request Quote</a><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-white text-white bg-transparent hover:bg-white hover:text-slate-950 px-10 h-16 text-xl font-black rounded-none transition-all" href="/ai-window-film-estimator">AI Estimator →</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></section><section class="mt-10 border-t border-slate-200 pt-6 pb-4"><div class="max-w-7xl mx-auto px-6 lg:px-8"><p class="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Related Resources</p><div class="flex flex-wrap gap-3 text-sm"><a class="text-green-700 underline" href="/brands">All Film Brands</a><a class="text-green-700 underline" href="/energy-saving-window-films">Energy-Saving Window Films</a><a class="text-green-700 underline" href="/window-film-distributor-phoenix">Window Film Distributor Phoenix</a><a class="text-green-700 underline" href="/commercial-window-tinting">Commercial Window Film</a><a class="text-green-700 underline" href="/residential-window-tinting">Residential Window Film</a><a class="text-green-700 underline" href="/brands/huper-optik">Hüper Optik Window Film</a><a class="text-green-700 underline" href="/brands/llumar">LLumar Window Film</a><a class="text-green-700 underline" href="/ai-window-film-estimator">AI Estimator</a></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

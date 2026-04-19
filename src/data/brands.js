@@ -603,5 +603,47 @@ export const brands = [
       { question: "Is Panorama window film made by Solar Gard?", answer: "Yes — Panorama is Solar Gard's premium spectrally selective architectural film line, manufactured by Saint-Gobain Performance Plastics. Arizona House of Film is an authorized Solar Gard installer in Phoenix and Scottsdale." },
       { question: "Does Panorama film qualify for SRP and APS energy rebates?", answer: "Yes. Panorama films carry NFRC certification with documented SHGC and U-factor values that meet SRP and APS commercial energy rebate requirements. We provide all compliance documentation with every install." }
     ]
+  },
+  {
+    name: "Nexfil USA",
+    slug: "nexfil",
+    category: "Major Manufacturers",
+    tagline: "Professional Window Film Manufacturer",
+    logo: "",
+    headquarters: "Gardena, CA",
+    website: "https://nexfilusa.com",
+    description: "Nexfil USA manufactures professional-grade architectural and automotive window film from Gardena, California. Arizona House of Film is an authorized Nexfil distributor offering the complete Nexfil architectural line.",
+    url: "https://nexfilusa.com",
+    relatedFilms: ["commercial", "energy-saving", "safety"],
+    specs: {
+      heatRejection: "Up to 90% IR (OnyVa IR90)",
+      uvProtection: "99%+ Blockage",
+      warranty: "Factory Backed",
+      tech: "Nano-Ceramic + Sputter Metalized"
+    },
+    arizonaNote: "Nexfil OnyVa IR90 is our primary nano-ceramic spec for cost-sensitive Arizona commercial perimeters — 90% IR rejection at a better wholesale price point than Hüper Optik or LLumar IRX. Lux IR80 covers the residential value tier, and Solar Bronze 20% is our go-to for west/south-facing facades where maximum TSER matters more than clarity. Stocked in Phoenix for same-week install.",
+    bestFor: ["Premium residential nano-ceramic", "Cost-sensitive commercial perimeters", "HOA-friendly clear films", "West/south-facing facades", "Authorized distributor pricing"],
+    highlights: [
+      "OnyVa IR90 — 90% IR rejection nano-ceramic",
+      "Lux IR80 — 80% IR rejection nano-ceramic",
+      "Solar Bronze 20% — 83.5% total solar energy rejected",
+      "Complete safety film range: 2-12 mil",
+      "Authorized drop-ship partner"
+    ],
+    filmSeries: [
+      { name: "Nexfil OnyVa IR90", description: "Premium nano-ceramic. 90% IR rejection across 5 VLT levels (5–70%). Non-metallic — no signal interference. Flagship Nexfil architectural spec." },
+      { name: "Nexfil Lux IR80", description: "Value-tier nano-ceramic. 80% IR rejection across 4 VLT levels (5–50%). Most popular residential SKU in the Nexfil line." },
+      { name: "Nexfil Solar Bronze", description: "Sputter metalized with copper construction. 83.5% TSER at 20% VLT — highest solar control in the Nexfil sputter line." },
+      { name: "Nexfil Centurion / HP Centurion", description: "Carbon and carbon-sputter color-stable films. Will not fade or purple. Mid price point with IR30–IR50 rejection." },
+      { name: "Nexfil Elegance / Prestigious / Twilight", description: "Ni+Chrome and aluminium sputter metalized line. Dual reflective Twilight, neutral Elegance, silver Prestigious — commercial and high-rise standards." },
+      { name: "Nexfil Safety Films", description: "Full safety range from 2 mil entry-level to 12 mil blast mitigation. 7 mil and 8 mil for schools, government, and commercial." },
+      { name: "Nexfil Anti-Graffiti", description: "4 mil exterior sacrificial film. Peel and replace when tagged — fraction of glass replacement cost." },
+      { name: "Nexfil Decorative", description: "Blackout, Whiteout, White Frost, and Silver Matte. Privacy and decorative architectural films for office partitions, server rooms, and storefronts." }
+    ],
+    faqs: [
+      { question: "Is Arizona House of Film an authorized Nexfil distributor?", answer: "Yes. Arizona House of Film is an authorized Nexfil USA distributor and installer. We stock the highest-volume OnyVa IR90 and Lux IR80 SKUs in Phoenix and drop-ship the full catalog to licensed Arizona contractors with 1–2 week lead time direct from Gardena, California." },
+      { question: "What is Nexfil OnyVa IR90?", answer: "OnyVa IR90 is Nexfil's flagship nano-ceramic film with 90% IR rejection — among the highest in the architectural film market. It is non-metallic, so it does not interfere with GPS, cellular, WiFi, or Bluetooth signals. Offered in VLT levels from 5% to 70%." },
+      { question: "How does Nexfil compare to LLumar and Hüper Optik?", answer: "Nexfil OnyVa IR90 is comparable to Hüper Optik Ceramic and LLumar IRX at a better wholesale price point. Hüper Optik still leads on optical neutrality for high-end residential; LLumar has broader NFRC rebate documentation. For most Arizona projects the three lines are interchangeable by spec." }
+    ]
   }
 ];

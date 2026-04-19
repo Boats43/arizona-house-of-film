@@ -37,6 +37,21 @@ const faqSchema = {
       name: 'Can I get privacy without blocking my view?',
       acceptedAnswer: { '@type': 'Answer', text: 'During the day, yes — one-way mirror film and dual-reflective film provide privacy while maintaining clear outward views. At night, no film provides both full privacy and clear views simultaneously. The best compromise is a dual-layer approach: frosted film on the lower portion of the window for 24/7 privacy where it matters most, and solar or clear film on the upper portion to preserve your view and natural light.' },
     },
+    {
+      '@type': 'Question',
+      name: 'Does reflective window film work at night?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Reflective window film — including one-way mirror, dual-reflective, and silver/bronze solar films — operates on a light differential and only provides privacy on the brighter side. During daylight, sunlight is brighter than your interior, so the exterior becomes a mirror. After sunset with interior lights on, the brighter side flips to your interior, and people outside can see through while you see your own reflection. For 24/7 privacy that does not reverse at night, use frosted/etched film or electric switchable PDLC film.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best two-way privacy window film?',
+      acceptedAnswer: { '@type': 'Answer', text: '"Two-way privacy" on clear glass is physically impossible with a passive film because reflectivity always follows the brighter side of the glass. The closest match is frosted or etched film, which diffuses light symmetrically in both directions and blocks clear views from inside and outside at all hours. For clear glass with on-demand privacy from both sides, electric switchable (PDLC) film is the only technology that delivers true two-way privacy at the flip of a switch — transparent when powered on, opaque when off.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does day and night privacy film work?',
+      acceptedAnswer: { '@type': 'Answer', text: 'There is no single film inherently called "day and night privacy film" — the phrase describes the result, not a product type. Three technologies deliver true 24/7 privacy: (1) frosted or etched films diffuse light and obscure views in both directions at all hours, (2) electric switchable PDLC film turns opaque on demand with a wall switch, and (3) blackout film is fully opaque and blocks 100% of light transfer. One-way and reflective films only deliver daytime privacy and require curtains or blinds after dark.' },
+    },
   ],
 };
 
@@ -181,6 +196,16 @@ export default function DayAndNightPrivacyFilm() {
                 {sol.note && <p className="text-xs text-slate-500 mt-1">{sol.note}</p>}
               </div>
             ))}
+          </div>
+          <div className="mt-10 bg-white border border-slate-200 rounded-xl p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+            <div>
+              <h3 className="font-black text-slate-900 mb-1">Browse the full catalog</h3>
+              <p className="text-sm text-slate-600">See every 24/7 privacy option we stock — samples ship same week.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to="/films/frosted-etched-films" className="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-lg text-sm text-center">Frosted & Etched Films →</Link>
+              <Link to="/electric-privacy-film-arizona" className="bg-purple-600 hover:bg-purple-500 text-white font-bold px-6 py-3 rounded-lg text-sm text-center">Electric Switchable Film →</Link>
+            </div>
           </div>
         </div>
       </section>

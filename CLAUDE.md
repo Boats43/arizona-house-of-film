@@ -13,7 +13,7 @@
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
 - **Trigger**: `"postbuild": "node scripts/prerender.js && node scripts/generate-sitemaps.js"` in package.json — `generate-sitemaps.js` runs automatically on every build
 - **Sitemap generation**: `scripts/generate-sitemaps.js` dynamically writes `public/sitemap-films.xml` (and `dist/sitemap-films.xml`) with all 618 Solyx SKU URLs + 8 category hubs (626 total) — never hand-edit sitemap-films.xml
-- **Result**: 956 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
+- **Result**: 961 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
 - **SKU routes**: `scripts/prerender.js` imports `solyxProducts` + `solyxToFilmsCategory` from `src/data/solyxFilms.js` and spreads generated SKU URLs into `ROUTES` — never hand-list SKUs
@@ -33,8 +33,8 @@
 - `vercel.json` — 84 redirects (incl. 16 legacy SKU category 301s + 4 stale category-alias 301s) + SPA rewrite fallback + security headers
 
 ## Page Counts
-- **Total prerendered**: 956
-- **Sitemap URLs**: 929 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
+- **Total prerendered**: 961
+- **Sitemap URLs**: 933 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
 - **Ahrefs health score**: 97
 - **Page JSX files**: 111 (48 root + 27 locations + 21 informational + 6 solutions + 7 brands + 2 films)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
@@ -54,7 +54,7 @@
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
-- Build must pass 956/956 prerender before pushing
+- Build must pass 961/961 prerender before pushing
 
 ## Open Items (as of April 4, 2026)
 - `/residential-window-tinting-phoenix` now internally linked from Home, Residential, and WindowFilmPhoenix — verify GSC pickup
@@ -67,4 +67,6 @@
 - `/day-and-night-privacy-window-film` added — targets trending day/night privacy queries (+120%), 5 FAQs, 4 solution options — monitor indexing
 - `/electric-privacy-film-arizona` added — targets switchable smart glass queries (+70%), PDLC technology, 5 FAQs — monitor indexing
 - `/privacy-film-sliding-glass-door` added — targets sliding door film queries (+8%), 6 film options, 5 FAQs — monitor indexing
-- Last updated: April 4, 2026
+- `/day-and-night-privacy-window-film` expanded — 3 new FAQs targeting GSC query variants (reflective at night, best two-way film, how day/night film works); 2 requested variants were already present verbatim so they were not duplicated. Added explicit internal links to `/films/frosted-etched-films` and `/electric-privacy-film-arizona`.
+- `/solyx-bird-safety-film` added — dedicated SEO page for Solyx bird-safe collection (7 SKUs: BSFD, BSFV, BSFH, BSFT, BSFAC-01, BSFAC-02, SC672), FAQPage + Service schema, FLAP/ABC 2×4-rule references, LEED Pilot Credit 55 context, commercial + residential applications — monitor indexing for "solyx bird safety film" and "bird safety window film arizona"
+- Last updated: April 19, 2026

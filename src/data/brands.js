@@ -645,5 +645,80 @@ export const brands = [
       { question: "What is Nexfil OnyVa IR90?", answer: "OnyVa IR90 is Nexfil's flagship nano-ceramic film with 90% IR rejection — among the highest in the architectural film market. It is non-metallic, so it does not interfere with GPS, cellular, WiFi, or Bluetooth signals. Offered in VLT levels from 5% to 70%." },
       { question: "How does Nexfil compare to LLumar and Hüper Optik?", answer: "Nexfil OnyVa IR90 is comparable to Hüper Optik Ceramic and LLumar IRX at a better wholesale price point. Hüper Optik still leads on optical neutrality for high-end residential; LLumar has broader NFRC rebate documentation. For most Arizona projects the three lines are interchangeable by spec." }
     ]
+  },
+  {
+    slug: "llumar",
+    name: "LLumar",
+    category: "Major Manufacturers",
+    tagline: "Window Film by Eastman",
+    headquarters: "Martinsville, VA",
+    website: "https://llumar.com",
+    url: "https://llumar.com",
+    description: "LLumar window film is manufactured by Eastman Performance Films. Arizona House of Film installs the full LLumar architectural line including ATC ceramic, CTX nano-ceramic, and Affinity dual-reflective series.",
+    relatedFilms: ["commercial", "energy-saving", "safety"],
+    specs: {
+      heatRejection: "Up to 95% IR (CTX)",
+      uvProtection: "99.9% Blockage",
+      warranty: "Lifetime Residential",
+      tech: "Nano-Ceramic + Dual-Reflective"
+    },
+    arizonaNote: "LLumar is our primary commercial spec when the project needs NFRC documentation for SRP/APS rebate applications or COMcheck compliance. CTX nano-ceramic handles high-end residential without signal interference, ATC is the workhorse non-reflective ceramic, and Affinity dual-reflective covers daytime-privacy commercial storefronts.",
+    bestFor: ["NFRC-documented commercial projects", "SRP/APS energy rebates", "HOA-friendly residential", "Signal-sensitive installations", "Dual-pane safe applications"],
+    highlights: [
+      "CTX nano-ceramic — signal-friendly high performance",
+      "ATC ceramic — non-reflective heat rejection",
+      "Affinity dual-reflective — daytime privacy",
+      "AIR series — nearly clear UV protection",
+      "Safety and security film range"
+    ],
+    filmSeries: [
+      { name: "LLumar CTX", description: "Nano-ceramic with up to 95% IR rejection. Non-metallic — no signal interference. Premium residential and commercial." },
+      { name: "LLumar ATC", description: "Advanced Thermal Control ceramic. Non-reflective neutral appearance. Workhorse residential spec." },
+      { name: "LLumar Affinity", description: "Dual-reflective series. Daytime privacy with mirror exterior. Commercial storefront standard." },
+      { name: "LLumar AIR", description: "Nearly-clear residential UV protection. Keeps glass looking untinted while blocking 99.9% UV." },
+      { name: "LLumar Safety / Magnum", description: "8-mil and 12-mil security films for commercial smash-and-grab, schools, and blast mitigation." }
+    ],
+    faqs: [
+      { question: "Is LLumar made by Eastman?", answer: "Yes. LLumar is manufactured by Eastman Performance Films in Martinsville, Virginia. Eastman also makes Vista (premium residential), SunTek (high-performance), and several automotive lines. Arizona House of Film is an authorized LLumar installer." },
+      { question: "Does LLumar CTX film interfere with GPS or cellular signals?", answer: "No. CTX nano-ceramic is non-metallic and does not interfere with GPS, cellular, WiFi, or Bluetooth signals. This makes it the preferred LLumar choice for corporate offices, medical facilities, and homes with heavy signal-dependent devices." },
+      { question: "Does LLumar qualify for SRP or APS rebates in Arizona?", answer: "Select LLumar commercial films with qualifying SHGC ratings meet SRP Business Solutions and APS energy efficiency rebate requirements. We provide NFRC-rated data sheets during the free estimate." }
+    ]
+  },
+  {
+    slug: "suntek",
+    name: "SunTek",
+    category: "Major Manufacturers",
+    tagline: "High Performance Window Film",
+    headquarters: "Martinsville, VA",
+    website: "https://suntekfilms.com",
+    url: "https://suntekfilms.com",
+    description: "SunTek window films are manufactured by Eastman Performance Films. Arizona House of Film stocks SunTek CXP ceramic and CIR carbon IR series for same-week residential and commercial installation.",
+    relatedFilms: ["commercial", "energy-saving", "safety"],
+    specs: {
+      heatRejection: "Up to 91% IR (CXP)",
+      uvProtection: "99% Blockage",
+      warranty: "Lifetime Residential",
+      tech: "Ceramic + Carbon IR"
+    },
+    arizonaNote: "SunTek is our IN-STOCK Eastman line — CXP ceramic and CIR carbon IR are the volume SKUs we install same-week on residential and commercial projects across Phoenix. Color-stable carbon construction means no fading or purpling over Arizona's UV cycle.",
+    bestFor: ["Same-week residential installs", "Color-stable carbon applications", "Budget-conscious premium spec", "Light-commercial storefronts"],
+    highlights: [
+      "CXP ceramic — non-reflective premium heat rejection",
+      "CIR carbon IR — color stable performance",
+      "Dual reflective series — daytime privacy",
+      "Safety film range",
+      "In stock — same week installation available"
+    ],
+    filmSeries: [
+      { name: "SunTek CXP", description: "Ceramic Extreme Performance. Non-reflective nano-ceramic with up to 91% IR rejection. Non-metallic — no signal interference." },
+      { name: "SunTek CIR", description: "Carbon IR. Color-stable carbon construction with strong IR rejection at a mid price point. Will not fade or purple." },
+      { name: "SunTek Dual Reflective", description: "Mirror exterior with neutral interior. Strong daytime privacy for offices and storefronts." },
+      { name: "SunTek Safety Series", description: "4-mil, 8-mil, and 12-mil clear safety films for retail, schools, and government applications." }
+    ],
+    faqs: [
+      { question: "Is SunTek made by Eastman?", answer: "Yes. SunTek is manufactured by Eastman Performance Films in Martinsville, Virginia — the same plant that produces LLumar. SunTek is Eastman's high-performance residential and light-commercial line." },
+      { question: "Can you install SunTek same week in Phoenix?", answer: "Yes. SunTek CXP ceramic and CIR carbon IR are stocked in our Phoenix warehouse. Most residential installs can be scheduled within the same week as estimate approval." },
+      { question: "What is the difference between SunTek CXP and CIR?", answer: "CXP is a non-reflective ceramic — premium heat rejection, no metallic look, no signal interference. CIR is carbon-based, color-stable, and sits at a mid price point with strong IR rejection but not quite the optical neutrality of CXP. Both are non-metallic and color-stable." }
+    ]
   }
 ];

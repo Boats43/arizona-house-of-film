@@ -186,7 +186,7 @@ const ROUTES = [
   '/best-window-film-arizona-heat', '/window-film-energy-rebates-arizona',
   '/ceramic-vs-dual-reflective-film', '/window-film-cost-arizona',
   '/security-film-vs-tempered-glass', '/how-long-does-window-film-last',
-  '/store', '/welcome', '/404',
+  '/store', '/welcome', '/404', '/privacy-policy',
   '/shatterproof-window-film',
   '/day-and-night-privacy-window-film',
   '/electric-privacy-film-arizona',

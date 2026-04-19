@@ -560,6 +560,7 @@
   </url>
   <url>
     <loc>https://arizonahouseoffilm.com/welcome</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -571,16 +572,13 @@
   </url>
   <url>
     <loc>https://arizonahouseoffilm.com/brands/flexfilm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arizonahouseoffilm.com/brands/panorama</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arizonahouseoffilm.com/window-film-cost-estimator</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

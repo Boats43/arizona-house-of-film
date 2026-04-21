@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 
 const CasperCloakingPage = () => {
-  const pageTitle = "Casper Cloaking Film Arizona | Screen Privacy for Phoenix Offices | ROC #314088";
-  const metaDescription = "Casper cloaking film installation Phoenix AZ — plus Quantum Cloaking Film, our preferred partner brand. Screen privacy for conference rooms & glass offices. $20–$35/sq ft. ROC #314088.";
+  const pageTitle = "Casper Cloaking Film Arizona | From $4,500 | Screen Privacy Phoenix Offices | ROC #314088";
+  const metaDescription = "Casper cloaking film installation Phoenix AZ — screen privacy for conference rooms and glass offices. From $4,500 for smaller applications; conference rooms start around $6,000. Free on-site consultation. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/casper-cloaking";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";
 
@@ -26,7 +26,7 @@ const CasperCloakingPage = () => {
       { "@type": "Question", name: "How does Casper cloaking film work?", acceptedAnswer: { "@type": "Answer", text: "Casper film uses a micro-louver optical technology that controls the angle at which light passes through the film. Light traveling straight through — from a person inside looking at a screen — passes normally. Light reflecting off the screen at an angle — visible from outside the glass — is blocked. The result is that screens are invisible from outside while remaining fully visible from inside." } },
       { "@type": "Question", name: "Does Casper film affect screen brightness or color from inside?", acceptedAnswer: { "@type": "Answer", text: "No. Casper cloaking film has zero measurable impact on screen visibility, color accuracy, or brightness for people inside the office. It does not require any adjustment to screen brightness settings." } },
       { "@type": "Question", name: "What types of screens does Casper film work with?", acceptedAnswer: { "@type": "Answer", text: "Casper film works with LED and OLED screens — the standard in modern commercial environments. It is effective on monitors, presentation screens, video walls, and laptop displays. It is not designed for older fluorescent backlit LCD screens." } },
-      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper and Quantum Cloaking Film both run $20–$35 per square foot installed depending on glass area and accessibility. Most single conference room installations run $1,500–$4,000. Quantum Cloaking Film is our preferred partner brand. Contact Arizona House of Film at (480) 788-1591 for a free commercial estimate." } },
+      { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is custom quoted after a free on-site consultation. Smaller applications like door sidelights or a single glass panel start at $4,500. Standard conference rooms typically start around $6,000 and scale up based on glass dimensions, screen positions, and whether we need full or partial height coverage. Every Casper project begins with a physical site survey — wavelength alignment to your specific screen positions requires on-site measurement. Contact Arizona House of Film at (480) 788-1591 to schedule a consultation." } },
       { "@type": "Question", name: "Do you install Quantum Cloaking Film in Phoenix and Scottsdale?", acceptedAnswer: { "@type": "Answer", text: "Yes. Arizona House of Film installs Quantum Cloaking Film® as an alternative cloaking film specification. Quantum Cloaking is used by Wells Fargo, Chase Bank, hospitals, police stations, and government buildings. Both Quantum Cloaking and Casper by Designtex achieve identical results — screens appear completely black from outside while remaining fully visible inside. Specification is determined per project. Call (480) 788-1591 for a free commercial estimate." } }
     ]
   };
@@ -142,9 +142,10 @@ const CasperCloakingPage = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Installation Cost — Phoenix & Scottsdale</h2>
-          <p className="text-lg text-slate-700 mb-4">Cloaking film (Casper and Quantum) runs $20–$35 per square foot installed — priced at a premium over standard privacy film due to the specialty optical technology. Most single conference room installations (40–120 sq ft of glass) run $1,500–$4,000. Full office floor projects are quoted by scope.</p>
-          <p className="text-lg text-slate-700">All installations include a site assessment to confirm glass type compatibility and screen placement angles. Call <a href="tel:4807881591" className="text-blue-600 hover:underline">(480) 788-1591</a> for a free commercial estimate.</p>
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Installation Cost — Phoenix &amp; Scottsdale</h2>
+          <p className="text-lg text-slate-700 mb-4">Casper cloaking is <strong>custom quoted after a free on-site consultation</strong>. Smaller applications like door sidelights or a single glass panel start at <strong>$4,500</strong>. Standard conference rooms typically start around <strong>$6,000</strong> and scale from there based on glass dimensions, screen positions, and whether we need full or partial height coverage.</p>
+          <p className="text-lg text-slate-700 mb-4">Decorative Films LLC MSRP is $58/sqft film only. Professional installation by Arizona House of Film adds precision wavelength alignment, edge sealing, and a licensed contractor guarantee. Every Casper project begins with a free on-site consultation — ROC #314088.</p>
+          <p className="text-lg text-slate-700">Call <a href="tel:4807881591" className="text-blue-600 hover:underline">(480) 788-1591</a> to schedule your consultation.</p>
         </section>
 
         <section className="mb-12">
@@ -159,25 +160,26 @@ const CasperCloakingPage = () => {
 
         <section className="mb-12 bg-slate-50 rounded-lg p-6 md:p-8">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Casper Cloaking Film Cost — Phoenix AZ</h2>
-          <p className="text-slate-700 mb-4">Casper cloaking film installation in Phoenix and Scottsdale is custom-quoted per project. Pricing is based on glass square footage, access difficulty, and project scope. These ranges reflect completed Arizona installations:</p>
+          <p className="text-slate-700 mb-4">Every Casper project is custom-quoted after a free on-site consultation. Wavelength alignment to your specific screen positions and glass dimensions requires physical measurement — we do not quote Casper sight-unseen. Starting points by application scope:</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div className="border border-slate-200 rounded-lg p-4">
-              <div className="font-black text-xl mb-1 text-green-700">$20–$35/sq ft</div>
-              <div className="font-bold text-slate-800 mb-2">Conference Room Glass</div>
-              <div className="text-sm text-slate-600">Single conference room, 100–300 sq ft of glass. Most common Casper installation.</div>
+              <div className="font-black text-xl mb-1 text-green-700">From $4,500</div>
+              <div className="font-bold text-slate-800 mb-2">Small Applications</div>
+              <div className="text-sm text-slate-600">Door sidelights 3–4 ft, single glass panels, accent glazing. Lowest entry point for Casper screen privacy.</div>
             </div>
             <div className="border border-slate-200 rounded-lg p-4">
-              <div className="font-black text-xl mb-1 text-green-700">$15,000–$45,000</div>
-              <div className="font-bold text-slate-800 mb-2">Full Office Floor</div>
-              <div className="text-sm text-slate-600">Multiple conference rooms and glass partitions. Tech campus and corporate office standard.</div>
+              <div className="font-black text-xl mb-1 text-green-700">From $6,000</div>
+              <div className="font-bold text-slate-800 mb-2">Conference Room</div>
+              <div className="text-sm text-slate-600">Standard 50+ sq ft conference room or executive office. Scope-driven: $6,000–$20,000 typical for single-room projects.</div>
             </div>
             <div className="border border-slate-200 rounded-lg p-4">
-              <div className="font-black text-xl mb-1 text-green-700">Custom Quote</div>
-              <div className="font-bold text-slate-800 mb-2">Multi-Floor / Custom</div>
-              <div className="text-sm text-slate-600">High-rise office buildings, custom glass configurations, and broadcast/media facilities.</div>
+              <div className="font-black text-xl mb-1 text-green-700">From $6,000 — scoped on-site</div>
+              <div className="font-bold text-slate-800 mb-2">Full Floor / Multi-Room</div>
+              <div className="text-sm text-slate-600">Large buildouts, 150–300+ sq ft, and full-floor projects. $20,000–$40,000+ range depending on glass count and screen layout.</div>
             </div>
           </div>
-          <p className="text-slate-600 text-sm">Casper cloaking film is a premium specification. All projects are assessed on-site before quoting. Free assessment — call (480) 788-1591 or <a href="/get-a-quote" className="text-green-700 underline">submit a quote request</a>. Licensed ROC #314088.</p>
+          <p className="text-slate-700 mb-4">Decorative Films LLC MSRP: $58/sqft film only. Professional installation by Arizona House of Film adds precision wavelength alignment, edge sealing, and a licensed contractor guarantee. Every Casper project begins with a free on-site consultation — ROC #314088.</p>
+          <p className="text-slate-600 text-sm">Casper cloaking film is a premium specification. All projects are assessed on-site before quoting. Free consultation — call (480) 788-1591 or <a href="/get-a-quote" className="text-green-700 underline">submit a quote request</a>. Licensed ROC #314088.</p>
         </section>
 
         <section className="bg-slate-100 p-8 rounded-lg">

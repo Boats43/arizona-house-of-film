@@ -811,7 +811,8 @@ const allBlogData = [
       <tr><th>Application</th><th>Film Type</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
       <tr><td>Bathroom windows (2–4)</td><td>Frosted</td><td>$8–$12</td><td>$300–$800</td></tr>
       <tr><td>Sidelights + transom</td><td>Etched/decorative</td><td>$10–$14</td><td>$400–$1,200</td></tr>
-      <tr><td>Conference room (1–3 walls)</td><td>Frosted band / Casper</td><td>$12–$22</td><td>$1,500–$5,000</td></tr>
+      <tr><td>Conference room (1–3 walls)</td><td>Frosted band</td><td>$12–$22</td><td>$1,500–$5,000</td></tr>
+      <tr><td>Conference room w/ screens — Casper cloaking</td><td>Casper (see <a href="/blog/casper-cloaking-film-cost-phoenix">dedicated cost guide</a>)</td><td>Custom-quoted on-site</td><td>From $6,000</td></tr>
       <tr><td>Full office suite</td><td>Mixed</td><td>$10–$18</td><td>$3,000–$8,000</td></tr>
       <tr><td>Branded storefront</td><td>Custom printed</td><td>$14–$20</td><td>$2,000–$6,000</td></tr>
     </table>
@@ -951,8 +952,8 @@ const allBlogData = [
   },
   {
     slug: 'casper-cloaking-film-cost-phoenix',
-    title: 'Casper Cloaking Film Cost in Phoenix — 2026 Pricing Guide',
-    excerpt: 'Casper cloaking film makes screens invisible from outside while staying clear inside. 2026 pricing, glass compatibility, and Phoenix install process explained.',
+    title: 'Casper Cloaking Film Cost Phoenix 2026 | From $4,500 | Licensed Installer ROC #314088',
+    excerpt: 'Casper cloaking film starts at $4,500 for smaller glass applications like sidelights and single panels. Standard conference rooms start around $6,000. Every project is scoped during a free on-site consultation — screen positions and glass height determine the exact investment. Arizona House of Film — licensed Casper installer ROC #314088.',
     date: '2026-04-06',
     alt: 'Casper cloaking film on a Phoenix office conference room making screens invisible from outside.',
     keywords: 'Casper cloaking film cost, Casper cloaking film price, Casper cloaking film Phoenix',
@@ -962,7 +963,7 @@ const allBlogData = [
     faqs: [
       {
         question: 'How much does Casper cloaking film cost?',
-        answer: 'Casper cloaking film typically costs $25–$45 per square foot installed in Phoenix, depending on glass size, accessibility, and project scope. A single conference room (2–3 glass walls) averages $3,000–$8,000. Multi-room executive suites and law office buildouts run $8,000–$25,000+. The film itself is a specialty product — there is no generic equivalent, which drives the premium over standard privacy films. Arizona House of Film (ROC #314088) provides free on-site estimates.'
+        answer: 'Casper cloaking film starts at $4,500 for smaller applications like door sidelights or a single glass panel. Standard conference rooms (50+ sqft of glass) typically start around $6,000 and scale up based on glass dimensions, screen positions, and whether full or partial height coverage is required. Medium boardrooms run $10,000–$20,000; large buildouts $20,000–$40,000+; full-floor projects $40,000+. Arizona House of Film does not quote Casper per square foot or sight-unseen — every project begins with a free on-site consultation so we can align the film wavelength to your specific screen positions. ROC #314088.'
       },
       {
         question: 'What glass does Casper cloaking film work on?',
@@ -970,7 +971,7 @@ const allBlogData = [
       },
       {
         question: 'Is Casper cloaking film worth it?',
-        answer: 'For organizations where screen content confidentiality matters — law firms, financial services, healthcare with patient data, executive boardrooms — the ROI is clear. A single data breach or disclosed confidential presentation costs orders of magnitude more than cloaking film. For general offices without sensitive screen content, frosted privacy bands at $8–$14/sq ft achieve visual privacy at a lower price point. We help clients determine which solution matches their actual confidentiality requirements.'
+        answer: 'For organizations where screen content confidentiality matters — law firms, financial services, healthcare with patient data, executive boardrooms — the ROI is clear. A single data breach or disclosed confidential presentation costs orders of magnitude more than cloaking film. Casper starts at $4,500 for small applications and $6,000 for standard conference rooms. For general offices without sensitive screen content, frosted privacy bands achieve visual privacy at a lower price point. We help clients determine which solution matches their actual confidentiality requirements during the on-site consultation.'
       }
     ],
     ctaCity: 'Phoenix',
@@ -988,14 +989,16 @@ const allBlogData = [
     <p>The film is applied to the interior surface of the glass partition, just like standard window film. It does not require electricity, connectivity, or maintenance. Once installed, it works passively and permanently.</p>
 
     <h2>2026 Phoenix Pricing for Casper Cloaking Film</h2>
+    <p>Arizona House of Film does <strong>not quote Casper per square foot</strong>. Every project is scoped during a free on-site consultation — wavelength alignment to your specific screen positions and glass dimensions requires physical measurement. Starting points by application:</p>
     <table>
-      <tr><th>Application</th><th>Scope</th><th>Cost/Sq Ft</th><th>Typical Total</th></tr>
-      <tr><td>Single conference room (2–3 walls)</td><td>60–120 sq ft</td><td>$25–$35</td><td>$3,000–$5,000</td></tr>
-      <tr><td>Executive boardroom (3–4 walls)</td><td>100–200 sq ft</td><td>$25–$35</td><td>$4,000–$8,000</td></tr>
-      <tr><td>Multi-room suite (4–8 rooms)</td><td>300–600 sq ft</td><td>$22–$30</td><td>$8,000–$18,000</td></tr>
-      <tr><td>Full-floor buildout</td><td>1,000+ sq ft</td><td>$20–$28</td><td>$20,000+</td></tr>
+      <tr><th>Application</th><th>Scope</th><th>Starting Investment</th></tr>
+      <tr><td>Small applications (sidelights, single panel)</td><td>3–4 ft sidelight or single accent glazing</td><td>From $4,500</td></tr>
+      <tr><td>Standard conference room</td><td>50+ sq ft glass</td><td>From $6,000</td></tr>
+      <tr><td>Medium boardroom</td><td>80–150 sq ft glass</td><td>$10,000–$20,000</td></tr>
+      <tr><td>Large buildout</td><td>150–300 sq ft glass</td><td>$20,000–$40,000+</td></tr>
+      <tr><td>Full-floor buildout</td><td>300+ sq ft glass</td><td>$40,000+</td></tr>
     </table>
-    <p>Volume pricing available for multi-floor and tenant improvement projects. All pricing includes professional installation and Designtex product warranty. ROC #314088.</p>
+    <p><strong>Decorative Films LLC MSRP: $58/sqft film only.</strong> Professional installation by Arizona House of Film adds precision wavelength alignment, edge sealing, and a licensed contractor guarantee. Every Casper project begins with a free on-site consultation — ROC #314088.</p>
 
     <h2>Compatible Glass Types</h2>
     <p>Casper cloaking film requires clear glass to function correctly. Compatibility:</p>
@@ -1015,7 +1018,7 @@ const allBlogData = [
       <tr><td>Screens hidden</td><td>Yes</td><td>Only if covered</td><td>Daytime only</td></tr>
       <tr><td>Glass stays clear</td><td>Yes</td><td>No (opaque zone)</td><td>Reflective exterior</td></tr>
       <tr><td>24/7 privacy</td><td>Screens only</td><td>Yes (in frosted zone)</td><td>No (reverses at night)</td></tr>
-      <tr><td>Cost/sq ft</td><td>$25–$45</td><td>$8–$14</td><td>$10–$18</td></tr>
+      <tr><td>Starting investment</td><td>From $4,500 (small) / $6,000 (conference room)</td><td>$8–$14/sq ft</td><td>$10–$18/sq ft</td></tr>
       <tr><td>Best for</td><td>Confidential screens</td><td>General visual privacy</td><td>Daytime offices</td></tr>
     </table>
     <p>Many Phoenix offices combine Casper cloaking with frosted bands — cloaking on the glass panels facing screens, frosted bands at eye level on remaining glass. This gives both screen confidentiality and general visual privacy at a blended cost.</p>
@@ -1034,7 +1037,7 @@ const allBlogData = [
     <div class="faq-section space-y-4">
       <div>
         <h3>How much does Casper cloaking film cost?</h3>
-        <p>$25–$45 per square foot installed in Phoenix. A single conference room averages $3,000–$8,000. Multi-room suites run $8,000–$25,000+. Volume pricing available for large buildouts.</p>
+        <p>Casper starts at $4,500 for small applications (sidelights, single panels) and $6,000 for standard conference rooms. Medium boardrooms $10,000–$20,000; large buildouts $20,000–$40,000+; full-floor projects $40,000+. Every project scoped during a free on-site consultation — we do not quote per sqft or sight-unseen.</p>
       </div>
       <div>
         <h3>What glass does Casper cloaking film work on?</h3>
@@ -1042,7 +1045,7 @@ const allBlogData = [
       </div>
       <div>
         <h3>Is Casper cloaking film worth it?</h3>
-        <p>For law firms, financial services, healthcare, and executive boardrooms where screen confidentiality matters — yes. For general offices, frosted bands at $8–$14/sq ft achieve visual privacy at lower cost.</p>
+        <p>For law firms, financial services, healthcare, and executive boardrooms where screen confidentiality matters — yes. Entry is $4,500 for small applications, $6,000 for conference rooms. For general offices without sensitive screen content, frosted bands at $8–$14/sq ft achieve visual privacy at lower cost.</p>
       </div>
     </div>
 

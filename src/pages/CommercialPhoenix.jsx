@@ -136,7 +136,7 @@ const CommercialPhoenix = () => {
     { icon: Sun,         title: 'Industrial & Warehouse',     body: 'Large-format solar control for loading areas, mezzanine glass, and office-warehouse transitions.' },
     { icon: Eye,         title: 'Medical & Professional',     body: 'Privacy film for patient areas, HIPAA-sensitive zones, and professional office environments.' },
     { icon: Shield,      title: 'Government & Institutional', body: 'Security and blast-mitigation film. GSA-spec options. Schools, municipal buildings, courthouses.' },
-    { icon: Zap,         title: 'Energy Efficiency Projects', body: 'Documented heat rejection for APS/SRP rebate applications. LEED support documentation available.' },
+    { icon: Zap,         title: 'Energy Efficiency Projects', body: 'Documented heat rejection for APS/SRP rebate applications. LEED support documentation available. All Solyx® decorative films are Intertek Clean Air Gold certified and LEED-compliant — we provide full documentation for green building submissions.' },
   ];
 
   return (

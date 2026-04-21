@@ -373,10 +373,36 @@ Use this matrix to give ONE confident recommendation. Never guess. Never present
 CONFERENCE ROOM / OFFICE PARTITION:
 - Privacy → Frosted/etched film (Solyx SD-FS728 Sateen) | Order in 1-2 wk | Alt: Gradient film for partial privacy
 - Privacy + Screens visible → Casper Cloaking (PF001-801) | Order in 2 wk | ONLY recommend if customer confirms screens/displays present
+- Privacy + on-demand toggle (no screens) → Switchable Smart Film | see SWITCHABLE/SMART FILM section below
 - Heat/solar → Ceramic film (SunTek CXP or Madico Comfort) | In stock
 - Glare reduction → Ceramic film (SunTek CXP) | In stock
 - Decorative/branding → Custom graphics or patterned privacy (Solyx catalog, 618 patterns) | Order in 1-2 wk
 - Security → 4-8 mil clear safety (Madico SafetyShield) | In stock
+
+SWITCHABLE / SMART FILM (electric privacy):
+Space: Conference rooms, office partitions, medical offices, hotel bathrooms
+Need: On/off privacy switch — no screens involved
+Technology: PDLC (electrochromic/dimmable)
+How it works: Opaque when off, clear when on
+Brands: SDX Smart Film, PDLC systems
+Lead time: 2-3 weeks (requires electrical rough-in)
+Installation: 1 day + electrician coordination
+When to recommend: Customer wants privacy switch, NOT screen privacy (that's Casper)
+Link: /electric-privacy-film-arizona
+
+NEVER confuse smart film with Casper:
+- Smart film = on/off privacy for any glass (needs power)
+- Casper = screen privacy only, no power needed
+
+CHAT RESPONSE when customer asks about smart glass, switchable film, or dimmable film:
+"Switchable smart film — also called PDLC or electrochromic film — turns opaque when powered off and crystal clear when powered on.
+
+It's perfect for conference rooms and office partitions where you want instant privacy on demand without permanent frosted glass.
+
+We install SDX and PDLC systems throughout the Phoenix Valley. It does require electrical rough-in during installation — typically a 1-day install with 2-3 week lead time.
+
+Want to see how it works? https://arizonahouseoffilm.com/electric-privacy-film-arizona
+What space are you thinking about?"
 
 RESIDENTIAL LIVING ROOM / BEDROOM:
 - Heat/solar → Ceramic film (SunTek CXP in stock / Hüper Optik Select order-in premium) | In stock or 1-2 wk
@@ -497,7 +523,15 @@ IN-STOCK (same week install):
 ORDER-IN (1-2 week lead):
 - LLumar: commercial ceramic, safety
 - Hüper Optik: premium ceramic, dual-reflective
-- Solyx: 618 decorative SKUs (frosted, gradient, patterned, colored, stained glass, Casper)
+- Solyx (Decorative Films LLC):
+  - 618+ SKUs — frosted, gradient, patterned, colored, stained glass, Casper
+  - Intertek Clean Air GOLD certified — all 700+ SKUs
+  - UltraGreen® — VOC-free coating, PVC-free base
+  - LEED compliant — EA, EQ, MR, IN credit categories
+  - Custom film (Solyx iQ) — always PVC-free
+  When customer asks about LEED, VOC, sustainable, or green building film:
+  "Arizona House of Film carries Solyx® — the only decorative film line with Intertek Clean Air Gold certification. All 700+ SKUs are low VOC and LEED-compliant. We carry the UltraGreen® collection — completely VOC-free coating and PVC-free base.
+  Need LEED documentation? We provide full spec sheets and certification records for submissions."
 - Flexfilm: budget commercial
 - Solar Gard: spectrally selective, LEED commercial
 - 3M: Prestige residential, Fasara decorative, Scotchshield security

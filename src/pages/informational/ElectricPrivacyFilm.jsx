@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
-const pageTitle = 'Electric Privacy Film Arizona | Switchable Smart Glass Film | ROC #314088';
-const metaDescription = "Switchable electric privacy film installed in Phoenix AZ. Clear when off, frosted when on. Conference rooms, offices, residential. Licensed ROC #314088.";
+const pageTitle = 'Electric Privacy Film Arizona | Dimmable Switchable Smart Glass | ROC #314088';
+const metaDescription = "Switchable dimmable electric privacy film installed in Phoenix, Scottsdale, Glendale AZ. SDX, PDLC, and electrochromic smart glass systems — clear when off, frosted when on. Conference rooms, offices, residential. Licensed ROC #314088.";
 const canonicalUrl = 'https://arizonahouseoffilm.com/electric-privacy-film-arizona';
 
 const faqSchema = {
@@ -89,7 +89,8 @@ export default function ElectricPrivacyFilm() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Electric Privacy Film — Switchable Smart Glass Arizona</h1>
           <p className="text-xl text-purple-300 font-bold mb-4">Clear When Off. Frosted When On. Instant Privacy on Demand.</p>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">PDLC switchable film transforms existing glass into smart glass — switch between fully transparent and frosted opaque in under one second. No glass replacement required. Installed by Arizona's licensed window film contractor.</p>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-4">PDLC switchable film transforms existing glass into smart glass — switch between fully transparent and frosted opaque in under one second. No glass replacement required. Installed by Arizona's licensed window film contractor.</p>
+          <p className="text-base text-purple-200 max-w-3xl mx-auto mb-8">Also called <strong>dimmable window film</strong> or <strong>electrochromic film</strong> — the technology uses liquid crystal particles that align when powered. We install SDX, PDLC, and electrochromic smart film systems from leading manufacturers. Serving Phoenix, Scottsdale, Glendale, and the greater Valley — smart film installation available same week for standard applications.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="inline-block bg-purple-500 hover:bg-purple-400 text-white font-black uppercase tracking-wide px-8 py-4 rounded-lg text-lg transition-colors">Get Switchable Film Quote →</Link>
             <Link to="/ai-window-film-estimator" className="inline-block border-2 border-white text-white hover:bg-white hover:text-slate-900 font-black uppercase px-8 py-4 rounded-lg text-lg transition-colors">Try AI Estimator</Link>
@@ -100,8 +101,9 @@ export default function ElectricPrivacyFilm() {
       {/* HOW IT WORKS */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-8">How Switchable Electric Film Works</h2>
-          <p className="text-lg text-slate-700 mb-6">Electric privacy film uses <strong>PDLC (Polymer Dispersed Liquid Crystal)</strong> technology. Microscopic liquid crystal droplets are suspended in a polymer layer between two conductive films laminated to your glass.</p>
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-8">How Electrochromic Smart Film Works</h2>
+          <p className="text-lg text-slate-700 mb-6">Electric privacy film uses <strong>PDLC (Polymer Dispersed Liquid Crystal)</strong> technology — a form of electrochromic smart film. Microscopic liquid crystal droplets are suspended in a polymer layer between two conductive films laminated to your glass. When current flows, the crystals align and the glass dims clear; cut the current, and the glass returns to a frosted opaque state. The term "dimmable window film" refers to the same underlying technology.</p>
+          <p className="text-lg text-slate-700 mb-6">Arizona House of Film installs <strong>SDX Smart Film</strong>, <strong>PDLC systems</strong>, and <strong>electrochromic</strong> smart glass retrofits from leading manufacturers. Same family of technology — different brand and substrate options depending on your glass type, voltage availability, and control integration.</p>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-slate-100 rounded-xl p-6 border-t-4 border-slate-400">
               <h3 className="font-black text-lg text-slate-800 mb-2">Power Off = Frosted (Private)</h3>

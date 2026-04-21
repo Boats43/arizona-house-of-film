@@ -187,6 +187,8 @@ const OfficePartitionFilm = () => {
       icon: Lock,
       title: 'Switchable Smart Film',
       body: 'Electric on/off privacy — instant transition from clear to opaque via wall switch, remote, or smartphone app. Low-voltage powered. Perfect for boardrooms and executive offices requiring on-demand privacy.',
+      linkLabel: 'Electric Privacy Film Arizona →',
+      linkTo: '/electric-privacy-film-arizona',
     },
     {
       icon: Shield,
@@ -369,6 +371,11 @@ const OfficePartitionFilm = () => {
                   </div>
                   <h3 className="text-base font-black text-white uppercase mb-3 leading-tight">{app.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed font-medium">{app.body}</p>
+                  {app.linkTo && (
+                    <Link to={app.linkTo} className="inline-block mt-4 text-green-500 hover:text-green-400 text-sm font-black uppercase tracking-wide">
+                      {app.linkLabel}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>

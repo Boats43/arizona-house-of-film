@@ -306,6 +306,14 @@ const Decorative = () => {
               </div>
             ))}
           </div>
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 mt-16">
+            <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-r-lg">
+              <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight mb-2">Certified Green Building Materials</h3>
+              <p className="text-slate-700 text-sm leading-relaxed">
+                Our Solyx&reg; decorative films carry <strong>Intertek Clean Air Gold</strong> certification &mdash; the highest standard for low VOC emissions. The <strong>UltraGreen&reg;</strong> collection goes further with a completely VOC-free coating and PVC-free base material, supporting LEED Low-Emitting Materials credits. Full certification documentation is provided for green building submissions.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* PROBLEM-FIRST SECTION */}

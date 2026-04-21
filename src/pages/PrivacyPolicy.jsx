@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const PrivacyPolicy = () => {
@@ -23,6 +24,9 @@ const PrivacyPolicy = () => {
         <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy | Arizona House of Film" />
+        <meta name="twitter:description" content="Read the privacy policy for Arizona House of Film. We are committed to protecting your personal information and being transparent about how we use it." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
       <div className="bg-white py-16 sm:py-24">
@@ -65,7 +69,7 @@ const PrivacyPolicy = () => {
               <li>We do not retain, sell, or share any images you upload.</li>
             </ul>
             <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+            <p>If you have any questions about this Privacy Policy, please <Link to="/contact" className="text-blue-700 underline">contact us</Link> or return to the <Link to="/" className="text-blue-700 underline">Arizona House of Film home page</Link>:</p>
             <ul>
               <li>By email: info@arizonahouseoffilm.com</li>
               <li>By phone number: 480-788-1591</li>

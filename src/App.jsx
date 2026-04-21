@@ -191,6 +191,33 @@ const globalLocalBusinessSchema = {
     "Chandler, AZ", "Gilbert, AZ", "Glendale, AZ", "Peoria, AZ",
     "Surprise, AZ", "Avondale, AZ", "Tolleson, AZ",
   ],
+  openingHours: [
+    "Mo-Fr 07:00-17:00",
+    "Sa 08:00-14:00",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Window Film Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Window Tinting" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential Window Film" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Security Window Film" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Decorative Window Film" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Anti-Graffiti Film" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Control Film" } },
+    ],
+  },
+  knowsAbout: [
+    "Window Film Installation",
+    "Solar Control Film",
+    "Security Window Film",
+    "Decorative Window Film",
+    "Anti-Graffiti Film",
+    "Nano-Ceramic Window Film",
+    "Commercial Window Tinting",
+    "Residential Window Film",
+  ],
+  slogan: "Arizona's Licensed Window Film Experts — ROC #314088",
 };
 
 /* ---------------- ROUTES ---------------- */

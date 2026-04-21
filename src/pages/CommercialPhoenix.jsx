@@ -41,7 +41,7 @@ const CommercialPhoenix = () => {
         name: 'How much does commercial window film cost in Phoenix?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Commercial window film in Phoenix typically ranges from $6–$18 per square foot installed, depending on film type, building height, glass condition, and access requirements. Small storefronts run $500–$2,000. Large office buildings run $5,000–$25,000+. All projects are custom-quoted after a free site assessment.',
+          text: 'Commercial window film in Phoenix is custom-quoted per project scope, depending on film type, building height, glass condition, and access requirements. Small storefronts run $500–$2,000. Large office buildings run $5,000–$25,000+. All projects are custom-quoted after a free site assessment.',
         },
       },
       {

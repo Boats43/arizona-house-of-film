@@ -41,7 +41,7 @@ const ScottsdaleCommercial = () => {
         name: 'How much does commercial window film cost in Scottsdale?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Commercial window film in Scottsdale typically ranges from $6–$18 per square foot installed, depending on film type, building height, and glass condition. Small storefronts run $500–$2,000. Large office buildings run $5,000–$25,000+. Free on-site estimates — call (480) 788-1591.',
+          text: 'Commercial window film in Scottsdale is custom-quoted per project scope, depending on film type, building height, and glass condition. Small storefronts run $500–$2,000. Large office buildings run $5,000–$25,000+. Free on-site estimates — call (480) 788-1591.',
         },
       },
       {

@@ -30,7 +30,7 @@ export default function SEOHead({
 
   // -------- OG IMAGE ----------
   const finalImage =
-    image || "https://arizonahouseoffilm.com/images/default-og.jpg";
+    image || "https://arizonahouseoffilm.com/og-image.jpg";
 
   // -------- SCHEMA ----------
   // LocalBusiness is injected globally by App.jsx — pages supply their own schema via props

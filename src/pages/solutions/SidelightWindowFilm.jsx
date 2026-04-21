@@ -48,6 +48,15 @@ export default function SidelightWindowFilm() {
         <meta name="description" content="Privacy film for door sidelights — frosted, decorative, one-way, and stained-glass styles. Narrow panels flanking your front door, cut precisely and installed Arizona-wide. ROC #314088. Free quote." />
         <meta name="keywords" content="sidelight window film phoenix, door sidelight privacy film arizona, narrow window privacy film scottsdale, front door sidelight film phoenix, sidelight glass frosting arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/sidelight-window-film" />
+        <meta property="og:title" content="Sidelight Window Film | Privacy Film for Door Sidelights | ROC #314088" />
+        <meta property="og:description" content="Privacy film for door sidelights — frosted, decorative, one-way, and stained-glass styles. Narrow panels flanking your front door, cut precisely and installed Arizona-wide. ROC #314088." />
+        <meta property="og:url" content="https://arizonahouseoffilm.com/sidelight-window-film" />
+        <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sidelight Window Film | Privacy Film for Door Sidelights" />
+        <meta name="twitter:description" content="Privacy film for door sidelights — frosted, decorative, one-way, and stained-glass styles. ROC #314088. Free quote." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>

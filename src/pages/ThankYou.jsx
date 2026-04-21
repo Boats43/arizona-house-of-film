@@ -55,6 +55,9 @@ const ThankYou = () => {
         <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
@@ -122,7 +125,8 @@ const ThankYou = () => {
       {/* EXPLORE MORE */}
       <section className="bg-slate-900 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className="text-2xl md:text-3xl font-bold text-center mb-12">Explore More</motion.h2>
+          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className="text-2xl md:text-3xl font-bold text-center mb-4">Explore More</motion.h2>
+          <p className="text-center text-gray-400 text-sm mb-12">Or <Link to="/" className="underline text-green-400 hover:text-green-300">return to the home page</Link>.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {exploreLinks.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.55 + i * 0.1 }}>

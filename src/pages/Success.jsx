@@ -33,6 +33,9 @@ const Success = () => {
         <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
       <div className="min-h-[60vh] flex items-center justify-center bg-gray-50 py-12 px-4">
@@ -47,6 +50,9 @@ const Success = () => {
               <Link to="/store"><ShoppingBag className="mr-2 h-5 w-5" />Continue Shopping</Link>
             </Button>
           </div>
+          <p className="text-sm text-gray-500">
+            Questions? <Link to="/contact" className="text-blue-700 underline">Contact us</Link> or return to the <Link to="/" className="text-blue-700 underline">home page</Link>.
+          </p>
         </motion.div>
       </div>
     </>

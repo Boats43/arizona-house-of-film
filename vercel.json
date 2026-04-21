@@ -25,7 +25,9 @@
       "permanent": true
     },
     { "source": "/:path*", "has": [{ "type": "query", "key": "a" }], "destination": "/", "permanent": false },
-    { "source": "/", "has": [{ "type": "query", "key": "zhHant" }], "destination": "/contact", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "query", "key": "zhHant" }], "destination": "/", "permanent": false },
+    { "source": "/:path*", "has": [{ "type": "query", "key": "campaign_uid" }], "destination": "/", "permanent": false },
+    { "source": "/:path*", "has": [{ "type": "query", "key": "search" }], "destination": "/", "permanent": false },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.arizonahouseoffilm.com" }],
@@ -33,7 +35,7 @@
       "permanent": true
     },
     { "source": "/dealeriframe/:path*", "destination": "/films", "permanent": true },
-    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": false },
     { "source": "/index.php/:path*", "destination": "/", "permanent": true },
     { "source": "/lander", "destination": "/", "permanent": true },
     { "source": "/lander/:path*", "destination": "/", "permanent": true },

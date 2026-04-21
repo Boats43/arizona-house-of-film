@@ -52,17 +52,17 @@ export default function CountertopProtectionFilmArizona() {
   return (
     <>
       <Helmet>
-        <title>Countertop Protection Film Arizona | Clear Bra Coating | ROC #314088</title>
-        <meta name="description" content="Countertop protection film installed across Arizona. Clear bra coating for kitchens, commercial surfaces, and high-traffic areas. Free estimate. ROC #314088." />
+        <title>Countertop Protection Film — Supply & Installation Arizona | ROC #314088</title>
+        <meta name="description" content="Arizona House of Film supplies countertop protection film to contractors and homeowners statewide. Nexfil, Solyx, and clear bra surface protection. Order direct or request installation. ROC #314088." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/countertop-protection-film-arizona" />
-        <meta property="og:title" content="Countertop Protection Film Arizona | Clear Bra | ROC #314088" />
-        <meta property="og:description" content="Protect quartz, marble, and granite countertops with professional protection film. Phoenix & Scottsdale installation. Licensed ROC #314088." />
+        <meta property="og:title" content="Countertop Protection Film — Supply & Installation Arizona | ROC #314088" />
+        <meta property="og:description" content="Supply and installation of countertop protection film across Arizona. Nexfil and Solyx surface protection lines — contractor pricing, drop-ship, or full-service install. ROC #314088." />
         <meta property="og:url" content="https://arizonahouseoffilm.com/countertop-protection-film-arizona" />
         <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Countertop Protection Film Installation Arizona | Phoenix & Scottsdale" />
-        <meta name="twitter:description" content="Protect quartz, marble, and granite countertops with professional protection film. Phoenix & Scottsdale installation. Licensed ROC #314088." />
+        <meta name="twitter:title" content="Countertop Protection Film — Supply & Installation Arizona" />
+        <meta name="twitter:description" content="Supply and install countertop protection film across Arizona. Contractor trade accounts, drop-ship, Nexfil and Solyx lines. ROC #314088." />
         <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -71,7 +71,20 @@ export default function CountertopProtectionFilmArizona() {
         { name: 'Countertop Protection Film Arizona', url: 'https://arizonahouseoffilm.com/countertop-protection-film-arizona' }
       ]} />
       <main className="max-w-4xl mx-auto px-4 py-16">
-        <h1 className="text-4xl font-black text-gray-900 mb-8">Countertop Protection Film Installation in Arizona</h1>
+        <h1 className="text-4xl font-black text-gray-900 mb-8">Countertop Protection Film — Supply &amp; Installation Arizona</h1>
+        <p className="text-lg text-gray-700 mb-8">Arizona House of Film <strong>supplies</strong> countertop protection film to contractors, fabricators, and homeowners across Arizona — and <strong>installs</strong> it for clients who want a turn-key job. We carry Nexfil surface protection and Solyx clear protective films in stock. Order film direct for your own crew, or schedule a full-service install with our W-2 team. ROC #314088.</p>
+
+        <div className="mb-10 bg-amber-50 border-2 border-amber-400 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Are You a Contractor or Fabricator?</h2>
+          <p className="text-gray-700 mb-3"><strong>We supply countertop protection film for direct order.</strong> Drop-ship available statewide. Volume pricing for trade accounts — general contractors, stone fabricators, kitchen designers, hotel renovators, and facility managers.</p>
+          <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-1">
+            <li>Nexfil surface protection and Solyx clear protective film lines in stock</li>
+            <li>Drop-ship direct to your Arizona jobsite — no minimum on first order</li>
+            <li>Volume pricing tiers for recurring contractor accounts</li>
+            <li>Sample kits available for spec and approval workflows</li>
+          </ul>
+          <a href="/contact?subject=Countertop%20Film%20Supply%20Inquiry" className="inline-block bg-amber-500 text-black font-bold px-6 py-3 rounded hover:bg-amber-600">Request Contractor Pricing →</a>
+        </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">What Is Countertop Protection Film?</h2>
         <p className="text-gray-700 mb-4">Countertop protection film is a clear, sacrificial polyester film applied directly to stone, quartz, laminate, and solid-surface countertops. It forms a transparent barrier against scratches, stains, and daily wear — peeling off cleanly when worn or damaged with no adhesive residue.</p>

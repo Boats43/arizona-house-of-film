@@ -2260,6 +2260,155 @@ const allBlogData = [
     <p>Arizona House of Film handles office building window film projects across the Phoenix metro. Licensed ROC #314088. Free on-site surveys with written fixed-price quotes and LEED/rebate documentation support. <a href="/contact">Request an office survey</a> or call (480) 788-1591.</p>
     <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
   `
+  },
+  {
+    slug: 'countertop-protection-film-distributor-nationwide',
+    title: 'Countertop Protection Film Distributor | Supply Direct | AHOF',
+    excerpt: 'Order countertop protection film direct from Arizona House of Film — nationwide drop-ship from Phoenix AZ. Nexfil and Solyx surface protection lines for contractors, fabricators, kitchen designers, and hotel renovators. No minimum on first order.',
+    date: '2026-04-20',
+    alt: 'Countertop protection film rolls in stock at the Arizona House of Film Phoenix warehouse for nationwide drop-ship.',
+    keywords: 'countertop protection film distributor, where to buy countertop protection film, countertop protection film wholesale, countertop protection film for contractors, countertop clear coat film supply, nexfil countertop film distributor',
+    serviceLink: '/countertop-protection-film-nationwide',
+    cityLink: '/countertop-protection-film-nationwide',
+    brandMentions: 'Nexfil, Solyx',
+    ctaCity: 'Phoenix',
+    faqs: [
+      {
+        question: 'Where can I buy countertop protection film direct?',
+        answer: 'Arizona House of Film supplies countertop protection film nationwide via drop-ship from our Phoenix, AZ warehouse. We carry Nexfil surface protection and Solyx clear protective film lines. Order a single cut sheet, a roll, or volume pricing for recurring contractor accounts. No business license required for a first order. Request distributor pricing via our contact form or call (480) 788-1591.'
+      },
+      {
+        question: 'What brands do you distribute?',
+        answer: 'We are authorized distributors for Nexfil USA (including Nexfil 4MAG 4 mil anti-scratch sacrificial polyester) and Solyx (Decorative Films LLC) clear surface protection lines. Both product families are professional-grade, peel-and-replace systems with clean-release adhesives that do not leave residue when removed within the replacement window.'
+      },
+      {
+        question: 'Do I need to be a contractor to buy countertop protection film?',
+        answer: 'No. We sell to anyone — contractors, fabricators, kitchen designers, hotel renovators, and homeowners. Contractor trade accounts unlock tiered volume pricing and net-30 terms, but a first-time homeowner ordering film for their own kitchen can place an order without a business license. Trade accounts are available after your first project-scale order and a short credit application.'
+      },
+      {
+        question: 'How is countertop protection film shipped?',
+        answer: 'Film ships from our Phoenix, AZ warehouse via FedEx or UPS ground as the standard option — 2–5 business days to most US locations. Expedited (2-day or overnight) is available on request. Small orders ship rolled in a protective tube; large orders ship flat-packed in a sheet carton. Drop-ship direct-to-jobsite is the default for contractor accounts.'
+      },
+      {
+        question: 'What is the minimum order for countertop protection film?',
+        answer: 'There is no minimum on your first order. Order a sample kit, a single cut sheet for one countertop, or a full roll — whatever you need to evaluate the film or complete the job. Recurring contractor trade accounts receive tiered volume pricing based on annual or per-project order volume. Multi-kitchen and hotel rollout contracts receive project-specific volume quotes.'
+      }
+    ],
+    customContent: `
+    <h1>Countertop Protection Film Distributor — Supply Direct From Arizona House of Film</h1>
+
+    <p class="lead">Arizona House of Film is a nationwide distributor of countertop protection film. We drop-ship from our Phoenix, AZ warehouse to contractors, fabricators, kitchen designers, hotel renovators, and homeowners across the United States. Our stance on countertop protection film is simple: we supply the film — you or your installer handles the install. Film installs like a large sticker and does not require our crew on-site. This guide covers what the film is, who buys it, what brands we carry, and how to order. Installation by Arizona House of Film crews is available locally within Arizona only.</p>
+
+    <h2>1. What Countertop Protection Film Is</h2>
+    <p>Countertop protection film is a clear, sacrificial polyester film applied to stone, quartz, marble, granite, laminate, and solid-surface countertops. It forms a transparent barrier against scratches, stains, UV yellowing, acid etching, and daily wear. When the film is damaged or worn out, it peels off cleanly and is replaced — no adhesive residue on the stone underneath.</p>
+    <ul>
+      <li><strong>Sacrificial design</strong> — damage lives on the film, not the stone. Peel and replace, glass stays untouched.</li>
+      <li><strong>Optical clarity</strong> — properly installed film reads as uncoated stone. No loss of polish or sheen.</li>
+      <li><strong>Replaceable finish</strong> — on a 3–5 year replacement cycle, countertops stay new-looking indefinitely.</li>
+      <li><strong>Clean removal</strong> — pressure-sensitive adhesive engineered to release cleanly within the replacement window.</li>
+    </ul>
+
+    <h2>2. Who Buys Countertop Protection Film</h2>
+    <p>Our buyers fall into six recurring categories. Your ordering pattern and pricing tier map to one of them:</p>
+    <ul>
+      <li><strong>General contractors and builders</strong> — film applied during build-out to protect countertops through the rest of construction. Often left on at turnover so the homebuyer peels it themselves.</li>
+      <li><strong>Stone fabricators</strong> — offered as a post-fabrication add-on to clients at the showroom. Fabricators install at the shop before delivery.</li>
+      <li><strong>Kitchen and interior designers</strong> — specifying film on high-value stone selections for design clients. Protects marble, quartzite, and onyx from the first days of use.</li>
+      <li><strong>Hotel and hospitality renovators</strong> — suite kitchenettes, bathroom vanities, and lobby surfaces on multi-unit rollouts. Volume pricing is standard on these orders.</li>
+      <li><strong>Restaurant and commercial kitchen operators</strong> — ordering roll stock for in-house maintenance replacement programs. Maintenance teams handle the replacement cycle themselves.</li>
+      <li><strong>Homeowners with experienced installers</strong> — ordering cut film for their own contractor to install. Typical when the homeowner is remodeling and the contractor prefers to source film themselves.</li>
+    </ul>
+
+    <h2>3. What We Carry — Nexfil Surface Protection and Solyx Clear Films</h2>
+    <p>We are authorized distributors for two professional product families that cover 95% of countertop protection projects in North America:</p>
+    <h3>Nexfil Surface Protection</h3>
+    <ul>
+      <li><strong>Nexfil 4MAG</strong> — 4 mil clear anti-scratch sacrificial polyester, our volume SKU. Handles standard residential and commercial kitchen protection.</li>
+      <li><strong>Nexfil 6 mil high-risk</strong> — thicker substrate for extended service life in heavy-use commercial environments.</li>
+      <li><strong>Non-metallic, optically clear</strong> — reads as uncoated stone at install.</li>
+    </ul>
+    <h3>Solyx Clear Protective Films</h3>
+    <ul>
+      <li><strong>Solyx clear surface protection lines</strong> — a range of clear and lightly frosted protective films covering stone, quartz, laminate, and solid-surface countertops.</li>
+      <li><strong>Various thickness and finish options</strong> — specify by your project requirement.</li>
+      <li><strong>Part of the 618-SKU Solyx library</strong> — familiar to most kitchen and interior designers who already specify Solyx elsewhere.</li>
+    </ul>
+
+    <h2>4. How to Order — Inquiry to Drop-Ship</h2>
+    <ol>
+      <li><strong>Submit an inquiry</strong> — tell us the region you are shipping to, the film line you want, and the rough order scope. <a href="/contact?subject=Countertop%20Film%20Supply%20Inquiry">Request distributor pricing here</a>.</li>
+      <li><strong>Receive a written quote</strong> — pricing, ship method, lead time, and trade-account eligibility. Typically returned within one business day.</li>
+      <li><strong>Place the order</strong> — payment via card, ACH, or approved trade-account terms (net-30 after credit approval).</li>
+      <li><strong>Drop-ship direct to jobsite</strong> — FedEx or UPS ground is standard from our Phoenix, AZ warehouse. Tracking number emailed on ship date.</li>
+      <li><strong>Install</strong> — your contractor handles installation. Our supply team is available during business hours for technique questions.</li>
+    </ol>
+
+    <h2>5. Coverage — Nationwide Drop-Ship From Phoenix AZ</h2>
+    <p>We drop-ship to all 50 states and US territories. Typical ground transit by region:</p>
+    <table>
+      <tr><th>Region</th><th>Ground Transit From Phoenix</th></tr>
+      <tr><td>Southwest (AZ, NV, NM, CA, UT, CO)</td><td>1–3 business days</td></tr>
+      <tr><td>West Coast (WA, OR, ID, MT, WY)</td><td>2–4 business days</td></tr>
+      <tr><td>Midwest (TX, OK, KS, MO, IA, IL)</td><td>3–5 business days</td></tr>
+      <tr><td>Southeast (FL, GA, AL, TN, NC, SC)</td><td>4–5 business days</td></tr>
+      <tr><td>Northeast & Mid-Atlantic</td><td>4–6 business days</td></tr>
+      <tr><td>Expedited (any region)</td><td>1–2 business days</td></tr>
+    </table>
+
+    <h2>6. No Installation Required on Your End — Film Installs Like a Large Sticker</h2>
+    <p>This is the part most first-time buyers ask about. Countertop protection film is designed for straightforward field installation:</p>
+    <ol>
+      <li>Clean the countertop surface (isopropyl alcohol on polished stone)</li>
+      <li>Peel the protective liner from the adhesive face</li>
+      <li>Position the film, aligning edges</li>
+      <li>Squeegee out air from center toward edges</li>
+      <li>Trim excess at the countertop edges with a sharp blade</li>
+    </ol>
+    <p>Experienced kitchen installers, stone fabricators, and handy homeowners self-install without issue. For high-value marble, quartzite, or onyx surfaces where install error is costly, we recommend a professional installer local to you. Our supply team is available during business hours to walk you through technique questions with your order — a five-minute phone call typically covers it.</p>
+
+    <h2>7. Trade Account Benefits</h2>
+    <p>Contractor trade accounts are available after your first project-scale order and a short credit application. Benefits:</p>
+    <ul>
+      <li><strong>Tiered volume pricing</strong> — rates drop as recurring order volume grows</li>
+      <li><strong>Net-30 terms</strong> — after credit approval</li>
+      <li><strong>Priority ship queue</strong> — same-day shipping when placed before 11am MST</li>
+      <li><strong>Direct technique support</strong> — line to our install team for field questions</li>
+      <li><strong>Sample kit replenishment</strong> — ongoing sample supply for your showroom or portfolio</li>
+      <li><strong>Consolidated billing</strong> — single monthly invoice across multiple jobsites</li>
+    </ul>
+
+    <h2>Related Pages</h2>
+    <p>For the full distribution page with inquiry form, see our <a href="/countertop-protection-film-nationwide">countertop protection film nationwide supply page</a>. For the Arizona-local supply-and-install option, see the <a href="/countertop-protection-film-arizona">Arizona countertop protection film page</a>. Our broader <a href="/window-film-distributor-phoenix">window film distributor page</a> covers solar, safety, and decorative film supply for contractors.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>Where can I buy countertop protection film direct?</h3>
+        <p>Arizona House of Film supplies countertop protection film nationwide via drop-ship from Phoenix, AZ. Nexfil and Solyx surface protection lines. No business license required for a first order.</p>
+      </div>
+      <div>
+        <h3>What brands do you distribute?</h3>
+        <p>Authorized distributor for Nexfil USA (including 4MAG 4 mil) and Solyx clear surface protection lines. Both are professional-grade peel-and-replace systems with clean-release adhesives.</p>
+      </div>
+      <div>
+        <h3>Do I need to be a contractor to buy countertop protection film?</h3>
+        <p>No. We sell to contractors, fabricators, designers, hotel renovators, and homeowners. Trade accounts unlock volume pricing and net-30 terms but are not required for a first order.</p>
+      </div>
+      <div>
+        <h3>How is countertop protection film shipped?</h3>
+        <p>FedEx or UPS ground from our Phoenix, AZ warehouse — 2–5 business days to most US locations. Expedited available on request. Drop-ship direct-to-jobsite is the default for contractor accounts.</p>
+      </div>
+      <div>
+        <h3>What is the minimum order for countertop protection film?</h3>
+        <p>No minimum on your first order. Order a sample kit, a single cut sheet, or a full roll. Trade accounts unlock tiered volume pricing on recurring project volume.</p>
+      </div>
+    </div>
+
+    <h2>Request Distributor Pricing</h2>
+    <p>Tell us your region, project scope, and preferred film line. Written quote returned within one business day.</p>
+    <p><a href="/contact?subject=Countertop%20Film%20Supply%20%E2%80%94%20Region%20Inquiry" style="display:inline-block;background:#2563eb;color:#fff;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Request Distributor Pricing →</a></p>
+    <p>Or call (480) 788-1591. Arizona installation available locally — see our <a href="/countertop-protection-film-arizona">Arizona supply &amp; installation page</a>.</p>
+  `
   }
 ];
 

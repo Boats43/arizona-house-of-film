@@ -94,6 +94,7 @@ const ROUTES = [
   '/blog/window-film-for-restaurants-arizona',
   '/blog/anti-graffiti-window-film-phoenix-guide',
   '/blog/window-film-for-offices-phoenix',
+  '/blog/countertop-protection-film-distributor-nationwide',
   '/brands/3m', '/brands/eastman', '/brands/solar-gard', '/brands/nexfil', '/brands/avery-dennison',
   '/brands/xpel', '/brands/madico', '/brands/suntek', '/brands/huper-optik', '/brands/johnson',
   '/brands/geoshield', '/brands/rayno', '/brands/global', '/brands/terminax',

@@ -8,42 +8,42 @@ export default function CountertopProtectionFilmNationwide() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Does Arizona House of Film install countertop protection film outside of Arizona?",
+        "name": "Does Arizona House of Film supply countertop protection film nationwide?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. For commercial countertop protection film projects of sufficient scope, Arizona House of Film travels nationwide. We regularly bid restaurant chains, hotel groups, hospital systems, and multi-location commercial kitchens across the Western US, Southeast, Midwest, Gulf Coast, and West Coast. Travel and lodging are quoted as a line item on the proposal. Licensed ROC #314088. Call (480) 788-1591 to discuss your project."
+          "text": "Yes. Arizona House of Film is a nationwide supplier of countertop protection film. We drop-ship from our Phoenix, AZ warehouse to contractors, fabricators, kitchen designers, and homeowners across the United States. You or your own contractor installs — we supply the film, roll stock, or custom-cut sheets. Installation is only performed by our crews locally within Arizona. ROC #314088."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the minimum project size for nationwide installation?",
+        "name": "What brands and lines do you carry?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Minimum project size for out-of-state travel is $500 in materials and labor; most nationwide commercial projects start around $5,000–$10,000 to make travel economical. For smaller jobs we can ship cut material directly to your installer or supply roll stock. Multi-location rollouts (restaurant chains, hotel groups) are quoted by total scope."
+          "text": "We carry Nexfil surface protection films and Solyx clear protective film lines. Nexfil 4MAG is our standard 4 mil sacrificial protection. Solyx offers a range of clear and lightly frosted protective films for stone, quartz, laminate, and solid-surface countertops. Both lines peel-and-replace without adhesive residue when removed within the replacement window."
         }
       },
       {
         "@type": "Question",
-        "name": "What does countertop protection film cost for commercial projects?",
+        "name": "Is there a minimum order for nationwide supply?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Commercial countertop protection film runs $10–$18 per square foot installed for standard 4 mil anti-graffiti spec, and $18–$28/sq ft for TuffSkin premium with 10-year manufacturer warranty. Out-of-state projects add a travel and lodging line item based on distance and crew size. Restaurant and hotel chains receive volume pricing on multi-location rollouts."
+          "text": "No minimum on your first order. Order a sample kit, a single cut sheet for one countertop, or a full roll — we ship whichever you need to evaluate the film. After your first order, trade accounts unlock volume pricing tiers based on recurring order volume. We do not require a business license to order, but contractor trade accounts get the best pricing."
         }
       },
       {
         "@type": "Question",
-        "name": "Which cities and regions do you service?",
+        "name": "How is the film shipped and how fast does it arrive?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Arizona House of Film services commercial countertop protection film projects across the Southwest (Phoenix, Las Vegas, Los Angeles, San Diego, Albuquerque), Southeast (Atlanta, Miami, Tampa, Charlotte, Orlando), Midwest (Chicago, Dallas, Houston, Denver, Kansas City), Gulf Coast (New Orleans, Houston, Tampa, Mobile), and West Coast (Seattle, Portland, San Francisco, Sacramento). For commercial projects in any US city, call (480) 788-1591."
+          "text": "Film ships from our Phoenix, AZ warehouse via FedEx or UPS ground for most orders. Typical transit is 2–5 business days across the continental US. Expedited shipping (2-day or overnight) is available on request. Film ships either rolled in a protective tube or flat-packed in a sheet carton depending on your order. Drop-ship direct-to-jobsite is the default for contractor trade accounts."
         }
       },
       {
         "@type": "Question",
-        "name": "Can you handle multi-location rollouts for restaurant or hotel chains?",
+        "name": "Do I need professional installation experience to install the film?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We have experience with multi-location commercial rollouts including Valley Metro fleet facilities and City of Phoenix municipal projects. For restaurant chains, hotel groups, and hospital systems we offer phased installation, scheduled replacement programs, and consolidated invoicing. Call (480) 788-1591 to discuss a national rollout."
+          "text": "Countertop protection film installs much like a large sticker — clean the surface, peel the liner, apply with a squeegee, trim edges. Stone fabricators, kitchen installers, and experienced DIY homeowners routinely self-install without issue. For high-value marble, quartzite, or onyx surfaces where installation error is costly, we recommend a professional installer local to you. Our supply team can provide technique guidance with your order."
         }
       }
     ]
@@ -52,99 +52,116 @@ export default function CountertopProtectionFilmNationwide() {
   return (
     <>
       <Helmet>
-        <title>Countertop Protection Film | Nationwide Installation | ROC #314088</title>
-        <meta name="description" content="Countertop protection film installed nationwide. Commercial kitchens, hotels, restaurants, stone surfaces. Arizona House of Film travels for large commercial projects. ROC #314088." />
+        <title>Countertop Protection Film — Nationwide Supply | Arizona House of Film</title>
+        <meta name="description" content="Order countertop protection film direct from Arizona House of Film. Authorized Nexfil and Solyx distributor. Drop-ship to contractors and fabricators nationwide. No minimum on first order." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/countertop-protection-film-nationwide" />
-        <meta property="og:title" content="Countertop Protection Film | Nationwide Installation | ROC #314088" />
-        <meta property="og:description" content="Commercial countertop protection film — nationwide installation for restaurants, hotels, kitchens, stone surfaces." />
+        <meta property="og:title" content="Countertop Protection Film — Nationwide Supply | Arizona House of Film" />
+        <meta property="og:description" content="Nationwide drop-ship supply of countertop protection film — Nexfil and Solyx surface protection. Trade accounts, volume pricing, no minimum on first order." />
         <meta property="og:url" content="https://arizonahouseoffilm.com/countertop-protection-film-nationwide" />
         <meta property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Countertop Protection Film — Nationwide Supply" />
+        <meta name="twitter:description" content="Order countertop protection film direct — Nexfil and Solyx distributor. Drop-ship nationwide from Phoenix AZ." />
+        <meta name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
-        { name: 'Countertop Protection Film — Nationwide', url: 'https://arizonahouseoffilm.com/countertop-protection-film-nationwide' }
+        { name: 'Countertop Protection Film — Nationwide Supply', url: 'https://arizonahouseoffilm.com/countertop-protection-film-nationwide' }
       ]} />
       <main className="max-w-4xl mx-auto px-4 py-16">
-        <h1 className="text-4xl font-black text-gray-900 mb-8">Countertop Protection Film — Nationwide Service</h1>
-        <p className="text-lg text-gray-700 mb-6">Arizona House of Film installs commercial countertop protection film across the United States. For restaurant chains, hotel groups, hospital systems, and large commercial kitchens, we travel from Phoenix to deliver professional installation, multi-location rollouts, and scheduled replacement programs. Licensed ROC #314088.</p>
+        <h1 className="text-4xl font-black text-gray-900 mb-6">Countertop Protection Film — Nationwide Supply | Arizona House of Film</h1>
+        <p className="text-lg text-gray-700 mb-8">Arizona House of Film is a <strong>nationwide supplier</strong> of countertop protection film. We drop-ship direct from Phoenix, AZ to contractors, fabricators, kitchen designers, hotel renovators, and homeowners across the United States. <strong>You or your contractor installs</strong> — the film applies like a large sticker. Installation is only performed by our crews locally within Arizona.</p>
+
+        <div className="mb-10 bg-green-50 border-2 border-green-500 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Six Reasons to Order From Us</h2>
+          <ol className="list-decimal pl-6 text-gray-700 space-y-2">
+            <li><strong>We supply film — you or your contractor installs.</strong> No travel charges, no scheduling around our crew. Your job, your timeline.</li>
+            <li><strong>Drop-ship direct to the jobsite.</strong> We ship FedEx or UPS ground from Phoenix — 2–5 business days to most US locations. Expedited available.</li>
+            <li><strong>Nexfil anti-scratch and Solyx surface protection lines.</strong> Two professional-grade product families covering residential, commercial, and hospitality specs.</li>
+            <li><strong>Contractor trade accounts available.</strong> Recurring-order contractors unlock tiered volume pricing. No business license required to place a first order.</li>
+            <li><strong>Volume pricing on request.</strong> Multi-countertop projects, fabricator supply contracts, and hotel/multi-unit orders receive project-specific quotes.</li>
+            <li><strong>Sample kits available.</strong> Evaluate the film on your own stone before committing to a full order. Useful for spec approval, design-client sign-off, and hands-on feel checks.</li>
+          </ol>
+        </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">What Countertop Protection Film Is</h2>
-        <p className="text-gray-700 mb-4">Countertop protection film is a clear, sacrificial polyester film applied to stone, quartz, marble, granite, laminate, and solid-surface countertops. It absorbs scratches, stains, etching, and daily wear — then peels off cleanly and is replaced. Two specs: standard 4 mil anti-graffiti polyester and TuffSkin premium with 10-year manufacturer warranty. Both peel-and-replace, no adhesive residue when removed within the replacement window. See our <a href="/countertop-protection-film-arizona" className="text-blue-600 font-semibold">Arizona countertop protection film page</a> for detailed specifications and material data.</p>
+        <p className="text-gray-700 mb-4">Countertop protection film is a clear, sacrificial polyester film applied to stone, quartz, marble, granite, laminate, and solid-surface countertops. It absorbs scratches, stains, etching, and daily wear — then peels off cleanly and is replaced. Two specs we stock: <strong>Nexfil 4 mil anti-graffiti polyester</strong> (standard) and <strong>Solyx clear protective film lines</strong> (range of finishes and thicknesses). Both peel-and-replace, no adhesive residue when removed within the replacement window. See our <a href="/countertop-protection-film-arizona" className="text-blue-600 font-semibold">Arizona countertop protection film page</a> for detailed specifications and material data.</p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Commercial Applications</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Who Orders From Us</h2>
         <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li><strong>Restaurants & commercial kitchens</strong> — protect prep surfaces, stone tabletops, bar tops from knife marks, acid etching, and heat damage</li>
-          <li><strong>Hotels & hospitality</strong> — lobby reception, bathroom vanities, suite kitchenettes, pool bar surfaces</li>
-          <li><strong>Hospital & medical facilities</strong> — break rooms, nurses' stations, lab counters, sterile prep surfaces</li>
-          <li><strong>Stone countertops</strong> — marble, quartzite, onyx, granite — UV-stabilized protection for high-value natural stone</li>
-          <li><strong>Retail & corporate</strong> — checkout counters, display surfaces, employee break rooms</li>
+          <li><strong>General contractors and builders</strong> — protecting countertops during build-out, handing units over to buyers with film in place</li>
+          <li><strong>Stone fabricators</strong> — offering film as a post-fabrication add-on to clients at the showroom</li>
+          <li><strong>Kitchen and interior designers</strong> — specifying film on high-value stone selections for design clients</li>
+          <li><strong>Hotel and hospitality renovators</strong> — protecting suite kitchenettes, bathroom vanities, and lobby surfaces during multi-unit rollouts</li>
+          <li><strong>Restaurant and commercial kitchen operators</strong> — ordering roll stock for in-house maintenance replacement programs</li>
+          <li><strong>Homeowners with experienced installers</strong> — ordering cut film for their own contractor to install</li>
         </ul>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Why We Travel for Commercial Projects</h2>
-        <p className="text-gray-700 mb-4">Countertop protection film installation on high-value commercial stone is a specialty trade. Most local installers handle automotive paint protection or window tint and lack experience with the squeegee technique and surface prep required for marble, quartzite, and polished stone. For projects where the cost of installation error exceeds the cost of travel, sending an experienced crew is the right call.</p>
-        <p className="text-gray-700 mb-4">Arizona House of Film has installed countertop protection film on projects ranging from single residential kitchens to multi-location commercial rollouts. For chains and hospitality groups standardizing on a single installer across regions, we offer consistency that subcontracted local labor cannot match.</p>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">How to Order — Inquiry to Drop-Ship</h2>
+        <ol className="list-decimal pl-6 text-gray-700 mb-4 space-y-2">
+          <li><strong>Submit an inquiry</strong> — tell us the region you are shipping to, the film line, and the rough order scope (one countertop, a full kitchen, a hotel rollout, a fabricator supply contract).</li>
+          <li><strong>Receive a written quote</strong> — pricing, ship method, lead time, and trade-account eligibility. Typically returned within one business day.</li>
+          <li><strong>Place the order</strong> — payment via card, ACH, or approved trade-account terms.</li>
+          <li><strong>Drop-ship direct to jobsite</strong> — tracking number emailed on ship date. FedEx or UPS ground is standard; expedited on request.</li>
+          <li><strong>Install</strong> — your contractor handles installation. Our supply team is available for technique questions during business hours.</li>
+        </ol>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Service Regions & Cities</h2>
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <h3 className="font-bold text-gray-900 mb-2">Southwest</h3>
-            <p className="text-gray-700">Phoenix, Las Vegas, Los Angeles, San Diego, Albuquerque, Tucson, Salt Lake City</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 mb-2">Southeast</h3>
-            <p className="text-gray-700">Atlanta, Miami, Tampa, Charlotte, Orlando, Jacksonville, Nashville</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 mb-2">Midwest</h3>
-            <p className="text-gray-700">Chicago, Dallas, Houston, Denver, Kansas City, St. Louis, Minneapolis</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 mb-2">Gulf Coast</h3>
-            <p className="text-gray-700">New Orleans, Houston, Tampa, Mobile, Pensacola, Biloxi</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 mb-2">West Coast</h3>
-            <p className="text-gray-700">Seattle, Portland, San Francisco, Sacramento, Oakland, San Jose</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 mb-2">Northeast & Mid-Atlantic</h3>
-            <p className="text-gray-700">By scope — call to discuss East Coast commercial projects</p>
-          </div>
-        </div>
-        <p className="text-gray-700 mb-4">Don't see your city? We bid commercial projects in any US metro. Call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a>.</p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Pricing — Nationwide Commercial</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Coverage — Nationwide Drop-Ship from Phoenix AZ</h2>
+        <p className="text-gray-700 mb-4">We drop-ship to all 50 states and US territories. Transit time from Phoenix by region:</p>
         <div className="overflow-x-auto mb-6">
           <table className="w-full border-collapse border border-gray-200 text-sm">
             <thead className="bg-gray-50">
               <tr>
-                <th className="border border-gray-200 px-4 py-2 text-left">Spec</th>
-                <th className="border border-gray-200 px-4 py-2 text-left">Installed Cost</th>
-                <th className="border border-gray-200 px-4 py-2 text-left">Best For</th>
+                <th className="border border-gray-200 px-4 py-2 text-left">Region</th>
+                <th className="border border-gray-200 px-4 py-2 text-left">Typical Ground Transit</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border border-gray-200 px-4 py-2">4 mil anti-graffiti</td><td className="border border-gray-200 px-4 py-2">$10–$18/sq ft</td><td className="border border-gray-200 px-4 py-2">High-traffic commercial, restaurants, retail</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">TuffSkin premium</td><td className="border border-gray-200 px-4 py-2">$18–$28/sq ft</td><td className="border border-gray-200 px-4 py-2">Luxury hospitality, warranty-required specs</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Project minimum</td><td className="border border-gray-200 px-4 py-2">$500</td><td className="border border-gray-200 px-4 py-2">All installations</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Travel & lodging</td><td className="border border-gray-200 px-4 py-2">Quoted as line item</td><td className="border border-gray-200 px-4 py-2">Out-of-state projects</td></tr>
-              <tr><td className="border border-gray-200 px-4 py-2">Multi-location rollouts</td><td className="border border-gray-200 px-4 py-2">Volume pricing</td><td className="border border-gray-200 px-4 py-2">Restaurant/hotel chains</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Southwest (AZ, NV, NM, CA, UT, CO)</td><td className="border border-gray-200 px-4 py-2">1–3 business days</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">West Coast (WA, OR, ID, MT, WY)</td><td className="border border-gray-200 px-4 py-2">2–4 business days</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Midwest (TX, OK, KS, MO, IA, IL, etc.)</td><td className="border border-gray-200 px-4 py-2">3–5 business days</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Southeast (FL, GA, AL, TN, NC, SC)</td><td className="border border-gray-200 px-4 py-2">4–5 business days</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Northeast & Mid-Atlantic (NY, NJ, PA, MA, etc.)</td><td className="border border-gray-200 px-4 py-2">4–6 business days</td></tr>
+              <tr><td className="border border-gray-200 px-4 py-2">Expedited (any region)</td><td className="border border-gray-200 px-4 py-2">1–2 business days (quoted)</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Real Clients</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">No Installation Required on Your End — Film Installs Like a Large Sticker</h2>
+        <p className="text-gray-700 mb-4">Countertop protection film is engineered for straightforward field installation. The process:</p>
+        <ol className="list-decimal pl-6 text-gray-700 mb-4 space-y-1">
+          <li>Clean the countertop surface (isopropyl alcohol on polished stone; manufacturer-approved cleaner otherwise)</li>
+          <li>Peel the protective liner from the adhesive face</li>
+          <li>Position the film over the countertop, aligning edges</li>
+          <li>Squeegee out air from the center toward the edges</li>
+          <li>Trim excess at the countertop edges with a sharp blade</li>
+        </ol>
+        <p className="text-gray-700 mb-4">Experienced kitchen installers, stone fabricators, and handy homeowners self-install without issue. For high-value marble, quartzite, or onyx surfaces, we recommend a professional installer local to you. Our supply team is available during business hours to walk through technique questions with your order.</p>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Trade Account Benefits</h2>
         <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li><strong>Valley Metro</strong> — fleet facility surface protection</li>
-          <li><strong>City of Phoenix</strong> — municipal building installations</li>
-          <li><strong>Commercial kitchens & restaurants</strong> across the Southwest</li>
-          <li><strong>Hotel & hospitality</strong> bathroom vanity and lobby protection</li>
+          <li><strong>Tiered volume pricing</strong> — rates drop as your recurring order volume grows</li>
+          <li><strong>Net-30 terms</strong> — available after credit approval for qualifying contractor accounts</li>
+          <li><strong>Priority ship queue</strong> — trade account orders ship same day when placed before 11am MST</li>
+          <li><strong>Technique support</strong> — direct line to our install team for field questions</li>
+          <li><strong>Sample kit replenishment</strong> — ongoing sample supply for your showroom or design portfolio</li>
+          <li><strong>Consolidated billing</strong> — single monthly invoice across multiple jobsites for recurring-project contractors</li>
         </ul>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Get a Nationwide Quote</h2>
-        <p className="text-gray-700 mb-4">For commercial countertop protection film projects in any US city, call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a> or use our <a href="/ai-window-film-estimator" className="text-blue-600 font-semibold">AI window film estimator</a> to start a quote. We respond same-day for commercial inquiries with project scope, material spec, and travel estimate.</p>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Volume Pricing</h2>
+        <p className="text-gray-700 mb-4">Pricing is project-specific and tiered by order volume. The more film you order on a single project (or on recurring trade-account volume), the lower the per-square-foot rate. Single-countertop residential orders are priced at our standard retail. Multi-kitchen, multi-unit, and fabricator supply contracts receive volume pricing. Request a quote with your project scope and we will return a tiered sheet.</p>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Sample Kits Available</h2>
+        <p className="text-gray-700 mb-4">Order a sample kit before committing to a full order. Kits include cut samples of Nexfil and Solyx surface protection lines so you can evaluate optical clarity, edge finish, and installation feel on a piece of your own stone. Useful for spec approval, design-client sign-off, and hands-on familiarization with the film before a full-size install.</p>
+
+        <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Request Distributor Pricing</h2>
+          <p className="text-gray-700 mb-4">Tell us your region, project scope, and preferred film line. We will return a written quote, ship time, and trade-account eligibility — typically within one business day.</p>
+          <a href="/contact?subject=Countertop%20Film%20Supply%20%E2%80%94%20Region%20Inquiry" className="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded hover:bg-blue-700">Request Distributor Pricing →</a>
+          <p className="text-sm text-gray-600 mt-3">Or call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a>. Arizona installation available locally — see our <a href="/countertop-protection-film-arizona" className="text-blue-600 font-semibold">Arizona supply &amp; installation page</a>.</p>
+        </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
         <div className="space-y-6">
@@ -154,12 +171,6 @@ export default function CountertopProtectionFilmNationwide() {
               <p className="text-gray-700">{faq.acceptedAnswer.text}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Get a Nationwide Commercial Quote</h2>
-          <p className="text-gray-700 mb-4">Arizona House of Film — licensed commercial installer. ROC #314088. We travel for commercial countertop protection film projects.</p>
-          <a href="tel:4807881591" className="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded">Call (480) 788-1591</a>
         </div>
       </main>
     </>

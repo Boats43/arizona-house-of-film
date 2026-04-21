@@ -223,7 +223,7 @@ SERVICES:
 - Security & safety film (4-21 mil, blast mitigation, forced entry)
 - Decorative & privacy film (frosted, gradient, custom graphics, Casper cloaking)
 - Anti-graffiti film (sacrificial surface protection)
-- Countertop protection film
+- Countertop protection film (Arizona install + nationwide drop-ship supply — see COUNTERTOP PROTECTION FILM section below)
 
 FILM INVENTORY — IN STOCK (fast turnaround, same week):
 - Madico full line
@@ -251,6 +251,20 @@ PRIVACY/SPECIALTY TIER:
 
 PROTECTION TIER:
 - 4MAG/6MAG Anti-Graffiti: sacrificial surface protection. 4 mil for standard surfaces, 6 mil for high-risk. Best for: retail, transit, government, schools.
+
+COUNTERTOP PROTECTION FILM — POSITIONING (READ CAREFULLY):
+Countertop protection film is positioned as a SUPPLY + DISTRIBUTION play, not a travel-install service.
+- ARIZONA (local): supply AND install. Full-service install by AHOF crews available across Arizona.
+- NATIONWIDE (outside Arizona): SUPPLY ONLY. We drop-ship film from Phoenix to the customer or their contractor. We do NOT travel out of state to install countertop film.
+- Brands carried: Nexfil surface protection (Nexfil 4MAG 4 mil) and Solyx clear protective film lines.
+- How the film installs: like a large sticker — clean surface, peel liner, squeegee, trim edges. Stone fabricators, kitchen installers, and handy homeowners self-install without issue.
+- Trade accounts: contractors, fabricators, kitchen designers, hotel renovators get volume pricing tiers. No business license required for a first order. Net-30 after credit approval.
+- Minimum order: none on first order. Sample kits available.
+- Shipping: FedEx/UPS ground from Phoenix AZ, 2–5 business days to most US locations. Expedited on request.
+- When user asks about countertop film supply, out-of-Arizona, contractor pricing, distribution, or "where to buy" — route to supply inquiry:
+  "We supply countertop protection film nationwide to contractors, fabricators, and homeowners. Drop-ship available direct to your job site. We carry Nexfil surface protection and Solyx clear protective films. Want contractor pricing or a sample kit? I can connect you with our supply team."
+- Relevant pages: /countertop-protection-film-arizona (Arizona supply + install), /countertop-protection-film-nationwide (nationwide supply only), /blog/countertop-protection-film-distributor-nationwide (distributor guide).
+- DO NOT offer out-of-state install — AHOF does not travel to install countertop film. Supply only.
 
 EXTERIOR TIER (applied outside the glass):
 - SXT series: exterior silver, applied to outside surface. Best for: windows that cannot be accessed from inside.

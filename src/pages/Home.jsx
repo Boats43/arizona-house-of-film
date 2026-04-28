@@ -82,7 +82,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <main>
       <Helmet>
         <title>Arizona House of Film | Window Film Phoenix AZ</title>
         <meta name="description" content="Arizona's licensed window film contractor — commercial, residential, security & decorative film across Phoenix, Scottsdale & all Arizona. ROC #314088. Free estimate." />
@@ -405,7 +405,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

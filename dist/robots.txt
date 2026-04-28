@@ -63,4 +63,16 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Block bot spam parameter crawling
+User-agent: *
+Disallow: /*?a=
+Disallow: /index.php
+Disallow: /index.php?
+Disallow: /*?zhHant*
+Disallow: /*?search*
+Disallow: /*?product/edit*
+Disallow: /*?campaign_uid*
+Disallow: /*?safe_search*
+Disallow: /*?events*
+
 Sitemap: https://arizonahouseoffilm.com/sitemap-index.xml

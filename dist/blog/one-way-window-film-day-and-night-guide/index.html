@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-B-LAE2hI.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BA9mbNh9.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">One-Way Window Film Day and Night | Does It Really Work? 2026 | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Honest answer to the most-asked privacy film question in Arizona — does one-way window film work at night? Day/night privacy compared across reflective film, frosted, electric PDLC, and Casper cloaking. What customers actually want."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="One-Way Window Film Day and Night | Does It Really Work? 2026 | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Honest answer to the most-asked privacy film question in Arizona — does one-way window film work at night? Day/night privacy compared across reflective film, frosted, electric PDLC, and Casper cloaking. What customers actually want."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/one-way-window-film-day-and-night-guide"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/one-way-window-film-day-and-night-guide.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/one-way-window-film-day-and-night-guide"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"One-Way Window Film Day and Night | Does It Really Work? 2026","description":"An in-depth guide to one way window film day and night. Learn about the benefits, costs, and top brands like Solyx, 3M, MaxPro.","datePublished":"2026-04-28","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-one-way-window-film-day-and-night-guide.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/one-way-window-film-day-and-night-guide"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does one-way window film work at night?","acceptedAnswer":{"@type":"Answer","text":"No — and this is the single most important fact about reflective one-way films. Reflective one-way films work in one direction at a time, driven by which side of the glass is brighter. During the day, the exterior is bright (sun) and the interior is darker, so the film acts as a mirror to the outside and lets you see out clearly. At night, when interior lights are on and the outside is dark, the physics reverses — you become visible from outside, and the film mirrors the room back to you instead. If you need privacy at night, reflective one-way film is the wrong product. The only films that deliver true day-and-night privacy are frosted, electric PDLC (smart film), and Casper cloaking."}},{"@type":"Question","name":"What window film actually works for both day and night privacy?","acceptedAnswer":{"@type":"Answer","text":"Three product categories deliver true day-and-night privacy: (1) Frosted/etched film — opaque white-frosted finish, total visual block in both directions, day and night, lights on or off. The trade-off is no view through the glass at all. (2) Electric PDLC smart film — switchable from clear to opaque on demand, draws ~5W per square meter when activated. (3) Casper cloaking film — the Solyx Casper Series, blocks visibility of LED screens specifically while keeping the rest of the room visible. For most residential bathroom, ground-floor bedroom, and home-office privacy needs, frosted is the right answer. For conference rooms and luxury bathrooms, PDLC smart film. For LED screen privacy specifically, Casper."}},{"@type":"Question","name":"Are there any one-way films that work at night?","acceptedAnswer":{"@type":"Answer","text":"No reflective film works at night — the physics does not allow it. The \"one-way\" effect requires a brightness differential, and the differential reverses at night. Some manufacturers market \"day and night\" or \"all-day\" privacy films, but on inspection these are either (a) mid-VLT reflective films that simply look less like a mirror in both directions and offer partial privacy in both directions, or (b) frosted films marketed under a different name. The honest answer is that \"one-way film that works at night\" does not exist as advertised. If you specifically need to see out while preventing others from seeing in, day and night, you need frosted film (no view) or PDLC smart film (clear when you want a view, opaque when you want privacy)."}},{"@type":"Question","name":"What is the difference between reflective film and two-way mirror film?","acceptedAnswer":{"@type":"Answer","text":"They are the same product. \"Two-way mirror film,\" \"one-way mirror film,\" and \"reflective privacy film\" all refer to the same category — a metallic or sputter film with high exterior reflectivity that acts as a mirror to the brighter side of the glass. The \"two-way\" naming is a marketing term that refers to the glass acting as a mirror from outside (during the day) and clear from inside — but the same physics that creates the daytime mirror reverses at night, when the bright side switches to the interior."}},{"@type":"Question","name":"What do most Phoenix customers actually need?","acceptedAnswer":{"@type":"Answer","text":"In our experience, about 80% of Phoenix customers asking for \"one-way film that works at night\" actually need frosted film — they want privacy in a bathroom, ground-floor bedroom, or home office where view through the glass is not the priority. Frosted film delivers what they want (total privacy day and night, lights on or off) at a price meaningfully lower than reflective film. The remaining 20% genuinely need a view through the glass during the day and privacy at night — for those customers, electric PDLC smart film is the right product, with Casper cloaking as a niche solution for LED-screen-specific privacy."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"One-Way Window Film Day and Night | Does It Really Work? 2026","item":"https://arizonahouseoffilm.com/blog/one-way-window-film-day-and-night-guide"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">One-Way Window Film Day and Night | Does It Really Work? 2026</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->April 27, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+    <h1>One-Way Window Film Day and Night — Does It Really Work? 2026 Honest Guide</h1>
+
+    <p class="lead">"I want privacy from the outside, but I still want to see out — and I want it to work at night too." This is the single most-asked privacy question we get at Arizona House of Film. The honest answer disappoints most callers but saves everyone money: reflective "one-way" mirror film does not work at night. The physics that makes it work during the day reverses after dark. This guide explains why, what films actually deliver day-and-night privacy, and what the right answer is for the most common Phoenix privacy scenarios.</p>
+
+    <h2>1. Why "One-Way" Film Fails at Night — The Physics</h2>
+    <p>Reflective one-way film works on a brightness differential. Whichever side of the glass is brighter becomes the mirror; whichever side is darker is the side from which you can see through.</p>
+    <ul>
+      <li><strong>Daytime</strong> — sun makes the exterior bright. Interior is darker by comparison. Film mirrors the outside (privacy from outside), and you can see out clearly from inside. Works as advertised.</li>
+      <li><strong>Nighttime</strong> — sun gone, exterior dark. Interior lights on, interior brighter. Physics reverses. Film now mirrors the inside (you see your own reflection), and someone outside can see clearly into your lit room. Privacy lost.</li>
+    </ul>
+    <p>This is not a product flaw — it is the underlying optics. No reflective film, regardless of brand, manufacturer, marketing claims, or price point, can defeat this. Films marketed as "all-day" or "day and night" reflective privacy are either reframed frosted films or partial-privacy products that look less mirror-like in both directions.</p>
+
+    <h2>2. The Day/Night Privacy Comparison Table</h2>
+    <table>
+      <tr><th>Film Type</th><th>Day Privacy</th><th>Night Privacy</th><th>See Through?</th><th>Price</th></tr>
+      <tr><td>Reflective one-way mirror</td><td>Yes (high)</td><td><strong>No</strong> (lights on)</td><td>Yes from inside daytime, no at night</td><td>$8–$14/sqft</td></tr>
+      <tr><td>Frosted / etched</td><td><strong>Yes (total)</strong></td><td><strong>Yes (total)</strong></td><td>No — opaque both directions</td><td>$8–$15/sqft</td></tr>
+      <tr><td>Electric PDLC smart film</td><td><strong>On demand</strong></td><td><strong>On demand</strong></td><td>Clear when off, opaque when on</td><td>$70–$140/sqft</td></tr>
+      <tr><td>Casper cloaking (Solyx Casper)</td><td>Yes (LED screens)</td><td>Yes (LED screens)</td><td>Yes — you see the room, not the LED</td><td>$40–$80/sqft</td></tr>
+    </table>
+    <p>Read this table carefully. The reflective one-way row is the only row with "No" under night privacy. Every other product on this list works in both lighting conditions because each uses a different mechanism — opacity, switchable liquid crystal, or LED-frequency-specific blocking — that does not depend on a brightness differential.</p>
+
+    <h2>3. What Customers Actually Want vs What They Think They Want</h2>
+    <p>When someone calls asking for "one-way film that works at night," the underlying need almost always falls into one of three patterns:</p>
+    <ul>
+      <li><strong>Bathroom privacy (60% of inquiries)</strong> — they want privacy at all times. They do not actually need to see out through the bathroom window. The right answer is frosted film — total privacy, day and night, lights on or off. Costs less than reflective. Solves the problem completely.</li>
+      <li><strong>Ground-floor bedroom or home office (25%)</strong> — they want privacy at night when the lights are on, and a view during the day. The right answer depends on view priority. If view matters, electric PDLC smart film. If view is nice-to-have, frosted is cheaper and simpler.</li>
+      <li><strong>Conference room or luxury bath (15%)</strong> — they want clear glass when the room is empty and total privacy when in use. The right answer is electric PDLC smart film, switched at the wall.</li>
+    </ul>
+    <p>Almost no one actually needs reflective one-way film for nighttime privacy, because the product cannot deliver it. We steer customers to the product that solves the actual problem instead of selling them the wrong product.</p>
+
+    <h2>4. The Three Films That Actually Work Day and Night</h2>
+    <h3>Frosted / Etched Film</h3>
+    <ul>
+      <li>Opaque white-frosted finish</li>
+      <li>Total privacy in both directions, day and night, lights on or off</li>
+      <li>No view through the glass</li>
+      <li>$8–$15 per sqft installed</li>
+      <li>Best for: bathrooms, sidelights, conference room walls, ground-floor bedroom windows where view is not a priority</li>
+    </ul>
+    <p>See our <a href="/films/frosted-etched-films">frosted/etched film category</a> for the full Solyx frosted SKU library.</p>
+    <h3>Electric PDLC Smart Film</h3>
+    <ul>
+      <li>Switchable liquid-crystal film, clear when powered, opaque when unpowered (or wired in reverse)</li>
+      <li>Clear glass for view, opaque on demand for privacy</li>
+      <li>Wall switch, remote, or smart-home integration</li>
+      <li>$70–$140 per sqft installed</li>
+      <li>Best for: conference rooms, luxury master bathrooms, executive offices, hotel suites</li>
+    </ul>
+    <p>See our <a href="/electric-privacy-film-arizona">electric privacy film Arizona</a> page for the full PDLC product overview.</p>
+    <h3>Casper Cloaking Film (Solyx Casper Series)</h3>
+    <ul>
+      <li>LED-frequency-specific blocking — makes LED screens (TVs, monitors) invisible to outside viewers while leaving the rest of the room visible</li>
+      <li>Day or night, lights on or off — works because LEDs emit a specific narrow frequency band the film blocks</li>
+      <li>$40–$80 per sqft installed</li>
+      <li>Best for: corner offices with confidential displays, executive boardrooms, secure conference rooms, residential home theaters facing public sidewalks</li>
+    </ul>
+
+    <h2>5. The Reflective One-Way Use Case Where It Still Makes Sense</h2>
+    <p>Reflective one-way film is not useless — it just is not the right answer for nighttime privacy. Where it does work well:</p>
+    <ul>
+      <li><strong>Daytime privacy with clear view-through</strong> — west-facing residential glass where the room is rarely lit at night (formal living room, dining room used for guests only) — daytime privacy is real, nighttime privacy is moot because lights are off.</li>
+      <li><strong>Commercial daytime privacy</strong> — storefront and office where business hours align with bright exterior lighting. By the time interior lights would matter, the building is closed.</li>
+      <li><strong>Heat rejection with privacy bonus</strong> — many reflective films also deliver high TSER. If you need both heat rejection and daytime privacy, reflective film stacks both.</li>
+    </ul>
+
+    <h2>6. The Recommendation Framework</h2>
+    <ol>
+      <li><strong>Do you need to see out through this glass during the day?</strong> If no → frosted film. Done.</li>
+      <li><strong>Do you need privacy at night with lights on?</strong> If yes and frosted is acceptable → frosted. If you need to keep view-through availability → electric PDLC smart film.</li>
+      <li><strong>Are you specifically protecting LED screens (TVs, monitors) from outside viewing?</strong> → Casper cloaking film.</li>
+      <li><strong>Do you only need daytime privacy?</strong> → Reflective one-way film is fine, and you get heat rejection as a bonus.</li>
+    </ol>
+
+    <h2>Related Resources</h2>
+    <ul>
+      <li><a href="/day-and-night-privacy-window-film">Day &amp; night privacy window film overview</a></li>
+      <li><a href="/electric-privacy-film-arizona">Electric privacy (PDLC) film Arizona</a></li>
+      <li><a href="/privacy-film-sliding-glass-door">Privacy film for sliding glass doors</a></li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>Does one-way window film work at night?</h3>
+        <p>No — reflective one-way film fails at night because the brightness differential reverses (interior brighter than exterior). For night privacy you need frosted, PDLC smart film, or Casper cloaking.</p>
+      </div>
+      <div>
+        <h3>What window film actually works for both day and night privacy?</h3>
+        <p>Frosted/etched (total privacy, no view), electric PDLC smart film (switchable clear-to-opaque), and Casper cloaking (LED-screen specific). All three work day or night, lights on or off.</p>
+      </div>
+      <div>
+        <h3>Are there any one-way films that work at night?</h3>
+        <p>No. Any film marketed as "day and night" reflective privacy is either a frosted film under a different name or a partial-privacy product. The physics does not allow reflective films to work at night.</p>
+      </div>
+      <div>
+        <h3>What is the difference between reflective film and two-way mirror film?</h3>
+        <p>Same product. Both refer to a metallic/sputter film that mirrors to the brighter side of the glass — daytime mirror to outside, nighttime mirror to inside.</p>
+      </div>
+      <div>
+        <h3>What do most Phoenix customers actually need?</h3>
+        <p>~80% need frosted film (bathroom, ground-floor bedroom). ~15% need PDLC smart film (conference rooms). ~5% need Casper cloaking (LED screen privacy). Reflective one-way film is rarely the right answer for night privacy.</p>
+      </div>
+    </div>
+
+    <h2>Talk to Us About Your Actual Privacy Need</h2>
+    <p>Arizona House of Film. ROC #314088. We will not sell you the wrong product.</p>
+    <p><a href="/contact?subject=Privacy%20Film%20Quote%20—%20Day%20and%20Night" style="display:inline-block;background:#2563eb;color:#fff;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Request a Privacy Quote →</a></p>
+    <p>Or call (480) 788-1591.</p>
+  </div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/service-areas/phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

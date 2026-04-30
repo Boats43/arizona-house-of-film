@@ -27,7 +27,9 @@ const CasperCloakingPage = () => {
       { "@type": "Question", name: "Does Casper film affect screen brightness or color from inside?", acceptedAnswer: { "@type": "Answer", text: "No. Casper cloaking film has zero measurable impact on screen visibility, color accuracy, or brightness for people inside the office. It does not require any adjustment to screen brightness settings." } },
       { "@type": "Question", name: "What types of screens does Casper film work with?", acceptedAnswer: { "@type": "Answer", text: "Casper film works with LED and OLED screens — the standard in modern commercial environments. It is effective on monitors, presentation screens, video walls, and laptop displays. It is not designed for older fluorescent backlit LCD screens." } },
       { "@type": "Question", name: "How much does Casper cloaking film cost in Phoenix?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is custom quoted after a free on-site consultation. Smaller applications like door sidelights or a single glass panel start at $4,500. Standard conference rooms typically start around $6,000 and scale up based on glass dimensions, screen positions, and whether we need full or partial height coverage. Every Casper project begins with a physical site survey — wavelength alignment to your specific screen positions requires on-site measurement. Contact Arizona House of Film at (480) 788-1591 to schedule a consultation." } },
-      { "@type": "Question", name: "Do you install Quantum Cloaking Film in Phoenix and Scottsdale?", acceptedAnswer: { "@type": "Answer", text: "Yes. Arizona House of Film installs Quantum Cloaking Film® as an alternative cloaking film specification. Quantum Cloaking is used by Wells Fargo, Chase Bank, hospitals, police stations, and government buildings. Both Quantum Cloaking and Casper by Designtex achieve identical results — screens appear completely black from outside while remaining fully visible inside. Specification is determined per project. Call (480) 788-1591 for a free commercial estimate." } }
+      { "@type": "Question", name: "Do you install Quantum Cloaking Film in Phoenix and Scottsdale?", acceptedAnswer: { "@type": "Answer", text: "Yes. Arizona House of Film installs Quantum Cloaking Film® as an alternative cloaking film specification. Quantum Cloaking is used by Wells Fargo, Chase Bank, hospitals, police stations, and government buildings. Both Quantum Cloaking and Casper by Designtex achieve identical results — screens appear completely black from outside while remaining fully visible inside. Specification is determined per project. Call (480) 788-1591 for a free commercial estimate." } },
+      { "@type": "Question", name: "How is Casper cloaking film installed?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film is installed using a wet application process similar to standard window film. The glass is thoroughly cleaned, the film is cut to exact dimensions, and applied with a slip solution for positioning. The critical difference is wavelength alignment — Casper must be positioned precisely relative to LED screen positions to achieve the cloaking effect. This requires on-site measurement and cannot be templated remotely. Installation typically takes 1-2 days depending on project scope. Licensed ROC #314088." } },
+      { "@type": "Question", name: "Does Casper work on all glass types?", acceptedAnswer: { "@type": "Answer", text: "Casper cloaking film works on most standard commercial glass including single-pane, dual-pane, and tempered glass. It is not recommended for highly textured or patterned glass where the micro-louver structure cannot adhere uniformly. We assess glass type during the free on-site consultation to confirm compatibility before quoting. Casper also requires flat interior glass surfaces — exterior texture is acceptable but interior must be smooth for proper adhesion." } }
     ]
   };
 
@@ -84,6 +86,91 @@ const CasperCloakingPage = () => {
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Casper Film vs Standard Frosted Privacy Film</h2>
           <p className="text-lg text-slate-700 mb-4">Standard frosted film solves visual privacy by diffusing all light through the glass — obscuring both the view and the screen behind it. Casper film is specified when you need screen privacy without losing glass transparency. The glass wall stays visually open and maintains natural light flow. The only thing blocked is screen content from outside view.</p>
           <p className="text-lg text-slate-700">For conference rooms where the glass should remain clear but screen content must be protected, Casper is the only film that delivers both simultaneously.</p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-6">Casper vs Frosted vs PDLC — Comparison</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-slate-300">
+              <thead>
+                <tr className="bg-slate-100">
+                  <th className="border border-slate-300 px-4 py-3 text-left font-black text-sm uppercase">Feature</th>
+                  <th className="border border-slate-300 px-4 py-3 text-left font-black text-sm uppercase">Casper Cloaking</th>
+                  <th className="border border-slate-300 px-4 py-3 text-left font-black text-sm uppercase">Frosted Film</th>
+                  <th className="border border-slate-300 px-4 py-3 text-left font-black text-sm uppercase">Electric PDLC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-300 px-4 py-3 font-bold text-slate-800">Privacy Type</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Screen privacy only</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Full opacity</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Switchable on demand</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="border border-slate-300 px-4 py-3 font-bold text-slate-800">Lighting Required</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Any lighting</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Any lighting</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Any lighting</td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-4 py-3 font-bold text-slate-800">Price Range</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">From $4,500</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">From $500</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">From $8,000+</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="border border-slate-300 px-4 py-3 font-bold text-slate-800">Power Required</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">No power</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">No power</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Requires electrical</td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-4 py-3 font-bold text-slate-800">Best For</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Glass offices with sensitive screen content</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Full visual privacy, bathroom partitions</td>
+                  <td className="border border-slate-300 px-4 py-3 text-slate-700">Boardrooms requiring on-demand privacy control</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-6">Phoenix Casper Cloaking Projects</h2>
+          <p className="text-lg text-slate-700 mb-6">Arizona House of Film installs Casper cloaking film across Phoenix and Scottsdale commercial offices. Typical applications and project scopes:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-50 border-l-4 border-green-600 p-6">
+              <h3 className="text-base font-black text-slate-900 uppercase mb-3">Executive Office Suites</h3>
+              <p className="text-sm text-slate-700 mb-3">Glass-walled C-suite offices in North Scottsdale and downtown Phoenix office towers. Typical scope: 50-150 sq ft perimeter glass. Screen privacy for financial data, legal documents, and proprietary dashboards.</p>
+              <p className="text-xs text-slate-500 font-bold">Typical Project Range: $6,000–$12,000</p>
+            </div>
+            <div className="bg-slate-50 border-l-4 border-green-600 p-6">
+              <h3 className="text-base font-black text-slate-900 uppercase mb-3">Conference Rooms</h3>
+              <p className="text-sm text-slate-700 mb-3">Standard 10×12 to 15×20 conference rooms with presentation screens and video conferencing. Partial-height or full-height glass coverage depending on screen positions and sightlines.</p>
+              <p className="text-xs text-slate-500 font-bold">Typical Project Range: $6,000–$18,000</p>
+            </div>
+            <div className="bg-slate-50 border-l-4 border-green-600 p-6">
+              <h3 className="text-base font-black text-slate-900 uppercase mb-3">Financial Services & Legal Offices</h3>
+              <p className="text-sm text-slate-700 mb-3">Law firms, financial planners, and accounting firms requiring client confidentiality. Multi-room installs with Casper on glass partitions separating workstations from lobby or corridor visibility.</p>
+              <p className="text-xs text-slate-500 font-bold">Typical Project Range: $12,000–$35,000</p>
+            </div>
+            <div className="bg-slate-50 border-l-4 border-green-600 p-6">
+              <h3 className="text-base font-black text-slate-900 uppercase mb-3">Door Sidelights & Small Applications</h3>
+              <p className="text-sm text-slate-700 mb-3">Entry door sidelights, single glass panels, accent glazing. Smallest entry point for Casper screen privacy — ideal for testing the specification before full-room commitment.</p>
+              <p className="text-xs text-slate-500 font-bold">Starting at: $4,500</p>
+            </div>
+          </div>
+          <div className="mt-6 bg-green-50 border border-green-200 rounded-lg p-6">
+            <h3 className="text-base font-black text-slate-900 uppercase mb-2">What the Consultation Process Looks Like</h3>
+            <ol className="list-decimal pl-6 text-sm text-slate-700 space-y-2">
+              <li><strong>Free on-site visit</strong> — We physically measure glass dimensions, photograph screen positions, and assess sightlines from outside the glass.</li>
+              <li><strong>Wavelength alignment</strong> — Casper requires precise positioning relative to LED screen wavelengths. This cannot be quoted sight-unseen.</li>
+              <li><strong>Pattern selection</strong> — We provide samples from the full Casper by Designtex collection and recommend the pattern that best matches your aesthetic.</li>
+              <li><strong>Written quote</strong> — Detailed proposal with glass area, film pattern, installation timeline, and total project cost.</li>
+              <li><strong>Scheduled install</strong> — Most Casper projects install in 1-2 days with minimal business disruption. Licensed ROC #314088.</li>
+            </ol>
+          </div>
         </section>
 
         <section className="mb-12">
@@ -180,6 +267,27 @@ const CasperCloakingPage = () => {
           </div>
           <p className="text-slate-700 mb-4">Decorative Films LLC MSRP: $58/sqft film only. Professional installation by Arizona House of Film adds precision wavelength alignment, edge sealing, and a licensed contractor guarantee. Every Casper project begins with a free on-site consultation — ROC #314088.</p>
           <p className="text-slate-600 text-sm">Casper cloaking film is a premium specification. All projects are assessed on-site before quoting. Free consultation — call (480) 788-1591 or <a href="/get-a-quote" className="text-green-700 underline">submit a quote request</a>. Licensed ROC #314088.</p>
+        </section>
+
+        <section className="mb-12 bg-slate-900 rounded-lg p-8">
+          <h2 className="text-2xl font-black uppercase tracking-tight mb-6 text-white">Related Privacy & Commercial Film Solutions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link to="/electric-privacy-film-arizona" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">
+              Electric Privacy Film (PDLC) →
+            </Link>
+            <Link to="/office-privacy-window-film" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">
+              Office Privacy Window Film →
+            </Link>
+            <Link to="/commercial-window-tinting" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">
+              Commercial Window Tinting →
+            </Link>
+            <Link to="/films/casper-films" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">
+              Casper Films Catalog →
+            </Link>
+            <Link to="/blog/casper-cloaking-film-cost-phoenix" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors md:col-span-2">
+              Casper Cloaking Film Cost Guide →
+            </Link>
+          </div>
         </section>
 
         <section className="bg-slate-100 p-8 rounded-lg">

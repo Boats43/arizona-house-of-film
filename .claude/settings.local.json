@@ -56,7 +56,9 @@
       "Bash(xargs grep:*)",
       "Bash(grep -l \"window-film-phoenix\" \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\\\\src\\\\pages\"/*.jsx)",
       "Bash(grep:*)",
-      "Bash(pkill -f \"prerender.js\")"
+      "Bash(pkill -f \"prerender.js\")",
+      "Bash(awk -F: '{ n=split\\($0, parts, /\\\\\\\\/\\); print parts[n] }')",
+      "Bash(awk -F':' '{ print $1 }')"
     ]
   }
 }

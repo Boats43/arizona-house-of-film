@@ -793,6 +793,7 @@ const Commercial = () => {
               <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Commercial Tinting by Location</p>
               <div className="flex flex-wrap gap-2">
                 {[
+                  { to: '/commercial-window-tinting-scottsdale', label: 'Scottsdale' },
                   { to: '/commercial-window-tinting-mesa', label: 'Mesa' },
                   { to: '/commercial-window-tinting-chandler', label: 'Chandler' },
                   { to: '/commercial-window-tinting-gilbert', label: 'Gilbert' },

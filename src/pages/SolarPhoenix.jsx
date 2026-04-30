@@ -258,6 +258,57 @@ const SolarPhoenix = () => {
           </div>
         </section>
 
+        {/* SRP REBATE SECTION */}
+        <section className="py-16 bg-green-950 border-b border-green-900">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              Solar Window Film Qualifies for SRP Rebates
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <p className="text-green-100 text-base md:text-lg leading-relaxed font-medium mb-4">
+                  Salt River Project (SRP) offers commercial and residential rebates for qualifying window film installations — typically <strong>$0.75–$1.00 per square foot</strong> for NFRC-certified solar control film.
+                </p>
+                <p className="text-green-100 text-base md:text-lg leading-relaxed font-medium mb-4">
+                  Arizona House of Film provides all required documentation for SRP rebate applications including NFRC certification labels, manufacturer spec sheets, and installed square footage verification.
+                </p>
+                <p className="text-green-100 text-base md:text-lg leading-relaxed font-medium">
+                  Rebate applications are submitted directly by the property owner to SRP after installation. We coordinate the paperwork — you submit and receive the rebate check.
+                </p>
+              </div>
+              <div className="bg-green-900/50 border border-green-800 rounded-lg p-6">
+                <h3 className="text-xl font-black text-green-300 uppercase mb-4">What You Need for SRP Rebate Approval</h3>
+                <ul className="space-y-3 text-green-100 text-sm">
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>NFRC certification</strong> — Arizona House of Film installs only NFRC-rated films eligible for SRP rebates</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>Manufacturer spec sheets</strong> — provided with every invoice, includes SHGC and VLT data required by SRP</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>Square footage documentation</strong> — itemized on invoice for rebate calculation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>Licensed contractor installation</strong> — SRP requires ROC-licensed contractor (ROC #314088)</span>
+                  </li>
+                </ul>
+                <div className="mt-6 pt-6 border-t border-green-800">
+                  <p className="text-green-200 text-sm">
+                    <strong>Learn more:</strong>{' '}
+                    <Link to="/blog/srp-rebate-window-film-2026" className="text-green-400 hover:text-green-300 underline">
+                      SRP Window Film Rebate Guide 2026 →
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FILM TYPES */}
         <section className="py-24 bg-slate-950 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -277,6 +328,57 @@ const SolarPhoenix = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* SOLAR FILM PERFORMANCE COMPARISON */}
+        <section className="py-16 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6 text-center">
+              Solar Film Performance Comparison
+            </h2>
+            <p className="text-slate-300 text-center text-base mb-8 max-w-3xl mx-auto">
+              Choosing the right solar film depends on heat rejection needs, privacy requirements, and exterior appearance preferences. Here's how the three main categories compare:
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-slate-800">
+                <thead>
+                  <tr className="bg-green-600">
+                    <th className="border border-slate-700 px-6 py-4 text-left font-black text-sm uppercase text-white">Film Type</th>
+                    <th className="border border-slate-700 px-6 py-4 text-left font-black text-sm uppercase text-white">TSER (Heat Rejection)</th>
+                    <th className="border border-slate-700 px-6 py-4 text-left font-black text-sm uppercase text-white">Exterior Appearance</th>
+                    <th className="border border-slate-700 px-6 py-4 text-left font-black text-sm uppercase text-white">Privacy</th>
+                    <th className="border border-slate-700 px-6 py-4 text-left font-black text-sm uppercase text-white">Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-slate-850">
+                    <td className="border border-slate-700 px-6 py-4 font-bold text-white">Dual-Reflective</td>
+                    <td className="border border-slate-700 px-6 py-4 text-green-400 font-black">TSER up to 91%</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">Mirror exterior</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">Daytime privacy</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">Maximum heat rejection + street-facing privacy</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-700 px-6 py-4 font-bold text-white">Ceramic</td>
+                    <td className="border border-slate-700 px-6 py-4 text-green-400 font-black">TSER up to 84%</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">Clear appearance</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">No privacy</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">HOA compliance, signal transparency, no mirror finish</td>
+                  </tr>
+                  <tr className="bg-slate-850">
+                    <td className="border border-slate-700 px-6 py-4 font-bold text-white">Spectrally Selective</td>
+                    <td className="border border-slate-700 px-6 py-4 text-green-400 font-black">TSER up to 79%</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">Nearly clear</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">No privacy</td>
+                    <td className="border border-slate-700 px-6 py-4 text-slate-300 text-sm">Minimal appearance change, preserve views, LEED projects</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-400 text-sm mt-6 text-center">
+              All film types block 99%+ UV and qualify for SRP/APS energy efficiency rebates when NFRC-certified. Arizona House of Film provides detailed spec sheets and performance data for every installation.
+            </p>
           </div>
         </section>
 
@@ -390,6 +492,12 @@ const SolarPhoenix = () => {
               <Link to="/commercial-window-film-phoenix" className="text-green-600 hover:underline">Commercial Window Film Phoenix</Link>
               {' · '}
               <Link to="/security-window-film-phoenix" className="text-green-600 hover:underline">Security Window Film</Link>
+              {' · '}
+              <Link to="/energy-saving-window-films" className="text-green-600 hover:underline">Energy-Saving Window Films</Link>
+              {' · '}
+              <Link to="/blog/best-window-film-arizona-heat-2026" className="text-green-600 hover:underline">Best Window Film for Arizona Heat</Link>
+              {' · '}
+              <Link to="/blog/srp-rebate-window-film-2026" className="text-green-600 hover:underline">SRP Rebate Guide 2026</Link>
             </div>
           </div>
         </section>

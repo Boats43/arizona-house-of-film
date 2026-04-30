@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ScottsdaleCommercial = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Commercial Window Tinting Scottsdale AZ | Free Quote';
-  const metaDescription = 'Commercial window tinting in Scottsdale from $6/sq ft. Offices, retail, hospitality — 3M, Huper Optik, Vista films. Boeing, ASU & State of AZ trust us. Free on-site estimate.';
+  const pageTitle = 'Commercial Window Film Scottsdale AZ | Licensed Contractor | ROC #314088';
+  const metaDescription = 'Licensed commercial window film contractor serving Scottsdale AZ. Offices, retail, medical, hospitality. Ceramic, solar control, security and decorative film. In-stock films available same week. Free estimate — ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =
@@ -114,6 +114,22 @@ const ScottsdaleCommercial = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Yes. Qualifying commercial window film installations in Scottsdale meet SRP Business Solutions and APS energy efficiency rebate requirements. Arizona House of Film provides NFRC-rated data sheets required for rebate applications. Customers submit directly to their utility provider.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What commercial window film is best for Scottsdale offices?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ceramic solar film is the standard specification for Scottsdale office buildings. Huper Optik Ceramic 40 and 3M Prestige 70 are the most common selections — both block 60-75% of solar heat, reject 99% UV, and meet Scottsdale HOA low-reflectivity requirements. For conference rooms and glass-walled offices, add 3M Fasara decorative or Casper cloaking film for privacy without blocking natural light.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between solar control and decorative commercial film?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Solar control film blocks heat and UV from the sun — designed for energy savings and occupant comfort. Decorative film obscures visibility through glass for privacy or branding without heat rejection. Most Scottsdale commercial projects combine both: solar control on perimeter glass for heat management and decorative film on interior glass partitions for conference room privacy.',
         },
       },
     ],
@@ -353,6 +369,41 @@ const ScottsdaleCommercial = () => {
           </div>
         </section>
 
+        {/* WHY SCOTTSDALE BUSINESSES CHOOSE CERAMIC FILM */}
+        <section className="py-16 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              Why Scottsdale Businesses Choose Ceramic Film
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h3 className="text-lg font-black text-green-400 uppercase mb-3">Scottsdale HOA Restrictions on Reflective Film</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  North Scottsdale office parks, DC Ranch, and Gainey Ranch commercial properties frequently restrict mirror-finish or high-reflectivity films. Ceramic solar film delivers 60-80% heat rejection with low visible light reflectance (VLR under 10%) — compliant with most Scottsdale design standards while maintaining architectural aesthetics.
+                </p>
+              </div>
+              <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h3 className="text-lg font-black text-green-400 uppercase mb-3">Glass-Heavy Modern Architecture</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Scottsdale commercial buildings — from Scottsdale Quarter retail to North Scottsdale medical offices — feature floor-to-ceiling glass, curtain walls, and atriums. Ceramic film is specified for compatibility with all glass types including dual-pane low-e units and thermally sensitive insulated glass.
+                </p>
+              </div>
+              <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h3 className="text-lg font-black text-green-400 uppercase mb-3">West-Facing Afternoon Exposure</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  West-facing Scottsdale office buildings receive sustained 3-6pm solar load during peak business hours. Ceramic film blocks infrared heat without darkening interiors — employees maintain outward views and natural daylight while avoiding afternoon glare and thermal discomfort.
+                </p>
+              </div>
+              <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h3 className="text-lg font-black text-green-400 uppercase mb-3">LEED Documentation Requirements</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Scottsdale commercial properties pursuing LEED certification require NFRC-rated window film data for energy modeling and credits. Arizona House of Film provides manufacturer spec sheets, thermal performance data, and post-installation documentation for LEED Energy & Atmosphere submittals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SECTION 3 — APPLICATIONS */}
         <section className="py-24 bg-slate-950 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -472,10 +523,14 @@ const ScottsdaleCommercial = () => {
               <Link to="/solar-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Solar Window Film Scottsdale →</Link>
               <Link to="/security-window-film-scottsdale" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Security Window Film Scottsdale →</Link>
             </div>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4 mb-4">
               <Link to="/commercial-window-tinting" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Commercial Window Tinting Arizona →</Link>
               <Link to="/industries/office-buildings" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Office Building Window Film →</Link>
               <Link to="/window-film-cost-arizona" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Window Film Cost Arizona →</Link>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link to="/energy-saving-window-films" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Energy-Saving Window Films →</Link>
+              <Link to="/blog/commercial-window-tinting-cost-phoenix-2026" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors">Commercial Window Tinting Cost Guide →</Link>
             </div>
           </div>
         </section>

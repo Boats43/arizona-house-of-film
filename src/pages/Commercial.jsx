@@ -21,8 +21,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 const Commercial = () => {
   const rocNumber = "314088";
   const pageTitle =
-    "Commercial Window Tinting Phoenix | Free Estimate";
-  const metaDescription = "Commercial window tinting in Phoenix & Arizona — offices, retail, government. Boeing, ASU & State of AZ trust us. Cuts cooling costs 30%. ROC #314088. Free estimate.";
+    "Commercial Window Film Phoenix AZ | Licensed Contractor Since 2017 | ROC #314088";
+  const metaDescription = "Phoenix's licensed commercial window film contractor. 713+ projects including Boeing, ASU, City of Phoenix, and Valley Metro. Solar control, security, decorative and anti-graffiti film. ROC #314088. Free estimate.";
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
   const heroImageUrl =
     "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
@@ -106,6 +106,14 @@ const Commercial = () => {
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088, is fully bonded and insured, and meets procurement requirements for government and institutional projects. We have completed work for the State of Arizona, Glendale Fire Station 152, Grand Canyon University, and ASU — environments where licensing documentation is mandatory.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is the best commercial window tinting company in Phoenix?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Arizona House of Film has completed 713+ commercial window film projects across Phoenix and Arizona since 2017 including government buildings (State of Arizona, City of Phoenix, Glendale Fire Station), medical facilities (Banner Physical Therapy, SDC Clinical), Fortune 500 offices (Boeing, Coca-Cola, Skechers USA), and educational institutions (ASU, Grand Canyon University). Licensed ROC #314088 since 2012. We are the preferred window film subcontractor for the Valley's leading general contractors including Wespac Construction, Renaissance Companies, DNG Construction, and FCI Constructors.",
         },
       },
     ],
@@ -304,6 +312,10 @@ const Commercial = () => {
       q: "Are you licensed for high-liability commercial environments?",
       a: "Yes. Arizona House of Film holds Arizona Registrar of Contractors license ROC #314088, is fully bonded and insured, and meets procurement requirements for government and institutional projects. We have completed work for the State of Arizona, Glendale Fire Station 152, Grand Canyon University, and ASU — environments where licensing documentation is mandatory.",
     },
+    {
+      q: "Who is the best commercial window tinting company in Phoenix?",
+      a: "Arizona House of Film has completed 713+ commercial window film projects across Phoenix and Arizona since 2017 including government buildings (State of Arizona, City of Phoenix, Glendale Fire Station), medical facilities (Banner Physical Therapy, SDC Clinical), Fortune 500 offices (Boeing, Coca-Cola, Skechers USA), and educational institutions (ASU, Grand Canyon University). Licensed ROC #314088 since 2012. We are the preferred window film subcontractor for the Valley's leading general contractors including Wespac Construction, Renaissance Companies, DNG Construction, and FCI Constructors.",
+    },
   ];
 
   return (
@@ -352,7 +364,7 @@ const Commercial = () => {
                 Licensed • Bonded • ROC #{rocNumber}
               </span>
               <h1 className="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">
-                Commercial Window Tinting Phoenix &amp; Scottsdale | Arizona House of Film
+                Commercial Window Film Installation Phoenix — Licensed Contractor ROC #314088
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">
                 Industrial-grade solar and <Link to="/safety" className="text-slate-200 underline">security</Link> solutions engineered for the Arizona climate. Protect your

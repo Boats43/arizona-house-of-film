@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ResidentialPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Home Window Tinting Phoenix AZ | From $8/sq ft';
-  const metaDescription = 'Home window tinting in Phoenix from $8/sq ft. Blocks 80% of solar heat, cuts AC bills, and protects furniture from UV. 700+ Phoenix homes done. Free estimate — (480) 788-1591.';
+  const pageTitle = 'Home Window Tinting Phoenix AZ | Licensed Contractor | ROC #314088';
+  const metaDescription = 'Phoenix\'s licensed home window tinting contractor. Blocks 80% of solar heat, cuts AC bills, and protects furniture from UV. SRP rebate eligible. 700+ Phoenix homes. Free estimate — (480) 788-1591.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl =
@@ -82,6 +82,38 @@ const ResidentialPhoenix = () => {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'We install LLumar, Madico, SunTek, and XPEL window films for residential projects in Phoenix. Each brand offers ceramic, solar, privacy, and security options — we match the right film to your home\'s needs and budget.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does window tinting comply with Phoenix HOA rules?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most Phoenix HOAs allow non-reflective ceramic window film. HOA restrictions typically target mirror-finish or highly reflective films that alter the exterior appearance of the home. Ceramic films deliver 60-80% heat rejection with minimal visible light reflectance (VLR under 10%) — compliant with most HOA design standards. We check HOA architectural guidelines before installation and can provide film spec sheets for HOA approval when required.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the SRP window film rebate for Phoenix homes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SRP (Salt River Project) offers $0.75-$1.00 per square foot rebate on qualifying NFRC-certified residential window film installations. Arizona House of Film provides all required NFRC documentation, manufacturer spec sheets, and installed square footage verification for your SRP rebate application. Homeowners submit directly to SRP after installation and receive rebate checks within 4-8 weeks. Typical Phoenix home rebate: $150-$400.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does home window tinting cost in Phoenix?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Phoenix home window tinting projects are custom-quoted based on square footage, film type (ceramic, dual-reflective, or decorative), window accessibility, and glass type (single-pane, dual-pane, or low-e). Most Phoenix homes run $800-$2,500 for 10-15 windows with ceramic solar film. Small projects like sidelights or bathrooms start around $300-$500. Free on-site estimate — (480) 788-1591.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What Phoenix neighborhoods do you serve?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Arizona House of Film serves all Metro Phoenix residential areas including Arcadia, Biltmore, Desert Ridge, Ahwatukee, Laveen, Sunnyslope, and central Phoenix. We also cover Scottsdale, Chandler, Gilbert, Peoria, Tempe, Mesa, Glendale, Avondale, Goodyear, Queen Creek, Anthem, New River, Cave Creek, and Carefree. Same-day estimates available for most Phoenix locations. Licensed ROC #314088.',
         },
       },
     ],
@@ -212,6 +244,38 @@ const ResidentialPhoenix = () => {
           </div>
         </section>
 
+        {/* PHOENIX NEIGHBORHOODS */}
+        <section className="py-16 bg-slate-950 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              Phoenix Neighborhoods We Serve
+            </h2>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-8">
+              Arizona House of Film installs residential window film across Metro Phoenix — from luxury Arcadia estates to new construction in Laveen, HOA communities in Desert Ridge, and historic homes in Sunnyslope. Same-day estimates available for most Phoenix neighborhoods.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+              {[
+                'Arcadia', 'Biltmore', 'Desert Ridge', 'Ahwatukee',
+                'Laveen', 'Sunnyslope', 'Maryvale', 'Central Phoenix',
+                'Scottsdale', 'Chandler', 'Gilbert', 'Peoria',
+                'Tempe', 'Mesa', 'Glendale', 'Avondale',
+                'Goodyear', 'Queen Creek', 'Anthem', 'New River',
+                'Cave Creek', 'Carefree', 'Paradise Valley', 'Fountain Hills'
+              ].map((neighborhood) => (
+                <div key={neighborhood} className="border border-slate-700 rounded-lg p-3 text-center">
+                  <div className="font-bold text-slate-200 text-sm">{neighborhood}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 max-w-3xl">
+              <h3 className="text-lg font-black text-green-400 uppercase mb-3">HOA-Restricted Areas</h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Phoenix HOA communities typically restrict mirror-finish or highly reflective films. We use non-reflective ceramic films that deliver 60-80% heat rejection with minimal exterior appearance change — compliant with most HOA architectural standards. We review HOA guidelines before installation and provide spec sheets for approval when required. Completed HOA-approved projects in Desert Ridge, DC Ranch, Anthem, and Verrado.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* VERIFIED PROJECTS */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -298,6 +362,115 @@ const ResidentialPhoenix = () => {
           </div>
         </section>
 
+        {/* SRP REBATE SECTION */}
+        <section className="py-16 bg-green-950 border-b border-green-900">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              SRP Window Film Rebate for Phoenix Homeowners
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <p className="text-green-100 text-base md:text-lg leading-relaxed font-medium mb-4">
+                  Salt River Project (SRP) offers residential rebates for qualifying window film installations — typically <strong>$0.75–$1.00 per square foot</strong> for NFRC-certified solar control film.
+                </p>
+                <p className="text-green-100 text-base md:text-lg leading-relaxed font-medium mb-4">
+                  Arizona House of Film provides all required documentation for SRP rebate applications including NFRC certification labels, manufacturer spec sheets, and installed square footage verification.
+                </p>
+                <p className="text-green-100 text-base md:text-lg leading-relaxed font-medium">
+                  Typical Phoenix home rebate: $150-$400. Rebate applications are submitted directly by homeowners to SRP after installation. We coordinate the paperwork — you submit and receive the rebate check within 4-8 weeks.
+                </p>
+              </div>
+              <div className="bg-green-900/50 border border-green-800 rounded-lg p-6">
+                <h3 className="text-xl font-black text-green-300 uppercase mb-4">What You Need for SRP Rebate Approval</h3>
+                <ul className="space-y-3 text-green-100 text-sm">
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>NFRC certification</strong> — All ceramic and spectrally selective films we install qualify for SRP rebates</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>Manufacturer spec sheets</strong> — provided with invoice, includes SHGC and VLT data required by SRP</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>Square footage documentation</strong> — itemized on invoice for rebate calculation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-green-400 font-black text-lg">✓</span>
+                    <span><strong>Licensed contractor installation</strong> — SRP requires ROC-licensed contractor (ROC #314088)</span>
+                  </li>
+                </ul>
+                <div className="mt-6 pt-6 border-t border-green-800">
+                  <p className="text-green-200 text-sm">
+                    <strong>Learn more:</strong>{' '}
+                    <Link to="/blog/srp-rebate-window-film-2026" className="text-green-400 hover:text-green-300 underline">
+                      SRP Window Film Rebate Guide 2026 →
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FILM COMPARISON TABLE */}
+        <section className="py-16 bg-white border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6 text-center">
+              Which Film Is Right for Your Phoenix Home?
+            </h2>
+            <p className="text-slate-600 text-center text-base mb-8 max-w-3xl mx-auto">
+              Phoenix homes need different film specs depending on glass orientation, HOA restrictions, and privacy requirements. Here's how the four main residential film types compare:
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white">
+                <thead>
+                  <tr className="bg-green-600">
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Film Type</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Heat Rejection</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Appearance</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Privacy</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-slate-50">
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Ceramic</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-black">Up to 84%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Nearly clear</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">None</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">HOA homes, low-e glass compatibility, signal transparency</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Dual-Reflective</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-black">Up to 91%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Mirror exterior</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Daytime one-way</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">West-facing glass, street-facing privacy, maximum heat rejection</td>
+                  </tr>
+                  <tr className="bg-slate-50">
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Spectrally Selective</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-black">Up to 79%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Crystal clear</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">None</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Preserve mountain/city views, minimal appearance change</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Frosted / Decorative</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-600">Low</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Opaque / patterned</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">24/7 full privacy</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Bathrooms, sidelights, shower enclosures, front door glass</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-500 text-sm mt-6 text-center">
+              All ceramic and dual-reflective films block 99%+ UV and qualify for SRP rebates when NFRC-certified. Free on-site consultation — (480) 788-1591.
+            </p>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
@@ -326,6 +499,12 @@ const ResidentialPhoenix = () => {
               <Link to="/energy-saving-window-films" className="text-green-600 hover:underline">Ceramic Window Film</Link>
               {' · '}
               <Link to="/brands/llumar" className="text-green-600 hover:underline">LLumar Window Film</Link>
+              {' · '}
+              <Link to="/solar-window-film-phoenix" className="text-green-600 hover:underline">Solar Window Film Phoenix</Link>
+              {' · '}
+              <Link to="/blog/best-window-film-arizona-heat-2026" className="text-green-600 hover:underline">Best Film for Arizona Heat</Link>
+              {' · '}
+              <Link to="/blog/srp-rebate-window-film-2026" className="text-green-600 hover:underline">SRP Rebate Guide 2026</Link>
             </div>
           </div>
         </section>

@@ -42,6 +42,10 @@ const EnergySaving = () => {
     { q: "Does energy-saving film work in winter too?", a: "Yes. Low-e films also retain interior heat in winter, making them beneficial year-round even in Arizona." },
     { q: "Does window film actually pay for itself in Arizona?", a: "Yes — and faster than anywhere else in the country. For a 10,000 sq ft commercial facility, energy savings alone typically cover installation cost within 18–36 months. When you factor in extended HVAC equipment life from reduced duty cycles, the total ROI is significantly higher. Arizona homeowners typically see payback in 2–4 years versus 8–12 years in northern climates." },
     { q: "How do SRP and APS rebates work for window film?", a: "Both utilities recognize window film as a qualifying energy upgrade. We are familiar with SRP Business Solutions and APS Peak Player program requirements. We identify qualifying films based on SHGC ratings, provide the required technical data sheets, and assist with the rebate application process. Ask about current rebate amounts during your free estimate — eligibility and amounts change seasonally." },
+    { q: "What is the most energy-efficient window film?", a: "Spectrally selective films deliver the highest energy efficiency for commercial applications (75-79% TSER with 50-70% visible light transmission). For residential, ceramic nano-particle films offer 80-84% TSER with excellent optical clarity. Both technologies are NFRC certified and qualify for SRP and APS energy rebates. We specify film based on glass type, orientation, and whether you prioritize heat rejection or natural light preservation." },
+    { q: "Does window film work better than window replacement?", a: "Window film costs 90% less than replacement windows and delivers comparable heat rejection performance. Replacing dual-pane windows in a Phoenix home runs $800-$1,200 per window installed. High-performance ceramic film runs $6-$14 per square foot — typically $800-$2,500 for an entire home. Film installs in hours with zero construction disruption. Replacement windows require weeks of scheduling and construction mess." },
+    { q: "What is NFRC certification for window film?", a: "NFRC (National Fenestration Rating Council) independently tests and certifies window film thermal performance including SHGC (Solar Heat Gain Coefficient), VLT (Visible Light Transmission), and U-factor. NFRC certification is required for SRP and APS utility rebate eligibility. All ceramic and spectrally selective films we install carry NFRC certification. We provide NFRC labels and data sheets with every installation for rebate documentation." },
+    { q: "Can I get both UV and heat rejection in one film?", a: "Yes. All ceramic and spectrally selective energy-saving films block 99.9% UV radiation while simultaneously rejecting 70-84% of solar heat. UV protection prevents furniture, flooring, and window treatment fading. Heat rejection lowers cooling costs. Both benefits are delivered in a single film application — no separate UV film required." },
   ];
 
   const faqSchema = {
@@ -167,6 +171,105 @@ const EnergySaving = () => {
           </div>
         </section>
 
+        {/* FILM PERFORMANCE COMPARISON */}
+        <section className="py-16 bg-white border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6 text-center">
+              Energy-Saving Film Performance by Technology
+            </h2>
+            <p className="text-slate-600 text-center text-base mb-8 max-w-3xl mx-auto">
+              Different film technologies deliver different levels of energy savings. Here's how the four main energy film types compare for Arizona applications:
+            </p>
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full border-collapse bg-white">
+                <thead>
+                  <tr className="bg-red-600">
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Film Type</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">TSER (Heat Rejection)</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">VLT (Light)</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">SRP Eligible</th>
+                    <th className="border border-slate-300 px-6 py-4 text-left font-black text-sm uppercase text-white">Best Application</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-slate-50">
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Ceramic Nano</td>
+                    <td className="border border-slate-300 px-6 py-4 text-red-700 font-black">80-84%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700">40-70%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-bold">Yes</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Residential homes, HOA compliance</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Spectrally Selective</td>
+                    <td className="border border-slate-300 px-6 py-4 text-red-700 font-black">75-79%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700">50-70%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-bold">Yes</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Commercial offices, LEED projects</td>
+                  </tr>
+                  <tr className="bg-slate-50">
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Dual-Reflective</td>
+                    <td className="border border-slate-300 px-6 py-4 text-red-700 font-black">85-91%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700">30-50%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-bold">Yes</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">West-facing glass, maximum heat rejection</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 px-6 py-4 font-bold text-slate-900">Low-E (EnerLogic)</td>
+                    <td className="border border-slate-300 px-6 py-4 text-red-700 font-black">70-75%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700">70%</td>
+                    <td className="border border-slate-300 px-6 py-4 text-green-700 font-bold">Yes</td>
+                    <td className="border border-slate-300 px-6 py-4 text-slate-700 text-sm">Year-round energy savings, winter insulation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-500 text-sm text-center">
+              All film types shown block 99%+ UV and qualify for SRP/APS rebates when NFRC-certified. Arizona House of Film provides NFRC documentation for all installations.
+            </p>
+          </div>
+        </section>
+
+        {/* PHOENIX ENERGY SAVINGS DATA */}
+        <section className="py-16 bg-red-600 text-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl font-black uppercase tracking-tighter mb-8 text-center">What Arizona Homeowners Save With Window Film</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-red-700 p-8 rounded-lg">
+                <h3 className="text-xl font-black uppercase mb-4">Average Phoenix Home (2,000 sq ft)</h3>
+                <ul className="space-y-3 text-white/90 text-sm">
+                  <li><strong>Cooling cost reduction:</strong> 25-30%</li>
+                  <li><strong>Annual savings estimate:</strong> $250-$725</li>
+                  <li><strong>Typical installation cost:</strong> $1,200-$2,400</li>
+                  <li><strong>Payback period:</strong> 3-5 years</li>
+                  <li><strong>Film lifespan:</strong> 15-25 years</li>
+                  <li><strong>SRP average rebate:</strong> $150-$400 per home</li>
+                </ul>
+              </div>
+              <div className="bg-red-700 p-8 rounded-lg">
+                <h3 className="text-xl font-black uppercase mb-4">APS and SRP Both Offer Window Film Rebates</h3>
+                <p className="text-white/90 text-sm mb-4">
+                  <strong>SRP (Salt River Project):</strong> $0.75-$1.00 per square foot for qualifying NFRC-certified residential and commercial film installations.
+                </p>
+                <p className="text-white/90 text-sm mb-4">
+                  <strong>APS (Arizona Public Service):</strong> Rebate amounts vary by program year. We serve both SRP and APS territory across Phoenix metro.
+                </p>
+                <p className="text-white/90 text-sm">
+                  Arizona House of Film provides all NFRC documentation, manufacturer spec sheets, and installation verification required for both SRP and APS rebate applications. Homeowners and commercial property owners submit directly to their utility provider.
+                </p>
+              </div>
+            </div>
+            <p className="text-center text-white/80 text-sm">
+              <Link to="/blog/srp-rebate-window-film-2026" className="text-white underline hover:text-red-100">
+                SRP Rebate Guide 2026 →
+              </Link>
+              {' · '}
+              <Link to="/solar-window-film-phoenix" className="text-white underline hover:text-red-100">
+                Solar Window Film Phoenix →
+              </Link>
+            </p>
+          </div>
+        </section>
+
         {/* PROVEN EFFICIENCY SECTION */}
         <section className="py-24 bg-slate-900 border-t border-slate-800">
           <div className="max-w-7xl mx-auto px-6">
@@ -262,6 +365,39 @@ const EnergySaving = () => {
                   <p className="text-sm text-slate-600 leading-relaxed font-medium">{faq.a}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* RELATED SERVICES */}
+        <section className="py-16 bg-slate-950 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-6 text-center">Related Window Film Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link to="/solar-window-film-phoenix" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                Solar Window Film Phoenix →
+              </Link>
+              <Link to="/residential-window-tinting-phoenix" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                Residential Window Tinting →
+              </Link>
+              <Link to="/commercial-window-tinting" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                Commercial Window Tinting →
+              </Link>
+              <Link to="/blog/srp-rebate-window-film-2026" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                SRP Rebate Guide 2026 →
+              </Link>
+              <Link to="/blog/best-window-film-arizona-heat-2026" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                Best Film for Arizona Heat →
+              </Link>
+              <Link to="/blog/enerlogic-window-film-arizona-guide" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                EnerLogic Film Guide →
+              </Link>
+              <Link to="/brands/solar-gard" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                Solar Gard Films →
+              </Link>
+              <Link to="/energy-saving-window-films" className="border border-slate-700 rounded-lg p-4 text-green-400 font-semibold hover:border-green-500 transition-colors text-center">
+                Energy-Saving Films (current page) →
+              </Link>
             </div>
           </div>
         </section>

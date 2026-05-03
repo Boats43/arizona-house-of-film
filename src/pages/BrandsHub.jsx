@@ -10,7 +10,7 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const canonicalUrl = "https://arizonahouseoffilm.com/brands";
 
-const pageTitle = "Window Film Brands Phoenix AZ | 30+ Manufacturers | Licensed Installer | ROC #314088";
+const pageTitle = "Window Film Brands Phoenix AZ | 30+ Lines | ROC #314088";
 const metaDescription = "Arizona House of Film installs 30+ window film brands — LLumar, XPEL, SunTek, Madico, 3M, Huper Optik, Solar Gard, Solyx and more. Licensed ROC #314088. Free estimates across Phoenix, Scottsdale, and the Valley.";
 
 // ── Helper: look up a brand slug from brands.js by name fragment ──────────────

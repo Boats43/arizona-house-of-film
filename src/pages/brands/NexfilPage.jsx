@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { nexfilCategories, nexfilProducts } from '@/data/nexfilFilms';
 
 const NexfilPage = () => {
-  const pageTitle = 'Nexfil USA Window Film Phoenix AZ | Authorized Distributor | ROC #314088';
+  const pageTitle = 'Nexfil USA Window Film Phoenix AZ | OnyVa IR90 | ROC #314088';
   const metaDescription = 'Authorized Nexfil USA window film distributor and installer in Phoenix AZ. OnyVa IR90 90% IR rejection, Lux IR80 nano-ceramic, Solar Bronze 83.5% TSER, full safety range. ROC #314088. Free estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/nexfil';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

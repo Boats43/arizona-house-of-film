@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 
 const CasperCloakingPage = () => {
-  const pageTitle = "Casper Cloaking Film Arizona | From $4,500 | Screen Privacy Phoenix Offices | ROC #314088";
+  const pageTitle = "Casper Cloaking Film Arizona | Screen Privacy | ROC #314088";
   const metaDescription = "Casper cloaking film installation Phoenix AZ — screen privacy for conference rooms and glass offices. From $4,500 for smaller applications; conference rooms start around $6,000. Free on-site consultation. ROC #314088.";
   const canonicalUrl = "https://arizonahouseoffilm.com/films/casper-cloaking";
   const ogImage = "https://arizonahouseoffilm.com/og-image.jpg";

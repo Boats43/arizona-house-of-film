@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const FlexfilmPage = () => {
-  const pageTitle = 'Flexfilm Window Film Phoenix AZ | Dualflex & Decorative | Licensed Installer | ROC #314088';
+  const pageTitle = 'Flexfilm Window Film Phoenix AZ | Dualflex | ROC #314088';
   const metaDescription = 'Professional Flexfilm window film installer in Phoenix AZ. Dualflex dual reflective, Panashield ceramic, Safetyflex security, and decorative film for homes and businesses. Free estimates. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/flexfilm';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

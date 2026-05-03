@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const MadicoPage = () => {
-  const pageTitle = 'Madico Window Film Phoenix AZ | Solar Control & Anti-Graffiti | ROC #314088';
+  const pageTitle = 'Madico Window Film Phoenix AZ | Solar Control | ROC #314088';
   const metaDescription = 'Professional Madico window film installer in Phoenix AZ. Nova, Optivision, Solar Grey, Solar Bronze, anti-graffiti and decorative Madico film. Free estimates. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/madico';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

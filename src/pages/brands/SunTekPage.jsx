@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const SunTekPage = () => {
-  const pageTitle = 'SunTek Window Film Phoenix AZ | CIR Ceramic | Licensed Installer | ROC #314088';
+  const pageTitle = 'SunTek Window Film Phoenix AZ | CIR Ceramic | ROC #314088';
   const metaDescription = 'Professional SunTek window film installer in Phoenix AZ. Ultra-Vision, Symphony, Infinity, Silver and Dual-Reflective series for homes and businesses. Free estimates. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/suntek';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 
 export default function HurricaneWindowFilmArizona() {
@@ -122,11 +123,11 @@ export default function HurricaneWindowFilmArizona() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Same Product as Security Film — Different Threat</h2>
-        <p className="text-gray-700 mb-4">Storm protection film and security window film are the same product. The film that holds glass together during a burglary attempt is the same film that holds glass together when a haboob hurls a tree branch into your living room window. We install the full security film line — see our <a href="/security-window-film-phoenix" className="text-blue-600 font-semibold">Phoenix security window film page</a> for product details, manufacturer specs, and break-in protection use cases. The recommendation here is the same: install before you need it.</p>
+        <p className="text-gray-700 mb-4">Storm protection film and security window film are the same product. The film that holds glass together during a burglary attempt is the same film that holds glass together when a haboob hurls a tree branch into your living room window. We install the full security film line — see our <Link to="/security-window-film-phoenix" className="text-blue-600 font-semibold">Phoenix security window film page</Link> for product details, manufacturer specs, and break-in protection use cases. The recommendation here is the same: install before you need it.</p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Before &amp; After Storm Damage</h2>
         <p className="text-gray-700 mb-4">Phoenix homeowners who installed security film before the 2024 monsoon season reported intact windows after major haboob events that broke unfilmed windows on neighboring properties. We've seen 4 mil film hold cracked glass in place after debris impact — preventing the glass from falling out of the frame and exposing the interior to dust, water, and follow-on damage.</p>
-        <p className="text-gray-700 mb-4">The cost of one shattered window cleanup, glass replacement, and interior damage typically exceeds the cost of film installation across the entire elevation.</p>
+        <p className="text-gray-700 mb-4">The cost of one shattered window cleanup, glass replacement, and interior damage typically exceeds the cost of film installation across the entire elevation. For residential applications, see our <Link to="/residential-window-tinting-phoenix" className="text-blue-600 font-semibold">residential window tinting page</Link> for more Phoenix-area examples.</p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
         <div className="space-y-6">
@@ -142,7 +143,8 @@ export default function HurricaneWindowFilmArizona() {
           <h2 className="text-xl font-bold text-gray-900 mb-2">Get an Estimate Before Monsoon Season</h2>
           <p className="text-gray-700 mb-4">Arizona House of Film — licensed security film installer. ROC #314088. Book your assessment before the June monsoon onset.</p>
           <a href="tel:4807881591" className="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded mr-3">Call (480) 788-1591</a>
-          <a href="/ai-window-film-estimator" className="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded">AI Estimate</a>
+          <Link to="/ai-window-film-estimator" className="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded mr-3">AI Estimate</Link>
+          <Link to="/contact" className="inline-block bg-gray-600 text-white font-bold px-6 py-3 rounded">Contact Us</Link>
         </div>
       </main>
     </>

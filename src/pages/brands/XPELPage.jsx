@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const XPELPage = () => {
-  const pageTitle = 'XPEL Window Film Phoenix AZ | VISION Series | Licensed Installer | ROC #314088';
+  const pageTitle = 'XPEL Window Film Phoenix AZ | VISION | ROC #314088';
   const metaDescription = 'Licensed XPEL VISION window film installer in Phoenix AZ. Solar control, security, decorative and specialty film for homes and businesses. Free estimates. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/xpel';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

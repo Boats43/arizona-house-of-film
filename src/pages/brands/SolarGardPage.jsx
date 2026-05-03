@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const SolarGardPage = () => {
-  const pageTitle = 'Solar Gard Window Film Phoenix AZ | Licensed Installer | ROC #314088';
+  const pageTitle = 'Solar Gard Window Film Phoenix AZ | ROC #314088';
   const metaDescription = 'Licensed Solar Gard window film installer in Phoenix AZ. Commercial, residential and security film. ROC #314088. Free estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/solar-gard';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

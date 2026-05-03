@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const HuperOptikPage = () => {
-  const pageTitle = 'H\u00fcper Optik Window Film Phoenix AZ | Ceramic & Select Series | ROC #314088';
+  const pageTitle = 'H\u00fcper Optik Window Film Phoenix AZ | ROC #314088';
   const metaDescription = 'Licensed H\u00fcper Optik window film installer in Phoenix AZ. Ceramic 20-70, Select SECH & DREI, Safety CS series. German-engineered nano-ceramic technology. ROC #314088. Free estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/huper-optik';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

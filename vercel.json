@@ -120,9 +120,7 @@
     { "source": "/films/exterior-films", "destination": "/films/specialty-films", "permanent": true },
     { "source": "/films/squid-window-textile", "destination": "/films/specialty-films", "permanent": true }
   ],
-  "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ],
+  "rewrites": [],
   "headers": [
     {
       "source": "/(.*)",

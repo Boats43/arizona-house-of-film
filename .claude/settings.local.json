@@ -58,7 +58,10 @@
       "Bash(grep:*)",
       "Bash(pkill -f \"prerender.js\")",
       "Bash(awk -F: '{ n=split\\($0, parts, /\\\\\\\\/\\); print parts[n] }')",
-      "Bash(awk -F':' '{ print $1 }')"
+      "Bash(awk -F':' '{ print $1 }')",
+      "Bash(awk '{print length\\($0\\)\" chars: \"$0}')",
+      "Bash(awk 'length\\($0\\)>60 {print length\\($0\\)\" chars: \"$0}')",
+      "WebFetch(domain:arizonahouseoffilm.com)"
     ]
   }
 }

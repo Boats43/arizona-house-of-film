@@ -1,0 +1,10 @@
+﻿fix: Ship 5 - claude-check kill switch advisory to hard gate
+
+When runClaudeCheck returns verified=false AND confidence=LOW, refuse
+to ship the computed price. Kill switch inserted at api/enrich.js:3078,
+after result assignment to out, before timings block. Nulls out.price,
+sets pricingSource=refused-claude-gate, surfaces first flag as priceNote.
+
+Closes B and B 28 Loot Crate polybag false-key pricing, Thanos 11
+wrong-issue comps, and future cases where pricing engine produces
+confident wrong answers that claude-check catches but cannot block.

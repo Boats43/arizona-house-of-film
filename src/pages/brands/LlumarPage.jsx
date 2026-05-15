@@ -6,7 +6,7 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 import { Button } from '@/components/ui/button';
 
 const LlumarPage = () => {
-  const pageTitle = 'LLumar Window Film Arizona | Licensed Installer | ROC #314088';
+  const pageTitle = 'LLumar Window Film Arizona | ROC #314088';
   const metaDescription = 'LLumar window film installation in Arizona. Solar control, safety, and decorative LLumar film for homes and businesses. Licensed ROC #314088. Free estimates.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/brands/llumar';
   const ogImage = 'https://arizonahouseoffilm.com/og-image.jpg';

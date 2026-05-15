@@ -203,6 +203,7 @@ const ROUTES = [
   '/ceramic-vs-dual-reflective-film', '/window-film-cost-arizona',
   '/security-film-vs-tempered-glass', '/how-long-does-window-film-last',
   '/store', '/welcome', '/404', '/privacy-policy',
+  '/thank-you', '/success',
   '/shatterproof-window-film',
   '/day-and-night-privacy-window-film',
   '/electric-privacy-film-arizona',
@@ -338,6 +339,8 @@ const PATTERN_MAP = [
   ['/store',                                '/src/pages/Store.jsx'],
   ['/welcome',                              '/src/pages/Welcome.jsx'],
   ['/404',                                  '/src/pages/NotFound.jsx'],
+  ['/thank-you',                            '/src/pages/ThankYou.jsx'],
+  ['/success',                              '/src/pages/Success.jsx'],
   ['/:category/:slug',                      '/src/pages/SupportingPage.jsx'],
 ]
 

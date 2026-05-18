@@ -70,7 +70,8 @@
       "PowerShell(\\(Select-String -Path \"src\\\\pages\\\\solutions\\\\SidelightWindowFilm.jsx\" -Pattern \"&lt;h2\" | Measure-Object\\).Count)",
       "PowerShell(\\(Select-String -Path \"public\\\\sitemap-core.xml\" -Pattern \"&lt;url&gt;\" | Measure-Object\\).Count)",
       "PowerShell(npm run *)",
-      "PowerShell(node scripts/prerender.js)"
+      "PowerShell(node scripts/prerender.js)",
+      "PowerShell(Get-ChildItem *)"
     ]
   }
 }

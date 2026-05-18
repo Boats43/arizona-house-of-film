@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
-const pageTitle = 'Privacy Film for Sliding Glass Doors | Day & Night | ROC #314088';
-const metaDescription = "Window film for sliding glass doors in Phoenix — frosted for day and night privacy, shatterproof security for patio doors, solar control, and one-way. Licensed installer ROC #314088. Free estimate.";
+const pageTitle = 'Privacy & Security Film for Sliding Glass Doors | Phoenix AZ | ROC #314088';
+const metaDescription = "Window film for sliding glass doors in Phoenix AZ. Privacy, security, heat control and UV protection. Patio door tinting from $8/sqft. Licensed ROC #314088. Free estimate — (480) 788-1591.";
 const canonicalUrl = 'https://arizonahouseoffilm.com/privacy-film-sliding-glass-door';
 
 const faqSchema = {
@@ -36,6 +36,26 @@ const faqSchema = {
       '@type': 'Question',
       name: 'Is sliding door film HOA-approved in Arizona?',
       acceptedAnswer: { '@type': 'Answer', text: 'Most Arizona HOAs allow window film on sliding glass doors as long as the exterior appearance remains neutral and non-reflective. Frosted, ceramic, and lightly tinted films are typically approved because they do not alter the exterior appearance significantly. Highly reflective mirror films may require HOA approval. Arizona House of Film helps homeowners select HOA-compliant film options and can provide product documentation for HOA submissions.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best privacy film for sliding doors?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Frosted film is the best choice for 24/7 privacy on sliding doors. It works day and night, allows natural light, and blocks all sightlines in both directions. One-way mirror film provides daytime-only privacy — it reverses at night when interior lights are on. For partial privacy with views, gradient film (frosted bottom, clear top) or lightly tinted ceramic film are effective options.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does tinting sliding glass doors reduce heat?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Ceramic and dual-reflective films reject 50-84% of solar heat coming through sliding glass doors. West-facing patio doors in Arizona benefit the most — film reduces interior temperature by 5-15°F and cuts AC runtime significantly. Most ceramic films qualify for SRP rebates of $0.75-$1.00 per square foot.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does sliding door window film last?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Quality window film lasts 10-15 years on sliding glass doors in Arizona. Ceramic and spectrally selective films are rated for high-UV environments and carry manufacturer warranties. Exterior-mounted film has a shorter lifespan (5-7 years) due to direct sun exposure. Interior-mounted film is the standard for sliding doors.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will film work on my double-pane sliding door?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes — most modern films are rated safe for dual-pane (insulated) glass. Arizona House of Film assesses your specific glass type before installation to ensure the film will not cause thermal stress. We carry films with NFRC ratings for dual-pane compatibility and provide written documentation of glass safety for warranty purposes.' },
     },
   ],
 };
@@ -213,8 +233,78 @@ export default function PrivacyFilmSlidingGlassDoor() {
         </div>
       </section>
 
-      {/* FRENCH DOOR VS SLIDING DOOR */}
+      {/* PRIVACY FILM FOR SLIDING GLASS DOORS */}
       <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Privacy Film for Sliding Glass Doors</h2>
+          <p className="text-slate-700 mb-4">Privacy film for sliding doors works by either diffusing light (frosted film) or reflecting it (one-way mirror film). Frosted film provides 24/7 privacy — it blocks all sightlines day and night while allowing natural light to pass through. One-way mirror film provides daytime-only privacy when the exterior is brighter than the interior.</p>
+          <p className="text-slate-700 mb-4"><strong>Best types for sliding doors:</strong> Frosted film is the most popular choice for bedrooms, bathrooms, and pool-facing sliding doors where nighttime privacy matters. Gradient film (frosted at eye level, clear above) provides privacy with sky views preserved. Ceramic tinted film offers partial privacy combined with heat rejection.</p>
+          <p className="text-slate-700">Daytime vs nighttime privacy reality: One-way mirror film reverses at night when interior lights are on and it is dark outside — the interior becomes visible from outside. For true 24/7 privacy without relying on lighting conditions, frosted film is the only reliable option for sliding glass doors.</p>
+        </div>
+      </section>
+
+      {/* SECURITY FILM FOR SLIDING GLASS DOORS */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Security Film for Sliding Glass Doors</h2>
+          <p className="text-slate-700 mb-4">Security film holds glass together on impact — preventing the glass from shattering into pellets and delaying forced entry. Sliding glass doors are the #1 residential break-in point in Arizona. Tempered glass shatters with a single strike, giving an intruder immediate access. Security film changes that.</p>
+          <p className="text-slate-700 mb-4"><strong>Film thickness options:</strong> 4-mil film provides basic glass retention and UV protection. 8-mil film is the standard for residential security — holds glass together for 30-60 seconds of sustained impact. 14-mil film is commercial-grade and provides 60-90+ seconds of forced entry delay, long enough for alarms, dogs, or a phone call.</p>
+          <p className="text-slate-700">Security film is clear and does not affect views or natural light. It can be combined with frosted or solar film for combined privacy + shatter resistance. Installation requires wet application and a 15-30 day cure time in Arizona heat. Learn more about <Link to="/security-window-film-phoenix" className="text-blue-700 underline hover:text-blue-900">security window film in Phoenix</Link>.</p>
+        </div>
+      </section>
+
+      {/* DOES ONE-WAY FILM WORK ON SLIDING GLASS DOORS */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Does One-Way Film Work on Sliding Glass Doors?</h2>
+          <p className="text-slate-700 mb-4">Yes — one-way film works on sliding glass doors, but only during the day when the exterior is brighter than the interior. The physics are identical to any glass: one-way mirror film creates a reflective surface on the side with more light. During daylight hours, the exterior reflects sunlight and appears as a mirror, while you see out clearly from the darker interior.</p>
+          <p className="text-slate-700 mb-4"><strong>Nighttime reversal:</strong> When interior lights are on and it is dark outside, the effect reverses — the interior becomes visible from outside. This is not a flaw; it is how light and reflection work. If you need nighttime privacy on a sliding door, pair one-way film with blinds, curtains, or choose frosted film instead.</p>
+          <p className="text-slate-700">One-way film provides excellent heat rejection (50-70% solar heat blocked) combined with daytime privacy, making it ideal for living room and den sliding doors where nighttime privacy is less critical. Read our full <Link to="/blog/one-way-window-film-day-and-night-guide" className="text-blue-700 underline hover:text-blue-900">one-way window film day and night guide</Link> for technical details and alternatives.</p>
+        </div>
+      </section>
+
+      {/* HEAT CONTROL FILM FOR SLIDING PATIO DOORS */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Heat Control Film for Sliding Patio Doors</h2>
+          <p className="text-slate-700 mb-4">West-facing patio doors in Arizona gain the most heat — afternoon sun pours through 35-45 sqft of glass, heating the interior by 10-20°F and forcing AC units to run continuously. Ceramic and dual-reflective films reject 50-84% of infrared heat without darkening the glass significantly.</p>
+          <p className="text-slate-700 mb-4"><strong>Ceramic vs dual reflective for heat:</strong> Ceramic film (Hüper Optik, LLumar CTX, 3M Prestige) rejects 60-84% of heat with a nearly-clear appearance and no signal interference. Dual-reflective film (silver, bronze, or tinted mirror finish) rejects 55-75% of heat at a lower cost but has a more visible tint and reflective exterior. Both are effective for patio doors.</p>
+          <p className="text-slate-700">SRP rebate: Most ceramic and spectrally selective films qualify for SRP residential rebates of $0.75-$1.00 per square foot when installed on owner-occupied single-family homes. A standard 40 sqft sliding door earns $30-40 back. Arizona House of Film provides the NFRC-rated data sheets required for rebate applications.</p>
+        </div>
+      </section>
+
+      {/* SHATTERPROOF FILM FOR SLIDING GLASS DOORS */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Shatterproof Film for Sliding Glass Doors</h2>
+          <p className="text-slate-700 mb-4">Shatterproof film (also called safety film or security film) holds glass together when it shatters — preventing sharp glass pellets from scattering across the floor. This protects kids and pets who play near sliding glass doors, and provides forced-entry resistance for ground-floor doors.</p>
+          <p className="text-slate-700 mb-4">Sliding glass doors use tempered glass that shatters into thousands of small pellets on impact. A child running into the glass, a pet collision, a thrown ball, or a burglar's strike all cause the same result: instant shatter. 4-8 mil safety film bonds the glass into a single flexible sheet that holds together even after the glass fractures.</p>
+          <p className="text-slate-700">Shatterproof film does not prevent the glass from cracking — it prevents the glass from falling apart. The pane stays in the frame as a cohesive unit, blocking entry and preventing injury from scattered glass. Installation takes 1-2 hours per door and cures over 15-30 days. Security film is clear and works on any sliding glass door type.</p>
+        </div>
+      </section>
+
+      {/* HOW MUCH DOES SLIDING GLASS DOOR TINTING COST */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">How Much Does Sliding Glass Door Tinting Cost?</h2>
+          <p className="text-slate-700 mb-4">Sliding glass door tinting costs $350-900 for a standard 35-45 sqft slider in Arizona, depending on film type and project scope. Budget solar film runs $350-500. Premium ceramic film runs $500-700. Frosted decorative film runs $400-800. Security film runs $500-900. French pane sliding doors with divided lites cost 25-40% more due to individual pane cutting.</p>
+          <p className="text-slate-700 mb-4"><strong>Project-based pricing:</strong> Most installers charge per square foot ($8-$18/sqft installed), but actual cost depends on film type, glass accessibility, door hardware, and whether the door is single-pane or dual-pane. A multi-panel slider (50-70 sqft) costs $600-1,400. Projects under $500 may incur a service minimum.</p>
+          <p className="text-slate-700">Arizona House of Film provides free on-site estimates where we measure glass, assess your door type, and provide written quotes with specific film recommendations. Call (480) 788-1591 or <Link to="/ai-window-film-estimator" className="text-blue-700 underline hover:text-blue-900">upload a photo for an instant AI estimate</Link> with ballpark pricing.</p>
+        </div>
+      </section>
+
+      {/* UV PROTECTION FILM FOR SLIDING GLASS DOORS */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">UV Protection Film for Sliding Glass Doors</h2>
+          <p className="text-slate-700 mb-4">All window film types — frosted, solar, decorative, security — block 99%+ of UV radiation through sliding glass doors. UV damage is the primary cause of furniture fading, hardwood floor discoloration, and carpet bleaching near Arizona sliding doors. The large glass area allows concentrated UV exposure that damages flooring, furniture, and artwork within 6-18 months.</p>
+          <p className="text-slate-700 mb-4"><strong>Furniture and flooring fade prevention:</strong> UV film eliminates the fading problem without darkening the glass. Frosted film, clear ceramic film, and nearly-clear spectrally selective films all provide 99%+ UV blocking while maintaining natural light transmission. You prevent fading without losing brightness or views.</p>
+          <p className="text-slate-700">UV blocking does not require tinted or dark film. Even fully clear films carry UV-blocking coatings. The UV protection is permanent — it does not degrade over time like window treatments. Film protects wood flooring, leather furniture, fabric upholstery, and artwork for the 10-15 year lifespan of the film installation.</p>
+        </div>
+      </section>
+
+      {/* FRENCH DOOR VS SLIDING DOOR */}
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4">French Door vs Sliding Door — Different Install</h2>
           <p className="text-slate-700 mb-8">Both are called "patio doors" interchangeably, but the installation approach is very different. Here is how we handle each:</p>

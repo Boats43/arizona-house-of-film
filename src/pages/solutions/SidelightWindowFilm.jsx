@@ -18,6 +18,11 @@ const FAQS = [
   { q: 'Can film be applied to narrow sidelight panels?', a: 'Yes — sidelights are a specialty application for Arizona House of Film. We cut film precisely to narrow panel dimensions and install around frames and hardware with no visible gaps or seams.' },
   { q: 'How long does sidelight window film last in Arizona?', a: 'Interior-mounted frosted sidelight films last 10–15 years in Arizona conditions. We use Solyx films with UV-stable coatings rated for Arizona\'s high-UV environment.' },
   { q: 'What does sidelight window film cost in Phoenix?', a: 'Sidelight film installation runs $8–$15 per square foot. A standard sidelight pair typically costs $150–$400 installed. Call (480) 788-1591 for a free quote.' },
+  { q: 'What is the best film for door sidelights?', a: 'Frosted film is the best choice for door sidelights — it provides 24/7 privacy day and night, diffuses natural light into the entryway, and has a clean etched-glass appearance that complements most entryway styles. Frosted film is also HOA-compliant and maintenance-free.' },
+  { q: 'Can sidelight film provide privacy at night?', a: 'Yes — frosted and patterned films provide full privacy at night because they diffuse light in both directions regardless of lighting conditions. One-way mirror film does NOT provide nighttime privacy when interior lights are on and it is dark outside. For front door sidelights, choose frosted film for reliable day and night privacy.' },
+  { q: 'Does sidelight film work on narrow windows?', a: 'Yes. Sidelight film is designed for narrow vertical panels. Arizona House of Film cuts film to exact sidelight dimensions — typically 6-10 inches wide by 60-80 inches tall. We install around door frames, hardware, and weatherstripping with no visible gaps or seams.' },
+  { q: 'Will sidelight film comply with my HOA?', a: 'Yes — frosted and etched sidelight films are HOA-compliant in most Arizona communities because they maintain a neutral, elegant exterior appearance. Highly reflective mirror films may require HOA approval. Arizona House of Film provides product documentation for HOA submissions when needed.' },
+  { q: 'How long does sidelight window film last?', a: 'Sidelight window film lasts 10-15 years when installed on interior-facing glass. Solyx films carry UV-stable coatings rated for Arizona\'s extreme UV exposure. Exterior-mounted film has a shorter lifespan (5-7 years) but is rarely needed for sidelights.' },
 ];
 
 export default function SidelightWindowFilm() {
@@ -44,8 +49,8 @@ export default function SidelightWindowFilm() {
   return (
     <>
       <Helmet>
-        <title>Sidelight Window Film | Privacy Film for Door Sidelights | ROC #314088</title>
-        <meta name="description" content="Privacy film for door sidelights — frosted, decorative, one-way, and stained-glass styles. Narrow panels flanking your front door, cut precisely and installed Arizona-wide. ROC #314088. Free quote." />
+        <title>Sidelight Window Film Phoenix | Privacy & Decorative Film for Door Sidelights | ROC #314088</title>
+        <meta name="description" content="Sidelight window film installed in Phoenix AZ. Frosted, patterned and privacy film for door sidelights. Day and night privacy. HOA compliant. Licensed ROC #314088. Free estimate." />
         <meta name="keywords" content="sidelight window film phoenix, door sidelight privacy film arizona, narrow window privacy film scottsdale, front door sidelight film phoenix, sidelight glass frosting arizona" />
         <link rel="canonical" href="https://arizonahouseoffilm.com/sidelight-window-film" />
         <meta property="og:title" content="Sidelight Window Film | Privacy Film for Door Sidelights | ROC #314088" />
@@ -138,6 +143,59 @@ export default function SidelightWindowFilm() {
           <div className="mt-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4 text-sm text-gray-700">
             <strong>Typical sidelight size:</strong> 6–10 sqft each. Our $500 minimum job covers a sidelight pair plus transom — use the whole minimum on one entryway rather than paying for a single 6 sqft panel. <Link to="/ai-window-film-estimator" className="text-blue-700 underline hover:text-blue-900 font-semibold">Try the AI estimator →</Link>
           </div>
+        </section>
+
+        {/* SIDELIGHT PRIVACY FILM OPTIONS */}
+        <section className="mb-12 bg-slate-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Sidelight Privacy Film Options</h2>
+          <p className="text-gray-700 mb-4">Three primary film types provide privacy on door sidelights: frosted, patterned, and one-way mirror. Each works differently and provides different levels of privacy depending on lighting conditions.</p>
+          <div className="space-y-4">
+            <div className="bg-white border-l-4 border-green-500 rounded-r-lg p-4">
+              <h3 className="font-bold text-gray-900 mb-2">Frosted Film — Day & Night Privacy</h3>
+              <p className="text-gray-600 text-sm">Frosted film diffuses light in both directions and blocks all sightlines 24/7. It works day and night regardless of lighting conditions. This is the most popular choice for front door sidelights because nighttime privacy is guaranteed. Frosted film allows natural light into the entryway without allowing any view through the glass.</p>
+            </div>
+            <div className="bg-white border-l-4 border-blue-500 rounded-r-lg p-4">
+              <h3 className="font-bold text-gray-900 mb-2">Patterned Film — Privacy Through Complexity</h3>
+              <p className="text-gray-600 text-sm">Patterned films (geometric, botanical, rice paper, linen textures) provide privacy through visual complexity rather than total opacity. Light passes through the pattern, but the pattern obscures clear sightlines. Most patterns provide day and night privacy. Dense patterns approach frosted-level opacity. Open patterns provide partial privacy.</p>
+            </div>
+            <div className="bg-white border-l-4 border-amber-500 rounded-r-lg p-4">
+              <h3 className="font-bold text-gray-900 mb-2">One-Way Mirror Film — Daytime Only</h3>
+              <p className="text-gray-600 text-sm">One-way mirror film provides daytime privacy when the exterior is brighter than the interior. At night when interior lights are on and it is dark outside, the effect reverses — the interior becomes visible from outside. For front door sidelights, one-way film is NOT recommended unless you pair it with interior window treatments for nighttime use.</p>
+            </div>
+          </div>
+          <p className="text-gray-700 mt-4 text-sm">Recommendation: For front door sidelights, choose frosted or patterned film for reliable 24/7 privacy. Reserve one-way film for applications where nighttime visibility is acceptable or where interior treatments will be used after dark.</p>
+        </section>
+
+        {/* DECORATIVE FILM FOR DOOR SIDELIGHTS */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Decorative Film for Door Sidelights</h2>
+          <p className="text-gray-700 mb-4">Decorative sidelight films combine privacy with aesthetic design. Solyx offers 618+ decorative patterns including frosted textures, geometric designs, botanical patterns, rice paper effects, linen textures, and gradient fades. Decorative film allows you to customize the entryway appearance without replacing expensive glass.</p>
+          <p className="text-gray-700 mb-4"><strong>Popular decorative styles for sidelights:</strong> Simple frosted (etched-glass look), gradient film (frosted at bottom fading to clear at top), rice paper (subtle texture with full privacy), geometric patterns (modern clean lines), and botanical patterns (traditional entryway elegance). All decorative films block 99% UV radiation and last 10-15 years in Arizona.</p>
+          <p className="text-gray-700">Stained glass look: Colored leaded-glass-style films replicate traditional stained glass aesthetics at a fraction of the cost. Popular for craftsman, traditional, and historic homes. Custom color matching available for specific design requirements. Learn more about <Link to="/decorative-window-films" className="text-blue-700 underline hover:text-blue-900">decorative window films</Link> for sidelights and entryways.</p>
+        </section>
+
+        {/* ONE-WAY SIDELIGHT WINDOW FILM */}
+        <section className="mb-12 bg-amber-50 border border-amber-200 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">One-Way Sidelight Window Film</h2>
+          <p className="text-gray-700 mb-4">One-way mirror film provides daytime-only privacy on sidelights. During daylight hours when the exterior is brighter than the interior, the sidelight appears as a mirror from outside while you see out clearly from inside. This provides daytime privacy without blocking your view of the front walkway, driveway, or street.</p>
+          <p className="text-gray-700 mb-4"><strong>Honest explanation of nighttime reversal:</strong> When interior lights are on after dark and it is dark outside, one-way film reverses — the interior becomes visible from outside. This is not a product defect; it is how light and reflection work. The side with more light always sees through. At night with lights on, the interior has more light, so outsiders can see in.</p>
+          <p className="text-gray-700">Recommendation: For front door sidelights where nighttime privacy matters (bedrooms visible, valuables near entryway, street-facing door), choose frosted film instead. One-way film works well for sidelights in gated communities, sidelights facing private yards, or when paired with interior curtains/blinds for nighttime use. Read our <Link to="/blog/one-way-window-film-day-and-night-guide" className="text-blue-700 underline hover:text-blue-900">complete one-way film guide</Link> for technical details.</p>
+        </section>
+
+        {/* BEST SIDELIGHT WINDOW FILM FOR PHOENIX HOMES */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Best Sidelight Window Film for Phoenix Homes</h2>
+          <p className="text-gray-700 mb-4">Frosted film is the most popular sidelight choice in Phoenix for three reasons: it provides 24/7 privacy day and night, it is HOA-compliant in most Arizona communities, and it does not depend on brightness conditions like one-way mirror film. Frosted film has a clean etched-glass appearance that complements both modern and traditional entryways.</p>
+          <p className="text-gray-700 mb-4"><strong>Ceramic sidelight film for heat rejection:</strong> If your sidelights face west or receive direct afternoon sun, ceramic tinted film provides both heat rejection and partial privacy. Ceramic film blocks 50-70% of solar heat while reducing interior visibility from outside. It does not provide full privacy but significantly reduces how clearly outsiders can see through the sidelight.</p>
+          <p className="text-gray-700">HOA compliance: Frosted and etched films maintain a neutral, elegant exterior appearance and are typically approved by Arizona HOAs without submission. Highly reflective or dark mirror films may require HOA approval. Arizona House of Film provides product documentation and manufacturer spec sheets for HOA submission when needed. Most Phoenix-area HOAs approve frosted sidelight film immediately.</p>
+        </section>
+
+        {/* HOW MUCH DOES SIDELIGHT FILM COST */}
+        <section className="mb-12 bg-blue-50 border border-blue-200 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">How Much Does Sidelight Film Cost?</h2>
+          <p className="text-gray-700 mb-4">Sidelight film costs $8-$15 per square foot installed in Phoenix. A single sidelight panel (6-10 sqft) typically costs $80-$200. A standard sidelight pair (two panels flanking the front door) costs $150-$400 installed. Sidelights plus transom (full entryway treatment) cost $250-$600 depending on total glass area and film type.</p>
+          <p className="text-gray-700 mb-4"><strong>Project-based pricing context:</strong> Most installers have a $500 minimum service charge. For a single small sidelight panel (6 sqft), you would pay the minimum rather than the per-sqft rate. The minimum covers travel, equipment setup, and the installer's time. For sidelight pairs or full entryway treatments, the square footage pricing applies because the project exceeds the minimum threshold.</p>
+          <p className="text-gray-700">Single door vs double door: Front doors with sidelights on both sides (two panels) are standard. Double front doors with four sidelights (two per door) double the glass area and installation time. French door entries with divided lites require individual pane cutting and cost 25-40% more than standard sidelights. Call (480) 788-1591 for a free quote on your specific sidelight configuration.</p>
         </section>
 
         {/* Film grid */}
@@ -237,11 +295,11 @@ export default function SidelightWindowFilm() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
             {[
               { title: 'Entryway & Door Film', href: '/entryway-window-film', desc: 'Full entryway treatment — sidelights, transom, door panels.' },
+              { title: 'Decorative Window Films', href: '/decorative-window-films', desc: 'Frosted, patterned, and etched glass effects.' },
+              { title: 'Privacy Film Sliding Glass Door', href: '/privacy-film-sliding-glass-door', desc: 'Film for patio doors — privacy, security, solar control.' },
+              { title: 'One-Way Window Film Guide', href: '/blog/one-way-window-film-day-and-night-guide', desc: 'Day & night privacy physics explained.' },
               { title: 'Bathroom Privacy Film', href: '/bathroom-privacy-window-film', desc: 'Shower glass and bathroom window privacy.' },
-              { title: 'One-Way Mirror Film', href: '/one-way-mirror-window-film', desc: 'Daytime privacy with solar control.' },
               { title: 'Frosted Film Catalog', href: '/films/frosted-etched-films', desc: '144+ frosted and etched patterns.' },
-              { title: 'Residential Tinting', href: '/residential-window-tinting', desc: 'Full residential service overview.' },
-              { title: 'All Films', href: '/films', desc: '618 Solyx films — browse the catalog.' },
             ].map((item, i) => (
               <Link key={i} to={item.href} className="flex items-start gap-3 p-4 border border-gray-100 rounded-xl hover:border-blue-200 hover:bg-blue-50 transition-all group">
                 <ArrowRight className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />

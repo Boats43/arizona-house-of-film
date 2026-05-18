@@ -61,7 +61,16 @@
       "Bash(awk -F':' '{ print $1 }')",
       "Bash(awk '{print length\\($0\\)\" chars: \"$0}')",
       "Bash(awk 'length\\($0\\)>60 {print length\\($0\\)\" chars: \"$0}')",
-      "WebFetch(domain:arizonahouseoffilm.com)"
+      "WebFetch(domain:arizonahouseoffilm.com)",
+      "PowerShell(if \\(Test-Path \"dist\"\\) { \\(Get-ChildItem -Path dist -Filter \"index.html\" -Recurse\\).Count } else { \"dist folder not found\" })",
+      "PowerShell(Get-Content *)",
+      "PowerShell(\\(Get-Content \"src\\\\pages\\\\informational\\\\PrivacyFilmSlidingGlassDoor.jsx\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(\\(Get-Content \"src\\\\pages\\\\solutions\\\\SidelightWindowFilm.jsx\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(\\(Select-String -Path \"src\\\\pages\\\\informational\\\\PrivacyFilmSlidingGlassDoor.jsx\" -Pattern \"&lt;h2\" | Measure-Object\\).Count)",
+      "PowerShell(\\(Select-String -Path \"src\\\\pages\\\\solutions\\\\SidelightWindowFilm.jsx\" -Pattern \"&lt;h2\" | Measure-Object\\).Count)",
+      "PowerShell(\\(Select-String -Path \"public\\\\sitemap-core.xml\" -Pattern \"&lt;url&gt;\" | Measure-Object\\).Count)",
+      "PowerShell(npm run *)",
+      "PowerShell(node scripts/prerender.js)"
     ]
   }
 }

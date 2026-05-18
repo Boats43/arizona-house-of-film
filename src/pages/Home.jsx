@@ -45,7 +45,7 @@ const Home = () => {
 
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     name: "Arizona House of Film",
     url: "https://arizonahouseoffilm.com",
     logo: {

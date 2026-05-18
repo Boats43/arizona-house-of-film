@@ -308,6 +308,10 @@ const categoryMap = {
 export default function FilmProductPage() {
   const { categorySlug, productSlug } = useParams();
 
+  // Noindex all SKUs except gradient-films
+  const INDEXED_CATEGORIES = ['gradient-films'];
+  const shouldIndex = INDEXED_CATEGORIES.includes(categorySlug);
+
   // Resolve film — try allFilms first, then solyxFilms
   const { film, solyxFilm } = useMemo(() => {
     // Try legacy allFilms
@@ -393,6 +397,7 @@ export default function FilmProductPage() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDesc} />
         <meta name="keywords" content={content.keywords} />
+        {!shouldIndex && <meta name="robots" content="noindex, follow" />}
         <link rel="canonical" href={`https://arizonahouseoffilm.com/films/${categorySlug}/${productSlug}`} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDesc} />

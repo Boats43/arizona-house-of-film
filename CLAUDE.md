@@ -13,7 +13,7 @@
 - **Method**: `scripts/prerender.js` — Vite SSR + `renderToString`, no Puppeteer
 - **Trigger**: `"postbuild": "node scripts/prerender.js && node scripts/generate-sitemaps.js"` in package.json — `generate-sitemaps.js` runs automatically on every build
 - **Sitemap generation**: `scripts/generate-sitemaps.js` dynamically writes `public/sitemap-films.xml` (and `dist/sitemap-films.xml`) with all 618 Solyx SKU URLs + 8 category hubs (626 total) — never hand-edit sitemap-films.xml
-- **Result**: 964 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
+- **Result**: 982 routes prerendered (~50KB each vs 6KB SPA shell) — includes all 618 Solyx SKU pages under `/films/:categorySlug/:productSlug` and all 8 canonical film category hubs at `/films/:categorySlug`
 - **Key fix**: Load `HelmetProvider` via `vite.ssrLoadModule('react-helmet-async')` inside `main()`, NOT as a top-level import — prevents module identity mismatch
 - **Vite config**: `ssr: { noExternal: ['react-helmet-async', 'react-helmet'] }` required in `createServer()`
 - **SKU routes**: `scripts/prerender.js` imports `solyxProducts` + `solyxToFilmsCategory` from `src/data/solyxFilms.js` and spreads generated SKU URLs into `ROUTES` — never hand-list SKUs
@@ -34,10 +34,11 @@
 - `vercel.json` — 84 redirects (incl. 16 legacy SKU category 301s + 4 stale category-alias 301s) + SPA rewrite fallback + security headers
 
 ## Page Counts
-- **Total prerendered**: 964
-- **Sitemap URLs**: 935 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
+- **Total prerendered**: 982
+- **Sitemap URLs**: 951 (across 7 sitemap files; sitemap-films.xml = 626 dynamically generated)
 - **Ahrefs health score**: 97
-- **Page JSX files**: 111 (47 root + 27 locations + 22 informational + 6 solutions + 8 brands + 2 films) — `HomePage.jsx` and `ProductDetailPage.jsx` removed as dead code on 2026-04-19
+- **Page JSX files**: 114 (47 root + 27 locations + 22 informational + 6 solutions + 8 brands + 2 films) — `HomePage.jsx` and `ProductDetailPage.jsx` removed as dead code on 2026-04-19
+- **Blog posts**: 38 (in blogPosts.jsx)
 - **Components**: ~33 (16 top-level + 5 contact + 2 SEO + 10 ui)
 - **Brand pages**: 36 (8 dedicated + 28 dynamic)
 - **Service area pages**: 100+ (dynamic via CityPage)
@@ -62,7 +63,7 @@
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
-- Build must pass 964/964 prerender before pushing
+- Build must pass 982/982 prerender before pushing
 
 ## Open Items (as of April 4, 2026)
 - `/residential-window-tinting-phoenix` now internally linked from Home, Residential, and WindowFilmPhoenix — verify GSC pickup
@@ -82,4 +83,5 @@
 - `/window-film-distributor-phoenix` added — new distributor/wholesale page for 6 authorized lines (Nexfil USA, Solyx, Madico, MaxPro, SunTek, XPEL), FAQPage + Organization/OfferCatalog schema, contractor drop-ship and bulk pricing, 6 buyer segments (GCs, architects, interior designers, facility managers, sign shops, glass shops). Schema later revised to single Service + LocalBusiness to clear GSC Product-without-offers warning.
 - Nexfil USA full presence added — dedicated `/brands/nexfil` page (NexfilPage.jsx), `src/data/nexfilFilms.js` catalog (7 categories, ~38 SKUs), brands.js entry, and api/chat.js ORDER-IN inventory listing. Monitor indexing for "nexfil", "nexfil usa", "onyva ir90", and "lux ir80".
 - Audit fixes 2026-04-19: (1) `/privacy-policy` added to prerender ROUTES (was served by SPA fallback only). (2) Backfilled 41 missing `<lastmod>` entries — 4 in sitemap-core, 37 long-tail cities in sitemap-service-areas. (3) `/brands/panorama` moved from sitemap-core to sitemap-brands. (4) LLumar and SunTek entries added to `brands.js` so the `/brands` hub iteration now covers all 8 dedicated brand pages. (5) Deleted dead-code orphans `src/pages/HomePage.jsx` (legacy Hostinger redirect) and `src/pages/ProductDetailPage.jsx` (old e-commerce UI).
-- Last updated: April 19, 2026
+- Last updated: May 15, 2026
+- Last commit: 862c65e3f (soft-404 fix)

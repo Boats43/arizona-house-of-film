@@ -42,6 +42,7 @@ Name: ${d.name || 'Not provided'}
 Phone: ${d.phone || 'Not provided'}
 Email: ${d.email || 'Not provided'}
 Address: ${d.address || 'Not provided'}
+Referral Source: ${d.referralSource || 'Not specified'}
 
 --- ESTIMATE DETAILS ---
 Property Type: ${d.propertyType || 'Not provided'}
@@ -85,6 +86,7 @@ Source: ${d.source || 'website'}
       <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Phone</td><td style="padding: 8px 0; font-weight: bold; font-size: 14px;"><a href="tel:${d.phone}" style="color: #6b8f71;">${d.phone || '—'}</a></td></tr>
       <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Email</td><td style="padding: 8px 0; font-size: 14px;"><a href="mailto:${d.email}" style="color: #6b8f71;">${d.email || '—'}</a></td></tr>
       <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Address</td><td style="padding: 8px 0; font-size: 14px;">${d.address || '—'}</td></tr>
+      <tr><td style="padding: 8px 0; color: #888; font-size: 13px;">Referral Source</td><td style="padding: 8px 0; font-size: 14px; font-weight: bold; color: #6b8f71;">${d.referralSource || 'Not specified'}</td></tr>
     </table>
   </div>
 

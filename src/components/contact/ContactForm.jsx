@@ -37,6 +37,7 @@ const ContactForm = () => {
           address: (formData.get('City') || '') + ', ' + (formData.get('Zip Code') || ''),
           message: formData.get('Message') || '',
           propertyType: formData.get('Project Type') || '',
+          referralSource: formData.get('Referral Source') || 'Not specified',
           source: 'contact-form',
         }),
       });
@@ -114,6 +115,22 @@ const ContactForm = () => {
           <label className="industrial-label">Phone Number *</label>
           <input name="Phone" type="tel" required className="industrial-input" placeholder="480-000-0000" disabled={isSubmitting} aria-label="Phone Number" />
         </div>
+      </div>
+
+      <div>
+        <label className="industrial-label">How did you find us? (optional)</label>
+        <select name="Referral Source" className="industrial-input" disabled={isSubmitting} aria-label="Referral Source">
+          <option value="">Please select...</option>
+          <option value="Google Search">Google Search</option>
+          <option value="ChatGPT / AI Search">ChatGPT / AI Search</option>
+          <option value="Perplexity AI">Perplexity AI</option>
+          <option value="Google AI Mode">Google AI Mode</option>
+          <option value="Referral from someone I know">Referral from someone I know</option>
+          <option value="Social media (Facebook/Instagram)">Social media (Facebook/Instagram)</option>
+          <option value="Saw your truck or signage">Saw your truck or signage</option>
+          <option value="Repeat customer">Repeat customer</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

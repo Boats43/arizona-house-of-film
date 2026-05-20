@@ -130,7 +130,7 @@ const FilmQuoteRequest = () => {
           description: "We'll contact you within 24 hours with detailed pricing.",
           className: 'bg-green-600 border-none text-white font-bold rounded-none',
         });
-        setTimeout(() => navigate('/thank-you'), 500);
+        setTimeout(() => navigate('/thank-you'), 1500);
       } else {
         throw new Error('Submission failed');
       }

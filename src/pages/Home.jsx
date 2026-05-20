@@ -122,6 +122,9 @@ const Home = () => {
                 <Button size="lg" asChild variant="outline" className="bg-white border-2 border-slate-900 text-slate-900 font-black w-full sm:w-auto h-16 px-10 rounded-none hover:bg-slate-900 hover:text-white">
                   <Link to="/get-a-quote">Get a Film Quote</Link>
                 </Button>
+                <Button size="lg" asChild variant="outline" className="bg-white border-2 border-slate-900 text-slate-900 font-black w-full sm:w-auto h-16 px-10 rounded-none hover:bg-slate-900 hover:text-white">
+                  <Link to="/window-film-cost-estimator">Instant Price Estimate</Link>
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -175,7 +178,7 @@ const Home = () => {
       <section className="bg-white py-12 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8">
           {[
-            { icon: Star, text: "Top Rated Google", sub: "21 Google Reviews" },
+            { icon: Star, text: "Top Rated Google", sub: "22 Google Reviews" },
             { icon: Award, text: "ROC #314088", sub: "Licensed & Bonded" },
             { icon: Server, text: "500,000+ Sq Ft Installed", sub: "Installed Valley-Wide" },
             { icon: Clock, text: "Free Estimates", sub: "24-Hour Response" },

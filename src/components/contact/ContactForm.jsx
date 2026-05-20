@@ -59,7 +59,7 @@ const ContactForm = () => {
 
         setTimeout(() => {
           navigate('/thank-you');
-        }, 1500);
+        }, 500);
       } else {
         throw new Error('Form submission failed');
       }

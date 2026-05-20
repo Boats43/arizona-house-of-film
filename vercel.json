@@ -118,7 +118,20 @@
     { "source": "/films/elegant-textured-films", "destination": "/films/frosted-etched-films", "permanent": true },
     { "source": "/films/glasslike-distortion-films", "destination": "/films/specialty-films", "permanent": true },
     { "source": "/films/exterior-films", "destination": "/films/specialty-films", "permanent": true },
-    { "source": "/films/squid-window-textile", "destination": "/films/specialty-films", "permanent": true }
+    { "source": "/films/squid-window-textile", "destination": "/films/specialty-films", "permanent": true },
+
+    { "source": "/welcome/safety-and-security-window-film-arizona", "destination": "/security-window-film-phoenix", "permanent": true },
+    { "source": "/welcome/safety-and-security-window-film-arizona/", "destination": "/security-window-film-phoenix", "permanent": true },
+    { "source": "/welcome/commercial-window-films", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/welcome/commercial-window-films/", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/welcome/residential-window-films-in-arizona", "destination": "/residential-window-tinting", "permanent": true },
+    { "source": "/welcome/residential-window-films-in-arizona/", "destination": "/residential-window-tinting", "permanent": true },
+    { "source": "/welcome/decorative", "destination": "/decorative-window-films", "permanent": true },
+    { "source": "/welcome/decorative/", "destination": "/decorative-window-films", "permanent": true },
+    { "source": "/welcome/privacy-policy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/welcome/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/welcome/feed", "destination": "/blog", "permanent": true },
+    { "source": "/welcome/feed/", "destination": "/blog", "permanent": true }
   ],
   "rewrites": [],
   "headers": [

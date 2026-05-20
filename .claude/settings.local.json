@@ -71,7 +71,11 @@
       "PowerShell(\\(Select-String -Path \"public\\\\sitemap-core.xml\" -Pattern \"&lt;url&gt;\" | Measure-Object\\).Count)",
       "PowerShell(npm run *)",
       "PowerShell(node scripts/prerender.js)",
-      "PowerShell(Get-ChildItem *)"
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(node -e \"JSON.parse\\(\\(Get-Content 'vercel.json' -Raw\\)\\); Write-Output 'vercel.json is valid JSON'\")",
+      "PowerShell(node -e \"const fs = require\\('fs'\\); JSON.parse\\(fs.readFileSync\\('vercel.json', 'utf8'\\)\\); console.log\\('vercel.json is valid JSON'\\)\")",
+      "PowerShell(npx vite build)",
+      "PowerShell(git add *)"
     ]
   }
 }

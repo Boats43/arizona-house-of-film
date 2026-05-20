@@ -33,7 +33,7 @@ export default function WindowFilmCostArizona() {
   return (
     <>
       <Helmet>
-        <title>Window Tinting Cost Arizona 2026 | $8–$18/sq ft</title>
+        <title>Window Film Cost Arizona 2026 | $8–$22/sqft | Free Estimate · ROC #314088</title>
         <meta name="description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic film from $13/sq ft. SRP rebate eligible. Free on-site estimate — (480) 788-1591." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/window-film-cost-arizona" />
         <meta property="og:title" content="Window Tinting Cost Arizona 2026 | $8–$18/sq ft" />

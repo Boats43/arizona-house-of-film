@@ -143,7 +143,10 @@
     { "source": "/blog/understanding-uv-protection-window-film", "destination": "/blog/solar-window-film-phoenix-az", "permanent": true },
 
     { "source": "/blog/a-business-owners-guide-to-security-window-films-25", "destination": "/blog/a-business-owners-guide-to-security-window-films", "permanent": true },
-    { "source": "/films/casper-films/sx-ccf", "destination": "/office-privacy-window-film", "permanent": true }
+    { "source": "/films/casper-films/sx-ccf", "destination": "/office-privacy-window-film", "permanent": true },
+
+    { "source": "/queen-creek-window-tinting", "destination": "/window-tinting-queen-creek", "permanent": true },
+    { "source": "/marana-window-tinting", "destination": "/service-areas/marana", "permanent": true }
   ],
   "rewrites": [],
   "headers": [

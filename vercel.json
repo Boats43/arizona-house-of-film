@@ -131,7 +131,16 @@
     { "source": "/welcome/privacy-policy", "destination": "/privacy-policy", "permanent": true },
     { "source": "/welcome/contact-us", "destination": "/contact", "permanent": true },
     { "source": "/welcome/feed", "destination": "/blog", "permanent": true },
-    { "source": "/welcome/feed/", "destination": "/blog", "permanent": true }
+    { "source": "/welcome/feed/", "destination": "/blog", "permanent": true },
+
+    { "source": "/about", "destination": "/welcome", "permanent": true },
+    { "source": "/services/exterior-films", "destination": "/films/specialty-films", "permanent": true },
+    { "source": "/services/dual-reflective", "destination": "/films/reflective-films", "permanent": true },
+    { "source": "/services/frosted", "destination": "/films/frosted-etched-films", "permanent": true },
+    { "source": "/services/commercial", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/author/jimmy-matamoros", "destination": "/welcome", "permanent": true },
+    { "source": "/blog/benefits-of-commercial-window-tinting", "destination": "/commercial-window-tinting", "permanent": true },
+    { "source": "/blog/understanding-uv-protection-window-film", "destination": "/blog/solar-window-film-phoenix-az", "permanent": true }
   ],
   "rewrites": [],
   "headers": [

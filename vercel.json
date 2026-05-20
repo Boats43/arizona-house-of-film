@@ -61,10 +61,10 @@
     { "source": "/pages/", "destination": "/", "permanent": true },
     { "source": "/pages", "destination": "/", "permanent": true },
     { "source": "/welcome/wp-admin/admin-ajax.php", "destination": "/", "permanent": true },
-    { "source": "/welcome/careers/", "destination": "/careers", "permanent": true },
-    { "source": "/welcome/careers", "destination": "/careers", "permanent": true },
-    { "source": "/welcome/gallery/", "destination": "/gallery", "permanent": true },
-    { "source": "/welcome/gallery", "destination": "/gallery", "permanent": true },
+    { "source": "/welcome/careers/", "destination": "/welcome", "permanent": true },
+    { "source": "/welcome/careers", "destination": "/welcome", "permanent": true },
+    { "source": "/welcome/gallery/", "destination": "/welcome", "permanent": true },
+    { "source": "/welcome/gallery", "destination": "/welcome", "permanent": true },
     { "source": "/en/", "destination": "/", "permanent": true },
     { "source": "/en", "destination": "/", "permanent": true },
     { "source": "/sv/", "destination": "/", "permanent": true },
@@ -140,7 +140,10 @@
     { "source": "/services/commercial", "destination": "/commercial-window-tinting", "permanent": true },
     { "source": "/author/jimmy-matamoros", "destination": "/welcome", "permanent": true },
     { "source": "/blog/benefits-of-commercial-window-tinting", "destination": "/commercial-window-tinting", "permanent": true },
-    { "source": "/blog/understanding-uv-protection-window-film", "destination": "/blog/solar-window-film-phoenix-az", "permanent": true }
+    { "source": "/blog/understanding-uv-protection-window-film", "destination": "/blog/solar-window-film-phoenix-az", "permanent": true },
+
+    { "source": "/blog/a-business-owners-guide-to-security-window-films-25", "destination": "/blog/a-business-owners-guide-to-security-window-films", "permanent": true },
+    { "source": "/films/casper-films/sx-ccf", "destination": "/office-privacy-window-film", "permanent": true }
   ],
   "rewrites": [],
   "headers": [

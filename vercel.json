@@ -84,6 +84,7 @@
 
     { "source": "/industries/government", "destination": "/industries/government-buildings", "permanent": true },
     { "source": "/industries/museums-libraries", "destination": "/industries", "permanent": true },
+    { "source": "/industries/arenas-stadiums", "destination": "/industries", "permanent": true },
 
     { "source": "/blog/:slug(.*)-:num([0-9]{1,2})", "destination": "/blog/:slug", "permanent": true },
 

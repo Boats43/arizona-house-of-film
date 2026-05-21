@@ -149,7 +149,9 @@
     { "source": "/queen-creek-window-tinting", "destination": "/window-tinting-queen-creek", "permanent": true },
     { "source": "/marana-window-tinting", "destination": "/service-areas/marana", "permanent": true }
   ],
-  "rewrites": [],
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

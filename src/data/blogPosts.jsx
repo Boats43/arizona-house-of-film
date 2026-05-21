@@ -138,7 +138,7 @@ const allBlogData = [
     keywords: 'car vs home window tint, automotive vs residential tint Arizona, Glendale window film',
     serviceLink: '/residential-window-tinting',
     cityLink: '/service-areas/glendale',
-    brandMentions: '3M Automotive, MaxPro',
+    brandMentions: '3M Crystalline, LLumar',
     faqs: [
       {
         question: 'Can I use automotive tint on my home windows?',

@@ -269,6 +269,12 @@ const Home = () => {
                   link: '/one-way-mirror-window-film',
                   desc: 'Daytime privacy + maximum solar heat rejection.',
                 },
+                {
+                  category: 'Countertop Protection Film',
+                  films: ['Clear Bra Film', 'Anti-Scratch', 'Heat-Resistant', 'Stain-Proof', 'Invisible Guard'],
+                  link: '/countertop-protection-film-arizona',
+                  desc: 'Protect quartz, marble, granite from scratches and heat.',
+                },
               ].map((cat, i) => (
                 <Link key={i} to={cat.link} className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-green-500/40 rounded-xl p-5 transition-all">
                   <h4 className="font-bold text-white text-sm mb-2 group-hover:text-green-400 transition-colors">{cat.category}</h4>

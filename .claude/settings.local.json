@@ -77,7 +77,8 @@
       "PowerShell(npx vite build)",
       "PowerShell(git add *)",
       "PowerShell(git push *)",
-      "PowerShell(Select-String *)"
+      "PowerShell(Select-String *)",
+      "Bash(awk -F'/' '{print $2}')"
     ]
   }
 }

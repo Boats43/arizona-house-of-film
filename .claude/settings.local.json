@@ -75,7 +75,9 @@
       "PowerShell(node -e \"JSON.parse\\(\\(Get-Content 'vercel.json' -Raw\\)\\); Write-Output 'vercel.json is valid JSON'\")",
       "PowerShell(node -e \"const fs = require\\('fs'\\); JSON.parse\\(fs.readFileSync\\('vercel.json', 'utf8'\\)\\); console.log\\('vercel.json is valid JSON'\\)\")",
       "PowerShell(npx vite build)",
-      "PowerShell(git add *)"
+      "PowerShell(git add *)",
+      "PowerShell(git push *)",
+      "PowerShell(Select-String *)"
     ]
   }
 }

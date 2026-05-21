@@ -27,11 +27,14 @@ function urlEntry({ loc, changefreq, priority }) {
 // Unique category hub routes from the canonical map
 const categoryHubs = Array.from(new Set(Object.values(solyxToFilmsCategory)))
 
-// All SKU routes — must mirror prerender.js slug logic
-const skuRoutes = solyxProducts.map(p => {
-  const cat = solyxToFilmsCategory[p.category] || 'specialty-films'
-  return `/films/${cat}/${toSlug(p.sku)}`
-})
+// Only include indexed SKU routes (gradient-films only)
+// All other SKUs are noindexed and should not appear in sitemap
+const skuRoutes = solyxProducts
+  .filter(p => {
+    const cat = solyxToFilmsCategory[p.category] || 'specialty-films'
+    return cat === 'gradient-films'
+  })
+  .map(p => `/films/gradient-films/${toSlug(p.sku)}`)
 // De-dupe just in case
 const uniqueSkuRoutes = Array.from(new Set(skuRoutes))
 

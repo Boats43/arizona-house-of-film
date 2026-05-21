@@ -5,15 +5,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Instagram, Facebook, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Gallery images — replace these src values with your actual uploaded photos
-// Upload your photos to /public/images/gallery/ and update these paths
+// Gallery images — actual project photos from public/images/gallery/
 const galleryImages = [
-  { src: "/images/gallery/project-1.jpg", alt: "Arizona residential window tinting on a modern home in Scottsdale" },
-  { src: "/images/gallery/project-2.jpg", alt: "Commercial office building with privacy film in Phoenix, AZ" },
-  { src: "/images/gallery/project-3.jpg", alt: "Living room with decorative window film on patio doors in a Mesa home" },
-  { src: "/images/gallery/project-4.jpg", alt: "Retail storefront with anti-graffiti security film in Tempe" },
-  { src: "/images/gallery/project-5.jpg", alt: "Kitchen with UV protection window film to prevent fading in a Chandler kitchen" },
-  { src: "/images/gallery/project-6.jpg", alt: "Conference room with frosted privacy film for an office in downtown Phoenix" },
+  { src: "/images/gallery/20241212_132902.jpg", alt: "Arizona residential window tinting installation on modern home in Scottsdale" },
+  { src: "/images/gallery/20250830_141748.jpg", alt: "Commercial office building with solar control film in Phoenix, AZ" },
+  { src: "/images/gallery/20250619_100523.jpg", alt: "Decorative window film installation on patio doors in Mesa home" },
+  { src: "/images/gallery/20250217_125430.jpg", alt: "Retail storefront with security film installation in Tempe, Arizona" },
+  { src: "/images/gallery/20250217_120258.jpg", alt: "Privacy window film installation in Chandler residential project" },
+  { src: "/images/gallery/White Frost  Salt Box.webp", alt: "White frost decorative film on Salt Box architecture in Phoenix area" },
 ];
 
 const imageVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
@@ -80,9 +79,6 @@ const Gallery = () => {
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-gray-500 mt-8 text-sm">
-            📸 Upload your project photos to <code>/public/images/gallery/</code> to populate this gallery.
-          </p>
         </div>
       </section>
 

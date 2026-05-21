@@ -1008,6 +1008,54 @@ export default function WindowFilmCostEstimator() {
           )}
         </div>
 
+        {/* Bottom CTA */}
+        <div style={{
+          maxWidth: "760px",
+          margin: "0 auto 32px",
+          padding: "32px",
+          background: "#1a1a2e",
+          borderRadius: "8px",
+          textAlign: "center"
+        }}>
+          <h3 style={{ color: "#fff", fontSize: "22px", fontWeight: "800", marginBottom: "8px" }}>
+            Ready for Your Exact Quote?
+          </h3>
+          <p style={{ color: "#ccc", fontSize: "15px", marginBottom: "24px" }}>
+            Free on-site assessment. Licensed ROC #314088. 24-hour response.
+          </p>
+          <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link
+              to="/get-a-quote"
+              style={{
+                background: "#2563eb",
+                color: "#fff",
+                padding: "14px 28px",
+                fontWeight: "800",
+                fontSize: "15px",
+                textDecoration: "none",
+                borderRadius: "4px"
+              }}
+            >
+              Get a Free Quote
+            </Link>
+            <a
+              href="tel:4807881591"
+              style={{
+                background: "transparent",
+                color: "#fff",
+                padding: "14px 28px",
+                fontWeight: "800",
+                fontSize: "15px",
+                textDecoration: "none",
+                border: "2px solid #fff",
+                borderRadius: "4px"
+              }}
+            >
+              Call (480) 788-1591
+            </a>
+          </div>
+        </div>
+
         {/* Related links */}
         <div
           style={{

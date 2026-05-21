@@ -110,19 +110,27 @@ const Home = () => {
           <div className="text-center max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
-                Arizona <span className="text-blue-500 italic">House of Film</span> — Licensed Window Film Contractor Phoenix AZ
+                Arizona <span className="text-blue-500 italic">House of Film</span>
+                <br className="hidden sm:block" />
+                {" "}— Licensed Window Film{" "}
+                <span className="block sm:inline">Contractor Phoenix AZ</span>
               </h1>
               <p className="mt-8 text-base sm:text-lg md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto">
-                Arizona House of Film installs commercial window tinting, residential window film, security film, decorative glass film, and solar control film across Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088 — serving contractors, enterprises, and homeowners since 2017.
+                <span className="sm:hidden">
+                  Phoenix's licensed window film contractor. Commercial, residential, security & decorative. ROC #314088.
+                </span>
+                <span className="hidden sm:inline">
+                  Arizona House of Film installs commercial window tinting, residential window film, security film, decorative glass film, and solar control film across Phoenix, Scottsdale, and the Arizona metro. Licensed ROC #314088 — serving contractors, enterprises, and homeowners since 2017.
+                </span>
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="mt-10 grid grid-cols-2 sm:flex sm:flex-row items-center justify-center gap-3">
                 <Button size="lg" asChild className="bg-blue-600 text-white font-black w-full sm:w-auto h-16 px-10 rounded-none">
                   <Link to="/contact">Schedule Free Glass Assessment</Link>
                 </Button>
                 <Button size="lg" asChild variant="outline" className="bg-white border-2 border-slate-900 text-slate-900 font-black w-full sm:w-auto h-16 px-10 rounded-none hover:bg-slate-900 hover:text-white">
                   <Link to="/get-a-quote">Get a Film Quote</Link>
                 </Button>
-                <Button size="lg" asChild variant="outline" className="bg-white border-2 border-slate-900 text-slate-900 font-black w-full sm:w-auto h-16 px-10 rounded-none hover:bg-slate-900 hover:text-white">
+                <Button size="lg" asChild variant="outline" className="bg-white border-2 border-slate-900 text-slate-900 font-black w-full col-span-2 sm:col-span-1 sm:w-auto h-16 px-10 rounded-none hover:bg-slate-900 hover:text-white">
                   <Link to="/window-film-cost-estimator">Instant Price Estimate</Link>
                 </Button>
               </div>

@@ -150,7 +150,7 @@
     { "source": "/marana-window-tinting", "destination": "/service-areas/marana", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|images/|assets/|favicon\\.ico|robots\\.txt|sitemap).*)", "destination": "/index.html" }
   ],
   "headers": [
     {

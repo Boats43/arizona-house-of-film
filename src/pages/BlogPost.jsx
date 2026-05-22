@@ -102,7 +102,7 @@ const BlogPost = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/service-areas/phoenix" className="text-blue-600 hover:underline">
+                <Link to="/window-tinting-phoenix" className="text-blue-600 hover:underline">
                   See local installs in Phoenix
                 </Link>
               </li>

@@ -7,7 +7,7 @@ const allBlogData = [
     alt: 'A beautiful Arizona home with tinted windows reflecting the sun.',
     keywords: 'arizona window tinting benefits, residential window film Arizona, home window tinting Phoenix',
     serviceLink: '/residential-window-tinting',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: '3M, SunTek',
     faqs: [
       {
@@ -85,7 +85,7 @@ const allBlogData = [
     alt: 'A window with peeling, bubbly DIY tint, illustrating a common mistake.',
     keywords: 'home window tint mistakes Arizona, DIY tinting Phoenix, professional window film Mesa',
     serviceLink: '/residential-window-tinting',
-    cityLink: '/service-areas/mesa',
+    cityLink: '/window-tinting-mesa',
     brandMentions: '3M, MaxPro',
     faqs: [
       {
@@ -137,7 +137,7 @@ const allBlogData = [
     alt: 'A split image showing a tinted car window next to a tinted residential window.',
     keywords: 'car vs home window tint, automotive vs residential tint Arizona, Glendale window film',
     serviceLink: '/residential-window-tinting',
-    cityLink: '/service-areas/glendale',
+    cityLink: '/window-tinting-glendale',
     brandMentions: '3M Crystalline, LLumar',
     faqs: [
       {
@@ -163,7 +163,7 @@ const allBlogData = [
     alt: 'An air conditioning unit with a large dollar sign, symbolizing cost savings.',
     keywords: 'window film lower AC bill, Phoenix energy saving tint, Arizona cooling costs',
     serviceLink: '/energy-saving-window-films',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: '3M, SunTek',
     faqs: [
       {
@@ -189,7 +189,7 @@ const allBlogData = [
     alt: 'A secure commercial storefront in Tempe protected by safety and security window film.',
     keywords: 'security window film Arizona, commercial safety tint Phoenix, anti-intrusion film Tempe',
     serviceLink: '/safety',
-    cityLink: '/service-areas/tempe',
+    cityLink: '/window-tinting-tempe',
     brandMentions: 'Madico SafetyShield, 3M',
     faqs: [
       {
@@ -215,7 +215,7 @@ const allBlogData = [
     alt: 'The Phoenix skyline with bright sun rays, illustrating the need for window tint.',
     keywords: 'window tint Phoenix, residential tinting Phoenix, Phoenix home comfort',
     serviceLink: '/residential-window-tinting',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'SunTek, 3M',
     faqs: [
       {
@@ -267,7 +267,7 @@ const allBlogData = [
     alt: 'SRP rebate application form with window film installation documentation.',
     keywords: 'SRP window film rebate 2026, SRP rebate window tinting, APS window film rebate Arizona',
     serviceLink: '/window-film-energy-rebates-arizona',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'LLumar, Hüper Optik',
     faqs: [
       {
@@ -388,7 +388,7 @@ const allBlogData = [
     alt: 'Phoenix home with professional window tinting installation in progress.',
     keywords: 'window tinting cost Phoenix, how much does window tinting cost, Phoenix window film pricing 2026',
     serviceLink: '/window-film-cost-arizona',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'LLumar, Hüper Optik',
     faqs: [
       {
@@ -516,7 +516,7 @@ const allBlogData = [
     alt: 'Comparison of ceramic and dual reflective window film on Arizona home windows.',
     keywords: 'best window film Arizona heat 2026, ceramic vs dual reflective window film, Arizona window film comparison',
     serviceLink: '/ceramic-vs-dual-reflective-film',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'Hüper Optik, LLumar',
     faqs: [
       {
@@ -2421,7 +2421,7 @@ const allBlogData = [
     alt: 'A North Phoenix home with residential performance window film installed on the west elevation, mid-afternoon sun.',
     keywords: 'residential performance window film phoenix, residential performance film desert ridge, residential performance film anthem, residential performance film new river, residential performance film glendale',
     serviceLink: '/residential-window-tinting-phoenix',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: '3M, LLumar, Huper Optik',
     ctaCity: 'Phoenix',
     faqs: [
@@ -2561,7 +2561,7 @@ const allBlogData = [
     alt: 'A Phoenix office tower with commercial performance window film installed on the west and south curtain wall elevations.',
     keywords: 'commercial performance window film phoenix, commercial performance film cave creek, commercial performance film scottsdale, LEED window film phoenix, SHGC commercial film',
     serviceLink: '/commercial-window-tinting',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: '3M, LLumar, Huper Optik',
     ctaCity: 'Phoenix',
     faqs: [
@@ -2722,7 +2722,7 @@ const allBlogData = [
     alt: 'Nexfil OnyVa IR90 sample card laid against a south-facing Phoenix window for visual comparison.',
     keywords: 'nexfil window film review, nexfil window film, nexfil onyva ir90 arizona, nexfil lux ir80, nexfil solar bronze, nexfil vs llumar',
     serviceLink: '/brands/nexfil',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'Nexfil, LLumar, Huper Optik',
     ctaCity: 'Phoenix',
     faqs: [
@@ -3012,7 +3012,7 @@ const allBlogData = [
     alt: 'A side-by-side comparison of a reflective one-way film exterior view by day vs the same window at night with interior lights on.',
     keywords: 'one way window film day and night, reflective window film day and night, 2 way mirror film, night time privacy window film, privacy window film at night, one-way window film that works at night, does one way privacy film work at night',
     serviceLink: '/day-and-night-privacy-window-film',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'Solyx, 3M, MaxPro',
     ctaCity: 'Phoenix',
     faqs: [
@@ -3175,7 +3175,7 @@ const allBlogData = [
     alt: 'A new-build Avondale home in Coldwater Springs with ceramic window film installed on west and south elevations.',
     keywords: 'window tinting avondale az, window tinting avondale arizona, window tinting near avondale, best window tinting service avondale arizona, residential window tinting avondale, commercial window tinting avondale',
     serviceLink: '/residential-window-tinting',
-    cityLink: '/service-areas/avondale',
+    cityLink: '/window-tinting-avondale',
     brandMentions: '3M, LLumar, Nexfil',
     ctaCity: 'Avondale',
     faqs: [
@@ -3325,7 +3325,7 @@ const allBlogData = [
     alt: 'A K-12 school entryway with 12 mil security window film and wet-glaze anchoring installed on the main entry vestibule.',
     keywords: 'security film cost breakdown for schools, school security window film arizona, blast mitigation film government buildings, best blast mitigation film for government buildings, university window film, k-12 security film',
     serviceLink: '/safety',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: '3M, Madico, Nexfil',
     ctaCity: 'Phoenix',
     faqs: [
@@ -3470,7 +3470,7 @@ const allBlogData = [
     alt: 'A medical office reception area with frosted privacy film on partition glass and UV-blocking ceramic on perimeter windows.',
     keywords: 'medical office window film arizona, window film for medical facilities, privacy film medical office, uv window film phoenix, hipaa window privacy medical, dental office privacy film',
     serviceLink: '/office-privacy-window-film',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'Solyx, 3M, Madico',
     ctaCity: 'Phoenix',
     faqs: [
@@ -3624,7 +3624,7 @@ const allBlogData = [
     alt: 'EnerLogic 70 sample card showing through to a Phoenix high-rise window with the IR-rejecting Low-E coating visible.',
     keywords: 'enerlogic window film, enerlogic window film review, enerlogic 70 review, enerlogic film, low e film for windows arizona, low-e window film phoenix',
     serviceLink: '/energy-saving-window-films',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'EnerLogic, Eastman, LLumar',
     ctaCity: 'Phoenix',
     faqs: [
@@ -3770,7 +3770,7 @@ const allBlogData = [
     alt: 'A Phoenix office conference room with decorative gradient and frosted patterned films installed across 14 partition panels.',
     keywords: 'decorative window film phoenix, decorative films phoenix, decorative window tinting phoenix, frosted window film phoenix, custom window film phoenix, patterned window film arizona, solyx decorative phoenix',
     serviceLink: '/decorative-window-films',
-    cityLink: '/service-areas/phoenix',
+    cityLink: '/window-tinting-phoenix',
     brandMentions: 'Solyx, MaxPro, Madico',
     ctaCity: 'Phoenix',
     faqs: [

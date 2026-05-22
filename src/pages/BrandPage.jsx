@@ -15,6 +15,18 @@ const BrandPage = () => {
 
   if (!brand) return <NotFound />;
 
+  /* ============================================================
+     THIN CONTENT NOINDEX — Low-value brands (<600 words)
+     Google refuses to index these thin templated pages.
+     Protect 6 major brands: 3m, madico, llumar, huper-optik, solar-gard, solyx
+  ============================================================ */
+  const noindexBrands = [
+    'rockrose', 'reflek', 'lintec', 'motoshield',
+    'decorative-films-llc', 'bdf', 'terminax',
+    'eastman', 'flexfilm', 'avery-dennison'
+  ];
+  const shouldNoindex = noindexBrands.includes(slug);
+
   const pageTitle = `${brand.name} Window Films | Arizona House of Film | ROC #314088`;
   const metaDescription = `Authorized ${brand.name} window film installation in Arizona. High-performance solar, security, and decorative solutions for Phoenix & Scottsdale homes.`;
   const canonicalUrl = `https://arizonahouseoffilm.com/brands/${brand.slug}`;
@@ -54,6 +66,7 @@ const BrandPage = () => {
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content={shouldNoindex ? "noindex, follow" : "index, follow"} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />

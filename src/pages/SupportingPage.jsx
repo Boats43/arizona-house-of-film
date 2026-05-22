@@ -18,6 +18,19 @@ const SupportingPage = () => {
   let pageData = pageKey ? supportingPagesData[pageKey] : null;
 
   /* ============================================================
+     THIN CONTENT NOINDEX — GSC "Crawled - not indexed" fix
+     Google refuses to index these ultra-thin (<300 word) pages.
+  ============================================================ */
+  const noindexPages = [
+    'safety/clear-visibility',
+    'safety/schools',
+    'safety/basement-windows',
+    'decorative-window-films/aesthetic-appeal',
+    'residential-window-tinting/uv-protection'
+  ];
+  const shouldNoindex = pageKey && noindexPages.includes(pageKey);
+
+  /* ============================================================
      FIREWALL LAYER 1 — Invalid Nested Route (/category/slug)
   ============================================================ */
   if (!pageData) {
@@ -108,6 +121,7 @@ const SupportingPage = () => {
         <title>{title}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content={shouldNoindex ? "noindex, follow" : "index, follow"} />
 
         {/* Open Graph */}
         <meta property="og:title" content={title} />

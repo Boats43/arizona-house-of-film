@@ -308,9 +308,10 @@ const categoryMap = {
 export default function FilmProductPage() {
   const { categorySlug, productSlug } = useParams();
 
-  // Noindex all SKUs except gradient-films
+  // Noindex all SKUs except gradient-films, PLUS 4 flagged thin SKUs
   const INDEXED_CATEGORIES = ['gradient-films'];
-  const shouldIndex = INDEXED_CATEGORIES.includes(categorySlug);
+  const NOINDEX_SKUS = ['sgc-6523', 'sx-sc571-35', 'sxo-034-48', 'sx-sc508'];
+  const shouldIndex = INDEXED_CATEGORIES.includes(categorySlug) && !NOINDEX_SKUS.includes(productSlug);
 
   // Resolve film — try allFilms first, then solyxFilms
   const { film, solyxFilm } = useMemo(() => {

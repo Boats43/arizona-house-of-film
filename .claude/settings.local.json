@@ -78,7 +78,8 @@
       "PowerShell(git add *)",
       "PowerShell(git push *)",
       "PowerShell(Select-String *)",
-      "Bash(awk -F'/' '{print $2}')"
+      "Bash(awk -F'/' '{print $2}')",
+      "PowerShell(git commit *)"
     ]
   }
 }

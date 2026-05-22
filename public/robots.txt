@@ -63,6 +63,9 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+User-agent: AhrefsBot
+Allow: /
+
 # Block bot spam parameter crawling
 User-agent: *
 Disallow: /*?a=

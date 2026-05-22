@@ -40,6 +40,20 @@ const CityPage = () => {
   // Normalize slug
   const cleanSlug = slug.replace("-window-tinting", "");
 
+  /* ======================================================
+     HIGH-VALUE CITIES — KEEP INDEXED
+     Google has deindexed 86/98 thin service-area pages.
+     Protect 12 high-value cities, noindex the rest.
+  ====================================================== */
+  const highValueCities = [
+    'scottsdale', 'tucson', 'flagstaff',
+    'prescott', 'sedona', 'surprise',
+    'goodyear', 'buckeye', 'paradise-valley',
+    'prescott-valley', 'yuma', 'sierra-vista'
+  ];
+
+  const shouldNoindex = !highValueCities.includes(cleanSlug.toLowerCase());
+
   // Validate against actual cities
   const city = cities.find(
     (c) => c.slug.toLowerCase() === cleanSlug.toLowerCase()
@@ -122,6 +136,7 @@ const CityPage = () => {
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content={shouldNoindex ? "noindex, follow" : "index, follow"} />
 
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Anti-Graffiti Film | Sacrificial Coatings for Commercial Properties</title>
+  <meta data-rh="true" name="description" content="Protect your glass, mirrors, and metal surfaces from vandalism with anti-graffiti film. This clear, sacrificial layer is easily replaced, saving Arizona businesses thousands in repair costs."/><meta data-rh="true" property="og:title" content="Anti-Graffiti Film | Sacrificial Coatings for Commercial Properties"/><meta data-rh="true" property="og:description" content="Protect your glass, mirrors, and metal surfaces from vandalism with anti-graffiti film. This clear, sacrificial layer is easily replaced, saving Arizona businesses thousands in repair costs."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/commercial-window-tinting/anti-graffiti"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Anti-Graffiti Film | Sacrificial Coatings for Commercial Properties"/><meta data-rh="true" name="twitter:description" content="Protect your glass, mirrors, and metal surfaces from vandalism with anti-graffiti film. This clear, sacrificial layer is easily replaced, saving Arizona businesses thousands in repair costs."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/commercial-window-tinting/anti-graffiti"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Commercial Services","item":"https://arizonahouseoffilm.com/commercial-window-tinting"},{"@type":"ListItem","position":3,"name":"Anti-Graffiti Film","item":"https://arizonahouseoffilm.com/commercial-window-tinting/anti-graffiti"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is anti-graffiti film thick enough to stop deep scratches?","acceptedAnswer":{"@type":"Answer","text":"Yes, our standard anti-graffiti films are typically 4 to 6 mil thick and are designed to protect against 'keying,' scratching, and even acid etching. The film absorbs the damage, leaving the glass underneath pristine."}},{"@type":"Question","name":"Can you see the edges of the film once it's installed?","acceptedAnswer":{"@type":"Answer","text":"Our professional installers are highly skilled at trimming the film for a precise, clean fit. Once installed, the film is virtually invisible to the naked eye."}},{"@type":"Question","name":"How quickly can a damaged film be replaced?","acceptedAnswer":{"@type":"Answer","text":"Film replacement is a very fast process. Our technicians can typically remove the old film and install the new one in a single service visit, restoring your property's appearance almost immediately."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Anti-Graffiti Film | Sacrificial Coatings for Commercial Properties","description":"Protect your glass, mirrors, and metal surfaces from vandalism with anti-graffiti film. This clear, sacrificial layer is easily replaced, saving Arizona businesses thousands in repair costs.","provider":{"@type":"LocalBusiness","name":"Arizona House of Film","url":"https://arizonahouseoffilm.com","@id":"https://arizonahouseoffilm.com/#business"},"areaServed":{"@type":"State","name":"Arizona"},"url":"https://arizonahouseoffilm.com/commercial-window-tinting/anti-graffiti"}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-white"><header class="relative py-20 text-white bg-gradient-to-br from-red-700 to-orange-800"><div class="absolute inset-0 bg-black/40"></div><div class="relative z-10 max-w-4xl mx-auto px-4 text-center"><div class="mb-4"><a class="text-white hover:underline flex items-center justify-center text-sm" href="/commercial-window-tinting"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to <!-- -->Commercial Services</a></div><h1 class="text-4xl md:text-5xl font-bold text-white" style="opacity:0;transform:translateY(20px) translateZ(0)">Protect Your Property from Vandalism</h1><p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Our anti-graffiti films act as an invisible shield against paint, scratching, and acid-etching.</p></div></header><main class="py-16 md:py-24"><div class="max-w-4xl mx-auto px-4"><div class="prose lg:prose-lg max-w-none text-gray-800" style="opacity:0;transform:translateY(20px) translateZ(0)"><div>
+      <h2>A Proactive Defense Against Vandalism and Damage</h2>
+      <p class="lead">Vandalism is an unfortunate and costly reality for many commercial property owners in urban areas. Replacing a large pane of glass that has been scratched, etched with acid, or spray-painted can cost thousands of dollars. Anti-graffiti film offers a simple, effective, and affordable alternative. This optically clear, sacrificial film is applied to the exterior of your glass or other smooth surfaces, taking the brunt of any damage.</p>
+      <h3>How Anti-Graffiti Film Works</h3>
+      <p>Think of it as a screen protector for your building. If a vandal strikes, they damage the film, not the expensive surface underneath. Our technicians can then quickly and easily remove the damaged film and apply a new layer, restoring your property's appearance for a fraction of the cost of replacement.</p>
+      <p>The benefits are clear:</p>
+      <ul>
+        <li><strong>Cost Savings:</strong> Dramatically reduces the cost associated with repairing or replacing vandalized property.</li>
+        <li><strong>Fast Recovery:</strong> Film replacement is much faster than ordering and installing new glass, minimizing downtime and maintaining your business's professional appearance.</li>
+        <li><strong>Invisible Protection:</strong> The film is virtually undetectable, so it doesn't alter the look of your property.</li>
+        <li><strong>Versatile Application:</strong> Protects not just glass but also other non-porous surfaces like stainless steel, mirrors, and marble that are common targets for vandals.</li>
+        <li><strong>UV Blocking:</strong> As an added benefit, our anti-graffiti films also block over 99% of harmful UV rays, helping to reduce fading of merchandise displayed near windows.</li>
+      </ul>
+      <h3>Ideal for High-Traffic Public Spaces</h3>
+      <p>Anti-graffiti film is a must-have for properties in high-traffic urban areas, including:</p>
+      <ul>
+        <li><strong>Retail Storefronts:</strong> Protect your valuable display windows from scratches and tags.</li>
+        <li><strong>Public Transportation:</strong> Used extensively on bus shelters, train windows, and in subway stations.</li>
+        <li><strong>Building Directories & Elevators:</strong> Safeguard mirrors and metal surfaces inside and out.</li>
+        <li><strong>Schools and Public Buildings:</strong> Reduce maintenance budgets by protecting against common forms of vandalism.</li>
+      </ul>
+      <p>Don't wait for vandals to strike. Protect your investment with a proactive solution. <a href="/contact">Contact Arizona House of Film</a> to learn more about our anti-graffiti services.</p>
+    </div></div></div></main><section class="py-16 md:py-24 bg-gray-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Is anti-graffiti film thick enough to stop deep scratches?</h3><p class="text-gray-700">Yes, our standard anti-graffiti films are typically 4 to 6 mil thick and are designed to protect against &#x27;keying,&#x27; scratching, and even acid etching. The film absorbs the damage, leaving the glass underneath pristine.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Can you see the edges of the film once it&#x27;s installed?</h3><p class="text-gray-700">Our professional installers are highly skilled at trimming the film for a precise, clean fit. Once installed, the film is virtually invisible to the naked eye.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">How quickly can a damaged film be replaced?</h3><p class="text-gray-700">Film replacement is a very fast process. Our technicians can typically remove the old film and install the new one in a single service visit, restoring your property&#x27;s appearance almost immediately.</p></div></div></div></section><section class="py-20 bg-blue-600 text-white"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Property?</h2><p class="text-lg text-blue-100 mb-8">Contact Arizona House of Film today for a free, no-obligation estimate.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-gray-200 font-semibold" href="/contact">Request Your Free Quote</a><a href="tel:480-788-1591" class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-11 rounded-md px-8 border-white text-white hover:bg-white hover:text-blue-600 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now</a></div></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

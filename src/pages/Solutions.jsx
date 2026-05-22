@@ -82,7 +82,7 @@ const problemCards = [
   {
     icon: Eye,
     problem: "People can see directly into my space",
-    context: "Street-level glass, conference rooms, and bathrooms need daytime privacy without losing natural light.",
+    context: "Street-level glass, conference rooms, and bathrooms need daytime privacy without losing natural light. Learn more in our one-way window film guide.",
     solution: "Frosted or One-Way Film",
     link: "/decorative-window-films",
   },

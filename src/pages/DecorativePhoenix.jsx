@@ -213,7 +213,7 @@ const DecorativePhoenix = () => {
               Decorative Window Film vs. Etched Glass
             </h2>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
-              Etched and sandblasted glass is permanent, expensive, and requires full pane replacement to change. Decorative window film achieves the same frosted, patterned, or textured look at a fraction of the cost — and it is removable. For commercial tenants, renters, and businesses that evolve, film is the only practical option. Arizona House of Film has installed decorative film for national chains, corporate offices, medical facilities, and luxury residences across Phoenix since 2017.
+              Etched and sandblasted glass is permanent, expensive, and requires full pane replacement to change. Decorative window film achieves the same frosted, patterned, or textured look at a fraction of the cost — and it is removable. For commercial tenants, renters, and businesses that evolve, film is the only practical option. Arizona House of Film has installed decorative film for national chains, corporate offices, medical facilities, and luxury residences across Phoenix since 2017. For office glass partitions and conference rooms, see our <Link to="/blog/casper-cloaking-film-cost-phoenix" className="text-green-400 hover:text-green-300 underline">Casper cloaking film cost</Link> breakdown.
             </p>
           </div>
         </section>

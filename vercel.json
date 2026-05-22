@@ -147,7 +147,19 @@
     { "source": "/films/casper-films/sx-ccf", "destination": "/office-privacy-window-film", "permanent": true },
 
     { "source": "/queen-creek-window-tinting", "destination": "/window-tinting-queen-creek", "permanent": true },
-    { "source": "/marana-window-tinting", "destination": "/service-areas/marana", "permanent": true }
+    { "source": "/marana-window-tinting", "destination": "/service-areas/marana", "permanent": true },
+
+    { "source": "/service-areas/phoenix", "destination": "/window-tinting-phoenix", "permanent": true },
+    { "source": "/service-areas/chandler", "destination": "/window-tinting-chandler", "permanent": true },
+    { "source": "/service-areas/gilbert", "destination": "/window-tinting-gilbert", "permanent": true },
+    { "source": "/service-areas/peoria", "destination": "/window-tinting-peoria", "permanent": true },
+    { "source": "/service-areas/queen-creek", "destination": "/window-tinting-queen-creek", "permanent": true },
+    { "source": "/service-areas/mesa", "destination": "/window-tinting-mesa", "permanent": true },
+    { "source": "/service-areas/tempe", "destination": "/window-tinting-tempe", "permanent": true },
+    { "source": "/service-areas/glendale", "destination": "/window-tinting-glendale", "permanent": true },
+    { "source": "/service-areas/tolleson", "destination": "/window-tinting-tolleson", "permanent": true },
+    { "source": "/service-areas/fountain-hills", "destination": "/window-tinting-fountain-hills", "permanent": true },
+    { "source": "/service-areas/avondale", "destination": "/window-tinting-avondale", "permanent": true }
   ],
   "rewrites": [
     { "source": "/((?!api/|images/|assets/|favicon\\.ico|robots\\.txt|sitemap).*)", "destination": "/index.html" }

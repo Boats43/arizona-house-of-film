@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Countertop Protection Film — Nationwide Supply | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Order countertop protection film direct from Arizona House of Film. Authorized Nexfil and Solyx distributor. Drop-ship to contractors and fabricators nationwide. No minimum on first order."/><meta data-rh="true" property="og:title" content="Countertop Protection Film — Nationwide Supply | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Nationwide drop-ship supply of countertop protection film — Nexfil and Solyx surface protection. Trade accounts, volume pricing, no minimum on first order."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/countertop-protection-film-nationwide"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Countertop Protection Film — Nationwide Supply"/><meta data-rh="true" name="twitter:description" content="Order countertop protection film direct — Nexfil and Solyx distributor. Drop-ship nationwide from Phoenix AZ."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/countertop-protection-film-nationwide"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Arizona House of Film supply countertop protection film nationwide?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film is a nationwide supplier of countertop protection film. We drop-ship from our Phoenix, AZ warehouse to contractors, fabricators, kitchen designers, and homeowners across the United States. You or your own contractor installs — we supply the film, roll stock, or custom-cut sheets. Installation is only performed by our crews locally within Arizona. ROC #314088."}},{"@type":"Question","name":"What brands and lines do you carry?","acceptedAnswer":{"@type":"Answer","text":"We carry Nexfil surface protection films and Solyx clear protective film lines. Nexfil 4MAG is our standard 4 mil sacrificial protection. Solyx offers a range of clear and lightly frosted protective films for stone, quartz, laminate, and solid-surface countertops. Both lines peel-and-replace without adhesive residue when removed within the replacement window."}},{"@type":"Question","name":"Is there a minimum order for nationwide supply?","acceptedAnswer":{"@type":"Answer","text":"No minimum on your first order. Order a sample kit, a single cut sheet for one countertop, or a full roll — we ship whichever you need to evaluate the film. After your first order, trade accounts unlock volume pricing tiers based on recurring order volume. We do not require a business license to order, but contractor trade accounts get the best pricing."}},{"@type":"Question","name":"How is the film shipped and how fast does it arrive?","acceptedAnswer":{"@type":"Answer","text":"Film ships from our Phoenix, AZ warehouse via FedEx or UPS ground for most orders. Typical transit is 2–5 business days across the continental US. Expedited shipping (2-day or overnight) is available on request. Film ships either rolled in a protective tube or flat-packed in a sheet carton depending on your order. Drop-ship direct-to-jobsite is the default for contractor trade accounts."}},{"@type":"Question","name":"Do I need professional installation experience to install the film?","acceptedAnswer":{"@type":"Answer","text":"Countertop protection film installs much like a large sticker — clean the surface, peel the liner, apply with a squeegee, trim edges. Stone fabricators, kitchen installers, and experienced DIY homeowners routinely self-install without issue. For high-value marble, quartzite, or onyx surfaces where installation error is costly, we recommend a professional installer local to you. Our supply team can provide technique guidance with your order."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Countertop Protection Film — Nationwide Supply","item":{"@id":"https://arizonahouseoffilm.com/countertop-protection-film-nationwide","name":"Countertop Protection Film — Nationwide Supply"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl font-black text-gray-900 mb-6">Countertop Protection Film — Nationwide Supply | Arizona House of Film</h1><p class="text-lg text-gray-700 mb-8">Arizona House of Film is a <strong>nationwide supplier</strong> of countertop protection film. We drop-ship direct from Phoenix, AZ to contractors, fabricators, kitchen designers, hotel renovators, and homeowners across the United States. <strong>You or your contractor installs</strong> — the film applies like a large sticker. Installation is only performed by our crews locally within Arizona.</p><div class="mb-10 bg-green-50 border-2 border-green-500 rounded-lg p-6"><h2 class="text-2xl font-bold text-gray-900 mb-3">Six Reasons to Order From Us</h2><ol class="list-decimal pl-6 text-gray-700 space-y-2"><li><strong>We supply film — you or your contractor installs.</strong> No travel charges, no scheduling around our crew. Your job, your timeline.</li><li><strong>Drop-ship direct to the jobsite.</strong> We ship FedEx or UPS ground from Phoenix — 2–5 business days to most US locations. Expedited available.</li><li><strong>Nexfil anti-scratch and Solyx surface protection lines.</strong> Two professional-grade product families covering residential, commercial, and hospitality specs.</li><li><strong>Contractor trade accounts available.</strong> Recurring-order contractors unlock tiered volume pricing. No business license required to place a first order.</li><li><strong>Volume pricing on request.</strong> Multi-countertop projects, fabricator supply contracts, and hotel/multi-unit orders receive project-specific quotes.</li><li><strong>Sample kits available.</strong> Evaluate the film on your own stone before committing to a full order. Useful for spec approval, design-client sign-off, and hands-on feel checks.</li></ol></div><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">What Countertop Protection Film Is</h2><p class="text-gray-700 mb-4">Countertop protection film is a clear, sacrificial polyester film applied to stone, quartz, marble, granite, laminate, and solid-surface countertops. It absorbs scratches, stains, etching, and daily wear — then peels off cleanly and is replaced. Two specs we stock: <strong>Nexfil 4 mil anti-graffiti polyester</strong> (standard) and <strong>Solyx clear protective film lines</strong> (range of finishes and thicknesses). Both peel-and-replace, no adhesive residue when removed within the replacement window. See our <a href="/countertop-protection-film-arizona" class="text-blue-600 font-semibold">Arizona countertop protection film page</a> for detailed specifications and material data.</p><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Who Orders From Us</h2><ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2"><li><strong>General contractors and builders</strong> — protecting countertops during build-out, handing units over to buyers with film in place</li><li><strong>Stone fabricators</strong> — offering film as a post-fabrication add-on to clients at the showroom</li><li><strong>Kitchen and interior designers</strong> — specifying film on high-value stone selections for design clients</li><li><strong>Hotel and hospitality renovators</strong> — protecting suite kitchenettes, bathroom vanities, and lobby surfaces during multi-unit rollouts</li><li><strong>Restaurant and commercial kitchen operators</strong> — ordering roll stock for in-house maintenance replacement programs</li><li><strong>Homeowners with experienced installers</strong> — ordering cut film for their own contractor to install</li></ul><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How to Order — Inquiry to Drop-Ship</h2><ol class="list-decimal pl-6 text-gray-700 mb-4 space-y-2"><li><strong>Submit an inquiry</strong> — tell us the region you are shipping to, the film line, and the rough order scope (one countertop, a full kitchen, a hotel rollout, a fabricator supply contract).</li><li><strong>Receive a written quote</strong> — pricing, ship method, lead time, and trade-account eligibility. Typically returned within one business day.</li><li><strong>Place the order</strong> — payment via card, ACH, or approved trade-account terms.</li><li><strong>Drop-ship direct to jobsite</strong> — tracking number emailed on ship date. FedEx or UPS ground is standard; expedited on request.</li><li><strong>Install</strong> — your contractor handles installation. Our supply team is available for technique questions during business hours.</li></ol><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Coverage — Nationwide Drop-Ship from Phoenix AZ</h2><p class="text-gray-700 mb-4">We drop-ship to all 50 states and US territories. Transit time from Phoenix by region:</p><div class="overflow-x-auto mb-6"><table class="w-full border-collapse border border-gray-200 text-sm"><thead class="bg-gray-50"><tr><th class="border border-gray-200 px-4 py-2 text-left">Region</th><th class="border border-gray-200 px-4 py-2 text-left">Typical Ground Transit</th></tr></thead><tbody><tr><td class="border border-gray-200 px-4 py-2">Southwest (AZ, NV, NM, CA, UT, CO)</td><td class="border border-gray-200 px-4 py-2">1–3 business days</td></tr><tr><td class="border border-gray-200 px-4 py-2">West Coast (WA, OR, ID, MT, WY)</td><td class="border border-gray-200 px-4 py-2">2–4 business days</td></tr><tr><td class="border border-gray-200 px-4 py-2">Midwest (TX, OK, KS, MO, IA, IL, etc.)</td><td class="border border-gray-200 px-4 py-2">3–5 business days</td></tr><tr><td class="border border-gray-200 px-4 py-2">Southeast (FL, GA, AL, TN, NC, SC)</td><td class="border border-gray-200 px-4 py-2">4–5 business days</td></tr><tr><td class="border border-gray-200 px-4 py-2">Northeast &amp; Mid-Atlantic (NY, NJ, PA, MA, etc.)</td><td class="border border-gray-200 px-4 py-2">4–6 business days</td></tr><tr><td class="border border-gray-200 px-4 py-2">Expedited (any region)</td><td class="border border-gray-200 px-4 py-2">1–2 business days (quoted)</td></tr></tbody></table></div><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">No Installation Required on Your End — Film Installs Like a Large Sticker</h2><p class="text-gray-700 mb-4">Countertop protection film is engineered for straightforward field installation. The process:</p><ol class="list-decimal pl-6 text-gray-700 mb-4 space-y-1"><li>Clean the countertop surface (isopropyl alcohol on polished stone; manufacturer-approved cleaner otherwise)</li><li>Peel the protective liner from the adhesive face</li><li>Position the film over the countertop, aligning edges</li><li>Squeegee out air from the center toward the edges</li><li>Trim excess at the countertop edges with a sharp blade</li></ol><p class="text-gray-700 mb-4">Experienced kitchen installers, stone fabricators, and handy homeowners self-install without issue. For high-value marble, quartzite, or onyx surfaces, we recommend a professional installer local to you. Our supply team is available during business hours to walk through technique questions with your order.</p><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Trade Account Benefits</h2><ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2"><li><strong>Tiered volume pricing</strong> — rates drop as your recurring order volume grows</li><li><strong>Net-30 terms</strong> — available after credit approval for qualifying contractor accounts</li><li><strong>Priority ship queue</strong> — trade account orders ship same day when placed before 11am MST</li><li><strong>Technique support</strong> — direct line to our install team for field questions</li><li><strong>Sample kit replenishment</strong> — ongoing sample supply for your showroom or design portfolio</li><li><strong>Consolidated billing</strong> — single monthly invoice across multiple jobsites for recurring-project contractors</li></ul><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Volume Pricing</h2><p class="text-gray-700 mb-4">Pricing is project-specific and tiered by order volume. The more film you order on a single project (or on recurring trade-account volume), the lower the per-square-foot rate. Single-countertop residential orders are priced at our standard retail. Multi-kitchen, multi-unit, and fabricator supply contracts receive volume pricing. Request a quote with your project scope and we will return a tiered sheet.</p><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Sample Kits Available</h2><p class="text-gray-700 mb-4">Order a sample kit before committing to a full order. Kits include cut samples of Nexfil and Solyx surface protection lines so you can evaluate optical clarity, edge finish, and installation feel on a piece of your own stone. Useful for spec approval, design-client sign-off, and hands-on familiarization with the film before a full-size install.</p><div class="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-8"><h2 class="text-2xl font-bold text-gray-900 mb-3">Request Distributor Pricing</h2><p class="text-gray-700 mb-4">Tell us your region, project scope, and preferred film line. We will return a written quote, ship time, and trade-account eligibility — typically within one business day.</p><a href="/contact?subject=Countertop%20Film%20Supply%20%E2%80%94%20Region%20Inquiry" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded hover:bg-blue-700">Request Distributor Pricing →</a><p class="text-sm text-gray-600 mt-3">Or call <a href="tel:4807881591" class="text-blue-600 font-semibold">(480) 788-1591</a>. Arizona installation available locally — see our <a href="/countertop-protection-film-arizona" class="text-blue-600 font-semibold">Arizona supply &amp; installation page</a>.</p></div><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2><div class="space-y-6"><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">Does Arizona House of Film supply countertop protection film nationwide?</h3><p class="text-gray-700">Yes. Arizona House of Film is a nationwide supplier of countertop protection film. We drop-ship from our Phoenix, AZ warehouse to contractors, fabricators, kitchen designers, and homeowners across the United States. You or your own contractor installs — we supply the film, roll stock, or custom-cut sheets. Installation is only performed by our crews locally within Arizona. ROC #314088.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">What brands and lines do you carry?</h3><p class="text-gray-700">We carry Nexfil surface protection films and Solyx clear protective film lines. Nexfil 4MAG is our standard 4 mil sacrificial protection. Solyx offers a range of clear and lightly frosted protective films for stone, quartz, laminate, and solid-surface countertops. Both lines peel-and-replace without adhesive residue when removed within the replacement window.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">Is there a minimum order for nationwide supply?</h3><p class="text-gray-700">No minimum on your first order. Order a sample kit, a single cut sheet for one countertop, or a full roll — we ship whichever you need to evaluate the film. After your first order, trade accounts unlock volume pricing tiers based on recurring order volume. We do not require a business license to order, but contractor trade accounts get the best pricing.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">How is the film shipped and how fast does it arrive?</h3><p class="text-gray-700">Film ships from our Phoenix, AZ warehouse via FedEx or UPS ground for most orders. Typical transit is 2–5 business days across the continental US. Expedited shipping (2-day or overnight) is available on request. Film ships either rolled in a protective tube or flat-packed in a sheet carton depending on your order. Drop-ship direct-to-jobsite is the default for contractor trade accounts.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">Do I need professional installation experience to install the film?</h3><p class="text-gray-700">Countertop protection film installs much like a large sticker — clean the surface, peel the liner, apply with a squeegee, trim edges. Stone fabricators, kitchen installers, and experienced DIY homeowners routinely self-install without issue. For high-value marble, quartzite, or onyx surfaces where installation error is costly, we recommend a professional installer local to you. Our supply team can provide technique guidance with your order.</p></div></div></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

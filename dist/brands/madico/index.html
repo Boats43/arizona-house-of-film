@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Madico Window Film Phoenix AZ | Solar Control | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Professional Madico window film installer in Phoenix AZ. Nova, Optivision, Solar Grey, Solar Bronze, anti-graffiti and decorative Madico film. Free estimates. ROC #314088."/><meta data-rh="true" property="og:title" content="Madico Window Film Phoenix AZ | Solar Control | ROC #314088"/><meta data-rh="true" property="og:description" content="Professional Madico window film installer in Phoenix AZ. Nova, Optivision, Solar Grey, Solar Bronze, anti-graffiti and decorative Madico film. Free estimates. ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/brands/madico"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Madico Window Film Phoenix AZ | Solar Control | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Professional Madico window film installer in Phoenix AZ. Nova, Optivision, Solar Grey, Solar Bronze, anti-graffiti and decorative Madico film. Free estimates. ROC #314088."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/brands/madico"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Madico Window Film Installation Phoenix AZ","serviceType":"Window Film Installation","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"areaServed":{"@type":"State","name":"Arizona"},"description":"Professional Madico window film installer in Phoenix AZ. Nova, Optivision, Solar Grey, Solar Bronze, anti-graffiti and decorative Madico film. Free estimates. ROC #314088.","url":"https://arizonahouseoffilm.com/brands/madico"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you install Madico window film in Phoenix AZ?","acceptedAnswer":{"@type":"Answer","text":"Arizona House of Film installs Madico architectural window film — including the Nova, Optivision, Solar Grey, Solar Bronze, and Reflective series — for residential and commercial properties throughout Phoenix, Scottsdale, Chandler, Gilbert, Mesa, and the greater Valley. Licensed ROC #314088."}},{"@type":"Question","name":"What Madico products does Arizona House of Film install?","acceptedAnswer":{"@type":"Answer","text":"Arizona House of Film installs Madico solar control films including Nova, Optivision, Optivision Reflective, Reflective Silver, Solar Bronze, Solar Grey, and their exterior-applied variants. We also install Madico anti-graffiti film and decorative film for commercial and residential applications."}},{"@type":"Question","name":"Which Madico film is best for Arizona heat?","acceptedAnswer":{"@type":"Answer","text":"For Arizona's intense solar environment, Madico Reflective Silver delivers maximum heat rejection with strong daytime privacy — ideal for west and south-facing commercial glass. Nova and Optivision are top choices where a non-reflective appearance is required. Solar Grey and Solar Bronze provide strong performance with distinctive aesthetic finishes for commercial properties."}},{"@type":"Question","name":"Does Madico window film qualify for the SRP rebate?","acceptedAnswer":{"@type":"Answer","text":"Yes — qualifying Madico solar control films with SHGC of 0.45 or lower qualify for the SRP residential rebate of $1 per square foot. Arizona House of Film provides all required NFRC documentation. Commercial SRP customers qualify for $0.60 per square foot."}},{"@type":"Question","name":"What warranty does Madico window film carry?","acceptedAnswer":{"@type":"Answer","text":"Madico architectural solar control films carry lifetime residential warranties on qualifying products. Commercial installations receive 10 or 15-year coverage. Decorative films are warranted for 7 years. Exterior films carry a 5-year warranty on vertical glass."}},{"@type":"Question","name":"How does Madico compare to LLumar or XPEL?","acceptedAnswer":{"@type":"Answer","text":"Madico, LLumar, and XPEL are all premium architectural film brands with NFRC-tested performance and strong manufacturer warranties. Madico's 120+ year manufacturing heritage is unmatched in the industry. Arizona House of Film installs all three brands and recommends the best product based on your glass type, orientation, sun exposure, and budget."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Brands","item":{"@id":"https://arizonahouseoffilm.com/brands","name":"Brands"}},{"@type":"ListItem","position":3,"name":"Madico Window Film","item":{"@id":"https://arizonahouseoffilm.com/brands/madico","name":"Madico Window Film"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-950 min-h-screen"><section class="py-24 bg-slate-950 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Madico Professional Installer · Founded 1903</span><h1 class="text-5xl md:text-7xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Madico Window Film Installation — Phoenix &amp; Arizona</h1><p class="text-xl text-slate-300 max-w-3xl mb-10 leading-relaxed font-medium">Arizona House of Film installs Madico architectural window film — including the Nova, Optivision, Solar Grey and Solar Bronze series — for commercial and residential properties across Phoenix, Scottsdale, and the Valley. ROC #314088.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/get-a-quote">Get a Free Estimate →</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">Call (480) 788-1591</a></div></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">About Madico Window Film</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl">Madico is one of the oldest window film manufacturers in the world — founded in 1903 and headquartered in Tampa Bay, Florida. With over 120 years of manufacturing experience and seven company-owned North American distribution centers, Madico produces architectural window films used in residential, commercial, government, and specialty applications worldwide. All Madico architectural films are NFRC-tested, carry manufacturer warranties, and are designed to meet the demands of high-solar environments like Arizona. Arizona House of Film installs Madico solar control, anti-graffiti, and decorative films for commercial and residential properties across the Phoenix metro.</p></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Madico Solar Control Film Series</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">Madico&#x27;s architectural solar control line blocks up to 99% UV and reduces solar heat gain across nine product options — from nearly clear to reflective finishes, interior and exterior applications.</p><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Premium Solar</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Nova</h3><p class="text-slate-600 text-sm mb-3">Madico&#x27;s flagship solar control film. High heat rejection with a neutral, non-reflective appearance. Suitable for residential and commercial applications requiring subtle aesthetics with strong performance.</p><p class="text-xs text-slate-500 font-medium">UV block: 99%+ · Non-reflective · Residential and commercial</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Optical Clarity</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Optivision®</h3><p class="text-slate-600 text-sm mb-3">Engineered for maximum optical clarity with solar control performance. Maintains distortion-free views while reducing heat and UV exposure. Ideal for retail storefronts and view-sensitive residential applications.</p><p class="text-xs text-slate-500 font-medium">UV block: 99%+ · High optical clarity · Solar heat reduction</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Clarity + Privacy</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Optivision® Reflective</h3><p class="text-slate-600 text-sm mb-3">Combines Optivision&#x27;s optical clarity with a reflective finish for daytime privacy. Strong solar performance with mirror-like exterior appearance on west and south-facing glass.</p><p class="text-xs text-slate-500 font-medium">UV block: 99%+ · Daytime privacy · Reflective exterior</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Maximum Rejection</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Reflective Silver</h3><p class="text-slate-600 text-sm mb-3">Mirror-finish solar control film delivering maximum heat rejection and daytime privacy. Standard specification for high-solar commercial buildings and west-facing residential glass in Arizona.</p><p class="text-xs text-slate-500 font-medium">UV block: 99%+ · Maximum heat rejection · Strong daytime privacy</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Exterior Application</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Reflective Silver Exterior</h3><p class="text-slate-600 text-sm mb-3">Exterior-applied version of Reflective Silver. Applied to the outside glass surface — ideal for single-pane or retrofit applications where interior film is impractical.</p><p class="text-xs text-slate-500 font-medium">Exterior application · UV block: 99%+ · 5-year warranty on vertical glass</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Warm Tone</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Solar Bronze</h3><p class="text-slate-600 text-sm mb-3">Bronze-tinted solar control film with a warm architectural finish. Reduces heat and UV while adding a distinctive bronze aesthetic to residential and commercial glass.</p><p class="text-xs text-slate-500 font-medium">UV block: 99%+ · Bronze appearance · Heat and glare reduction</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Exterior Bronze</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Solar Bronze Exterior</h3><p class="text-slate-600 text-sm mb-3">Exterior-applied Solar Bronze for single-pane and retrofit glass. Delivers bronze aesthetics and solar performance applied to the outside surface.</p><p class="text-xs text-slate-500 font-medium">Exterior application · Bronze finish · UV block: 99%+</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Neutral Tone</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Solar Grey</h3><p class="text-slate-600 text-sm mb-3">Grey-tinted solar control film with a clean, professional appearance. Popular for commercial office buildings, retail properties, and HOA-restricted residential applications.</p><p class="text-xs text-slate-500 font-medium">UV block: 99%+ · Neutral grey appearance · Commercial and residential</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><span class="text-xs font-black text-green-700 uppercase tracking-widest">Exterior Grey</span><h3 class="font-black text-slate-900 text-lg mt-1 mb-2">Madico <!-- -->Solar Grey Exterior</h3><p class="text-slate-600 text-sm mb-3">Exterior-applied Solar Grey for retrofit and single-pane applications. Grey aesthetics and solar performance without interior film installation.</p><p class="text-xs text-slate-500 font-medium">Exterior application · Grey finish · UV block: 99%+</p></div></div></div></section><section class="py-16 bg-slate-950 border-y border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Madico Anti-Graffiti Film</h2><p class="text-slate-300 text-lg leading-relaxed max-w-4xl mb-8">Madico anti-graffiti film is a sacrificial surface protection layer installed over existing glass, mirrors, stainless steel, and polished metal. When vandalized, the film is removed and replaced — protecting the underlying surface from permanent damage at a fraction of replacement cost.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Retail Storefronts</h3><p class="text-slate-600 text-sm">Protects storefront glass from etching, scratching, and spray paint. Remove and replace after vandalism — no glass replacement needed.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Restaurant &amp; Hospitality</h3><p class="text-slate-600 text-sm">Bathroom mirrors, decorative glass panels, bar surfaces. Sacrificial layer replaced on routine maintenance schedule.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Municipal &amp; Transit</h3><p class="text-slate-600 text-sm">Bus shelters, light rail stations, government facilities, elevator panels. High-traffic public surfaces requiring regular protection.</p></div></div></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Madico Decorative Film</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl mb-8">Madico decorative films add privacy, architectural accents, and branded elements to commercial and residential glass. 7-year manufacturer warranty.</p><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Madico <!-- -->Frosted &amp; Etched</h3><p class="text-slate-600 text-sm">Mimics sandblasted or acid-etched glass. Conference rooms, office partitions, bathroom glass, shower doors.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Madico <!-- -->Patterned Privacy</h3><p class="text-slate-600 text-sm">Geometric and organic patterns for architectural interest combined with privacy. Multiple designs and opacity levels.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Madico <!-- -->UV Gard</h3><p class="text-slate-600 text-sm">Near-clear UV protection with SPF equivalent of 1,937. Blocks UV deep into the visible spectrum. Museums, galleries, retail merchandise display.</p></div><div class="border border-slate-200 rounded-lg p-4 bg-white"><h3 class="font-black text-slate-900 text-lg mb-2">Madico <!-- -->Custom Applications</h3><p class="text-slate-600 text-sm">Logo designs, brand elements, and privacy patterns cut to specification. Storefronts, office partitions, entry doors.</p></div></div></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Madico Film for Arizona&#x27;s Climate</h2><p class="text-slate-700 text-lg leading-relaxed max-w-4xl">Arizona&#x27;s 299+ sunny days per year, UV Index regularly exceeding 11, and summer temperatures above 110°F make it one of the most demanding environments for window film in the United States. Madico&#x27;s solar control line — Nova, Optivision, Solar Grey, Solar Bronze, and the Reflective series — is engineered to reduce solar heat gain by up to 80% on west and south-facing glass where Arizona homes and commercial buildings absorb the most solar load. All Madico architectural films block up to 99% of UV rays — a critical factor in Arizona where UV exposure is among the highest in the country. Arizona House of Film provides NFRC documentation for all qualifying Madico installations to support SRP rebate applications for eligible residential and commercial customers.</p></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-6">Madico Warranty Coverage</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4"><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-1">Residential Solar</h3><p class="text-3xl font-black text-green-700 mb-2">Lifetime*</p><p class="text-slate-600 text-sm">Qualifying solar control films — valid as long as you own the home</p></div><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-1">Commercial</h3><p class="text-3xl font-black text-green-700 mb-2">10-15 Years</p><p class="text-slate-600 text-sm">Architectural series commercial installations</p></div><div class="border border-slate-200 rounded-lg p-6 bg-slate-50"><h3 class="font-black text-slate-950 text-sm uppercase mb-1">Decorative</h3><p class="text-3xl font-black text-green-700 mb-2">7 Years</p><p class="text-slate-600 text-sm">All Madico decorative and specialty films</p></div></div><p class="text-xs text-slate-500">*Lifetime warranty on qualifying residential Madico products. Warranty terms confirmed at time of installation.</p></div></section><section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Why Arizona House of Film for Madico Installation</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Licensed</h3><p class="text-slate-600 text-sm leading-relaxed">ROC #314088, Arizona licensed contractor since 2017</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">700+ Projects</h3><p class="text-slate-600 text-sm leading-relaxed">Verified residential and commercial installations across Maricopa County</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">NFRC Documentation</h3><p class="text-slate-600 text-sm leading-relaxed">All technical docs provided for SRP rebate applications</p></div><div class="border-l-4 border-green-500 p-6 bg-white"><h3 class="font-black text-slate-950 text-sm uppercase mb-2">Free Assessment</h3><p class="text-slate-600 text-sm leading-relaxed">On-site measurement and film recommendation, no obligation</p></div></div></div></section><section class="bg-gray-900 border-t-4 border-green-500 py-12 px-6 my-10 rounded-lg"><div class="max-w-3xl mx-auto text-center"><div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 w-10 h-10"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><h2 class="text-2xl font-black text-white uppercase tracking-tight mb-3">Get Your Instant Window Film Estimate</h2><p class="text-gray-400 mb-6 text-base">Enter your property type, window count, and film preference — get a ballpark cost range in under 2 minutes. No obligation. Free on-site estimate follows.</p><a href="/window-film-cost-estimator" class="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-8 py-4 rounded-lg text-lg transition-colors">Use the Cost Estimator →</a><p class="text-gray-600 text-xs mt-4">Residential · Commercial · Government · All film types</p></div></section><section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Frequently Asked Questions — Madico Window Film</h2><div class="space-y-6 max-w-4xl"><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">Do you install Madico window film in Phoenix AZ?</h3><p class="text-slate-600 leading-relaxed">Arizona House of Film installs Madico architectural window film — including the Nova, Optivision, Solar Grey, Solar Bronze, and Reflective series — for residential and commercial properties throughout Phoenix, Scottsdale, Chandler, Gilbert, Mesa, and the greater Valley. Licensed ROC #314088.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">What Madico products does Arizona House of Film install?</h3><p class="text-slate-600 leading-relaxed">Arizona House of Film installs Madico solar control films including Nova, Optivision, Optivision Reflective, Reflective Silver, Solar Bronze, Solar Grey, and their exterior-applied variants. We also install Madico anti-graffiti film and decorative film for commercial and residential applications.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">Which Madico film is best for Arizona heat?</h3><p class="text-slate-600 leading-relaxed">For Arizona&#x27;s intense solar environment, Madico Reflective Silver delivers maximum heat rejection with strong daytime privacy — ideal for west and south-facing commercial glass. Nova and Optivision are top choices where a non-reflective appearance is required. Solar Grey and Solar Bronze provide strong performance with distinctive aesthetic finishes for commercial properties.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">Does Madico window film qualify for the SRP rebate?</h3><p class="text-slate-600 leading-relaxed">Yes — qualifying Madico solar control films with SHGC of 0.45 or lower qualify for the SRP residential rebate of $1 per square foot. Arizona House of Film provides all required NFRC documentation. Commercial SRP customers qualify for $0.60 per square foot.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">What warranty does Madico window film carry?</h3><p class="text-slate-600 leading-relaxed">Madico architectural solar control films carry lifetime residential warranties on qualifying products. Commercial installations receive 10 or 15-year coverage. Decorative films are warranted for 7 years. Exterior films carry a 5-year warranty on vertical glass.</p></div><div class="border-b border-slate-200 pb-6"><h3 class="font-black text-slate-900 text-lg mb-2">How does Madico compare to LLumar or XPEL?</h3><p class="text-slate-600 leading-relaxed">Madico, LLumar, and XPEL are all premium architectural film brands with NFRC-tested performance and strong manufacturer warranties. Madico&#x27;s 120+ year manufacturing heritage is unmatched in the industry. Arizona House of Film installs all three brands and recommends the best product based on your glass type, orientation, sun exposure, and budget.</p></div></div></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">Get a Free Madico Film Estimate</h2><p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">Free on-site assessment. Madico film specified for your glass type and performance requirements. Licensed ROC #314088.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/get-a-quote">Request Quote</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></section><section class="mt-10 border-t border-slate-200 pt-6 pb-4"><div class="max-w-7xl mx-auto px-6 lg:px-8"><p class="text-xs font-black text-slate-500 uppercase tracking-widest mb-4">Related Resources</p><div class="flex flex-wrap gap-3 text-sm"><a class="text-green-700 underline" href="/residential-window-tinting">Residential Window Film</a><a class="text-green-700 underline" href="/commercial-window-tinting">Commercial Window Film</a><a class="text-green-700 underline" href="/anti-graffiti-film-phoenix">Anti-Graffiti Film</a><a class="text-green-700 underline" href="/window-film-energy-rebates-arizona">SRP Rebate Calculator</a><a class="text-green-700 underline" href="/brands/llumar">LLumar Window Film</a><a class="text-green-700 underline" href="/brands/xpel">XPEL Window Film</a><a class="text-green-700 underline" href="/brands">All Film Brands</a><a class="text-green-700 underline" href="/get-a-quote">Get a Quote</a></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

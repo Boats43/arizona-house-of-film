@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Residential Window Tinting Scottsdale AZ | 2026 Guide | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Complete 2026 guide to residential window tinting in Scottsdale AZ — HOA rules, ceramic vs dual-reflective film, SRP rebates, pricing $12–$20/sqft, and free estimates from Arizona House of Film (ROC #314088)."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="Residential Window Tinting Scottsdale AZ | 2026 Guide | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Complete 2026 guide to residential window tinting in Scottsdale AZ — HOA rules, ceramic vs dual-reflective film, SRP rebates, pricing $12–$20/sqft, and free estimates from Arizona House of Film (ROC #314088)."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/residential-window-tinting-scottsdale-az-guide"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/residential-window-tinting-scottsdale-az-guide.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/residential-window-tinting-scottsdale-az-guide"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Residential Window Tinting Scottsdale AZ | 2026 Guide","description":"An in-depth guide to residential window tinting scottsdale az. Learn about the benefits, costs, and top brands like Hüper Optik, 3M Prestige.","datePublished":"2026-04-11","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-residential-window-tinting-scottsdale-az-guide.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/residential-window-tinting-scottsdale-az-guide"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does residential window tinting cost in Scottsdale AZ?","acceptedAnswer":{"@type":"Answer","text":"Residential window tinting in Scottsdale costs $12–$20 per square foot installed for ceramic and dual-reflective films. A typical 15-window Scottsdale home runs $2,400–$5,000. Luxury homes with 30+ windows or spectrally selective film can run $6,000–$14,000. Pricing depends on film type, glass size, and access. Arizona House of Film (ROC #314088) provides free on-site estimates across all Scottsdale neighborhoods."}},{"@type":"Question","name":"Will my Scottsdale HOA approve residential window tinting?","acceptedAnswer":{"@type":"Answer","text":"Most Scottsdale HOAs — including DC Ranch, Gainey Ranch, McCormick Ranch, Scottsdale Ranch, and Grayhawk — approve ceramic and spectrally selective window film because it maintains a neutral, clear exterior appearance. Reflective, mirrored, and dark-tinted films may be restricted. Arizona House of Film provides manufacturer spec sheets for HOA submission and advises on compliant options before installation."}},{"@type":"Question","name":"Is ceramic or dual-reflective film better for Scottsdale homes?","acceptedAnswer":{"@type":"Answer","text":"Ceramic film (Hüper Optik Select, LLumar CTX) is the default choice — it rejects 50–84% of solar heat, blocks 99% UV, and is HOA-compliant. Dual-reflective film adds daytime privacy by reflecting light outward during the day, making it ideal for homes in close-proximity communities like McCormick Ranch and Scottsdale Ranch. For maximum heat rejection with near-invisible appearance, spectrally selective film (3M Prestige, Hüper Optik Klar) is the premium option."}},{"@type":"Question","name":"Do Scottsdale homeowners qualify for SRP window film rebates?","acceptedAnswer":{"@type":"Answer","text":"Yes. SRP offers rebates of $1.00 per square foot for qualifying solar window film installed on single-family homes in their service territory. Most Scottsdale addresses qualify. The film must meet SRP's Solar Heat Gain Coefficient (SHGC) requirements. Arizona House of Film handles SRP rebate paperwork and verifies eligibility during the free estimate. See our SRP rebate guide for full details."}},{"@type":"Question","name":"How long does residential window film last in Scottsdale's heat?","acceptedAnswer":{"@type":"Answer","text":"Professional-grade ceramic and spectrally selective window film lasts 15–25 years in Scottsdale's extreme heat when installed by a licensed contractor. Manufacturer warranties from Hüper Optik, LLumar, and 3M cover 10–15 years for residential applications. Cheap dyed films from big-box stores degrade in 3–5 years under Arizona UV. Arizona House of Film only installs films with documented Arizona-heat warranties."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"Residential Window Tinting Scottsdale AZ | 2026 Guide","item":"https://arizonahouseoffilm.com/blog/residential-window-tinting-scottsdale-az-guide"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Residential Window Tinting Scottsdale AZ | 2026 Guide</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->April 10, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+    <h1>Residential Window Tinting in Scottsdale AZ — What Homeowners Need to Know</h1>
+
+    <p class="lead">Scottsdale homeowners deal with 300+ days of direct sun, triple-digit summer heat, strict HOA appearance standards, and high-value interiors vulnerable to UV damage. Residential window tinting solves all four — but only if you choose the right film. This 2026 guide covers what Scottsdale homeowners actually need to know: which films work in desert heat, what HOAs approve, how SRP rebates apply, and what professional installation costs. Arizona House of Film (ROC #314088) has installed residential window film across Scottsdale since 2017 — from McCormick Ranch patio homes to Silverleaf custom estates.</p>
+
+    <h2>Why Scottsdale Homeowners Install Window Film</h2>
+    <p>Scottsdale sits in the hottest metro in the U.S. — 115°F+ summers, UV index 10+ for five months straight, and cooling costs that run $300–$600/month for homes with significant glass. Residential window tinting addresses the three problems Scottsdale homeowners bring to us most:</p>
+    <ul>
+      <li><strong>Solar heat through west and south-facing glass</strong> — These elevations drive 60–70% of your home's cooling load. Ceramic window film rejects 50–84% of that solar energy before it enters your home, reducing AC runtime and leveling room-to-room temperature differences.</li>
+      <li><strong>UV damage to interiors</strong> — Arizona UV destroys hardwood floors, leather furniture, artwork, and cabinetry within 2–5 years of unprotected exposure. Window film blocks 99%+ of UV — more effective than window coverings, which only work when closed.</li>
+      <li><strong>Privacy without losing views</strong> — Scottsdale homes are designed for mountain and desert views. Dual-reflective film provides daytime privacy from the outside while maintaining your view from the inside — no blinds required.</li>
+    </ul>
+
+    <h2>Scottsdale HOA Rules for Window Tinting</h2>
+    <p>HOA compliance is the #1 question Scottsdale homeowners ask before installing window film. Here's what we've learned from working with Scottsdale HOAs since 2017:</p>
+    <ul>
+      <li><strong>Approved film types</strong> — Ceramic and spectrally selective films are approved by virtually every Scottsdale HOA because they maintain a neutral, clear exterior appearance. The glass looks essentially unchanged from the outside.</li>
+      <li><strong>Restricted film types</strong> — Reflective (mirror-look), dark-tinted, and colored films are commonly restricted in communities like DC Ranch, Gainey Ranch, Grayhawk, Scottsdale Ranch, and McCormick Ranch. Some HOAs restrict any film below 40% visible light transmission (VLT).</li>
+      <li><strong>Approval process</strong> — Most Scottsdale HOAs require an architectural modification request before installation. Arizona House of Film provides manufacturer spec sheets showing VLT, reflectivity, and exterior appearance photos for HOA submission. We've never had a properly submitted ceramic film application denied.</li>
+      <li><strong>Existing violations</strong> — If you received an HOA violation for existing reflective or dark film, we remove it and replace it with compliant ceramic film — usually resolving the violation the same week.</li>
+    </ul>
+
+    <h2>Ceramic vs Dual-Reflective Film for Desert Heat</h2>
+    <p>These are the two film categories Scottsdale homeowners choose between most often. Both work in Arizona heat — the right choice depends on your priorities:</p>
+    <table>
+      <tr><th>Feature</th><th>Ceramic Film</th><th>Dual-Reflective Film</th></tr>
+      <tr><td>Heat rejection (TSER)</td><td>50–67%</td><td>55–72%</td></tr>
+      <tr><td>UV blocked</td><td>99%</td><td>99%</td></tr>
+      <tr><td>Daytime privacy</td><td>Minimal</td><td>Strong — mirror effect outward</td></tr>
+      <tr><td>Nighttime privacy</td><td>No</td><td>No — requires window coverings</td></tr>
+      <tr><td>HOA compliance</td><td>Excellent — neutral appearance</td><td>Good — slight exterior reflectivity may require approval</td></tr>
+      <tr><td>Signal interference</td><td>None</td><td>None (ceramic-based)</td></tr>
+      <tr><td>Cost installed</td><td>$12–$18/sq ft</td><td>$14–$20/sq ft</td></tr>
+    </table>
+    <p><strong>Our recommendation:</strong> Ceramic film (Hüper Optik Select or LLumar CTX) is the default for most Scottsdale homes — maximum HOA compliance with strong heat rejection. Dual-reflective is the better choice for homes in close-proximity communities where daytime privacy matters (McCormick Ranch, Scottsdale Ranch townhomes, patio homes). For luxury homes where any visible tint is unacceptable, spectrally selective film (3M Prestige, Hüper Optik Klar) offers maximum clarity at $16–$22/sq ft.</p>
+    <p>For a full technical breakdown, see our <a href="/ceramic-vs-dual-reflective-film">ceramic vs dual-reflective film comparison</a>.</p>
+
+    <h2>SRP Rebate Eligibility for Scottsdale Homeowners</h2>
+    <p>Salt River Project (SRP) offers a <strong>$1.00 per square foot rebate</strong> for qualifying solar window film installed on single-family homes. Key details for Scottsdale homeowners:</p>
+    <ul>
+      <li><strong>Eligibility</strong> — Your home must be in SRP's service territory (most Scottsdale addresses qualify — check your utility bill). The film must meet SRP's Solar Heat Gain Coefficient (SHGC) threshold. Ceramic and dual-reflective films from Hüper Optik, LLumar, and 3M qualify.</li>
+      <li><strong>Rebate amount</strong> — $1.00/sq ft of film installed. A 15-window home with 200 sq ft of glass typically receives a $200 rebate. Larger homes with 400+ sq ft of glass receive $400+.</li>
+      <li><strong>Process</strong> — Arizona House of Film handles the rebate paperwork. We submit the application with proof of installation and qualifying film specifications. SRP processes the rebate within 4–8 weeks.</li>
+      <li><strong>APS customers</strong> — If your Scottsdale address is served by APS instead of SRP, APS does not currently offer a window film rebate. We can still document your energy savings for tax purposes.</li>
+    </ul>
+    <p>Full details in our <a href="/blog/srp-rebate-window-film-2026">2026 SRP rebate guide</a>.</p>
+
+    <h2>Residential Window Tinting Pricing — Scottsdale 2026</h2>
+    <p>Residential window tinting in Scottsdale costs <strong>$12–$20 per square foot installed</strong> for professional-grade ceramic and dual-reflective films. Here's what Scottsdale homeowners typically pay:</p>
+    <table>
+      <tr><th>Home Type</th><th>Typical Film</th><th>Window Count</th><th>Cost Range</th></tr>
+      <tr><td>Townhome / patio home</td><td>Ceramic</td><td>8–12</td><td>$1,800–$3,200</td></tr>
+      <tr><td>Single-family (standard)</td><td>Ceramic</td><td>12–20</td><td>$2,400–$5,000</td></tr>
+      <tr><td>Custom / large home</td><td>Ceramic or dual-reflective</td><td>20–30</td><td>$4,000–$8,000</td></tr>
+      <tr><td>Luxury estate</td><td>Spectrally selective</td><td>30–50+</td><td>$6,000–$14,000+</td></tr>
+    </table>
+    <p>Pricing includes professional installation, manufacturer warranty registration, and cleanup. We provide written quotes after on-site measurement — no ballpark estimates over the phone. SRP rebate ($1.00/sq ft) reduces final cost on qualifying installations.</p>
+    <p>For a quick estimate before scheduling, try our <a href="/ai-window-film-estimator">AI window film estimator</a>.</p>
+
+    <h2>What the Installation Process Looks Like</h2>
+    <p>Residential window film installation in Scottsdale typically takes one day for most homes:</p>
+    <ul>
+      <li><strong>Free estimate</strong> — We measure your glass, assess orientation and existing coatings, review HOA requirements, and provide a written quote. Takes 30–45 minutes on-site.</li>
+      <li><strong>Film selection</strong> — We recommend specific films for each window based on orientation (west-facing gets maximum heat rejection, north-facing may only need UV protection).</li>
+      <li><strong>Installation day</strong> — Most homes take 4–8 hours. We protect flooring and furnishings, apply the film, and clean all glass. The home is fully usable during installation.</li>
+      <li><strong>Cure time</strong> — Window film takes 15–30 days to fully cure in Arizona's dry heat. Small haze or water bubbles during curing are normal and disappear completely.</li>
+    </ul>
+
+    <h2>Scottsdale Neighborhoods We Serve</h2>
+    <p>Arizona House of Film installs residential window film across all Scottsdale neighborhoods, including:</p>
+    <ul>
+      <li>McCormick Ranch, Scottsdale Ranch, Gainey Ranch</li>
+      <li>DC Ranch, Silverleaf, Desert Mountain, Estancia</li>
+      <li>Grayhawk, Kierland, McDowell Mountain Ranch</li>
+      <li>Old Town Scottsdale, South Scottsdale</li>
+      <li>Troon, Pinnacle Peak, North Scottsdale</li>
+      <li>Paradise Valley (bordering Scottsdale)</li>
+    </ul>
+    <p>We also serve the broader Phoenix metro — see our <a href="/residential-window-tinting">residential window tinting service page</a> for full coverage.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>How much does residential window tinting cost in Scottsdale AZ?</h3>
+        <p>$12–$20/sq ft installed for ceramic and dual-reflective film. Standard homes run $2,400–$5,000. Luxury homes with extensive glass run $6,000–$14,000+. Free on-site estimates available.</p>
+      </div>
+      <div>
+        <h3>Will my Scottsdale HOA approve residential window tinting?</h3>
+        <p>Ceramic and spectrally selective films are approved by virtually every Scottsdale HOA. Reflective and dark-tinted films may require approval. We provide spec sheets for HOA submission and advise on compliant options.</p>
+      </div>
+      <div>
+        <h3>Is ceramic or dual-reflective film better for Scottsdale homes?</h3>
+        <p>Ceramic is the default — maximum HOA compliance with 50–84% heat rejection. Dual-reflective adds daytime privacy, ideal for close-proximity neighborhoods. Both block 99% UV and work in Arizona heat.</p>
+      </div>
+      <div>
+        <h3>Do Scottsdale homeowners qualify for SRP window film rebates?</h3>
+        <p>Most Scottsdale addresses in SRP territory qualify for $1.00/sq ft rebates on qualifying solar film. We handle the paperwork. APS customers do not currently have a window film rebate program.</p>
+      </div>
+      <div>
+        <h3>How long does residential window film last in Scottsdale's heat?</h3>
+        <p>Professional-grade ceramic film lasts 15–25 years in Arizona heat. Manufacturer warranties cover 10–15 years. Cheap dyed films degrade in 3–5 years under Arizona UV — we only install warranted ceramic and spectrally selective films.</p>
+      </div>
+    </div>
+
+    <h2>Get Your Scottsdale Residential Window Tinting Estimate</h2>
+    <p>Arizona House of Film serves all Scottsdale neighborhoods — McCormick Ranch, DC Ranch, Gainey Ranch, Grayhawk, Silverleaf, and beyond. Licensed ROC #314088. Free on-site estimates with HOA compliance guidance. <a href="/contact">Request your quote</a> or call (480) 788-1591.</p>
+    <p><a href="/ai-window-film-estimator" style="display:inline-block;background:#22c55e;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Get an Instant AI Estimate →</a></p>
+  </div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/service-areas/phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

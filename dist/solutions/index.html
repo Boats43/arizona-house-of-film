@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Window Film Types &amp; Solutions | Arizona Heat &amp; UV</title>
+  <meta data-rh="true" name="description" content="6 window film solutions for Arizona heat: solar control, privacy, security, decorative, anti-graffiti &amp; countertop protection. Compare types and get a free estimate."/><meta data-rh="true" property="og:title" content="Window Film Types &amp; Solutions | Arizona Heat &amp; UV"/><meta data-rh="true" property="og:description" content="6 window film solutions for Arizona heat: solar control, privacy, security, decorative, anti-graffiti &amp; countertop protection. Compare types and get a free estimate."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/solutions"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Window Film Types &amp; Solutions | Arizona Heat &amp; UV"/><meta data-rh="true" name="twitter:description" content="6 window film solutions for Arizona heat: solar control, privacy, security, decorative, anti-graffiti &amp; countertop protection. Compare types and get a free estimate."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/solutions"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Window Film Types & Solutions | Arizona Heat & UV","description":"6 window film solutions for Arizona heat: solar control, privacy, security, decorative, anti-graffiti & countertop protection. Compare types and get a free estimate.","url":"https://arizonahouseoffilm.com/solutions","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Window Film Solutions","itemListElement":[{"@type":"Offer","position":1,"itemOffered":{"@type":"Service","name":"Comfort & Energy","description":"Reduce heat, cut glare, and lower your energy bills with our advanced solar control films."}},{"@type":"Offer","position":2,"itemOffered":{"@type":"Service","name":"Privacy & Decorative","description":"Enhance privacy and style with a wide range of frosted, patterned, and custom decorative films."}},{"@type":"Offer","position":3,"itemOffered":{"@type":"Service","name":"Safety & Security","description":"Strengthen your glass against break-ins, accidents, and storms with heavy-duty security films."}},{"@type":"Offer","position":4,"itemOffered":{"@type":"Service","name":"Graphics & Branding","description":"Turn your windows into a canvas with custom-cut logos and vibrant graphics to elevate your brand."}},{"@type":"Offer","position":5,"itemOffered":{"@type":"Service","name":"Graffiti & Protection","description":"Protect your property from vandalism with sacrificial anti-graffiti films that are easy to replace."}},{"@type":"Offer","position":6,"itemOffered":{"@type":"Service","name":"Countertop Protection","description":"Clear bra film for quartz, marble, granite, and laminate — prevents scratches, stains, and heat damage."}}]}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the most popular window film for Arizona homes?","acceptedAnswer":{"@type":"Answer","text":"Ceramic solar control films are by far the most common choice — they reject 50–84% of solar heat without the reflective mirror look. They're non-conductive, work on tinted glass, and are backed by lifetime warranties."}},{"@type":"Question","name":"Can I get window film for just one problem window?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We install film on single windows, rooms, or entire properties. Many customers start with their worst west-facing windows and return to do the whole house once they feel the difference."}},{"@type":"Question","name":"What's the difference between residential and commercial film?","acceptedAnswer":{"@type":"Answer","text":"Commercial films are typically thicker, have higher heat rejection specs, and come in larger rolls for big glass facades. Performance-wise, both use the same ceramic and IR-blocking technology."}},{"@type":"Question","name":"How long does window film last in Arizona's extreme heat?","acceptedAnswer":{"@type":"Answer","text":"Quality ceramic films installed by a professional are rated 10–25 years in high-UV climates like Phoenix. Cheaper dyed films degrade faster, turning purple and bubbling. We only install warranty-backed, name-brand films."}},{"@type":"Question","name":"Can window film be applied to already-tinted glass?","acceptedAnswer":{"@type":"Answer","text":"Yes, in most cases. Our technicians assess your existing glass and tint level before recommending a compatible film. Applying the wrong film to factory-tinted glass can cause seal failure on dual-pane units — we check first."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Solutions","item":{"@id":"https://arizonahouseoffilm.com/solutions","name":"Solutions"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="bg-slate-950 min-h-screen"><header class="relative py-32 flex items-center justify-center text-center overflow-hidden"><div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-green-950 to-slate-950"></div><div class="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/60 to-slate-950"></div><div class="relative z-10 max-w-4xl px-6"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Performance Grade Solutions • ROC #<!-- -->314088</span><h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none" style="opacity:0;transform:translateY(20px) translateZ(0)">Window Film Solutions in Phoenix &amp; Scottsdale</h1><p class="mt-6 text-xl text-slate-300 font-bold max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Arizona&#x27;s climate is extreme. The right film solves specific problems. Find yours below.</p></div></header><section class="py-20 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-4 text-center">What Problem Are You Trying to Solve?</h2><p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto font-medium">Skip straight to the solution. Click the problem that matches your situation.</p><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><div style="opacity:0;transform:translateY(20px) translateZ(0)"><a class="block bg-slate-950 border border-slate-700 p-6 hover:border-green-500 transition-all duration-300 group" href="/energy-saving-window-films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-500 mb-4"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><p class="text-white font-black text-lg mb-2 group-hover:text-green-400 transition-colors leading-tight">&quot;<!-- -->My rooms are unbearably hot in summer<!-- -->&quot;</p><p class="text-slate-400 text-sm font-medium leading-relaxed mb-4">South and west-facing Arizona windows receive direct sun 8+ hours daily, turning rooms into ovens.</p><span class="inline-flex items-center text-green-500 text-xs font-black uppercase tracking-widest">→ <!-- -->Solar Control Film</span></a></div><div style="opacity:0;transform:translateY(20px) translateZ(0)"><a class="block bg-slate-950 border border-slate-700 p-6 hover:border-green-500 transition-all duration-300 group" href="/energy-saving-window-films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-500 mb-4"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg><p class="text-white font-black text-lg mb-2 group-hover:text-green-400 transition-colors leading-tight">&quot;<!-- -->My AC bill spikes every summer<!-- -->&quot;</p><p class="text-slate-400 text-sm font-medium leading-relaxed mb-4">Unprotected glass allows 70–80% of solar heat to pass through. Film cuts that load by up to 84%.</p><span class="inline-flex items-center text-green-500 text-xs font-black uppercase tracking-widest">→ <!-- -->Energy-Saving Film</span></a></div><div style="opacity:0;transform:translateY(20px) translateZ(0)"><a class="block bg-slate-950 border border-slate-700 p-6 hover:border-green-500 transition-all duration-300 group" href="/decorative-window-films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-500 mb-4"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg><p class="text-white font-black text-lg mb-2 group-hover:text-green-400 transition-colors leading-tight">&quot;<!-- -->People can see directly into my space<!-- -->&quot;</p><p class="text-slate-400 text-sm font-medium leading-relaxed mb-4">Street-level glass, conference rooms, and bathrooms need daytime privacy without losing natural light. Learn more in our one-way window film guide.</p><span class="inline-flex items-center text-green-500 text-xs font-black uppercase tracking-widest">→ <!-- -->Frosted or One-Way Film</span></a></div><div style="opacity:0;transform:translateY(20px) translateZ(0)"><a class="block bg-slate-950 border border-slate-700 p-6 hover:border-green-500 transition-all duration-300 group" href="/safety"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-500 mb-4"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><p class="text-white font-black text-lg mb-2 group-hover:text-green-400 transition-colors leading-tight">&quot;<!-- -->I&#x27;m worried about break-ins or glass breakage<!-- -->&quot;</p><p class="text-slate-400 text-sm font-medium leading-relaxed mb-4">Standard glass shatters into dangerous shards. Security film holds glass together after impact.</p><span class="inline-flex items-center text-green-500 text-xs font-black uppercase tracking-widest">→ <!-- -->Safety &amp; Security Film</span></a></div><div style="opacity:0;transform:translateY(20px) translateZ(0)"><a class="block bg-slate-950 border border-slate-700 p-6 hover:border-green-500 transition-all duration-300 group" href="/anti-graffiti"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-500 mb-4"><path d="M3 3h.01"></path><path d="M7 5h.01"></path><path d="M11 7h.01"></path><path d="M3 7h.01"></path><path d="M7 9h.01"></path><path d="M3 11h.01"></path><rect width="4" height="4" x="15" y="5"></rect><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"></path><path d="m13 14 8-2"></path><path d="m13 19 8-2"></path></svg><p class="text-white font-black text-lg mb-2 group-hover:text-green-400 transition-colors leading-tight">&quot;<!-- -->My windows keep getting tagged with graffiti<!-- -->&quot;</p><p class="text-slate-400 text-sm font-medium leading-relaxed mb-4">Glass etching and spray paint are costly to remove. A sacrificial film layer absorbs the damage.</p><span class="inline-flex items-center text-green-500 text-xs font-black uppercase tracking-widest">→ <!-- -->Anti-Graffiti Film</span></a></div><div style="opacity:0;transform:translateY(20px) translateZ(0)"><a class="block bg-slate-950 border border-slate-700 p-6 hover:border-green-500 transition-all duration-300 group" href="/energy-saving-window-films"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-500 mb-4"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg><p class="text-white font-black text-lg mb-2 group-hover:text-green-400 transition-colors leading-tight">&quot;<!-- -->UV is fading my furniture and flooring<!-- -->&quot;</p><p class="text-slate-400 text-sm font-medium leading-relaxed mb-4">Arizona UV index regularly hits 11+. Window film blocks up to 99.9% of UV rays — the #1 cause of fade.</p><span class="inline-flex items-center text-green-500 text-xs font-black uppercase tracking-widest">→ <!-- -->UV-Blocking Film</span></a></div></div></div></section><section class="py-24 px-6 lg:px-8"><div class="max-w-7xl mx-auto"><h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-4 text-center">Browse by Film Category</h2><p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto font-medium">Five distinct film families — each engineered for a specific performance outcome.</p><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="group relative" style="opacity:0;transform:translateY(30px) translateZ(0)"><a class="block h-full bg-slate-900 border border-slate-800 p-10 hover:border-green-500 transition-all duration-300 relative z-10 overflow-hidden" href="/energy-saving-window-films"><div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-sky-600 rounded-none flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></div><h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-green-500 transition-colors">Comfort &amp; Energy</h3><p class="text-slate-300 font-medium leading-relaxed mb-8">Reduce heat, cut glare, and lower your energy bills with our advanced solar control films.</p><div class="flex items-center text-white font-black uppercase text-sm tracking-widest">Explore Energy-Saving Films<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 text-green-500"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><p class="text-slate-500 text-xs font-medium leading-relaxed mt-3 italic px-1">The most popular category for Arizona homes and offices — blocks solar heat without darkening glass.</p></div><div class="group relative" style="opacity:0;transform:translateY(30px) translateZ(0)"><a class="block h-full bg-slate-900 border border-slate-800 p-10 hover:border-green-500 transition-all duration-300 relative z-10 overflow-hidden" href="/decorative-window-films"><div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-none flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div><h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-green-500 transition-colors">Privacy &amp; Decorative</h3><p class="text-slate-300 font-medium leading-relaxed mb-8">Enhance privacy and style with a wide range of frosted, patterned, and custom decorative films.</p><div class="flex items-center text-white font-black uppercase text-sm tracking-widest">Explore Decorative Films<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 text-green-500"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><p class="text-slate-500 text-xs font-medium leading-relaxed mt-3 italic px-1">From subtle frosted to bold custom graphics — installed clean with no bubbles, guaranteed.</p></div><div class="group relative" style="opacity:0;transform:translateY(30px) translateZ(0)"><a class="block h-full bg-slate-900 border border-slate-800 p-10 hover:border-green-500 transition-all duration-300 relative z-10 overflow-hidden" href="/safety"><div class="w-20 h-20 bg-gradient-to-br from-red-500 to-orange-600 rounded-none flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg></div><h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-green-500 transition-colors">Safety &amp; Security</h3><p class="text-slate-300 font-medium leading-relaxed mb-8">Strengthen your glass against break-ins, accidents, and storms with heavy-duty security films.</p><div class="flex items-center text-white font-black uppercase text-sm tracking-widest">Explore Security Films<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 text-green-500"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><p class="text-slate-500 text-xs font-medium leading-relaxed mt-3 italic px-1">8–12 mil laminate film holds glass in place after impact — required in many Arizona commercial applications.</p></div><div class="group relative" style="opacity:0;transform:translateY(30px) translateZ(0)"><a class="block h-full bg-slate-900 border border-slate-800 p-10 hover:border-green-500 transition-all duration-300 relative z-10 overflow-hidden" href="/decorative-window-films"><div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-none flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="m2 2 7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg></div><h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-green-500 transition-colors">Graphics &amp; Branding</h3><p class="text-slate-300 font-medium leading-relaxed mb-8">Turn your windows into a canvas with custom-cut logos and vibrant graphics to elevate your brand.</p><div class="flex items-center text-white font-black uppercase text-sm tracking-widest">Explore Branding Films<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 text-green-500"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><p class="text-slate-500 text-xs font-medium leading-relaxed mt-3 italic px-1">Custom-cut vinyl and window graphics for storefronts, offices, and vehicles.</p></div><div class="group relative" style="opacity:0;transform:translateY(30px) translateZ(0)"><a class="block h-full bg-slate-900 border border-slate-800 p-10 hover:border-green-500 transition-all duration-300 relative z-10 overflow-hidden" href="/anti-graffiti"><div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-none flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><path d="M3 3h.01"></path><path d="M7 5h.01"></path><path d="M11 7h.01"></path><path d="M3 7h.01"></path><path d="M7 9h.01"></path><path d="M3 11h.01"></path><rect width="4" height="4" x="15" y="5"></rect><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"></path><path d="m13 14 8-2"></path><path d="m13 19 8-2"></path></svg></div><h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-green-500 transition-colors">Graffiti &amp; Protection</h3><p class="text-slate-300 font-medium leading-relaxed mb-8">Protect your property from vandalism with sacrificial anti-graffiti films that are easy to replace.</p><div class="flex items-center text-white font-black uppercase text-sm tracking-widest">Explore Anti-Graffiti Films<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 text-green-500"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><p class="text-slate-500 text-xs font-medium leading-relaxed mt-3 italic px-1">Sacrificial film layer that takes the damage — peel and replace at fraction of glass replacement cost.</p></div><div class="group relative" style="opacity:0;transform:translateY(30px) translateZ(0)"><a class="block h-full bg-slate-900 border border-slate-800 p-10 hover:border-green-500 transition-all duration-300 relative z-10 overflow-hidden" href="/countertop-protection-film-arizona"><div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-none flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg></div><h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-green-500 transition-colors">Countertop Protection</h3><p class="text-slate-300 font-medium leading-relaxed mb-8">Clear bra film for quartz, marble, granite, and laminate — prevents scratches, stains, and heat damage.</p><div class="flex items-center text-white font-black uppercase text-sm tracking-widest">Explore Countertop Film<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 text-green-500"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><p class="text-slate-500 text-xs font-medium leading-relaxed mt-3 italic px-1">Invisible protection layer for kitchen and bathroom surfaces. Professional installation across Arizona.</p></div></div></div></section><section class="py-20 bg-slate-900 border-t border-slate-800"><div class="max-w-5xl mx-auto px-6 lg:px-8"><h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-6">Why Film Choice Matters in Arizona</h2><p class="text-slate-300 font-medium leading-relaxed mb-10">Standard window glass blocks less than 30% of solar heat. In Phoenix, where south and west-facing windows can receive direct sun for 8+ hours daily, unprotected glass turns rooms into ovens and drives AC costs through the roof. The right film — matched to your glass type, orientation, and goals — can reduce solar heat gain by 40–84%.</p><div class="grid grid-cols-1 sm:grid-cols-3 gap-6"><div class="bg-slate-950 border border-slate-700 p-6 text-center"><p class="text-5xl font-black text-green-500 mb-2">105°F+</p><p class="text-slate-300 text-sm font-bold uppercase tracking-wider">Average Summer High in Phoenix</p></div><div class="bg-slate-950 border border-slate-700 p-6 text-center"><p class="text-5xl font-black text-green-500 mb-2">11</p><p class="text-slate-300 text-sm font-bold uppercase tracking-wider">Peak UV Index (Scale of 1–11+)</p></div><div class="bg-slate-950 border border-slate-700 p-6 text-center"><p class="text-5xl font-black text-green-500 mb-2">84%</p><p class="text-slate-300 text-sm font-bold uppercase tracking-wider">Max Solar Heat Rejection from Film</p></div></div></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-6xl mx-auto px-6 lg:px-8"><h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-4">Film Type Comparison</h2><p class="text-slate-400 font-medium mb-10">Use this table to match your primary goal to the right film category.</p><div class="overflow-x-auto"><table class="w-full text-sm border-collapse"><thead><tr class="bg-slate-800 text-left"><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-slate-700">Film Type</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-slate-700">Heat Rejection</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-slate-700">UV Block</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-slate-700">Glare Reduction</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-slate-700">Privacy</th><th class="px-4 py-3 text-white font-black uppercase tracking-wider border border-slate-700">Best For</th></tr></thead><tbody><tr class="bg-slate-900"><td class="px-4 py-3 border border-slate-700"><a class="text-green-400 font-bold hover:underline" href="/energy-saving-window-films">Ceramic Solar Control</a></td><td class="px-4 py-3 text-slate-300 border border-slate-700">50–84%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">99.9%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">High</td><td class="px-4 py-3 text-slate-300 border border-slate-700">None</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Homes, offices, heat reduction</td></tr><tr class="bg-slate-950"><td class="px-4 py-3 border border-slate-700"><a class="text-green-400 font-bold hover:underline" href="/decorative-window-films">Frosted / Decorative</a></td><td class="px-4 py-3 text-slate-300 border border-slate-700">Moderate</td><td class="px-4 py-3 text-slate-300 border border-slate-700">99%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Moderate</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Full daytime</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Bathrooms, conference rooms, branding</td></tr><tr class="bg-slate-900"><td class="px-4 py-3 border border-slate-700"><a class="text-green-400 font-bold hover:underline" href="/safety">Safety &amp; Security</a></td><td class="px-4 py-3 text-slate-300 border border-slate-700">Varies</td><td class="px-4 py-3 text-slate-300 border border-slate-700">99%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Low</td><td class="px-4 py-3 text-slate-300 border border-slate-700">None</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Entry glass, storefronts, schools</td></tr><tr class="bg-slate-950"><td class="px-4 py-3 border border-slate-700"><a class="text-green-400 font-bold hover:underline" href="/safety">Dual-Purpose (Solar + Security)</a></td><td class="px-4 py-3 text-slate-300 border border-slate-700">40–60%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">99.9%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">High</td><td class="px-4 py-3 text-slate-300 border border-slate-700">None</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Commercial ground-floor, retail</td></tr><tr class="bg-slate-900"><td class="px-4 py-3 border border-slate-700"><a class="text-green-400 font-bold hover:underline" href="/anti-graffiti">Anti-Graffiti</a></td><td class="px-4 py-3 text-slate-300 border border-slate-700">Minimal</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Varies</td><td class="px-4 py-3 text-slate-300 border border-slate-700">None</td><td class="px-4 py-3 text-slate-300 border border-slate-700">None</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Transit, retail, public buildings</td></tr><tr class="bg-slate-950"><td class="px-4 py-3 border border-slate-700"><a class="text-green-400 font-bold hover:underline" href="/decorative-window-films">Decorative / Branding</a></td><td class="px-4 py-3 text-slate-300 border border-slate-700">Low</td><td class="px-4 py-3 text-slate-300 border border-slate-700">99%</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Varies</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Full</td><td class="px-4 py-3 text-slate-300 border border-slate-700">Storefronts, office branding</td></tr></tbody></table></div><p class="text-slate-500 text-xs mt-4 italic">Not sure which row fits? <a class="text-green-400 underline" href="/contact">Ask us — free recommendations, no pressure.</a></p></div></section><section class="py-20 bg-slate-900 border-t border-slate-800"><div class="max-w-4xl mx-auto px-6 lg:px-8"><h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-12">Window Film Solutions — FAQ</h2><div class="space-y-8"><div class="border-b border-slate-700 pb-8"><h3 class="font-black text-white uppercase text-sm mb-3">What&#x27;s the most popular window film for Arizona homes?</h3><p class="text-sm text-slate-400 leading-relaxed font-medium">Ceramic solar control films are by far the most common choice — they reject 50–84% of solar heat without the reflective mirror look. They&#x27;re non-conductive, work on tinted glass, and are backed by lifetime warranties.</p></div><div class="border-b border-slate-700 pb-8"><h3 class="font-black text-white uppercase text-sm mb-3">Can I get window film for just one problem window?</h3><p class="text-sm text-slate-400 leading-relaxed font-medium">Absolutely. We install film on single windows, rooms, or entire properties. Many customers start with their worst west-facing windows and return to do the whole house once they feel the difference.</p></div><div class="border-b border-slate-700 pb-8"><h3 class="font-black text-white uppercase text-sm mb-3">What&#x27;s the difference between residential and commercial film?</h3><p class="text-sm text-slate-400 leading-relaxed font-medium">Commercial films are typically thicker, have higher heat rejection specs, and come in larger rolls for big glass facades. Performance-wise, both use the same ceramic and IR-blocking technology.</p></div><div class="border-b border-slate-700 pb-8"><h3 class="font-black text-white uppercase text-sm mb-3">How long does window film last in Arizona&#x27;s extreme heat?</h3><p class="text-sm text-slate-400 leading-relaxed font-medium">Quality ceramic films installed by a professional are rated 10–25 years in high-UV climates like Phoenix. Cheaper dyed films degrade faster, turning purple and bubbling. We only install warranty-backed, name-brand films.</p></div><div class="border-b border-slate-700 pb-8"><h3 class="font-black text-white uppercase text-sm mb-3">Can window film be applied to already-tinted glass?</h3><p class="text-sm text-slate-400 leading-relaxed font-medium">Yes, in most cases. Our technicians assess your existing glass and tint level before recommending a compatible film. Applying the wrong film to factory-tinted glass can cause seal failure on dual-pane units — we check first.</p></div></div><p class="text-slate-400 text-sm leading-relaxed mt-10">Ready to install?<!-- --> <a class="text-green-400 underline" href="/residential-window-tinting">Explore residential tinting</a> <!-- -->or<!-- --> <a class="text-green-400 underline" href="/commercial-window-tinting">commercial tinting services</a>.<!-- --> <!-- -->Not sure which film is right?<!-- --> <a class="text-green-400 underline" href="/contact">Contact us for a free recommendation</a>.</p></div></section><section class="bg-gray-900 border-t-4 border-green-500 py-12 px-6 my-10 rounded-lg"><div class="max-w-3xl mx-auto text-center"><div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 w-10 h-10"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><h2 class="text-2xl font-black text-white uppercase tracking-tight mb-3">Get Your Instant Window Film Estimate</h2><p class="text-gray-400 mb-6 text-base">Enter your property type, window count, and film preference — get a ballpark cost range in under 2 minutes. No obligation. Free on-site estimate follows.</p><a href="/window-film-cost-estimator" class="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-8 py-4 rounded-lg text-lg transition-colors">Use the Cost Estimator →</a><p class="text-gray-600 text-xs mt-4">Residential · Commercial · Government · All film types</p></div></section><section class="py-24 border-t border-slate-800"><div class="max-w-4xl mx-auto px-6 text-center"><h2 class="text-4xl md:text-6xl font-black text-white mb-4 uppercase italic">Ready to transform your glass?</h2><p class="text-slate-400 font-medium mb-10">Licensed · Bonded · ROC #<!-- -->314088<!-- --> | Call us at<!-- --> <a href="tel:4807881591" class="text-green-400 hover:underline font-bold">(480) 788-1591</a></p><div class="flex flex-col sm:flex-row gap-6 justify-center items-center"><a class="inline-flex items-center justify-center ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-500 hover:bg-green-400 text-slate-950 px-12 h-16 text-xl font-black rounded-none w-full sm:w-auto" href="/contact">Request A Free Quote</a><a href="tel:4807881591" class="text-3xl font-black text-white hover:text-green-500 transition-colors">(480) 788-1591</a></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

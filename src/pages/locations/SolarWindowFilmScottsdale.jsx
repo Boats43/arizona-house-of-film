@@ -125,7 +125,7 @@ export default function SolarWindowFilmScottsdale() {
               Solar Window Film Services in Scottsdale AZ
             </h2>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
-              Arizona House of Film installs nano-ceramic solar control window film for residential and commercial properties throughout Scottsdale. Our films reject up to 84% of solar heat, block 99.9% of UV rays, and reduce annual cooling loads by $250–$725 for an average Scottsdale home. Licensed ROC #{rocNumber}. SRP rebate-ready installations.
+              Arizona House of Film installs nano-ceramic solar control window film for residential and commercial properties throughout Scottsdale. Our films reject up to 84% of solar heat, block 99.9% of UV rays, and reduce annual cooling loads by $250–$725 for an average Scottsdale home. Licensed ROC #{rocNumber}. SRP rebate-ready installations. Learn more in our complete <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">solar window film Phoenix</Link> guide.
             </p>
           </div>
         </section>

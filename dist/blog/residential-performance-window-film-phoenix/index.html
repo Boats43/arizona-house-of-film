@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Residential Performance Window Film Phoenix | 2026 Installation Guide | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="What &quot;performance&quot; residential window film actually means in Phoenix — ceramic vs spectrally selective, neighborhood-specific guidance for Desert Ridge, Anthem, New River, Glendale, and Cave Creek, plus SRP rebate eligibility."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="Residential Performance Window Film Phoenix | 2026 Installation Guide | Arizona House of Film"/><meta data-rh="true" property="og:description" content="What &quot;performance&quot; residential window film actually means in Phoenix — ceramic vs spectrally selective, neighborhood-specific guidance for Desert Ridge, Anthem, New River, Glendale, and Cave Creek, plus SRP rebate eligibility."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/residential-performance-window-film-phoenix"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/residential-performance-window-film-phoenix.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/residential-performance-window-film-phoenix"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Residential Performance Window Film Phoenix | 2026 Installation Guide","description":"An in-depth guide to residential performance window film phoenix. Learn about the benefits, costs, and top brands like 3M, LLumar, Huper Optik.","datePublished":"2026-04-28","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-residential-performance-window-film-phoenix.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/residential-performance-window-film-phoenix"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between performance window film and standard tint?","acceptedAnswer":{"@type":"Answer","text":"Standard tint is a dyed polyester film that primarily darkens glass and rejects some heat through absorption — typical TSER 30–45%. Performance film uses ceramic nanoparticles or spectrally selective coatings to reject infrared heat (the part you feel) while allowing visible light through — TSER 55–80% with VLT 40–70%. In Phoenix, the practical difference is 8–14°F lower interior surface temperature on west and south glass at peak sun."}},{"@type":"Question","name":"Which neighborhoods do you serve for residential performance film?","acceptedAnswer":{"@type":"Answer","text":"We install residential performance film across North Phoenix (Desert Ridge, Tatum Ranch, Pinnacle Peak), Anthem, New River, Cave Creek, Carefree, and the I-17 corridor up to Black Canyon City. We also cover Glendale (Arrowhead, Westgate, Stetson Hills), Peoria, and the broader Phoenix metro. Free on-site assessment for any property in Maricopa County."}},{"@type":"Question","name":"Does residential performance film qualify for the SRP rebate?","acceptedAnswer":{"@type":"Answer","text":"Yes — most ceramic and spectrally selective films we install meet SRP rebate criteria for solar control window film in single-family homes. Rebate amounts vary by film SHGC and home size; we provide the manufacturer spec sheet and energy performance data needed for the SRP application. See our SRP rebate guide for current 2026 amounts and qualifying criteria."}},{"@type":"Question","name":"Ceramic vs spectrally selective — which is better for a Phoenix home?","acceptedAnswer":{"@type":"Answer","text":"For most Phoenix homes, ceramic film (3M Ceramic, LLumar CTX, SunTek CIR) hits the sweet spot: 60–75% TSER, no metallic content (no HOA reflectivity issues, no cell signal interference), and a neutral charcoal appearance. Spectrally selective (3M Prestige, Huper Optik Drei) costs 30–50% more but delivers higher TSER at higher VLT — the right call for view-priority rooms with tall glass or for owners who want maximum clarity at the same heat rejection."}},{"@type":"Question","name":"How much does residential performance film cost in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"Ceramic performance film runs $9–$14 per square foot installed on standard residential glass. Spectrally selective premium runs $14–$22 per square foot. A typical 2,500 sqft Phoenix home with 350 sqft of glass costs $3,200–$4,900 ceramic, $4,900–$7,700 spectrally selective. Free on-site quote with exact film specification and energy performance projections."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"Residential Performance Window Film Phoenix | 2026 Installation Guide","item":"https://arizonahouseoffilm.com/blog/residential-performance-window-film-phoenix"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Residential Performance Window Film Phoenix | 2026 Installation Guide</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->April 27, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+    <h1>Residential Performance Window Film Phoenix — 2026 Installation Guide</h1>
+
+    <p class="lead">If you have spent any time researching window film for an Arizona home, you have probably noticed the term "performance film" appearing more often than plain "tint." This is a real distinction — not marketing language. Performance window film is a specific category of product engineered to reject infrared heat while keeping the glass visually neutral. In Phoenix, where summer interior surface temperatures routinely exceed 110°F on west-facing glass, the difference between standard tint and performance-grade film shows up in your AC runtime, your interior comfort, and your fade rate on furniture and floors. This guide is for homeowners in Desert Ridge, Anthem, New River, Glendale, Cave Creek, and across North Phoenix who want to know what performance film actually does, which film fits their home, and what it costs in 2026.</p>
+
+    <h2>1. What "Performance Film" Actually Means</h2>
+    <p>The window film industry uses three loose tiers, and understanding them clears up most of the confusion:</p>
+    <ul>
+      <li><strong>Standard tint (dyed polyester)</strong> — the budget category. Color is the heat-rejection mechanism. TSER (Total Solar Energy Rejected) typically lands between 30% and 45%. Performs adequately in mild climates and fails in Phoenix sun within 5–8 years (color shift to purple, edge delamination).</li>
+      <li><strong>Metallized / dual-reflective</strong> — middle tier. Sputtered metal layers reflect heat. Higher TSER (45–60%) but introduces a reflective exterior, can interfere with cellular signal, and may trigger HOA reflectivity rules in Desert Ridge, Anthem, and parts of Cave Creek.</li>
+      <li><strong>Performance film (ceramic or spectrally selective)</strong> — the tier this guide covers. Non-metallic, non-reflective, optically neutral. TSER 55–80% on the strongest products. The film you install when you care about results, not just price.</li>
+    </ul>
+
+    <h2>2. Why Phoenix Homes Specifically Benefit</h2>
+    <p>Phoenix metro logs 110+ days per year above 100°F. The summer monsoon does not lower daytime peak temperatures — it just adds humidity to the air conditioning load. On a typical Desert Ridge home with west-facing master bedroom windows, the glass interior surface can reach 115–125°F at 4–6pm in July. That heat radiates into the room for hours after sunset, which is why many homeowners report the AC "never catches up" in late summer.</p>
+    <p>Performance film changes the equation by rejecting solar heat at the glass — before it enters the room. Real-world data we have logged on Anthem and New River installations shows interior surface temperatures dropping 8–14°F on treated west glass, with corresponding HVAC runtime reductions of 12–22% on those zones during peak season.</p>
+
+    <h2>3. Ceramic vs Spectrally Selective for Residential</h2>
+    <p>This is the decision most Phoenix homeowners face once they have committed to performance film. Both options reject infrared heat without metallic content. The difference comes down to clarity, price, and how much you value tall-window aesthetics.</p>
+    <h3>Ceramic Performance Film (3M Ceramic, LLumar CTX, SunTek CIR)</h3>
+    <ul>
+      <li>TSER: 55–72%</li>
+      <li>VLT options: typically 30%, 40%, 50%, 70%</li>
+      <li>Appearance: neutral charcoal, low reflectivity</li>
+      <li>Price: $9–$14 per sqft installed</li>
+      <li>Best for: most Phoenix homes, HOA-restricted communities (no reflective exterior), bedrooms, family rooms, west and south elevations</li>
+    </ul>
+    <h3>Spectrally Selective Premium (3M Prestige, Huper Optik Drei)</h3>
+    <ul>
+      <li>TSER: 65–80%</li>
+      <li>VLT options: typically 40%, 50%, 60%, 70% — with the 70% VLT version being virtually clear</li>
+      <li>Appearance: optically clear, no perceptible tint at higher VLT</li>
+      <li>Price: $14–$22 per sqft installed</li>
+      <li>Best for: view-priority rooms (great rooms with mountain views in Anthem, North Phoenix luxury homes with desert vistas), tall glass spans where any tint would feel oppressive, owners who want maximum heat rejection without visible film</li>
+    </ul>
+
+    <h2>4. Neighborhoods We Cover for Performance Film Installs</h2>
+    <p>We install performance residential film across the Phoenix metro and the I-17 corridor north. Coverage is not capacity-limited — these are simply the neighborhoods where we have the highest install density and the most local reference projects:</p>
+    <ul>
+      <li><strong>Desert Ridge</strong> — many homes have tall west and south glass spans facing the McDowell Sonoran Preserve. Common spec: ceramic 50% VLT on west, spectrally selective 60–70% VLT on view-priority great-room glass.</li>
+      <li><strong>Anthem</strong> — large lot homes with significant glass area. HOA rules favor non-reflective products. Ceramic is the typical choice.</li>
+      <li><strong>New River</strong> — newer construction with high-performance Low-E glass already in place. Performance film stacks with Low-E to push total heat rejection above 80% on west elevations.</li>
+      <li><strong>Cave Creek and Carefree</strong> — desert-modern architecture with floor-to-ceiling glass. Spectrally selective preserves the design intent.</li>
+      <li><strong>North Phoenix (Tatum Ranch, Pinnacle Peak, Stetson Hills)</strong> — mixed inventory, mixed budget. We spec ceramic for most projects, spectrally selective on owner request.</li>
+      <li><strong>Glendale (Arrowhead, Westgate, Stetson Hills, Sierra Verde)</strong> — west-valley sun load is intense from 1pm onward. Ceramic 30–40% VLT on west elevations is the volume spec.</li>
+    </ul>
+
+    <h2>5. SRP Rebate Eligibility</h2>
+    <p>Salt River Project (SRP) offers rebates for solar control window film installed on owner-occupied single-family homes. Most ceramic and spectrally selective performance films we install qualify. The rebate amount depends on the film's SHGC (Solar Heat Gain Coefficient) and the qualifying square footage. We provide the manufacturer-stamped spec sheet and energy performance data the SRP application requires.</p>
+    <p>For 2026 rebate amounts and qualifying criteria, see our <a href="/blog/srp-rebate-window-film-2026">SRP rebate window film 2026 guide</a>. APS does not currently offer a comparable rebate program for residential film, so SRP customers in north Phoenix, Anthem, and parts of Glendale on SRP service have a meaningful incremental incentive that APS-served customers do not.</p>
+
+    <h2>6. What a Phoenix Performance Film Project Costs</h2>
+    <table>
+      <tr><th>Home Size</th><th>Approx. Glass Area</th><th>Ceramic Cost</th><th>Spectrally Selective Cost</th></tr>
+      <tr><td>1,800 sqft</td><td>~250 sqft glass</td><td>$2,250–$3,500</td><td>$3,500–$5,500</td></tr>
+      <tr><td>2,500 sqft</td><td>~350 sqft glass</td><td>$3,200–$4,900</td><td>$4,900–$7,700</td></tr>
+      <tr><td>3,500 sqft</td><td>~500 sqft glass</td><td>$4,500–$7,000</td><td>$7,000–$11,000</td></tr>
+      <tr><td>5,000+ sqft luxury</td><td>~700+ sqft glass</td><td>$6,500–$10,000+</td><td>$10,000–$16,000+</td></tr>
+    </table>
+    <p>SRP rebate (when applicable) typically reduces net cost by $0.50–$1.50 per qualifying square foot. We quote SRP-eligible square footage separately on the written estimate so you can submit the rebate application directly.</p>
+
+    <h2>7. What Happens After You Request a Quote</h2>
+    <ol>
+      <li>On-site assessment: we measure glass, identify orientation, photograph existing conditions, and check for any Low-E coatings already in place</li>
+      <li>Spec recommendation: ceramic vs spectrally selective, VLT level per elevation, and SRP rebate-qualifying square footage</li>
+      <li>Written quote with film spec sheets attached</li>
+      <li>Schedule install — typical residential install is one full day for an average Phoenix home</li>
+      <li>Manufacturer warranty registered in your name (lifetime residential, transferable on most product lines)</li>
+    </ol>
+
+    <h2>Related Resources</h2>
+    <ul>
+      <li><a href="/residential-window-tinting-phoenix">Phoenix residential window tinting overview</a></li>
+      <li><a href="/energy-saving-window-films">Energy-saving window films</a></li>
+      <li><a href="/blog/best-window-film-arizona-heat-2026">Best window film for Arizona heat 2026</a></li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>What is the difference between performance window film and standard tint?</h3>
+        <p>Standard tint is dyed polyester — TSER 30–45%, fades in Phoenix sun. Performance film uses ceramic or spectrally selective coatings — TSER 55–80%, no color shift, 8–14°F cooler interior glass surface temperatures.</p>
+      </div>
+      <div>
+        <h3>Which neighborhoods do you serve for residential performance film?</h3>
+        <p>Desert Ridge, Anthem, New River, Cave Creek, Carefree, North Phoenix, Glendale, Peoria, and the entire Phoenix metro. Free on-site assessment in Maricopa County.</p>
+      </div>
+      <div>
+        <h3>Does residential performance film qualify for the SRP rebate?</h3>
+        <p>Yes — ceramic and spectrally selective films meeting SRP's SHGC and product criteria qualify. We provide the manufacturer spec sheet for the rebate application.</p>
+      </div>
+      <div>
+        <h3>Ceramic vs spectrally selective — which is better for a Phoenix home?</h3>
+        <p>Ceramic is the volume choice — 60–75% TSER, neutral charcoal, $9–$14/sqft. Spectrally selective is the premium choice — higher TSER at higher VLT, optically clear, $14–$22/sqft.</p>
+      </div>
+      <div>
+        <h3>How much does residential performance film cost in Phoenix?</h3>
+        <p>$9–$14/sqft ceramic, $14–$22/sqft spectrally selective. A 2,500 sqft Phoenix home runs $3,200–$4,900 ceramic or $4,900–$7,700 spectrally selective.</p>
+      </div>
+    </div>
+
+    <h2>Schedule a Free On-Site Assessment</h2>
+    <p>Arizona House of Film. ROC #314088. 700+ Phoenix metro installations since 2017.</p>
+    <p><a href="/contact?subject=Residential%20Performance%20Film%20Quote" style="display:inline-block;background:#2563eb;color:#fff;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Request Your Free Quote →</a></p>
+    <p>Or call (480) 788-1591.</p>
+  </div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/service-areas/phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

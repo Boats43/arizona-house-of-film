@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Bird Safety Window Film Arizona | Solyx Bird Safe | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Solyx bird safety window film installed across Arizona — UV-visible dot, vertical, horizontal, and trellis patterns that help prevent window strikes. FLAP-referenced spacing, commercial and residential. ROC #314088."/><meta data-rh="true" property="og:title" content="Bird Safety Window Film Arizona | Solyx Bird Safe | ROC #314088"/><meta data-rh="true" property="og:description" content="Solyx bird safety window film installed across Arizona — UV-visible dot, vertical, horizontal, and trellis patterns that help prevent window strikes. FLAP-referenced spacing, commercial and residential. ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/solyx-bird-safety-film"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Bird Safety Window Film Arizona | Solyx Bird Safe | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Solyx bird safety window film installed across Arizona — UV-visible dot, vertical, horizontal, and trellis patterns that help prevent window strikes. FLAP-referenced spacing, commercial and residential. ROC #314088."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/solyx-bird-safety-film"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is bird safety window film?","acceptedAnswer":{"@type":"Answer","text":"Bird safety window film is a visual-marker film applied to glass to break up the mirror-like reflections of sky and foliage that cause birds to collide with windows. Patterns are spaced tightly enough that birds perceive the glass as a solid surface and alter their flight path. Solyx bird safety films use dots, vertical lines, horizontal lines, trellis patterns, or illustrated artwork — all at spacing informed by FLAP and American Bird Conservancy testing."}},{"@type":"Question","name":"Is Solyx bird safety film FLAP certified?","acceptedAnswer":{"@type":"Answer","text":"Solyx bird safety patterns are designed to the spacing guidance published by FLAP Canada (Fatal Light Awareness Program) and the American Bird Conservancy — most notably the 2\"×4\" rule for dot patterns and the 2\"×2\" rule for smaller songbirds. Testing status varies by specific SKU and year; if your project (LEED Pilot Credit 55, Bird-Safe Design, or a municipal bird-safe building ordinance) requires a specific certification, we verify the exact SKU against the most current tested-product list before specifying."}},{"@type":"Question","name":"How does UV-visible bird safety film work?","acceptedAnswer":{"@type":"Answer","text":"Some bird safety films use a UV-reflective or UV-absorbing component in the pattern, taking advantage of the fact that many birds see into the near-ultraviolet range that is invisible to human eyes. The intent is a pattern birds can see clearly while the glass appears nearly clear to people. In practice, UV-only patterns degrade faster and do not work for every species, so most current bird-safe specifications — including Solyx patterns — favor visible markers (frosted dots, lines, trellis, or art) installed on the exterior or between panes."}},{"@type":"Question","name":"Can bird safety film be used on residential windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. Homes with large picture windows, glass sunrooms, sliding doors, or windows that reflect vegetation are common strike locations. The Solyx BSFD dot pattern and the SC672 hummingbird chip pattern are popular residential choices — they reduce strikes while reading as decorative film rather than industrial signage. Arizona homes backing to washes, golf courses, or native landscaping see the highest benefit."}},{"@type":"Question","name":"Does bird safety film qualify for LEED credit?","acceptedAnswer":{"@type":"Answer","text":"Bird-safe glazing contributes to LEED v4/v4.1 Pilot Credit 55 — Bird Collision Deterrence. The credit requires that exterior glazing meet a maximum \"Threat Factor\" using ABC-tested materials or equivalent patterns at the 2×4 or tighter spacing. We supply documentation packets (pattern spacing, installation photos, SKU data sheets) for project teams pursuing the credit on Arizona commercial buildings."}},{"@type":"Question","name":"Why is bird safety film especially relevant in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Arizona sits on two of the major North American flyways — the Pacific and Central — and hosts year-round species plus seasonal migrants. Reflective glass on commercial towers, hillside homes, and desert-adjacent campuses creates strike hot spots during fall and spring migration. Phoenix, Tucson, Sedona, and Flagstaff all see meaningful residential and commercial strike volume that the right visible-marker film measurably reduces."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Bird Safety Window Film Installation — Arizona","description":"Solyx bird safety window film installed across Arizona — UV-visible dot, vertical, horizontal, and trellis patterns that help prevent window strikes. FLAP-referenced spacing, commercial and residential. ROC #314088.","provider":{"@type":"LocalBusiness","name":"Arizona House of Film","telephone":"+1-480-788-1591","address":{"@type":"PostalAddress","streetAddress":"7007 W Flower St","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85033"}},"areaServed":{"@type":"State","name":"Arizona"},"serviceType":"Bird collision deterrent window film installation"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Bird Safety Window Film","item":{"@id":"https://arizonahouseoffilm.com/solyx-bird-safety-film","name":"Bird Safety Window Film"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><section class="bg-gradient-to-br from-emerald-900 via-slate-900 to-slate-900 text-white py-20 px-6"><div class="max-w-4xl mx-auto text-center"><p class="text-emerald-400 font-bold uppercase tracking-wider text-sm mb-4">Solyx Bird Safe Collection</p><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Bird Safety Window Film — Arizona</h1><p class="text-xl text-gray-200 max-w-3xl mx-auto mb-4">Visible-marker films that prevent window strikes on storefronts, hillside homes, schools, and museums across Arizona. Seven Solyx patterns in stock — dots, lines, trellis, and illustrated series — spaced to FLAP and ABC guidance.</p><p class="text-sm text-gray-400 mb-8">Licensed ROC #314088 · U.S. Navy veteran owned · Arizona-wide install</p><a class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-black uppercase tracking-wide px-10 py-4 rounded-lg text-lg transition-colors shadow-lg" href="/get-a-quote">Request Bird Safe Quote →</a></div></section><section class="py-16 px-6 bg-white"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-8">Why Bird Safety Film Is Needed</h2><div class="grid md:grid-cols-3 gap-6"><div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg"><p class="text-3xl font-black text-emerald-700 mb-2">Up to 1B</p><p class="text-sm text-slate-700">Birds estimated to die annually in the U.S. from window strikes (American Bird Conservancy).</p></div><div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg"><p class="text-3xl font-black text-amber-700 mb-2">2 flyways</p><p class="text-sm text-slate-700">Arizona sits on the Pacific and Central migratory flyways — elevated strike risk during spring and fall migration.</p></div><div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg"><p class="text-3xl font-black text-blue-700 mb-2">2×4 rule</p><p class="text-sm text-slate-700">Pattern spacing referenced by FLAP Canada — no gap larger than 2&quot; vertical × 4&quot; horizontal.</p></div></div><p class="mt-8 text-slate-700 text-lg">Reflective glass mirrors sky, trees, and cactus. Birds see the reflection as continuous habitat and strike the glass at flight speed. Visible-marker film breaks the reflection with a pattern dense enough that birds perceive a solid surface and redirect before impact.</p></div></section><section class="py-16 px-6 bg-slate-50"><div class="max-w-6xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4 text-center">Solyx Bird Safety Film Patterns</h2><p class="text-center text-gray-600 mb-12">Seven SKUs in stock — each links to the product page with full spec sheet and imagery.</p><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-BSFD-72</p><h3 class="text-lg font-black text-slate-900 mb-3">BSFD Frost Dot Bird Safety Film</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Frosted dots on a 2&quot;×2&quot; grid</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->Most broadly applicable pattern — meets common 2×4 spacing guidance referenced by ABC and FLAP for reducing strikes on reflective glass.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Commercial + Residential</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/frosted-etched-films/sx-bsfd-72">View product →</a></div><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-BSFV-72</p><h3 class="text-lg font-black text-slate-900 mb-3">BSFV Bird Safety Film — Vertical</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Vertical lines spaced for strike-prevention</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->Preferred for large storefront and curtain-wall glazing where vertical sight lines read cleanly into the architecture.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Commercial / storefront</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/specialty-films/sx-bsfv-72">View product →</a></div><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-BSFH-70</p><h3 class="text-lg font-black text-slate-900 mb-3">BSFH Bird Safety Film — Horizontal</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Horizontal lines spaced for strike-prevention</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->Used when vertical mullions already break up the view — horizontal spacing completes the deterrent grid.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Commercial + Residential</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/specialty-films/sx-bsfh-70">View product →</a></div><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-BSFT-60</p><h3 class="text-lg font-black text-slate-900 mb-3">BSFT Trellis Bird Safety Film</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Decorative trellis / lattice weave</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->For residential and hospitality glazing where the owner wants a designer look in addition to strike prevention.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Residential / hospitality</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/specialty-films/sx-bsft-60">View product →</a></div><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-BSFAC-01</p><h3 class="text-lg font-black text-slate-900 mb-3">Color Bird Safety Film — Ashley Cecil</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Illustrated vines in full color (artist series)</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->Nature-center, school, and museum glazing where the graphic doubles as educational artwork. Designed by conservation artist Ashley Cecil.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Institutional / museum</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/colored-films/sx-bsfac-01">View product →</a></div><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-BSFAC-02</p><h3 class="text-lg font-black text-slate-900 mb-3">Frost Bird Safety Film — Ashley Cecil</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Frosted vines on clear (artist series, neutral)</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->Same vine graphic as BSFAC-01 in frosted-only format — blends with any interior palette.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Commercial + Residential</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/frosted-etched-films/sx-bsfac-02">View product →</a></div><div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-500 transition-colors"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">SX-SC672</p><h3 class="text-lg font-black text-slate-900 mb-3">Humming Bird Chips</h3><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Pattern:</span> <!-- -->Decorative hummingbird silhouettes</p><p class="text-sm text-slate-600 mb-2"><span class="font-bold text-slate-800">Best for:</span> <!-- -->Residential accent for smaller lites, French doors, and entry sidelights. Decorative film with bird-imagery deterrent value.</p><p class="text-xs text-slate-500 mb-4">Segment: <!-- -->Residential accent</p><a class="text-emerald-700 underline text-sm font-semibold hover:text-emerald-900" href="/films/specialty-films/sx-sc672">View product →</a></div></div></div></section><section class="py-16 px-6 bg-white"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">UV-Visible vs Visible-Marker Patterns</h2><p class="text-lg text-slate-700 mb-4">Some bird safety products rely on UV-reflective ink that is visible to birds but nearly invisible to humans. The approach works in theory — most bird species see into the near-ultraviolet range — but UV-only markers degrade faster in Arizona UV, are not visible to all species, and do not meet the most current ABC tested-product criteria.</p><p class="text-lg text-slate-700 mb-4">Solyx bird-safe patterns use visible markers — frosted dots, lines, trellis geometry, or illustrated artwork — installed on the interior surface. Visible markers are species-agnostic, last the life of the film, and are what current LEED Pilot Credit 55 guidance actually rewards.</p><p class="text-lg text-slate-700">For sensitive-design projects where the client still wants a &quot;disappearing&quot; pattern, BSFD frosted dots or BSFAC-02 frosted vines read as decorative from normal viewing distance while remaining dense enough to deter strikes.</p></div></section><section class="py-16 px-6 bg-slate-50"><div class="max-w-5xl mx-auto"><h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-8 text-center">Where We Install Bird Safety Film</h2><div class="grid md:grid-cols-2 gap-6"><div class="bg-white border border-slate-200 rounded-xl p-6"><h3 class="text-xl font-black text-slate-900 mb-3">Commercial</h3><ul class="space-y-2 text-slate-700 text-sm"><li>• Storefronts, lobbies, and curtain-wall glazing</li><li>• Corporate campuses pursuing LEED Pilot Credit 55</li><li>• Municipal buildings subject to bird-safe ordinances</li><li>• Schools, universities, and research facilities</li><li>• Museums, nature centers, and visitor centers</li></ul></div><div class="bg-white border border-slate-200 rounded-xl p-6"><h3 class="text-xl font-black text-slate-900 mb-3">Residential</h3><ul class="space-y-2 text-slate-700 text-sm"><li>• Large picture windows and sliding glass doors</li><li>• Glass sunrooms and atrium glazing</li><li>• Hillside homes with heavy reflective-glass exposure</li><li>• Homes adjacent to washes, golf courses, native habitat</li><li>• Second-home retrofits after confirmed strike incidents</li></ul></div></div></div></section><section class="py-12 px-6 bg-white"><div class="max-w-4xl mx-auto"><h2 class="text-2xl font-black uppercase tracking-tight text-slate-900 mb-6">Related Film Categories</h2><div class="grid md:grid-cols-2 gap-4"><a class="block bg-slate-50 hover:bg-emerald-50 border border-slate-200 rounded-lg p-5" href="/films/specialty-films/bird-safety"><p class="font-bold text-slate-900">Bird Safety Category Hub</p><p class="text-sm text-slate-600">Full Solyx bird-safe category page with every SKU in stock.</p></a><a class="block bg-slate-50 hover:bg-emerald-50 border border-slate-200 rounded-lg p-5" href="/films/frosted-etched-films"><p class="font-bold text-slate-900">Frosted &amp; Etched Films</p><p class="text-sm text-slate-600">BSFD dots, BSFAC-02 frosted vines, and the full frosted catalog.</p></a><a class="block bg-slate-50 hover:bg-emerald-50 border border-slate-200 rounded-lg p-5" href="/films/specialty-films"><p class="font-bold text-slate-900">Specialty Films</p><p class="text-sm text-slate-600">Decorative bird patterns — vertical, horizontal, trellis, chips.</p></a><a class="block bg-slate-50 hover:bg-emerald-50 border border-slate-200 rounded-lg p-5" href="/films/colored-films"><p class="font-bold text-slate-900">Colored Films</p><p class="text-sm text-slate-600">Ashley Cecil full-color illustrated bird-safety series.</p></a></div></div></section><section class="py-16 px-6 bg-slate-50"><div class="max-w-3xl mx-auto"><h2 class="text-3xl font-black text-center text-slate-900 uppercase tracking-tight mb-12">Frequently Asked Questions</h2><div class="space-y-4"><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">What is bird safety window film?<span class="text-emerald-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Bird safety window film is a visual-marker film applied to glass to break up the mirror-like reflections of sky and foliage that cause birds to collide with windows. Patterns are spaced tightly enough that birds perceive the glass as a solid surface and alter their flight path. Solyx bird safety films use dots, vertical lines, horizontal lines, trellis patterns, or illustrated artwork — all at spacing informed by FLAP and American Bird Conservancy testing.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Is Solyx bird safety film FLAP certified?<span class="text-emerald-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Solyx bird safety patterns are designed to the spacing guidance published by FLAP Canada (Fatal Light Awareness Program) and the American Bird Conservancy — most notably the 2&quot;×4&quot; rule for dot patterns and the 2&quot;×2&quot; rule for smaller songbirds. Testing status varies by specific SKU and year; if your project (LEED Pilot Credit 55, Bird-Safe Design, or a municipal bird-safe building ordinance) requires a specific certification, we verify the exact SKU against the most current tested-product list before specifying.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">How does UV-visible bird safety film work?<span class="text-emerald-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Some bird safety films use a UV-reflective or UV-absorbing component in the pattern, taking advantage of the fact that many birds see into the near-ultraviolet range that is invisible to human eyes. The intent is a pattern birds can see clearly while the glass appears nearly clear to people. In practice, UV-only patterns degrade faster and do not work for every species, so most current bird-safe specifications — including Solyx patterns — favor visible markers (frosted dots, lines, trellis, or art) installed on the exterior or between panes.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Can bird safety film be used on residential windows?<span class="text-emerald-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Yes. Homes with large picture windows, glass sunrooms, sliding doors, or windows that reflect vegetation are common strike locations. The Solyx BSFD dot pattern and the SC672 hummingbird chip pattern are popular residential choices — they reduce strikes while reading as decorative film rather than industrial signage. Arizona homes backing to washes, golf courses, or native landscaping see the highest benefit.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Does bird safety film qualify for LEED credit?<span class="text-emerald-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Bird-safe glazing contributes to LEED v4/v4.1 Pilot Credit 55 — Bird Collision Deterrence. The credit requires that exterior glazing meet a maximum &quot;Threat Factor&quot; using ABC-tested materials or equivalent patterns at the 2×4 or tighter spacing. We supply documentation packets (pattern spacing, installation photos, SKU data sheets) for project teams pursuing the credit on Arizona commercial buildings.</div></details><details class="group border border-slate-200 rounded-lg bg-white"><summary class="cursor-pointer px-6 py-4 font-bold text-slate-900 flex items-center justify-between">Why is bird safety film especially relevant in Arizona?<span class="text-emerald-500 group-open:rotate-45 transition-transform text-xl">+</span></summary><div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">Arizona sits on two of the major North American flyways — the Pacific and Central — and hosts year-round species plus seasonal migrants. Reflective glass on commercial towers, hillside homes, and desert-adjacent campuses creates strike hot spots during fall and spring migration. Phoenix, Tucson, Sedona, and Flagstaff all see meaningful residential and commercial strike volume that the right visible-marker film measurably reduces.</div></details></div></div></section><section class="py-12 px-6 bg-emerald-900 text-white text-center"><div class="max-w-3xl mx-auto"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Ready to Spec Bird Safe Film for Your Project?</h2><p class="text-gray-200 mb-6">We&#x27;ll match the SKU to your building type, confirm pattern spacing against the current ABC/FLAP guidance, and supply LEED documentation where required.</p><a class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-black uppercase px-10 py-4 rounded-lg text-lg" href="/get-a-quote">Request a Quote →</a><p class="text-gray-400 text-xs mt-4">Licensed ROC #314088 · Arizona-wide · Commercial + residential</p></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="text" name="website_url" style="display:none" tabindex="-1" autoComplete="off"/><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN" aria-label="First Name"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH" aria-label="Last Name"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM" aria-label="Email Address"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000" aria-label="Phone Number"/></div></div><div><label class="industrial-label">How did you find us? (optional)</label><select name="Referral Source" class="industrial-input" aria-label="Referral Source"><option value="">Please select...</option><option value="Google Search">Google Search</option><option value="ChatGPT / AI Search">ChatGPT / AI Search</option><option value="Perplexity AI">Perplexity AI</option><option value="Google AI Mode">Google AI Mode</option><option value="Referral from someone I know">Referral from someone I know</option><option value="Social media (Facebook/Instagram)">Social media (Facebook/Instagram)</option><option value="Saw your truck or signage">Saw your truck or signage</option><option value="Repeat customer">Repeat customer</option><option value="Other">Other</option></select></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX" aria-label="City"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001" aria-label="Zip Code"/></div></div><fieldset><legend class="industrial-label">Project Type *</legend><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></fieldset><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..." aria-label="Message"></textarea></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

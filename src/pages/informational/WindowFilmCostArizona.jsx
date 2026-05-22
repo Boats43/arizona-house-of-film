@@ -100,7 +100,7 @@ export default function WindowFilmCostArizona() {
         <section className="mb-12">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">SRP and APS Rebates Can Offset Cost</h2>
           <p className="text-lg text-slate-700 mb-4">Qualifying ceramic and spectrally selective window films meet SRP Business Solutions and APS energy efficiency rebate program requirements. We identify rebate-eligible films during your estimate and provide the NFRC-rated data sheets required for rebate applications.</p>
-          <p className="text-lg text-slate-700">Combined with annual cooling savings of $250–$725, rebates can significantly reduce the effective cost of window film installation.</p>
+          <p className="text-lg text-slate-700">Combined with annual cooling savings of $250–$725, rebates can significantly reduce the effective cost of window film installation. Learn more in our <Link to="/blog/solar-window-film-phoenix-az" className="text-blue-600 hover:underline">solar window film Phoenix</Link> guide.</p>
         </section>
 
         <section className="bg-slate-100 p-8 rounded-lg">

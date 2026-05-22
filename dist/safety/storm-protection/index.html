@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Storm Protection Window Film | Defend Against Severe Weather</title>
+  <meta data-rh="true" name="description" content="Strengthen your windows against high winds, flying debris, and severe weather with storm protection security film. An essential upgrade for protecting property in Arizona&#x27;s monsoon season."/><meta data-rh="true" property="og:title" content="Storm Protection Window Film | Defend Against Severe Weather"/><meta data-rh="true" property="og:description" content="Strengthen your windows against high winds, flying debris, and severe weather with storm protection security film. An essential upgrade for protecting property in Arizona&#x27;s monsoon season."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/safety/storm-protection"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Storm Protection Window Film | Defend Against Severe Weather"/><meta data-rh="true" name="twitter:description" content="Strengthen your windows against high winds, flying debris, and severe weather with storm protection security film. An essential upgrade for protecting property in Arizona&#x27;s monsoon season."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/safety/storm-protection"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Safety & Security Films","item":"https://arizonahouseoffilm.com/safety"},{"@type":"ListItem","position":3,"name":"Storm Protection Window Film","item":"https://arizonahouseoffilm.com/safety/storm-protection"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is storm protection film tested?","acceptedAnswer":{"@type":"Answer","text":"Storm protection films are subjected to rigorous testing standards, including large missile impact tests (simulating debris like a 2x4) and pressure cycling tests to simulate hurricane-force winds. We offer films that meet these demanding requirements."}},{"@type":"Question","name":"Is an attachment system necessary for storm protection?","acceptedAnswer":{"@type":"Answer","text":"For maximum storm mitigation performance, yes. An attachment system, which anchors the film to the window frame, is critical to prevent the entire pane of broken glass from being pushed out by high winds. We strongly recommend it for all storm protection applications."}},{"@type":"Question","name":"Is storm film different from regular security film?","acceptedAnswer":{"@type":"Answer","text":"The films themselves are very similar (thick, multi-layered polyester). The primary difference in the application is the emphasis on an attachment system to withstand the unique pressures exerted by high-velocity winds. A security film installation can be upgraded to a storm protection system by adding an attachment system."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Storm Protection Window Film | Defend Against Severe Weather","description":"Strengthen your windows against high winds, flying debris, and severe weather with storm protection security film. An essential upgrade for protecting property in Arizona's monsoon season.","provider":{"@type":"LocalBusiness","name":"Arizona House of Film","url":"https://arizonahouseoffilm.com","@id":"https://arizonahouseoffilm.com/#business"},"areaServed":{"@type":"State","name":"Arizona"},"url":"https://arizonahouseoffilm.com/safety/storm-protection"}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-white"><header class="relative py-20 text-white bg-gradient-to-br from-slate-700 to-black"><div class="absolute inset-0 bg-black/40"></div><div class="relative z-10 max-w-4xl mx-auto px-4 text-center"><div class="mb-4"><a class="text-white hover:underline flex items-center justify-center text-sm" href="/safety"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to <!-- -->Safety &amp; Security Films</a></div><h1 class="text-4xl md:text-5xl font-bold text-white" style="opacity:0;transform:translateY(20px) translateZ(0)">Your Shield Against the Storm</h1><p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Reinforce your windows to withstand high winds and debris during Arizona&#x27;s powerful monsoon storms.</p></div></header><main class="py-16 md:py-24"><div class="max-w-4xl mx-auto px-4"><div class="prose lg:prose-lg max-w-none text-gray-800" style="opacity:0;transform:translateY(20px) translateZ(0)"><div>
+      <h2>Protect Your Property When the Weather Turns Wild</h2>
+      <p class="lead">Arizona's monsoon season can bring sudden, violent storms with high winds and flying debris. Your windows are the most vulnerable part of your building's envelope. If a window fails, it can lead to catastrophic damage from wind and water, and the subsequent pressure changes can even lead to roof failure. Storm protection window film is a proven, tested solution to mitigate these risks and protect your property.</p>
+      <h3>How Film Provides Storm Protection</h3>
+      <p>Similar to our <a href="/safety/break-in-deterrent">break-in deterrent films</a>, storm protection films are thick, heavy-duty products designed to hold glass together under extreme stress. When combined with an attachment system that bonds the film to the window frame, it creates a formidable barrier.</p>
+      <ul>
+        <li><strong>Resists Debris Impact:</strong> The film can withstand significant impacts from wind-borne debris like tree branches or outdoor furniture, preventing the glass from breaking.</li>
+        <li><strong>Prevents Window Failure:</strong> Even if the glass does crack under a severe impact, the film and attachment system hold the window in place, preventing wind and rain from entering the building.</li>
+        <li><strong>Maintains the Building Envelope:</strong> By preventing the initial breach, the film protects your property from the devastating internal pressurization that can lead to roof lift-off and structural failure.</li>
+      </ul>
+      <h3>A 24/7, Passive Protection System</h3>
+      <p>Unlike storm shutters or plywood boards, which have to be manually deployed before a storm, window film provides passive, 24/7 protection. It's always there, ready to defend your property, without any action required from you. And because it's optically clear, it never blocks your view.</p>
+      <p>This makes it an ideal solution for both residential and commercial properties, offering peace of mind that your building is protected even if a storm hits unexpectedly. It's a one-time upgrade that provides lasting protection, season after season.</p>
+      <p>Don't leave your property's safety to chance. <a href="/contact">Contact us</a> to learn more about our storm protection film solutions.</p>
+    </div></div></div></main><section class="py-16 md:py-24 bg-gray-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">How is storm protection film tested?</h3><p class="text-gray-700">Storm protection films are subjected to rigorous testing standards, including large missile impact tests (simulating debris like a 2x4) and pressure cycling tests to simulate hurricane-force winds. We offer films that meet these demanding requirements.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Is an attachment system necessary for storm protection?</h3><p class="text-gray-700">For maximum storm mitigation performance, yes. An attachment system, which anchors the film to the window frame, is critical to prevent the entire pane of broken glass from being pushed out by high winds. We strongly recommend it for all storm protection applications.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Is storm film different from regular security film?</h3><p class="text-gray-700">The films themselves are very similar (thick, multi-layered polyester). The primary difference in the application is the emphasis on an attachment system to withstand the unique pressures exerted by high-velocity winds. A security film installation can be upgraded to a storm protection system by adding an attachment system.</p></div></div></div></section><section class="py-20 bg-blue-600 text-white"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Property?</h2><p class="text-lg text-blue-100 mb-8">Contact Arizona House of Film today for a free, no-obligation estimate.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-gray-200 font-semibold" href="/contact">Request Your Free Quote</a><a href="tel:480-788-1591" class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-11 rounded-md px-8 border-white text-white hover:bg-white hover:text-blue-600 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now</a></div></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

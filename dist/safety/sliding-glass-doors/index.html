@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Sliding Glass Door Security Film | Reinforce Your Patio Doors</title>
+  <meta data-rh="true" name="description" content="Your sliding glass door is a major vulnerability. Strengthen it against intruders and accidental impact with our heavy-duty security film, available for homeowners across Phoenix, AZ."/><meta data-rh="true" property="og:title" content="Sliding Glass Door Security Film | Reinforce Your Patio Doors"/><meta data-rh="true" property="og:description" content="Your sliding glass door is a major vulnerability. Strengthen it against intruders and accidental impact with our heavy-duty security film, available for homeowners across Phoenix, AZ."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/safety/sliding-glass-doors"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Sliding Glass Door Security Film | Reinforce Your Patio Doors"/><meta data-rh="true" name="twitter:description" content="Your sliding glass door is a major vulnerability. Strengthen it against intruders and accidental impact with our heavy-duty security film, available for homeowners across Phoenix, AZ."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/safety/sliding-glass-doors"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Safety & Security Films","item":"https://arizonahouseoffilm.com/safety"},{"@type":"ListItem","position":3,"name":"Sliding Glass Door Security Film","item":"https://arizonahouseoffilm.com/safety/sliding-glass-doors"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it better to film the inside or the outside of the sliding door?","acceptedAnswer":{"@type":"Answer","text":"Nearly all standard security and solar films are designed for interior application. This protects the film from the elements and ensures a long-lasting bond with the glass. The protection is just as effective when applied from the inside."}},{"@type":"Question","name":"My sliding door is double-pane. Is it still vulnerable?","acceptedAnswer":{"@type":"Answer","text":"Yes. While a double-pane unit offers better insulation, it provides very little additional security. Both panes of glass are typically standard annealed glass and can be easily broken. Security film is still a necessary upgrade."}},{"@type":"Question","name":"Can you film a door that has grids or muntins?","acceptedAnswer":{"@type":"Answer","text":"Yes, but the process is more detailed. For doors with true divided lights (multiple small panes), we cut a piece of film for each individual pane. For doors with decorative grids between the glass, we apply a single sheet of film to the entire surface."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Sliding Glass Door Security Film | Reinforce Your Patio Doors","description":"Your sliding glass door is a major vulnerability. Strengthen it against intruders and accidental impact with our heavy-duty security film, available for homeowners across Phoenix, AZ.","provider":{"@type":"LocalBusiness","name":"Arizona House of Film","url":"https://arizonahouseoffilm.com","@id":"https://arizonahouseoffilm.com/#business"},"areaServed":{"@type":"State","name":"Arizona"},"url":"https://arizonahouseoffilm.com/safety/sliding-glass-doors"}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><div class="bg-white"><header class="relative py-20 text-white bg-gradient-to-br from-blue-800 to-gray-800"><div class="absolute inset-0 bg-black/40"></div><div class="relative z-10 max-w-4xl mx-auto px-4 text-center"><div class="mb-4"><a class="text-white hover:underline flex items-center justify-center text-sm" href="/safety"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to <!-- -->Safety &amp; Security Films</a></div><h1 class="text-4xl md:text-5xl font-bold text-white" style="opacity:0;transform:translateY(20px) translateZ(0)">Secure Your Sliding Glass Doors</h1><p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto" style="opacity:0;transform:translateY(20px) translateZ(0)">Transform your beautiful but vulnerable patio doors into a powerful security barrier.</p></div></header><main class="py-16 md:py-24"><div class="max-w-4xl mx-auto px-4"><div class="prose lg:prose-lg max-w-none text-gray-800" style="opacity:0;transform:translateY(20px) translateZ(0)"><div>
+      <h2>Don't Let Your Biggest Window Be Your Biggest Weakness</h2>
+      <p class="lead">Sliding glass doors offer a wonderful, expansive view and easy access to your patio or backyard. Unfortunately, that large pane of glass is also a prime target for burglars and a significant safety hazard in the event of accidental breakage. Applying heavy-duty security film is the most effective way to reinforce your sliding glass doors, protecting against both forced entry and accidental impact.</p>
+      <h3>The Dual Threat of Sliding Doors</h3>
+      <p>Sliding doors present two main risks:</p>
+      <ol>
+        <li><strong>Forced Entry:</strong> The large glass panel can be quickly and quietly shattered by an intruder, allowing them to walk right into your home.</li>
+        <li><strong>Accidental Impact:</strong> Due to their size and location in high-traffic areas, these doors are prone to accidental breakage from people (especially children) running into them or from stray objects.</li>
+      </ol>
+      <p>Security film addresses both threats head-on. The thick, durable film holds the glass together, even after a significant impact. This will <a href="/safety/break-in-deterrent">deter intruders</a> by making entry incredibly difficult and will <a href="/safety/accident-protection">prevent injury</a> by containing the dangerous broken shards in the event of an accident.</p>
+      <h3>Why Film is the Superior Solution</h3>
+      <p>While options like "charley bars" can prevent a door from being pried open, they do nothing to address the threat of the glass itself being broken. Security film is the only solution that reinforces the weakest part of the door—the glass.</p>
+      <ul>
+        <li><strong>Maintains Functionality:</strong> Film doesn't interfere with the door's ability to slide open and closed.</li>
+        <li><strong>Preserves Your View:</strong> Optically clear film provides robust protection without obstructing your view or changing the look of the door.</li>
+        <li><strong>Adds UV and Heat Rejection:</strong> You can choose a combination film to not only secure your door but also block heat, glare, and 99% of fading UV rays.</li>
+      </ul>
+      <p>Your patio door is a gateway to your backyard, not your home's contents. <a href="/contact">Contact us today</a> to get a free estimate for securing your sliding glass doors.</p>
+    </div></div></div></main><section class="py-16 md:py-24 bg-gray-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2><div class="space-y-6"><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Is it better to film the inside or the outside of the sliding door?</h3><p class="text-gray-700">Nearly all standard security and solar films are designed for interior application. This protects the film from the elements and ensures a long-lasting bond with the glass. The protection is just as effective when applied from the inside.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">My sliding door is double-pane. Is it still vulnerable?</h3><p class="text-gray-700">Yes. While a double-pane unit offers better insulation, it provides very little additional security. Both panes of glass are typically standard annealed glass and can be easily broken. Security film is still a necessary upgrade.</p></div><div class="bg-white p-6 rounded-lg shadow-md" style="opacity:0;transform:translateX(-20px) translateZ(0)"><h3 class="text-xl font-semibold text-blue-700 mb-2">Can you film a door that has grids or muntins?</h3><p class="text-gray-700">Yes, but the process is more detailed. For doors with true divided lights (multiple small panes), we cut a piece of film for each individual pane. For doors with decorative grids between the glass, we apply a single sheet of film to the entire surface.</p></div></div></div></section><section class="py-20 bg-blue-600 text-white"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Property?</h2><p class="text-lg text-blue-100 mb-8">Contact Arizona House of Film today for a free, no-obligation estimate.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-blue-600 hover:bg-gray-200 font-semibold" href="/contact">Request Your Free Quote</a><a href="tel:480-788-1591" class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-11 rounded-md px-8 border-white text-white hover:bg-white hover:text-blue-600 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now</a></div></div></section></div></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

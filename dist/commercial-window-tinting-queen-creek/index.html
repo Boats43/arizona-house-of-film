@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Commercial Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088</title>
+  <meta data-rh="true" name="description" content="Commercial window tinting in Queen Creek AZ. Solar control, security, and decorative film for offices and retail. Licensed ROC #314088. Free estimates — (480) 788-1591."/><meta data-rh="true" property="og:title" content="Commercial Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088"/><meta data-rh="true" property="og:description" content="Commercial window tinting in Queen Creek AZ. Solar control, security, and decorative film for offices and retail. Licensed ROC #314088. Free estimates — (480) 788-1591."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/commercial-window-tinting-queen-creek"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Commercial Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088"/><meta data-rh="true" name="twitter:description" content="Commercial window tinting in Queen Creek AZ. Solar control, security, and decorative film for offices and retail. Licensed ROC #314088. Free estimates — (480) 788-1591."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/images/default-og.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/commercial-window-tinting-queen-creek"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Commercial Window Tinting Queen Creek AZ","serviceType":"Commercial Window Film Installation","provider":{"@type":"LocalBusiness","@id":"https://arizonahouseoffilm.com","name":"Arizona House of Film"},"areaServed":{"@type":"City","name":"Queen Creek","addressRegion":"AZ"},"description":"Commercial window tinting in Queen Creek AZ. Solar control, security, and decorative film for offices and retail. Licensed ROC #314088. Free estimates — (480) 788-1591.","url":"https://arizonahouseoffilm.com/commercial-window-tinting-queen-creek"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you install commercial window film in Queen Creek AZ?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arizona House of Film installs commercial window tinting throughout Queen Creek and the San Tan Valley for office buildings, retail centers, and medical facilities. Licensed ROC #314088. Call (480) 788-1591 for a free estimate."}},{"@type":"Question","name":"How much does commercial window tinting cost in Queen Creek?","acceptedAnswer":{"@type":"Answer","text":"Commercial window film in Queen Creek is quoted by scope. Small office or medical projects start around $3,500. Larger commercial perimeters run $15,000+. Free estimates with NFRC documentation provided."}},{"@type":"Question","name":"Do you serve new commercial construction in Queen Creek?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install window film on new commercial construction throughout Queen Creek and San Tan Valley. We coordinate with general contractors and building management for phased installations on new builds. Licensed ROC #314088."}},{"@type":"Question","name":"What commercial window film do you recommend for Queen Creek properties?","acceptedAnswer":{"@type":"Answer","text":"For Queen Creek commercial properties we recommend spectrally selective solar control film for east and west-facing glass — the Southeast Valley gets significant afternoon heat load. All specifications include NFRC documentation for SRP rebate applications."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Commercial Window Tinting","item":{"@id":"https://arizonahouseoffilm.com/commercial-window-tinting","name":"Commercial Window Tinting"}},{"@type":"ListItem","position":3,"name":"Commercial Window Tinting Queen Creek","item":{"@id":"https://arizonahouseoffilm.com/commercial-window-tinting-queen-creek","name":"Commercial Window Tinting Queen Creek"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main id="main-content" class="bg-slate-950 min-h-screen"><section class="relative flex items-center pt-24 pb-16 bg-slate-950"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="max-w-4xl"><span class="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Licensed • Bonded • ROC #<!-- -->314088</span><h1 class="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Commercial Window Tinting Queen Creek AZ — Licensed Installer Since 2017</h1><p class="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">Solar control, security, and decorative window film for Queen Creek offices, retail centers, medical facilities, and new commercial construction. Licensed ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Get a Commercial Quote</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Commercial Window Tinting Services in Queen Creek AZ</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-4">Queen Creek is one of the fastest-growing communities in the Southeast Valley with significant new commercial development — the Ellsworth Road corridor, San Tan Valley area, and expanding retail, medical, and office buildout. New construction and existing commercial properties alike face extreme Arizona solar exposure that degrades interiors, overloads HVAC, and drives up operating costs.</p><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">Arizona House of Film provides licensed commercial window tinting throughout Queen Creek and San Tan Valley — from new construction to existing building retrofits. We install solar control, security, decorative, and privacy film for every commercial property type in the Queen Creek market. Licensed, bonded, insured — ROC #<!-- -->314088<!-- -->.</p></div></section><section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-slate-950 mb-4 uppercase tracking-tight">Solar Control for Queen Creek Office and Retail</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">Heat Rejection</h3></div><p class="text-slate-600 text-sm leading-relaxed">Queen Creek commercial buildings along the Ellsworth Road corridor and Rittenhouse Road face extreme east-west solar exposure — the Southeast Valley gets significant afternoon heat load. Spectrally selective and nano-ceramic films reject 50–80% of solar heat without darkening interiors.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg><h3 class="text-base font-black text-slate-950 uppercase">Glare Reduction</h3></div><p class="text-slate-600 text-sm leading-relaxed">Conference rooms, medical offices, and open-plan workspaces suffer from screen glare and occupant discomfort. Solar control film eliminates glare while maintaining natural daylight — improving productivity without blinds or shades.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">Energy Rebates</h3></div><p class="text-slate-600 text-sm leading-relaxed">Qualifying commercial window film installations in Queen Creek meet SRP energy efficiency rebate requirements. We provide NFRC-rated data sheets and assist with rebate applications — documenting projected energy savings for your building.</p></div><div class="bg-slate-50 border-l-4 border-green-500 p-8"><div class="flex items-center gap-3 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg><h3 class="text-base font-black text-slate-950 uppercase">UV Protection</h3></div><p class="text-slate-600 text-sm leading-relaxed">Commercial solar film blocks 99%+ of UV radiation — protecting furnishings, flooring, merchandise, and medical equipment from sun damage. Critical for Queen Creek properties with south and west exposure.</p></div></div></div></section><section class="py-24 bg-slate-950 border-y border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">Security Film for Queen Creek Commercial</h2><div class="w-24 h-2 bg-green-500 mx-auto mb-6"></div></div><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mx-auto mb-8">Queen Creek retail centers and commercial storefronts along Ellsworth Road and the San Tan Valley corridor face smash-and-grab, forced entry, and storm damage risks. Security window film holds shattered glass in place — delaying forced entry, reducing injury risk, and protecting inventory.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"><div class="bg-slate-900 border border-slate-800 p-8"><h3 class="text-base font-black text-white uppercase mb-3">Smash-and-Grab Deterrence</h3><p class="text-slate-400 text-sm leading-relaxed">8–14 mil security film holds glass in frame after impact — critical delay for retail with high-value inventory.</p></div><div class="bg-slate-900 border border-slate-800 p-8"><h3 class="text-base font-black text-white uppercase mb-3">Storm &amp; Debris Protection</h3><p class="text-slate-400 text-sm leading-relaxed">Monsoon-driven debris and wind loads shatter unprotected glass. Security film keeps shards contained.</p></div><div class="bg-slate-900 border border-slate-800 p-8"><h3 class="text-base font-black text-white uppercase mb-3">New Construction</h3><p class="text-slate-400 text-sm leading-relaxed">Security film specified during new construction for Queen Creek commercial, medical, and retail developments. Coordination with GCs available.</p></div></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">New Construction Commercial Film Queen Creek</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-4">Queen Creek&#x27;s rapid commercial growth means new buildings going up throughout the Ellsworth corridor and San Tan Valley. We install window film on new commercial construction — coordinating with general contractors and building management for phased installations on new builds. Solar control film specified during construction eliminates the need for costly retrofits later.</p><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We also install decorative, privacy, and branded film for new Queen Creek commercial properties — frosted partitions, conference room privacy, HIPAA-compliant medical zones, and custom branding for retail storefronts. Licensed ROC #<!-- -->314088<!-- -->.</p></div></section><section class="py-24 bg-white"><div class="max-w-4xl mx-auto px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl font-black text-slate-950 uppercase tracking-tight mb-4">Commercial Window Tinting FAQs — Queen Creek</h2><div class="w-24 h-2 bg-green-500 mx-auto"></div></div><div class="space-y-8"><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">Do you install commercial window film in Queen Creek AZ?</h3><p class="text-slate-600 leading-relaxed">Yes. Arizona House of Film installs commercial window tinting throughout Queen Creek and the San Tan Valley for office buildings, retail centers, and medical facilities. Licensed ROC #314088. Call (480) 788-1591 for a free estimate.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">How much does commercial window tinting cost in Queen Creek?</h3><p class="text-slate-600 leading-relaxed">Commercial window film in Queen Creek is quoted by scope. Small office or medical projects start around $3,500. Larger commercial perimeters run $15,000+. Free estimates with NFRC documentation provided.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">Do you serve new commercial construction in Queen Creek?</h3><p class="text-slate-600 leading-relaxed">Yes. We install window film on new commercial construction throughout Queen Creek and San Tan Valley. We coordinate with general contractors and building management for phased installations on new builds. Licensed ROC #314088.</p></div><div class="border-b border-slate-200 pb-8"><h3 class="text-lg font-black text-slate-950 mb-3 uppercase">What commercial window film do you recommend for Queen Creek properties?</h3><p class="text-slate-600 leading-relaxed">For Queen Creek commercial properties we recommend spectrally selective solar control film for east and west-facing glass — the Southeast Valley gets significant afternoon heat load. All specifications include NFRC documentation for SRP rebate applications.</p></div></div><div class="mt-10 text-center text-slate-500 text-sm">Also see:<!-- --> <a class="text-green-600 hover:underline" href="/commercial-window-tinting">Commercial Window Tinting</a> · <a class="text-green-600 hover:underline" href="/commercial-window-film-phoenix">Phoenix Commercial</a> · <a class="text-green-600 hover:underline" href="/window-tinting-queen-creek">Window Tinting Queen Creek</a></div></div></section><section class="py-16 bg-slate-900 border-b border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">Service Area</h2><p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">We serve commercial properties throughout Queen Creek, San Tan Valley, and the Southeast Valley — including Gilbert, Chandler, Mesa, Apache Junction, and the full Phoenix metro. Same-day estimates available for most Queen Creek locations. Licensed, bonded, insured. ROC #<!-- -->314088<!-- -->.</p></div></section><section class="bg-gray-900 border-t-4 border-green-500 py-12 px-6 my-10 rounded-lg"><div class="max-w-3xl mx-auto text-center"><div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 w-10 h-10"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><h2 class="text-2xl font-black text-white uppercase tracking-tight mb-3">Get Your Instant Window Film Estimate</h2><p class="text-gray-400 mb-6 text-base">Enter your property type, window count, and film preference — get a ballpark cost range in under 2 minutes. No obligation. Free on-site estimate follows.</p><a href="/window-film-cost-estimator" class="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-8 py-4 rounded-lg text-lg transition-colors">Use the Cost Estimator →</a><p class="text-gray-600 text-xs mt-4">Residential · Commercial · Government · All film types</p></div></section><section class="py-20 bg-slate-950 border-t border-slate-800"><div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">Get a Queen Creek Commercial Window Tinting Quote</h2><p class="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">Free on-site assessment. Custom specification for your building type, glass orientation, and performance requirements. Licensed ROC #<!-- -->314088<!-- -->.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl" href="/contact">Request Commercial Quote</a><a href="tel:480-788-1591" class="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a></div></div></section><section class="py-24 bg-white relative overflow-hidden"><div class="absolute top-10 left-10 pointer-events-none select-none opacity-[0.04] z-0"><h2 class="text-[12vw] font-black uppercase leading-none text-slate-900">PHOENIX <br/> WINDOW <br/> TINTING</h2></div><div class="max-w-full mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start"><div style="opacity:0;transform:translateX(-30px) translateZ(0)"><h2 class="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-8">Request <br/> Your Free <br/><span class="text-green-600 italic">Audit</span></h2><div class="h-3 w-32 bg-green-600 mb-10"></div><p class="text-xl text-slate-600 font-bold mb-10 max-w-md">Fill out the form for a detailed quote on your commercial or residential project.</p><div class="space-y-4"><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Detailed quote within 24 hours</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Licensed, bonded, and insured</span></div><div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-black uppercase text-xs tracking-widest text-slate-900">Professional installation guarantee</span></div></div></div><div style="opacity:0;transform:translateX(30px) translateZ(0)"><div class="bg-white border-2 border-slate-100 p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(241,245,249,1)] lg:shadow-[40px_40px_0px_0px_rgba(241,245,249,1)]"><form class="space-y-8"><input type="text" name="website_url" style="display:none" tabindex="-1" autoComplete="off"/><input type="hidden" name="_subject" value="🎬 INDUSTRIAL QUOTE REQUEST - Arizona House of Film"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">First Name *</label><input name="First Name" required="" class="industrial-input" placeholder="JOHN" aria-label="First Name"/></div><div><label class="industrial-label">Last Name *</label><input name="Last Name" required="" class="industrial-input" placeholder="SMITH" aria-label="Last Name"/></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Email Address *</label><input name="Email" type="email" required="" class="industrial-input" placeholder="J.SMITH@COMPANY.COM" aria-label="Email Address"/></div><div><label class="industrial-label">Phone Number *</label><input name="Phone" type="tel" required="" class="industrial-input" placeholder="480-000-0000" aria-label="Phone Number"/></div></div><div><label class="industrial-label">How did you find us? (optional)</label><select name="Referral Source" class="industrial-input" aria-label="Referral Source"><option value="">Please select...</option><option value="Google Search">Google Search</option><option value="ChatGPT / AI Search">ChatGPT / AI Search</option><option value="Perplexity AI">Perplexity AI</option><option value="Google AI Mode">Google AI Mode</option><option value="Referral from someone I know">Referral from someone I know</option><option value="Social media (Facebook/Instagram)">Social media (Facebook/Instagram)</option><option value="Saw your truck or signage">Saw your truck or signage</option><option value="Repeat customer">Repeat customer</option><option value="Other">Other</option></select></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="industrial-label">Project City *</label><input name="City" required="" class="industrial-input" placeholder="PHOENIX" aria-label="City"/></div><div><label class="industrial-label">Zip Code *</label><input name="Zip Code" required="" class="industrial-input" placeholder="85001" aria-label="Zip Code"/></div></div><fieldset><legend class="industrial-label">Project Type *</legend><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2"><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" checked="" value="Commercial"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Commercial</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Residential"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Residential</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Decorative"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Decorative</span></label><label class="flex items-center justify-center border-2 border-slate-100 py-3 cursor-pointer hover:border-green-500 transition-colors has-[:checked]:border-green-600 has-[:checked]:bg-green-50"><input type="radio" name="Project Type" class="hidden" required="" value="Safety"/><span class="text-[10px] font-black uppercase text-slate-600 tracking-tighter">Safety</span></label></div></fieldset><div><label class="industrial-label">Project Details *</label><textarea name="Message" rows="4" required="" class="industrial-input min-h-[120px] resize-none" placeholder="DESCRIBE SCOPE, WINDOW COUNT, OR SPECIFIC GOALS..." aria-label="Message"></textarea></div><button type="submit" class="industrial-button flex items-center justify-center gap-3 disabled:bg-slate-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>REQUEST MY FREE AUDIT</button><p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest leading-loose">Security Protected • 24-Hour Response Guarantee • No Data Sharing</p></form></div></div></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

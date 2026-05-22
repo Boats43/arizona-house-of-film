@@ -94,7 +94,7 @@ const Residential = () => {
   const benefits = [
     { icon: Sun, title: 'UV Protection', slug: 'uv-protection', description: 'Block up to 99.9% of harmful UV rays that cause furniture fading and skin damage while maintaining natural light.' },
     { icon: DollarSign, title: 'Energy Savings', slug: 'energy-savings', description: 'Reduce your AC cooling costs by up to 30% with our high-performance ceramic residential window films.' },
-    { icon: Eye, title: 'Enhanced Privacy', slug: 'enhanced-privacy', description: 'Enjoy daytime privacy while maintaining your view of the outdoors with our advanced one-way visibility films.' },
+    { icon: Eye, title: 'Enhanced Privacy', slug: 'enhanced-privacy', description: 'Enjoy daytime privacy while maintaining your view of the outdoors with our advanced one-way visibility films. Learn more in our one-way window film guide.' },
     { icon: Thermometer, title: 'Temperature Control', slug: 'temperature-control', description: 'Eliminate hot spots and maintain consistent temperatures throughout your home for total year-round comfort.' },
     { icon: Shield, title: 'Glare Reduction', slug: 'glare-reduction', description: 'Reduce annoying glare on TV screens and monitors while preserving your beautiful Arizona views.' },
     { icon: Home, title: 'Increased Comfort', slug: 'increased-comfort', description: 'Create a cooler living environment by reducing total solar heat gain by up to 78%.' },
@@ -216,7 +216,7 @@ const Residential = () => {
         <section className="py-12 bg-slate-800 border-b border-slate-700">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
-              Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088.
+              Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088. Read our <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">solar window film Phoenix</Link> guide for detailed specs and energy savings data.
             </p>
           </div>
         </section>

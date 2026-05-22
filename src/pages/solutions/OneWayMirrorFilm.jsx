@@ -112,7 +112,7 @@ export default function OneWayMirrorFilm() {
                 <h3 className="font-bold text-white">At Night</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
-                When interior lights are on at night, the light differential reverses — interior is now brighter than the dark exterior. The reflective layer now reflects interior light outward, making the interior visible from outside. For night privacy, use interior window coverings or choose frosted film instead.
+                When interior lights are on at night, the light differential reverses — interior is now brighter than the dark exterior. The reflective layer now reflects interior light outward, making the interior visible from outside. For night privacy, use interior window coverings or choose frosted film instead. Read our complete <Link to="/blog/one-way-window-film-day-and-night-guide" className="text-green-400 hover:text-green-300 underline">one-way window film guide</Link> for technical details.
               </p>
             </div>
           </div>

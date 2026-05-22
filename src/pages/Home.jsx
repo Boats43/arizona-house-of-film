@@ -209,7 +209,7 @@ const Home = () => {
             <p className="text-green-400 text-sm font-bold uppercase tracking-widest mb-2">ARIZONA'S TRUSTED INSTALLER SINCE 2017</p>
             <h2 className="text-3xl md:text-4xl font-black mb-4">The Standard for Arizona Solar Control</h2>
             <p className="text-gray-300 max-w-2xl mx-auto text-base leading-relaxed">
-              Since 2017, Arizona House of Film has been the trusted provider of residential and commercial window tinting in Phoenix, Scottsdale, and across Arizona. Our advanced Nano-Ceramic window films can reduce annual cooling loads by $250–$725. Licensed ROC #314088.
+              Since 2017, Arizona House of Film has been the trusted provider of residential and commercial window tinting in Phoenix, Scottsdale, and across Arizona. Our advanced Nano-Ceramic window films can reduce annual cooling loads by $250–$725. Licensed ROC #314088. Read our complete <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">solar window film Phoenix</Link> guide for technical specs and rebate eligibility.
             </p>
           </div>
 

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Nexfil Window Film Arizona | Honest Review 2026 | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Honest 2026 review of Nexfil USA window film in Arizona — OnyVa IR90, Lux IR80, Solar Bronze, Carbon, and Safety lines compared against LLumar and Huper Optik. What works, what does not, and where Nexfil fits in the Arizona market."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="Nexfil Window Film Arizona | Honest Review 2026 | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Honest 2026 review of Nexfil USA window film in Arizona — OnyVa IR90, Lux IR80, Solar Bronze, Carbon, and Safety lines compared against LLumar and Huper Optik. What works, what does not, and where Nexfil fits in the Arizona market."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/nexfil-window-film-arizona-review"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/nexfil-window-film-arizona-review.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/nexfil-window-film-arizona-review"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nexfil Window Film Arizona | Honest Review 2026","description":"An in-depth guide to nexfil window film review. Learn about the benefits, costs, and top brands like Nexfil, LLumar, Huper Optik.","datePublished":"2026-04-28","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-nexfil-window-film-arizona-review.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/nexfil-window-film-arizona-review"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Nexfil window film good?","acceptedAnswer":{"@type":"Answer","text":"Yes — Nexfil USA is a credible nano-ceramic and sputter film line with documented spectrophotometer-tested performance, particularly in the OnyVa IR series. The OnyVa IR90 in particular delivers 90% IR rejection numbers that match or beat 3M Ceramic IR and Huper Optik nano-ceramic at a noticeably lower price point. The trade-off is brand recognition: Nexfil is less widely known to end-customers than LLumar or 3M, so it is more often specified by installers and architects than asked for by name."}},{"@type":"Question","name":"What is the difference between OnyVa IR90 and Lux IR80?","acceptedAnswer":{"@type":"Answer","text":"OnyVa IR90 is the flagship — 90% IR rejection across 5 VLT levels (15%, 25%, 35%, 50%, 70%), nano-ceramic, non-metallic, ideal for residential where heat is the priority and signal interference must be avoided. Lux IR80 is a step down — 80% IR rejection at 4 VLT levels, slightly lower TSER, lower price point. For most Phoenix residential applications, OnyVa IR90 is worth the upgrade. Lux IR80 makes sense on budget-driven jobs or back-of-house glazing where the heat differential is small."}},{"@type":"Question","name":"Is Nexfil better than LLumar?","acceptedAnswer":{"@type":"Answer","text":"Different products, different positioning. LLumar has stronger brand recognition, a wider distribution network, and a broader catalog including FormulaOne, Stratos, and IRX. Nexfil OnyVa IR90 is competitive with LLumar IRX on heat rejection numbers at a lower price. LLumar is the safer institutional spec when brand recognition matters (corporate procurement, real estate transactions). Nexfil is the better economic choice when the customer cares about performance and price more than the name on the spec sheet. Both come with multi-decade warranties."}},{"@type":"Question","name":"Does Arizona House of Film carry Nexfil?","acceptedAnswer":{"@type":"Answer","text":"Yes — Arizona House of Film is an authorized Nexfil USA distributor for Arizona. We stock the volume SKUs (OnyVa IR90, Lux IR80, Solar Bronze 20%) and order-in the rest of the Nexfil catalog (Centurion/HP Centurion carbon, Elegance/Prestigious/Twilight sputter, Silver Reflective, Safety 2-12 mil, Anti-Graffiti 4 mil, Decorative) on a 1–2 week lead from the Gardena CA warehouse. See our /brands/nexfil page for the full catalog."}},{"@type":"Question","name":"What warranty does Nexfil offer?","acceptedAnswer":{"@type":"Answer","text":"Nexfil USA offers a 15-year manufacturer warranty on the OnyVa IR series and Lux IR series for residential vertical glass installations, transferable on home sale. Commercial warranties are 10–12 years depending on product line and orientation. Warranty covers color shift, delamination, and manufacturing defects. We register the warranty in your name at install — you do not need to track it yourself."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"Nexfil Window Film Arizona | Honest Review 2026","item":"https://arizonahouseoffilm.com/blog/nexfil-window-film-arizona-review"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Nexfil Window Film Arizona | Honest Review 2026</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->April 27, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+    <h1>Nexfil Window Film Arizona — Honest Review 2026</h1>
+
+    <p class="lead">Nexfil USA does not have the brand recognition of LLumar, 3M, or Huper Optik in the Arizona window film market. Most Phoenix homeowners have not heard of it. That is a market position problem, not a product problem — Nexfil's flagship OnyVa IR90 nano-ceramic film delivers heat-rejection numbers that match or beat the household-name premium products, at a lower price. This is an honest review of Nexfil from a distributor that carries it: what is good, what is genuinely better than the alternatives, where the line falls short, and where it makes sense to spec Nexfil over LLumar or Huper Optik.</p>
+
+    <h2>1. Who Nexfil USA Is</h2>
+    <p>Nexfil USA is the North American arm of a Korean parent company manufacturing window film since the early 2000s. North American distribution is run out of a warehouse in Gardena, California — south of LA. Dealer-distributors like Arizona House of Film order direct from Gardena, with 1–2 week lead times to Phoenix on non-stock SKUs. Volume SKUs (OnyVa IR90, Lux IR80, Solar Bronze 20%) are typically held in regional inventory.</p>
+    <p>Nexfil is a real manufacturer, not a re-labeler. The OnyVa nano-ceramic line is produced in Korea using sputter-deposition coating equipment comparable to what 3M and Huper Optik run. Spectrophotometer test reports are published on every SKU in the catalog.</p>
+
+    <h2>2. The Catalog — Six Product Families</h2>
+    <h3>Nano-Ceramic (OnyVa IR Series and Lux IR Series)</h3>
+    <ul>
+      <li><strong>OnyVa IR90</strong> — flagship. 90% IR rejection across 5 VLT levels (15%, 25%, 35%, 50%, 70%). Nano-ceramic, non-metallic, no signal interference, no HOA reflectivity issues. The competitive answer to 3M Ceramic IR and Huper Optik Drei.</li>
+      <li><strong>Lux IR80</strong> — step-down. 80% IR rejection across 4 VLT levels. Lower price point. Good fit for budget residential and back-of-house commercial.</li>
+    </ul>
+    <h3>Sputter (Elegance, Prestigious, Twilight, Silver Reflective)</h3>
+    <ul>
+      <li>Multi-layer sputter-deposited films with metallic content. Higher TSER but introduces exterior reflectivity. We rarely spec these in Phoenix residential — HOA rules and signal interference make them a poor fit for most homes. Useful in commercial signage-glass applications.</li>
+    </ul>
+    <h3>Carbon (Centurion / HP Centurion)</h3>
+    <ul>
+      <li>Carbon-particle dye system. Mid-tier commercial product. Better than basic dyed polyester, not in the same league as nano-ceramic on heat rejection. Volume choice for low-budget retrofits.</li>
+    </ul>
+    <h3>Solar Bronze</h3>
+    <ul>
+      <li><strong>Solar Bronze 20%</strong> — 83.5% TSER (very strong number). Bronze tonal cast. Where the bronze appearance is acceptable, this is one of the highest-TSER commercial films in the catalog at a moderate price.</li>
+    </ul>
+    <h3>Safety (2 mil to 12 mil)</h3>
+    <ul>
+      <li>Optically clear safety/security films. Standard catalog with 4 mil and 8 mil being the volume SKUs. Performs to GSA Level standards. Adequate but not exceptional.</li>
+    </ul>
+    <h3>Anti-Graffiti (4 mil) and Decorative</h3>
+    <ul>
+      <li>4 mil sacrificial anti-graffiti for storefront and transit. Decorative films available for privacy and aesthetic applications. Not a market leader in either category — Solyx and Madico decorative outperform in the design-driven segment.</li>
+    </ul>
+
+    <h2>3. The Honest Pros</h2>
+    <ul>
+      <li><strong>OnyVa IR90 is genuinely competitive on heat rejection</strong> — 90% IR is the same number 3M Ceramic IR and Huper Optik Drei publish. We have run side-by-side spectrophotometer comparisons; the curves overlap.</li>
+      <li><strong>Price advantage is real</strong> — OnyVa IR90 typically lands 15–25% below 3M Ceramic IR and 25–35% below Huper Optik Drei on installed price.</li>
+      <li><strong>Lifetime/transferable residential warranty</strong> — 15-year warranty on OnyVa IR is at par with the premium brands.</li>
+      <li><strong>Solar Bronze 20% TSER is exceptional</strong> — 83.5% TSER puts it in the top tier of commercial bronze products.</li>
+      <li><strong>Distribution support is responsive</strong> — Gardena warehouse turns orders inside two business days. Tech support reachable when an installer needs it.</li>
+    </ul>
+
+    <h2>4. The Honest Cons</h2>
+    <ul>
+      <li><strong>Brand recognition is low</strong> — most Phoenix homeowners have not heard of Nexfil. If brand-on-the-spec-sheet matters to you (real estate disclosure, corporate procurement), LLumar or 3M are easier sells.</li>
+      <li><strong>The decorative line is not industry-leading</strong> — for design-driven privacy or pattern projects, we steer customers to Solyx (618 SKU library) or Madico decorative.</li>
+      <li><strong>Sputter line introduces reflectivity</strong> — like all sputter films, the Elegance/Prestigious/Twilight family is wrong for HOA-restricted Phoenix residential.</li>
+      <li><strong>Smaller installer ecosystem</strong> — fewer Phoenix installers carry Nexfil than carry LLumar. If you ever need warranty service from a different installer, the dealer network is thinner.</li>
+    </ul>
+
+    <h2>5. Nexfil vs LLumar vs Huper Optik — Where Each Fits</h2>
+    <table>
+      <tr><th>Scenario</th><th>Best Fit</th><th>Why</th></tr>
+      <tr><td>Phoenix residential, heat priority, value-conscious</td><td>Nexfil OnyVa IR90</td><td>Top-tier heat rejection at 15–25% below 3M Ceramic</td></tr>
+      <tr><td>Luxury Phoenix residential, brand sensitivity</td><td>3M Prestige or Huper Optik Drei</td><td>Brand recognition matters at high price points</td></tr>
+      <tr><td>Class-A commercial curtain wall, LEED documentation</td><td>3M Prestige or LLumar Stratos</td><td>Wider procurement acceptance, established LEED submittal precedent</td></tr>
+      <tr><td>Class-B office tenant retrofit, budget-driven</td><td>Nexfil Lux IR80 or Centurion carbon</td><td>Solid mid-tier performance at meaningful cost reduction</td></tr>
+      <tr><td>Decorative/privacy design project</td><td>Solyx or Madico</td><td>Nexfil decorative is not the strongest fit</td></tr>
+      <tr><td>Storefront anti-graffiti</td><td>Nexfil 4 mil or 3M Anti-Graffiti</td><td>Both perform; Nexfil is cheaper</td></tr>
+    </table>
+
+    <h2>6. Arizona House of Film as Authorized Distributor</h2>
+    <p>We are an authorized Nexfil USA distributor for Arizona. We stock OnyVa IR90, Lux IR80, and Solar Bronze 20% in the volume VLT levels. The rest of the Nexfil catalog ships on 1–2 week lead from Gardena. We register the manufacturer warranty in your name at install. See our <a href="/brands/nexfil">Nexfil brand page</a> for the full SKU list and pricing inquiry form.</p>
+    <p>For the deeper dive on the OnyVa IR90 specifically, see our <a href="/blog/nexfil-onyva-ir90-arizona-review">Nexfil OnyVa IR90 Arizona review</a>. For broader distributor inquiries, see <a href="/window-film-distributor-phoenix">window film distributor Phoenix</a>.</p>
+
+    <h2>7. The Bottom Line</h2>
+    <p>Nexfil OnyVa IR90 is the value play in the premium nano-ceramic category. The performance numbers are real, the warranty is solid, and the price is meaningfully below the household-name premiums. If you are a Phoenix homeowner who cares about heat rejection more than the brand on the receipt, OnyVa IR90 is the rational choice. If you are a class-A commercial owner with LEED documentation and corporate procurement to navigate, the wider-distribution premium brands are the safer institutional spec. There is room for both, and we install both — the right answer depends on what you are optimizing.</p>
+
+    <h2>Related Resources</h2>
+    <ul>
+      <li><a href="/brands/nexfil">Nexfil USA brand page (full catalog)</a></li>
+      <li><a href="/blog/nexfil-onyva-ir90-arizona-review">Nexfil OnyVa IR90 Arizona deep-dive review</a></li>
+      <li><a href="/window-film-distributor-phoenix">Window film distributor Phoenix</a></li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section space-y-4">
+      <div>
+        <h3>Is Nexfil window film good?</h3>
+        <p>Yes — credible nano-ceramic line with spectrophotometer-tested performance. OnyVa IR90 matches or beats 3M Ceramic IR at lower price. Lower brand recognition than LLumar/3M.</p>
+      </div>
+      <div>
+        <h3>What is the difference between OnyVa IR90 and Lux IR80?</h3>
+        <p>OnyVa IR90 — flagship, 90% IR, 5 VLT levels. Lux IR80 — step-down, 80% IR, 4 VLT levels, lower price. For Phoenix residential, OnyVa IR90 is worth the upgrade.</p>
+      </div>
+      <div>
+        <h3>Is Nexfil better than LLumar?</h3>
+        <p>Different positioning. Nexfil OnyVa IR90 matches LLumar IRX heat numbers at lower price. LLumar has stronger brand recognition. Both carry multi-decade warranties.</p>
+      </div>
+      <div>
+        <h3>Does Arizona House of Film carry Nexfil?</h3>
+        <p>Yes — authorized distributor. Stock on OnyVa IR90, Lux IR80, Solar Bronze 20%. Order-in 1–2 week lead on rest of catalog from Gardena CA warehouse.</p>
+      </div>
+      <div>
+        <h3>What warranty does Nexfil offer?</h3>
+        <p>15-year transferable manufacturer warranty on OnyVa IR and Lux IR residential vertical glass. Commercial warranties 10–12 years. We register at install.</p>
+      </div>
+    </div>
+
+    <h2>Schedule a Nexfil Quote</h2>
+    <p>Arizona House of Film. Authorized Nexfil USA distributor for Arizona. ROC #314088.</p>
+    <p><a href="/contact?subject=Nexfil%20Window%20Film%20Quote" style="display:inline-block;background:#2563eb;color:#fff;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Request a Nexfil Quote →</a></p>
+    <p>Or call (480) 788-1591.</p>
+  </div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/service-areas/phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Industries We Serve | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Window film for offices, retail, medical, schools, government, and warehouses across Phoenix and Arizona. Licensed ROC #314088."/><meta data-rh="true" property="og:title" content="Industries We Serve | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Window film for offices, retail, medical, schools, government, and warehouses across Phoenix and Arizona. Licensed ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/industries"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Industries We Serve | Arizona House of Film"/><meta data-rh="true" name="twitter:description" content="Window film for offices, retail, medical, schools, government, and warehouses across Phoenix and Arizona. Licensed ROC #314088."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/industries"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What industries does Arizona House of Film serve?","acceptedAnswer":{"@type":"Answer","text":"We serve offices, retail stores, restaurants, medical facilities, schools, government buildings, hotels, and warehouses across Arizona. Our commercial team has experience with projects ranging from single-suite offices to multi-building campuses and government facilities."}},{"@type":"Question","name":"How long do commercial window film installations take?","acceptedAnswer":{"@type":"Answer","text":"Most commercial installations take 1–3 days depending on square footage and glass complexity. We schedule around your operations — including nights and weekends — to minimize disruption. Large multi-floor projects are phased over a planned timeline."}},{"@type":"Question","name":"Does commercial window film qualify for Arizona utility rebates?","acceptedAnswer":{"@type":"Answer","text":"Yes. SRP and APS offer commercial rebate programs for qualifying energy-saving window film installations. We provide all required documentation and can help you navigate the rebate application process. Ask our team during your free site assessment."}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main><section class="bg-slate-900 pt-24 pb-16"><div class="max-w-7xl mx-auto px-6 lg:px-8"><span class="inline-block px-4 py-1 bg-blue-600 text-white font-black text-xs mb-6 uppercase tracking-widest">Commercial Expertise</span><h1 class="text-5xl md:text-7xl font-black text-white uppercase leading-tight tracking-tighter mb-6">Industries We Serve</h1><p class="text-xl text-slate-300 max-w-3xl leading-relaxed">Since 2012, Arizona House of Film has delivered commercial window film solutions across every major industry sector in Arizona. Licensed ROC #314088 — we understand the unique requirements of each environment we work in.</p></div></section><section class="bg-white py-20"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/office-buildings"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Office Buildings</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">Solar control and glare reduction for productive, energy-efficient workspaces across Arizona.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/retail-stores"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Retail Stores</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">UV protection for merchandise and anti-graffiti film for high-traffic storefronts.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/restaurants"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Restaurants</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">Comfort-focused tinting that keeps dining rooms cool without sacrificing natural light.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/medical-facilities"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Medical Facilities</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">HIPAA-supporting privacy films and safety glazing for healthcare environments.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/educational-institutions"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><path d="m4 6 8-4 8 4"></path><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"></path><path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4"></path><path d="M18 5v17"></path><path d="M6 5v17"></path><circle cx="12" cy="9" r="2"></circle></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Schools &amp; Universities</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">Safety films meeting school security code requirements; anti-glare for smartboards.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/government-buildings"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Government Buildings</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">Blast-mitigation films, energy efficiency, and privacy for sensitive government facilities.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/hotels-hospitality"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"></path><path d="m9 16 .348-.24c1.465-1.013 3.84-1.013 5.304 0L15 16"></path><path d="M8 7h.01"></path><path d="M16 7h.01"></path><path d="M12 7h.01"></path><path d="M12 11h.01"></path><path d="M16 11h.01"></path><path d="M8 11h.01"></path><path d="M10 22v-6.5m4 0V22"></path></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Hotels &amp; Hospitality</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">Guest comfort film for sun-facing rooms; decorative films for spas and common areas.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a class="group flex flex-col p-8 border border-gray-200 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all" href="/industries/warehouses"><div class="w-14 h-14 bg-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-700 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-white"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"></path><path d="M6 18h12"></path><path d="M6 14h12"></path><rect width="12" height="12" x="6" y="10"></rect></svg></div><h2 class="text-lg font-black text-gray-900 uppercase tracking-tight mb-3">Warehouses</h2><p class="text-sm text-gray-600 leading-relaxed flex-1">Heat rejection and safety films for large industrial spaces, with rapid ROI.</p><div class="mt-6 flex items-center text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a></div><p class="mt-10 text-center text-sm text-slate-600">Higher-education glazing? See our dedicated <a class="text-blue-700 font-bold underline hover:text-blue-900" href="/university-window-film">university window film</a> page for campus-scale spec, dorm window security, and Class-A academic building retrofits.</p></div></section><section class="bg-gray-50 py-20 border-t border-gray-100"><div class="max-w-4xl mx-auto px-6"><h2 class="text-3xl font-black text-gray-900 uppercase tracking-tighter mb-10">Commercial Window Film — Common Questions</h2><div class="space-y-8"><div class="border-b border-gray-200 pb-8"><h3 class="font-black text-gray-900 uppercase text-sm mb-3">What industries does Arizona House of Film serve?</h3><p class="text-sm text-gray-600 leading-relaxed">We serve offices, retail stores, restaurants, medical facilities, schools, government buildings, hotels, and warehouses across Arizona. Our commercial team has experience with projects ranging from single-suite offices to multi-building campuses and government facilities.</p></div><div class="border-b border-gray-200 pb-8"><h3 class="font-black text-gray-900 uppercase text-sm mb-3">How long do commercial window film installations take?</h3><p class="text-sm text-gray-600 leading-relaxed">Most commercial installations take 1–3 days depending on square footage and glass complexity. We schedule around your operations — including nights and weekends — to minimize disruption. Large multi-floor projects are phased over a planned timeline.</p></div><div class="border-b border-gray-200 pb-8"><h3 class="font-black text-gray-900 uppercase text-sm mb-3">Does commercial window film qualify for Arizona utility rebates?</h3><p class="text-sm text-gray-600 leading-relaxed">Yes. SRP and APS offer commercial rebate programs for qualifying energy-saving window film installations. We provide all required documentation and can help you navigate the rebate application process. Ask our team during your free site assessment.</p></div></div></div></section><section class="bg-blue-700 py-16 text-center"><div class="max-w-4xl mx-auto px-6"><h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-4">Ready to Protect Your Facility?</h2><p class="text-blue-100 text-lg mb-8 font-medium">Licensed ROC #314088 · Free on-site estimates · Statewide Arizona coverage</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-blue-700 hover:bg-gray-100 font-black px-10 h-14 rounded-none" href="/commercial-window-tinting">Commercial Services</a><a class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-900 text-white hover:bg-slate-800 font-black px-10 h-14 rounded-none" href="/contact">Request a Free Quote</a></div></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

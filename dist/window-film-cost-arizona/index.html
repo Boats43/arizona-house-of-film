@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CeoMmUjf.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-N85VCA8A.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Window Film Cost Arizona 2026 | $8–$22/sqft | Free Estimate · ROC #314088</title>
+  <meta data-rh="true" name="description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic film from $13/sq ft. SRP rebate eligible. Free on-site estimate — (480) 788-1591."/><meta data-rh="true" property="og:title" content="Window Tinting Cost Arizona 2026 | $8–$18/sq ft"/><meta data-rh="true" property="og:description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic from $13/sq ft. SRP rebate eligible. Free estimate."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/window-film-cost-arizona"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Window Tinting Cost Arizona 2026 | $8–$18/sq ft"/><meta data-rh="true" name="twitter:description" content="Window film costs $8–$18/sq ft for homes, $6–$18/sq ft for commercial in Arizona. Ceramic from $13/sq ft. SRP rebate eligible. Free estimate."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/window-film-cost-arizona"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does residential window tinting cost in Phoenix?","acceptedAnswer":{"@type":"Answer","text":"$8–$18 per sq ft installed. Most Phoenix homes average $800–$2,500 total depending on film type and window count. Ceramic films run $13–18/sq ft. We provide free on-site estimates — call (480) 788-1591."}},{"@type":"Question","name":"How much does commercial window film cost in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Commercial projects are quoted by scope and square footage. Small retail or office installs typically start around $3,500. Large commercial perimeters — multi-story buildings, campuses — run $15,000–$45,000+. We provide free commercial estimates with NFRC documentation."}},{"@type":"Question","name":"Does window film qualify for SRP or APS rebates in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes. Qualifying ceramic and spectrally selective films meet SRP Business Solutions and APS energy efficiency rebate requirements. We provide the NFRC-rated data sheets required for rebate applications during your free estimate."}},{"@type":"Question","name":"Is ceramic window film worth the higher cost in Arizona?","acceptedAnswer":{"@type":"Answer","text":"Yes — in Arizona's 115°F heat, ceramic film delivers the best long-term ROI. It rejects up to 84% of infrared heat, lasts 15–25 years, and doesn't interfere with cell or WiFi signals. The higher upfront cost is offset by $250–$725 in annual cooling savings and significantly longer lifespan than dyed or carbon films."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Window Film Cost Arizona","item":{"@id":"https://arizonahouseoffilm.com/window-film-cost-arizona","name":"Window Film Cost Arizona"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">Window Film Cost in Arizona — What to Expect in 2026</h1><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Residential Window Film Cost in Phoenix</h2><p class="text-lg text-slate-700 mb-4">Residential window film in Phoenix costs <strong>$8–$18 per square foot installed</strong>. Most homes average <strong>$800–$2,500 total</strong> depending on film type, window count, and access difficulty. South and west-facing windows deliver the highest ROI and are where most homeowners start.</p><p class="text-lg text-slate-700">Factors that affect residential pricing include film technology (dyed vs ceramic), number of windows, window size and accessibility, and whether dual-pane glass assessment is required.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Commercial Window Film Cost in Arizona</h2><p class="text-lg text-slate-700 mb-4">Commercial window film projects range from <strong>$3,500 for small retail or office installs</strong> to <strong>$15,000–$45,000+</strong> for large commercial perimeters including multi-story buildings and campus installations. Commercial projects are quoted per square foot based on scope, film specification, and SHGC/NFRC documentation requirements.</p><p class="text-lg text-slate-700">All commercial estimates include NFRC documentation for COMcheck compliance and energy rebate applications. See <a class="text-blue-700 underline hover:text-blue-900" href="/commercial-window-tinting-scottsdale">Scottsdale commercial window film pricing</a> for project-specific ranges in the Scottsdale market.</p></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Film Type Cost Breakdown</h2><div class="overflow-x-auto"><table class="w-full border-collapse border border-slate-300 text-left"><thead><tr class="bg-slate-100"><th class="border border-slate-300 px-4 py-3 font-black uppercase text-sm">Film Type</th><th class="border border-slate-300 px-4 py-3 font-black uppercase text-sm">Cost per Sq Ft</th></tr></thead><tbody class="text-slate-700"><tr><td class="border border-slate-300 px-4 py-3">Dyed Film</td><td class="border border-slate-300 px-4 py-3">$8–$10</td></tr><tr><td class="border border-slate-300 px-4 py-3">Carbon Film</td><td class="border border-slate-300 px-4 py-3">$10–$13</td></tr><tr><td class="border border-slate-300 px-4 py-3">Ceramic Film</td><td class="border border-slate-300 px-4 py-3">$13–$18</td></tr><tr><td class="border border-slate-300 px-4 py-3">Security Film (8 mil)</td><td class="border border-slate-300 px-4 py-3">$15–$22</td></tr><tr><td class="border border-slate-300 px-4 py-3">Decorative Film</td><td class="border border-slate-300 px-4 py-3">$12–$20</td></tr></tbody></table></div></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">What Affects the Final Price</h2><ul class="list-disc pl-6 text-lg text-slate-700 space-y-2"><li><strong>Glass condition</strong> — older glass may require additional preparation or seal assessment</li><li><strong>Access height</strong> — second-story and above windows require ladder or lift access</li><li><strong>Film specification</strong> — ceramic and security films cost more than dyed or carbon</li><li><strong>Dual-pane assessment</strong> — we verify thermal compatibility before installing on dual-pane windows</li></ul></section><section class="mb-12"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">SRP and APS Rebates Can Offset Cost</h2><p class="text-lg text-slate-700 mb-4">Qualifying ceramic and spectrally selective window films meet SRP Business Solutions and APS energy efficiency rebate program requirements. We identify rebate-eligible films during your estimate and provide the NFRC-rated data sheets required for rebate applications.</p><p class="text-lg text-slate-700">Combined with annual cooling savings of $250–$725, rebates can significantly reduce the effective cost of window film installation. Learn more in our <a class="text-blue-600 hover:underline" href="/blog/solar-window-film-phoenix-az">solar window film Phoenix</a> guide.</p></section><section class="bg-slate-100 p-8 rounded-lg"><h2 class="text-2xl font-black uppercase tracking-tight mb-4">Get a Free On-Site Estimate</h2><p class="text-lg text-slate-700 mb-4">Every property is different. We provide free on-site estimates with film samples, glass assessment, and written pricing — no obligation. Licensed ROC #314088.</p><p class="text-lg font-bold mb-4">Call <a href="tel:4807881591" class="text-blue-600 hover:underline">(480) 788-1591</a> or <a class="text-blue-600 hover:underline" href="/contact">schedule online</a>.</p></section><section class="mt-16"><h2 class="text-2xl font-black uppercase tracking-tight mb-6">Frequently Asked Questions</h2><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">How much does residential window tinting cost in Phoenix?</h3><p class="text-slate-700">$8–$18 per sq ft installed. Most Phoenix homes average $800–$2,500 total depending on film type and window count. Ceramic films run $13–18/sq ft. We provide free on-site estimates — call (480) 788-1591.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">How much does commercial window film cost in Arizona?</h3><p class="text-slate-700">Commercial projects are quoted by scope and square footage. Small retail or office installs typically start around $3,500. Large commercial perimeters — multi-story buildings, campuses — run $15,000–$45,000+. We provide free commercial estimates with NFRC documentation.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Does window film qualify for SRP or APS rebates in Arizona?</h3><p class="text-slate-700">Yes. Qualifying ceramic and spectrally selective films meet SRP Business Solutions and APS energy efficiency rebate requirements. We provide the NFRC-rated data sheets required for rebate applications during your free estimate.</p></div><div class="mb-6 border-b border-slate-200 pb-6"><h3 class="text-lg font-bold mb-2">Is ceramic window film worth the higher cost in Arizona?</h3><p class="text-slate-700">Yes — in Arizona&#x27;s 115°F heat, ceramic film delivers the best long-term ROI. It rejects up to 84% of infrared heat, lasts 15–25 years, and doesn&#x27;t interfere with cell or WiFi signals. The higher upfront cost is offset by $250–$725 in annual cooling savings and significantly longer lifespan than dyed or carbon films.</p></div></section></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

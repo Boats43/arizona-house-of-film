@@ -78,4 +78,4 @@ Disallow: /*?campaign_uid*
 Disallow: /*?safe_search*
 Disallow: /*?events*
 
-Sitemap: https://arizonahouseoffilm.com/sitemap-index.xml
+Sitemap: https://arizonahouseoffilm.com/sitemap.xml

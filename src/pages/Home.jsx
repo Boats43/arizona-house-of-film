@@ -84,7 +84,7 @@ const Home = () => {
   return (
     <main>
       <Helmet>
-        <title>Arizona House of Film | Window Film Phoenix AZ</title>
+        <title>Arizona House of Film | Licensed Window Film Contractor</title>
         <meta name="description" content="Arizona's licensed window film contractor — commercial, residential, security & decorative film across Phoenix, Scottsdale & all Arizona. ROC #314088. Free estimate." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/" />
         <meta property="og:title" content="Arizona Window Film | Phoenix's #1 Rated Installer Since 2017" />

@@ -176,7 +176,7 @@ const globalLocalBusinessSchema = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.6",
-    reviewCount: "21",
+    reviewCount: "22",
     bestRating: "5",
   },
   sameAs: [
@@ -218,6 +218,12 @@ const globalLocalBusinessSchema = {
     "Residential Window Film",
   ],
   slogan: "Arizona's Licensed Window Film Experts — ROC #314088",
+  license: "Arizona ROC #314088",
+  identifier: {
+    "@type": "PropertyValue",
+    name: "Arizona ROC License",
+    value: "314088"
+  },
 };
 
 /* ---------------- ROUTES ---------------- */

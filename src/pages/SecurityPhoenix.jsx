@@ -126,7 +126,7 @@ const serviceSchema = {
     '@id': 'https://arizonahouseoffilm.com',
     name: 'Arizona House of Film',
   },
-  areaServed: 'Phoenix, AZ',
+  areaServed: { '@type': 'City', name: 'Phoenix', addressRegion: 'AZ' },
   description: metaDescription,
   serviceType: 'Security Window Film',
 };

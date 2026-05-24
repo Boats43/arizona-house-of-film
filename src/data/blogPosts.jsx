@@ -668,7 +668,7 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-    <h1>Security Window Film Installation in Phoenix, AZ — 2026 Cost & Types Guide</h1>
+    <h2>Security Window Film Installation in Phoenix, AZ — 2026 Cost & Types Guide</h2>
 
     <p class="lead">Break-ins, storm damage, and accidental glass injuries cost Phoenix property owners thousands every year. Security window film is the most cost-effective retrofit to protect existing glass — no window replacement required. Arizona House of Film (ROC #314088) has installed security film on retail storefronts, schools, government buildings, and homes across the Phoenix metro since 2017. This guide covers what security film actually does, how thick you need, what it costs in Phoenix, and whether it's worth it for your property.</p>
 
@@ -759,7 +759,7 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-    <h1>Privacy & Decorative Window Film in Phoenix — 2026 Options and Cost Guide</h1>
+    <h2>Privacy & Decorative Window Film in Phoenix — 2026 Options and Cost Guide</h2>
 
     <p class="lead">Phoenix homes and offices share a common problem: large windows designed for natural light also eliminate privacy. New construction neighborhoods have tight lot spacing. Commercial offices have glass-walled conference rooms. Whether you need to block a neighbor's sightline, brand a storefront, or hide screens in a conference room, there's a film for that. Arizona House of Film (ROC #314088) carries 600+ decorative patterns and has completed privacy film installations across Phoenix, Scottsdale, Tempe, and Mesa since 2017. This guide covers every privacy and decorative film option available in 2026, what each costs, and which works best for your application.</p>
 
@@ -873,7 +873,7 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-    <h1>Countertop Protection Film Installation in Arizona — Cost, Process & FAQs</h1>
+    <h2>Countertop Protection Film Installation in Arizona — Cost, Process & FAQs</h2>
 
     <p class="lead">Arizona kitchens take a beating — intense UV through large windows, hot pan transfers from the range, kids doing homework on marble islands. Countertop protection film is a clear, sacrificial layer that absorbs scratches, stains, and UV damage so your stone doesn't. Arizona House of Film (ROC #314088) installs countertop protection film across Phoenix, Scottsdale, Glendale, and Mesa. This guide covers what the film is, which surfaces it works on, what it costs in Arizona, and how the installation process works step by step.</p>
 
@@ -976,7 +976,7 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-    <h1>Casper Cloaking Film Cost in Phoenix — What You'll Pay in 2026</h1>
+    <h2>Casper Cloaking Film Cost in Phoenix — What You'll Pay in 2026</h2>
 
     <p class="lead">Glass-walled conference rooms look modern. They also broadcast every slide deck, financial model, and patient record to anyone walking by. Casper cloaking film solves this — it makes LED and OLED screens appear black from outside the glass while remaining fully visible from inside. No frosting, no blinds, no loss of transparency. Arizona House of Film (ROC #314088) is a certified Casper cloaking installer serving Phoenix, Scottsdale, Tempe, and the metro area. This guide covers how the film works, what it costs in 2026, which glass types are compatible, and whether it's worth the premium for your office.</p>
 
@@ -1080,7 +1080,7 @@ const allBlogData = [
     ],
     ctaCity: 'Queen Creek',
     customContent: `
-    <h1>Window Tinting in Queen Creek, AZ — Residential, Privacy & Commercial Film Guide</h1>
+    <h2>Window Tinting in Queen Creek, AZ — Residential, Privacy & Commercial Film Guide</h2>
 
     <p class="lead">Queen Creek is one of the fastest-growing communities in the East Valley — and one of the hottest. New construction homes in Hastings Farms, Ironwood Crossing, Cortina, Meridian, and Encanterra come with large windows, open floor plans, and tight lot spacing. That means maximum heat gain, minimal privacy, and rising energy bills from day one. Arizona House of Film (ROC #314088) has been installing window film on Queen Creek properties since 2017 — solar control, privacy, commercial, and turf protection film. This guide covers what Queen Creek homeowners and businesses need to know in 2026.</p>
 
@@ -1189,7 +1189,7 @@ const allBlogData = [
     ],
     ctaCity: 'Scottsdale',
     customContent: `
-    <h1>Window Tinting in Scottsdale, AZ — Residential & Commercial Film Guide 2026</h1>
+    <h2>Window Tinting in Scottsdale, AZ — Residential & Commercial Film Guide 2026</h2>
 
     <p class="lead">Scottsdale properties face a unique combination of challenges: extreme solar heat, HOA restrictions on appearance, high-value interiors vulnerable to UV damage, and large glass elevations designed for views. The right window film addresses all four without compromising aesthetics. Arizona House of Film (ROC #314088) has installed residential and commercial window film across Scottsdale — from McCormick Ranch townhomes to Silverleaf estates to Old Town retail storefronts — since 2017. This guide covers what Scottsdale property owners need to know about window film options, costs, and installation in 2026.</p>
 
@@ -1300,7 +1300,7 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-    <h1>Solar Window Film in Phoenix, AZ — Best Options for Heat Rejection in 2026</h1>
+    <h2>Solar Window Film in Phoenix, AZ — Best Options for Heat Rejection in 2026</h2>
 
     <p class="lead">Phoenix summers push past 115°F for weeks at a time. Air conditioning accounts for 50–70% of a typical Phoenix home's electric bill from May through September. Solar window film is the single most cost-effective retrofit to reduce that load — it blocks 50–84% of solar heat at the glass before it enters your home, reducing AC runtime and lowering your bill. Arizona House of Film (ROC #314088) has installed solar film on 700+ Phoenix-area properties since 2017. This guide covers what solar film does, which films perform best in Phoenix heat, how they compare to window replacement, and what you'll actually pay in 2026.</p>
 
@@ -1405,7 +1405,7 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-    <h1>EnerLogic Window Film in Arizona — Is It Worth It? (2026 Review)</h1>
+    <h2>EnerLogic Window Film in Arizona — Is It Worth It? (2026 Review)</h2>
 
     <p class="lead">EnerLogic is the only window film with a legitimate low-e coating — the same technology used in high-performance replacement windows. It rejects solar heat in summer and retains interior heat in winter. On paper, that makes it the ultimate window film for year-round energy savings. But does that dual-season value translate to Arizona, where cooling dominates 8 months of the year? Arizona House of Film (ROC #314088) has installed EnerLogic and competing ceramic films on hundreds of Phoenix-area properties. This is our honest assessment of EnerLogic's performance, cost, and value for Arizona homeowners in 2026.</p>
 
@@ -1512,7 +1512,7 @@ const allBlogData = [
     ],
     ctaCity: 'Scottsdale',
     customContent: `
-    <h1>Residential Window Tinting in Scottsdale AZ — What Homeowners Need to Know</h1>
+    <h2>Residential Window Tinting in Scottsdale AZ — What Homeowners Need to Know</h2>
 
     <p class="lead">Scottsdale homeowners deal with 300+ days of direct sun, triple-digit summer heat, strict HOA appearance standards, and high-value interiors vulnerable to UV damage. Residential window tinting solves all four — but only if you choose the right film. This 2026 guide covers what Scottsdale homeowners actually need to know: which films work in desert heat, what HOAs approve, how SRP rebates apply, and what professional installation costs. Arizona House of Film (ROC #314088) has installed residential window film across Scottsdale since 2017 — from McCormick Ranch patio homes to Silverleaf custom estates.</p>
 
@@ -1654,7 +1654,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Commercial Window Tinting Cost in Phoenix — 2026 Guide</h1>
+    <h2>Commercial Window Tinting Cost in Phoenix — 2026 Guide</h2>
 
     <p class="lead">Commercial window tinting in Phoenix is not priced off a single per-square-foot number. Project scope — film technology, access, glass area, tenant coordination, rebate documentation — drives final cost more than the film itself. This 2026 guide covers what actually shows up on a commercial window film quote, what qualifies for SRP and APS rebates, and how a Phoenix business should plan for the install. Arizona House of Film (ROC #314088) has completed commercial window film projects across the Phoenix metro since 2017 — from single-suite law offices to multi-floor government buildings.</p>
 
@@ -1775,7 +1775,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Nexfil OnyVa IR90 — Arizona's Highest IR Rejection Nano-Ceramic Film</h1>
+    <h2>Nexfil OnyVa IR90 — Arizona's Highest IR Rejection Nano-Ceramic Film</h2>
 
     <p class="lead">Nexfil OnyVa IR90 is the nano-ceramic architectural film we reach for when an Arizona homeowner or commercial client wants maximum heat rejection without darkening the glass. 90% infrared rejection at every VLT level, no metal layer, and a price point that makes it viable on projects where Hüper Optik or 3M Prestige blow the budget. This review covers what OnyVa IR90 actually is, how it compares to its real competitors, and where it fits in the Arizona climate. Arizona House of Film (ROC #314088) is an authorized Nexfil USA distributor and installer.</p>
 
@@ -1894,7 +1894,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Window Film for Restaurants in Arizona — What Works and Why</h1>
+    <h2>Window Film for Restaurants in Arizona — What Works and Why</h2>
 
     <p class="lead">Arizona restaurants face a specific set of window problems: brutal west-sun heat during dinner service, privacy for intimate dining areas, branded storefront signage that outlives a single build-out, and exterior glass that invites tagging in urban corridors. Window film solves all four — without requiring glass replacement or major renovation. This 2026 guide covers what Arizona restaurants actually specify, how it compares to permanent alternatives like etched glass, and how we schedule installs around service hours. Arizona House of Film (ROC #314088) has handled restaurant window film projects across the Phoenix metro since 2017.</p>
 
@@ -2015,7 +2015,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Anti-Graffiti Window Film in Phoenix — The Complete Guide</h1>
+    <h2>Anti-Graffiti Window Film in Phoenix — The Complete Guide</h2>
 
     <p class="lead">Anti-graffiti window film is one of the few building-envelope products that pays for itself the first time it is used. A tagged storefront or transit window pane costs $800–$3,000+ to replace. A replaced layer of sacrificial 4 mil anti-graffiti film costs a small fraction of that. This 2026 guide covers how sacrificial film actually works, when to specify 4 mil vs 6 mil, what the Nexfil 4MAG product actually delivers, and where it makes sense across Phoenix. Arizona House of Film (ROC #314088) is an authorized Nexfil USA distributor and installs anti-graffiti film across the Phoenix metro.</p>
 
@@ -2153,7 +2153,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Window Film for Office Buildings in Phoenix — Heat, Glare & Privacy Solutions</h1>
+    <h2>Window Film for Office Buildings in Phoenix — Heat, Glare & Privacy Solutions</h2>
 
     <p class="lead">Office buildings in Phoenix face three distinct window problems — solar heat through west and south-facing floors, glare on monitors and video conference cameras, and privacy through glass partitions in open-office layouts. Window film solves all three, and on qualifying SRP or APS commercial accounts the install can be partially rebated. This 2026 guide covers what actually works for Phoenix office buildings: which films to specify, how to handle dual-pane IG glass, what LEED credit is available, and how to plan tenant coordination. Arizona House of Film (ROC #314088) has installed window film on Phoenix office buildings since 2017.</p>
 
@@ -2298,7 +2298,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Countertop Protection Film Distributor — Supply Direct From Arizona House of Film</h1>
+    <h2>Countertop Protection Film Distributor — Supply Direct From Arizona House of Film</h2>
 
     <p class="lead">Arizona House of Film is a nationwide distributor of countertop protection film. We drop-ship from our Phoenix, AZ warehouse to contractors, fabricators, kitchen designers, hotel renovators, and homeowners across the United States. Our stance on countertop protection film is simple: we supply the film — you or your installer handles the install. Film installs like a large sticker and does not require our crew on-site. This guide covers what the film is, who buys it, what brands we carry, and how to order. Installation by Arizona House of Film crews is available locally within Arizona only.</p>
 
@@ -2447,7 +2447,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Residential Performance Window Film Phoenix — 2026 Installation Guide</h1>
+    <h2>Residential Performance Window Film Phoenix — 2026 Installation Guide</h2>
 
     <p class="lead">If you have spent any time researching window film for an Arizona home, you have probably noticed the term "performance film" appearing more often than plain "tint." This is a real distinction — not marketing language. Performance window film is a specific category of product engineered to reject infrared heat while keeping the glass visually neutral. In Phoenix, where summer interior surface temperatures routinely exceed 110°F on west-facing glass, the difference between standard tint and performance-grade film shows up in your AC runtime, your interior comfort, and your fade rate on furniture and floors. This guide is for homeowners in Desert Ridge, Anthem, New River, Glendale, Cave Creek, and across North Phoenix who want to know what performance film actually does, which film fits their home, and what it costs in 2026.</p>
 
@@ -2587,7 +2587,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Commercial Performance Window Film Phoenix — Office &amp; Retail 2026</h1>
+    <h2>Commercial Performance Window Film Phoenix — Office &amp; Retail 2026</h2>
 
     <p class="lead">Commercial buildings in the Phoenix metro burn 30–55% of their electricity load on cooling. On west and south curtain wall, the solar gain through unfilmed glass is the single largest contributor — and the easiest one to address without HVAC system replacement. Commercial performance window film is the documented, NFRC-rated, LEED-qualifying intervention. This guide covers what performance film delivers for Phoenix offices and retail, how SHGC and LEED play in, the spectrally-selective-vs-ceramic call for commercial-grade glass, the corridors where we install, and the SRP commercial rebate that makes a typical project pay back inside 36 months.</p>
 
@@ -2748,7 +2748,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Nexfil Window Film Arizona — Honest Review 2026</h1>
+    <h2>Nexfil Window Film Arizona — Honest Review 2026</h2>
 
     <p class="lead">Nexfil USA does not have the brand recognition of LLumar, 3M, or Huper Optik in the Arizona window film market. Most Phoenix homeowners have not heard of it. That is a market position problem, not a product problem — Nexfil's flagship OnyVa IR90 nano-ceramic film delivers heat-rejection numbers that match or beat the household-name premium products, at a lower price. This is an honest review of Nexfil from a distributor that carries it: what is good, what is genuinely better than the alternatives, where the line falls short, and where it makes sense to spec Nexfil over LLumar or Huper Optik.</p>
 
@@ -2889,7 +2889,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Window Tinting Goodyear AZ — 2026 Residential &amp; Commercial Guide</h1>
+    <h2>Window Tinting Goodyear AZ — 2026 Residential &amp; Commercial Guide</h2>
 
     <p class="lead">Goodyear is one of the fastest-growing cities in the West Valley and one of the hottest. New-construction subdivisions like Estrella, PebbleCreek, Palm Valley, and Canyon Trails feature exactly the kind of architecture that struggles in Arizona summer: tall ceilings, large west and south-facing glass spans, and beautiful desert views that come with brutal afternoon solar gain. Window film is the single most effective intervention you can make on a Goodyear home or commercial building short of replacing the glass. This guide covers what works, who we serve, and what it costs in 2026.</p>
 
@@ -3038,7 +3038,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>One-Way Window Film Day and Night — Does It Really Work? 2026 Honest Guide</h1>
+    <h2>One-Way Window Film Day and Night — Does It Really Work? 2026 Honest Guide</h2>
 
     <p class="lead">"I want privacy from the outside, but I still want to see out — and I want it to work at night too." This is the single most-asked privacy question we get at Arizona House of Film. The honest answer disappoints most callers but saves everyone money: reflective "one-way" mirror film does not work at night. The physics that makes it work during the day reverses after dark. This guide explains why, what films actually deliver day-and-night privacy, and what the right answer is for the most common Phoenix privacy scenarios.</p>
 
@@ -3201,7 +3201,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Window Tinting Avondale AZ — 2026 Residential &amp; Commercial Guide</h1>
+    <h2>Window Tinting Avondale AZ — 2026 Residential &amp; Commercial Guide</h2>
 
     <p class="lead">Avondale is one of the fastest-growing communities in the West Valley and one of the hottest. Subdivisions like Coldwater Springs, Garden Lakes, Rancho Santa Fe, and Crystal Gardens have exactly the architecture that struggles in Arizona summer: tall ceilings, large west and south glass spans, and AC systems that "never catch up" in late afternoon. Window film is the single most effective intervention you can make on an Avondale property short of replacing the glass. This guide covers what works, what we install, and what it costs in 2026.</p>
 
@@ -3351,7 +3351,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Security Window Film for Arizona Schools — 2026 Installation Guide</h1>
+    <h2>Security Window Film for Arizona Schools — 2026 Installation Guide</h2>
 
     <p class="lead">Security window film is one of the lowest-cost, highest-impact hardening interventions a school or government building can deploy. Compared to ballistic glass replacement (often $200+ per square foot) or full glazing system retrofits, security film with mechanical anchoring delivers documented forced-entry delay and shatter-retention performance at $9–$26 per square foot. This guide covers what film delivers for K-12 schools, universities, and government buildings in Arizona — mil thickness selection, ANSI/ASTM compliance, federal grant eligibility, blast mitigation specs, and what we have installed.</p>
 
@@ -3496,7 +3496,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Window Film for Medical Offices Arizona — Privacy &amp; UV Protection 2026</h1>
+    <h2>Window Film for Medical Offices Arizona — Privacy &amp; UV Protection 2026</h2>
 
     <p class="lead">Medical offices have a uniquely demanding window film spec: simultaneous patient privacy, UV protection for occupants and finishes, glare control on monitors, and (in pharmacies) physical security for after-hours glazing. The right answer is rarely a single product — it is a layered spec that puts the right film in front of the right pane. This guide covers what we install in Arizona clinics, dental offices, urgent care, and hospital outpatient facilities, with reference projects including Banner Physical Therapy and the Tohono O'odham Nation Health Care (TONHC) Casa Grande facility.</p>
 
@@ -3650,7 +3650,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>EnerLogic Window Film Arizona — Low-E Insulation Review 2026</h1>
+    <h2>EnerLogic Window Film Arizona — Low-E Insulation Review 2026</h2>
 
     <p class="lead">EnerLogic is the one residential window film in the Arizona market with a genuinely unique value proposition: it works in both directions. Standard ceramic films reject summer solar heat. EnerLogic does that, and also reflects interior heat back into the room in winter — a Low-E coating effect typically only available in OEM glass. The dual-season story is real, but the economics differ between Phoenix and northern Arizona. This guide is an honest 2026 review: what EnerLogic actually does, where it wins, where it ties premium ceramic, and how it priced against 3M Prestige.</p>
 
@@ -3796,7 +3796,7 @@ const allBlogData = [
       }
     ],
     customContent: `
-    <h1>Decorative Window Film Phoenix — Frosted, Patterned &amp; Custom 2026</h1>
+    <h2>Decorative Window Film Phoenix — Frosted, Patterned &amp; Custom 2026</h2>
 
     <p class="lead">Decorative window film delivers the look of etched glass, stained glass, custom-printed artwork, and architectural privacy patterns at a fraction of the cost of permanent glass treatment — and with the flexibility to update or remove on a lease cycle, brand refresh, or design change. Arizona House of Film carries the full 618-SKU Solyx library plus MaxPro and Madico decorative lines, with custom-print capability through Solyx iQ. This guide covers what decorative film is, what it costs in Phoenix in 2026, and how to spec it for your project.</p>
 

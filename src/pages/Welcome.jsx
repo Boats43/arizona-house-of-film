@@ -322,15 +322,32 @@ const Welcome = () => {
               Service Coverage
             </h2>
             <div className="flex flex-wrap justify-center gap-2">
-              {areaCities.map((city) => (
+              {areaCities.map((city) => {
+                const slug = city.toLowerCase().replace(/\s+/g, '-');
+                const dedicatedRoutes = {
+                  'phoenix': '/window-tinting-phoenix',
+                  'chandler': '/window-tinting-chandler',
+                  'gilbert': '/window-tinting-gilbert',
+                  'peoria': '/window-tinting-peoria',
+                  'queen-creek': '/window-tinting-queen-creek',
+                  'mesa': '/window-tinting-mesa',
+                  'tempe': '/window-tinting-tempe',
+                  'glendale': '/window-tinting-glendale',
+                  'tolleson': '/window-tinting-tolleson',
+                  'fountain-hills': '/window-tinting-fountain-hills',
+                  'avondale': '/window-tinting-avondale',
+                };
+                const to = dedicatedRoutes[slug] || `/service-areas/${slug}`;
+                return (
                 <Link
                   key={city}
-                  to={`/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={to}
                   className="px-4 py-2 bg-slate-900 border border-slate-800 text-xs font-black text-slate-400 uppercase hover:border-green-500 hover:text-green-400 transition-all"
                 >
                   {city}
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

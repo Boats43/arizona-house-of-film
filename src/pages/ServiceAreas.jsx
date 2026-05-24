@@ -99,9 +99,24 @@ const ServiceAreas = () => {
               </div>
             </div>
             <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {filteredCities.map((city) => (
+              {filteredCities.map((city) => {
+                const dedicatedRoutes = {
+                  'phoenix': '/window-tinting-phoenix',
+                  'chandler': '/window-tinting-chandler',
+                  'gilbert': '/window-tinting-gilbert',
+                  'peoria': '/window-tinting-peoria',
+                  'queen-creek': '/window-tinting-queen-creek',
+                  'mesa': '/window-tinting-mesa',
+                  'tempe': '/window-tinting-tempe',
+                  'glendale': '/window-tinting-glendale',
+                  'tolleson': '/window-tinting-tolleson',
+                  'fountain-hills': '/window-tinting-fountain-hills',
+                  'avondale': '/window-tinting-avondale',
+                };
+                const to = dedicatedRoutes[city.slug] || `/service-areas/${city.slug}`;
+                return (
                 <motion.div key={city.slug} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="group">
-                  <Link to={`/service-areas/${city.slug}`} className="flex flex-col items-center justify-center text-center bg-slate-50 border-2 border-slate-100 p-6 group-hover:bg-slate-950 group-hover:border-slate-950 transition-all duration-300 h-full">
+                  <Link to={to} className="flex flex-col items-center justify-center text-center bg-slate-50 border-2 border-slate-100 p-6 group-hover:bg-slate-950 group-hover:border-slate-950 transition-all duration-300 h-full">
                     <MapPin className="w-5 h-5 mb-2 text-red-600 group-hover:text-white transition-colors" />
                     <span className="font-black text-slate-950 group-hover:text-white uppercase text-xs tracking-widest leading-tight">{city.name}</span>
                     <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -109,7 +124,8 @@ const ServiceAreas = () => {
                     </div>
                   </Link>
                 </motion.div>
-              ))}
+                );
+              })}
             </motion.div>
             {filteredCities.length === 0 && (
               <div className="text-center py-20 border-4 border-dashed border-slate-100">
@@ -155,6 +171,7 @@ const ServiceAreas = () => {
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
               {[...cities].sort((a, b) => a.name.localeCompare(b.name)).map((city) => {
                 const dedicatedRoutes = {
+                  'phoenix': '/window-tinting-phoenix',
                   'chandler': '/window-tinting-chandler',
                   'gilbert': '/window-tinting-gilbert',
                   'peoria': '/window-tinting-peoria',
@@ -162,6 +179,9 @@ const ServiceAreas = () => {
                   'mesa': '/window-tinting-mesa',
                   'tempe': '/window-tinting-tempe',
                   'glendale': '/window-tinting-glendale',
+                  'tolleson': '/window-tinting-tolleson',
+                  'fountain-hills': '/window-tinting-fountain-hills',
+                  'avondale': '/window-tinting-avondale',
                 };
                 const to = dedicatedRoutes[city.slug] || `/service-areas/${city.slug}`;
                 return (

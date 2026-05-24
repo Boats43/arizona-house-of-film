@@ -564,11 +564,27 @@ const Decorative = () => {
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-sm font-black text-slate-600 mb-10 uppercase tracking-[0.3em]">Licensed Statewide Service</h2>
             <div className="flex flex-wrap justify-center gap-2">
-              {cities.map(city => (
-                <Link key={city.slug} to={`/service-areas/${city.slug}`} className="px-4 py-2 bg-white border border-slate-200 text-[10px] font-black text-slate-600 uppercase hover:border-slate-950 hover:text-slate-950 transition-all shadow-sm">
+              {cities.map(city => {
+                const dedicatedRoutes = {
+                  'phoenix': '/window-tinting-phoenix',
+                  'chandler': '/window-tinting-chandler',
+                  'gilbert': '/window-tinting-gilbert',
+                  'peoria': '/window-tinting-peoria',
+                  'queen-creek': '/window-tinting-queen-creek',
+                  'mesa': '/window-tinting-mesa',
+                  'tempe': '/window-tinting-tempe',
+                  'glendale': '/window-tinting-glendale',
+                  'tolleson': '/window-tinting-tolleson',
+                  'fountain-hills': '/window-tinting-fountain-hills',
+                  'avondale': '/window-tinting-avondale',
+                };
+                const to = dedicatedRoutes[city.slug] || `/service-areas/${city.slug}`;
+                return (
+                <Link key={city.slug} to={to} className="px-4 py-2 bg-white border border-slate-200 text-[10px] font-black text-slate-600 uppercase hover:border-slate-950 hover:text-slate-950 transition-all shadow-sm">
                   {city.name}
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

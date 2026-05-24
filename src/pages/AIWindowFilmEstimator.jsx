@@ -404,6 +404,15 @@ export default function AIWindowFilmEstimator() {
         </div>
       </section>
 
+      {/* Alternative Estimator Banner */}
+      <section className="py-8 px-6 bg-slate-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-sm text-gray-700 mb-3">
+            Prefer a manual calculator? <Link to="/window-film-cost-estimator" className="text-blue-600 underline hover:text-blue-800 font-bold">Use our interactive cost estimator →</Link>
+          </p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">

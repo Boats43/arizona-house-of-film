@@ -364,6 +364,15 @@ export default function WindowFilmCostEstimator() {
           </div>
         </div>
 
+        {/* AI Estimator Alternative Banner */}
+        <div style={{ maxWidth: "760px", margin: "0 auto", padding: isMobile ? "16px" : "24px 32px 0" }}>
+          <div style={{ background: "#12121a", border: "1px solid #2a2a35", borderRadius: "8px", padding: "16px", textAlign: "center" }}>
+            <p style={{ fontSize: "13px", color: "#aaa", marginBottom: "12px" }}>
+              Want AI to analyze your windows from photos? <Link to="/ai-window-film-estimator" style={{ color: "#6b8f71", textDecoration: "underline" }}>Try our AI Photo Estimator →</Link>
+            </p>
+          </div>
+        </div>
+
         <div style={{ maxWidth: "760px", margin: "0 auto", padding: isMobile ? "24px 16px" : "40px 32px" }}>
           {/* Progress */}
           <div style={{ display: "flex", gap: "8px", marginBottom: "48px" }}>

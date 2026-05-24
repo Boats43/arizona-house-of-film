@@ -79,7 +79,9 @@
       "PowerShell(git push *)",
       "PowerShell(Select-String *)",
       "Bash(awk -F'/' '{print $2}')",
-      "PowerShell(git commit *)"
+      "PowerShell(git commit *)",
+      "Bash(vercel logs *)",
+      "Bash(vercel ls *)"
     ]
   }
 }

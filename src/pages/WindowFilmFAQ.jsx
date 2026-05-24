@@ -239,14 +239,22 @@ function EstimatorBanner() {
   return (
     <div className="bg-slate-900 rounded-xl p-6 my-10 text-center">
       <p className="text-gray-300 text-sm mb-4">
-        Have more questions? Our AI assistant answers window film questions 24/7 — or upload photos of your windows for an instant estimate.
+        Want an instant cost estimate? Use our free cost estimator or upload photos for AI analysis.
       </p>
-      <Link
-        to="/ai-window-film-estimator"
-        className="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-8 py-3 rounded-lg text-sm transition-colors"
-      >
-        Try AI Estimator →
-      </Link>
+      <div className="flex flex-wrap justify-center gap-3">
+        <Link
+          to="/window-film-cost-estimator"
+          className="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-6 py-3 rounded-lg text-sm transition-colors"
+        >
+          Cost Estimator →
+        </Link>
+        <Link
+          to="/ai-window-film-estimator"
+          className="inline-block border border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-black uppercase tracking-wide px-6 py-3 rounded-lg text-sm transition-colors"
+        >
+          AI Photo Estimator →
+        </Link>
+      </div>
     </div>
   );
 }

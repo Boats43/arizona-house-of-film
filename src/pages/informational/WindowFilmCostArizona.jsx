@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
 import { Link } from 'react-router-dom';
+import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function WindowFilmCostArizona() {
   const faqSchema = {
@@ -86,6 +87,8 @@ export default function WindowFilmCostArizona() {
             </table>
           </div>
         </section>
+
+        <EstimatorCTA />
 
         <section className="mb-12">
           <h2 className="text-2xl font-black uppercase tracking-tight mb-4">What Affects the Final Price</h2>

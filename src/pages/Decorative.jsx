@@ -457,7 +457,7 @@ const Decorative = () => {
                 <div>
                   <h3 className="text-sm font-black text-blue-400 uppercase tracking-widest mb-3">Glass Partition Privacy Bands</h3>
                   <p className="text-gray-300 text-sm leading-relaxed font-medium">
-                    Modern center-band frosting provides privacy while seated but keeps the office feeling open — no full blackout. Executed for Transact Commercial Interiors tenant improvement projects.
+                    Modern center-band frosting provides privacy while seated but keeps the office feeling open — no full blackout. Executed for Transact Commercial Interiors tenant improvement projects. <Link to="/office-partition-window-film" className="text-blue-400 underline hover:text-blue-300">Learn more about office partition window film →</Link>
                   </p>
                 </div>
                 <div>

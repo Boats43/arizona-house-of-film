@@ -226,7 +226,7 @@ const Commercial = () => {
     {
       icon: ShoppingBag,
       title: "Retail, Hospitality & Food Service",
-      body: "Arizona retail and hospitality businesses face a dual challenge: keeping customers comfortable in extreme heat while protecting merchandise and interiors from UV damage. Our solar control films reduce ambient temperature near windows, anti-glare films improve product visibility, and UV-blocking films protect inventory from fading. We minimize disruption with after-hours and weekend installation scheduling.",
+      body: <>Arizona retail and hospitality businesses face a dual challenge: keeping customers comfortable in extreme heat while protecting merchandise and interiors from UV damage. Our solar control films reduce ambient temperature near windows, anti-glare films improve product visibility, and UV-blocking films protect inventory from fading. We minimize disruption with after-hours and weekend installation scheduling. Learn more about our <Link to="/restaurant-window-film" className="text-green-400 underline hover:text-green-300">restaurant window film</Link> solutions.</>,
       partners: [
         "Skechers USA",
         "PetSmart",
@@ -249,7 +249,7 @@ const Commercial = () => {
     {
       icon: Home,
       title: "Property Management, HOA & Real Estate",
-      body: "Arizona's property management sector requires consistent, professional window film solutions across multi-unit and commercial properties. We offer bulk project pricing, uniform film specification across all units, and coordination with building management to minimize tenant disruption. Our work for Camden Development, Menlo Group, and Associated Asset Management demonstrates our capability at scale.",
+      body: <>Arizona's property management sector requires consistent, professional window film solutions across multi-unit and commercial properties. We offer bulk project pricing, uniform film specification across all units, and coordination with building management to minimize tenant disruption. For office buildings and commercial spaces, our <Link to="/office-partition-window-film" className="text-green-400 underline hover:text-green-300">office partition window film</Link> solutions provide privacy and professional aesthetics. Our work for Camden Development, Menlo Group, and Associated Asset Management demonstrates our capability at scale.</>,
       partners: [
         "Camden Development",
         "Menlo Group Commercial Real Estate",

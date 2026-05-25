@@ -160,7 +160,7 @@ const Header = () => {
             <div className="flex-shrink-0">
               <Link to="/" aria-label="Arizona House of Film - Back to Home">
                 <img
-                  src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/untitled-design-4-IrbHI.png"
+                  src="/AHOF Logo.png"
                   alt="Arizona House of Film Logo"
                   className="h-12 w-auto"
                   width="120"
@@ -342,7 +342,7 @@ const Header = () => {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
             <div>
               <img
-                src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/untitled-design-4-IrbHI.png"
+                src="/AHOF Logo.png"
                 alt="Arizona House of Film Logo"
                 className="h-8 w-auto"
                 width="80"

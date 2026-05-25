@@ -109,11 +109,11 @@ const Footer = () => {
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/untitled-design-4-Jg0bh.png"
-                alt="Arizona House of Film secondary logo"
-                className="h-12 w-auto bg-white p-1 rounded-sm"
+                src="/AHOF Logo.png"
+                alt="Arizona House of Film Logo"
+                className="h-12 w-auto"
                 loading="lazy"
-                width="48"
+                width="120"
                 height="48"
               />
               <span className="font-bold text-xl">Arizona House of Film</span>

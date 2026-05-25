@@ -37,6 +37,9 @@ const categories = [
       { display: 'EnerLogic', slug: 'enerlogic' },
       { display: 'Solar Gard (Saint-Gobain)', slug: 'solar-gard' },
       { display: 'LLumar', slug: 'llumar' },
+      { display: 'Johnson', slug: 'johnson' },
+      { display: 'GeoShield', slug: 'geoshield' },
+      { display: 'V-SMILE', slug: 'vsmile' },
     ],
   },
   {
@@ -51,6 +54,7 @@ const categories = [
       { display: 'Lintec', slug: 'lintec' },
       { display: 'XPEL', slug: 'xpel' },
       { display: 'Madico', slug: 'madico' },
+      { display: 'Hanita Tek', slug: 'hanitatek' },
     ],
   },
   {
@@ -66,6 +70,10 @@ const categories = [
       { display: 'BuyDecorativeFilm (BDF)', slug: 'bdf' },
       { display: '3M Fasara', slug: '3m' },
       { display: 'Flexfilm', slug: 'flexfilm' },
+      { display: 'Panorama', slug: 'panorama' },
+      { display: 'Gila', slug: 'gila' },
+      { display: 'SimGlas', slug: 'simglas' },
+      { display: 'Concord', slug: 'concord' },
     ],
   },
   {

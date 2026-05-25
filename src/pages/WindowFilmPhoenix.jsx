@@ -481,6 +481,7 @@ const WindowFilmPhoenix = () => {
               <Link to="/window-tinting-phoenix" className="text-green-700 underline">Window Tinting Phoenix</Link>
               <Link to="/service-areas" className="text-green-700 underline">All Service Areas</Link>
               <Link to="/get-a-quote" className="text-green-700 underline">Get a Quote</Link>
+              <Link to="/window-film-faq" className="text-green-700 underline">Window Film FAQ for Phoenix Homeowners</Link>
             </div>
           </div>
         </section>

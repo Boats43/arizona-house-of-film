@@ -815,7 +815,8 @@ const Commercial = () => {
               <Link to="/store" className="text-blue-700 underline">Browse Window Film Catalog</Link> →{" "}
               <Link to="/commercial-window-tinting/anti-graffiti" className="text-blue-700 underline">Commercial Anti-Graffiti Film</Link>{" "}
               <Link to="/commercial-window-tinting/enhanced-privacy" className="text-blue-700 underline">Commercial Privacy Film</Link>{" "}
-              <Link to="/countertop-protection-film-arizona" className="text-blue-700 underline">Countertop Protection Film</Link>
+              <Link to="/countertop-protection-film-arizona" className="text-blue-700 underline">Countertop Protection Film</Link>{" "}
+              <Link to="/window-film-faq" className="text-blue-700 underline">Frequently Asked Questions</Link>
             </p>
             <div className="mt-6">
               <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Commercial Tinting by Location</p>

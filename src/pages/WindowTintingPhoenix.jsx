@@ -438,6 +438,10 @@ const WindowTintingPhoenix = () => {
                 Commercial Window Film Phoenix
               </Link>
               {' · '}
+              <Link to="/window-film-phoenix" className="text-green-600 hover:underline">
+                Window Film Phoenix AZ
+              </Link>
+              {' · '}
               <Link to="/security-window-film-phoenix" className="text-green-600 hover:underline">
                 Security Window Film Phoenix
               </Link>

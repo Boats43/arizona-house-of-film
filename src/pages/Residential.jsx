@@ -613,7 +613,8 @@ const Residential = () => {
               to confirm coverage in your city.{" "}
               <Link to="/store" className="text-green-600 underline font-bold">Browse Window Film Catalog</Link> →{" "}
               <Link to="/ceramic-vs-dual-reflective-film" className="text-green-600 underline font-bold">Ceramic vs Dual Reflective Film</Link>{" "}
-              <Link to="/how-long-does-window-film-last" className="text-green-600 underline font-bold">How Long Does Window Film Last?</Link>
+              <Link to="/how-long-does-window-film-last" className="text-green-600 underline font-bold">How Long Does Window Film Last?</Link>{" "}
+              <Link to="/window-film-faq" className="text-green-600 underline font-bold">Window Film FAQ</Link>
             </p>
             <div className="mt-6">
               <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Residential Specialties</p>

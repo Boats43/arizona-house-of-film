@@ -419,6 +419,20 @@ const Home = () => {
               </div>
             ))}
           </div>
+          <div className="mt-10 text-center text-gray-600 text-sm">
+            More resources:{' '}
+            <Link to="/window-film-phoenix" className="text-green-700 underline font-bold">
+              Window Film Phoenix
+            </Link>
+            {' · '}
+            <Link to="/residential-window-tinting-phoenix" className="text-green-700 underline font-bold">
+              Residential Tinting Phoenix
+            </Link>
+            {' · '}
+            <Link to="/service-areas" className="text-green-700 underline font-bold">
+              Service Areas
+            </Link>
+          </div>
         </div>
       </section>
     </main>

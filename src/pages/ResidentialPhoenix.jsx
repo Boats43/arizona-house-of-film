@@ -14,8 +14,7 @@ const ResidentialPhoenix = () => {
   const metaDescription = 'Phoenix\'s licensed home window tinting contractor. Blocks 80% of solar heat, cuts AC bills, and protects furniture from UV. SRP rebate eligible. 700+ Phoenix homes. Free estimate — (480) 788-1591.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
-  const heroImageUrl =
-    'https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg';
+  const heroImageUrl = '/images/gallery/20250619_100523.webp';
 
   const serviceSchema = {
     '@context': 'https://schema.org',

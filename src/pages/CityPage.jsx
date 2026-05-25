@@ -176,7 +176,7 @@ const CityPage = () => {
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img
-            src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20240727_093255-hCWXg.jpg"
+            src="/images/Suntek White Frost, Suprise AZ.webp"
             alt={`${name} Arizona landscape`}
             className="w-full h-full object-cover"
             width="1600"
@@ -268,7 +268,7 @@ const CityPage = () => {
               </p>
 
               <img
-                src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20250308_084212-1-aYIad.jpg"
+                src="/images/Suntek White Frost, Suprise AZ.webp"
                 alt="Interior cooling comfort"
                 className="rounded-xl shadow-md"
               />

@@ -23,7 +23,7 @@ const Decorative = () => {
   const pageTitle = "Decorative Window Film Phoenix AZ | ROC #314088";
   const metaDescription = "Decorative window film Phoenix and Scottsdale. Frosted glass, privacy film, gradient film, custom graphics. 30+ collections. ROC #314088. Free estimate.";
   const canonicalUrl = "https://arizonahouseoffilm.com/decorative-window-films";
-  const heroImageUrl = "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20221202_101145-IvRcT.jpg";
+  const heroImageUrl = '/images/phoenix-window-tinting-sQw5T.webp';
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
   const allFaqItems = [

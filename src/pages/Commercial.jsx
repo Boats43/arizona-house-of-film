@@ -24,8 +24,7 @@ const Commercial = () => {
     "Commercial Window Film Phoenix AZ | Licensed Contractor Since 2017 | ROC #314088";
   const metaDescription = "Phoenix's licensed commercial window film contractor. 713+ projects including Boeing, ASU, City of Phoenix, and Valley Metro. Solar control, security, decorative and anti-graffiti film. ROC #314088. Free estimate.";
   const canonicalUrl = "https://arizonahouseoffilm.com/commercial-window-tinting";
-  const heroImageUrl =
-    "https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg";
+  const heroImageUrl = '/images/gallery/20250619_100523.webp';
   const ogImage = "https://arizonahouseoffilm.com/images/default-og.jpg";
 
   const trustedNames = [

@@ -118,7 +118,7 @@ const BlogPage = () => {
             <img
               alt="Person writing on a notepad, symbolizing blog content creation"
               className="w-full h-full object-cover"
-              src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/20231104_094145-5v8TT.jpg"
+              src="/images/phoenix-window-tinting-Arizona House of Film.webp"
               width="1600"
               height="1066"
               style={{ aspectRatio: '1600/1066' }}

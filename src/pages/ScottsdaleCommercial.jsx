@@ -14,8 +14,7 @@ const ScottsdaleCommercial = () => {
   const metaDescription = 'Licensed commercial window film contractor serving Scottsdale AZ. Offices, retail, medical, hospitality. Ceramic, solar control, security and decorative film. In-stock films available same week. Free estimate — ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/commercial-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
-  const heroImageUrl =
-    'https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg';
+  const heroImageUrl = '/images/gallery/20250619_100523.webp';
 
   const serviceSchema = {
     '@context': 'https://schema.org',

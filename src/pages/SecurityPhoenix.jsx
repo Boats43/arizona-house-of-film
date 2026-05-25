@@ -12,7 +12,7 @@ const rocNumber = 'ROC #314088';
 const pageTitle = 'Security Window Film Phoenix AZ | 4–21 Mil | ROC #314088';
 const metaDescription = 'Licensed security window film installers in Phoenix AZ. 4-21 mil thickness, blast mitigation, forced entry protection. Trusted by U.S. Navy. Free estimate.';
 const canonicalUrl = 'https://arizonahouseoffilm.com/security-window-film-phoenix';
-const heroImageUrl = '/images/security-film-hero.jpg';
+const heroImageUrl = '/images/Security Window Film Phoenix AZ.webp';
 
 const faqSchema = {
   '@context': 'https://schema.org',

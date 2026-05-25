@@ -14,8 +14,7 @@ const RestaurantWindowFilm = () => {
   const metaDescription = 'Professional restaurant window film installation in Arizona — solar control, decorative film, glare reduction & privacy for dining rooms, bars & patios. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/restaurant-window-film';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
-  const heroImageUrl =
-    'https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg';
+  const heroImageUrl = '/images/gallery/20250619_100523.webp';
 
   const serviceSchema = {
     '@context': 'https://schema.org',

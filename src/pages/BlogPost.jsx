@@ -25,7 +25,7 @@ const BlogPost = () => {
   const processedContent = content.replace(
     /<img alt="([^"]*)" src="[^"]*"\s*\/?>/g,
     (_, altText) =>
-      `<img alt="${altText}" src="https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/placeholder-blog-image.jpg" class="w-full h-auto object-cover rounded-lg my-8 shadow-lg" loading="lazy">`
+      `<img alt="${altText}" src="/images/phoenix-window-tinting-Arizona House of Film.webp" class="w-full h-auto object-cover rounded-lg my-8 shadow-lg" loading="lazy">`
   );
 
   const speakableSchema = {

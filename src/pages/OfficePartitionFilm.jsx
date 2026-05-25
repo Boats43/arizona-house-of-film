@@ -14,8 +14,7 @@ const OfficePartitionFilm = () => {
   const metaDescription = 'Professional office partition window film installation — Casper cloaking, frosted, gradient & switchable films for glass walls, conference rooms & open offices. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/office-partition-window-film';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
-  const heroImageUrl =
-    'https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/img_20240821_123937_469-jYOb9.jpg';
+  const heroImageUrl = '/images/gallery/20250619_100523.webp';
 
   const serviceSchema = {
     '@context': 'https://schema.org',

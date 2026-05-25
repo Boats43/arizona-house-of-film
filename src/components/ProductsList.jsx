@@ -32,7 +32,7 @@ const ProductCard = ({ variant, index }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editableVariant, setEditableVariant] = useState(variant);
   const [editableImage, setEditableImage] = useState(
-    'https://horizons-cdn.hostinger.com/500f9a0e-19d5-4ed7-98ea-cc353ce878bb/untitled-design-4-8cGHF.png'
+    '/images/phoenix-window-tinting-Arizona House of Film.webp'
   );
 
   const handleRequestInfo = e => {

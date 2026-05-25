@@ -42,14 +42,19 @@ const CityPage = () => {
 
   /* ======================================================
      HIGH-VALUE CITIES — KEEP INDEXED
-     Google has deindexed 86/98 thin service-area pages.
-     Protect 12 high-value cities, noindex the rest.
+     Tier 2: 9 protected cities for indexing.
+     All others noindexed + removed from sitemap.
   ====================================================== */
   const highValueCities = [
-    'scottsdale', 'tucson', 'flagstaff',
-    'prescott', 'sedona', 'surprise',
-    'goodyear', 'buckeye', 'paradise-valley',
-    'prescott-valley', 'yuma', 'sierra-vista'
+    'scottsdale',
+    'tucson',
+    'surprise',
+    'goodyear',
+    'buckeye',
+    'paradise-valley',
+    'cave-creek',
+    'ahwatukee',
+    'sun-city'
   ];
 
   const shouldNoindex = !highValueCities.includes(cleanSlug.toLowerCase());

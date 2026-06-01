@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ResidentialPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Home Window Tinting Phoenix AZ | Licensed Contractor | ROC #314088';
-  const metaDescription = 'Phoenix\'s licensed home window tinting contractor. Blocks 80% of solar heat, cuts AC bills, and protects furniture from UV. SRP rebate eligible. 700+ Phoenix homes. Free estimate — (480) 788-1591.';
+  const pageTitle = 'Residential Window Film Phoenix AZ | ROC #314088';
+  const metaDescription = 'Licensed home window tinting in Phoenix. Blocks 80% solar heat, cuts AC bills. SRP rebate eligible. 700+ homes served. Free estimate — (480) 788-1591.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl = '/images/gallery/20250619_100523.webp';

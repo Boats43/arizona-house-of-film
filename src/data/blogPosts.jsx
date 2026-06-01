@@ -261,7 +261,7 @@ const allBlogData = [
   },
   {
     slug: 'srp-rebate-window-film-2026',
-    title: 'SRP Window Film Rebate Arizona 2026 | How to Qualify and Apply',
+    title: 'SRP Window Film Rebate Arizona 2026',
     excerpt: 'SRP offers $0.75–$1.00 per sqft rebate on qualifying window film. Arizona House of Film handles all NFRC documentation and rebate paperwork. ROC #314088.',
     date: '2026-04-04',
     alt: 'SRP rebate application form with window film installation documentation.',
@@ -2415,8 +2415,8 @@ const allBlogData = [
   },
   {
     slug: 'residential-performance-window-film-phoenix',
-    title: 'Residential Performance Window Film Phoenix | 2026 Installation Guide',
-    excerpt: 'What "performance" residential window film actually means in Phoenix — ceramic vs spectrally selective, neighborhood-specific guidance for Desert Ridge, Anthem, New River, Glendale, and Cave Creek, plus SRP rebate eligibility.',
+    title: 'Performance Window Film Phoenix AZ',
+    excerpt: 'What performance window film means in Phoenix — ceramic vs spectrally selective for Desert Ridge, Anthem, Cave Creek, and Glendale. SRP rebate eligible.',
     date: '2026-04-28',
     alt: 'A North Phoenix home with residential performance window film installed on the west elevation, mid-afternoon sun.',
     keywords: 'residential performance window film phoenix, residential performance film desert ridge, residential performance film anthem, residential performance film new river, residential performance film glendale',
@@ -3006,8 +3006,8 @@ const allBlogData = [
   },
   {
     slug: 'one-way-window-film-day-and-night-guide',
-    title: 'One-Way Window Film at Night | Honest Truth + What Actually Works | 2026 Guide',
-    excerpt: 'Reflective one-way window film does NOT work at night — physics reverses when interior lights are on. Honest guide explaining why, plus the 3 films that actually deliver day AND night privacy. ROC #314088.',
+    title: 'Does One-Way Window Film Work at Night?',
+    excerpt: 'Reflective window film loses privacy at night when interior lights are on. Here\'s why — and the 3 films that actually work day AND night. ROC #314088.',
     date: '2026-04-28',
     alt: 'A side-by-side comparison of a reflective one-way film exterior view by day vs the same window at night with interior lights on.',
     keywords: 'one way window film day and night, reflective window film day and night, 2 way mirror film, night time privacy window film, privacy window film at night, one-way window film that works at night, does one way privacy film work at night',

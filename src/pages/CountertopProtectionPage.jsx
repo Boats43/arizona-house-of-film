@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema';
 import { countertopRegions, baseFAQs } from '@/data/countertopRegions';
 
@@ -9,9 +9,9 @@ export default function CountertopProtectionPage() {
   // Lookup region data
   const region = countertopRegions.find(r => r.slug === regionSlug);
 
-  // If no region found, redirect to nationwide page
+  // If no region found, return null (will 404 in production via client-side routing)
   if (!region) {
-    return <Navigate to="/countertop-protection-film-nationwide" replace />;
+    return null;
   }
 
   // Merge base FAQs with region-specific overrides
@@ -44,7 +44,7 @@ export default function CountertopProtectionPage() {
     countertopRegions[(currentIndex + 3) % countertopRegions.length]
   ].filter(r => r.slug !== regionSlug);
 
-  const canonicalUrl = `https://arizonahouseoffilm.com/countertop-protection-film-${region.slug}`;
+  const canonicalUrl = `https://arizonahouseoffilm.com/countertop-protection-film/${region.slug}`;
   const contactSubject = `Countertop Film ${region.regionName} Inquiry`;
 
   return (
@@ -68,7 +68,7 @@ export default function CountertopProtectionPage() {
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://arizonahouseoffilm.com/' },
         { name: 'Countertop Film Supply', url: 'https://arizonahouseoffilm.com/countertop-protection-film-nationwide' },
-        { name: region.regionName, url: canonicalUrl }
+        { name: region.regionName, url: `https://arizonahouseoffilm.com/countertop-protection-film/${region.slug}` }
       ]} />
 
       <main className="max-w-4xl mx-auto px-4 py-16">
@@ -277,7 +277,7 @@ export default function CountertopProtectionPage() {
               {relatedRegions.map(related => (
                 <Link
                   key={related.slug}
-                  to={`/countertop-protection-film-${related.slug}`}
+                  to={`/countertop-protection-film/${related.slug}`}
                   className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition"
                 >
                   <h3 className="font-bold text-gray-900 mb-1">{related.regionName}</h3>

@@ -79,7 +79,7 @@ for (const out of outPaths) {
 const countertopEntries = countertopRegions
   .filter(r => r.slug !== 'mexico')
   .map(r => urlEntry({
-    loc: `${ORIGIN}/countertop-protection-film-${r.slug}`,
+    loc: `${ORIGIN}/countertop-protection-film/${r.slug}`,
     changefreq: 'monthly',
     priority: String(r.sitemapPriority),
   }))

@@ -174,7 +174,7 @@ export default function CountertopProtectionFilmNationwide() {
           {countertopRegions.filter(r => r.slug !== 'mexico').map(region => (
             <Link
               key={region.slug}
-              to={`/countertop-protection-film-${region.slug}`}
+              to={`/countertop-protection-film/${region.slug}`}
               className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition"
             >
               <h3 className="font-bold text-gray-900 mb-2">{region.regionName}</h3>

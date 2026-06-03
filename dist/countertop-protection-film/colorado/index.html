@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}#header-reserve{height:80px}#hero-reserve{aspect-ratio:1600/1066;background:#111;width:100%}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-BRTQgEci.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-C9VfoSTL.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Countertop Film Colorado — Denver, Boulder, Aspen Drop-Ship | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Drop-ship countertop protection film across Colorado. Nexfil + Solyx. 2-3 day ground transit from Phoenix. Denver, Boulder, Fort Collins, Aspen."/><meta data-rh="true" property="og:title" content="Countertop Film Colorado — Denver, Boulder, Aspen Drop-Ship"/><meta data-rh="true" property="og:description" content="Drop-ship countertop protection film across Colorado. Nexfil + Solyx. 2-3 day ground transit from Phoenix. Denver, Boulder, Fort Collins, Aspen."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/countertop-protection-film/colorado"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-image.jpg"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Countertop Film Colorado — Denver, Boulder, Aspen Drop-Ship"/><meta data-rh="true" name="twitter:description" content="Drop-ship countertop protection film across Colorado. Nexfil + Solyx. 2-3 day ground transit from Phoenix. Denver, Boulder, Fort Collins, Aspen."/><meta data-rh="true" name="twitter:image" content="https://arizonahouseoffilm.com/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/countertop-protection-film/colorado"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is countertop protection film?","acceptedAnswer":{"@type":"Answer","text":"Countertop protection film is a clear, self-adhesive polyurethane or polyester film applied to stone, quartz, laminate, and solid-surface countertops to protect against scratches, stains, UV yellowing, and daily wear. Quality film uses 4 mil sacrificial polyester that peels off cleanly when worn, scratched, or damaged — no adhesive residue. Replacement is fast and cost-effective compared to refinishing or resealing stone surfaces."}},{"@type":"Question","name":"Does countertop protection film work on quartz and marble?","acceptedAnswer":{"@type":"Answer","text":"Yes. Countertop protection film is compatible with quartz, marble, granite, laminate, quartzite, and solid-surface countertops. The film is optically clear and does not alter the appearance of the stone. Particularly recommended for marble and quartzite in high-UV climates."}},{"@type":"Question","name":"Can countertop protection film be removed without damaging the surface?","acceptedAnswer":{"@type":"Answer","text":"Yes — when properly installed and removed within the replacement window (3-5 years). Quality countertop protection films use pressure-sensitive adhesive that bonds securely during use but releases cleanly without adhesive residue on polished stone, quartz, or laminate surfaces."}},{"@type":"Question","name":"How fast does countertop film ship to Denver or Boulder?","acceptedAnswer":{"@type":"Answer","text":"Ground transit from Phoenix to Denver, Boulder, Fort Collins, and Colorado Springs is 2-3 business days. Aspen and mountain resort areas 3-4 days. We drop-ship direct to your jobsite or fabrication shop."}},{"@type":"Question","name":"Is there a minimum order for countertop film supply?","acceptedAnswer":{"@type":"Answer","text":"No minimum on your first order. Order a sample kit, a single cut sheet for one countertop, or a full roll. After your first order, trade accounts unlock volume pricing tiers based on recurring order volume."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://arizonahouseoffilm.com/","name":"Home"}},{"@type":"ListItem","position":2,"name":"Countertop Film Supply","item":{"@id":"https://arizonahouseoffilm.com/countertop-protection-film-nationwide","name":"Countertop Film Supply"}},{"@type":"ListItem","position":3,"name":"Colorado","item":{"@id":"https://arizonahouseoffilm.com/countertop-protection-film/colorado","name":"Colorado"}}]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header space reservation -->
+  <div id="header-reserve"></div>
+
+  <!-- Hero space reservation -->
+  <div id="hero-reserve"></div>
+
+  <!-- React root -->
+  <div id="root"><main class="max-w-4xl mx-auto px-4 py-16"><h1 class="text-4xl font-black text-gray-900 mb-6">Countertop Protection Film Colorado — Denver &amp; Statewide Supply</h1><p class="text-lg text-gray-700 mb-8">Arizona House of Film is a <strong>nationwide supplier</strong> of countertop protection film. We drop-ship <!-- --> Nexfil and Solyx surface protection from our Phoenix, AZ warehouse to <!-- -->Denver, Boulder, Colorado Springs, Fort Collins, Aspen<!-- -->, and all <!-- -->Colorado<!-- --> metros.<strong> <!-- -->Drop-ship from Phoenix AZ warehouse. Fast 2-3 day ground transit to Denver, Boulder, and all Colorado metros. You or your contractor installs.</strong></p><div class="mb-10 bg-blue-50 border-2 border-blue-400 rounded-lg p-6"><h2 class="text-2xl font-bold text-gray-900 mb-3">Why <!-- -->Colorado<!-- -->?</h2><p class="text-gray-700 mb-4">Colorado high-altitude UV exposure and dry climate accelerate countertop surface degradation — particularly on marble, quartzite, and soapstone. Protection film is standard in Denver luxury homes, Boulder eco-builds, Aspen resort properties, and Colorado Springs new construction. Eliminates resealing costs and preserves resale value.</p><ul class="list-disc pl-6 text-gray-700 space-y-2"><li><strong>Luxury residential </strong> — <!-- --> marble, quartzite, and soapstone protection (Denver, Boulder, Cherry Hills, Aspen)</li><li><strong>Mountain resort properties </strong> — <!-- --> ski lodge and vacation rental kitchen protection</li><li><strong>New construction </strong> — <!-- --> protect countertops during build-out</li><li><strong>Commercial kitchens </strong> — <!-- --> restaurant and brewery surface protection</li></ul></div><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">What Is Countertop Protection Film?</h2><p class="text-gray-700 mb-4">Countertop protection film is a clear, sacrificial polyester film applied to stone, quartz, marble, granite, laminate, and solid-surface countertops. It absorbs scratches, stains, etching, and daily wear — then peels off cleanly and is replaced. Two specs we stock: <strong>Nexfil 4 mil anti-graffiti polyester</strong> (standard) and <strong>Solyx clear protective film lines</strong> (range of finishes and thicknesses). Both peel-and-replace, no adhesive residue when removed within the replacement window.</p><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Surface Compatibility — <!-- -->Colorado</h2><div class="overflow-x-auto mb-6"><table class="w-full border-collapse border border-gray-200 text-sm"><thead class="bg-gray-50"><tr><th class="border border-gray-200 px-4 py-2 text-left">Surface Type</th><th class="border border-gray-200 px-4 py-2 text-center">Compatible</th><th class="border border-gray-200 px-4 py-2 text-left">Notes</th></tr></thead><tbody><tr><td class="border border-gray-200 px-4 py-2">Quartz</td><td class="border border-gray-200 px-4 py-2 text-center">✓</td><td class="border border-gray-200 px-4 py-2">Scratch and stain protection without affecting color or sheen</td></tr><tr><td class="border border-gray-200 px-4 py-2">Granite</td><td class="border border-gray-200 px-4 py-2 text-center">✓</td><td class="border border-gray-200 px-4 py-2">Scratch protection and UV stabilization</td></tr><tr><td class="border border-gray-200 px-4 py-2">Marble</td><td class="border border-gray-200 px-4 py-2 text-center">✓</td><td class="border border-gray-200 px-4 py-2">Etch and stain protection from acids — lemon, wine, coffee</td></tr><tr><td class="border border-gray-200 px-4 py-2">Quartzite</td><td class="border border-gray-200 px-4 py-2 text-center">✓</td><td class="border border-gray-200 px-4 py-2">UV protection and liquid barrier for porous natural stone</td></tr><tr><td class="border border-gray-200 px-4 py-2">Laminate</td><td class="border border-gray-200 px-4 py-2 text-center">○</td><td class="border border-gray-200 px-4 py-2">Compatible — contact for recommendations</td></tr><tr><td class="border border-gray-200 px-4 py-2">Butcher Block</td><td class="border border-gray-200 px-4 py-2 text-center">✓</td><td class="border border-gray-200 px-4 py-2">Moisture and stain barrier for wood countertops</td></tr><tr><td class="border border-gray-200 px-4 py-2">Concrete</td><td class="border border-gray-200 px-4 py-2 text-center">○</td><td class="border border-gray-200 px-4 py-2">Compatible — contact for recommendations</td></tr><tr><td class="border border-gray-200 px-4 py-2">Soapstone</td><td class="border border-gray-200 px-4 py-2 text-center">✓</td><td class="border border-gray-200 px-4 py-2">Scratch and oil stain protection for natural soapstone</td></tr></tbody></table></div><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How It Works — Order to Protection</h2><ol class="list-decimal pl-6 text-gray-700 mb-6 space-y-3"><li><strong>Submit an inquiry</strong> — Tell us your region (<!-- -->Colorado<!-- -->), the film line, and the rough order scope (one countertop, a full kitchen, a hotel rollout, a fabricator supply contract).</li><li><strong>Receive a written quote</strong> — Pricing, ship method, lead time, and trade-account eligibility. Typically returned within one business day.</li><li><strong>Place the order</strong> — Payment via card, ACH, or approved trade-account terms.</li><li><strong>Drop-ship direct to jobsite</strong> — Tracking number emailed on ship date. Typical transit to <!-- -->Denver<!-- --> and <!-- -->Colorado<!-- --> is <strong>2-3 business days</strong>.</li><li><strong>Install</strong> — Your contractor handles installation. Our supply team is available for technique questions during business hours.</li></ol><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Shipping to <!-- -->Colorado</h2><p class="text-gray-700 mb-4">We drop-ship via FedEx or UPS ground from Phoenix, AZ. Typical ground transit to <!-- -->Denver, Boulder, Colorado Springs, Fort Collins, Aspen<!-- -->is <strong>2-3 business days</strong>. Expedited 2-day or overnight shipping available on request. Film ships either rolled in a protective tube or flat-packed in a sheet carton depending on your order. Drop-ship direct-to-jobsite is the default for contractor trade accounts.</p><div class="mb-10 bg-amber-50 border-2 border-amber-400 rounded-lg p-6"><h2 class="text-2xl font-bold text-gray-900 mb-3">Trade Account Benefits — <!-- -->Colorado<!-- --> Contractors</h2><ul class="list-disc pl-6 text-gray-700 space-y-2"><li><strong>Tiered volume pricing</strong> — rates drop as your recurring order volume grows</li><li><strong>Net-30 terms</strong> — available after credit approval for qualifying contractor accounts</li><li><strong>Priority ship queue</strong> — trade account orders ship same day when placed before 11am MST</li><li><strong>Technique support</strong> — direct line to our install team for field questions</li><li><strong>Sample kit replenishment</strong> — ongoing sample supply for your showroom or design portfolio</li></ul><a href="/contact?subject=Countertop%20Film%20Colorado%20Inquiry" class="inline-block mt-4 bg-amber-500 text-black font-bold px-6 py-3 rounded hover:bg-amber-600">Request <!-- -->Colorado<!-- --> Pricing →</a></div><h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions — <!-- -->Colorado</h2><div class="space-y-6"><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">What is countertop protection film?</h3><p class="text-gray-700">Countertop protection film is a clear, self-adhesive polyurethane or polyester film applied to stone, quartz, laminate, and solid-surface countertops to protect against scratches, stains, UV yellowing, and daily wear. Quality film uses 4 mil sacrificial polyester that peels off cleanly when worn, scratched, or damaged — no adhesive residue. Replacement is fast and cost-effective compared to refinishing or resealing stone surfaces.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">Does countertop protection film work on quartz and marble?</h3><p class="text-gray-700">Yes. Countertop protection film is compatible with quartz, marble, granite, laminate, quartzite, and solid-surface countertops. The film is optically clear and does not alter the appearance of the stone. Particularly recommended for marble and quartzite in high-UV climates.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">Can countertop protection film be removed without damaging the surface?</h3><p class="text-gray-700">Yes — when properly installed and removed within the replacement window (3-5 years). Quality countertop protection films use pressure-sensitive adhesive that bonds securely during use but releases cleanly without adhesive residue on polished stone, quartz, or laminate surfaces.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">How fast does countertop film ship to Denver or Boulder?</h3><p class="text-gray-700">Ground transit from Phoenix to Denver, Boulder, Fort Collins, and Colorado Springs is 2-3 business days. Aspen and mountain resort areas 3-4 days. We drop-ship direct to your jobsite or fabrication shop.</p></div><div class="border-b border-gray-200 pb-4"><h3 class="font-bold text-gray-900 mb-2">Is there a minimum order for countertop film supply?</h3><p class="text-gray-700">No minimum on your first order. Order a sample kit, a single cut sheet for one countertop, or a full roll. After your first order, trade accounts unlock volume pricing tiers based on recurring order volume.</p></div></div><h2 class="text-2xl font-bold text-gray-900 mt-12 mb-4">Other Regions We Serve</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"><a class="border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition" href="/countertop-protection-film/oregon-washington"><h3 class="font-bold text-gray-900 mb-1">Oregon &amp; Washington</h3><p class="text-sm text-gray-600 mb-2">Portland, Seattle, Spokane</p><p class="text-xs text-gray-500">Ship time: <!-- -->2-4 business days</p></a><a class="border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition" href="/countertop-protection-film/southeast-us"><h3 class="font-bold text-gray-900 mb-1">Southeast United States</h3><p class="text-sm text-gray-600 mb-2">Atlanta, Charlotte, Nashville</p><p class="text-xs text-gray-500">Ship time: <!-- -->3-4 business days</p></a><a class="border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition" href="/countertop-protection-film/california"><h3 class="font-bold text-gray-900 mb-1">Northern California</h3><p class="text-sm text-gray-600 mb-2">San Francisco, San Jose, Sacramento</p><p class="text-xs text-gray-500">Ship time: <!-- -->1-2 business days</p></a></div><div class="mt-12 bg-gray-50 border border-gray-200 rounded-lg p-6"><h2 class="text-xl font-bold text-gray-900 mb-3">More Resources</h2><ul class="space-y-2 text-gray-700"><li><a class="text-blue-600 font-semibold underline" href="/countertop-protection-film-nationwide">Nationwide Countertop Film Supply Hub</a> — All regions, specs, and trade account details</li><li><a class="text-blue-600 font-semibold underline" href="/countertop-protection-film-arizona">Arizona Installation Services</a> — Full-service install with W-2 crew (ROC #314088)</li><li><a class="text-blue-600 font-semibold underline" href="/solutions">All Window Film Solutions</a> — Solar, privacy, security, decorative, anti-graffiti</li><li><a class="text-blue-600 font-semibold underline" href="/contact">Contact Us</a> — Request a quote or ask a question</li></ul></div><div class="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-8"><h2 class="text-2xl font-bold text-gray-900 mb-3">Request <!-- -->Colorado<!-- --> Pricing</h2><p class="text-gray-700 mb-4">Tell us your project scope and preferred film line. We&#x27;ll return a written quote, ship time, and trade-account eligibility — typically within one business day.</p><a href="/contact?subject=Countertop%20Film%20Colorado%20Inquiry" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded hover:bg-blue-700">Get <!-- -->Colorado<!-- --> Quote →</a><p class="text-sm text-gray-600 mt-3">Or call <a href="tel:4807881591" class="text-blue-600 font-semibold">(480) 788-1591</a>. Drop-ship to <!-- -->Denver<!-- --> and all <!-- -->Colorado<!-- --> metros.</p></div></main></div>
+
+  <script>
+    // Remove reserves after React mounts
+    const observer = new MutationObserver(() => {
+      const root = document.getElementById("root");
+      if (root && root.children.length > 0) {
+        document.getElementById("header-reserve")?.remove();
+        document.getElementById("hero-reserve")?.remove();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.getElementById("root"), { childList: true });
+  </script>
+
+</body>
+</html>

@@ -25,7 +25,7 @@ const SOLYX_SKU_ROUTES = solyxProducts.map(p =>
 // EXCLUDE MEXICO until business confirms cross-border shipping capability
 const COUNTERTOP_ROUTES = countertopRegions
   .filter(r => r.slug !== 'mexico')
-  .map(r => `/countertop-protection-film-${r.slug}`)
+  .map(r => `/countertop-protection-film/${r.slug}`)
 // HelmetProvider loaded via ssrLoadModule inside main() to share the same
 // module instance as page components (prevents context identity mismatch)
 
@@ -290,8 +290,7 @@ const PATTERN_MAP = [
   ['/high-rise-commercial-window-tinting-phoenix', '/src/pages/informational/HighRiseCommercialWindowTintingPhoenix.jsx'],
   ['/countertop-protection-film-arizona',   '/src/pages/informational/CountertopProtectionFilmArizona.jsx'],
   ['/countertop-protection-film-nationwide','/src/pages/informational/CountertopProtectionFilmNationwide.jsx'],
-  ['/countertop-protection-film-:regionSlug', '/src/pages/CountertopProtectionPage.jsx'],
-  ...countertopRegions.map(r => [`/countertop-protection-film-${r.slug}`, '/src/pages/CountertopProtectionPage.jsx']),
+  ['/countertop-protection-film/:regionSlug', '/src/pages/CountertopProtectionPage.jsx'],
   ['/hurricane-window-film-arizona',        '/src/pages/informational/HurricaneWindowFilmArizona.jsx'],
   ['/commercial-window-tinting-mesa',      '/src/pages/locations/CommercialWindowTintingMesa.jsx'],
   ['/commercial-window-tinting-chandler',  '/src/pages/locations/CommercialWindowTintingChandler.jsx'],
@@ -406,6 +405,8 @@ async function main() {
       const Component = await loadComponent(src)
       const helmetContext = {}
 
+      const routePattern = pattern
+
       const appHtml = renderToString(
         React.createElement(
           HelmetProvider, { context: helmetContext },
@@ -413,7 +414,7 @@ async function main() {
             StaticRouter, { location: route },
             React.createElement(
               Routes, null,
-              React.createElement(Route, { path: pattern, element: React.createElement(Component) })
+              React.createElement(Route, { path: routePattern, element: React.createElement(Component) })
             )
           )
         )

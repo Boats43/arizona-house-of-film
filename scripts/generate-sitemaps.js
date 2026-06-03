@@ -1,10 +1,12 @@
 // Generates public/sitemap-films.xml with all Solyx SKU URLs + category hubs.
+// AND public/sitemap-countertop.xml with all regional countertop pages.
 // Run AFTER prerender.js as part of the build pipeline.
 
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { solyxProducts, solyxToFilmsCategory } from '../src/data/solyxFilms.js'
+import { countertopRegions } from '../src/data/countertopRegions.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
@@ -67,6 +69,37 @@ for (const out of outPaths) {
     if (!fs.existsSync(path.dirname(out))) continue
     fs.writeFileSync(out, xml, 'utf8')
     console.log(`✓ wrote ${path.relative(ROOT, out)} — ${categoryHubs.length} hubs + ${uniqueSkuRoutes.length} SKUs = ${entries.length} URLs`)
+  } catch (e) {
+    console.error(`✗ failed to write ${out}:`, e.message)
+  }
+}
+
+// Generate sitemap-countertop.xml
+// EXCLUDE MEXICO until business confirms cross-border shipping capability
+const countertopEntries = countertopRegions
+  .filter(r => r.slug !== 'mexico')
+  .map(r => urlEntry({
+    loc: `${ORIGIN}/countertop-protection-film-${r.slug}`,
+    changefreq: 'monthly',
+    priority: String(r.sitemapPriority),
+  }))
+
+const countertopXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${countertopEntries.join('\n')}
+</urlset>
+`
+
+const countertopOutPaths = [
+  path.join(ROOT, 'public', 'sitemap-countertop.xml'),
+  path.join(ROOT, 'dist', 'sitemap-countertop.xml'),
+]
+
+for (const out of countertopOutPaths) {
+  try {
+    if (!fs.existsSync(path.dirname(out))) continue
+    fs.writeFileSync(out, countertopXml, 'utf8')
+    console.log(`✓ wrote ${path.relative(ROOT, out)} — ${countertopEntries.length} regional countertop pages`)
   } catch (e) {
     console.error(`✗ failed to write ${out}:`, e.message)
   }

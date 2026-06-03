@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '../../components/SEO/BreadcrumbSchema';
+import { countertopRegions } from '../../data/countertopRegions';
 
 export default function CountertopProtectionFilmNationwide() {
   const faqSchema = {
@@ -163,6 +165,39 @@ export default function CountertopProtectionFilmNationwide() {
           <p className="text-sm text-gray-600 mt-3">Or call <a href="tel:4807881591" className="text-blue-600 font-semibold">(480) 788-1591</a>. Arizona installation available locally — see our <a href="/countertop-protection-film-arizona" className="text-blue-600 font-semibold">Arizona supply &amp; installation page</a>.</p>
         </div>
 
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Find Your Region — Regional Supply Pages</h2>
+        <p className="text-gray-700 mb-6">
+          Select your region below for shipping times, regional context, trade account details, and local FAQs.
+          Each page covers specific metros, surface compatibility, and transit time from our Phoenix warehouse.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+          {countertopRegions.filter(r => r.slug !== 'mexico').map(region => (
+            <Link
+              key={region.slug}
+              to={`/countertop-protection-film-${region.slug}`}
+              className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition"
+            >
+              <h3 className="font-bold text-gray-900 mb-2">{region.regionName}</h3>
+              <p className="text-sm text-gray-600 mb-2">{region.primaryCities.slice(0, 3).join(', ')}</p>
+              <p className="text-xs text-gray-500">Ship time: {region.shippingTime}</p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mb-10 bg-amber-50 border-2 border-amber-400 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Installation in Arizona?</h2>
+          <p className="text-gray-700 mb-4">
+            Arizona House of Film offers <strong>full-service installation</strong> with our W-2 crew for clients in Phoenix,
+            Scottsdale, and the Arizona metro. Licensed ROC #314088. Supply + installation pricing available.
+          </p>
+          <Link
+            to="/countertop-protection-film-arizona"
+            className="inline-block bg-amber-500 text-black font-bold px-6 py-3 rounded hover:bg-amber-600"
+          >
+            Arizona Installation Services →
+          </Link>
+        </div>
+
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
         <div className="space-y-6">
           {faqSchema.mainEntity.map((faq, i) => (
@@ -171,6 +206,22 @@ export default function CountertopProtectionFilmNationwide() {
               <p className="text-gray-700">{faq.acceptedAnswer.text}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">More Resources</h2>
+          <ul className="space-y-2 text-gray-700">
+            <li>
+              <Link to="/solutions" className="text-blue-600 font-semibold underline">
+                All Window Film Solutions
+              </Link> — Solar, privacy, security, decorative, anti-graffiti
+            </li>
+            <li>
+              <Link to="/contact" className="text-blue-600 font-semibold underline">
+                Contact Us
+              </Link> — Request a quote or ask a question
+            </li>
+          </ul>
         </div>
       </main>
     </>

@@ -257,13 +257,17 @@ Countertop protection film is positioned as a SUPPLY + DISTRIBUTION play, not a 
 - ARIZONA (local): supply AND install. Full-service install by AHOF crews available across Arizona.
 - NATIONWIDE (outside Arizona): SUPPLY ONLY. We drop-ship film from Phoenix to the customer or their contractor. We do NOT travel out of state to install countertop film.
 - Brands carried: Nexfil surface protection (Nexfil 4MAG 4 mil) and Solyx clear protective film lines.
+- What is countertop protection film: Clear sacrificial polyester film applied to quartz, granite, marble, quartzite, laminate, butcher block, concrete, and soapstone countertops. Absorbs scratches, stains, etching, daily wear — then peels off cleanly and is replaced. No adhesive residue when removed within 3-5 year replacement window.
 - How the film installs: like a large sticker — clean surface, peel liner, squeegee, trim edges. Stone fabricators, kitchen installers, and handy homeowners self-install without issue.
 - Trade accounts: contractors, fabricators, kitchen designers, hotel renovators get volume pricing tiers. No business license required for a first order. Net-30 after credit approval.
 - Minimum order: none on first order. Sample kits available.
-- Shipping: FedEx/UPS ground from Phoenix AZ, 2–5 business days to most US locations. Expedited on request.
+- Shipping: FedEx/UPS ground from Phoenix AZ. Transit time varies by region (see regional pages). Expedited on request.
 - When user asks about countertop film supply, out-of-Arizona, contractor pricing, distribution, or "where to buy" — route to supply inquiry:
   "We supply countertop protection film nationwide to contractors, fabricators, and homeowners. Drop-ship available direct to your job site. We carry Nexfil surface protection and Solyx clear protective films. Want contractor pricing or a sample kit? I can connect you with our supply team."
-- Relevant pages: /countertop-protection-film-arizona (Arizona supply + install), /countertop-protection-film-nationwide (nationwide supply only), /blog/countertop-protection-film-distributor-nationwide (distributor guide).
+- Regional pages available for specific regions (12 dedicated pages with shipping times, local context, surface compatibility):
+  Southeast U.S., California, Northeast U.S., Midwest, Mexico, Utah, Gulf Coast (Texas/Florida), Chicago/Illinois, Las Vegas/Nevada, Southern California, Colorado, Oregon/Washington
+  Example: User in California → mention /countertop-protection-film-california for 1-2 day shipping, Los Angeles and Bay Area context.
+- Relevant pages: /countertop-protection-film-arizona (Arizona supply + install), /countertop-protection-film-nationwide (nationwide supply hub with full regional grid), regional pages at /countertop-protection-film-{region}, /blog/countertop-protection-film-distributor-nationwide (distributor guide).
 - DO NOT offer out-of-state install — AHOF does not travel to install countertop film. Supply only.
 
 EXTERIOR TIER (applied outside the glass):

@@ -14,6 +14,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server.js'
 import { Routes, Route } from 'react-router-dom'
 import { solyxProducts, solyxToFilmsCategory } from '../src/data/solyxFilms.js'
+import { countertopRegions } from '../src/data/countertopRegions.js'
 
 function _toSlug(str) {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -21,6 +22,10 @@ function _toSlug(str) {
 const SOLYX_SKU_ROUTES = solyxProducts.map(p =>
   `/films/${solyxToFilmsCategory[p.category] || 'specialty-films'}/${_toSlug(p.sku)}`
 )
+// EXCLUDE MEXICO until business confirms cross-border shipping capability
+const COUNTERTOP_ROUTES = countertopRegions
+  .filter(r => r.slug !== 'mexico')
+  .map(r => `/countertop-protection-film-${r.slug}`)
 // HelmetProvider loaded via ssrLoadModule inside main() to share the same
 // module instance as page components (prevents context identity mismatch)
 
@@ -221,6 +226,7 @@ const ROUTES = [
   // NOTE: elegant-textured-films, exterior-films, glasslike-distortion-films,
   // squid-window-textile are stale category aliases — 301'd in vercel.json, do not prerender.
   ...SOLYX_SKU_ROUTES,
+  ...COUNTERTOP_ROUTES,
 ]
 
 const PATTERN_MAP = [
@@ -284,6 +290,8 @@ const PATTERN_MAP = [
   ['/high-rise-commercial-window-tinting-phoenix', '/src/pages/informational/HighRiseCommercialWindowTintingPhoenix.jsx'],
   ['/countertop-protection-film-arizona',   '/src/pages/informational/CountertopProtectionFilmArizona.jsx'],
   ['/countertop-protection-film-nationwide','/src/pages/informational/CountertopProtectionFilmNationwide.jsx'],
+  ['/countertop-protection-film-:regionSlug', '/src/pages/CountertopProtectionPage.jsx'],
+  ...countertopRegions.map(r => [`/countertop-protection-film-${r.slug}`, '/src/pages/CountertopProtectionPage.jsx']),
   ['/hurricane-window-film-arizona',        '/src/pages/informational/HurricaneWindowFilmArizona.jsx'],
   ['/commercial-window-tinting-mesa',      '/src/pages/locations/CommercialWindowTintingMesa.jsx'],
   ['/commercial-window-tinting-chandler',  '/src/pages/locations/CommercialWindowTintingChandler.jsx'],

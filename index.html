@@ -72,18 +72,6 @@
       }
     }
 
-    /* Reserve header height */
-    #header-reserve {
-      height: 80px;
-    }
-
-    /* Reserve hero space */
-    #hero-reserve {
-      width: 100%;
-      aspect-ratio: 1600 / 1066;
-      background: #111;
-    }
-
     /* Prevent white flash */
     #root:empty {
       min-height: 100vh;
@@ -102,28 +90,8 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Header space reservation -->
-  <div id="header-reserve"></div>
-
-  <!-- Hero space reservation -->
-  <div id="hero-reserve"></div>
-
   <!-- React root -->
   <div id="root"></div>
-
-  <script>
-    // Remove reserves after React mounts
-    const observer = new MutationObserver(() => {
-      const root = document.getElementById("root");
-      if (root && root.children.length > 0) {
-        document.getElementById("header-reserve")?.remove();
-        document.getElementById("hero-reserve")?.remove();
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.getElementById("root"), { childList: true });
-  </script>
 
 </body>
 </html>

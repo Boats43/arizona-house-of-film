@@ -377,6 +377,12 @@ async function main() {
   const helmetMod = await vite.ssrLoadModule('react-helmet-async')
   const HelmetProvider = helmetMod.HelmetProvider ?? helmetMod.default?.HelmetProvider
 
+  // Load Header and Footer components
+  const headerMod = await vite.ssrLoadModule('/src/components/Header.jsx')
+  const Header = headerMod.default
+  const footerMod = await vite.ssrLoadModule('/src/components/Footer.jsx')
+  const Footer = footerMod.default
+
   const moduleCache = new Map()
 
   async function loadComponent(src) {
@@ -413,8 +419,13 @@ async function main() {
           React.createElement(
             StaticRouter, { location: route },
             React.createElement(
-              Routes, null,
-              React.createElement(Route, { path: routePattern, element: React.createElement(Component) })
+              React.Fragment, null,
+              React.createElement(Header),
+              React.createElement(
+                Routes, null,
+                React.createElement(Route, { path: routePattern, element: React.createElement(Component) })
+              ),
+              React.createElement(Footer)
             )
           )
         )

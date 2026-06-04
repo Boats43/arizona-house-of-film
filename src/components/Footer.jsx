@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Youtube, Linkedin, Star } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(2026);
+  useEffect(() => { setCurrentYear(new Date().getFullYear()); }, []);
 
   const mainLinks = [
     { name: 'Commercial', path: '/commercial-window-tinting' },

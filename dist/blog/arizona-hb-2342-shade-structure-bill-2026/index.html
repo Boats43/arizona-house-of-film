@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}@media (max-width:1024px){body{padding-bottom:60px}}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-CLPG79Dz.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-C9VfoSTL.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Arizona Shade Structure Bill 2026 | Arizona House of Film</title>
+  <meta data-rh="true" name="description" content="Arizona HB 2342 passed the legislature — HOAs can no longer ban backyard shade structures. Here&#x27;s what it means, and the heat fix that works indoors too. ROC #314088."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="Arizona Shade Structure Bill 2026 | Arizona House of Film"/><meta data-rh="true" property="og:description" content="Arizona HB 2342 passed the legislature — HOAs can no longer ban backyard shade structures. Here&#x27;s what it means, and the heat fix that works indoors too. ROC #314088."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/arizona-hb-2342-shade-structure-bill-2026"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/arizona-hb-2342-shade-structure-bill-2026.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/arizona-hb-2342-shade-structure-bill-2026"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Arizona Shade Structure Bill 2026","description":"An in-depth guide to Arizona HB 2342. Learn about the benefits, costs, and top brands like Hüper Optik, LLumar, Solar Gard.","datePublished":"2026-06-04","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-arizona-hb-2342-shade-structure-bill-2026.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/arizona-hb-2342-shade-structure-bill-2026"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is HB 2342 signed into law yet?","acceptedAnswer":{"@type":"Answer","text":"Not yet — HB 2342 passed both the Arizona House and Senate with bipartisan support and is awaiting the governor's signature. If signed, the bill will take effect approximately September 2026 under Arizona's General Effective Date."}},{"@type":"Question","name":"Can my HOA still restrict shade structures after HB 2342?","acceptedAnswer":{"@type":"Answer","text":"HOAs can set reasonable rules on size, placement, and appearance of shade structures but cannot outright ban them. The bill ensures homeowners have the right to install umbrellas, awnings, shade sails, gazebos, pergolas, and canopies in their backyards."}},{"@type":"Question","name":"Does window film count as a shade structure under HB 2342?","acceptedAnswer":{"@type":"Answer","text":"No — window film installs on glass and is not classified as a shade structure. Solar window film is generally not restricted by HOAs because most high-performance films are optically clear or lightly reflective from the exterior."}},{"@type":"Question","name":"Will solar window film work with a shade structure?","acceptedAnswer":{"@type":"Answer","text":"Yes — they're complementary solutions. Shade structures handle outdoor comfort by blocking direct sun on patios and yards, while solar window film addresses heat transfer through your glass — the entry point shade structures can't address. Together, they create comprehensive indoor-outdoor heat protection."}},{"@type":"Question","name":"Does Arizona House of Film install window film under HOA restrictions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most solar films are optically clear or lightly reflective — typically HOA compliant. We're a licensed Arizona contractor (ROC #314088) and provide free consultations to identify HOA-friendly film options that maximize heat rejection while meeting appearance requirements."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"Arizona Shade Structure Bill 2026","item":"https://arizonahouseoffilm.com/blog/arizona-hb-2342-shade-structure-bill-2026"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- React root -->
+  <div id="root"><header class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm h-20" role="banner"><div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 h-full"><div class="flex items-center justify-between h-full"><div class="flex-shrink-0"><a aria-label="Arizona House of Film - Back to Home" href="/"><img src="/AHOF-logo.webp" alt="Arizona House of Film Logo" class="h-12 w-auto" width="120" height="48"/></a></div><nav class="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Primary navigation"><div class="relative"><div class="flex items-center gap-1"><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/commercial-window-tinting">Commercial</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-gray-500"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="relative"><div class="flex items-center gap-1"><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/residential-window-tinting">Residential</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-gray-500"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="relative"><div class="flex items-center gap-1"><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/solutions">Solutions</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-gray-500"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="relative"><button type="button" class="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-blue-800 transition-colors">Industries<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="m6 9 6 6 6-6"></path></svg></button></div><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/brands">Brands</a><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/contact">Contact</a><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/get-a-quote">Get a Quote</a></nav><div class="hidden lg:flex items-center space-x-4"><div class="flex items-center text-sm mr-2 bg-gray-100 px-3 py-1 rounded-full border border-gray-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#B45309" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-amber-700"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="ml-1.5 text-gray-900 font-bold">4.6 Google Rating</span></div><a aria-label="Get a free window tint estimate today" class="inline-flex items-center justify-center rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 py-2 bg-blue-800 hover:bg-blue-900 font-bold shadow-md px-6" href="/contact">Request Quote</a></div><button class="lg:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-md" aria-label="Open primary navigation menu"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div></header><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Arizona Shade Structure Bill 2026</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->June 3, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+<h1>Arizona's HB 2342 Shade Structure Bill — And the Heat Fix HOAs Can Never Block</h1>
+
+<p>Arizona HB 2342 passed the legislature with bipartisan support in 2026, heading to the governor's desk. If signed, the bill will prohibit HOAs from banning backyard shade structures — a first-of-its-kind measure in the United States. But while shade structures solve outdoor heat, there's a critical gap they don't address: heat transfer through your windows. Here's what the bill does, what it doesn't, and the indoor heat solution HOAs can't restrict.</p>
+
+<h2>What HB 2342 Actually Does</h2>
+
+<p>House Bill 2342 passed both the Arizona House and Senate and is awaiting Governor Katie Hobbs' signature. If signed, the bill takes effect approximately <strong>September 2026</strong> under Arizona's General Effective Date statute.</p>
+
+<p>The bill's core provision: <strong>HOAs cannot prohibit backyard shade structures</strong>. Specifically, it bans HOA restrictions on:</p>
+<ul>
+  <li>Umbrellas</li>
+  <li>Awnings</li>
+  <li>Shade sails</li>
+  <li>Gazebos</li>
+  <li>Pergolas</li>
+  <li>Canopies</li>
+</ul>
+
+<p><strong>What HOAs CAN still do:</strong> Set reasonable rules on size, placement, and appearance. The bill doesn't eliminate all HOA oversight — it eliminates outright bans. So an HOA could require that a shade sail match a neutral color palette or be positioned away from the property line, but it cannot forbid the shade structure entirely.</p>
+
+<p>Arizona is the first state to pass this type of legislation. The bill was motivated by a high-profile case in which a homeowner was forced by their HOA to remove a backyard shade structure, leading to a four-year legal battle. Lawmakers cited Arizona's extreme heat as a public health issue that overrides restrictive HOA covenants.</p>
+
+<h2>The Heat Problem Shade Solves</h2>
+
+<p>Shade structures are highly effective at reducing outdoor temperatures. A properly positioned shade sail or pergola can lower the temperature beneath it by <strong>30°F or more</strong> compared to direct sun exposure. For Arizona homeowners trying to make patios, pools, and backyards usable during summer, shade is essential.</p>
+
+<p>But shade structures cool <strong>outdoor spaces</strong> — yards, patios, pool decks. Your home's interior is a different story.</p>
+
+<h2>The Gap — What Shade Can't Do</h2>
+
+<p>A shade sail protects your patio. A pergola makes your outdoor kitchen tolerable. But neither stops heat from transferring through your windows into your living room, bedrooms, or home office.</p>
+
+<p>When exterior glass absorbs solar radiation, it conducts heat inward — raising interior temperatures, forcing your HVAC system to work harder, and driving up cooling costs. A Phoenix home baking at 95°F outside will have a comfortable shaded backyard under a pergola, but without window treatment, the interior will still heat up from solar gain through the glass.</p>
+
+<p>This is where <strong>solar window film</strong> picks up where shade ends. Film blocks 50–80% of solar heat <em>at the source</em> — the glass itself — the entry point shade structures can't address.</p>
+
+<h2>What Solar Window Film Does</h2>
+
+<p>Solar window film installs on the interior surface of your glass and rejects infrared heat, UV radiation, and visible light glare before it enters your home. Unlike shade structures that shade outdoor areas, window film addresses the <strong>heat transfer pathway</strong> through your windows.</p>
+
+<p><strong>Key benefits:</strong></p>
+<ul>
+  <li><strong>50–80% heat rejection</strong> — High-performance ceramic films like Hüper Optik Select DREI and LLumar CTX block the majority of solar heat entering through glass</li>
+  <li><strong>99% UV protection</strong> — Prevents fading of furniture, flooring, and artwork</li>
+  <li><strong>HOA compliant</strong> — Most solar films are optically clear or lightly reflective from the exterior, so they're rarely restricted by HOAs (unlike reflective exterior shades or screens)</li>
+  <li><strong>SRP rebate eligible</strong> — Arizona utility rebates available for qualifying energy-efficient window film installations (<a href="/blog/srp-rebate-window-film-2026">SRP rebate details</a>)</li>
+  <li><strong>Works year-round</strong> — Unlike seasonal shade sails or retractable awnings, window film provides continuous heat protection</li>
+</ul>
+
+<p>Arizona House of Film is a licensed contractor (ROC #314088) specializing in residential and commercial solar film installation. We handle free consultations, professional measurement, and installations that qualify for utility rebates. <a href="/window-film-cost-arizona">Learn more about window film costs in Arizona</a>.</p>
+
+<h2>Shade + Film Together — The Complete Stack</h2>
+
+<p>Shade structures and solar window film aren't competing solutions — they're <strong>complementary</strong>. Together, they provide comprehensive heat protection for indoor and outdoor spaces:</p>
+
+<ul>
+  <li><strong>Shade structure</strong> — Handles outdoor comfort: patio, pool deck, outdoor kitchen</li>
+  <li><strong>Solar window film</strong> — Handles indoor heat gain through glass: living rooms, bedrooms, home offices</li>
+</ul>
+
+<p><strong>The full outdoor kitchen stack:</strong> If you're building or upgrading an outdoor kitchen in Arizona, consider this combination:</p>
+<ol>
+  <li><strong>Pergola or shade sail</strong> — Provides overhead shade for outdoor cooking and dining areas</li>
+  <li><strong><a href="/countertop-protection-film-arizona">Countertop protection film</a></strong> — Protects outdoor countertops (quartz, granite, concrete) from UV degradation, scratches, and heat damage</li>
+  <li><strong>Solar film on sliding glass doors</strong> — Prevents heat transfer from the backyard into your kitchen and dining room when doors are closed</li>
+</ol>
+
+<p>This layered approach keeps outdoor spaces usable and prevents indoor heat buildup — a critical combo for Arizona's 110°F+ summer days.</p>
+
+<h2>Why Window Film Is HOA-Proof</h2>
+
+<p>Unlike shade structures, solar window film is rarely restricted by HOAs. Here's why:</p>
+
+<ul>
+  <li><strong>Invisible from outside</strong> — High-performance ceramic films like Hüper Optik Klar, LLumar CTX, and Solar Gard Panorama are optically clear or have only light tint from the exterior</li>
+  <li><strong>Interior installation</strong> — Film is applied to the inside surface of the glass, so there's no exterior alteration visible from the street</li>
+  <li><strong>No structural change</strong> — Unlike awnings, screens, or shutters, window film doesn't alter the building envelope or façade</li>
+</ul>
+
+<p>Most HOAs classify window film the same way they classify interior window treatments (blinds, curtains) — not subject to exterior appearance restrictions. That said, if your HOA has specific language about reflective glass or tinting, we recommend reviewing your CC&Rs or requesting pre-approval. Arizona House of Film provides sample swatches and technical spec sheets to simplify the approval process.</p>
+
+<p><a href="/best-window-film-arizona-heat">Read our full guide to the best window film for Arizona heat in 2026</a>.</p>
+
+<h2>Next Steps</h2>
+
+<p>If you're planning a shade structure under HB 2342 or looking for an indoor heat solution that complements your outdoor setup, Arizona House of Film offers free consultations and professional installations backed by manufacturer warranties and Arizona ROC licensing (ROC #314088).</p>
+
+<p><strong>Schedule a free consultation:</strong> <a href="/get-a-quote">Get a free quote</a> or call <a href="tel:4807881591">(480) 788-1591</a>.</p>
+</div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/window-tinting-phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article><footer class="bg-gray-900 text-white" itemscope="" itemType="https://schema.org/WPFooter"><div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8"><div class="col-span-2 lg:col-span-2"><a class="flex items-center gap-2" href="/"><img src="/AHOF-logo.webp" alt="Arizona House of Film Logo" class="h-12 w-auto" loading="lazy" width="120" height="48"/><span class="font-bold text-xl">Arizona House of Film</span></a><p class="mt-4 text-gray-400 text-sm">Arizona&#x27;s trusted, licensed partner for professional window tinting solutions. ROC # 314088</p><div class="mt-6 flex items-center space-x-1 text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="text-white ml-2 text-sm">4.6 Stars (22 Reviews)</span></div><div class="mt-6 flex space-x-4"><a href="https://www.facebook.com/arizonahouseoffilm" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.instagram.com/arizonahouseoffilm/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a><a href="https://www.youtube.com/@arizonahouseoffilm" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a><a href="https://www.linkedin.com/company/arizona-house-of-film" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Services</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/commercial-window-tinting">Commercial</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/commercial-window-tinting-scottsdale">Commercial Scottsdale</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/residential-window-tinting">Residential</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/residential-window-tinting-scottsdale">Residential Scottsdale</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/safety">Safety &amp; Security</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/anti-graffiti">Anti-Graffiti</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/decorative-window-films">Decorative Films</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/energy-saving-window-films">Energy Saving</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/solutions">All Solutions</a></li></ul><p class="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">Privacy Solutions</p><ul class="space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/bathroom-privacy-window-film">Bathroom Privacy Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/office-privacy-window-film">Office Privacy Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/storefront-window-film">Storefront Window Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/entryway-window-film">Entryway &amp; Door Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/sidelight-window-film">Sidelight Window Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/privacy-film-sliding-glass-door">Sliding Glass Door Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/one-way-mirror-window-film">One-Way Mirror Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/office-partition-window-film">Office Partition Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/restaurant-window-film">Restaurant Window Film</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Phoenix</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-phoenix">Window Tinting Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-phoenix">Window Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/commercial-window-film-phoenix">Commercial Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/residential-window-tinting-phoenix">Residential Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/solar-window-film-phoenix">Solar Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/security-window-film-phoenix">Security Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/anti-graffiti-film-phoenix">Anti-Graffiti Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/decorative-window-film-phoenix">Decorative Film Phoenix</a></li></ul><p class="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">East Valley</p><ul class="space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-chandler">Window Tinting Chandler</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-gilbert">Window Tinting Gilbert</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-peoria">Window Tinting Peoria</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-queen-creek">Window Tinting Queen Creek</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-fountain-hills">Window Tinting Fountain Hills</a></li></ul><p class="text-gray-500 text-xs font-bold uppercase tracking-wider mt-4 mb-2">West &amp; Central Valley</p><ul class="space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-mesa">Window Tinting Mesa</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-tempe">Window Tinting Tempe</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-glendale">Window Tinting Glendale</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-tolleson">Window Tinting Tolleson</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-avondale">Window Tinting Avondale</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Explore</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/films">Films</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/brands">Brands</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/service-areas">Service Areas</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/gallery">Gallery</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/blog">Blog</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/book-now">Book Now</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/store">Store</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/contact">Contact</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/get-a-quote">Get a Quote</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/ai-window-film-estimator">AI Estimator</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-cost-arizona">Window Film Cost</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-faq">Window Film FAQ</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-distributor-phoenix">Window Film Distributor</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Industries</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries">All Industries</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/office-buildings">Office Buildings</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/retail-stores">Retail Stores</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/restaurants">Restaurants</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/medical-facilities">Medical Facilities</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/educational-institutions">Schools</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/government-buildings">Government</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/hotels-hospitality">Hotels</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/warehouses">Warehouses</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Company</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/welcome">About Us</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/careers">Careers</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/privacy-policy">Privacy Policy</a></li></ul></div></div><div class="mt-12 border-t border-gray-800 pt-8"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-gray-400"><p>© <!-- -->2026<!-- --> Arizona House of Film. All Rights Reserved. ROC #314088</p><div class="flex flex-col md:flex-row md:items-center gap-3"><a href="tel:4807881591" class="hover:text-white">Phone: (480) 788-1591</a><a href="mailto:arizonahouseoffilm@gmail.com" class="hover:text-white">arizonahouseoffilm@gmail.com</a><span itemProp="address" itemscope="" itemType="https://schema.org/PostalAddress"><span itemProp="streetAddress">7007 W Flower St</span>,<!-- --> <span itemProp="addressLocality">Phoenix</span>,<!-- --> <span itemProp="addressRegion">AZ</span> <span itemProp="postalCode">85033</span></span></div></div></div></div></footer></div>
+
+</body>
+</html>

@@ -1,5 +1,130 @@
 const allBlogData = [
   {
+    slug: 'arizona-hb-2342-shade-structure-bill-2026',
+    title: 'Arizona Shade Structure Bill 2026',
+    excerpt: 'Arizona HB 2342 passed the legislature — HOAs can no longer ban backyard shade structures. Here\'s what it means, and the heat fix that works indoors too. ROC #314088.',
+    canonicalUrl: '/blog/arizona-hb-2342-shade-structure-bill-2026',
+    date: '2026-06-04',
+    alt: 'Arizona backyard with shade structure and solar window film protecting from extreme heat.',
+    keywords: 'Arizona HB 2342, shade structure bill Arizona, HOA shade ban, Arizona heat solutions',
+    serviceLink: '/residential-window-tinting-phoenix',
+    cityLink: '/window-tinting-phoenix',
+    brandMentions: 'Hüper Optik, LLumar, Solar Gard',
+    faqs: [
+      {
+        question: 'Is HB 2342 signed into law yet?',
+        answer: 'Not yet — HB 2342 passed both the Arizona House and Senate with bipartisan support and is awaiting the governor\'s signature. If signed, the bill will take effect approximately September 2026 under Arizona\'s General Effective Date.'
+      },
+      {
+        question: 'Can my HOA still restrict shade structures after HB 2342?',
+        answer: 'HOAs can set reasonable rules on size, placement, and appearance of shade structures but cannot outright ban them. The bill ensures homeowners have the right to install umbrellas, awnings, shade sails, gazebos, pergolas, and canopies in their backyards.'
+      },
+      {
+        question: 'Does window film count as a shade structure under HB 2342?',
+        answer: 'No — window film installs on glass and is not classified as a shade structure. Solar window film is generally not restricted by HOAs because most high-performance films are optically clear or lightly reflective from the exterior.'
+      },
+      {
+        question: 'Will solar window film work with a shade structure?',
+        answer: 'Yes — they\'re complementary solutions. Shade structures handle outdoor comfort by blocking direct sun on patios and yards, while solar window film addresses heat transfer through your glass — the entry point shade structures can\'t address. Together, they create comprehensive indoor-outdoor heat protection.'
+      },
+      {
+        question: 'Does Arizona House of Film install window film under HOA restrictions?',
+        answer: 'Yes. Most solar films are optically clear or lightly reflective — typically HOA compliant. We\'re a licensed Arizona contractor (ROC #314088) and provide free consultations to identify HOA-friendly film options that maximize heat rejection while meeting appearance requirements.'
+      }
+    ],
+    ctaCity: 'Phoenix',
+    customContent: `
+<h1>Arizona's HB 2342 Shade Structure Bill — And the Heat Fix HOAs Can Never Block</h1>
+
+<p>Arizona HB 2342 passed the legislature with bipartisan support in 2026, heading to the governor's desk. If signed, the bill will prohibit HOAs from banning backyard shade structures — a first-of-its-kind measure in the United States. But while shade structures solve outdoor heat, there's a critical gap they don't address: heat transfer through your windows. Here's what the bill does, what it doesn't, and the indoor heat solution HOAs can't restrict.</p>
+
+<h2>What HB 2342 Actually Does</h2>
+
+<p>House Bill 2342 passed both the Arizona House and Senate and is awaiting Governor Katie Hobbs' signature. If signed, the bill takes effect approximately <strong>September 2026</strong> under Arizona's General Effective Date statute.</p>
+
+<p>The bill's core provision: <strong>HOAs cannot prohibit backyard shade structures</strong>. Specifically, it bans HOA restrictions on:</p>
+<ul>
+  <li>Umbrellas</li>
+  <li>Awnings</li>
+  <li>Shade sails</li>
+  <li>Gazebos</li>
+  <li>Pergolas</li>
+  <li>Canopies</li>
+</ul>
+
+<p><strong>What HOAs CAN still do:</strong> Set reasonable rules on size, placement, and appearance. The bill doesn't eliminate all HOA oversight — it eliminates outright bans. So an HOA could require that a shade sail match a neutral color palette or be positioned away from the property line, but it cannot forbid the shade structure entirely.</p>
+
+<p>Arizona is the first state to pass this type of legislation. The bill was motivated by a high-profile case in which a homeowner was forced by their HOA to remove a backyard shade structure, leading to a four-year legal battle. Lawmakers cited Arizona's extreme heat as a public health issue that overrides restrictive HOA covenants.</p>
+
+<h2>The Heat Problem Shade Solves</h2>
+
+<p>Shade structures are highly effective at reducing outdoor temperatures. A properly positioned shade sail or pergola can lower the temperature beneath it by <strong>30°F or more</strong> compared to direct sun exposure. For Arizona homeowners trying to make patios, pools, and backyards usable during summer, shade is essential.</p>
+
+<p>But shade structures cool <strong>outdoor spaces</strong> — yards, patios, pool decks. Your home's interior is a different story.</p>
+
+<h2>The Gap — What Shade Can't Do</h2>
+
+<p>A shade sail protects your patio. A pergola makes your outdoor kitchen tolerable. But neither stops heat from transferring through your windows into your living room, bedrooms, or home office.</p>
+
+<p>When exterior glass absorbs solar radiation, it conducts heat inward — raising interior temperatures, forcing your HVAC system to work harder, and driving up cooling costs. A Phoenix home baking at 95°F outside will have a comfortable shaded backyard under a pergola, but without window treatment, the interior will still heat up from solar gain through the glass.</p>
+
+<p>This is where <strong>solar window film</strong> picks up where shade ends. Film blocks 50–80% of solar heat <em>at the source</em> — the glass itself — the entry point shade structures can't address.</p>
+
+<h2>What Solar Window Film Does</h2>
+
+<p>Solar window film installs on the interior surface of your glass and rejects infrared heat, UV radiation, and visible light glare before it enters your home. Unlike shade structures that shade outdoor areas, window film addresses the <strong>heat transfer pathway</strong> through your windows.</p>
+
+<p><strong>Key benefits:</strong></p>
+<ul>
+  <li><strong>50–80% heat rejection</strong> — High-performance ceramic films like Hüper Optik Select DREI and LLumar CTX block the majority of solar heat entering through glass</li>
+  <li><strong>99% UV protection</strong> — Prevents fading of furniture, flooring, and artwork</li>
+  <li><strong>HOA compliant</strong> — Most solar films are optically clear or lightly reflective from the exterior, so they're rarely restricted by HOAs (unlike reflective exterior shades or screens)</li>
+  <li><strong>SRP rebate eligible</strong> — Arizona utility rebates available for qualifying energy-efficient window film installations (<a href="/blog/srp-rebate-window-film-2026">SRP rebate details</a>)</li>
+  <li><strong>Works year-round</strong> — Unlike seasonal shade sails or retractable awnings, window film provides continuous heat protection</li>
+</ul>
+
+<p>Arizona House of Film is a licensed contractor (ROC #314088) specializing in residential and commercial solar film installation. We handle free consultations, professional measurement, and installations that qualify for utility rebates. <a href="/window-film-cost-arizona">Learn more about window film costs in Arizona</a>.</p>
+
+<h2>Shade + Film Together — The Complete Stack</h2>
+
+<p>Shade structures and solar window film aren't competing solutions — they're <strong>complementary</strong>. Together, they provide comprehensive heat protection for indoor and outdoor spaces:</p>
+
+<ul>
+  <li><strong>Shade structure</strong> — Handles outdoor comfort: patio, pool deck, outdoor kitchen</li>
+  <li><strong>Solar window film</strong> — Handles indoor heat gain through glass: living rooms, bedrooms, home offices</li>
+</ul>
+
+<p><strong>The full outdoor kitchen stack:</strong> If you're building or upgrading an outdoor kitchen in Arizona, consider this combination:</p>
+<ol>
+  <li><strong>Pergola or shade sail</strong> — Provides overhead shade for outdoor cooking and dining areas</li>
+  <li><strong><a href="/countertop-protection-film-arizona">Countertop protection film</a></strong> — Protects outdoor countertops (quartz, granite, concrete) from UV degradation, scratches, and heat damage</li>
+  <li><strong>Solar film on sliding glass doors</strong> — Prevents heat transfer from the backyard into your kitchen and dining room when doors are closed</li>
+</ol>
+
+<p>This layered approach keeps outdoor spaces usable and prevents indoor heat buildup — a critical combo for Arizona's 110°F+ summer days.</p>
+
+<h2>Why Window Film Is HOA-Proof</h2>
+
+<p>Unlike shade structures, solar window film is rarely restricted by HOAs. Here's why:</p>
+
+<ul>
+  <li><strong>Invisible from outside</strong> — High-performance ceramic films like Hüper Optik Klar, LLumar CTX, and Solar Gard Panorama are optically clear or have only light tint from the exterior</li>
+  <li><strong>Interior installation</strong> — Film is applied to the inside surface of the glass, so there's no exterior alteration visible from the street</li>
+  <li><strong>No structural change</strong> — Unlike awnings, screens, or shutters, window film doesn't alter the building envelope or façade</li>
+</ul>
+
+<p>Most HOAs classify window film the same way they classify interior window treatments (blinds, curtains) — not subject to exterior appearance restrictions. That said, if your HOA has specific language about reflective glass or tinting, we recommend reviewing your CC&Rs or requesting pre-approval. Arizona House of Film provides sample swatches and technical spec sheets to simplify the approval process.</p>
+
+<p><a href="/best-window-film-arizona-heat">Read our full guide to the best window film for Arizona heat in 2026</a>.</p>
+
+<h2>Next Steps</h2>
+
+<p>If you're planning a shade structure under HB 2342 or looking for an indoor heat solution that complements your outdoor setup, Arizona House of Film offers free consultations and professional installations backed by manufacturer warranties and Arizona ROC licensing (ROC #314088).</p>
+
+<p><strong>Schedule a free consultation:</strong> <a href="/get-a-quote">Get a free quote</a> or call <a href="tel:4807881591">(480) 788-1591</a>.</p>
+`
+  },
+  {
     slug: 'ultimate-guide-to-window-tinting-benefits-in-arizona',
     title: 'Ultimate Guide to Window Tinting Benefits in Arizona',
     excerpt: 'Everything you need to know about window tinting benefits in Arizona — UV protection, energy savings, and privacy for Phoenix-area homes.',

@@ -75,6 +75,7 @@
 - All routes must be added to BOTH `App.jsx` AND `scripts/prerender.js` (ROUTES + PATTERN_MAP)
 - **Dynamic route params require slashes, not hyphens** (learned 2026-06-03): Any data-driven page using useParams() MUST use /category/:slug structure, NEVER /category-:slug. React Router SSR splits on slashes to match segments — a hyphenated single-segment URL cannot bind a :param. Failure mode is SILENT: prerender renders a 7.5KB SPA shell instead of full SSR HTML, no build error, ✓ shows in prerender log, but Google receives empty content with noindex. Working pattern: ROUTES use explicit slugs (/countertop-protection-film/southeast-us), PATTERN_MAP + App.jsx Route use the wildcard (/countertop-protection-film/:regionSlug).
 - **Hero images MUST include width, height, AND style={{aspectRatio}}** — missing dimensions caused site-wide CLS 0.72 (2026-06-03). Use Home.jsx line 107 as the canonical hero pattern: `<img src={HERO_IMAGE} width="1600" height="1066" fetchpriority="high" loading="eager" style={{ aspectRatio: "1600/1066" }} />`. For CSS backgroundImage heroes, add aspectRatio to the container style. FloatingContactButton mobile CLS mitigated via body { padding-bottom: 60px } in index.html.
+- **Logo**: /public/AHOF-logo.webp (240×96px, 3.1KB). Replaced /AHOF Logo.png (500×500px, 129KB) on 2026-06-04. Never revert to PNG. Used in Header.jsx (desktop + mobile) and Footer.jsx.
 - Film category slugs in solyxFilms.js differ from route slugs — use `categoryRoutes` map in chat.js
 - Node ESM: use `react-router-dom/server.js` (needs `.js` extension) for SSR
 - Never expose API keys in client code — all secrets are server-side `process.env` only
@@ -98,5 +99,13 @@
 - `/window-film-distributor-phoenix` added — new distributor/wholesale page for 6 authorized lines (Nexfil USA, Solyx, Madico, MaxPro, SunTek, XPEL), FAQPage + Organization/OfferCatalog schema, contractor drop-ship and bulk pricing, 6 buyer segments (GCs, architects, interior designers, facility managers, sign shops, glass shops). Schema later revised to single Service + LocalBusiness to clear GSC Product-without-offers warning.
 - Nexfil USA full presence added — dedicated `/brands/nexfil` page (NexfilPage.jsx), `src/data/nexfilFilms.js` catalog (7 categories, ~38 SKUs), brands.js entry, and api/chat.js ORDER-IN inventory listing. Monitor indexing for "nexfil", "nexfil usa", "onyva ir90", and "lux ir80".
 - Audit fixes 2026-04-19: (1) `/privacy-policy` added to prerender ROUTES (was served by SPA fallback only). (2) Backfilled 41 missing `<lastmod>` entries — 4 in sitemap-core, 37 long-tail cities in sitemap-service-areas. (3) `/brands/panorama` moved from sitemap-core to sitemap-brands. (4) LLumar and SunTek entries added to `brands.js` so the `/brands` hub iteration now covers all 8 dedicated brand pages. (5) Deleted dead-code orphans `src/pages/HomePage.jsx` (legacy Hostinger redirect) and `src/pages/ProductDetailPage.jsx` (old e-commerce UI).
-- Last updated: June 3, 2026
-- Last commit: f4df1f2bf (countertop regional pages — correct URL structure to /countertop-protection-film/:regionSlug for SSR useParams compatibility)
+- Last updated: June 4, 2026
+- Last commit: 35baa9545 (logo PNG→WebP, 97.6% reduction)
+
+## Performance Baselines (as of 2026-06-04)
+- PageSpeed Desktop: 92 (CLS: 0.002, LCP: 1.4s, FCP: 0.7s)
+- PageSpeed Mobile: 67 → pending logo fix measurement
+- CLS history: 0.72 (Jun 1) → 0.431 mobile/0.729 desktop (after hero fix) → 0.002/0 (after SSR header fix Jun 4)
+- Root causes fixed: hero image dimensions (mobile), header-reserve SSR mismatch (desktop), logo PNG (LCP)
+- Vercel Speed Insights RES: 75 (field data, updating)
+- Next target: Mobile Performance 75+, LCP <4s

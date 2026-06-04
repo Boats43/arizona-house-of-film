@@ -70,6 +70,61 @@ const allBlogData = [
 
 <p>This is where <strong>solar window film</strong> picks up where shade ends. Film blocks 50–80% of solar heat <em>at the source</em> — the glass itself — the entry point shade structures can't address.</p>
 
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 rounded-xl overflow-hidden shadow-lg">
+  <div class="bg-gradient-to-br from-red-600 to-orange-400 p-6 text-white">
+    <div class="text-3xl mb-2">🔥</div>
+    <h3 class="font-bold text-lg mb-2">Standard Glass</h3>
+    <p class="text-sm opacity-90">Solar heat passes directly through glass. Interior temps rise 15–25°F above outdoor near sun-facing windows.</p>
+    <div class="mt-4 bg-red-900/40 rounded-lg p-3 text-center font-bold text-sm">Interior near windows: ~95–105°F</div>
+  </div>
+  <div class="bg-gradient-to-br from-blue-600 to-cyan-500 p-6 text-white">
+    <div class="text-3xl mb-2">❄️</div>
+    <h3 class="font-bold text-lg mb-2">With Ceramic Solar Film</h3>
+    <p class="text-sm opacity-90">Up to 99% of infrared heat reflected before entering. AC runs less. Interior stays comfortable.</p>
+    <div class="mt-4 bg-blue-900/40 rounded-lg p-3 text-center font-bold text-sm">Interior: Cooler by 15–25°F ✓</div>
+  </div>
+</div>
+
+<div class="bg-gray-50 rounded-xl p-6 my-8 overflow-x-auto">
+  <h2 class="text-xl font-bold text-gray-900 mb-1">Which Film Is Right for Arizona Heat?</h2>
+  <p class="text-sm text-gray-600 mb-4">Not all window film handles desert sun equally. Here's the honest breakdown:</p>
+  <table class="w-full text-sm border-collapse">
+    <thead>
+      <tr class="bg-gray-800 text-white">
+        <th class="p-3 text-left rounded-tl-lg">Film Type</th>
+        <th class="p-3 text-center">Heat (IR) Rejection</th>
+        <th class="p-3 text-center">UV Protection</th>
+        <th class="p-3 text-center">AZ Lifespan</th>
+        <th class="p-3 text-center rounded-tr-lg">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-gray-200">
+        <td class="p-3 font-medium">Standard Dyed</td>
+        <td class="p-3 text-center text-red-600">20–30%</td>
+        <td class="p-3 text-center">Moderate</td>
+        <td class="p-3 text-center text-red-600">1–3 yrs</td>
+        <td class="p-3 text-center">$</td>
+      </tr>
+      <tr class="border-b border-gray-200 bg-white">
+        <td class="p-3 font-medium">Carbon Film</td>
+        <td class="p-3 text-center text-yellow-600">40–50%</td>
+        <td class="p-3 text-center">99%</td>
+        <td class="p-3 text-center text-yellow-600">3–5 yrs</td>
+        <td class="p-3 text-center">$$</td>
+      </tr>
+      <tr class="bg-amber-50">
+        <td class="p-3 font-bold text-amber-900">Premium Ceramic ⭐ RECOMMENDED</td>
+        <td class="p-3 text-center font-bold text-green-700">80–99%</td>
+        <td class="p-3 text-center font-bold text-green-700">99.9%</td>
+        <td class="p-3 text-center font-bold text-green-700">Lifetime</td>
+        <td class="p-3 text-center font-bold text-amber-900">$$$</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-xs text-gray-500 mt-3">In Arizona's extreme heat, ceramic film is the only tier that never fades, never purples, and pays for itself long-term through AC savings.</p>
+</div>
+
 <h2>What Solar Window Film Does</h2>
 
 <p>Solar window film installs on the interior surface of your glass and rejects infrared heat, UV radiation, and visible light glare before it enters your home. Unlike shade structures that shade outdoor areas, window film addresses the <strong>heat transfer pathway</strong> through your windows.</p>
@@ -82,6 +137,28 @@ const allBlogData = [
   <li><strong>SRP rebate eligible</strong> — Arizona utility rebates available for qualifying energy-efficient window film installations (<a href="/blog/srp-rebate-window-film-2026">SRP rebate details</a>)</li>
   <li><strong>Works year-round</strong> — Unlike seasonal shade sails or retractable awnings, window film provides continuous heat protection</li>
 </ul>
+
+<div class="bg-green-50 border border-green-200 rounded-xl p-6 my-6">
+  <h3 class="font-bold text-green-900 text-lg mb-3">💰 SRP Rebate: The Actual Math</h3>
+  <div class="space-y-2 text-sm">
+    <div class="flex justify-between py-2 border-b border-green-200 text-green-800">
+      <span>SRP rebate rate (qualifying solar film)</span>
+      <span class="font-bold">$0.75–$1.00 per sqft</span>
+    </div>
+    <div class="flex justify-between py-2 border-b border-green-200 text-green-800">
+      <span>Typical home — 15 windows (≈200 sqft)</span>
+      <span class="font-bold">$150–$200 cashback</span>
+    </div>
+    <div class="flex justify-between py-2 border-b border-green-200 text-green-800">
+      <span>Requirement</span>
+      <span class="font-bold">Licensed ROC contractor + NFRC-rated film</span>
+    </div>
+    <div class="flex justify-between py-2 text-green-900 font-bold">
+      <span>AHOF handles all rebate paperwork</span>
+      <span>ROC #314088 ✓</span>
+    </div>
+  </div>
+</div>
 
 <p>Arizona House of Film is a licensed contractor (ROC #314088) specializing in residential and commercial solar film installation. We handle free consultations, professional measurement, and installations that qualify for utility rebates. <a href="/window-film-cost-arizona">Learn more about window film costs in Arizona</a>.</p>
 
@@ -116,6 +193,14 @@ const allBlogData = [
 <p>Most HOAs classify window film the same way they classify interior window treatments (blinds, curtains) — not subject to exterior appearance restrictions. That said, if your HOA has specific language about reflective glass or tinting, we recommend reviewing your CC&Rs or requesting pre-approval. Arizona House of Film provides sample swatches and technical spec sheets to simplify the approval process.</p>
 
 <p><a href="/best-window-film-arizona-heat">Read our full guide to the best window film for Arizona heat in 2026</a>.</p>
+
+<div class="bg-blue-900 rounded-xl p-8 my-8 text-center">
+  <h3 class="text-white font-bold text-xl mb-2">See What Film Would Cost Your Home</h3>
+  <p class="text-blue-200 text-sm mb-5">Enter your window count and orientation — get an instant estimate of film cost, monthly AC savings, and your SRP rebate amount.</p>
+  <a href="/ai-window-film-estimator" class="inline-block bg-amber-500 hover:bg-amber-400 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+    Try Free AI Estimator →
+  </a>
+</div>
 
 <h2>Next Steps</h2>
 

@@ -83,7 +83,8 @@
       "Bash(vercel logs *)",
       "Bash(vercel ls *)",
       "Bash(Get-Content \"C:\\\\Users\\\\matam\\\\OneDrive\\\\Desktop\\\\AZHOF\\\\horizons-export-500f9a0e-19d5-4ed7-98ea-cc353ce878bb\\(4\\)\\\\src\\\\pages\\\\SecurityPhoenix.jsx\")",
-      "Bash(Select-String -Pattern \"hero\" -Context 3,3)"
+      "Bash(Select-String -Pattern \"hero\" -Context 3,3)",
+      "Bash(ffmpeg -i \"AHOF Logo.png\" -vf \"scale=96:96\" -quality 85 -compression_level 6 \"AHOF-logo.webp\" -y)"
     ]
   }
 }

@@ -114,7 +114,7 @@ const Footer = () => {
                 alt="Arizona House of Film Logo"
                 className="h-12 w-auto"
                 loading="lazy"
-                width="120"
+                width="48"
                 height="48"
               />
               <span className="font-bold text-xl">Arizona House of Film</span>

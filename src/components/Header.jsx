@@ -163,7 +163,7 @@ const Header = () => {
                   src="/AHOF-logo.webp"
                   alt="Arizona House of Film Logo"
                   className="h-12 w-auto"
-                  width="120"
+                  width="48"
                   height="48"
                 />
               </Link>
@@ -345,7 +345,7 @@ const Header = () => {
                 src="/AHOF-logo.webp"
                 alt="Arizona House of Film Logo"
                 className="h-8 w-auto"
-                width="80"
+                width="32"
                 height="32"
               />
               <p className="text-xs text-gray-500 font-medium mt-1">

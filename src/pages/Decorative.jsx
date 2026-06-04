@@ -261,7 +261,7 @@ const Decorative = () => {
         {/* HERO */}
         <section className="relative min-h-[70vh] flex items-center pt-24 bg-white overflow-hidden text-slate-900">
           <div className="absolute inset-0 z-0 opacity-15">
-            <img alt="Decorative window film pattern installation" className="w-full h-full object-cover" src={heroImageUrl} fetchpriority="high" width="1920" height="1080" />
+            <img alt="Decorative window film pattern installation" className="w-full h-full object-cover" src={heroImageUrl} fetchpriority="high" width="1920" height="1080" style={{ aspectRatio: '1920/1080' }} />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="max-w-3xl">

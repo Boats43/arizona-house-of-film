@@ -173,6 +173,9 @@ const CommercialPhoenix = () => {
               className="w-full h-full object-cover opacity-40"
               src={heroImageUrl}
               fetchpriority="high"
+              width="1600"
+              height="1066"
+              style={{ aspectRatio: '1600/1066' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>

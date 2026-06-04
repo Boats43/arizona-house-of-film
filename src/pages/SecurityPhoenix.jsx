@@ -334,7 +334,7 @@ export default function SecurityPhoenix() {
         <div className="absolute inset-0 bg-slate-950 opacity-80 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImageUrl})` }}
+          style={{ backgroundImage: `url(${heroImageUrl})`, aspectRatio: '1600/1066' }}
         />
         <div className="relative z-20 max-w-4xl mx-auto px-6 text-center">
           <motion.div

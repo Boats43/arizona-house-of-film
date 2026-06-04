@@ -160,7 +160,7 @@ const Header = () => {
             <div className="flex-shrink-0">
               <Link to="/" aria-label="Arizona House of Film - Back to Home">
                 <img
-                  src="/AHOF Logo.png"
+                  src="/AHOF-logo.webp"
                   alt="Arizona House of Film Logo"
                   className="h-12 w-auto"
                   width="120"
@@ -342,7 +342,7 @@ const Header = () => {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
             <div>
               <img
-                src="/AHOF Logo.png"
+                src="/AHOF-logo.webp"
                 alt="Arizona House of Film Logo"
                 className="h-8 w-auto"
                 width="80"

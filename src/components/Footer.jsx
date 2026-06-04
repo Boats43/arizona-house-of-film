@@ -110,7 +110,7 @@ const Footer = () => {
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src="/AHOF Logo.png"
+                src="/AHOF-logo.webp"
                 alt="Arizona House of Film Logo"
                 className="h-12 w-auto"
                 loading="lazy"

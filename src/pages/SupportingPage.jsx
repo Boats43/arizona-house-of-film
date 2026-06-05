@@ -18,17 +18,10 @@ const SupportingPage = () => {
   let pageData = pageKey ? supportingPagesData[pageKey] : null;
 
   /* ============================================================
-     THIN CONTENT NOINDEX — GSC "Crawled - not indexed" fix
-     Google refuses to index these ultra-thin (<300 word) pages.
+     NOINDEX REMOVED 2026-06-04 — All supporting pages have 370+ words
+     Original concern was <300 word pages, but actual content is substantial.
   ============================================================ */
-  const noindexPages = [
-    'safety/clear-visibility',
-    'safety/schools',
-    'safety/basement-windows',
-    'decorative-window-films/aesthetic-appeal',
-    'residential-window-tinting/uv-protection'
-  ];
-  const shouldNoindex = pageKey && noindexPages.includes(pageKey);
+  const shouldNoindex = false;
 
   /* ============================================================
      FIREWALL LAYER 1 — Invalid Nested Route (/category/slug)

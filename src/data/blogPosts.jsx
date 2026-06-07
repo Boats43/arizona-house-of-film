@@ -471,8 +471,8 @@ const allBlogData = [
   },
   {
     slug: 'srp-rebate-window-film-2026',
-    title: 'SRP Window Film Rebate Arizona 2026',
-    excerpt: 'SRP offers $0.75–$1.00 per sqft rebate on qualifying window film. Arizona House of Film handles all NFRC documentation and rebate paperwork. ROC #314088.',
+    title: 'SRP Window Film Rebate 2026 | Up to $1/sqft + Paperwork Done',
+    excerpt: 'SRP pays $0.75–$1.00 per sqft on qualifying window film in 2026. We handle all NFRC and rebate paperwork for you. See if your home qualifies.',
     date: '2026-04-04',
     alt: 'SRP rebate application form with window film installation documentation.',
     keywords: 'SRP window film rebate 2026, SRP rebate window tinting, APS window film rebate Arizona',

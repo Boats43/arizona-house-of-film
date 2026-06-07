@@ -52,8 +52,8 @@ export default function CountertopProtectionFilmArizona() {
   return (
     <>
       <Helmet>
-        <title>Countertop Protection Film Arizona | ROC #314088</title>
-        <meta name="description" content="Arizona House of Film supplies and installs countertop protection film statewide. Nexfil, Solyx, and clear bra surface protection. Licensed ROC #314088." />
+        <title>Countertop Protection Film Installation Arizona | Free Quote</title>
+        <meta name="description" content="Professional countertop protection film installation across Arizona. Clear, scratch-proof surface protection for quartz, marble, and granite. Licensed installer — get a quote." />
         <link rel="canonical" href="https://arizonahouseoffilm.com/countertop-protection-film-arizona" />
         <meta property="og:title" content="Countertop Protection Film — Supply & Installation Arizona | ROC #314088" />
         <meta property="og:description" content="Supply and installation of countertop protection film across Arizona. Nexfil and Solyx surface protection lines — contractor pricing, drop-ship, or full-service install. ROC #314088." />

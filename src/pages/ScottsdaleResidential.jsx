@@ -10,9 +10,9 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const ScottsdaleResidential = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Residential Window Film Scottsdale AZ | ROC #314088';
+  const pageTitle = 'Scottsdale Home Window Tinting & Film | HOA Compliant';
   const metaDescription =
-    "Residential window film in Scottsdale AZ. Ceramic, dual reflective, privacy, and security film for North Scottsdale homes. HOA compliant. ROC #314088.";
+    "Residential window film and tinting in Scottsdale AZ. Ceramic, dual-reflective, privacy, and security film for North Scottsdale homes. HOA compliant. Free estimate.";
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-scottsdale';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl = '/images/gallery/20250619_100523.webp';

@@ -3216,8 +3216,8 @@ const allBlogData = [
   },
   {
     slug: 'one-way-window-film-day-and-night-guide',
-    title: 'Does One-Way Window Film Work at Night?',
-    excerpt: 'Reflective window film loses privacy at night when interior lights are on. Here\'s why — and the 3 films that actually work day AND night. ROC #314088.',
+    title: 'Does One-Way Window Film Work at Night? The Honest Answer',
+    excerpt: 'Most one-way film fails at night when your lights are on. Here are the only 3 films that give real privacy day and night — and which to skip.',
     date: '2026-04-28',
     alt: 'A side-by-side comparison of a reflective one-way film exterior view by day vs the same window at night with interior lights on.',
     keywords: 'one way window film day and night, reflective window film day and night, 2 way mirror film, night time privacy window film, privacy window film at night, one-way window film that works at night, does one way privacy film work at night',

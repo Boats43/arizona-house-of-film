@@ -10,8 +10,8 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const SolarPhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Solar Window Film Phoenix AZ | Heat Rejection & Energy Savings | Arizona House of Film';
-  const metaDescription = 'Phoenix solar window film installer. Block up to 80% solar heat, cut AC costs, protect interiors. Ceramic & dual-reflective film for homes and businesses. ROC #314088. Free quote.';
+  const pageTitle = 'Solar Window Film Phoenix | Block 80% Heat, Cut AC Costs';
+  const metaDescription = 'Phoenix solar window film that blocks up to 80% of solar heat and lowers AC bills. Ceramic and dual-reflective for homes and offices. Free quote.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/solar-window-film-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
   const heroImageUrl = '/images/gallery/20250619_100523.webp';

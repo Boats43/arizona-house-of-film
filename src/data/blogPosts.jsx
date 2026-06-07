@@ -2625,8 +2625,8 @@ const allBlogData = [
   },
   {
     slug: 'residential-performance-window-film-phoenix',
-    title: 'Performance Window Film Phoenix AZ',
-    excerpt: 'What performance window film means in Phoenix — ceramic vs spectrally selective for Desert Ridge, Anthem, Cave Creek, and Glendale. SRP rebate eligible.',
+    title: 'Performance Window Film Phoenix | Ceramic vs Spectrally Selective',
+    excerpt: 'Which performance window film is right for your Phoenix home? Ceramic vs spectrally selective compared for heat, glare, and SRP rebates. Desert Ridge to Glendale.',
     date: '2026-04-28',
     alt: 'A North Phoenix home with residential performance window film installed on the west elevation, mid-afternoon sun.',
     keywords: 'residential performance window film phoenix, residential performance film desert ridge, residential performance film anthem, residential performance film new river, residential performance film glendale',

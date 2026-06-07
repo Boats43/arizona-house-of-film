@@ -9,8 +9,8 @@ import EstimatorCTA from '../../components/EstimatorCTA';
 
 export default function ResidentialWindowTintingQueenCreek() {
   const rocNumber = '314088';
-  const pageTitle = 'Residential Window Tinting Queen Creek AZ | Licensed Installer | ROC #314088';
-  const metaDescription = 'Residential window tinting in Queen Creek AZ. Ceramic, solar, and privacy window film for homes and new construction. Licensed ROC #314088. Free estimates.';
+  const pageTitle = 'Window Tinting Queen Creek AZ | Homes & New Construction';
+  const metaDescription = 'Window tinting in Queen Creek AZ for homes and new builds. Ceramic, solar, and privacy film from a licensed local installer. Free on-site estimate.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/residential-window-tinting-queen-creek';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';
 

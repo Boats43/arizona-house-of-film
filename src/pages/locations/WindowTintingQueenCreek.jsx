@@ -201,16 +201,38 @@ export default function WindowTintingQueenCreek() {
           </div>
         </section>
 
+        {/* QUEEN CREEK CLUSTER LINKS */}
+        <section className="mb-12 bg-green-50 border border-green-200 rounded-2xl p-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">Queen Creek Window Film Services</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link to="/residential-window-tinting-queen-creek" className="flex items-center gap-2 p-4 bg-white border border-green-200 rounded-xl hover:border-green-400 hover:bg-green-100 transition-all group">
+              <ArrowRight className="w-4 h-4 text-green-600 group-hover:translate-x-1 transition-transform" />
+              <span className="font-semibold text-gray-800 text-sm">Queen Creek Residential Window Tinting</span>
+            </Link>
+            <Link to="/commercial-window-tinting-queen-creek" className="flex items-center gap-2 p-4 bg-white border border-green-200 rounded-xl hover:border-green-400 hover:bg-green-100 transition-all group">
+              <ArrowRight className="w-4 h-4 text-green-600 group-hover:translate-x-1 transition-transform" />
+              <span className="font-semibold text-gray-800 text-sm">Queen Creek Commercial Window Film</span>
+            </Link>
+            <Link to="/blog/window-tinting-queen-creek-guide" className="flex items-center gap-2 p-4 bg-white border border-green-200 rounded-xl hover:border-green-400 hover:bg-green-100 transition-all group">
+              <ArrowRight className="w-4 h-4 text-green-600 group-hover:translate-x-1 transition-transform" />
+              <span className="font-semibold text-gray-800 text-sm">Complete Queen Creek Window Film Guide</span>
+            </Link>
+          </div>
+        </section>
+
         {/* Related links */}
         <section className="mb-12">
           <h2 className="text-lg font-bold text-gray-800 mb-4">Explore Film Solutions</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
             {[
               { title: 'Residential Window Tinting', href: '/residential-window-tinting' },
+              { title: 'Privacy Window Film Phoenix Homes', href: '/privacy-window-film-phoenix-homes' },
+              { title: 'Solar Window Film Phoenix', href: '/solar-window-film-phoenix' },
               { title: 'Bathroom Privacy Film', href: '/bathroom-privacy-window-film' },
               { title: 'Office Privacy Film', href: '/office-privacy-window-film' },
               { title: 'Commercial Window Film', href: '/commercial-window-tinting' },
               { title: 'Security Window Film', href: '/safety' },
+              { title: 'Decorative Window Films', href: '/decorative-window-films' },
               { title: 'Browse 618 Film Options', href: '/films' },
             ].map((item, i) => (
               <Link key={i} to={item.href} className="flex items-center gap-2 p-4 border border-gray-100 rounded-xl hover:border-blue-200 hover:bg-blue-50 transition-all group">

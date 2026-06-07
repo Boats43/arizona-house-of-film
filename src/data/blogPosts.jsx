@@ -1313,7 +1313,7 @@ const allBlogData = [
     <p>See our <a href="/privacy-window-film-phoenix-homes">privacy film service page</a> for specifications and examples.</p>
 
     <h2>Residential Window Tinting in Queen Creek</h2>
-    <p>Most Queen Creek residential projects include ceramic solar film on south and west-facing windows plus privacy film on windows facing neighboring properties. The typical project scope:</p>
+    <p>Most Queen Creek residential projects include ceramic solar film on south and west-facing windows plus privacy film on windows facing neighboring properties. For detailed residential service information, see our <a href="/residential-window-tinting-queen-creek">Queen Creek residential window film page</a>. The typical project scope:</p>
     <ul>
       <li>10–20 windows filmed (partial or whole-home)</li>
       <li>Ceramic film on sun-facing elevations (Hüper Optik Select or LLumar CTX)</li>
@@ -1325,7 +1325,7 @@ const allBlogData = [
     <p>SRP rebates of $1.00/sq ft are available for qualifying ceramic film — we handle the documentation. See our <a href="/blog/srp-rebate-window-film-2026">SRP rebate guide</a> for eligibility details.</p>
 
     <h2>Commercial Window Tinting in Queen Creek</h2>
-    <p>Queen Creek's commercial growth along Rittenhouse Road, Ellsworth Road, and the Queen Creek Marketplace has driven demand for commercial window film. Common projects include:</p>
+    <p>Queen Creek's commercial growth along Rittenhouse Road, Ellsworth Road, and the Queen Creek Marketplace has driven demand for commercial window film. Learn more about our <a href="/commercial-window-tinting-queen-creek">Queen Creek commercial window film services</a>. Common projects include:</p>
     <ul>
       <li><strong>Retail storefronts</strong> — Solar control film reduces interior heat and glare while keeping merchandise visible. Security film provides smash-and-grab protection.</li>
       <li><strong>Restaurant glass</strong> — Heat rejection on west-facing dining areas improves guest comfort during afternoon and evening service. Glare reduction on TVs and screens.</li>
@@ -1346,7 +1346,7 @@ const allBlogData = [
       <tr><td>Turf protection film</td><td>Anti-reflective exterior</td><td>$12–$20</td><td>$400–$1,500</td></tr>
       <tr><td>Commercial storefront</td><td>Solar + security</td><td>$10–$22</td><td>$2,500–$10,000</td></tr>
     </table>
-    <p>All pricing includes professional installation and manufacturer warranty. <a href="/window-tinting-queen-creek">See our Queen Creek service page</a> for full details. ROC #314088.</p>
+    <p>All pricing includes professional installation and manufacturer warranty. <a href="/window-tinting-queen-creek">See our Queen Creek window tinting hub</a> for all services, or visit our <a href="/residential-window-tinting-queen-creek">residential</a> or <a href="/commercial-window-tinting-queen-creek">commercial</a> Queen Creek pages for specific details. ROC #314088.</p>
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq-section space-y-4">

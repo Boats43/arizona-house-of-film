@@ -238,7 +238,7 @@ const ResidentialPhoenix = () => {
               Why Phoenix Homes Need Window Film
             </h2>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
-              Phoenix receives over 299 days of sun per year with summer highs regularly exceeding 115F. Standard dual-pane windows — even low-e glass — allow significant solar heat into your home through south and west-facing glass. This forces AC systems to run continuously, spikes utility bills, and fades flooring, furniture, and window treatments. Window film is the highest-ROI home improvement available for Phoenix homeowners — installed in hours, no construction, immediate results.
+              Phoenix receives over 299 days of sun per year with summer highs regularly exceeding 115F. Standard dual-pane windows — even low-e glass — allow significant solar heat into your home through south and west-facing glass. This forces AC systems to run continuously, spikes utility bills, and fades flooring, furniture, and window treatments. Window film is the highest-ROI home improvement available for Phoenix homeowners — installed in hours, no construction, immediate results. See our <Link to="/blog/residential-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">residential performance window film Phoenix</Link> guide for ceramic vs spectrally-selective recommendations by neighborhood.
             </p>
           </div>
         </section>
@@ -500,6 +500,8 @@ const ResidentialPhoenix = () => {
               <Link to="/brands/llumar" className="text-green-600 hover:underline">LLumar Window Film</Link>
               {' · '}
               <Link to="/solar-window-film-phoenix" className="text-green-600 hover:underline">Solar Window Film Phoenix</Link>
+              {' · '}
+              <Link to="/blog/residential-performance-window-film-phoenix" className="text-green-600 hover:underline">Performance Film for Phoenix Homes</Link>
               {' · '}
               <Link to="/blog/best-window-film-arizona-heat-2026" className="text-green-600 hover:underline">Best Film for Arizona Heat</Link>
               {' · '}

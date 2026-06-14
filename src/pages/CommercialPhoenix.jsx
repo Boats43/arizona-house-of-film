@@ -209,7 +209,7 @@ const CommercialPhoenix = () => {
               The Phoenix Commercial Window Film Challenge
             </h2>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
-              Phoenix commercial buildings face 299+ days of sun annually with summer temperatures exceeding 115°F. East and west-facing glass generates extreme solar heat gain that overloads HVAC systems, creates uncomfortable hot zones for employees and customers, and accelerates UV degradation of interiors. Window film is the highest-ROI intervention available — no window replacement, no construction, installed around your business schedule. Arizona House of Film has completed 700+ commercial and residential projects across the Phoenix metro since 2017. For office glass partitions and conference rooms, learn more about <Link to="/blog/casper-cloaking-film-cost-phoenix" className="text-green-400 hover:text-green-300 underline">Casper cloaking film cost</Link> and privacy solutions.
+              Phoenix commercial buildings face 299+ days of sun annually with summer temperatures exceeding 115°F. East and west-facing glass generates extreme solar heat gain that overloads HVAC systems, creates uncomfortable hot zones for employees and customers, and accelerates UV degradation of interiors. Window film is the highest-ROI intervention available — no window replacement, no construction, installed around your business schedule. Arizona House of Film has completed 700+ commercial and residential projects across the Phoenix metro since 2017. See our <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">commercial performance window film Phoenix</Link> guide for HVAC savings and spectrally-selective specs. For office glass partitions and conference rooms, learn more about <Link to="/blog/casper-cloaking-film-cost-phoenix" className="text-green-400 hover:text-green-300 underline">Casper cloaking film cost</Link> and privacy solutions.
             </p>
           </div>
         </section>
@@ -320,6 +320,8 @@ const CommercialPhoenix = () => {
             <div className="mt-10 text-center text-slate-500 text-sm">
               Also see:{' '}
               <Link to="/commercial-window-tinting" className="text-green-600 hover:underline">Commercial Window Tinting</Link>
+              {' · '}
+              <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-600 hover:underline">Commercial Window Film Phoenix 2026</Link>
               {' · '}
               <Link to="/commercial-window-tinting-scottsdale" className="text-green-600 hover:underline">Scottsdale Commercial</Link>
               {' · '}

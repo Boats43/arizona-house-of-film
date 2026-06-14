@@ -437,6 +437,10 @@ const WindowTintingPhoenix = () => {
                 Commercial Window Film Phoenix
               </Link>
               {' · '}
+              <Link to="/privacy-film-sliding-glass-door" className="text-green-600 hover:underline">
+                Sliding Glass Door Tinting
+              </Link>
+              {' · '}
               <Link to="/window-film-phoenix" className="text-green-600 hover:underline">
                 Window Film Phoenix AZ
               </Link>

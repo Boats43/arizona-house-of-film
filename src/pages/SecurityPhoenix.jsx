@@ -258,7 +258,7 @@ const buildingTypes = [
   {
     type: 'Residential',
     threats: 'burglary, storm damage, accidents',
-    spec: '8 mil on entry doors, sidelights, and ground-floor windows. Solar-control + safety combo films available for dual performance. HOA color restrictions accommodated.',
+    spec: '8 mil on entry doors, sidelights, and ground-floor windows. Solar-control + safety combo films available for dual performance. HOA color restrictions accommodated. See our shatter-resistant film for patio doors guide for sliding door security.',
     link: '/residential-window-tinting',
     linkText: 'Residential Window Film →',
   },
@@ -562,6 +562,8 @@ export default function SecurityPhoenix() {
           <div className="mt-10 text-center text-slate-500 text-sm">
             Also see:{' '}
             <Link to="/safety" className="text-red-600 hover:underline">Safety Window Film</Link>
+            {' · '}
+            <Link to="/privacy-film-sliding-glass-door" className="text-red-600 hover:underline">Security Film for Patio Doors</Link>
             {' · '}
             <Link to="/hurricane-window-film-arizona" className="text-red-600 hover:underline">Hurricane Window Film Arizona</Link>
             {' · '}

@@ -82,6 +82,7 @@ const ROUTES = [
   '/blog/a-business-owners-guide-to-security-window-films',
   '/blog/why-phoenix-residents-swear-by-window-tinting',
   '/blog/the-secret-to-scottsdale-luxury-high-end-window-films',
+  '/blog/orafol-maxpro-acquisition-arizona-2026',
   '/blog/arizona-hb-2342-shade-structure-bill-2026',
   '/blog/srp-rebate-window-film-2026',
   '/blog/how-much-does-window-tinting-cost-phoenix',

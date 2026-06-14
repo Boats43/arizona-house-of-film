@@ -50,7 +50,7 @@ export default function CountertopProtectionPage() {
   return (
     <>
       <Helmet>
-        <title>{region.metaTitle} | Arizona House of Film</title>
+        <title>{region.metaTitle}</title>
         <meta name="description" content={region.metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={region.metaTitle} />

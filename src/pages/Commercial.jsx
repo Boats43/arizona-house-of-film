@@ -136,8 +136,11 @@ const Commercial = () => {
     {
       icon: Zap,
       title: "Energy Efficiency",
-      description:
-        "Reduce HVAC load and cooling costs by up to 30% by rejecting solar heat before it enters the building.",
+      description: (
+        <>
+          Reduce HVAC load and cooling costs by up to 30% by rejecting solar heat before it enters the building. See our <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-400 underline hover:text-green-300">commercial performance window film Phoenix</Link> guide for LEED and HVAC savings data.
+        </>
+      ),
     },
     {
       icon: ShieldCheck,
@@ -815,6 +818,7 @@ const Commercial = () => {
               <Link to="/safety" className="text-blue-700 underline">safety &amp; security films</Link>{" "}
               for your building.{" "}
               <Link to="/store" className="text-blue-700 underline">Browse Window Film Catalog</Link> →{" "}
+              <Link to="/blog/commercial-performance-window-film-phoenix" className="text-blue-700 underline">Commercial Window Film Phoenix 2026</Link>{" "}
               <Link to="/commercial-window-tinting/anti-graffiti" className="text-blue-700 underline">Commercial Anti-Graffiti Film</Link>{" "}
               <Link to="/commercial-window-tinting/enhanced-privacy" className="text-blue-700 underline">Commercial Privacy Film</Link>{" "}
               <Link to="/countertop-protection-film-arizona" className="text-blue-700 underline">Countertop Protection Film</Link>{" "}

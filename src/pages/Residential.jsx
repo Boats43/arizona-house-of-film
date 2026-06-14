@@ -29,7 +29,7 @@ const Residential = () => {
     },
     {
       q: "Can you tint sliding glass doors and skylights?",
-      a: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights.",
+      a: "Yes. We install film on all glass surfaces including sliders, skylights, transoms, and decorative sidelights. Sliding glass door tinting is one of our most popular residential services — learn more in our sliding glass door tinting guide.",
     },
     {
       q: "Which windows should I prioritize for tinting?",
@@ -216,7 +216,7 @@ const Residential = () => {
         <section className="py-12 bg-slate-800 border-b border-slate-700">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
-              Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088. Read our <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">solar window film Phoenix</Link> guide for detailed specs and energy savings data.
+              Protect your Arizona home from one of the harshest climates in North America. Arizona House of Film installs residential window film across Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, and 100+ Arizona cities. Our ceramic films block 84% of solar heat and 99.9% of UV rays — without compromising your view or darkening your rooms. Licensed ROC #314088. Read our <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">solar window film Phoenix</Link> guide or our <Link to="/blog/residential-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">residential performance window film Phoenix</Link> guide for neighborhood-specific recommendations.
             </p>
           </div>
         </section>
@@ -612,6 +612,8 @@ const Residential = () => {
               <Link to="/service-areas" className="text-green-600 underline font-bold">check our service areas</Link>{" "}
               to confirm coverage in your city.{" "}
               <Link to="/store" className="text-green-600 underline font-bold">Browse Window Film Catalog</Link> →{" "}
+              <Link to="/privacy-film-sliding-glass-door" className="text-green-600 underline font-bold">Sliding Glass Door Tinting</Link>{" "}
+              <Link to="/blog/residential-performance-window-film-phoenix" className="text-green-600 underline font-bold">Performance Film for Phoenix Homes</Link>{" "}
               <Link to="/ceramic-vs-dual-reflective-film" className="text-green-600 underline font-bold">Ceramic vs Dual Reflective Film</Link>{" "}
               <Link to="/how-long-does-window-film-last" className="text-green-600 underline font-bold">How Long Does Window Film Last?</Link>{" "}
               <Link to="/window-film-faq" className="text-green-600 underline font-bold">Window Film FAQ</Link>

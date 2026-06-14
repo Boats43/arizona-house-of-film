@@ -15,9 +15,10 @@ const BlogPost = () => {
   const canonicalUrl = post.canonicalUrl
     ? `https://arizonahouseoffilm.com${post.canonicalUrl}`
     : `https://arizonahouseoffilm.com/blog/${post.slug}`;
-  const { title, date, content, blogSchema, faqPageSchema, excerpt } = post;
+  const { title, h1, date, content, blogSchema, faqPageSchema, excerpt } = post;
 
-  const pageTitle = `${title} | Arizona House of Film`;
+  const pageTitle = title;
+  const pageH1 = h1 || title;
   const metaDescription = excerpt || "Learn expert insights, case studies, and window film tips from Arizona House of Film.";
   
   const ogImageUrl = `https://arizonahouseoffilm.com/og-images/blog/${slug}.jpg`;
@@ -81,7 +82,7 @@ const BlogPost = () => {
               </Link>
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-              {title}
+              {pageH1}
             </h1>
             <p className="text-md text-gray-500 flex items-center">
               <Calendar className="w-4 h-4 mr-2" /> Published on {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}

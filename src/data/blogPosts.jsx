@@ -1,7 +1,55 @@
 const allBlogData = [
   {
+    slug: 'orafol-maxpro-acquisition-arizona-2026',
+    title: 'ORAFOL Acquires Maxpro Films 2026',
+    h1: 'ORAFOL Acquires Maxpro: What the Window Film Deal Means for Arizona',
+    excerpt: 'ORAFOL acquired Maxpro Manufacturing — the window film maker with a Chandler, AZ facility. What the 2026 deal means for Arizona window film.',
+    canonicalUrl: '/blog/orafol-maxpro-acquisition-arizona-2026',
+    date: '2026-06-13',
+    alt: 'Window film manufacturing and distribution facility representing industry consolidation in Arizona market.',
+    keywords: 'ORAFOL Maxpro acquisition, Maxpro Films Chandler Arizona, window film industry 2026, ORAFOL acquisition',
+    serviceLink: '/commercial-window-tinting',
+    cityLink: '/window-tinting-chandler',
+    brandMentions: 'ORAFOL, Maxpro, Reflomax',
+    faqs: [
+      {
+        question: 'Who did ORAFOL acquire?',
+        answer: 'ORAFOL announced in May 2026 that it agreed to acquire Maxpro Manufacturing, a U.S. manufacturer of window and protective films headquartered in Whiteville, North Carolina. The transaction was reported as subject to customary closing conditions.'
+      },
+      {
+        question: 'Does Maxpro have an Arizona location?',
+        answer: 'Yes. Maxpro operates a logistics facility in Chandler, Arizona, in the Phoenix metro area, alongside its North Carolina headquarters.'
+      },
+      {
+        question: 'What does the ORAFOL–Maxpro deal mean for Arizona homeowners?',
+        answer: 'Industry investment of this kind generally drives better film technology, durability, and product selection over time. For Arizona\'s extreme-heat market, improvements in solar-control and architectural films are especially relevant.'
+      },
+      {
+        question: 'What window films does Arizona House of Film install?',
+        answer: 'Arizona House of Film installs a curated range of professional architectural window films — solar, security, privacy, and decorative — selected to perform in Arizona\'s climate. We match film to the specific application rather than pushing a single brand. You can review the films we install on our brands page.'
+      }
+    ],
+    ctaCity: 'Chandler',
+    customContent: `
+<p>In May 2026, ORAFOL — a German manufacturer of high-performance functional films — announced it had agreed to acquire Maxpro Manufacturing, a U.S. window and protective film producer headquartered in Whiteville, North Carolina. The deal, reported as subject to customary closing conditions, folds Maxpro into ORAFOL's newly formed Functional Films Business Unit. For Phoenix-area homeowners and businesses, one detail stands out: Maxpro operates a logistics facility right here in <a href="/window-tinting-chandler">Chandler, Arizona</a>.</p>
+
+<h2>A Global Film Maker Deepens Its Arizona Roots</h2>
+<p>Founded in 2010, Maxpro develops and manufactures films for automotive, architectural, and paint protection applications, along with the specialized tools installers use to apply them. Its products move through an established global dealer network. ORAFOL — which also acquired South Korea's Reflomax in 2025 — describes the move as part of its "Roadmap 2030" strategy to build out advanced functional-materials capabilities and strengthen its North American presence.</p>
+
+<h2>Why Chandler, Arizona Matters</h2>
+<p>Arizona is one of the most demanding window-film markets on earth. Summer surface temperatures, relentless UV, and high cooling costs mean architectural film here isn't a luxury — it's infrastructure. When a global manufacturer positions distribution in Chandler, it's a signal: the Valley is a serious market for high-performance film, and the supply chain is moving closer to the customers who need it most. The same conditions are exactly why <a href="/best-window-film-arizona-heat">choosing the right film for Arizona heat</a> matters more here than almost anywhere else.</p>
+
+<h2>What It Means for Arizona Homeowners and Businesses</h2>
+<p>Industry consolidation like this generally points in one direction for consumers: more research and development, more durable and better-engineered films, and broader product selection. As global players invest in functional-film technology, the solar-control and architectural films available to Arizona buyers tend to improve — better heat rejection, better clarity, longer warranties. Local distribution can also mean faster availability and shorter lead times for in-demand products, which matters for everything from residential installs to large <a href="/commercial-window-tinting">commercial window film</a> projects.</p>
+
+<h2>The Bottom Line from Arizona House of Film</h2>
+<p>We track the industry so our clients don't have to. Manufacturer news matters less than one thing: matching the right film to the right application for Arizona's climate. A film engineered for a mild coastal market can underperform fast under a Phoenix-metro sun. Whatever the brand on the roll, what protects your home or building is the expertise behind the install — film selection, surface prep, and a clean application built to last in our heat. You can see the <a href="/brands">range of professional films we install</a> and how we match them to each project.</p>
+`
+  },
+  {
     slug: 'arizona-hb-2342-shade-structure-bill-2026',
     title: 'Arizona Shade Structure Bill 2026',
+    h1: 'Arizona\'s HB 2342 Shade Structure Bill — And the Heat Fix HOAs Can Never Block',
     excerpt: 'Arizona HB 2342 passed the legislature — HOAs can no longer ban backyard shade structures. Here\'s what it means, and the heat fix that works indoors too. ROC #314088.',
     canonicalUrl: '/blog/arizona-hb-2342-shade-structure-bill-2026',
     date: '2026-06-04',
@@ -34,8 +82,6 @@ const allBlogData = [
     ],
     ctaCity: 'Phoenix',
     customContent: `
-<h1>Arizona's HB 2342 Shade Structure Bill — And the Heat Fix HOAs Can Never Block</h1>
-
 <p>Arizona HB 2342 passed the legislature with bipartisan support in 2026, heading to the governor's desk. If signed, the bill will prohibit HOAs from banning backyard shade structures — a first-of-its-kind measure in the United States. But while shade structures solve outdoor heat, there's a critical gap they don't address: heat transfer through your windows. Here's what the bill does, what it doesn't, and the indoor heat solution HOAs can't restrict.</p>
 
 <h2>What HB 2342 Actually Does</h2>
@@ -850,8 +896,8 @@ const allBlogData = [
   },
   {
     slug: 'security-window-film-phoenix-cost-guide',
-    title: 'Security Window Film in Phoenix: Cost, Types & What to Expect in 2026',
-    excerpt: 'Security window film for Phoenix homes and businesses — smash-and-grab protection, blast resistance, and safety glazing. Real costs and ROI for Arizona.',
+    title: 'Security Window Film Phoenix Cost & Install Guide 2026',
+    excerpt: 'Security window film Phoenix — blast mitigation, forced entry protection, free assessment. Commercial + residential installs. Licensed ROC #314088.',
     date: '2026-04-06',
     alt: 'Security window film installed on a Phoenix commercial storefront.',
     keywords: 'security window film Phoenix, security film installation Phoenix, phoenix window security film installers',
@@ -1266,8 +1312,8 @@ const allBlogData = [
   },
   {
     slug: 'window-tinting-queen-creek-guide',
-    title: 'Window Tinting in Queen Creek, AZ — Residential, Privacy & Commercial (2026)',
-    excerpt: 'Window tinting in Queen Creek AZ — privacy film, heat rejection, residential and commercial installs. Licensed ROC #314088 contractor serving the East Valley.',
+    title: 'Window Tinting Queen Creek AZ — Privacy & Heat Control',
+    excerpt: 'Window tinting Queen Creek — privacy + heat rejection + turf protection film. Residential & commercial. Licensed ROC #314088. Free estimate — (480) 788-1591.',
     date: '2026-04-06',
     alt: 'Residential window tinting installation on a new construction home in Queen Creek AZ.',
     keywords: 'window tinting Queen Creek AZ, privacy window films Queen Creek, architectural window tinting Queen Creek',
@@ -2625,8 +2671,8 @@ const allBlogData = [
   },
   {
     slug: 'residential-performance-window-film-phoenix',
-    title: 'Performance Window Film Phoenix | Ceramic vs Spectrally Selective',
-    excerpt: 'Which performance window film is right for your Phoenix home? Ceramic vs spectrally selective compared for heat, glare, and SRP rebates. Desert Ridge to Glendale.',
+    title: 'Performance Film for Phoenix Homes',
+    excerpt: 'Which performance film works in Desert Ridge, Anthem & North Phoenix heat? Ceramic vs spectrally-selective, by neighborhood. SRP rebate eligible.',
     date: '2026-04-28',
     alt: 'A North Phoenix home with residential performance window film installed on the west elevation, mid-afternoon sun.',
     keywords: 'residential performance window film phoenix, residential performance film desert ridge, residential performance film anthem, residential performance film new river, residential performance film glendale',
@@ -2765,8 +2811,8 @@ const allBlogData = [
   },
   {
     slug: 'commercial-performance-window-film-phoenix',
-    title: 'Commercial Performance Window Film Phoenix | Office & Retail 2026',
-    excerpt: 'What commercial performance window film delivers for Phoenix offices, retail, and corporate buildings — SHGC ratings, LEED compliance, spectrally selective vs ceramic, SRP commercial rebate, and corridor-specific guidance for Scottsdale, Cave Creek, Desert Ridge, and Chandler.',
+    title: 'Commercial Window Film Phoenix 2026',
+    excerpt: 'Commercial performance film for Phoenix-area offices, retail & Scottsdale buildings. HVAC savings, glare control, tenant comfort by neighborhood.',
     date: '2026-04-28',
     alt: 'A Phoenix office tower with commercial performance window film installed on the west and south curtain wall elevations.',
     keywords: 'commercial performance window film phoenix, commercial performance film cave creek, commercial performance film scottsdale, LEED window film phoenix, SHGC commercial film',

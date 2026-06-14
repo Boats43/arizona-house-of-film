@@ -1,0 +1,1493 @@
+
+> arizona-house-of-film@1.1.0 build
+> npx vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 1819 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                                                 [39m[1m[2m  6.82 kB[22m[1m[22m[2m │ gzip:   2.73 kB[22m
+[2mdist/[22m[35massets/index-BD6iYAdK.css                                  [39m[1m[2m 85.32 kB[22m[1m[22m[2m │ gzip:  13.95 kB[22m
+[2mdist/[22m[36massets/BreadcrumbSchema-D4_CV4Qp.js                        [39m[1m[2m  0.53 kB[22m[1m[22m[2m │ gzip:   0.37 kB[22m
+[2mdist/[22m[36massets/input-Cn-E650i.js                                   [39m[1m[2m  0.59 kB[22m[1m[22m[2m │ gzip:   0.37 kB[22m
+[2mdist/[22m[36massets/textarea-D1iHQ7ck.js                                [39m[1m[2m  0.82 kB[22m[1m[22m[2m │ gzip:   0.44 kB[22m
+[2mdist/[22m[36massets/FloatingContactButton-C4VBk5bU.js                   [39m[1m[2m  1.07 kB[22m[1m[22m[2m │ gzip:   0.55 kB[22m
+[2mdist/[22m[36massets/EstimatorCTA-fsBa1Za-.js                            [39m[1m[2m  1.09 kB[22m[1m[22m[2m │ gzip:   0.60 kB[22m
+[2mdist/[22m[36massets/ContactFormSection-DoODV1Df.js                      [39m[1m[2m  1.95 kB[22m[1m[22m[2m │ gzip:   0.89 kB[22m
+[2mdist/[22m[36massets/Success-BP0zqo0a.js                                 [39m[1m[2m  2.57 kB[22m[1m[22m[2m │ gzip:   1.10 kB[22m
+[2mdist/[22m[36massets/NotFound-CJwRQGZS.js                                [39m[1m[2m  3.27 kB[22m[1m[22m[2m │ gzip:   1.29 kB[22m
+[2mdist/[22m[36massets/BlogPost-CREY1dPX.js                                [39m[1m[2m  3.79 kB[22m[1m[22m[2m │ gzip:   1.55 kB[22m
+[2mdist/[22m[36massets/Blog-BmHr7_6v.js                                    [39m[1m[2m  4.77 kB[22m[1m[22m[2m │ gzip:   1.83 kB[22m
+[2mdist/[22m[36massets/BookNow-JrO2rrfV.js                                 [39m[1m[2m  5.28 kB[22m[1m[22m[2m │ gzip:   2.15 kB[22m
+[2mdist/[22m[36massets/PrivacyPolicy-MG2XcydT.js                           [39m[1m[2m  5.44 kB[22m[1m[22m[2m │ gzip:   1.87 kB[22m
+[2mdist/[22m[36massets/SecurityFilmPage-BFBJzfjF.js                        [39m[1m[2m  5.97 kB[22m[1m[22m[2m │ gzip:   2.13 kB[22m
+[2mdist/[22m[36massets/ContactForm-D9bLt0ZZ.js                             [39m[1m[2m  6.35 kB[22m[1m[22m[2m │ gzip:   2.24 kB[22m
+[2mdist/[22m[36massets/ThankYou-cPl4mSKU.js                                [39m[1m[2m  6.72 kB[22m[1m[22m[2m │ gzip:   2.29 kB[22m
+[2mdist/[22m[36massets/Careers-CLtTixJl.js                                 [39m[1m[2m  6.73 kB[22m[1m[22m[2m │ gzip:   2.58 kB[22m
+[2mdist/[22m[36massets/Gallery-BURK3Jy5.js                                 [39m[1m[2m  7.26 kB[22m[1m[22m[2m │ gzip:   2.35 kB[22m
+[2mdist/[22m[36massets/Industries-CdreAcpv.js                              [39m[1m[2m  7.39 kB[22m[1m[22m[2m │ gzip:   2.70 kB[22m
+[2mdist/[22m[36massets/WindowTintingTolleson-CqmvcTtZ.js                   [39m[1m[2m  8.51 kB[22m[1m[22m[2m │ gzip:   2.53 kB[22m
+[2mdist/[22m[36massets/WindowTintingAvondale-BfQyHEPL.js                   [39m[1m[2m  8.53 kB[22m[1m[22m[2m │ gzip:   2.46 kB[22m
+[2mdist/[22m[36massets/cities-CeDCHQue.js                                  [39m[1m[2m  8.57 kB[22m[1m[22m[2m │ gzip:   2.27 kB[22m
+[2mdist/[22m[36massets/WindowFilmForRestaurantsArizona-CoDOpgI7.js         [39m[1m[2m  8.71 kB[22m[1m[22m[2m │ gzip:   2.65 kB[22m
+[2mdist/[22m[36massets/WindowTintingFountainHills-CbYwUdjB.js              [39m[1m[2m  8.73 kB[22m[1m[22m[2m │ gzip:   2.38 kB[22m
+[2mdist/[22m[36massets/FilmsHub-B1Oo35U9.js                                [39m[1m[2m  8.82 kB[22m[1m[22m[2m │ gzip:   3.01 kB[22m
+[2mdist/[22m[36massets/CityPage-Cgo289zq.js                                [39m[1m[2m  8.84 kB[22m[1m[22m[2m │ gzip:   3.29 kB[22m
+[2mdist/[22m[36massets/WindowFilmForSchoolsArizona-cs4CVF4c.js             [39m[1m[2m  8.95 kB[22m[1m[22m[2m │ gzip:   2.78 kB[22m
+[2mdist/[22m[36massets/WindowFilmForWarehousesArizona-DUxAYosC.js          [39m[1m[2m  8.99 kB[22m[1m[22m[2m │ gzip:   2.64 kB[22m
+[2mdist/[22m[36massets/WindowFilmForMedicalFacilitiesArizona-C6y-N5Dq.js   [39m[1m[2m  9.01 kB[22m[1m[22m[2m │ gzip:   2.69 kB[22m
+[2mdist/[22m[36massets/UVProtectionWindowFilmPhoenix-CH-EZV_9.js           [39m[1m[2m  9.52 kB[22m[1m[22m[2m │ gzip:   2.87 kB[22m
+[2mdist/[22m[36massets/Contact-jT2hfv8M.js                                 [39m[1m[2m  9.59 kB[22m[1m[22m[2m │ gzip:   2.93 kB[22m
+[2mdist/[22m[36massets/GlareReductionWindowFilmPhoenix-fksjC4Tv.js         [39m[1m[2m  9.72 kB[22m[1m[22m[2m │ gzip:   2.84 kB[22m
+[2mdist/[22m[36massets/SecurityFilmVsTemperedGlass-CDTFzotj.js             [39m[1m[2m  9.84 kB[22m[1m[22m[2m │ gzip:   2.79 kB[22m
+[2mdist/[22m[36massets/BestWindowFilmArizonaHeat-eo0ZCurD.js               [39m[1m[2m  9.89 kB[22m[1m[22m[2m │ gzip:   3.07 kB[22m
+[2mdist/[22m[36massets/HowLongDoesWindowFilmLast-CCxNHABG.js               [39m[1m[2m  9.93 kB[22m[1m[22m[2m │ gzip:   2.82 kB[22m
+[2mdist/[22m[36massets/HighRiseCommercialWindowTintingPhoenix-B8Y2YsiR.js  [39m[1m[2m  9.95 kB[22m[1m[22m[2m │ gzip:   2.73 kB[22m
+[2mdist/[22m[36massets/ReduceHeatPhoenixWindows-B8-JZ0Kf.js                [39m[1m[2m 10.00 kB[22m[1m[22m[2m │ gzip:   2.96 kB[22m
+[2mdist/[22m[36massets/WindowFilmCostArizona-Cerzt9fg.js                   [39m[1m[2m 10.03 kB[22m[1m[22m[2m │ gzip:   2.83 kB[22m
+[2mdist/[22m[36massets/ServiceAreas-CywTra7s.js                            [39m[1m[2m 10.42 kB[22m[1m[22m[2m │ gzip:   3.52 kB[22m
+[2mdist/[22m[36massets/BrandPage-RfQF9Zuj.js                               [39m[1m[2m 11.21 kB[22m[1m[22m[2m │ gzip:   3.37 kB[22m
+[2mdist/[22m[36massets/PrivacyWindowFilmPhoenixHomes-CAg2A0nY.js           [39m[1m[2m 11.50 kB[22m[1m[22m[2m │ gzip:   2.99 kB[22m
+[2mdist/[22m[36massets/CeramicVsDualReflectiveFilm-CJAJ_cEd.js             [39m[1m[2m 11.61 kB[22m[1m[22m[2m │ gzip:   3.07 kB[22m
+[2mdist/[22m[36massets/WindowTintingChandler-2UA-LQC7.js                   [39m[1m[2m 12.21 kB[22m[1m[22m[2m │ gzip:   3.83 kB[22m
+[2mdist/[22m[36massets/ShatterproofWindowFilm-CioTO5Fh.js                  [39m[1m[2m 12.27 kB[22m[1m[22m[2m │ gzip:   3.00 kB[22m
+[2mdist/[22m[36massets/WindowTintingMesa-CL-NHbtt.js                       [39m[1m[2m 12.59 kB[22m[1m[22m[2m │ gzip:   4.03 kB[22m
+[2mdist/[22m[36massets/WindowTintingTempe-BQKvyaEY.js                      [39m[1m[2m 12.79 kB[22m[1m[22m[2m │ gzip:   4.00 kB[22m
+[2mdist/[22m[36massets/WindowTintingGilbert-Cj1UKVku.js                    [39m[1m[2m 12.82 kB[22m[1m[22m[2m │ gzip:   3.95 kB[22m
+[2mdist/[22m[36massets/WindowTintingPeoria-C8GyWBkO.js                     [39m[1m[2m 12.91 kB[22m[1m[22m[2m │ gzip:   4.02 kB[22m
+[2mdist/[22m[36massets/WindowTintingGlendale-CycdYX4u.js                   [39m[1m[2m 12.92 kB[22m[1m[22m[2m │ gzip:   3.99 kB[22m
+[2mdist/[22m[36massets/films-OCjRTIAQ.js                                   [39m[1m[2m 13.27 kB[22m[1m[22m[2m │ gzip:   2.85 kB[22m
+[2mdist/[22m[36massets/HurricaneWindowFilmArizona-BUxSGUft.js              [39m[1m[2m 13.62 kB[22m[1m[22m[2m │ gzip:   3.84 kB[22m
+[2mdist/[22m[36massets/CountertopProtectionPage-BJZL4sEs.js                [39m[1m[2m 13.95 kB[22m[1m[22m[2m │ gzip:   3.64 kB[22m
+[2mdist/[22m[36massets/WindowTintingQueenCreek-C7iIJxJL.js                 [39m[1m[2m 14.78 kB[22m[1m[22m[2m │ gzip:   4.15 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingPeoria-DXhzDLPv.js           [39m[1m[2m 14.90 kB[22m[1m[22m[2m │ gzip:   4.00 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingMesa-Ctw1iPNB.js             [39m[1m[2m 14.99 kB[22m[1m[22m[2m │ gzip:   4.09 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingGilbert-Bw3cOk7m.js          [39m[1m[2m 14.99 kB[22m[1m[22m[2m │ gzip:   3.94 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingMesa-DemnSa8z.js            [39m[1m[2m 15.04 kB[22m[1m[22m[2m │ gzip:   4.08 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingTempe-BPnnyJYu.js            [39m[1m[2m 15.19 kB[22m[1m[22m[2m │ gzip:   4.03 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingGlendale-B3wbwAGm.js         [39m[1m[2m 15.24 kB[22m[1m[22m[2m │ gzip:   4.03 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingChandler-IfdcUS2E.js        [39m[1m[2m 15.25 kB[22m[1m[22m[2m │ gzip:   4.00 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingChandler-CjCxRiCD.js         [39m[1m[2m 15.33 kB[22m[1m[22m[2m │ gzip:   4.11 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingPeoria-BFpUxAmR.js          [39m[1m[2m 15.33 kB[22m[1m[22m[2m │ gzip:   4.06 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingGilbert-vwVD9xeG.js         [39m[1m[2m 15.34 kB[22m[1m[22m[2m │ gzip:   4.03 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingGlendale-DD7rTel8.js        [39m[1m[2m 15.41 kB[22m[1m[22m[2m │ gzip:   4.11 kB[22m
+[2mdist/[22m[36massets/BathroomPrivacyFilm-MVsVoIrM.js                     [39m[1m[2m 15.59 kB[22m[1m[22m[2m │ gzip:   4.77 kB[22m
+[2mdist/[22m[36massets/Welcome-CQKZmB83.js                                 [39m[1m[2m 15.77 kB[22m[1m[22m[2m │ gzip:   4.84 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingTempe-8Vfm5R20.js           [39m[1m[2m 15.85 kB[22m[1m[22m[2m │ gzip:   4.10 kB[22m
+[2mdist/[22m[36massets/WindowFilmDistributorPhoenix-PBRT3H61.js            [39m[1m[2m 15.85 kB[22m[1m[22m[2m │ gzip:   4.71 kB[22m
+[2mdist/[22m[36massets/EntrywaySidelightFilm-DTO8Itb5.js                   [39m[1m[2m 15.90 kB[22m[1m[22m[2m │ gzip:   4.70 kB[22m
+[2mdist/[22m[36massets/FilmQuoteRequest-CEkNlWtG.js                        [39m[1m[2m 16.03 kB[22m[1m[22m[2m │ gzip:   4.67 kB[22m
+[2mdist/[22m[36massets/OfficePrivacyFilm-BrU62EnS.js                       [39m[1m[2m 16.05 kB[22m[1m[22m[2m │ gzip:   4.76 kB[22m
+[2mdist/[22m[36massets/OneWayMirrorFilm-DWSlqkxm.js                        [39m[1m[2m 16.18 kB[22m[1m[22m[2m │ gzip:   4.96 kB[22m
+[2mdist/[22m[36massets/CommercialWindowTintingQueenCreek-DQRGVoug.js       [39m[1m[2m 16.22 kB[22m[1m[22m[2m │ gzip:   4.08 kB[22m
+[2mdist/[22m[36massets/ResidentialWindowTintingQueenCreek-eUK_TpAf.js      [39m[1m[2m 16.48 kB[22m[1m[22m[2m │ gzip:   4.23 kB[22m
+[2mdist/[22m[36massets/XPELPage-uAny4A9t.js                                [39m[1m[2m 16.54 kB[22m[1m[22m[2m │ gzip:   4.66 kB[22m
+[2mdist/[22m[36massets/ElectricPrivacyFilm-CRZSJFZ_.js                     [39m[1m[2m 16.64 kB[22m[1m[22m[2m │ gzip:   5.01 kB[22m
+[2mdist/[22m[36massets/AntiGraffiti-CxuZD8qI.js                            [39m[1m[2m 16.71 kB[22m[1m[22m[2m │ gzip:   4.84 kB[22m
+[2mdist/[22m[36massets/StorefrontWindowFilm-U9CWbNY0.js                    [39m[1m[2m 16.78 kB[22m[1m[22m[2m │ gzip:   4.83 kB[22m
+[2mdist/[22m[36massets/DecorativeWindowFilmScottsdale-CTV1Ckfz.js          [39m[1m[2m 17.15 kB[22m[1m[22m[2m │ gzip:   4.17 kB[22m
+[2mdist/[22m[36massets/DayAndNightPrivacyFilm-BzZkXUZU.js                  [39m[1m[2m 17.22 kB[22m[1m[22m[2m │ gzip:   5.25 kB[22m
+[2mdist/[22m[36massets/AIWindowFilmEstimator-BN3Jqbb-.js                   [39m[1m[2m 17.26 kB[22m[1m[22m[2m │ gzip:   5.16 kB[22m
+[2mdist/[22m[36massets/LLumarPage-BZO8y6L6.js                              [39m[1m[2m 17.65 kB[22m[1m[22m[2m │ gzip:   4.85 kB[22m
+[2mdist/[22m[36massets/CommercialPhoenix-2yXU7IGM.js                       [39m[1m[2m 17.89 kB[22m[1m[22m[2m │ gzip:   5.24 kB[22m
+[2mdist/[22m[36massets/SolyxBirdSafetyFilm-CIASgxv0.js                     [39m[1m[2m 18.23 kB[22m[1m[22m[2m │ gzip:   5.44 kB[22m
+[2mdist/[22m[36massets/SolarWindowFilmScottsdale-9yaihxVV.js               [39m[1m[2m 18.23 kB[22m[1m[22m[2m │ gzip:   4.48 kB[22m
+[2mdist/[22m[36massets/BrandsHub-CuShvioz.js                               [39m[1m[2m 18.26 kB[22m[1m[22m[2m │ gzip:   5.97 kB[22m
+[2mdist/[22m[36massets/SecurityWindowFilmScottsdale-BqqjSCUN.js            [39m[1m[2m 18.36 kB[22m[1m[22m[2m │ gzip:   4.35 kB[22m
+[2mdist/[22m[36massets/Solutions-DGUBrLq2.js                               [39m[1m[2m 18.41 kB[22m[1m[22m[2m │ gzip:   5.48 kB[22m
+[2mdist/[22m[36massets/FlexfilmPage-DEGydbup.js                            [39m[1m[2m 18.56 kB[22m[1m[22m[2m │ gzip:   5.16 kB[22m
+[2mdist/[22m[36massets/CountertopProtectionFilmNationwide-DlxGxzA_.js      [39m[1m[2m 19.20 kB[22m[1m[22m[2m │ gzip:   5.30 kB[22m
+[2mdist/[22m[36massets/WindowTintingPhoenix-DEctudcp.js                    [39m[1m[2m 19.41 kB[22m[1m[22m[2m │ gzip:   5.37 kB[22m
+[2mdist/[22m[36massets/MadicoPage-DG66Him3.js                              [39m[1m[2m 19.73 kB[22m[1m[22m[2m │ gzip:   5.35 kB[22m
+[2mdist/[22m[36massets/SunTekPage-5ftAznXG.js                              [39m[1m[2m 20.06 kB[22m[1m[22m[2m │ gzip:   5.50 kB[22m
+[2mdist/[22m[36massets/AntiGraffitiPhoenix-DgW0EhDy.js                     [39m[1m[2m 20.10 kB[22m[1m[22m[2m │ gzip:   5.52 kB[22m
+[2mdist/[22m[36massets/FilmCategoryPage-CBH3ReD0.js                        [39m[1m[2m 20.82 kB[22m[1m[22m[2m │ gzip:   7.11 kB[22m
+[2mdist/[22m[36massets/DecorativePhoenix-OM_S-vnb.js                       [39m[1m[2m 21.47 kB[22m[1m[22m[2m │ gzip:   6.20 kB[22m
+[2mdist/[22m[36massets/SolarGardPage-Dj9dgVdj.js                           [39m[1m[2m 23.39 kB[22m[1m[22m[2m │ gzip:   5.96 kB[22m
+[2mdist/[22m[36massets/countertopRegions-d8wq4V_t.js                       [39m[1m[2m 23.81 kB[22m[1m[22m[2m │ gzip:   5.61 kB[22m
+[2mdist/[22m[36massets/HuperOptikPage-D8qCg1ke.js                          [39m[1m[2m 23.90 kB[22m[1m[22m[2m │ gzip:   6.12 kB[22m
+[2mdist/[22m[36massets/WindowFilmEnergyRebatesArizona-Co8UdEDI.js          [39m[1m[2m 24.59 kB[22m[1m[22m[2m │ gzip:   5.77 kB[22m
+[2mdist/[22m[36massets/RestaurantWindowFilm-B_77ppXv.js                    [39m[1m[2m 24.66 kB[22m[1m[22m[2m │ gzip:   7.08 kB[22m
+[2mdist/[22m[36massets/Safety-O9Fc4HM0.js                                  [39m[1m[2m 24.73 kB[22m[1m[22m[2m │ gzip:   6.63 kB[22m
+[2mdist/[22m[36massets/WindowFilmPhoenix-Dqt2MxuA.js                       [39m[1m[2m 25.11 kB[22m[1m[22m[2m │ gzip:   6.84 kB[22m
+[2mdist/[22m[36massets/router-C3Zr9VL2.js                                  [39m[1m[2m 25.25 kB[22m[1m[22m[2m │ gzip:   9.26 kB[22m
+[2mdist/[22m[36massets/EnergySaving-9REdcZUb.js                            [39m[1m[2m 26.12 kB[22m[1m[22m[2m │ gzip:   7.12 kB[22m
+[2mdist/[22m[36massets/UniversityWindowFilm-u6PmhO1p.js                    [39m[1m[2m 26.14 kB[22m[1m[22m[2m │ gzip:   7.27 kB[22m
+[2mdist/[22m[36massets/WindowFilmFAQ-v5ghJjQz.js                           [39m[1m[2m 26.16 kB[22m[1m[22m[2m │ gzip:   7.61 kB[22m
+[2mdist/[22m[36massets/WindowFilmCostEstimator-Zix3S-Mb.js                 [39m[1m[2m 26.27 kB[22m[1m[22m[2m │ gzip:   6.90 kB[22m
+[2mdist/[22m[36massets/OfficePartitionFilm-JXPpu4AG.js                     [39m[1m[2m 26.35 kB[22m[1m[22m[2m │ gzip:   7.65 kB[22m
+[2mdist/[22m[36massets/Store-B5yHdaWC.js                                   [39m[1m[2m 26.46 kB[22m[1m[22m[2m │ gzip:   7.70 kB[22m
+[2mdist/[22m[36massets/Home-UocJAQge.js                                    [39m[1m[2m 26.47 kB[22m[1m[22m[2m │ gzip:   7.34 kB[22m
+[2mdist/[22m[36massets/SecurityPhoenix-CrSZMpP1.js                         [39m[1m[2m 27.08 kB[22m[1m[22m[2m │ gzip:   7.49 kB[22m
+[2mdist/[22m[36massets/CountertopProtectionFilmArizona-y8-i3CHB.js         [39m[1m[2m 27.43 kB[22m[1m[22m[2m │ gzip:   5.83 kB[22m
+[2mdist/[22m[36massets/SolarPhoenix-DeZKBJ40.js                            [39m[1m[2m 27.49 kB[22m[1m[22m[2m │ gzip:   7.15 kB[22m
+[2mdist/[22m[36massets/CasperCloakingPage-G4X36KIT.js                      [39m[1m[2m 27.52 kB[22m[1m[22m[2m │ gzip:   6.68 kB[22m
+[2mdist/[22m[36massets/SidelightWindowFilm-CF-6py_D.js                     [39m[1m[2m 27.56 kB[22m[1m[22m[2m │ gzip:   7.77 kB[22m
+[2mdist/[22m[36massets/ScottsdaleCommercial-C7bOhJ5k.js                    [39m[1m[2m 27.89 kB[22m[1m[22m[2m │ gzip:   7.20 kB[22m
+[2mdist/[22m[36massets/Decorative-C2G9NwVg.js                              [39m[1m[2m 27.95 kB[22m[1m[22m[2m │ gzip:   8.16 kB[22m
+[2mdist/[22m[36massets/IndustriesPage-venYb5Mb.js                          [39m[1m[2m 28.69 kB[22m[1m[22m[2m │ gzip:   9.75 kB[22m
+[2mdist/[22m[36massets/ResidentialPhoenix-BktnCA-c.js                      [39m[1m[2m 29.70 kB[22m[1m[22m[2m │ gzip:   7.62 kB[22m
+[2mdist/[22m[36massets/PrivacyFilmSlidingGlassDoor-CjQMBQIQ.js             [39m[1m[2m 31.75 kB[22m[1m[22m[2m │ gzip:   8.67 kB[22m
+[2mdist/[22m[36massets/ui-vendor-D_Z4zzcL.js                               [39m[1m[2m 33.07 kB[22m[1m[22m[2m │ gzip:  10.33 kB[22m
+[2mdist/[22m[36massets/NexfilPage-PmD4dor8.js                              [39m[1m[2m 33.70 kB[22m[1m[22m[2m │ gzip:   8.07 kB[22m
+[2mdist/[22m[36massets/ScottsdaleResidential-JQ7bhQrQ.js                   [39m[1m[2m 35.66 kB[22m[1m[22m[2m │ gzip:   8.82 kB[22m
+[2mdist/[22m[36massets/FilmProductPage-CNNeYtYZ.js                         [39m[1m[2m 36.85 kB[22m[1m[22m[2m │ gzip:  11.23 kB[22m
+[2mdist/[22m[36massets/vendor-Dx8KtIur.js                                  [39m[1m[2m 37.05 kB[22m[1m[22m[2m │ gzip:  13.32 kB[22m
+[2mdist/[22m[36massets/Residential-RqE4ItqX.js                             [39m[1m[2m 38.50 kB[22m[1m[22m[2m │ gzip:  10.48 kB[22m
+[2mdist/[22m[36massets/Commercial-ZpgEr1O8.js                              [39m[1m[2m 40.35 kB[22m[1m[22m[2m │ gzip:  10.67 kB[22m
+[2mdist/[22m[36massets/brands-Cs2Q1q9U.js                                  [39m[1m[2m 50.33 kB[22m[1m[22m[2m │ gzip:  13.28 kB[22m
+[2mdist/[22m[36massets/index-BPbP1K8v.js                                   [39m[1m[2m 82.81 kB[22m[1m[22m[2m │ gzip:  22.74 kB[22m
+[2mdist/[22m[36massets/framer-DQVOsQxy.js                                  [39m[1m[2m 98.52 kB[22m[1m[22m[2m │ gzip:  33.17 kB[22m
+[2mdist/[22m[36massets/solyxFilms-DAI3vERo.js                              [39m[1m[2m110.94 kB[22m[1m[22m[2m │ gzip:  15.40 kB[22m
+[2mdist/[22m[36massets/SupportingPage-CC7EzA0T.js                          [39m[1m[2m129.46 kB[22m[1m[22m[2m │ gzip:  38.01 kB[22m
+[2mdist/[22m[36massets/react-vendor-YG7mo9qR.js                            [39m[1m[2m162.05 kB[22m[1m[22m[2m │ gzip:  52.45 kB[22m
+[2mdist/[22m[36massets/blogPosts-DRoRoWhH.js                               [39m[1m[2m392.09 kB[22m[1m[22m[2m │ gzip: 100.65 kB[22m
+[32m✓ built in 9.85s[39m
+
+> arizona-house-of-film@1.1.0 postbuild
+> node scripts/prerender.js && node scripts/generate-sitemaps.js
+
+✓ / (1/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/index.html[22m
+✓ /commercial-window-tinting (2/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting/index.html[22m
+✓ /residential-window-tinting (3/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting/index.html[22m
+✓ /decorative-window-films (4/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-films/index.html[22m
+✓ /safety (5/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/index.html[22m
+✓ /energy-saving-window-films (6/983)
+✓ /solutions (7/983)
+✓ /gallery (8/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/energy-saving-window-films/index.html[22m
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/solutions/index.html[22m
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/gallery/index.html[22m
+✓ /service-areas (9/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/index.html[22m
+✓ /films (10/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/index.html[22m
+✓ /brands (11/983)
+[2m7:35:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/index.html[22m
+✓ /contact (12/983)
+✓ /get-a-quote (13/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/contact/index.html[22m
+✓ /book-now (14/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/get-a-quote/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/book-now/index.html[22m
+✓ /careers (15/983)
+✓ /industries (16/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/careers/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/index.html[22m
+✓ /blog (17/983)
+✓ /films/security (18/983)
+✓ /films/security-films (19/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/index.html[22m
+✓ /films/casper-cloaking (20/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/security/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/security-films/index.html[22m
+✓ /brands/flexfilm (21/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/casper-cloaking/index.html[22m
+✓ /brands/llumar (22/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/flexfilm/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/llumar/index.html[22m
+✓ /brands/panorama (23/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/panorama/index.html[22m
+✓ /window-tinting-phoenix (24/983)
+✓ /window-tinting-chandler (25/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-phoenix/index.html[22m
+✓ /window-tinting-gilbert (26/983)
+✓ /window-tinting-mesa (27/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-chandler/index.html[22m
+✓ /window-tinting-tempe (28/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-gilbert/index.html[22m
+✓ /window-tinting-glendale (29/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-mesa/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-tempe/index.html[22m
+✓ /window-tinting-peoria (30/983)
+✓ /window-tinting-queen-creek (31/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-glendale/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-peoria/index.html[22m
+✓ /commercial-window-tinting-phoenix (32/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-queen-creek/index.html[22m
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-phoenix/index.html[22m
+✓ /commercial-window-tinting-scottsdale (33/983)
+[2m7:35:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-scottsdale/index.html[22m
+✓ /residential-window-tinting-scottsdale (34/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-scottsdale/index.html[22m
+✓ /residential-window-tinting-phoenix (35/983)
+✓ /commercial-window-film-phoenix (36/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-film-phoenix/index.html[22m
+✓ /anti-graffiti (37/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-phoenix/index.html[22m
+✓ /anti-graffiti-film-phoenix (38/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/anti-graffiti/index.html[22m
+✓ /decorative-window-film-phoenix (39/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/anti-graffiti-film-phoenix/index.html[22m
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-film-phoenix/index.html[22m
+✓ /solar-window-film-phoenix (40/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/solar-window-film-phoenix/index.html[22m
+✓ /security-window-film-phoenix (41/983)
+✓ /one-way-mirror-window-film (42/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/security-window-film-phoenix/index.html[22m
+✓ /bathroom-privacy-window-film (43/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/one-way-mirror-window-film/index.html[22m
+✓ /office-privacy-window-film (44/983)
+✓ /storefront-window-film (45/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/bathroom-privacy-window-film/index.html[22m
+✓ /entryway-window-film (46/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/office-privacy-window-film/index.html[22m
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/storefront-window-film/index.html[22m
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/entryway-window-film/index.html[22m
+✓ /sidelight-window-film (47/983)
+[2m7:35:08 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/sidelight-window-film/index.html[22m
+✓ /commercial-window-tinting/energy-cost-reduction (48/983)
+✓ /commercial-window-tinting/enhanced-privacy (49/983)
+✓ /commercial-window-tinting/anti-graffiti (50/983)
+✓ /residential-window-tinting/uv-protection (51/983)
+✓ /residential-window-tinting/energy-savings (52/983)
+✓ /residential-window-tinting/enhanced-privacy (53/983)
+✓ /residential-window-tinting/glare-reduction (54/983)
+✓ /residential-window-tinting/increased-comfort (55/983)
+✓ /decorative-window-films/enhanced-privacy (56/983)
+✓ /decorative-window-films/aesthetic-appeal (57/983)
+✓ /decorative-window-films/design-flexibility (58/983)
+✓ /decorative-window-films/easy-maintenance (59/983)
+✓ /safety/break-in-deterrent (60/983)
+✓ /safety/accident-protection (61/983)
+✓ /safety/storm-protection (62/983)
+✓ /safety/clear-visibility (63/983)
+✓ /safety/ground-floor-windows (64/983)
+✓ /safety/sliding-glass-doors (65/983)
+✓ /safety/french-doors (66/983)
+✓ /safety/basement-windows (67/983)
+✓ /safety/storefronts (68/983)
+✓ /safety/office-buildings (69/983)
+✓ /safety/schools (70/983)
+✓ /safety/government-facilities (71/983)
+✓ /industries/office-buildings (72/983)
+✓ /industries/retail-stores (73/983)
+✓ /industries/restaurants (74/983)
+✓ /industries/medical-facilities (75/983)
+✓ /industries/educational-institutions (76/983)
+✓ /industries/government-buildings (77/983)
+✓ /industries/hotels-hospitality (78/983)
+✓ /industries/warehouses (79/983)
+✓ /blog/ultimate-guide-to-window-tinting-benefits-in-arizona (80/983)
+✓ /blog/slashing-your-energy-bills-with-window-film (81/983)
+✓ /blog/decorative-vs-privacy-film-which-is-right-for-you (82/983)
+✓ /blog/top-5-mistakes-to-avoid-when-tinting-your-home (83/983)
+✓ /blog/commercial-window-film-case-study-fedex-yuma (84/983)
+✓ /blog/car-vs-home-window-tinting-whats-the-difference (85/983)
+✓ /blog/faq-can-window-film-really-lower-my-ac-bill (86/983)
+✓ /blog/a-business-owners-guide-to-security-window-films (87/983)
+✓ /blog/why-phoenix-residents-swear-by-window-tinting (88/983)
+✓ /blog/the-secret-to-scottsdale-luxury-high-end-window-films (89/983)
+✓ /blog/arizona-hb-2342-shade-structure-bill-2026 (90/983)
+✓ /blog/srp-rebate-window-film-2026 (91/983)
+✓ /blog/how-much-does-window-tinting-cost-phoenix (92/983)
+✓ /blog/best-window-film-arizona-heat-2026 (93/983)
+✓ /blog/security-window-film-phoenix-cost-guide (94/983)
+✓ /blog/privacy-decorative-window-film-phoenix (95/983)
+✓ /blog/countertop-protection-film-arizona-guide (96/983)
+✓ /blog/casper-cloaking-film-cost-phoenix (97/983)
+✓ /blog/window-tinting-queen-creek-guide (98/983)
+✓ /blog/window-tinting-scottsdale-az-guide (99/983)
+✓ /blog/solar-window-film-phoenix-az (100/983)
+✓ /blog/enerlogic-window-film-arizona-review (101/983)
+✓ /blog/residential-window-tinting-scottsdale-az-guide (102/983)
+✓ /blog/commercial-window-tinting-cost-phoenix-2026 (103/983)
+✓ /blog/nexfil-onyva-ir90-arizona-review (104/983)
+✓ /blog/window-film-for-restaurants-arizona (105/983)
+✓ /blog/anti-graffiti-window-film-phoenix-guide (106/983)
+✓ /blog/window-film-for-offices-phoenix (107/983)
+✓ /blog/countertop-protection-film-distributor-nationwide (108/983)
+✓ /blog/residential-performance-window-film-phoenix (109/983)
+✓ /blog/commercial-performance-window-film-phoenix (110/983)
+✓ /blog/nexfil-window-film-arizona-review (111/983)
+✓ /blog/window-tinting-goodyear-az-guide (112/983)
+✓ /blog/one-way-window-film-day-and-night-guide (113/983)
+✓ /blog/window-tinting-avondale-az-guide (114/983)
+✓ /blog/security-window-film-schools-arizona (115/983)
+✓ /blog/window-film-for-medical-offices-arizona (116/983)
+✓ /blog/enerlogic-window-film-arizona-guide (117/983)
+✓ /blog/decorative-window-film-phoenix-guide (118/983)
+✓ /brands/3m (119/983)
+✓ /brands/eastman (120/983)
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting/anti-graffiti/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting/enhanced-privacy/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting/energy-cost-reduction/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting/energy-savings/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting/increased-comfort/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting/glare-reduction/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting/enhanced-privacy/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting/uv-protection/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-films/aesthetic-appeal/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-films/design-flexibility/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-films/easy-maintenance/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-films/enhanced-privacy/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/break-in-deterrent/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/accident-protection/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/clear-visibility/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/basement-windows/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/french-doors/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/ground-floor-windows/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/government-facilities/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/office-buildings/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/schools/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/storefronts/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/sliding-glass-doors/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/safety/storm-protection/index.html[22m
+✓ /brands/solar-gard (121/983)
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/government-buildings/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/educational-institutions/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/hotels-hospitality/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/medical-facilities/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/office-buildings/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/retail-stores/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/restaurants/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/industries/warehouses/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/anti-graffiti-window-film-phoenix-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/arizona-hb-2342-shade-structure-bill-2026/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/a-business-owners-guide-to-security-window-films/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/best-window-film-arizona-heat-2026/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/commercial-window-film-case-study-fedex-yuma/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/car-vs-home-window-tinting-whats-the-difference/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/commercial-window-tinting-cost-phoenix-2026/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/commercial-performance-window-film-phoenix/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/casper-cloaking-film-cost-phoenix/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/countertop-protection-film-distributor-nationwide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/countertop-protection-film-arizona-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/decorative-window-film-phoenix-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/enerlogic-window-film-arizona-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/faq-can-window-film-really-lower-my-ac-bill/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/decorative-vs-privacy-film-which-is-right-for-you/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/how-much-does-window-tinting-cost-phoenix/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/enerlogic-window-film-arizona-review/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/nexfil-onyva-ir90-arizona-review/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/nexfil-window-film-arizona-review/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/privacy-decorative-window-film-phoenix/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/one-way-window-film-day-and-night-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/residential-performance-window-film-phoenix/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/slashing-your-energy-bills-with-window-film/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/security-window-film-phoenix-cost-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/residential-window-tinting-scottsdale-az-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/top-5-mistakes-to-avoid-when-tinting-your-home/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/security-window-film-schools-arizona/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/solar-window-film-phoenix-az/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/the-secret-to-scottsdale-luxury-high-end-window-films/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/srp-rebate-window-film-2026/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/ultimate-guide-to-window-tinting-benefits-in-arizona/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-tinting-avondale-az-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-film-for-offices-phoenix/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-film-for-restaurants-arizona/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/why-phoenix-residents-swear-by-window-tinting/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-film-for-medical-offices-arizona/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-tinting-scottsdale-az-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-tinting-queen-creek-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/blog/window-tinting-goodyear-az-guide/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/3m/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/eastman/index.html[22m
+✓ /brands/nexfil (122/983)
+✓ /brands/avery-dennison (123/983)
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/solar-gard/index.html[22m
+✓ /brands/xpel (124/983)
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/avery-dennison/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/nexfil/index.html[22m
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/xpel/index.html[22m
+✓ /brands/madico (125/983)
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/madico/index.html[22m
+✓ /brands/suntek (126/983)
+[2m7:35:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/suntek/index.html[22m
+✓ /brands/huper-optik (127/983)
+✓ /brands/johnson (128/983)
+✓ /brands/geoshield (129/983)
+✓ /brands/rayno (130/983)
+✓ /brands/global (131/983)
+✓ /brands/terminax (132/983)
+✓ /brands/motoshield (133/983)
+✓ /brands/gila (134/983)
+✓ /brands/artscape (135/983)
+✓ /brands/enerlogic (136/983)
+✓ /brands/concord (137/983)
+✓ /brands/bdf (138/983)
+✓ /brands/rockrose (139/983)
+✓ /brands/vkool (140/983)
+✓ /brands/decorative-films-llc (141/983)
+✓ /brands/smart-glass (142/983)
+✓ /brands/armor-glass (143/983)
+✓ /brands/hanitatek (144/983)
+✓ /brands/lintec (145/983)
+✓ /brands/garware (146/983)
+✓ /brands/reflek (147/983)
+✓ /brands/contra-vision (148/983)
+✓ /brands/vsmile (149/983)
+✓ /brands/solyx (150/983)
+✓ /brands/simglas (151/983)
+✓ /films/casper-films/casper-cloaking (152/983)
+✓ /films/casper-films/casper-graphic (153/983)
+✓ /films/colored-films/color-polyester (154/983)
+✓ /films/colored-films/color-vinyl (155/983)
+✓ /films/colored-films/color-translucent (156/983)
+✓ /films/colored-films/color-dichroic (157/983)
+✓ /films/colored-films/color-patterned (158/983)
+✓ /films/elegant-textured-films/cut-glass (159/983)
+✓ /films/elegant-textured-films/textured (160/983)
+✓ /films/elegant-textured-films/dichroic (161/983)
+✓ /films/exterior-films/exterior-frosted (162/983)
+✓ /films/exterior-films/exterior-opaque (163/983)
+✓ /films/exterior-films/exterior-patterned (164/983)
+✓ /films/exterior-films/exterior-solar (165/983)
+✓ /films/frosted-etched-films/simple-frosted (166/983)
+✓ /films/frosted-etched-films/frosted-colors (167/983)
+✓ /films/frosted-etched-films/opaque (168/983)
+✓ /films/frosted-etched-films/light-diffusing (169/983)
+✓ /films/frosted-etched-films/frosted-patterns (170/983)
+✓ /films/glasslike-distortion-films/sgc-crystal (171/983)
+✓ /films/glasslike-distortion-films/sgd-dusted (172/983)
+✓ /films/glasslike-distortion-films/sgv-frosted (173/983)
+✓ /films/glasslike-distortion-films/cleaner-polish (174/983)
+✓ /films/gradient-films/gradient-24 (175/983)
+✓ /films/gradient-films/gradient-60 (176/983)
+✓ /films/gradient-films/gradient-71 (177/983)
+✓ /films/patterned-privacy-films/privacy-natural (178/983)
+✓ /films/patterned-privacy-films/privacy-stripes (179/983)
+✓ /films/patterned-privacy-films/privacy-squares (180/983)
+✓ /films/patterned-privacy-films/privacy-dots (181/983)
+✓ /films/patterned-privacy-films/privacy-rice-paper (182/983)
+✓ /films/specialty-films/anti-fog (183/983)
+✓ /films/specialty-films/anti-graffiti (184/983)
+✓ /films/specialty-films/bird-safety (185/983)
+✓ /films/specialty-films/rear-projection (186/983)
+✓ /films/specialty-films/writable (187/983)
+✓ /films/specialty-films/one-way (188/983)
+✓ /films/stained-glass-films/stained-static (189/983)
+✓ /films/stained-glass-films/stained-adhesive (190/983)
+✓ /films/squid-window-textile/squid (191/983)
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/armor-glass/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/artscape/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/concord/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/bdf/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/garware/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/contra-vision/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/enerlogic/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/geoshield/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/global/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/decorative-films-llc/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/gila/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/huper-optik/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/johnson/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/lintec/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/hanitatek/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/motoshield/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/reflek/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/rayno/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/rockrose/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/simglas/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/smart-glass/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/terminax/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/solyx/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/vkool/index.html[22m
+[2m7:35:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/brands/vsmile/index.html[22m
+✓ /service-areas/scottsdale (192/983)
+✓ /service-areas/surprise (193/983)
+✓ /service-areas/goodyear (194/983)
+✓ /service-areas/tucson (195/983)
+✓ /service-areas/flagstaff (196/983)
+✓ /service-areas/prescott (197/983)
+✓ /service-areas/yuma (198/983)
+✓ /service-areas/buckeye (199/983)
+✓ /service-areas/san-tan-valley (200/983)
+✓ /service-areas/paradise-valley (201/983)
+✓ /service-areas/cave-creek (202/983)
+✓ /service-areas/anthem (203/983)
+✓ /service-areas/laveen (204/983)
+✓ /service-areas/ahwatukee (205/983)
+✓ /service-areas/prescott-valley (206/983)
+✓ /service-areas/maricopa (207/983)
+✓ /service-areas/apache-junction (208/983)
+✓ /service-areas/casa-grande (209/983)
+✓ /service-areas/el-mirage (210/983)
+✓ /service-areas/florence (211/983)
+✓ /service-areas/gold-canyon (212/983)
+✓ /service-areas/litchfield-park (213/983)
+✓ /service-areas/new-river (214/983)
+✓ /service-areas/rio-verde (215/983)
+✓ /service-areas/sun-city (216/983)
+✓ /service-areas/sun-city-west (217/983)
+✓ /service-areas/sun-lakes (218/983)
+✓ /service-areas/youngtown (219/983)
+✓ /service-areas/sedona (220/983)
+✓ /service-areas/cottonwood (221/983)
+✓ /service-areas/camp-verde (222/983)
+✓ /service-areas/clarkdale (223/983)
+✓ /service-areas/jerome (224/983)
+✓ /service-areas/lake-havasu-city (225/983)
+✓ /service-areas/kingman (226/983)
+✓ /service-areas/bullhead-city (227/983)
+✓ /service-areas/payson (228/983)
+✓ /service-areas/globe (229/983)
+✓ /service-areas/miami (230/983)
+✓ /service-areas/show-low (231/983)
+✓ /service-areas/pinetop-lakeside (232/983)
+✓ /service-areas/winslow (233/983)
+✓ /service-areas/holbrook (234/983)
+✓ /service-areas/st-johns (235/983)
+✓ /service-areas/eagar (236/983)
+✓ /service-areas/springerville (237/983)
+✓ /service-areas/safford (238/983)
+✓ /service-areas/thatcher (239/983)
+✓ /service-areas/willcox (240/983)
+✓ /service-areas/benson (241/983)
+✓ /service-areas/sierra-vista (242/983)
+✓ /service-areas/bisbee (243/983)
+✓ /service-areas/douglas (244/983)
+✓ /service-areas/nogales (245/983)
+✓ /service-areas/green-valley (246/983)
+✓ /service-areas/sahuarita (247/983)
+✓ /service-areas/vail (248/983)
+✓ /service-areas/oro-valley (249/983)
+✓ /service-areas/marana (250/983)
+✓ /service-areas/catalina-foothills (251/983)
+✓ /service-areas/picture-rocks (252/983)
+✓ /service-areas/three-points (253/983)
+✓ /service-areas/arivaca (254/983)
+✓ /service-areas/tubac (255/983)
+✓ /service-areas/patagonia (256/983)
+✓ /service-areas/sonoita (257/983)
+✓ /service-areas/elgin (258/983)
+✓ /service-areas/wickenburg (259/983)
+✓ /service-areas/congress (260/983)
+✓ /service-areas/yarnell (261/983)
+✓ /service-areas/black-canyon-city (262/983)
+✓ /service-areas/dewey-humboldt (263/983)
+✓ /service-areas/mayer (264/983)
+✓ /service-areas/chino-valley (265/983)
+✓ /service-areas/paulden (266/983)
+✓ /service-areas/ash-fork (267/983)
+✓ /service-areas/williams (268/983)
+✓ /service-areas/grand-canyon-village (269/983)
+✓ /service-areas/tusayan (270/983)
+✓ /service-areas/page (271/983)
+✓ /service-areas/kayenta (272/983)
+✓ /service-areas/tuba-city (273/983)
+✓ /service-areas/window-rock (274/983)
+✓ /service-areas/chinle (275/983)
+✓ /service-areas/ganado (276/983)
+✓ /service-areas/parker (277/983)
+✓ /service-areas/quartzsite (278/983)
+✓ /service-areas/wellton (279/983)
+✓ /service-areas/somerton (280/983)
+✓ /service-areas/san-luis (281/983)
+✓ /service-areas/gadsden (282/983)
+✓ /service-areas/superior (283/983)
+✓ /service-areas/kearny (284/983)
+✓ /service-areas/hayden (285/983)
+✓ /service-areas/winkelman (286/983)
+✓ /service-areas/coolidge (287/983)
+✓ /service-areas/eloy (288/983)
+✓ /service-areas/arizona-city (289/983)
+✓ /window-tinting-tolleson (290/983)
+✓ /window-tinting-fountain-hills (291/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/anthem/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/ahwatukee/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/apache-junction/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/arizona-city/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/ash-fork/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/benson/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/arivaca/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/black-canyon-city/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/camp-verde/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/buckeye/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/bisbee/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/bullhead-city/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/casa-grande/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/catalina-foothills/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/chinle/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/cave-creek/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/congress/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/chino-valley/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/clarkdale/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/cottonwood/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/eagar/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/el-mirage/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/dewey-humboldt/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/douglas/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/elgin/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/coolidge/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/eloy/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/flagstaff/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/globe/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/ganado/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/gadsden/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/florence/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/grand-canyon-village/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/gold-canyon/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/hayden/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/goodyear/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/holbrook/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/litchfield-park/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/jerome/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/green-valley/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/kearny/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/laveen/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/kingman/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/marana/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/kayenta/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/maricopa/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/lake-havasu-city/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/nogales/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/new-river/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/miami/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/mayer/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/oro-valley/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/paradise-valley/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/parker/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/page/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/patagonia/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/paulden/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/payson/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/picture-rocks/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/prescott/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/prescott-valley/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/rio-verde/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/pinetop-lakeside/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/safford/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sahuarita/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/quartzsite/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/san-luis/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/san-tan-valley/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/scottsdale/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/show-low/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sierra-vista/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sedona/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/springerville/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sonoita/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/st-johns/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sun-city/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/somerton/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sun-city-west/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/surprise/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/superior/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/sun-lakes/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/tuba-city/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/three-points/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/tubac/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/thatcher/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/tucson/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/tusayan/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/wickenburg/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/vail/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/wellton/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/winkelman/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/williams/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/winslow/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/willcox/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/window-rock/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/yarnell/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/yuma/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/service-areas/youngtown/index.html[22m
+✓ /window-tinting-avondale (292/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/exterior-films/exterior-frosted/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/casper-films/casper-graphic/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/exterior-films/exterior-opaque/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/exterior-films/exterior-solar/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/exterior-films/exterior-patterned/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/casper-films/casper-cloaking/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/frosted-etched-films/frosted-colors/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/colored-films/color-polyester/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/colored-films/color-dichroic/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/colored-films/color-patterned/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/colored-films/color-vinyl/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/colored-films/color-translucent/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/frosted-etched-films/light-diffusing/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/frosted-etched-films/simple-frosted/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/frosted-etched-films/frosted-patterns/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/gradient-films/gradient-60/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/frosted-etched-films/opaque/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/gradient-films/gradient-24/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/elegant-textured-films/cut-glass/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/gradient-films/gradient-71/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/glasslike-distortion-films/cleaner-polish/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/elegant-textured-films/dichroic/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/elegant-textured-films/textured/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/glasslike-distortion-films/sgc-crystal/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/anti-fog/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/glasslike-distortion-films/sgv-frosted/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/glasslike-distortion-films/sgd-dusted/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/anti-graffiti/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/bird-safety/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/rear-projection/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/patterned-privacy-films/privacy-rice-paper/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/one-way/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/writable/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/patterned-privacy-films/privacy-dots/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/patterned-privacy-films/privacy-natural/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/patterned-privacy-films/privacy-squares/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/squid-window-textile/squid/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/patterned-privacy-films/privacy-stripes/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/stained-glass-films/stained-static/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/stained-glass-films/stained-adhesive/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-tolleson/index.html[22m
+✓ /high-rise-commercial-window-tinting-phoenix (293/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-fountain-hills/index.html[22m
+✓ /countertop-protection-film-arizona (294/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-tinting-avondale/index.html[22m
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/high-rise-commercial-window-tinting-phoenix/index.html[22m
+✓ /countertop-protection-film-nationwide (295/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/countertop-protection-film-arizona/index.html[22m
+✓ /hurricane-window-film-arizona (296/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/countertop-protection-film-nationwide/index.html[22m
+✓ /commercial-window-tinting-mesa (297/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/hurricane-window-film-arizona/index.html[22m
+✓ /commercial-window-tinting-chandler (298/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-mesa/index.html[22m
+✓ /commercial-window-tinting-tempe (299/983)
+✓ /commercial-window-tinting-gilbert (300/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-chandler/index.html[22m
+✓ /residential-window-tinting-mesa (301/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-tempe/index.html[22m
+✓ /residential-window-tinting-chandler (302/983)
+[2m7:35:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-gilbert/index.html[22m
+✓ /residential-window-tinting-gilbert (303/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-mesa/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-chandler/index.html[22m
+✓ /residential-window-tinting-tempe (304/983)
+✓ /security-window-film-scottsdale (305/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-gilbert/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-tempe/index.html[22m
+✓ /decorative-window-film-scottsdale (306/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/security-window-film-scottsdale/index.html[22m
+✓ /solar-window-film-scottsdale (307/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/decorative-window-film-scottsdale/index.html[22m
+✓ /commercial-window-tinting-peoria (308/983)
+✓ /commercial-window-tinting-glendale (309/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/solar-window-film-scottsdale/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-peoria/index.html[22m
+✓ /commercial-window-tinting-queen-creek (310/983)
+✓ /residential-window-tinting-peoria (311/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-glendale/index.html[22m
+✓ /residential-window-tinting-glendale (312/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/commercial-window-tinting-queen-creek/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-peoria/index.html[22m
+✓ /residential-window-tinting-queen-creek (313/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-glendale/index.html[22m
+✓ /reduce-heat-phoenix-windows (314/983)
+✓ /uv-protection-window-film-phoenix (315/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/residential-window-tinting-queen-creek/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/reduce-heat-phoenix-windows/index.html[22m
+✓ /privacy-window-film-phoenix-homes (316/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/uv-protection-window-film-phoenix/index.html[22m
+✓ /glare-reduction-window-film-phoenix (317/983)
+✓ /window-film-for-schools-arizona (318/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/privacy-window-film-phoenix-homes/index.html[22m
+✓ /window-film-for-medical-facilities-arizona (319/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/glare-reduction-window-film-phoenix/index.html[22m
+✓ /window-film-for-restaurants-arizona (320/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-for-schools-arizona/index.html[22m
+✓ /window-film-for-warehouses-arizona (321/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-for-medical-facilities-arizona/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-for-restaurants-arizona/index.html[22m
+✓ /window-film-cost-estimator (322/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-for-warehouses-arizona/index.html[22m
+✓ /best-window-film-arizona-heat (323/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-cost-estimator/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/best-window-film-arizona-heat/index.html[22m
+✓ /window-film-energy-rebates-arizona (324/983)
+✓ /ceramic-vs-dual-reflective-film (325/983)
+✓ /window-film-cost-arizona (326/983)
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-energy-rebates-arizona/index.html[22m
+[2m7:35:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/ceramic-vs-dual-reflective-film/index.html[22m
+✓ /security-film-vs-tempered-glass (327/983)
+✓ /how-long-does-window-film-last (328/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-cost-arizona/index.html[22m
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/security-film-vs-tempered-glass/index.html[22m
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/how-long-does-window-film-last/index.html[22m
+✓ /store (329/983)
+✓ /welcome (330/983)
+✓ /404 (331/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/store/index.html[22m
+✓ /privacy-policy (332/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/404/index.html[22m
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/welcome/index.html[22m
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/privacy-policy/index.html[22m
+✓ /thank-you (333/983)
+✓ /success (334/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/thank-you/index.html[22m
+✓ /shatterproof-window-film (335/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/success/index.html[22m
+✓ /day-and-night-privacy-window-film (336/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/shatterproof-window-film/index.html[22m
+✓ /electric-privacy-film-arizona (337/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/day-and-night-privacy-window-film/index.html[22m
+✓ /privacy-film-sliding-glass-door (338/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/electric-privacy-film-arizona/index.html[22m
+✓ /solyx-bird-safety-film (339/983)
+✓ /window-film-distributor-phoenix (340/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/privacy-film-sliding-glass-door/index.html[22m
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/solyx-bird-safety-film/index.html[22m
+✓ /ai-window-film-estimator (341/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-distributor-phoenix/index.html[22m
+✓ /window-film-faq (342/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/ai-window-film-estimator/index.html[22m
+✓ /office-partition-window-film (343/983)
+✓ /restaurant-window-film (344/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/window-film-faq/index.html[22m
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/office-partition-window-film/index.html[22m
+✓ /university-window-film (345/983)
+[2m7:35:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/restaurant-window-film/index.html[22m
+✓ /window-film-phoenix (346/983)
+✓ /films/frosted-etched-films (347/983)
+✓ /films/casper-films (348/983)
+✓ /films/specialty-films (349/983)
+✓ /films/gradient-films (350/983)
+✓ /films/colored-films (351/983)
+✓ /films/patterned-privacy-films (352/983)
+✓ /films/reflective-films (353/983)
+✓ /films/stained-glass-films (354/983)
+✓ /films/casper-films/pf001-801-48 (355/983)
+✓ /films/casper-films/pf002-801 (356/983)
+✓ /films/casper-films/pf003-801 (357/983)
+✓ /films/casper-films/pf005-801 (358/983)
+✓ /films/casper-films/pf006-801 (359/983)
+✓ /films/casper-films/pf007-801 (360/983)
+✓ /films/casper-films/pf008-801 (361/983)
+✓ /films/casper-films/pf009-801 (362/983)
+✓ /films/casper-films/pf010-801 (363/983)
+✓ /films/casper-films/pf011-801 (364/983)
+✓ /films/casper-films/pf012-801 (365/983)
+✓ /films/casper-films/pf013-801 (366/983)
+✓ /films/casper-films/pf014-801 (367/983)
+✓ /films/casper-films/pf015-801 (368/983)
+✓ /films/casper-films/pf016-801 (369/983)
+✓ /films/frosted-etched-films/sd-fs228-e (370/983)
+✓ /films/specialty-films/sd-fs254-w (371/983)
+✓ /films/specialty-films/sd-fs2667-wf (372/983)
+✓ /films/frosted-etched-films/sd-fs274-e (373/983)
+✓ /films/specialty-films/sd-fs2764-w (374/983)
+✓ /films/specialty-films/sd-fs2765-w (375/983)
+✓ /films/specialty-films/sd-fs327-wf (376/983)
+✓ /films/patterned-privacy-films/sd-fs3424-wf (377/983)
+✓ /films/gradient-films/sd-fs4682-gra (378/983)
+✓ /films/frosted-etched-films/sd-fs728-e (379/983)
+✓ /films/specialty-films/sd-fs728-w (380/983)
+✓ /films/frosted-etched-films/sd-fs728-wf (381/983)
+✓ /films/specialty-films/sd-fs744-w (382/983)
+✓ /films/frosted-etched-films/sd-fs787-e (383/983)
+✓ /films/specialty-films/sd-ob467-ether-72 (384/983)
+✓ /films/specialty-films/sd-ob467-haze-72 (385/983)
+✓ /films/specialty-films/sd-ob737-ether-72 (386/983)
+✓ /films/specialty-films/sd-ob737-haze-72 (387/983)
+✓ /films/patterned-privacy-films/sgc-02 (388/983)
+✓ /films/specialty-films/sgc-05 (389/983)
+✓ /films/reflective-films/sgc-06 (390/983)
+✓ /films/specialty-films/sgc-08 (391/983)
+✓ /films/specialty-films/sgc-12 (392/983)
+✓ /films/specialty-films/sgc-14 (393/983)
+✓ /films/specialty-films/sgc-15 (394/983)
+✓ /films/specialty-films/sgc-16 (395/983)
+✓ /films/specialty-films/sgc-17 (396/983)
+✓ /films/specialty-films/sgc-18 (397/983)
+✓ /films/specialty-films/sgc-20 (398/983)
+✓ /films/specialty-films/sgc-24 (399/983)
+✓ /films/specialty-films/sgc-25 (400/983)
+✓ /films/specialty-films/sgc-26 (401/983)
+✓ /films/specialty-films/sgc-32 (402/983)
+✓ /films/specialty-films/sgc-33 (403/983)
+✓ /films/specialty-films/sgc-41 (404/983)
+✓ /films/patterned-privacy-films/sgc-55 (405/983)
+✓ /films/specialty-films/sgc-6511-58 (406/983)
+✓ /films/frosted-etched-films/sgc-6521-58 (407/983)
+✓ /films/specialty-films/sgc-6523 (408/983)
+✓ /films/specialty-films/sgc-6525-ug-58 (409/983)
+✓ /films/specialty-films/sgc-6527-ug (410/983)
+✓ /films/specialty-films/sgc-6528-ug (411/983)
+✓ /films/frosted-etched-films/sgc-6531-ug (412/983)
+✓ /films/specialty-films/sgc-6535-ug (413/983)
+✓ /films/specialty-films/sgc-6537-ug (414/983)
+✓ /films/specialty-films/sgd-6002-ug (415/983)
+✓ /films/specialty-films/sgd-6003 (416/983)
+✓ /films/specialty-films/sgd-6005-ug (417/983)
+✓ /films/specialty-films/sgd-6007 (418/983)
+✓ /films/specialty-films/sgd-6008-58 (419/983)
+✓ /films/specialty-films/sgd-6009-ug (420/983)
+✓ /films/specialty-films/sgd-6011 (421/983)
+✓ /films/specialty-films/sgd-6015-ug (422/983)
+✓ /films/specialty-films/sgd-6100-ug (423/983)
+✓ /films/stained-glass-films/sgv-020 (424/983)
+✓ /films/stained-glass-films/sgv-021 (425/983)
+✓ /films/stained-glass-films/sgv-031 (426/983)
+✓ /films/stained-glass-films/sgv-041 (427/983)
+✓ /films/stained-glass-films/sgv-052 (428/983)
+✓ /films/frosted-etched-films/sgv-056 (429/983)
+✓ /films/stained-glass-films/sgv-063 (430/983)
+✓ /films/stained-glass-films/sgv-073 (431/983)
+✓ /films/specialty-films/sgv-6601-ug (432/983)
+✓ /films/specialty-films/sgv-6605-ug (433/983)
+✓ /films/frosted-etched-films/sgv-6607 (434/983)
+✓ /films/frosted-etched-films/sgv-6608-ug (435/983)
+✓ /films/frosted-etched-films/sgv-6610 (436/983)
+✓ /films/frosted-etched-films/sgv-6612 (437/983)
+✓ /films/frosted-etched-films/sgv-6613-ug (438/983)
+✓ /films/specialty-films/sgv-6614 (439/983)
+✓ /films/specialty-films/simglas-128oz (440/983)
+✓ /films/specialty-films/simglas-8oz (441/983)
+✓ /films/specialty-films/simglas-8oz-kit (442/983)
+✓ /films/specialty-films/sq-2000 (443/983)
+✓ /films/specialty-films/sq-2001 (444/983)
+✓ /films/specialty-films/sq-2002 (445/983)
+✓ /films/specialty-films/sq-2003 (446/983)
+✓ /films/specialty-films/sq-2004 (447/983)
+✓ /films/specialty-films/sq-2005 (448/983)
+✓ /films/specialty-films/sx-001 (449/983)
+✓ /films/specialty-films/sx-002 (450/983)
+✓ /films/specialty-films/sx-0044 (451/983)
+✓ /films/specialty-films/sx-0103c-ug (452/983)
+✓ /films/frosted-etched-films/sx-0302 (453/983)
+✓ /films/specialty-films/sx-0423 (454/983)
+✓ /films/specialty-films/item-code (455/983)
+✓ /films/specialty-films/sx-0424 (456/983)
+✓ /films/specialty-films/sx-0425-59 (457/983)
+✓ /films/specialty-films/sx-1000-60 (458/983)
+✓ /films/specialty-films/sx-1002-60100 (459/983)
+✓ /films/specialty-films/sx-1004 (460/983)
+✓ /films/specialty-films/sx-1017-ug (461/983)
+✓ /films/specialty-films/sx-1109-48 (462/983)
+✓ /films/frosted-etched-films/sx-1164-48 (463/983)
+✓ /films/specialty-films/sx-1212-60 (464/983)
+✓ /films/specialty-films/sx-1254-60-ug (465/983)
+✓ /films/specialty-films/sx-1255-60 (466/983)
+✓ /films/specialty-films/sx-1256-54 (467/983)
+✓ /films/specialty-films/sx-1257 (468/983)
+✓ /films/specialty-films/sx-1258 (469/983)
+✓ /films/specialty-films/sx-1259-54 (470/983)
+✓ /films/specialty-films/sx-1261-54 (471/983)
+✓ /films/specialty-films/sx-1262-60-ug (472/983)
+✓ /films/casper-films/sx-1275 (473/983)
+✓ /films/specialty-films/sx-1277-54 (474/983)
+✓ /films/frosted-etched-films/sx-1278-54 (475/983)
+✓ /films/specialty-films/sx-1279-54 (476/983)
+✓ /films/frosted-etched-films/sx-1303-60100 (477/983)
+✓ /films/frosted-etched-films/sx-1309-60 (478/983)
+✓ /films/frosted-etched-films/sx-1325-60 (479/983)
+✓ /films/specialty-films/sx-1326 (480/983)
+✓ /films/frosted-etched-films/sx-1409-60100 (481/983)
+✓ /films/frosted-etched-films/sx-14316-48 (482/983)
+✓ /films/specialty-films/sx-1462-35 (483/983)
+✓ /films/stained-glass-films/sx-1513-48 (484/983)
+✓ /films/specialty-films/sx-1523-48 (485/983)
+✓ /films/specialty-films/sx-1544-48 (486/983)
+✓ /films/frosted-etched-films/sx-1545-48 (487/983)
+✓ /films/frosted-etched-films/sx-1546-48 (488/983)
+✓ /films/frosted-etched-films/sx-1549-48 (489/983)
+✓ /films/frosted-etched-films/sx-1550-ug (490/983)
+✓ /films/specialty-films/sx-1551-48 (491/983)
+✓ /films/specialty-films/sx-1552-48 (492/983)
+✓ /films/frosted-etched-films/sx-1580-ug (493/983)
+✓ /films/patterned-privacy-films/sx-1700-60 (494/983)
+✓ /films/patterned-privacy-films/sx-1710-60 (495/983)
+✓ /films/specialty-films/sx-1720-60 (496/983)
+✓ /films/specialty-films/sx-1740-ug (497/983)
+✓ /films/specialty-films/sx-1750-ug (498/983)
+✓ /films/specialty-films/sx-1758-ug (499/983)
+✓ /films/frosted-etched-films/sx-1760-ug (500/983)
+✓ /films/reflective-films/sx-1800-60 (501/983)
+✓ /films/specialty-films/sx-1801-60 (502/983)
+✓ /films/frosted-etched-films/sx-1900 (503/983)
+✓ /films/frosted-etched-films/sx-1910-60 (504/983)
+✓ /films/frosted-etched-films/sx-1920-60 (505/983)
+✓ /films/specialty-films/sx-1940-60 (506/983)
+✓ /films/specialty-films/sx-1950-72 (507/983)
+✓ /films/reflective-films/sx-1975-71w (508/983)
+✓ /films/patterned-privacy-films/sx-2006-60 (509/983)
+✓ /films/patterned-privacy-films/sx-2007 (510/983)
+✓ /films/specialty-films/sx-2080-60 (511/983)
+✓ /films/specialty-films/sx-2082 (512/983)
+✓ /films/specialty-films/sx-2090-59 (513/983)
+✓ /films/specialty-films/sx-2092 (514/983)
+✓ /films/specialty-films/sx-2095-59 (515/983)
+✓ /films/specialty-films/sx-2097 (516/983)
+✓ /films/specialty-films/sx-2099 (517/983)
+✓ /films/frosted-etched-films/sx-22564-48 (518/983)
+✓ /films/frosted-etched-films/sx-3006-59 (519/983)
+✓ /films/specialty-films/sx-3008 (520/983)
+✓ /films/colored-films/sx-3050 (521/983)
+✓ /films/colored-films/sx-3065 (522/983)
+✓ /films/colored-films/sx-3066-54 (523/983)
+✓ /films/colored-films/sx-3067 (524/983)
+✓ /films/colored-films/sx-3068 (525/983)
+✓ /films/colored-films/sx-3069 (526/983)
+✓ /films/colored-films/sx-3071 (527/983)
+✓ /films/colored-films/sx-3072 (528/983)
+✓ /films/colored-films/sx-3073 (529/983)
+✓ /films/specialty-films/sx-3130-60 (530/983)
+✓ /films/frosted-etched-films/sx-3131-72-ug (531/983)
+✓ /films/frosted-etched-films/sx-3133 (532/983)
+✓ /films/frosted-etched-films/sx-3134 (533/983)
+✓ /films/frosted-etched-films/sx-3140-60 (534/983)
+✓ /films/frosted-etched-films/sx-3141-5975 (535/983)
+✓ /films/specialty-films/sx-3142-60 (536/983)
+✓ /films/frosted-etched-films/sx-3143-48 (537/983)
+✓ /films/frosted-etched-films/sx-3145-48 (538/983)
+✓ /films/specialty-films/sx-3146-ug-59 (539/983)
+✓ /films/frosted-etched-films/sx-3147-60 (540/983)
+✓ /films/specialty-films/sx-3148-60 (541/983)
+✓ /films/specialty-films/sx-3150-60 (542/983)
+✓ /films/specialty-films/sx-3160-60 (543/983)
+✓ /films/frosted-etched-films/sx-316132-h-ug (544/983)
+✓ /films/frosted-etched-films/sx-316132-v-ug (545/983)
+✓ /films/specialty-films/sx-3170 (546/983)
+✓ /films/specialty-films/sx-3171 (547/983)
+✓ /films/specialty-films/sx-3172 (548/983)
+✓ /films/specialty-films/sx-3173 (549/983)
+✓ /films/specialty-films/sx-3174 (550/983)
+✓ /films/specialty-films/sx-3175 (551/983)
+✓ /films/specialty-films/sx-3176 (552/983)
+✓ /films/specialty-films/sx-3177 (553/983)
+✓ /films/specialty-films/sx-3650-ug (554/983)
+✓ /films/specialty-films/sx-4500-60 (555/983)
+✓ /films/frosted-etched-films/sx-4647-60 (556/983)
+✓ /films/frosted-etched-films/sx-4800 (557/983)
+✓ /films/specialty-films/sx-4801 (558/983)
+✓ /films/patterned-privacy-films/sx-4802-60 (559/983)
+✓ /films/patterned-privacy-films/sx-4803 (560/983)
+✓ /films/specialty-films/sx-4804 (561/983)
+✓ /films/patterned-privacy-films/sx-5013-48 (562/983)
+✓ /films/specialty-films/sx-5015-48 (563/983)
+✓ /films/specialty-films/sx-5018-48 (564/983)
+✓ /films/specialty-films/sx-5020-60 (565/983)
+✓ /films/specialty-films/sx-5020in-48 (566/983)
+✓ /films/patterned-privacy-films/sx-5021-48 (567/983)
+✓ /films/frosted-etched-films/sx-5031-60 (568/983)
+✓ /films/frosted-etched-films/sx-5032-60 (569/983)
+✓ /films/frosted-etched-films/sx-5033-60 (570/983)
+✓ /films/frosted-etched-films/sx-5034-60 (571/983)
+✓ /films/specialty-films/sx-5035-ug (572/983)
+✓ /films/specialty-films/sx-5036 (573/983)
+✓ /films/specialty-films/sx-5037 (574/983)
+✓ /films/specialty-films/sx-5038-ug (575/983)
+✓ /films/specialty-films/sx-5039 (576/983)
+✓ /films/frosted-etched-films/sx-5042 (577/983)
+✓ /films/specialty-films/sx-5870-ug (578/983)
+✓ /films/colored-films/sx-6010 (579/983)
+✓ /films/reflective-films/sx-6030 (580/983)
+✓ /films/reflective-films/sx-6040-53 (581/983)
+✓ /films/reflective-films/sx-6059 (582/983)
+✓ /films/reflective-films/sx-7000 (583/983)
+✓ /films/reflective-films/sx-7001 (584/983)
+✓ /films/reflective-films/sx-7002 (585/983)
+✓ /films/frosted-etched-films/sx-8210-60 (586/983)
+✓ /films/frosted-etched-films/sx-8280 (587/983)
+✓ /films/frosted-etched-films/sx-8281 (588/983)
+✓ /films/specialty-films/sx-8400 (589/983)
+✓ /films/specialty-films/sx-8783-ug (590/983)
+✓ /films/specialty-films/sx-9000-60 (591/983)
+✓ /films/specialty-films/sx-9050 (592/983)
+✓ /films/frosted-etched-films/sx-9060 (593/983)
+✓ /films/specialty-films/sx-9100-60 (594/983)
+✓ /films/frosted-etched-films/sx-932932-48 (595/983)
+✓ /films/specialty-films/sx-9510 (596/983)
+✓ /films/specialty-films/sx-9800 (597/983)
+✓ /films/specialty-films/sx-9801 (598/983)
+✓ /films/specialty-films/sx-9802 (599/983)
+✓ /films/specialty-films/sx-9803 (600/983)
+✓ /films/colored-films/sx-bsfac-01 (601/983)
+✓ /films/frosted-etched-films/sx-bsfac-02 (602/983)
+✓ /films/frosted-etched-films/sx-bsfd-72 (603/983)
+✓ /films/specialty-films/sx-bsfh-70 (604/983)
+✓ /films/specialty-films/sx-bsft-60 (605/983)
+✓ /films/specialty-films/sx-bsfv-72 (606/983)
+✓ /films/frosted-etched-films/sx-c300-60 (607/983)
+✓ /films/specialty-films/sx-c333-60 (608/983)
+✓ /films/frosted-etched-films/sx-c347-ug (609/983)
+✓ /films/specialty-films/sx-c357 (610/983)
+✓ /films/specialty-films/sx-c361-59 (611/983)
+✓ /films/specialty-films/sx-c362-48 (612/983)
+✓ /films/frosted-etched-films/sx-c363-60 (613/983)
+✓ /films/specialty-films/sx-c367-48 (614/983)
+✓ /films/frosted-etched-films/sx-c368 (615/983)
+✓ /films/specialty-films/sx-c370 (616/983)
+✓ /films/specialty-films/sx-c371-48 (617/983)
+✓ /films/specialty-films/sx-c372-47 (618/983)
+✓ /films/frosted-etched-films/sx-c373-48 (619/983)
+✓ /films/frosted-etched-films/sx-c374-60 (620/983)
+✓ /films/specialty-films/sx-c375-60 (621/983)
+✓ /films/frosted-etched-films/sx-c376-48 (622/983)
+✓ /films/frosted-etched-films/sx-c378 (623/983)
+✓ /films/frosted-etched-films/sx-c379-60 (624/983)
+✓ /films/frosted-etched-films/sx-c380-59 (625/983)
+✓ /films/frosted-etched-films/sx-c381-48 (626/983)
+✓ /films/frosted-etched-films/sx-c382 (627/983)
+✓ /films/frosted-etched-films/sx-c384 (628/983)
+✓ /films/frosted-etched-films/sx-c385-60 (629/983)
+✓ /films/specialty-films/sx-c386 (630/983)
+✓ /films/patterned-privacy-films/sx-c387 (631/983)
+✓ /films/specialty-films/sx-c391 (632/983)
+✓ /films/specialty-films/sx-c392 (633/983)
+✓ /films/specialty-films/sx-c444-60 (634/983)
+✓ /films/gradient-films/sx-cat-gra60 (635/983)
+✓ /films/gradient-films/sx-cat-gra6071-23 (636/983)
+✓ /films/gradient-films/sx-cat-gra71 (637/983)
+✓ /films/frosted-etched-films/sx-md-8301 (638/983)
+✓ /films/frosted-etched-films/sx-md-8302 (639/983)
+✓ /films/frosted-etched-films/sx-md-8303 (640/983)
+✓ /films/frosted-etched-films/sx-md-8304 (641/983)
+✓ /films/stained-glass-films/sx-sc0004 (642/983)
+✓ /films/stained-glass-films/sx-sc0011 (643/983)
+✓ /films/specialty-films/sx-sc0012-48 (644/983)
+✓ /films/frosted-etched-films/sx-sc0020-59 (645/983)
+✓ /films/specialty-films/sx-sc005 (646/983)
+✓ /films/frosted-etched-films/sx-sc008-35 (647/983)
+✓ /films/colored-films/sx-sc020 (648/983)
+✓ /films/frosted-etched-films/sx-sc034 (649/983)
+✓ /films/specialty-films/sx-sc038 (650/983)
+✓ /films/specialty-films/sx-sc104 (651/983)
+✓ /films/stained-glass-films/sx-sc108-355 (652/983)
+✓ /films/specialty-films/sx-sc109-35 (653/983)
+✓ /films/specialty-films/sx-sc1120-35 (654/983)
+✓ /films/frosted-etched-films/sx-sc155-36 (655/983)
+✓ /films/specialty-films/sx-sc190 (656/983)
+✓ /films/frosted-etched-films/sx-sc216 (657/983)
+✓ /films/specialty-films/sx-sc217 (658/983)
+✓ /films/specialty-films/sx-sc218 (659/983)
+✓ /films/specialty-films/sx-sc219 (660/983)
+✓ /films/frosted-etched-films/sx-sc220 (661/983)
+✓ /films/frosted-etched-films/sx-sc302-35 (662/983)
+✓ /films/frosted-etched-films/sx-sc305-48 (663/983)
+✓ /films/specialty-films/sx-sc307-35 (664/983)
+✓ /films/specialty-films/sx-sc308-35 (665/983)
+✓ /films/specialty-films/sx-sc318-48 (666/983)
+✓ /films/specialty-films/sx-sc319-48 (667/983)
+✓ /films/patterned-privacy-films/sx-sc461-355 (668/983)
+✓ /films/specialty-films/sx-sc462-35 (669/983)
+✓ /films/specialty-films/sx-sc463-35 (670/983)
+✓ /films/specialty-films/sx-sc464-35 (671/983)
+✓ /films/specialty-films/sx-sc465 (672/983)
+✓ /films/frosted-etched-films/sx-sc466-35 (673/983)
+✓ /films/specialty-films/sx-sc468 (674/983)
+✓ /films/specialty-films/sx-sc477 (675/983)
+✓ /films/specialty-films/sx-sc488-35 (676/983)
+✓ /films/colored-films/sx-sc489 (677/983)
+✓ /films/specialty-films/sx-sc507-35 (678/983)
+✓ /films/specialty-films/sx-sc508 (679/983)
+✓ /films/stained-glass-films/sx-sc509 (680/983)
+✓ /films/specialty-films/sx-sc510 (681/983)
+✓ /films/specialty-films/sx-sc511-35 (682/983)
+✓ /films/stained-glass-films/sx-sc513-35 (683/983)
+✓ /films/specialty-films/sx-sc514-35 (684/983)
+✓ /films/specialty-films/sx-sc534 (685/983)
+✓ /films/specialty-films/sx-sc540-48 (686/983)
+✓ /films/specialty-films/sx-sc543-35 (687/983)
+✓ /films/specialty-films/sx-sc544-48 (688/983)
+✓ /films/frosted-etched-films/sx-sc546-36 (689/983)
+✓ /films/frosted-etched-films/sx-sc549-36 (690/983)
+✓ /films/specialty-films/sx-sc551-35 (691/983)
+✓ /films/specialty-films/sx-sc553 (692/983)
+✓ /films/specialty-films/sx-sc554 (693/983)
+✓ /films/specialty-films/sx-sc555 (694/983)
+✓ /films/specialty-films/sx-sc556-48 (695/983)
+✓ /films/specialty-films/sx-sc557-35 (696/983)
+✓ /films/specialty-films/sx-sc558-35 (697/983)
+✓ /films/frosted-etched-films/sx-sc560-35 (698/983)
+✓ /films/specialty-films/sx-sc561-35 (699/983)
+✓ /films/specialty-films/sx-sc563-35 (700/983)
+✓ /films/specialty-films/sx-sc564-35 (701/983)
+✓ /films/patterned-privacy-films/sx-sc565-35 (702/983)
+✓ /films/frosted-etched-films/sx-sc569-35 (703/983)
+✓ /films/specialty-films/sx-sc570-35 (704/983)
+✓ /films/patterned-privacy-films/sx-sc571-35 (705/983)
+✓ /films/patterned-privacy-films/sx-sc572 (706/983)
+✓ /films/stained-glass-films/sx-sc573 (707/983)
+✓ /films/stained-glass-films/sx-sc574-36 (708/983)
+✓ /films/specialty-films/sx-sc576 (709/983)
+✓ /films/specialty-films/sx-sc577 (710/983)
+✓ /films/specialty-films/sx-sc578 (711/983)
+✓ /films/patterned-privacy-films/sx-sc579-36 (712/983)
+✓ /films/specialty-films/sx-sc581-36 (713/983)
+✓ /films/specialty-films/sx-sc582-36 (714/983)
+✓ /films/specialty-films/sx-sc583-35 (715/983)
+✓ /films/specialty-films/sx-sc584-35 (716/983)
+✓ /films/specialty-films/sx-sc586 (717/983)
+✓ /films/specialty-films/sx-sc587 (718/983)
+✓ /films/specialty-films/sx-sc614-36 (719/983)
+✓ /films/frosted-etched-films/sx-sc620 (720/983)
+✓ /films/frosted-etched-films/sx-sc625 (721/983)
+✓ /films/frosted-etched-films/sx-sc630 (722/983)
+✓ /films/gradient-films/sx-sc650 (723/983)
+✓ /films/frosted-etched-films/sx-sc656 (724/983)
+✓ /films/specialty-films/sx-sc664 (725/983)
+✓ /films/specialty-films/sx-sc665 (726/983)
+✓ /films/frosted-etched-films/sx-sc667-48 (727/983)
+✓ /films/specialty-films/sx-sc668 (728/983)
+✓ /films/specialty-films/sx-sc672 (729/983)
+✓ /films/specialty-films/sx-sc674 (730/983)
+✓ /films/frosted-etched-films/sx-sc675 (731/983)
+✓ /films/frosted-etched-films/sx-sc676 (732/983)
+✓ /films/specialty-films/sx-sc677 (733/983)
+✓ /films/specialty-films/sx-sc678-48 (734/983)
+✓ /films/specialty-films/sx-sc679-48 (735/983)
+✓ /films/frosted-etched-films/sx-sc682 (736/983)
+✓ /films/specialty-films/sx-sc684-48 (737/983)
+✓ /films/specialty-films/sx-sc685-48 (738/983)
+✓ /films/specialty-films/sx-sc687 (739/983)
+✓ /films/colored-films/sx-sc690 (740/983)
+✓ /films/stained-glass-films/sx-sc693 (741/983)
+✓ /films/specialty-films/sx-sc694 (742/983)
+✓ /films/specialty-films/sx-sc695 (743/983)
+✓ /films/reflective-films/sx-sc696 (744/983)
+✓ /films/patterned-privacy-films/sx-sc697 (745/983)
+✓ /films/specialty-films/sx-sc698 (746/983)
+✓ /films/specialty-films/sx-sc699 (747/983)
+✓ /films/specialty-films/sx-sc900 (748/983)
+✓ /films/specialty-films/sx-scwo-60 (749/983)
+✓ /films/reflective-films/sx-sg09-60 (750/983)
+✓ /films/specialty-films/sx-stpf-35 (751/983)
+✓ /films/frosted-etched-films/sx3-314-60 (752/983)
+✓ /films/specialty-films/sx3-9004 (753/983)
+✓ /films/specialty-films/sxb-170 (754/983)
+✓ /films/specialty-films/sxb-171 (755/983)
+✓ /films/specialty-films/sxb-172 (756/983)
+✓ /films/specialty-films/sxb-173 (757/983)
+✓ /films/specialty-films/sxb-174 (758/983)
+✓ /films/specialty-films/sxb-175 (759/983)
+✓ /films/specialty-films/sxb-176 (760/983)
+✓ /films/specialty-films/sxb-177 (761/983)
+✓ /films/specialty-films/sxb-21-48 (762/983)
+✓ /films/specialty-films/sxb-30-48 (763/983)
+✓ /films/specialty-films/sxb-31-48 (764/983)
+✓ /films/specialty-films/sxb-32-48 (765/983)
+✓ /films/specialty-films/sxb-33-48 (766/983)
+✓ /films/specialty-films/sxb-34-48 (767/983)
+✓ /films/specialty-films/sxb-41-48 (768/983)
+✓ /films/specialty-films/sxb-47-48 (769/983)
+✓ /films/specialty-films/sxb-51-48 (770/983)
+✓ /films/specialty-films/sxb-52-48 (771/983)
+✓ /films/specialty-films/sxb-53 (772/983)
+✓ /films/specialty-films/sxb-54-48 (773/983)
+✓ /films/frosted-etched-films/sxb-56 (774/983)
+✓ /films/specialty-films/sxb-57-48 (775/983)
+✓ /films/specialty-films/sxb-60-48 (776/983)
+✓ /films/specialty-films/sxb-61-48 (777/983)
+✓ /films/specialty-films/sxb-68-48 (778/983)
+✓ /films/specialty-films/sxb-77-48 (779/983)
+✓ /films/specialty-films/sxb-85 (780/983)
+✓ /films/specialty-films/sxb-96-48 (781/983)
+✓ /films/specialty-films/sxb-97-48 (782/983)
+✓ /films/specialty-films/sxc-125sr (783/983)
+✓ /films/patterned-privacy-films/sxc-130sr-60 (784/983)
+✓ /films/frosted-etched-films/sxc-131-60 (785/983)
+✓ /films/frosted-etched-films/sxc-1418-60 (786/983)
+✓ /films/frosted-etched-films/sxc-1419 (787/983)
+✓ /films/frosted-etched-films/sxc-3510-60 (788/983)
+✓ /films/frosted-etched-films/sxc-3511-60 (789/983)
+✓ /films/frosted-etched-films/sxc-4410 (790/983)
+✓ /films/specialty-films/sxd-1616-ug (791/983)
+✓ /films/specialty-films/sxd-1818-ug (792/983)
+✓ /films/patterned-privacy-films/sxd-4200-35 (793/983)
+✓ /films/specialty-films/sxd-4210-35 (794/983)
+✓ /films/specialty-films/sxd-4220-35 (795/983)
+✓ /films/specialty-films/sxd-4230-35 (796/983)
+✓ /films/specialty-films/sxd-4240-35 (797/983)
+✓ /films/frosted-etched-films/sxd-4250-35 (798/983)
+✓ /films/specialty-films/sxd-4260-35 (799/983)
+✓ /films/specialty-films/sxd-4270-35 (800/983)
+✓ /films/specialty-films/sxd-4290 (801/983)
+✓ /films/stained-glass-films/sxeg-1026-36 (802/983)
+✓ /films/stained-glass-films/sxeg-1027 (803/983)
+✓ /films/stained-glass-films/sxeg-1028-48 (804/983)
+✓ /films/stained-glass-films/sxeg-4848-48 (805/983)
+✓ /films/patterned-privacy-films/sxeg-4860-48 (806/983)
+✓ /films/stained-glass-films/sxeg-4861 (807/983)
+✓ /films/specialty-films/sxeg-4862-48 (808/983)
+✓ /films/specialty-films/sxeg-4863-48 (809/983)
+✓ /films/specialty-films/sxeg-4865-48 (810/983)
+✓ /films/stained-glass-films/sxeg-4881 (811/983)
+✓ /films/colored-films/sxeg-4882 (812/983)
+✓ /films/specialty-films/sxeg-4884 (813/983)
+✓ /films/specialty-films/sxeg-4888 (814/983)
+✓ /films/frosted-etched-films/sxf-0600-60 (815/983)
+✓ /films/specialty-films/sxf-5050-60 (816/983)
+✓ /films/frosted-etched-films/sxg-0020-59 (817/983)
+✓ /films/frosted-etched-films/sxg-9118-ug (818/983)
+✓ /films/frosted-etched-films/sxgf-0097-60 (819/983)
+✓ /films/frosted-etched-films/sxgf-0197-60 (820/983)
+✓ /films/frosted-etched-films/sxgf-0500uv (821/983)
+✓ /films/frosted-etched-films/sxhe-1034-60 (822/983)
+✓ /films/specialty-films/sxhe-39-60 (823/983)
+✓ /films/patterned-privacy-films/sxhp-2041 (824/983)
+✓ /films/frosted-etched-films/sxhp-4020-36 (825/983)
+✓ /films/frosted-etched-films/sxj-0403 (826/983)
+✓ /films/frosted-etched-films/sxj-0500 (827/983)
+✓ /films/gradient-films/sxj-0530 (828/983)
+✓ /films/gradient-films/sxj-0535 (829/983)
+✓ /films/gradient-films/sxj-0540 (830/983)
+✓ /films/gradient-films/sxj-0541 (831/983)
+✓ /films/gradient-films/sxj-0545 (832/983)
+✓ /films/gradient-films/sxj-0546 (833/983)
+✓ /films/gradient-films/sxj-0547 (834/983)
+✓ /films/gradient-films/sxj-0548 (835/983)
+✓ /films/gradient-films/sxj-0549 (836/983)
+✓ /films/frosted-etched-films/sxj-0550-60 (837/983)
+✓ /films/gradient-films/sxj-0553 (838/983)
+✓ /films/gradient-films/sxj-0561 (839/983)
+✓ /films/gradient-films/sxj-0565 (840/983)
+✓ /films/gradient-films/sxj-0571 (841/983)
+✓ /films/gradient-films/sxj-0575 (842/983)
+✓ /films/frosted-etched-films/sxj-0579 (843/983)
+✓ /films/frosted-etched-films/sxj-0581 (844/983)
+✓ /films/frosted-etched-films/sxj-0582 (845/983)
+✓ /films/frosted-etched-films/sxj-0583 (846/983)
+✓ /films/frosted-etched-films/sxj-0584 (847/983)
+✓ /films/gradient-films/sxj-0585 (848/983)
+✓ /films/specialty-films/sxj-0588 (849/983)
+✓ /films/gradient-films/sxj-0591 (850/983)
+✓ /films/frosted-etched-films/sxj-0592 (851/983)
+✓ /films/gradient-films/sxj-0593 (852/983)
+✓ /films/gradient-films/sxj-0594 (853/983)
+✓ /films/gradient-films/sxj-0595 (854/983)
+✓ /films/frosted-etched-films/sxj-0596 (855/983)
+✓ /films/frosted-etched-films/sxj-0597 (856/983)
+✓ /films/frosted-etched-films/sxj-0598 (857/983)
+✓ /films/frosted-etched-films/sxj-0599 (858/983)
+✓ /films/specialty-films/sxj-0615 (859/983)
+✓ /films/specialty-films/sxj-0617 (860/983)
+✓ /films/specialty-films/sxj-0619 (861/983)
+✓ /films/frosted-etched-films/sxj-0715 (862/983)
+✓ /films/frosted-etched-films/sxj-0720 (863/983)
+✓ /films/frosted-etched-films/sxj-0725 (864/983)
+✓ /films/gradient-films/sxj-0758 (865/983)
+✓ /films/gradient-films/sxj-2081 (866/983)
+✓ /films/specialty-films/sxl-1022-46-5 (867/983)
+✓ /films/specialty-films/sxlt-1305-48 (868/983)
+✓ /films/specialty-films/sxo-020-48 (869/983)
+✓ /films/specialty-films/sxo-021-48 (870/983)
+✓ /films/specialty-films/sxo-025-48 (871/983)
+✓ /films/specialty-films/sxo-030-48 (872/983)
+✓ /films/specialty-films/sxo-031-48 (873/983)
+✓ /films/specialty-films/sxo-032-48 (874/983)
+✓ /films/specialty-films/sxo-033-48 (875/983)
+✓ /films/specialty-films/sxo-034-48 (876/983)
+✓ /films/specialty-films/sxo-040-48 (877/983)
+✓ /films/specialty-films/sxo-041-48 (878/983)
+✓ /films/specialty-films/sxo-047-48 (879/983)
+✓ /films/specialty-films/sxo-049-48 (880/983)
+✓ /films/specialty-films/sxo-051-48 (881/983)
+✓ /films/specialty-films/sxo-052-48 (882/983)
+✓ /films/specialty-films/sxo-053-48 (883/983)
+✓ /films/specialty-films/sxo-054-48 (884/983)
+✓ /films/frosted-etched-films/sxo-056-48 (885/983)
+✓ /films/specialty-films/sxo-057-48 (886/983)
+✓ /films/specialty-films/sxo-060-48 (887/983)
+✓ /films/specialty-films/sxo-061-48 (888/983)
+✓ /films/specialty-films/sxo-063-48 (889/983)
+✓ /films/specialty-films/sxo-068-48 (890/983)
+✓ /films/specialty-films/sxo-073-48 (891/983)
+✓ /films/specialty-films/sxo-074-48 (892/983)
+✓ /films/specialty-films/sxo-077-48 (893/983)
+✓ /films/specialty-films/sxo-079-48 (894/983)
+✓ /films/specialty-films/sxo-085-48 (895/983)
+✓ /films/specialty-films/sxo-089-48 (896/983)
+✓ /films/frosted-etched-films/sxo-091-48 (897/983)
+✓ /films/specialty-films/sxo-096-48 (898/983)
+✓ /films/specialty-films/sxo-097-48 (899/983)
+✓ /films/specialty-films/sxp-006 (900/983)
+✓ /films/specialty-films/sxp-014 (901/983)
+✓ /films/colored-films/sxp-020 (902/983)
+✓ /films/specialty-films/sxp-025 (903/983)
+✓ /films/specialty-films/sxp-029 (904/983)
+✓ /films/specialty-films/sxp-030 (905/983)
+✓ /films/specialty-films/sxp-031 (906/983)
+✓ /films/specialty-films/sxp-032 (907/983)
+✓ /films/specialty-films/sxp-034 (908/983)
+✓ /films/specialty-films/sxp-035 (909/983)
+✓ /films/specialty-films/sxp-039 (910/983)
+✓ /films/specialty-films/sxp-041 (911/983)
+✓ /films/specialty-films/sxp-052 (912/983)
+✓ /films/frosted-etched-films/sxp-056 (913/983)
+✓ /films/specialty-films/sxp-057 (914/983)
+✓ /films/specialty-films/sxp-063 (915/983)
+✓ /films/specialty-films/sxp-064 (916/983)
+✓ /films/specialty-films/sxp-068 (917/983)
+✓ /films/specialty-films/sxp-073 (918/983)
+✓ /films/specialty-films/sxp-074uv (919/983)
+✓ /films/specialty-films/sxp-076uv (920/983)
+✓ /films/specialty-films/sxp-077 (921/983)
+✓ /films/specialty-films/sxp-079 (922/983)
+✓ /films/specialty-films/sxp-096 (923/983)
+✓ /films/specialty-films/sxp-097 (924/983)
+✓ /films/specialty-films/sxr-8785 (925/983)
+✓ /films/frosted-etched-films/sxr-9829-54 (926/983)
+✓ /films/stained-glass-films/sxrr-8000-o (927/983)
+✓ /films/stained-glass-films/sxrr-8000-t (928/983)
+✓ /films/stained-glass-films/sxrr-9040-o (929/983)
+✓ /films/stained-glass-films/sxrr-9040-t (930/983)
+✓ /films/stained-glass-films/sxrr-9041-o (931/983)
+✓ /films/stained-glass-films/sxrr-9041-t (932/983)
+✓ /films/stained-glass-films/sxrr-9043-o (933/983)
+✓ /films/stained-glass-films/sxrr-9043-t (934/983)
+✓ /films/frosted-etched-films/sxs-m5005-54 (935/983)
+✓ /films/frosted-etched-films/sxs-m6000-60 (936/983)
+✓ /films/specialty-films/sxs-m800 (937/983)
+✓ /films/frosted-etched-films/sxw-08 (938/983)
+✓ /films/frosted-etched-films/sxwf-bm-60 (939/983)
+✓ /films/specialty-films/sxwf-bo-72 (940/983)
+✓ /films/frosted-etched-films/sxwf-cm-60 (941/983)
+✓ /films/frosted-etched-films/sxwf-sm-60 (942/983)
+✓ /films/frosted-etched-films/sxwf-twm-60-ug (943/983)
+✓ /films/frosted-etched-films/sxwf-wb (944/983)
+✓ /films/frosted-etched-films/sxwf-wm-72 (945/983)
+✓ /films/frosted-etched-films/sxwf-wmax (946/983)
+✓ /films/frosted-etched-films/sxwf-wmp60 (947/983)
+✓ /films/specialty-films/sxwf-wo-72 (948/983)
+✓ /films/specialty-films/sxwv-0200-60 (949/983)
+✓ /films/specialty-films/t101-pl (950/983)
+✓ /films/specialty-films/t102-pl (951/983)
+✓ /films/stained-glass-films/t106-pl (952/983)
+✓ /films/stained-glass-films/t107-pl (953/983)
+✓ /films/specialty-films/t108-pl (954/983)
+✓ /films/stained-glass-films/t110-pl (955/983)
+✓ /films/specialty-films/t111-pl (956/983)
+✓ /films/specialty-films/t112-pl (957/983)
+✓ /films/reflective-films/ultracool-b1560 (958/983)
+✓ /films/specialty-films/ultracool-ir8360 (959/983)
+✓ /films/reflective-films/ultracool-s1560 (960/983)
+✓ /films/reflective-films/ultracool-s20-osw-72 (961/983)
+✓ /films/reflective-films/ultracool-s3560 (962/983)
+✓ /films/reflective-films/ultracool-s6060 (963/983)
+✓ /films/reflective-films/ultracool-sb2060 (964/983)
+✓ /films/reflective-films/ultracool-sc320 (965/983)
+✓ /films/specialty-films/ultraglare-g006 (966/983)
+✓ /films/specialty-films/ultraglare-g014 (967/983)
+✓ /films/specialty-films/ultraglare-g035 (968/983)
+✓ /films/specialty-films/ultrasafe-260 (969/983)
+✓ /films/specialty-films/ultrasafe-460-72 (970/983)
+✓ /films/specialty-films/ultrasafe-860-60 (971/983)
+✓ /films/frosted-etched-films/ultrasafe-wmmax (972/983)
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/university-window-film/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/frosted-etched-films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/casper-films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/specialty-films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/gradient-films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/colored-films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/patterned-privacy-films/index.html[22m
+[2m7:35:17 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdist/films/stained-glass-films/index.html[22m
+✓ /countertop-protection-film/southeast-us (973/983)
+✓ /countertop-protection-film/california (974/983)
+✓ /countertop-protection-film/northeast-us (975/983)
+✓ /countertop-protection-film/midwest (976/983)
+✓ /countertop-protection-film/utah (977/983)
+✓ /countertop-protection-film/gulf-coast-texas-florida (978/983)
+✓ /countertop-protection-film/chicago-illinois (979/983)
+✓ /countertop-protection-film/las-vegas-nevada (980/983)
+✓ /countertop-protection-film/southern-california (981/983)
+✓ /countertop-protection-film/colorado (982/983)
+✓ /countertop-protection-film/oregon-washington (983/983)
+✓ Copied 404/index.html → 404.html
+
+Done: 983 prerendered, 0 failed of 983
+✓ wrote public\sitemap-films.xml — 8 hubs + 26 SKUs = 34 URLs
+✓ wrote dist\sitemap-films.xml — 8 hubs + 26 SKUs = 34 URLs
+✓ wrote public\sitemap-countertop.xml — 11 regional countertop pages
+✓ wrote dist\sitemap-countertop.xml — 11 regional countertop pages

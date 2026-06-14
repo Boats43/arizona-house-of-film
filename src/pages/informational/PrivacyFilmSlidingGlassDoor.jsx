@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import ContactFormSection from '@/components/contact/ContactFormSection';
 
-const pageTitle = 'Privacy & Security Film for Sliding Glass Doors | Phoenix AZ | ROC #314088';
-const metaDescription = "Window film for sliding glass doors in Phoenix AZ. Privacy, security, heat control and UV protection. Patio door tinting from $8/sqft. Licensed ROC #314088. Free estimate — (480) 788-1591.";
+const pageTitle = 'Sliding Glass Door Tinting Phoenix | Arizona House of Film';
+const metaDescription = "Sliding glass door tinting in Phoenix AZ. Privacy, security, heat control and UV protection. Patio door tinting from $8/sqft. Licensed ROC #314088. Free estimate — (480) 788-1591.";
 const canonicalUrl = 'https://arizonahouseoffilm.com/privacy-film-sliding-glass-door';
 
 const faqSchema = {
@@ -108,12 +108,12 @@ const filmOptions = [
   },
   {
     title: 'Security Film',
-    desc: 'Thick polyester film (4-14 mil) that holds glass together on impact. Does not provide visual privacy but prevents break-in through sliding glass — the most common residential entry point for burglars in Arizona.',
+    desc: 'Thick polyester film (4-14 mil) that holds glass together on impact. Does not provide visual privacy but prevents break-in through sliding glass — the most common residential entry point for burglars in Arizona. See our shatter-resistant film for patio doors guide.',
     price: '$500-900',
     bestFor: 'Ground-floor sliders, security-conscious homes',
     privacy: 'None (clear)',
-    link: '/safety',
-    linkText: 'Security film details',
+    link: '/security-window-film-phoenix',
+    linkText: 'Security film for sliding doors',
   },
   {
     title: 'Decorative Pattern Film',
@@ -158,9 +158,9 @@ export default function PrivacyFilmSlidingGlassDoor() {
       {/* HERO */}
       <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Window Film for Sliding Glass Doors — Privacy, Security & Solar Control</h1>
-          <p className="text-xl text-blue-300 font-bold mb-4">Frosted (Day &amp; Night), Shatterproof, One-Way, Solar — We Install All Types</p>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">Sliding glass doors (also called patio doors) are the largest single pane of glass in most Arizona homes — and the biggest privacy, heat-gain, and break-in problem. When you tint sliding glass doors with the right film, you solve all three without replacing the door or blocking the view.</p>
+          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Sliding Glass Door Tinting in Phoenix, AZ</h1>
+          <p className="text-xl text-blue-300 font-bold mb-4">Privacy, Security & Solar Control — Frosted, Shatterproof, One-Way & Ceramic</p>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">Sliding glass door tinting solves the three biggest problems with Arizona patio doors: privacy, heat gain, and break-in risk. Professional tinting adds privacy film, security film, or solar control film without replacing the door or blocking the view. Phoenix's most-requested patio door upgrade.</p>
           <Link to="/ai-window-film-estimator" className="inline-block bg-green-500 hover:bg-green-400 text-white font-black uppercase tracking-wide px-10 py-4 rounded-lg text-lg transition-colors shadow-lg">Get Sliding Door Estimate →</Link>
           <p className="text-gray-400 text-sm mt-4">Standard sliding door: ~35-45 sqft | $350-900 installed</p>
         </div>
@@ -169,8 +169,8 @@ export default function PrivacyFilmSlidingGlassDoor() {
       {/* FILM OPTIONS */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4 text-center">Film Options for Sliding Glass Doors</h2>
-          <p className="text-center text-gray-600 mb-12">Six film categories — each solves a different sliding door problem.</p>
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4 text-center">Sliding Glass Door Tinting Options</h2>
+          <p className="text-center text-gray-600 mb-12">Six film categories — each solves a different patio door problem. Professional tinting completes in 1-2 hours per door.</p>
           <div className="grid md:grid-cols-2 gap-6">
             {filmOptions.map((opt) => (
               <div key={opt.title} className="border border-slate-200 rounded-xl overflow-hidden">
@@ -195,7 +195,7 @@ export default function PrivacyFilmSlidingGlassDoor() {
       {/* MEASUREMENT */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Sliding Door Sizing & Pricing</h2>
+          <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6">Patio Door Tinting Pricing & Sizing</h2>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white border border-slate-200 rounded-xl p-6 text-center">
               <p className="text-3xl font-black text-blue-700">35-45 sqft</p>

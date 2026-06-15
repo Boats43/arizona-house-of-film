@@ -131,6 +131,9 @@ export default function ResidentialWindowTintingGlendale() {
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
               Arizona House of Film installs residential window tinting throughout Glendale — ceramic, solar control, privacy, decorative, and security film for every home type. Licensed, bonded, insured — ROC #{rocNumber}. Free on-site estimates with glass assessment and film recommendations tailored to your home's orientation and needs.
             </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mt-4">
+              For Glendale-specific film recommendations, see our <Link to="/blog/residential-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">residential performance window film Phoenix</Link> guide covering West Valley ceramic and dual-reflective specs.
+            </p>
           </div>
         </section>
 

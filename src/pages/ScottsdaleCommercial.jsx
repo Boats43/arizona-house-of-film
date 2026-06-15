@@ -304,6 +304,9 @@ const ScottsdaleCommercial = () => {
             <p className="text-lg text-slate-300 mb-4">
               Arizona House of Film has completed commercial window film installations across Scottsdale since 2017 — from single-story retail to multi-story professional office buildings. Licensed ROC #314088. Every project custom-quoted, documented, and installed by certified technicians.
             </p>
+            <p className="text-lg text-slate-300 mb-4">
+              For Scottsdale office and retail film specs, read our <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">commercial performance window film Phoenix</Link> guide covering HVAC savings and spectrally-selective recommendations.
+            </p>
           </div>
         </section>
 

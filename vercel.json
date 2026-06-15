@@ -72,7 +72,7 @@
     { "source": "/services/privacy", "destination": "/privacy-window-film-phoenix-homes", "permanent": true },
     { "source": "/benson-window-tinting", "destination": "/service-areas/benson", "permanent": true },
     { "source": "/residential-window-tinting/temperature-control", "destination": "/residential-window-tinting", "permanent": true },
-    { "source": "/fountain-hills-window-tinting", "destination": "/service-areas/fountain-hills", "permanent": true },
+    { "source": "/fountain-hills-window-tinting", "destination": "/window-tinting-fountain-hills", "permanent": true },
 
     { "source": "/cities/:slug", "destination": "/service-areas/:slug", "permanent": true },
     { "source": "/services", "destination": "/solutions", "permanent": true },

@@ -248,6 +248,8 @@ const allBlogData = [
   </a>
 </div>
 
+<p>If you're ready to install window film before the summer heat peaks — or before your HOA can rethink the rules — our <a href="/residential-window-tinting-phoenix">licensed Phoenix residential window tinting</a> team is scheduling same-week installs now.</p>
+
 <h2>Next Steps</h2>
 
 <p>If you're planning a shade structure under HB 2342 or looking for an indoor heat solution that complements your outdoor setup, Arizona House of Film offers free consultations and professional installations backed by manufacturer warranties and Arizona ROC licensing (ROC #314088).</p>
@@ -3391,6 +3393,7 @@ const allBlogData = [
       <li><a href="/day-and-night-privacy-window-film">Day &amp; night privacy window film overview</a></li>
       <li><a href="/electric-privacy-film-arizona">Electric privacy (PDLC) film Arizona</a></li>
       <li><a href="/privacy-film-sliding-glass-door">Privacy film for sliding glass doors</a></li>
+      <li><a href="/one-way-mirror-window-film">One-way mirror window film installation</a></li>
     </ul>
 
     <h2>Frequently Asked Questions</h2>

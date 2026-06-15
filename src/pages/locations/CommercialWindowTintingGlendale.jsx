@@ -131,6 +131,9 @@ export default function CommercialWindowTintingGlendale() {
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
               Arizona House of Film provides licensed commercial window tinting throughout Glendale — from single-suite offices to full entertainment district properties. Glendale Fire Station 152 is a verified AHOF client. We install solar control, security, decorative, and privacy film for every commercial property type in the Glendale market. Licensed, bonded, insured — ROC #{rocNumber}.
             </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mt-4">
+              For Glendale commercial film specs, read our <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">commercial performance window film Phoenix</Link> guide covering West Valley office and retail HVAC savings.
+            </p>
           </div>
         </section>
 

@@ -95,7 +95,7 @@ const faqSchema = {
       name: 'Do you install blast-rated security film in Phoenix?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Arizona House of Film installs blast-mitigation grade window film including 21 mil specifications from LLumar, Madico, and SunTek for government, municipal, and institutional facilities in Phoenix and across Arizona. Blast-rated installations require mechanical attachment systems and NFRC-rated documentation — we provide both. Past projects include City of Phoenix and U.S. Navy facilities. Licensed ROC #314088.',
+        text: 'Yes. Arizona House of Film installs blast-mitigation grade window film including 21 mil specifications from LLumar, Madico, and SunTek for government, municipal, and institutional facilities in Phoenix and across Arizona. Blast-rated installations require mechanical attachment systems and NFRC-rated documentation — we provide both. Past projects include City of Phoenix and U.S. Navy facilities. For Arizona government facility specifications, see our blast mitigation film guide for government buildings. Licensed ROC #314088.',
       },
     },
     {
@@ -561,6 +561,8 @@ export default function SecurityPhoenix() {
           </div>
           <div className="mt-10 text-center text-slate-500 text-sm">
             Also see:{' '}
+            <Link to="/blog/blast-mitigation-film-government-buildings-arizona" className="text-red-600 hover:underline">Blast Mitigation Film for Government Buildings</Link>
+            {' · '}
             <Link to="/safety" className="text-red-600 hover:underline">Safety Window Film</Link>
             {' · '}
             <Link to="/privacy-film-sliding-glass-door" className="text-red-600 hover:underline">Security Film for Patio Doors</Link>

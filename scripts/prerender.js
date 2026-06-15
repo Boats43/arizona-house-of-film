@@ -112,6 +112,7 @@ const ROUTES = [
   '/blog/window-film-for-medical-offices-arizona',
   '/blog/enerlogic-window-film-arizona-guide',
   '/blog/decorative-window-film-phoenix-guide',
+  '/blog/turf-protection-window-film-queen-creek',
   '/brands/3m', '/brands/eastman', '/brands/solar-gard', '/brands/nexfil', '/brands/avery-dennison',
   '/brands/xpel', '/brands/madico', '/brands/suntek', '/brands/huper-optik', '/brands/johnson',
   '/brands/geoshield', '/brands/rayno', '/brands/global', '/brands/terminax',

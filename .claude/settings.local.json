@@ -88,7 +88,8 @@
       "Bash(awk -F'>' '{print $2}')",
       "Bash(awk -F'<' '{print $1}')",
       "Bash(awk '{print length, $0}')",
-      "Bash(awk '$1 > 60')"
+      "Bash(awk '$1 > 60')",
+      "PowerShell($content = Get-Content \"dist/blog/turf-protection-window-film-queen-creek/index.html\" -Raw; $size = \\(Get-Item \"dist/blog/turf-protection-window-film-queen-creek/index.html\"\\).Length; Write-Output \"File size: $size bytes\"; if \\($content -match 'Stop Low-E Window Reflection from Melting Your Artificial Turf'\\) { \"✅ H1 present\" } else { \"❌ H1 missing\" }; if \\($content -match 'FAQPage'\\) { \"✅ FAQPage schema present\" } else { \"❌ FAQPage schema missing\" }; if \\($content -match 'BlogPosting'\\) { \"✅ BlogPosting schema present\" } else { \"❌ BlogPosting schema missing\" }; if \\($content -match 'window-tinting-queen-creek'\\) { \"✅ QC hub link present\" } else { \"❌ QC hub link missing\" }; if \\($content -match 'residential-window-tinting-phoenix'\\) { \"✅ Phoenix residential link present\" } else { \"❌ Phoenix residential link missing\" })"
     ]
   }
 }

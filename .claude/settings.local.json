@@ -93,7 +93,8 @@
       "Bash(awk '{print $1}')",
       "PowerShell($size = \\(Get-Item \"dist\\\\blog\\\\residential-window-tinting-queen-creek\\\\index.html\"\\).Length; Write-Host \"File size: $size bytes\"; if \\($size -lt 10000\\) { Write-Host \"WARNING: SPA shell detected\" } else { Write-Host \"OK: Full SSR HTML\" })",
       "PowerShell($html = Get-Content \"dist\\\\blog\\\\residential-window-tinting-queen-creek\\\\index.html\" -Raw; if \\($html -match '<title>\\([^<]+\\)</title>'\\) { Write-Host \"Title: $\\($matches[1]\\)\" } else { Write-Host \"ERROR: Title not found\" })",
-      "PowerShell($size = \\(Get-Item \"dist\\\\blog\\\\privacy-window-film-queen-creek\\\\index.html\"\\).Length; Write-Host \"File size: $size bytes\"; if \\($size -lt 10000\\) { Write-Host \"WARNING: SPA shell\" } else { Write-Host \"OK: Full SSR HTML\" })"
+      "PowerShell($size = \\(Get-Item \"dist\\\\blog\\\\privacy-window-film-queen-creek\\\\index.html\"\\).Length; Write-Host \"File size: $size bytes\"; if \\($size -lt 10000\\) { Write-Host \"WARNING: SPA shell\" } else { Write-Host \"OK: Full SSR HTML\" })",
+      "PowerShell($size = \\(Get-Item \"dist\\\\blog\\\\security-window-film-queen-creek\\\\index.html\"\\).Length; Write-Host \"File size: $size bytes\"; if \\($size -lt 10000\\) { Write-Host \"WARNING: SPA shell\" } else { Write-Host \"OK: Full SSR HTML\" })"
     ]
   }
 }

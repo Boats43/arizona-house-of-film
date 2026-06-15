@@ -116,6 +116,7 @@ const ROUTES = [
   '/blog/turf-protection-window-film-queen-creek',
   '/blog/residential-window-tinting-queen-creek',
   '/blog/privacy-window-film-queen-creek',
+  '/blog/security-window-film-queen-creek',
   '/brands/3m', '/brands/eastman', '/brands/solar-gard', '/brands/nexfil', '/brands/avery-dennison',
   '/brands/xpel', '/brands/madico', '/brands/suntek', '/brands/huper-optik', '/brands/johnson',
   '/brands/geoshield', '/brands/rayno', '/brands/global', '/brands/terminax',

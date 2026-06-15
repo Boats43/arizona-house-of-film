@@ -4382,6 +4382,117 @@ const allBlogData = [
 <h2>Related Queen Creek Services</h2>
 <p>Arizona House of Film serves Queen Creek homeowners with a full range of residential window film solutions. See our <a href="/window-tinting-queen-creek">Queen Creek window tinting hub</a> for solar control, privacy, and security film options, or visit our <a href="/residential-window-tinting-phoenix">Phoenix residential window tinting</a> page for service details.</p>
   `
+  },
+  {
+    slug: 'residential-window-tinting-queen-creek',
+    title: 'Residential Window Tinting Queen Creek AZ',
+    h1: 'Residential Window Tinting Queen Creek AZ — HOA-Compliant Film for East Valley Heat',
+    excerpt: 'Residential window tinting in Queen Creek AZ. Ceramic solar film for HOA communities, dual-pane homes, SRP rebate eligible. Free estimate — ROC #314088.',
+    canonicalUrl: '/blog/residential-window-tinting-queen-creek',
+    date: '2026-06-15',
+    alt: 'Residential window film installation on dual-pane glass in Queen Creek Arizona new-build home.',
+    keywords: 'residential window tinting queen creek az, queen creek home window film, HOA window film queen creek, ceramic window film queen creek',
+    serviceLink: '/residential-window-tinting-phoenix',
+    cityLink: '/window-tinting-queen-creek',
+    brandMentions: '3M, Madico, Huper Optik',
+    ctaCity: 'Queen Creek',
+    faqs: [
+      {
+        question: 'Is residential window film HOA-approved in Queen Creek communities?',
+        answer: 'Yes — most Queen Creek HOAs (San Tan Heights, Montelena, Cortina, Eastmark) approve non-reflective ceramic and neutral-tone films. We verify HOA compliance before installation and provide spec documentation if requested. ROC #314088.'
+      },
+      {
+        question: 'Can window film be installed on dual-pane Low-E glass in Queen Creek homes?',
+        answer: 'Yes, but film selection must be verified for Low-E compatibility. Queen Creek homes built after 2015 typically have Low-E dual-pane glass. We assess your glass type during the free estimate and recommend only compatible films to prevent thermal stress fractures.'
+      },
+      {
+        question: 'How do I qualify for the SRP residential window film rebate in Queen Creek?',
+        answer: 'SRP offers $0.75–$1.00 per square foot rebates for qualifying ceramic window film installations in Queen Creek. We provide NFRC-rated spec sheets required for rebate applications. Homeowners submit directly to SRP after installation. Rebate approval depends on film specifications and SRP program availability.'
+      },
+      {
+        question: 'What residential window film is best for Queen Creek heat?',
+        answer: 'Ceramic solar film is the top specification for Queen Creek homes — rejects up to 84% of solar heat without reflective appearance. Huper Optik Ceramic 40 and 3M Prestige 70 are common selections for west-facing glass. We assess window orientation and HOA requirements during the free on-site estimate.'
+      },
+      {
+        question: 'How long does residential window film installation take in Queen Creek?',
+        answer: 'Most Queen Creek residential installations complete in 4–8 hours depending on the number of windows. We schedule around your availability. Film cures in 3–5 days during Arizona summer heat. ROC #314088 licensed installation.'
+      }
+    ],
+    customContent: `
+<p>Queen Creek homeowners face a specific East Valley heat challenge — rapid new-build expansion since 2015 means most homes have floor-to-ceiling glass, west-facing great rooms, and dual-pane Low-E windows that were never designed for Arizona's 115°F+ summer exposure. Residential window tinting in Queen Creek solves three problems: heat concentration in primary living areas, HOA compliance in master-planned communities, and dual-pane glass compatibility in new construction. Arizona House of Film installs ceramic solar film for Queen Creek homes — HOA-compliant, dual-pane safe, SRP rebate eligible. Licensed ROC #314088. Free estimate — (480) 788-1591.</p>
+
+<h2>The East Valley Heat Challenge in Queen Creek Homes</h2>
+<p>Queen Creek's residential boom after 2015 created a housing stock dominated by open-concept floor plans with west-facing glass walls, sliding doors onto pool decks, and clerestory windows in vaulted great rooms. These architectural features maximize natural light but create intense afternoon heat concentration from 2pm–6pm during summer months.</p>
+
+<p>West-facing glass in Queen Creek homes receives direct solar exposure during the hottest part of the day — when ambient temperature is already 110°F+, the solar heat gain through unfilmed glass pushes interior temperature 8–15°F above the rest of the home. Air conditioning systems run continuously but struggle to keep up with the solar load entering through glass.</p>
+
+<p>Residential window tinting blocks 50–84% of solar heat at the glass surface — before it enters the home. The result is lower AC demand, more consistent room temperature, and elimination of afternoon hot spots in west-facing rooms.</p>
+
+<h2>Ceramic vs Dual-Reflective Film for Queen Creek Homes</h2>
+<p>Queen Creek homeowners choosing residential window film face two primary options — ceramic solar film and dual-reflective film:</p>
+
+<ul>
+  <li><strong>Ceramic solar film</strong> — non-metallic, non-reflective, blocks up to 84% of heat without mirror appearance. HOA-compliant in virtually all Queen Creek communities. Top specification for dual-pane Low-E glass compatibility. Common brands: Huper Optik Ceramic, 3M Prestige, Madico CeraMetal.</li>
+  <li><strong>Dual-reflective film</strong> — metallic coating creates mirror appearance from exterior, blocks 60–75% of heat. Often restricted by Queen Creek HOAs due to reflectivity. May not be compatible with dual-pane Low-E glass depending on coating type.</li>
+</ul>
+
+<p>For Queen Creek HOA communities, ceramic film is the standard specification — neutral appearance, maximum heat rejection, and no HOA approval issues.</p>
+
+<h2>HOA Compliance by Queen Creek Community</h2>
+<p>Queen Creek's master-planned communities enforce design standards that restrict reflective or mirror-finish window film. The most active HOAs include:</p>
+
+<ul>
+  <li><strong>San Tan Heights</strong> — non-reflective films approved, neutral tones preferred, documentation required on request</li>
+  <li><strong>Montelena</strong> — low-reflectivity ceramic films approved, mirror films restricted</li>
+  <li><strong>Cortina</strong> — neutral-tone films approved, spec sheets required for HOA architectural review</li>
+  <li><strong>Eastmark</strong> — ceramic solar films approved, exterior reflectance under 15% required</li>
+</ul>
+
+<p>Arizona House of Film verifies HOA compliance before every Queen Creek residential installation. We carry manufacturer spec sheets showing exterior reflectance percentages and can provide documentation to your HOA management company if required. ROC #314088 licensure ensures accountability — not a handshake agreement from an unlicensed contractor.</p>
+
+<h2>Dual-Pane Low-E Glass Compatibility in New Builds</h2>
+<p>Queen Creek homes built after 2015 typically have Low-E dual-pane glass as the standard window specification. Low-E coatings improve energy efficiency but create compatibility considerations when adding window film — applying the wrong film to Low-E glass can cause thermal stress fractures.</p>
+
+<p>We assess your existing glass type during the free on-site estimate. For dual-pane Low-E glass, we recommend only manufacturer-verified compatible films — typically ceramic films with low solar heat absorption. The assessment includes:</p>
+
+<ul>
+  <li>Glass type verification (single-pane, dual-pane, Low-E coating present or absent)</li>
+  <li>Window orientation (south, west, east, north exposure)</li>
+  <li>Film specification recommendation based on glass type and orientation</li>
+  <li>HOA compliance verification</li>
+</ul>
+
+<p>No guesswork. No assumptions. Every Queen Creek residential project is specified for the actual glass type in your home.</p>
+
+<h2>SRP Residential Window Film Rebate Eligibility</h2>
+<p>Salt River Project (SRP) offers residential energy efficiency rebates for qualifying window film installations in Queen Creek. Current rebate rates are $0.75–$1.00 per square foot for ceramic solar films meeting NFRC performance standards.</p>
+
+<p>Arizona House of Film provides NFRC-rated spec sheets required for SRP rebate applications. Homeowners submit rebate applications directly to SRP after installation. Rebate approval depends on:</p>
+
+<ul>
+  <li>Film NFRC rating (solar heat gain coefficient and visible light transmittance)</li>
+  <li>SRP program funding availability at time of application</li>
+  <li>Home address within SRP service territory (most of Queen Creek qualifies)</li>
+</ul>
+
+<p>We provide the documentation — you handle the rebate submission. SRP processes rebate applications within 4–8 weeks of submission. For current SRP rebate program details, see our <a href="/window-film-energy-rebates-arizona">Arizona window film rebate guide</a>.</p>
+
+<h2>Get a Free Residential Window Film Estimate — Queen Creek AZ</h2>
+<p>All Queen Creek residential window tinting projects are custom-quoted after a free on-site assessment. We evaluate your glass type, window orientation, HOA requirements, and film compatibility — then recommend the right specification. No flat per-window rates. No phone estimates. Licensed ROC #314088.</p>
+
+<p>For a free residential window film estimate in Queen Creek, call <a href="tel:4807881591">(480) 788-1591</a> or <a href="/contact">request a quote online</a>.</p>
+
+<h2>Related Queen Creek Window Film Services</h2>
+<p>Arizona House of Film serves Queen Creek homeowners with a full range of residential and commercial window film solutions. See our <a href="/window-tinting-queen-creek">Queen Creek window tinting hub</a> for all services, or explore:</p>
+<ul>
+  <li><a href="/blog/turf-protection-window-film-queen-creek">Turf protection window film Queen Creek</a> — stop Low-E reflection from melting artificial turf</li>
+  <li>Privacy window film Queen Creek — frosted and one-way film for pool-facing glass (coming soon)</li>
+  <li>Security window film Queen Creek — forced entry protection for ground-floor windows (coming soon)</li>
+  <li>Commercial window film Queen Creek — retail and office solutions (coming soon)</li>
+</ul>
+
+<p>For broader Phoenix residential window tinting service details, visit our <a href="/residential-window-tinting-phoenix">Phoenix residential window film page</a>.</p>
+  `
   }
 ];
 

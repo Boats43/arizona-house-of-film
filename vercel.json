@@ -24,10 +24,11 @@
       "destination": "https://arizonahouseoffilm.com/:path*",
       "permanent": true
     },
-    { "source": "/:path*", "has": [{ "type": "query", "key": "a" }], "destination": "/", "permanent": false },
+    { "source": "/:path*", "has": [{ "type": "query", "key": "a" }], "destination": "/", "permanent": true },
     { "source": "/:path*", "has": [{ "type": "query", "key": "zhHant" }], "destination": "/", "permanent": false },
     { "source": "/:path*", "has": [{ "type": "query", "key": "campaign_uid" }], "destination": "/", "permanent": false },
     { "source": "/:path*", "has": [{ "type": "query", "key": "search" }], "destination": "/", "permanent": false },
+    { "source": "/commercial-window-tinting-phoenix", "destination": "/commercial-window-film-phoenix", "permanent": true },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.arizonahouseoffilm.com" }],

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MC2PDPFR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- ✅ Base SEO — title and description are set per-page by react-helmet-async -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- 🔥 Non-blocking Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=optional"
+    />
+  </noscript>
+
+  <!-- Size-adjust fallback to minimize layout shift if Inter loads late -->
+  <style>@font-face{ascent-override:90%;descent-override:22%;font-family:Inter Fallback;line-gap-override:0%;size-adjust:107%;src:local("Arial")}</style>
+
+  <!-- 🔥 Preload Hero Image (MUST be public path, not local path) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/phoenix-window-tinting.webp"
+    fetchpriority="high"
+  />
+
+  <!-- Prevent layout shift before hydration -->
+  <style>body{margin:0}@media (max-width:1024px){body{padding-bottom:60px}}#root:empty{min-height:100vh}</style>
+
+  <!-- Vite entry (Dev Mode) -->
+
+  <script type="module" crossorigin src="/assets/index-D4n6qwhy.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Dx8KtIur.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-YG7mo9qR.js">
+  <link rel="modulepreload" crossorigin href="/assets/router-C3Zr9VL2.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-vendor-D_Z4zzcL.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BD6iYAdK.css">
+  <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+  <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+  <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+  <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  <script type="module">
+if (window.navigation && window.self !== window.top) {
+	window.navigation.addEventListener('navigate', (event) => {
+		const url = event.destination.url;
+
+		try {
+			const destinationUrl = new URL(url);
+			const destinationOrigin = destinationUrl.origin;
+			const currentOrigin = window.location.origin;
+
+			if (destinationOrigin === currentOrigin) {
+				return;
+			}
+		} catch (error) {
+			return;
+		}
+
+		window.parent.postMessage({
+			type: 'horizons-navigation-error',
+			url,
+		}, '*');
+	});
+}
+</script>
+  <title data-rh="true">Window and Door Graphics Scottsdale AZ</title>
+  <meta data-rh="true" name="description" content="Window and door graphics in Scottsdale AZ — branded frosted logos, storefront decals, ADA door markings. Old Town &amp; North Scottsdale. Licensed ROC #314088. Free estimate."/><meta data-rh="true" name="robots" content="index, follow"/><meta data-rh="true" property="og:title" content="Window and Door Graphics Scottsdale AZ"/><meta data-rh="true" property="og:description" content="Window and door graphics in Scottsdale AZ — branded frosted logos, storefront decals, ADA door markings. Old Town &amp; North Scottsdale. Licensed ROC #314088. Free estimate."/><meta data-rh="true" property="og:url" content="https://arizonahouseoffilm.com/blog/window-door-graphics-scottsdale"/><meta data-rh="true" property="og:type" content="article"/><meta data-rh="true" property="og:image" content="https://arizonahouseoffilm.com/og-images/blog/window-door-graphics-scottsdale.jpg"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <link data-rh="true" rel="canonical" href="https://arizonahouseoffilm.com/blog/window-door-graphics-scottsdale"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Window and Door Graphics Scottsdale AZ","description":"An in-depth guide to window and door graphics scottsdale az. Learn about the benefits, costs, and top brands like 3M, Solyx.","datePublished":"2026-06-15","author":{"@type":"Organization","name":"Arizona House of Film"},"image":"https://arizonahouseoffilm.com/og-image-window-door-graphics-scottsdale.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://arizonahouseoffilm.com/blog/window-door-graphics-scottsdale"},"publisher":{"@type":"Organization","name":"Arizona House of Film","logo":{"@type":"ImageObject","url":"https://arizonahouseoffilm.com/favicon-512.png","width":512,"height":512}}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the design process for custom window graphics in Scottsdale?","acceptedAnswer":{"@type":"Answer","text":"Arizona House of Film accepts client-supplied artwork (vector files preferred: AI, EPS, PDF) or coordinates with your designer. We confirm file resolution, convert to cutting templates, and provide a proof before production. Installation typically occurs 5–10 business days after artwork approval."}},{"@type":"Question","name":"Do window graphics comply with Old Town Scottsdale design standards?","acceptedAnswer":{"@type":"Answer","text":"Yes. We select films and designs that meet Old Town Scottsdale historic district aesthetic guidelines. Frosted and etched-appearance films are typically approved; reflective and mirror films may require additional review. We recommend checking with your property manager or Scottsdale Historic Preservation Office before finalizing storefront graphics in Old Town."}},{"@type":"Question","name":"How long do window and door graphics last in Arizona sun?","acceptedAnswer":{"@type":"Answer","text":"3M commercial graphic films rated for exterior use last 5–7 years in Arizona sun. Interior-applied frosted logo films and decorative graphics last 10+ years. UV exposure, glass orientation, and film type all affect lifespan. We specify UV-stable films for all Scottsdale commercial installations."}}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://arizonahouseoffilm.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://arizonahouseoffilm.com/blog"},{"@type":"ListItem","position":3,"name":"Window and Door Graphics Scottsdale AZ","item":"https://arizonahouseoffilm.com/blog/window-door-graphics-scottsdale"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"SpeakableSpecification","xpath":["/html/head/title","/html/body//h1"]}</script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC2PDPFR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- React root -->
+  <div id="root"><header class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm h-20" role="banner"><div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 h-full"><div class="flex items-center justify-between h-full"><div class="flex-shrink-0"><a aria-label="Arizona House of Film - Back to Home" href="/"><img src="/AHOF-logo.webp" alt="Arizona House of Film Logo" class="h-12 w-auto" width="48" height="48"/></a></div><nav class="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Primary navigation"><div class="relative"><div class="flex items-center gap-1"><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/commercial-window-tinting">Commercial</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-gray-500"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="relative"><div class="flex items-center gap-1"><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/residential-window-tinting">Residential</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-gray-500"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="relative"><div class="flex items-center gap-1"><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/solutions">Solutions</a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-gray-500"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="relative"><button type="button" class="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-blue-800 transition-colors">Industries<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="m6 9 6 6 6-6"></path></svg></button></div><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/brands">Brands</a><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/contact">Contact</a><a class="text-sm font-bold uppercase tracking-wider transition-colors text-gray-900 hover:text-blue-800" href="/get-a-quote">Get a Quote</a></nav><div class="hidden lg:flex items-center space-x-4"><div class="flex items-center text-sm mr-2 bg-gray-100 px-3 py-1 rounded-full border border-gray-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#B45309" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-amber-700"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="ml-1.5 text-gray-900 font-bold">4.6 Google Rating</span></div><a aria-label="Get a free window tint estimate today" class="inline-flex items-center justify-center rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 py-2 bg-blue-800 hover:bg-blue-900 font-bold shadow-md px-6" href="/contact">Request Quote</a></div><button class="lg:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-md" aria-label="Open primary navigation menu"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div></header><article class="bg-white py-20" style="opacity:0"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><header class="mb-8"><div class="mb-8"><a class="text-blue-600 hover:underline flex items-center" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back to Blog</a></div><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Window and Door Graphics Scottsdale AZ — Storefront Branding, Frosted Logos &amp; ADA Film</h1><p class="text-md text-gray-500 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Published on <!-- -->June 14, 2026</p></header><div class="prose lg:prose-xl max-w-none text-gray-700">
+    <h2>Window and Door Graphics for Scottsdale Businesses</h2>
+
+    <p class="lead">Scottsdale commercial properties use window and door graphics for three primary functions — branding, privacy, and compliance. Branded frosted logos create visual identity on North Scottsdale corporate office glass. Storefront decals communicate hours, services, and promotions in Old Town retail corridors. ADA door markings ensure building code compliance across all commercial properties. Arizona House of Film installs 3M commercial graphic films designed for Arizona sun exposure and multi-year durability. Licensed ROC #314088. Free estimate — (480) 788-1591.</p>
+
+    <h2>Scottsdale Storefront Branding and Identity</h2>
+    <p>Old Town Scottsdale and North Scottsdale commercial corridors demand visual differentiation. Window graphics deliver branding without permanent etching or paint:</p>
+    <ul>
+      <li><strong>Branded frosted logos</strong> — custom-cut frosted film displaying corporate logos on office glass, conference room partitions, and storefront entries. Privacy plus brand presence.</li>
+      <li><strong>Storefront decals</strong> — vinyl graphics for hours, contact information, accepted payment methods, and promotional messaging. Removable without residue.</li>
+      <li><strong>Full-coverage decorative film</strong> — patterned or gradient films for privacy that match brand color palettes and design standards.</li>
+      <li><strong>One-way privacy with branding</strong> — perforated window film allows outward visibility while displaying graphics to passersby. Common in retail storefronts.</li>
+    </ul>
+    <p>For Scottsdale businesses in design-sensitive environments — Old Town historic district, Scottsdale Quarter, Kierland Commons — we coordinate film selection with property management and design review boards before installation.</p>
+
+    <h2>Types of Commercial Window and Door Graphics</h2>
+    <p>Arizona House of Film installs the following graphic film types for Scottsdale commercial properties:</p>
+    <ul>
+      <li><strong>Frosted logo film (3M Scotchcal)</strong> — custom-cut logos and text in frosted vinyl. Interior or exterior application. Creates etched-glass appearance without permanent glass treatment.</li>
+      <li><strong>Vinyl decals (3M Controltac)</strong> — repositionable adhesive vinyl for storefront messaging, hours, contact info, and promotional graphics. Removable and replaceable seasonally.</li>
+      <li><strong>ADA door markings</strong> — compliant visual markers for commercial door glass meeting ADA Title III requirements. Contrasting color, required height placement.</li>
+      <li><strong>Solyx patterned decorative film</strong> — 618-SKU catalog of geometric, botanical, and gradient patterns for privacy and branding. Custom color matching available.</li>
+      <li><strong>Perforated one-way film</strong> — allows outward visibility from inside while displaying solid graphics to exterior viewers. Retail storefronts, office lobbies.</li>
+    </ul>
+
+    <h2>Process — Design Submission to Installation</h2>
+    <p>Commercial window and door graphics for Scottsdale businesses follow this process:</p>
+    <ol>
+      <li><strong>Artwork submission or design coordination</strong> — client supplies vector files (AI, EPS, PDF preferred) or we coordinate with your designer. Raster files (PNG, JPG) require resolution verification.</li>
+      <li><strong>Template conversion and proof</strong> — we convert artwork to cutting templates, scale to glass dimensions, and provide a digital proof for approval.</li>
+      <li><strong>Film selection and compliance review</strong> — we recommend 3M or Solyx films rated for Arizona sun exposure and confirm compliance with Scottsdale design standards if applicable (Old Town, HOA-managed properties).</li>
+      <li><strong>Production and installation</strong> — film is precision-cut via plotter, weeded, and installed on-site. Typical turnaround: 5–10 business days after artwork approval.</li>
+    </ol>
+
+    <h2>Old Town Scottsdale Design Standard Compliance</h2>
+    <p>Old Town Scottsdale commercial properties operate under historic preservation design guidelines. Window and door graphics must meet aesthetic standards:</p>
+    <ul>
+      <li><strong>Frosted and etched-appearance films</strong> — typically approved. Subtle, non-reflective, compatible with historic architecture.</li>
+      <li><strong>Reflective and mirror films</strong> — may require additional review or approval from Scottsdale Historic Preservation Office.</li>
+      <li><strong>Vinyl decals</strong> — allowed for hours, contact, and business identification. Excessive coverage or neon colors may be restricted.</li>
+    </ul>
+    <p>We recommend confirming design standards with your property manager or the City of Scottsdale before finalizing storefront graphics in Old Town. Arizona House of Film provides spec sheets and visual mockups for design review submissions.</p>
+
+    <h2>Pricing — Free Estimate Required</h2>
+    <p>Window and door graphics are custom-quoted per project scope. Variables include artwork complexity, film type, glass square footage, and installation access. Small decal sets (hours + logo) run $200–$600. Full storefront frosted branding runs $800–$3,000. Large-scale office lobby graphics run $2,000–$8,000+. All Scottsdale commercial projects receive a free on-site estimate with written fixed-price quote. Call (480) 788-1591.</p>
+
+    <h2>Related Scottsdale Commercial Services</h2>
+    <p>For broader <a href="/commercial-window-tinting-scottsdale">commercial window tinting in Scottsdale</a>, see our main commercial page covering solar control, security, and privacy film. For decorative film without branding, see our <a href="/decorative-window-films">decorative window films catalog</a> (618 Solyx SKUs). For project quotes, <a href="/contact">contact us</a> or call (480) 788-1591.</p>
+  </div><footer class="mt-12 pt-8 border-t border-gray-200"><h3 class="text-xl font-bold text-gray-800 mb-4">Continue Exploring</h3><ul class="list-none p-0 space-y-2"><li><a class="text-blue-600 hover:underline" href="/commercial-window-tinting">Explore commercial tinting options</a></li><li><a class="text-blue-600 hover:underline" href="/window-tinting-phoenix">See local installs in Phoenix</a></li><li><a class="text-blue-600 hover:underline" href="/decorative-window-films">Compare decorative film types</a></li></ul></footer></div></article><footer class="bg-gray-900 text-white" itemscope="" itemType="https://schema.org/WPFooter"><div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8"><div class="col-span-2 lg:col-span-2"><a class="flex items-center gap-2" href="/"><img src="/AHOF-logo.webp" alt="Arizona House of Film Logo" class="h-12 w-auto" loading="lazy" width="48" height="48"/><span class="font-bold text-xl">Arizona House of Film</span></a><p class="mt-4 text-gray-400 text-sm">Arizona&#x27;s trusted, licensed partner for professional window tinting solutions. ROC # 314088</p><div class="mt-6 flex items-center space-x-1 text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="text-white ml-2 text-sm">4.6 Stars (22 Reviews)</span></div><div class="mt-6 flex space-x-4"><a href="https://www.facebook.com/arizonahouseoffilm" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.instagram.com/arizonahouseoffilm/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a><a href="https://www.youtube.com/@arizonahouseoffilm" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a><a href="https://www.linkedin.com/company/arizona-house-of-film" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Services</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/commercial-window-tinting">Commercial</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/commercial-window-tinting-scottsdale">Commercial Scottsdale</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/residential-window-tinting">Residential</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/residential-window-tinting-scottsdale">Residential Scottsdale</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/safety">Safety &amp; Security</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/anti-graffiti">Anti-Graffiti</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/decorative-window-films">Decorative Films</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/energy-saving-window-films">Energy Saving</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/solutions">All Solutions</a></li></ul><p class="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">Privacy Solutions</p><ul class="space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/bathroom-privacy-window-film">Bathroom Privacy Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/office-privacy-window-film">Office Privacy Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/storefront-window-film">Storefront Window Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/entryway-window-film">Entryway &amp; Door Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/sidelight-window-film">Sidelight Window Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/privacy-film-sliding-glass-door">Sliding Glass Door Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/one-way-mirror-window-film">One-Way Mirror Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/office-partition-window-film">Office Partition Film</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/restaurant-window-film">Restaurant Window Film</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Phoenix</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-phoenix">Window Tinting Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-phoenix">Window Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/commercial-window-film-phoenix">Commercial Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/residential-window-tinting-phoenix">Residential Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/solar-window-film-phoenix">Solar Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/security-window-film-phoenix">Security Film Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/anti-graffiti-film-phoenix">Anti-Graffiti Phoenix</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/decorative-window-film-phoenix">Decorative Film Phoenix</a></li></ul><p class="text-gray-500 text-xs font-bold uppercase tracking-wider mt-5 mb-2">East Valley</p><ul class="space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-chandler">Window Tinting Chandler</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-gilbert">Window Tinting Gilbert</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-peoria">Window Tinting Peoria</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-queen-creek">Window Tinting Queen Creek</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-fountain-hills">Window Tinting Fountain Hills</a></li></ul><p class="text-gray-500 text-xs font-bold uppercase tracking-wider mt-4 mb-2">West &amp; Central Valley</p><ul class="space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-mesa">Window Tinting Mesa</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-tempe">Window Tinting Tempe</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-glendale">Window Tinting Glendale</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-tolleson">Window Tinting Tolleson</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-tinting-avondale">Window Tinting Avondale</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Explore</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/films">Films</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/brands">Brands</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/service-areas">Service Areas</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/gallery">Gallery</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/blog">Blog</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/book-now">Book Now</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/store">Store</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/contact">Contact</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/get-a-quote">Get a Quote</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/ai-window-film-estimator">AI Estimator</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-cost-arizona">Window Film Cost</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-faq">Window Film FAQ</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/window-film-distributor-phoenix">Window Film Distributor</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Industries</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries">All Industries</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/office-buildings">Office Buildings</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/retail-stores">Retail Stores</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/restaurants">Restaurants</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/medical-facilities">Medical Facilities</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/educational-institutions">Schools</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/government-buildings">Government</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/hotels-hospitality">Hotels</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/industries/warehouses">Warehouses</a></li></ul></div><div><p class="text-sm font-semibold tracking-wider uppercase text-gray-300">Company</p><ul class="mt-4 space-y-2"><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/welcome">About Us</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/careers">Careers</a></li><li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="/privacy-policy">Privacy Policy</a></li></ul></div></div><div class="mt-12 border-t border-gray-800 pt-8"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-gray-400"><p>© <!-- -->2026<!-- --> Arizona House of Film. All Rights Reserved. ROC #314088</p><div class="flex flex-col md:flex-row md:items-center gap-3"><a href="tel:4807881591" class="hover:text-white">Phone: (480) 788-1591</a><a href="mailto:arizonahouseoffilm@gmail.com" class="hover:text-white">arizonahouseoffilm@gmail.com</a><span itemProp="address" itemscope="" itemType="https://schema.org/PostalAddress"><span itemProp="streetAddress">7007 W Flower St</span>,<!-- --> <span itemProp="addressLocality">Phoenix</span>,<!-- --> <span itemProp="addressRegion">AZ</span> <span itemProp="postalCode">85033</span></span></div></div></div></div></footer></div>
+
+</body>
+</html>

@@ -10,7 +10,7 @@ import EstimatorCTA from '../components/EstimatorCTA';
 
 const DecorativePhoenix = () => {
   const rocNumber = '314088';
-  const pageTitle = 'Decorative Window Film Phoenix AZ | ROC #314088';
+  const pageTitle = 'Decorative Window Film Phoenix AZ | Patterns & Frosted';
   const metaDescription = 'Phoenix decorative window film installer. Frosted glass, privacy film, 3M Fasara, Solyx patterns. Free estimate. ROC #314088.';
   const canonicalUrl = 'https://arizonahouseoffilm.com/decorative-window-film-phoenix';
   const ogImage = 'https://arizonahouseoffilm.com/images/default-og.jpg';

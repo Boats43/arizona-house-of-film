@@ -47,6 +47,83 @@ const allBlogData = [
 `
   },
   {
+    slug: 'window-door-graphics-scottsdale',
+    title: 'Window and Door Graphics Scottsdale AZ',
+    h1: 'Window and Door Graphics Scottsdale AZ — Storefront Branding, Frosted Logos & ADA Film',
+    excerpt: 'Window and door graphics in Scottsdale AZ — branded frosted logos, storefront decals, ADA door markings. Old Town & North Scottsdale. Licensed ROC #314088. Free estimate.',
+    canonicalUrl: '/blog/window-door-graphics-scottsdale',
+    date: '2026-06-15',
+    alt: 'Commercial storefront window graphics and branded frosted film installed in Scottsdale Arizona.',
+    keywords: 'window and door graphics scottsdale az, storefront graphics scottsdale, frosted logo film scottsdale, ADA door markings scottsdale',
+    serviceLink: '/commercial-window-tinting-scottsdale',
+    cityLink: '/commercial-window-tinting-scottsdale',
+    brandMentions: '3M, Solyx',
+    ctaCity: 'Scottsdale',
+    faqs: [
+      {
+        question: 'What is the design process for custom window graphics in Scottsdale?',
+        answer: 'Arizona House of Film accepts client-supplied artwork (vector files preferred: AI, EPS, PDF) or coordinates with your designer. We confirm file resolution, convert to cutting templates, and provide a proof before production. Installation typically occurs 5–10 business days after artwork approval.'
+      },
+      {
+        question: 'Do window graphics comply with Old Town Scottsdale design standards?',
+        answer: 'Yes. We select films and designs that meet Old Town Scottsdale historic district aesthetic guidelines. Frosted and etched-appearance films are typically approved; reflective and mirror films may require additional review. We recommend checking with your property manager or Scottsdale Historic Preservation Office before finalizing storefront graphics in Old Town.'
+      },
+      {
+        question: 'How long do window and door graphics last in Arizona sun?',
+        answer: '3M commercial graphic films rated for exterior use last 5–7 years in Arizona sun. Interior-applied frosted logo films and decorative graphics last 10+ years. UV exposure, glass orientation, and film type all affect lifespan. We specify UV-stable films for all Scottsdale commercial installations.'
+      }
+    ],
+    customContent: `
+    <h2>Window and Door Graphics for Scottsdale Businesses</h2>
+
+    <p class="lead">Scottsdale commercial properties use window and door graphics for three primary functions — branding, privacy, and compliance. Branded frosted logos create visual identity on North Scottsdale corporate office glass. Storefront decals communicate hours, services, and promotions in Old Town retail corridors. ADA door markings ensure building code compliance across all commercial properties. Arizona House of Film installs 3M commercial graphic films designed for Arizona sun exposure and multi-year durability. Licensed ROC #314088. Free estimate — (480) 788-1591.</p>
+
+    <h2>Scottsdale Storefront Branding and Identity</h2>
+    <p>Old Town Scottsdale and North Scottsdale commercial corridors demand visual differentiation. Window graphics deliver branding without permanent etching or paint:</p>
+    <ul>
+      <li><strong>Branded frosted logos</strong> — custom-cut frosted film displaying corporate logos on office glass, conference room partitions, and storefront entries. Privacy plus brand presence.</li>
+      <li><strong>Storefront decals</strong> — vinyl graphics for hours, contact information, accepted payment methods, and promotional messaging. Removable without residue.</li>
+      <li><strong>Full-coverage decorative film</strong> — patterned or gradient films for privacy that match brand color palettes and design standards.</li>
+      <li><strong>One-way privacy with branding</strong> — perforated window film allows outward visibility while displaying graphics to passersby. Common in retail storefronts.</li>
+    </ul>
+    <p>For Scottsdale businesses in design-sensitive environments — Old Town historic district, Scottsdale Quarter, Kierland Commons — we coordinate film selection with property management and design review boards before installation.</p>
+
+    <h2>Types of Commercial Window and Door Graphics</h2>
+    <p>Arizona House of Film installs the following graphic film types for Scottsdale commercial properties:</p>
+    <ul>
+      <li><strong>Frosted logo film (3M Scotchcal)</strong> — custom-cut logos and text in frosted vinyl. Interior or exterior application. Creates etched-glass appearance without permanent glass treatment.</li>
+      <li><strong>Vinyl decals (3M Controltac)</strong> — repositionable adhesive vinyl for storefront messaging, hours, contact info, and promotional graphics. Removable and replaceable seasonally.</li>
+      <li><strong>ADA door markings</strong> — compliant visual markers for commercial door glass meeting ADA Title III requirements. Contrasting color, required height placement.</li>
+      <li><strong>Solyx patterned decorative film</strong> — 618-SKU catalog of geometric, botanical, and gradient patterns for privacy and branding. Custom color matching available.</li>
+      <li><strong>Perforated one-way film</strong> — allows outward visibility from inside while displaying solid graphics to exterior viewers. Retail storefronts, office lobbies.</li>
+    </ul>
+
+    <h2>Process — Design Submission to Installation</h2>
+    <p>Commercial window and door graphics for Scottsdale businesses follow this process:</p>
+    <ol>
+      <li><strong>Artwork submission or design coordination</strong> — client supplies vector files (AI, EPS, PDF preferred) or we coordinate with your designer. Raster files (PNG, JPG) require resolution verification.</li>
+      <li><strong>Template conversion and proof</strong> — we convert artwork to cutting templates, scale to glass dimensions, and provide a digital proof for approval.</li>
+      <li><strong>Film selection and compliance review</strong> — we recommend 3M or Solyx films rated for Arizona sun exposure and confirm compliance with Scottsdale design standards if applicable (Old Town, HOA-managed properties).</li>
+      <li><strong>Production and installation</strong> — film is precision-cut via plotter, weeded, and installed on-site. Typical turnaround: 5–10 business days after artwork approval.</li>
+    </ol>
+
+    <h2>Old Town Scottsdale Design Standard Compliance</h2>
+    <p>Old Town Scottsdale commercial properties operate under historic preservation design guidelines. Window and door graphics must meet aesthetic standards:</p>
+    <ul>
+      <li><strong>Frosted and etched-appearance films</strong> — typically approved. Subtle, non-reflective, compatible with historic architecture.</li>
+      <li><strong>Reflective and mirror films</strong> — may require additional review or approval from Scottsdale Historic Preservation Office.</li>
+      <li><strong>Vinyl decals</strong> — allowed for hours, contact, and business identification. Excessive coverage or neon colors may be restricted.</li>
+    </ul>
+    <p>We recommend confirming design standards with your property manager or the City of Scottsdale before finalizing storefront graphics in Old Town. Arizona House of Film provides spec sheets and visual mockups for design review submissions.</p>
+
+    <h2>Pricing — Free Estimate Required</h2>
+    <p>Window and door graphics are custom-quoted per project scope. Variables include artwork complexity, film type, glass square footage, and installation access. Small decal sets (hours + logo) run $200–$600. Full storefront frosted branding runs $800–$3,000. Large-scale office lobby graphics run $2,000–$8,000+. All Scottsdale commercial projects receive a free on-site estimate with written fixed-price quote. Call (480) 788-1591.</p>
+
+    <h2>Related Scottsdale Commercial Services</h2>
+    <p>For broader <a href="/commercial-window-tinting-scottsdale">commercial window tinting in Scottsdale</a>, see our main commercial page covering solar control, security, and privacy film. For decorative film without branding, see our <a href="/decorative-window-films">decorative window films catalog</a> (618 Solyx SKUs). For project quotes, <a href="/contact">contact us</a> or call (480) 788-1591.</p>
+  `
+  },
+  {
     slug: 'arizona-hb-2342-shade-structure-bill-2026',
     title: 'Arizona Shade Structure Bill 2026',
     h1: 'Arizona\'s HB 2342 Shade Structure Bill — And the Heat Fix HOAs Can Never Block',
@@ -2408,12 +2485,16 @@ const allBlogData = [
       {
         question: 'Can window film qualify for LEED credit on office projects?',
         answer: 'Window film can contribute to LEED v4 and v4.1 credits for Energy and Atmosphere (EA) under energy-efficiency measures and Indoor Environmental Quality (IEQ) for thermal comfort. The specific credit path depends on your building type, baseline, and project certification level. We supply manufacturer spec sheets, NFRC ratings, and installation documentation for LEED submissions. Not every window film qualifies — high-performance ceramic and spectrally selective films are typically required for meaningful EA contribution.'
+      },
+      {
+        question: 'Can you install office window film without disrupting business hours?',
+        answer: 'Yes. Arizona House of Film schedules commercial office installations floor-by-floor, evenings, or weekends to avoid disrupting tenants and operations. We coordinate directly with building management and provide a written installation schedule in advance.'
       }
     ],
     customContent: `
     <h2>Window Film for Office Buildings in Phoenix — Heat, Glare & Privacy Solutions</h2>
 
-    <p class="lead">Office buildings in Phoenix face three distinct window problems — solar heat through west and south-facing floors, glare on monitors and video conference cameras, and privacy through glass partitions in open-office layouts. Window film solves all three, and on qualifying SRP or APS commercial accounts the install can be partially rebated. This 2026 guide covers what actually works for Phoenix office buildings: which films to specify, how to handle dual-pane IG glass, what LEED credit is available, and how to plan tenant coordination. Arizona House of Film (ROC #314088) has installed window film on Phoenix office buildings since 2017.</p>
+    <p class="lead">Office buildings in Phoenix face three distinct window problems — solar heat through west and south-facing floors, glare on monitors and video conference cameras, and privacy through glass partitions in open-office layouts. Window film solves all three, and on qualifying SRP or APS commercial accounts the install can be partially rebated. This 2026 guide covers what actually works for Phoenix office buildings: which films to specify, how to handle dual-pane IG glass, what LEED credit is available, and how to plan tenant coordination. Arizona House of Film (ROC #314088) has installed window film on Phoenix office buildings since 2017. Arizona House of Film has installed office window film for Boeing, ASU MacroTechnology Works, the State of Arizona, and the Frank Lloyd Wright Foundation.</p>
 
     <h2>The Three Office Window Film Problems</h2>
     <p>Every office building window film project we quote maps to one or more of these three problems:</p>
@@ -2489,6 +2570,12 @@ const allBlogData = [
       <tr><td>Suburban office park</td><td>Heat + SRP rebate</td><td>LLumar CTX / OnyVa IR90</td></tr>
       <tr><td>Open-office tech space</td><td>Glare + privacy</td><td>Ceramic solar + Solyx decorative partitions</td></tr>
     </table>
+
+    <h2>Security Film for Phoenix Office Buildings</h2>
+    <p>8-12mil <a href="/security-window-film-phoenix">security film for office buildings</a> provides forced entry delay (30-90 seconds under sustained impact), glass retention preventing injury from shattered glass, and government-spec compliance for high-security tenants. Security films meet GSA requirements and ANSI Z97.1 glazing safety standards. Clear security film does not affect office appearance — it maintains natural light and exterior views while adding a critical safety layer. Arizona House of Film has installed security film for U.S. Navy Recruitment Centers and State of Arizona facilities where government compliance documentation is mandatory.</p>
+
+    <h2>Multi-Tenant Installation Logistics</h2>
+    <p>Commercial office window film installations in multi-tenant buildings require coordination beyond standard residential projects. Key logistics include floor-by-floor sequencing to minimize disruption, landlord and property manager approval process (often requiring NFRC specs and warranty documentation upfront), after-hours and weekend installation schedules to avoid disrupting business operations, and common area coordination when lobby or shared corridor glass is involved. Arizona House of Film provides a written installation schedule, NFRC spec sheets, manufacturer warranties, and ROC #314088 documentation packages for building management. See our full <a href="/industries/office-buildings">office building window film solutions</a> page for project planning details.</p>
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq-section space-y-4">

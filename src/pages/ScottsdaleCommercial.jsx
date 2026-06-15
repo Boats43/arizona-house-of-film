@@ -131,6 +131,14 @@ const ScottsdaleCommercial = () => {
           text: 'Solar control film blocks heat and UV from the sun — designed for energy savings and occupant comfort. Decorative film obscures visibility through glass for privacy or branding without heat rejection. Most Scottsdale commercial projects combine both: solar control on perimeter glass for heat management and decorative film on interior glass partitions for conference room privacy.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'Do you install window and door graphics in Scottsdale?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes — Arizona House of Film installs branded frosted logos, storefront decals, ADA door markings, and commercial signage film for Scottsdale businesses. We work with client-supplied artwork or can coordinate design. All installations use 3M commercial graphic films rated for Arizona sun exposure.',
+        },
+      },
     ],
   };
 
@@ -461,6 +469,21 @@ const ScottsdaleCommercial = () => {
         </section>
 
         <EstimatorCTA />
+
+        {/* WINDOW AND DOOR GRAPHICS */}
+        <section className="py-16 bg-slate-900 border-b border-slate-800">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6">
+              Window and Door Graphics for Scottsdale Businesses
+            </h2>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mb-4">
+              Branded frosted logos for North Scottsdale corporate offices, storefront decals for Old Town retail, ADA-compliant door markings for commercial buildings, and storefront hours/contact vinyl. Custom design or client-supplied artwork accepted. 3M commercial graphic films. Scottsdale design standards compliant — Old Town historic district aesthetic rules accommodated.
+            </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
+              Window and door graphics combine branding with functionality — frosted logo film creates privacy while displaying corporate identity, ADA markings ensure compliance, and storefront decals communicate hours and services. All installations use 3M commercial graphic films rated for Arizona sun exposure and designed for multi-year durability.
+            </p>
+          </div>
+        </section>
 
         {/* PRICING & SPECIFICATIONS */}
         <section className="py-16 bg-white">

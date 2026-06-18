@@ -116,8 +116,11 @@ const EnergySaving = () => {
         {/* OPENING AUTHORITY */}
         <section className="py-12 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6">
-            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium mb-4">
               In Phoenix, windows are thermal holes in your building envelope. For large-scale facilities like Peyton&rsquo;s Distribution Center and Genuine Parts Company, unprotected glass is not just a comfort issue &mdash; it is a massive line-item expense on every utility bill. Arizona House of Film installs ceramic and spectrally selective films that neutralize solar heat at the source, protecting your HVAC investment and your bottom line. SRP and APS customers may qualify for rebates on qualifying installations. Licensed ROC #314088.
+            </p>
+            <p className="text-slate-300 text-base leading-relaxed font-medium">
+              For <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">commercial HVAC performance data</Link>, see our Phoenix office film guide. For residential heat rejection, see our <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">Phoenix solar film heat rejection</Link> specs.
             </p>
           </div>
         </section>

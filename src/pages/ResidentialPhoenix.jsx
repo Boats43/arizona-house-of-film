@@ -216,8 +216,11 @@ const ResidentialPhoenix = () => {
               <h1 className="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">
                 Residential Window Tinting Phoenix AZ
               </h1>
-              <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">
+              <p className="text-xl text-slate-300 max-w-2xl mb-6 leading-relaxed font-medium">
                 Heat rejection, UV protection, privacy, and security film for Phoenix homes. Ceramic, dual-reflective, and decorative options. 700+ projects since 2017. ROC #{rocNumber}.
+              </p>
+              <p className="text-slate-300 text-sm max-w-2xl mb-10">
+                <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline font-semibold">Best solar film for Phoenix heat</Link> — ceramic specs & heat rejection data.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white px-10 h-16 text-xl font-black rounded-none transition-all shadow-xl">

@@ -129,7 +129,7 @@ export default function CommercialWindowTintingTempe() {
               Tempe is one of the most commercially dense cities in the Phoenix metro — ASU campus area, Mill Avenue corridor, Tempe Town Lake, and the light rail corridor drive a high concentration of retail, hospitality, office, and mixed-use properties. All face extreme Arizona solar exposure that degrades interiors, overloads HVAC, and drives up operating costs.
             </p>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl">
-              Arizona House of Film provides licensed commercial window tinting throughout Tempe — from restaurant storefronts on Mill Avenue to multi-story office buildings along the 101/202 corridor. We install solar control, security, decorative, and privacy film for every commercial property type. Licensed, bonded, insured — ROC #{rocNumber}.
+              Arizona House of Film provides licensed commercial window tinting throughout Tempe — from restaurant storefronts on Mill Avenue to multi-story office buildings along the 101/202 corridor. We install solar control, security, decorative, and privacy film for every commercial property type. Licensed, bonded, insured — ROC #{rocNumber}. For <Link to="/blog/commercial-performance-window-film-phoenix" className="text-green-400 hover:text-green-300 underline">performance film for Tempe offices</Link>, see our Phoenix metro guide.
             </p>
           </div>
         </section>

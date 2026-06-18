@@ -975,7 +975,7 @@ const allBlogData = [
   },
   {
     slug: 'security-window-film-phoenix-cost-guide',
-    title: 'Security Window Film Phoenix Cost & Install Guide 2026',
+    title: 'Security Window Film Phoenix | Blast Mitigation 2026',
     excerpt: 'Security window film Phoenix — blast mitigation, forced entry protection, free assessment. Commercial + residential installs. Licensed ROC #314088.',
     date: '2026-04-06',
     alt: 'Security window film installed on a Phoenix commercial storefront.',
@@ -1391,7 +1391,7 @@ const allBlogData = [
   },
   {
     slug: 'window-tinting-queen-creek-guide',
-    title: 'Window Tinting Queen Creek AZ — Privacy & Heat Control',
+    title: 'Queen Creek Window Film — Privacy & Heat Control 2026',
     excerpt: 'Window tinting Queen Creek — privacy + heat rejection + turf protection film. Residential & commercial. Licensed ROC #314088. Free estimate — (480) 788-1591.',
     date: '2026-04-06',
     alt: 'Residential window tinting installation on a new construction home in Queen Creek AZ.',
@@ -1607,7 +1607,7 @@ const allBlogData = [
   },
   {
     slug: 'solar-window-film-phoenix-az',
-    title: 'Solar Window Film in Phoenix, AZ — Best Options for Heat Rejection (2026)',
+    title: 'Phoenix Solar Film — Block 80% Heat, Cut AC Load',
     excerpt: 'Solar window film for Phoenix homes — blocks up to 80% of heat, cuts AC costs, and protects interiors from UV. Best films for Arizona\'s extreme summer heat.',
     date: '2026-04-06',
     alt: 'Solar window film installed on a Phoenix home reducing heat and glare.',
@@ -2900,7 +2900,7 @@ const allBlogData = [
   },
   {
     slug: 'commercial-performance-window-film-phoenix',
-    title: 'Commercial Window Film Phoenix 2026',
+    title: 'Phoenix Office Window Film — HVAC Savings & LEED',
     excerpt: 'Commercial performance film for Phoenix-area offices, retail & Scottsdale buildings. HVAC savings, glare control, tenant comfort by neighborhood.',
     date: '2026-04-28',
     alt: 'A Phoenix office tower with commercial performance window film installed on the west and south curtain wall elevations.',

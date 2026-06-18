@@ -124,8 +124,11 @@ export default function WindowTintingChandler() {
           <p className="text-gray-600 text-lg leading-relaxed mb-4">
             Arizona House of Film serves Chandler with the full range of residential and commercial window film solutions. Chandler's extreme summer heat — with temperatures regularly exceeding 110°F — makes solar control film one of the highest-ROI home improvements available. We've completed projects across Chandler's master-planned communities, commercial corridors, and retail storefronts since 2017.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 leading-relaxed mb-4">
             Licensed ROC #314088, bonded, and insured. We carry Solyx, LLumar, 3M, and Huper Optik films. Every project is custom-quoted — no flat-rate gimmicks. Call (480) 788-1591 or request a quote online.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            Nearby: <Link to="/blog/window-tinting-queen-creek-guide" className="text-blue-600 hover:underline font-semibold">Queen Creek window tinting</Link>
           </p>
         </section>
 

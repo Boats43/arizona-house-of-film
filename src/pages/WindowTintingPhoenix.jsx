@@ -281,7 +281,7 @@ const WindowTintingPhoenix = () => {
               <div>
                 <h3 className="text-xl font-black text-green-400 uppercase tracking-widest mb-4">Residential</h3>
                 <p className="text-slate-300 text-base leading-relaxed font-medium">
-                  Arizona's 300+ days of sun and 115°F summer peaks push untreated residential glass to the breaking point. South and west-facing windows can radiate intense heat into living spaces, forcing air conditioning systems to run continuously. Window tinting for homes in Phoenix cuts solar heat gain by 50–80%, reducing AC demand, lowering utility bills, blocking 99% of UV rays that fade flooring and furniture, and eliminating hot spots near glass. House window tinting is one of the highest-ROI home improvements available in the Phoenix market — installed in hours, no construction.
+                  Arizona's 300+ days of sun and 115°F summer peaks push untreated residential glass to the breaking point. South and west-facing windows can radiate intense heat into living spaces, forcing air conditioning systems to run continuously. Window tinting for homes in Phoenix cuts solar heat gain by 50–80%, reducing AC demand, lowering utility bills, blocking 99% of UV rays that fade flooring and furniture, and eliminating hot spots near glass. House window tinting is one of the highest-ROI home improvements available in the Phoenix market — installed in hours, no construction. For detailed heat rejection specs and film recommendations, see our <Link to="/blog/solar-window-film-phoenix-az" className="text-green-400 hover:text-green-300 underline">Phoenix solar window film guide</Link>.
                 </p>
               </div>
               <div>

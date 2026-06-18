@@ -124,8 +124,11 @@ export default function WindowTintingGilbert() {
           <p className="text-gray-600 text-lg leading-relaxed mb-4">
             Arizona House of Film serves Gilbert with the full range of residential and commercial window film solutions. Gilbert's explosive growth — from master-planned communities like Power Ranch, Val Vista Lakes, and Morrison Ranch to the thriving Higley Tech Corridor and SanTan commercial corridor — has created enormous demand for solar control, privacy, and energy-saving window film. New construction homes in Gilbert feature large glass elevations that absorb significant heat without film protection.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 leading-relaxed mb-4">
             Licensed ROC #314088, bonded, and insured. We carry Solyx, LLumar, 3M, and Huper Optik films. Every project is custom-quoted — no flat-rate gimmicks. Call (480) 788-1591 or request a quote online.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            Nearby: <Link to="/blog/window-tinting-queen-creek-guide" className="text-blue-600 hover:underline font-semibold">Queen Creek window tinting</Link>
           </p>
         </section>
 

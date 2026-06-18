@@ -367,8 +367,11 @@ export default function SecurityPhoenix() {
       {/* AUTHORITY OPENER */}
       <section className="bg-slate-900 py-14 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg text-slate-300 leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed mb-4">
             Most Phoenix windows offer zero resistance to forced entry. A standard single-pane or dual-pane window fails in under 10 seconds. Security window film doesn't replace glass — it converts it into a forced-entry barrier, buying critical time and containing hazardous shards. Arizona House of Film has installed security film in government facilities, retail locations, schools, and residences across Phoenix since 2017.
+          </p>
+          <p className="text-lg text-slate-300 leading-relaxed">
+            For detailed cost breakdown by thickness and application, see our <Link to="/blog/security-window-film-phoenix-cost-guide" className="text-green-400 hover:text-green-300 underline">security window film cost and install guide</Link>.
           </p>
         </div>
       </section>

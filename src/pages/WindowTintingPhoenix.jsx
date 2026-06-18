@@ -95,7 +95,7 @@ const WindowTintingPhoenix = () => {
     {
       icon: Shield,
       title: 'Security Window Film',
-      body: 'Forced entry resistance, blast mitigation, safety glass.',
+      body: <>Forced entry resistance, blast mitigation, safety glass. <Link to="/blog/security-window-film-phoenix-cost-guide" className="text-blue-600 hover:underline text-sm">Pricing guide →</Link></>,
       to: '/security-window-film-phoenix',
     },
     {

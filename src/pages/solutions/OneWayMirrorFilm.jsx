@@ -84,8 +84,11 @@ export default function OneWayMirrorFilm() {
           <p className="text-gray-600 text-lg leading-relaxed mb-4">
             One-way mirror window film gives you the best of both worlds — an unobstructed view from inside during the day while presenting a reflective mirror surface to anyone looking in from outside. Combined with Arizona's intense sunlight, reflective film also provides significant solar heat rejection — reducing cooling costs while delivering privacy.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 leading-relaxed mb-4">
             Arizona House of Film installs residential and commercial reflective films across Phoenix, Scottsdale, Chandler, and Mesa. Available in silver, bronze, gold, pewter, and chrome finishes — from subtle tints to full mirror-grade reflectivity.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            Before choosing one-way film, understand the night limitation — read our complete guide: <Link to="/blog/one-way-window-film-day-and-night-guide" className="text-blue-600 hover:underline font-semibold">Does one-way window film work at night?</Link>
           </p>
         </section>
 

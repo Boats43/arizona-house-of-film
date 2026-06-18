@@ -126,8 +126,11 @@ const Safety = () => {
         {/* OPENING AUTHORITY */}
         <section className="py-12 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium mb-4">
               Security window film is one of the fastest-growing segments of the window film industry — and for good reason. In Arizona, both residential and commercial properties benefit from film that holds shattered glass in place after impact. Arizona House of Film installs 4-mil through 12-mil safety films across Phoenix, Scottsdale, and the Greater Arizona market. Licensed ROC #314088.
+            </p>
+            <p className="text-slate-300 text-base leading-relaxed font-medium">
+              For cost transparency and specification guidance, see our <Link to="/blog/security-window-film-phoenix-cost-guide" className="text-green-400 hover:text-green-300 underline">Phoenix security film cost breakdown</Link>.
             </p>
           </div>
         </section>

@@ -177,7 +177,7 @@ const Commercial = () => {
     {
       icon: Shield,
       title: "Government, Military & Municipal Facilities",
-      body: "Licensed, bonded, and experienced in high-security government environments. We provide fragmentation retention films, privacy solutions for sensitive infrastructure, and anti-graffiti protection for public-facing buildings. Our work meets GSA standards and Arizona procurement requirements — fully documented for compliance review.",
+      body: <>Licensed, bonded, and experienced in high-security government environments. We provide fragmentation retention films, privacy solutions for sensitive infrastructure, and anti-graffiti protection for public-facing buildings. Our work meets GSA standards and Arizona procurement requirements — fully documented for compliance review. For <Link to="/blog/security-window-film-phoenix-cost-guide" className="text-green-400 underline hover:text-green-300">security film cost for Phoenix storefronts</Link>, see our install guide.</>,
       partners: [
         "State of Arizona",
         "State of Arizona Department of Corrections",

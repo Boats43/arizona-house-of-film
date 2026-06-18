@@ -141,6 +141,7 @@ const SolyxBirdSafetyFilm = lazy(() => import("@/pages/informational/SolyxBirdSa
 const WindowFilmDistributorPhoenix = lazy(() => import("@/pages/informational/WindowFilmDistributorPhoenix"));
 const AIWindowFilmEstimator = lazy(() => import("@/pages/AIWindowFilmEstimator"));
 const WindowFilmFAQ = lazy(() => import("@/pages/WindowFilmFAQ"));
+const WindowFilmComparison = lazy(() => import("@/pages/WindowFilmComparison"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -369,6 +370,7 @@ function AppRoutes() {
           <Route path="/window-film-distributor-phoenix" element={<WindowFilmDistributorPhoenix />} />
           <Route path="/ai-window-film-estimator" element={<AIWindowFilmEstimator />} />
           <Route path="/window-film-faq" element={<WindowFilmFAQ />} />
+          <Route path="/window-film-comparison" element={<WindowFilmComparison />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

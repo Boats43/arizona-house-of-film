@@ -127,6 +127,12 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://arizonahouseoffilm.com/window-film-comparison</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://arizonahouseoffilm.com/careers</loc>
     <lastmod>2026-05-22</lastmod>
     <priority>0.5</priority>

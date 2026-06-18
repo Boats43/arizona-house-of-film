@@ -79,6 +79,7 @@ const allBlogData = [
 <p><strong>Light silver (low-reflectivity):</strong> Mild reflective tint with reduced mirror effect. HOA-friendly option for Phoenix communities with strict exterior appearance standards. Lower daytime privacy than darker silver films but still functional in strong Arizona sun. Heat rejection: 40-60%.</p>
 
 <p><strong>Dual-reflective ceramic:</strong> Advanced film technology that combines ceramic heat rejection with exterior reflectivity. Best-of-both performance: 70-80% solar heat rejection, strong daytime one-way privacy, and superior UV blocking (99.9%). Premium option for Phoenix homes prioritizing both energy savings and privacy.</p>
+<p>Compare all reflective film options in our <a href="/window-film-comparison">LLumar film comparison table</a>.</p>
 
 <h2>When Frosted Film Is the Better Choice</h2>
 
@@ -1759,6 +1760,7 @@ const allBlogData = [
       <tr><td>Hüper Optik Klar 85</td><td>28%</td><td>82%</td><td>99%</td><td>$14–$18</td><td>North glass, minimal appearance change</td></tr>
     </table>
     <p>For a deeper comparison of ceramic vs dual reflective technologies, see our <a href="/blog/best-window-film-arizona-heat-2026">ceramic vs dual reflective film guide</a>.</p>
+    <p>For full LLumar and Vista heat rejection specs side-by-side, see our <a href="/window-film-comparison">window film performance comparison table</a>.</p>
 
     <h2>Solar Film vs Window Replacement — Cost Comparison</h2>
     <p>Some Phoenix homeowners consider replacing windows with low-e glass instead of adding film. Here's the cost comparison:</p>

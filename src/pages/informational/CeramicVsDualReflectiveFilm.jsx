@@ -85,6 +85,7 @@ export default function CeramicVsDualReflectiveFilm() {
             </table>
           </div>
           <p className="text-lg text-slate-700 mt-4"><strong>Important:</strong> IR rejection and TSER are different measurements. Ceramic excels at infrared blocking; dual reflective excels at total solar energy rejection including visible light reflection. Both reduce interior temperatures significantly in Arizona conditions.</p>
+          <p className="text-lg text-slate-700 mt-4">For detailed heat rejection specs on 47 LLumar and Vista films, see our <Link to="/window-film-comparison" className="text-blue-600 hover:underline font-semibold">window film performance comparison table</Link>.</p>
         </section>
 
         <section className="mb-12">

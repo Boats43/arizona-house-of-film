@@ -337,11 +337,7 @@ export default function SecurityPhoenix() {
           style={{ backgroundImage: `url(${heroImageUrl})`, aspectRatio: '1600/1066' }}
         />
         <div className="relative z-20 max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <span className="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
               Licensed Security Film Installer · {rocNumber}
             </span>
@@ -360,7 +356,7 @@ export default function SecurityPhoenix() {
                 <Link to="/safety">View Safety Film Options</Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

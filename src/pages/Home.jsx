@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Award from "lucide-react/dist/esm/icons/award";
 import Zap from "lucide-react/dist/esm/icons/zap";
@@ -108,7 +107,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center relative z-20">
           <div className="text-center max-w-5xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <div>
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-6xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-2xl">
                 Arizona <span className="text-blue-500 italic">House of Film</span>
                 {" "}— Licensed Window Film{" "}
@@ -133,7 +132,7 @@ const Home = () => {
                   <Link to="/window-film-cost-estimator">Instant Price Estimate</Link>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Phone, CheckCircle, FileText, Building2, Store, Utensils, Heart, GraduationCap, Landmark, Hotel, Warehouse } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { blogPosts } from '@/data/blogPosts';
 
 const WindowFilmResourceHub = () => {
   const pageTitle = "Arizona Window Film Resource Hub — Complete Guide | ROC #314088";
@@ -28,7 +29,7 @@ const WindowFilmResourceHub = () => {
     { name: 'Warehouses', slug: 'warehouses', Icon: Warehouse },
   ];
 
-  const topBlogs = [
+  const topBlogSlugs = [
     'arizona-hb-2342-shade-structure-bill-2026',
     'blast-mitigation-film-government-buildings-arizona',
     'one-way-window-film-day-and-night-guide',
@@ -43,18 +44,26 @@ const WindowFilmResourceHub = () => {
     'nexfil-window-film-arizona-review',
   ];
 
+  // Get actual blog post objects with titles
+  const topBlogs = topBlogSlugs.map(slug =>
+    blogPosts.find(post => post.slug === slug)
+  ).filter(Boolean);
+
   const faqs = [
     {
       question: 'What window film blocks the most heat in Arizona?',
-      answer: 'Vista VXA14 (exterior HPR) blocks 83% of solar heat — highest in the Eastman LLumar/Vista catalog. For interior installation, LLumar RHE20 blocks 81% and RN07G one-way mirror blocks 82%. Selection depends on glass type, orientation, and HOA requirements. See full specs → /window-film-comparison'
+      answer: 'Vista VXA14 (exterior HPR) blocks 83% of solar heat — highest in the Eastman LLumar/Vista catalog. For interior installation, LLumar RHE20 blocks 81% and RN07G one-way mirror blocks 82%. Selection depends on glass type, orientation, and HOA requirements.',
+      link: { text: 'See full specs', url: '/window-film-comparison' }
     },
     {
       question: 'Does countertop protection film protect granite and quartz?',
-      answer: 'Yes. Clear protective film shields natural and engineered stone countertops from scratches, etching, and stains while remaining nearly invisible. Common for quartz, granite, marble, and quartzite in residential and commercial settings. Details → /countertop-protection-film-arizona'
+      answer: 'Yes. Clear protective film shields natural and engineered stone countertops from scratches, etching, and stains while remaining nearly invisible. Common for quartz, granite, marble, and quartzite in residential and commercial settings.',
+      link: { text: 'Details', url: '/countertop-protection-film-arizona' }
     },
     {
       question: 'Does one-way mirror film work at night?',
-      answer: 'No. One-way mirror film provides daytime privacy only. The effect reverses at night when interior lights are on — people outside can see in. For 24/7 privacy, frosted film is the correct specification. Full explanation → /blog/one-way-window-film-day-and-night-guide'
+      answer: 'No. One-way mirror film provides daytime privacy only. The effect reverses at night when interior lights are on — people outside can see in. For 24/7 privacy, frosted film is the correct specification.',
+      link: { text: 'Full explanation', url: '/blog/one-way-window-film-day-and-night-guide' }
     },
     {
       question: 'Does window film qualify for SRP rebates in Arizona?',
@@ -62,7 +71,8 @@ const WindowFilmResourceHub = () => {
     },
     {
       question: 'What security film is required for Arizona government buildings?',
-      answer: 'Federal facilities require GSA TS01-2003 compliance; DoD/military require UFC 4-010-01. Minimum 12-14 mil thickness with wet-glaze anchoring. LLumar ArmorCoat and Madico SafetyShield are GSA-certified. Details → /blog/blast-mitigation-film-government-buildings-arizona'
+      answer: 'Federal facilities require GSA TS01-2003 compliance; DoD/military require UFC 4-010-01. Minimum 12-14 mil thickness with wet-glaze anchoring. LLumar ArmorCoat and Madico SafetyShield are GSA-certified.',
+      link: { text: 'Details', url: '/blog/blast-mitigation-film-government-buildings-arizona' }
     },
     {
       question: 'Can window film be installed on dual-pane Low-E glass?',
@@ -82,7 +92,7 @@ const WindowFilmResourceHub = () => {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer
+        "text": faq.link ? `${faq.answer} ${faq.link.text}: ${faq.link.url}` : faq.answer
       }
     }))
   };
@@ -378,7 +388,17 @@ const WindowFilmResourceHub = () => {
               {faqs.map((faq, idx) => (
                 <div key={idx} className="border-b border-gray-200 pb-6 last:border-0">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    {faq.answer}
+                    {faq.link && (
+                      <>
+                        {' '}
+                        <Link to={faq.link.url} className="text-blue-600 hover:underline font-semibold">
+                          {faq.link.text} →
+                        </Link>
+                      </>
+                    )}
+                  </p>
                 </div>
               ))}
             </div>
@@ -390,16 +410,16 @@ const WindowFilmResourceHub = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Arizona Window Film Guides</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-              {topBlogs.map((slug) => (
+              {topBlogs.map((post) => (
                 <Link
-                  key={slug}
-                  to={`/blog/${slug}`}
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
                   className="block p-4 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition-all bg-white"
                 >
                   <div className="flex items-start gap-2">
                     <FileText className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 text-sm font-medium leading-tight">
-                      {slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                      {post.title}
                     </span>
                   </div>
                 </Link>

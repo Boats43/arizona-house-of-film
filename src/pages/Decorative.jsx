@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Palette,
@@ -264,7 +263,7 @@ const Decorative = () => {
             <img alt="Decorative window film pattern installation" className="w-full h-full object-cover" src={heroImageUrl} fetchpriority="high" width="1920" height="1080" style={{ aspectRatio: '1920/1080' }} />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="max-w-3xl">
+            <div className="max-w-3xl">
               <span className="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-800 font-black text-xs mb-6 border border-slate-200 uppercase tracking-widest">
                 Licensed & Bonded • ROC #{rocNumber}
               </span>
@@ -282,7 +281,7 @@ const Decorative = () => {
                   480-788-1591
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

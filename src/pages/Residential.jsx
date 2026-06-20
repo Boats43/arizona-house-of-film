@@ -190,7 +190,7 @@ const Residential = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <div className="max-w-3xl">
               <span className="inline-block px-4 py-1 rounded-full bg-green-500/20 text-green-400 font-bold text-sm mb-6 border border-green-500/30 uppercase tracking-widest">
                 Residential Specialists
               </span>
@@ -208,7 +208,7 @@ const Residential = () => {
                   <Link to="/contact">Get A Free Quote</Link>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

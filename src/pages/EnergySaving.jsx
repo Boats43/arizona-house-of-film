@@ -1,7 +1,6 @@
-import React from 'react';
+﻿import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { DollarSign, Thermometer, Shield, Activity, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -87,7 +86,7 @@ const EnergySaving = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent opacity-50" />
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+              <div transition={{ duration: 0.6 }}>
                 <div className="inline-block px-3 py-1 bg-red-600 text-white font-black text-xs uppercase tracking-widest mb-6">
                   Performance Grade Window Film
                 </div>
@@ -105,7 +104,7 @@ const EnergySaving = () => {
                     <Phone className="mr-3 w-6 h-6 text-red-600" /> 480-788-1591
                   </a>
                 </div>
-              </motion.div>
+              </div>
               <div className="relative border-2 border-white/10 p-2 bg-slate-900 min-h-64 flex items-center justify-center">
                 <p className="text-slate-600 text-sm">Image coming soon</p>
               </div>

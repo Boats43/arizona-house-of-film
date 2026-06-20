@@ -100,7 +100,7 @@ const AntiGraffitiPhoenix = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="max-w-4xl">
+            <div className="max-w-4xl">
               <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">Licensed • Bonded • ROC #{rocNumber}</span>
               <h1 className="text-5xl md:text-8xl font-black text-white mb-6 uppercase leading-[0.85] tracking-tighter">Anti-Graffiti Film Phoenix AZ</h1>
               <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-medium">Sacrificial film protection for glass, mirrors, and polished metal. Replace film not glass. Valley Metro, AutoZone, City of Phoenix. ROC #{rocNumber}.</p>
@@ -110,7 +110,7 @@ const AntiGraffitiPhoenix = () => {
                 </Button>
                 <a href="tel:480-788-1591" className="flex items-center gap-3 px-8 h-16 border-2 border-white text-white font-black hover:bg-white hover:text-slate-950 transition-all text-lg">(480) 788-1591</a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

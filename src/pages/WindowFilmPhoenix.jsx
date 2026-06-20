@@ -212,7 +212,7 @@ const WindowFilmPhoenix = () => {
         {/* HERO */}
         <section className="py-24 bg-slate-950 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="max-w-4xl">
+            <div className="max-w-4xl">
               <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">
                 Licensed &bull; Bonded &bull; ROC #314088
               </span>
@@ -244,7 +244,7 @@ const WindowFilmPhoenix = () => {
                   (480) 788-1591
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

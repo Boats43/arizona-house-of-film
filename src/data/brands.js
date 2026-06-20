@@ -230,7 +230,7 @@ export const brands = [
     slug: "global",
     category: "Automotive",
     description: "Reliable and budget-friendly films for both installers and DIY consumers.",
-    url: "https://globalwindowfilms.com",
+    url: "https://globalhitechfilms.com/window-films/",
     relatedFilms: ["residential"],
     specs: {
       heatRejection: "High Heat Rejection",

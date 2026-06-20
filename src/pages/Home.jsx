@@ -259,7 +259,7 @@ const Home = () => {
                 {
                   category: 'Anti-Graffiti Films',
                   films: ['Sacrificial Surface Film', 'Clear Anti-Graffiti', 'Tinted Anti-Graffiti', 'Mirror Anti-Graffiti'],
-                  link: '/anti-graffiti-film',
+                  link: '/anti-graffiti-film-phoenix',
                   desc: 'Peel-and-replace protection for storefronts and transit.',
                 },
                 {

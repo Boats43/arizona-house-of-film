@@ -97,7 +97,10 @@
       "PowerShell($size = \\(Get-Item \"dist\\\\blog\\\\security-window-film-queen-creek\\\\index.html\"\\).Length; Write-Host \"File size: $size bytes\"; if \\($size -lt 10000\\) { Write-Host \"WARNING: SPA shell\" } else { Write-Host \"OK: Full SSR HTML\" })",
       "PowerShell(\\(Get-Item \"dist\\\\window-film-comparison\\\\index.html\"\\).Length)",
       "Bash(xxd -l 80)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "WebFetch(domain:www.johnsonwindowfilms.com)",
+      "WebFetch(domain:globalwindowfilms.com)",
+      "WebFetch(domain:globalhitechfilms.com)"
     ]
   }
 }

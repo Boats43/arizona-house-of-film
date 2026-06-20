@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 
 const BookNow = () => {
@@ -65,11 +64,11 @@ const BookNow = () => {
       <section className="relative py-20 bg-gradient-to-br from-teal-900 to-blue-900 overflow-hidden">
         <div className="absolute inset-0 hero-pattern opacity-20"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <div>
             <Calendar className="w-16 h-16 mx-auto text-white mb-4" />
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Schedule Your Free Window Film Estimate | Arizona House of Film</h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Book a free, no-obligation estimate for your home or business. Arizona House of Film serves Phoenix, Scottsdale, and communities statewide. Licensed ROC #314088. Most estimates are scheduled within 1–3 business days.</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 

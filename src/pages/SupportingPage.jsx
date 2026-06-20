@@ -167,23 +167,17 @@ const SupportingPage = () => {
               </Link>
             </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+            <h1
               className="text-4xl md:text-5xl font-bold text-white"
             >
               {hero.title}
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+            <p
               className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
             >
               {hero.subtitle}
-            </motion.p>
+            </p>
           </div>
         </header>
 

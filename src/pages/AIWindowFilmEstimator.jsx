@@ -234,7 +234,7 @@ export default function AIWindowFilmEstimator() {
       {/* HERO */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div>
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">
               AI Window Film Estimator — Phoenix AZ
             </h1>
@@ -256,7 +256,7 @@ export default function AIWindowFilmEstimator() {
               <span>713+ Projects</span>
               <span>U.S. Navy Veteran Owned</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

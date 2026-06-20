@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import CheckCircle2 from 'lucide-react/dist/esm/icons/check-circle-2';
 import Phone from 'lucide-react/dist/esm/icons/phone';
 import Star from 'lucide-react/dist/esm/icons/star';
@@ -63,7 +62,7 @@ const ThankYou = () => {
 
       {/* SUCCESS HEADER */}
       <section className="bg-slate-900 text-white py-16 px-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center space-y-6">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
           <div className="flex justify-center">
             <CheckCircle2 className="h-20 w-20 text-green-400" />
           </div>
@@ -77,12 +76,12 @@ const ThankYou = () => {
               </a>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* REVIEW REQUEST */}
       <section className="bg-white py-16 px-4 border-b border-gray-100">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="max-w-xl mx-auto text-center space-y-6">
+        <div className="max-w-xl mx-auto text-center space-y-6">
           <div className="flex justify-center gap-1">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="h-7 w-7 text-yellow-400 fill-yellow-400" />
@@ -98,16 +97,16 @@ const ThankYou = () => {
               </a>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* WHAT HAPPENS NEXT */}
       <section className="bg-gray-50 py-16 px-4 border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">What Happens Next</motion.h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">What Happens Next</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center space-y-3">
+              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center space-y-3">
                 <div className="flex justify-center">
                   <div className="bg-slate-900 rounded-full p-3">
                     <step.icon className="h-6 w-6 text-green-400" />
@@ -116,7 +115,7 @@ const ThankYou = () => {
                 <span className="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">{step.timeline}</span>
                 <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>
                 <p className="text-gray-600 text-sm">{step.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -125,11 +124,11 @@ const ThankYou = () => {
       {/* EXPLORE MORE */}
       <section className="bg-slate-900 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className="text-2xl md:text-3xl font-bold text-center mb-4">Explore More</motion.h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Explore More</h2>
           <p className="text-center text-gray-400 text-sm mb-12">Or <Link to="/" className="underline text-green-400 hover:text-green-300">return to the home page</Link>.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {exploreLinks.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.55 + i * 0.1 }}>
+              <div key={i}>
                 <Link to={item.path} className="block bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl p-6 transition-colors group space-y-3">
                   <item.icon className="h-8 w-8 text-green-400" />
                   <h3 className="text-lg font-bold group-hover:text-green-400 transition-colors">{item.title}</h3>
@@ -138,7 +137,7 @@ const ThankYou = () => {
                     Learn more <ArrowRight className="ml-1 h-4 w-4" />
                   </span>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

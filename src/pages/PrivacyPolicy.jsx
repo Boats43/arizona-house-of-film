@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const PrivacyPolicy = () => {
   const schema = {
@@ -31,13 +30,13 @@ const PrivacyPolicy = () => {
       </Helmet>
       <div className="bg-white py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
+          <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Privacy Policy</h1>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="mt-12 prose prose-lg max-w-none">
+          </div>
+          <div className="mt-12 prose prose-lg max-w-none">
             <p>Arizona House of Film ("us", "we", or "our") operates the Arizona House of Film website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
             <h2>Information Collection and Use</h2>
             <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
@@ -74,7 +73,7 @@ const PrivacyPolicy = () => {
               <li>By email: info@arizonahouseoffilm.com</li>
               <li>By phone number: 480-788-1591</li>
             </ul>
-          </motion.div>
+          </div>
         </div>
       </div>
     </>

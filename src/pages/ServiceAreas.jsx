@@ -70,7 +70,7 @@ const ServiceAreas = () => {
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
           </div>
           <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <div>
               <span className="inline-flex items-center gap-2 px-4 py-1 bg-red-600 text-white font-black text-xs mb-6 uppercase tracking-[0.2em]">
                 <ShieldCheck className="w-4 h-4" /> Statewide Deployment • ROC #{rocNumber}
               </span>
@@ -85,7 +85,7 @@ const ServiceAreas = () => {
                   <a href="tel:480-788-1591">Call Dispatch: 480-788-1591</a>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

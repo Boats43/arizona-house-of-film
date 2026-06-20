@@ -88,7 +88,7 @@ const BrandPage = () => {
               <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" /> Back to Partners
             </Link>
             <div className="grid lg:grid-cols-2 gap-12 items-end">
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <div>
                 <div className="flex items-center gap-3 mb-4 text-slate-400 font-black uppercase tracking-tighter">
                   <Award className="text-red-600 w-5 h-5" /> Authorized Arizona Installer
                 </div>
@@ -96,7 +96,7 @@ const BrandPage = () => {
                   {brand.name}<br /><span className="text-red-600">Series</span>
                 </h1>
                 <p className="text-xl text-slate-300 font-bold uppercase tracking-wide border-l-4 border-red-600 pl-6 max-w-2xl">{brand.description}</p>
-              </motion.div>
+              </div>
               <div className="flex flex-wrap gap-4 lg:justify-end">
                 {brand.url && brand.url !== "#" && (
                   <Button asChild variant="outline" className="rounded-none border-white/20 hover:bg-white hover:text-black font-black uppercase italic">

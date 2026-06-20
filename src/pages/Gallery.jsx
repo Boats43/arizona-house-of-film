@@ -53,13 +53,13 @@ const Gallery = () => {
       <section className="relative py-20 bg-gradient-to-br from-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0 hero-pattern opacity-20"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Window Film Installation Gallery | Phoenix &amp; Scottsdale Projects</h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Browse Arizona House of Film's installation portfolio — residential homes, commercial offices, retail storefronts, and specialty applications across Phoenix, Scottsdale, and Arizona. Every project in this gallery was completed by our licensed installation team. ROC #314088.</p>
             <Button asChild size="lg" className="bg-white text-indigo-900 hover:bg-gray-100">
               <Link to="/contact">Start Your Project</Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
 

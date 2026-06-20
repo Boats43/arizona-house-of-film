@@ -261,7 +261,7 @@ const ScottsdaleCommercial = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="max-w-4xl">
+            <div className="max-w-4xl">
               <span className="inline-block px-4 py-1 bg-green-500 text-slate-950 font-black text-xs mb-6 uppercase tracking-widest">
                 Licensed • Bonded • ROC #{rocNumber}
               </span>
@@ -287,7 +287,7 @@ const ScottsdaleCommercial = () => {
                   (480) 788-1591
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema.jsx';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Building, Utensils, School, Stethoscope, Hotel, Briefcase, Warehouse, ArrowLeft, Sun, Shield, Sparkles } from 'lucide-react';
 import NotFound from '@/pages/NotFound';
 import { Button } from '@/components/ui/button';
@@ -260,7 +259,7 @@ const IndustriesPage = () => {
       ]} />
       <div className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <div>
             <div className="mb-4 text-center">
               <Link to="/industries" className="text-blue-600 hover:underline flex items-center justify-center">
                 <ArrowLeft className="w-4 h-4 mr-2" /> All Industries
@@ -313,7 +312,7 @@ const IndustriesPage = () => {
                 <a href="tel:4807881591" className="hover:underline font-bold">(480) 788-1591</a>
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </>

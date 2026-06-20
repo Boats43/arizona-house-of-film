@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { CheckCircle, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -39,7 +38,7 @@ const Success = () => {
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
       <div className="min-h-[60vh] flex items-center justify-center bg-gray-50 py-12 px-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-md w-full space-y-8 text-center bg-white p-10 rounded-2xl shadow-lg">
+        <div className="max-w-md w-full space-y-8 text-center bg-white p-10 rounded-2xl shadow-lg">
           <div className="flex justify-center">
             <CheckCircle className="h-20 w-20 text-green-500" />
           </div>
@@ -53,7 +52,7 @@ const Success = () => {
           <p className="text-sm text-gray-500">
             Questions? <Link to="/contact" className="text-blue-700 underline">Contact us</Link> or return to the <Link to="/" className="text-blue-700 underline">home page</Link>.
           </p>
-        </motion.div>
+        </div>
       </div>
     </>
   );

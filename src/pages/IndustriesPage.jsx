@@ -278,6 +278,18 @@ const IndustriesPage = () => {
               </div>
             )}
 
+            {/* Complete Guide Link for Medical Facilities */}
+            {slug === 'medical-facilities' && (
+              <div className="my-8 text-center">
+                <Link
+                  to="/window-film-for-medical-facilities-arizona"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-lg hover:underline"
+                >
+                  Read the complete guide → Window Film for Medical Facilities Arizona
+                </Link>
+              </div>
+            )}
+
             {/* FAQ Section */}
             {faqsBySlug[slug] && (
               <div className="my-12">

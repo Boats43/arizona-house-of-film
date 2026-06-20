@@ -42,6 +42,13 @@ const WindowFilmResourceHub = () => {
     'commercial-window-film-queen-creek',
     'turf-protection-window-film-queen-creek',
     'nexfil-window-film-arizona-review',
+    'car-vs-home-window-tinting-whats-the-difference',
+    'top-5-mistakes-to-avoid-when-tinting-your-home',
+    'window-film-for-restaurants-arizona',
+    'slashing-your-energy-bills-with-window-film',
+    'ultimate-guide-to-window-tinting-benefits-in-arizona',
+    'commercial-window-film-case-study-fedex-yuma',
+    'the-secret-to-scottsdale-luxury-high-end-window-films',
   ];
 
   // Get actual blog post objects with titles
@@ -67,7 +74,8 @@ const WindowFilmResourceHub = () => {
     },
     {
       question: 'Does window film qualify for SRP rebates in Arizona?',
-      answer: 'Yes. SRP offers rebates for qualifying NFRC-rated ceramic window film meeting solar heat gain thresholds. Arizona House of Film provides NFRC spec sheets required for rebate applications. Current rebate amounts available at srpnet.com. APS has custom commercial measure rebates.'
+      answer: 'Yes. SRP offers rebates for qualifying NFRC-rated ceramic window film meeting solar heat gain thresholds. Arizona House of Film provides NFRC spec sheets required for rebate applications.',
+      link: { text: 'See our complete Arizona window film energy rebates guide', url: '/window-film-energy-rebates-arizona' }
     },
     {
       question: 'What security film is required for Arizona government buildings?',

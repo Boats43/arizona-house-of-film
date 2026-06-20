@@ -142,6 +142,7 @@ const WindowFilmDistributorPhoenix = lazy(() => import("@/pages/informational/Wi
 const AIWindowFilmEstimator = lazy(() => import("@/pages/AIWindowFilmEstimator"));
 const WindowFilmFAQ = lazy(() => import("@/pages/WindowFilmFAQ"));
 const WindowFilmComparison = lazy(() => import("@/pages/WindowFilmComparison"));
+const WindowFilmResourceHub = lazy(() => import("@/pages/WindowFilmResourceHub"));
 
 /* ---------------- GLOBAL SCHEMA ---------------- */
 const globalLocalBusinessSchema = {
@@ -371,6 +372,7 @@ function AppRoutes() {
           <Route path="/ai-window-film-estimator" element={<AIWindowFilmEstimator />} />
           <Route path="/window-film-faq" element={<WindowFilmFAQ />} />
           <Route path="/window-film-comparison" element={<WindowFilmComparison />} />
+          <Route path="/window-film-resource-hub" element={<WindowFilmResourceHub />} />
 
           {/* MISC */}
           <Route path="/gallery" element={<Gallery />} />

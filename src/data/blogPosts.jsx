@@ -1747,7 +1747,7 @@ const allBlogData = [
       <li><strong>51% TSER</strong> — Hüper Optik Select SECH. Best balance of heat rejection and natural light (61% VLT). Ideal for living rooms and kitchens.</li>
       <li><strong>28% TSER</strong> — Hüper Optik Klar 85. Nearly invisible film for north-facing or low-priority windows.</li>
     </ul>
-    <p>On a west-facing window in Phoenix receiving direct afternoon sun, the difference between unfilmed glass and 67% TSER film is dramatic — interior surface temperatures drop 20–30°F, and the AC runs significantly less during peak hours.</p>
+    <p>On a west-facing window in Phoenix receiving direct afternoon sun, the difference between unfilmed glass and 67% TSER film is dramatic — interior surface temperatures drop 20–30°F, and the AC runs significantly less during peak hours. West-facing <a href='/privacy-film-sliding-glass-door'>sliding glass doors</a> are the highest heat-load surface in most Phoenix homes — solar film on patio doors reduces afternoon heat load by 40-55%.</p>
 
     <h2>Best Solar Films for Phoenix Homes (by TSER Rating)</h2>
     <table>

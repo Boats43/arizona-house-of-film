@@ -14,6 +14,7 @@ const REFLECTIVE_FILMS = solyxProducts.filter(p => p.category === 'reflective-mi
 
 const FAQS = [
   { q: 'Does one-way mirror window film work at night?', a: 'No. One-way mirror film relies on a light differential — it must be brighter outside than inside. During the day, strong exterior sunlight creates this differential naturally. At night, when interior lights are on, the effect reverses — people can see in. For 24-hour privacy, combine reflective film with interior shades or choose frosted film instead.' },
+  { q: 'What about sliding glass doors?', a: 'For sliding glass doors specifically, frosted film provides 24/7 privacy without the nighttime reversal. One-way mirror film works during the day but reverses at night when patio lights are on. See our <a href="/privacy-film-sliding-glass-door" class="text-blue-600 hover:underline">sliding glass door privacy film guide</a> for a full comparison of frosted, one-way, and security film options for patio doors.' },
   { q: 'How much heat does one-way mirror film reject in Arizona?', a: 'Quality reflective films reject 50–80% of solar heat gain. In Phoenix, this is measurable — west and south-facing windows with reflective film can reduce cooling costs by 20–30% on heavily glazed elevations. We can provide heat rejection data for specific film specs.' },
   { q: 'What\'s the difference between reflective film and frosted film?', a: 'Reflective (one-way mirror) film maintains a clear view from inside while appearing mirrored from outside in daylight. It does not block views at night when interior lights are on. Frosted film permanently blocks sightlines in both directions at all times but does not allow a clear view from inside.' },
   { q: 'Will one-way mirror film make my home look commercial?', a: 'Residential-grade reflective films (bronze, pewter, light silver) have a subtle tinted appearance rather than a hard commercial mirror look. We help you select the right film tone for your home\'s aesthetic. Darker silver films are more reflective and have a more commercial appearance.' },
@@ -212,7 +213,7 @@ export default function OneWayMirrorFilm() {
             {FAQS.map((faq, i) => (
               <div key={i} className="border border-gray-100 rounded-xl p-6">
                 <h3 className="font-bold text-gray-800 mb-2">{faq.q}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+                <p className="text-gray-500 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.a }} />
               </div>
             ))}
           </div>

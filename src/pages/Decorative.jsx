@@ -138,7 +138,7 @@ const Decorative = () => {
   const problemCards = [
     {
       title: "I need privacy but don\u2019t want to block natural light",
-      copy: "Blinds and curtains block light entirely. Frosted and privacy films diffuse light while blocking views — you keep full brightness inside with zero visibility from outside during the day. Perfect for street-facing windows, bathrooms, and ground-floor offices.",
+      copy: "Blinds and curtains block light entirely. Frosted and privacy films diffuse light while blocking views — you keep full brightness inside with zero visibility from outside during the day. Perfect for street-facing windows, bathrooms, and ground-floor offices. Frosted film is one of the most popular choices for <a href='/privacy-film-sliding-glass-door' class='text-blue-600 hover:underline'>sliding glass door privacy</a> in Arizona homes.",
       cta: 'See Frosted Films',
       link: '#film-collection',
       external: false,
@@ -334,7 +334,7 @@ const Decorative = () => {
                   className="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-8 transition-all group"
                 >
                   <h3 className="text-base font-black text-white uppercase mb-3 leading-snug">{card.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed font-medium mb-5">{card.copy}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed font-medium mb-5" dangerouslySetInnerHTML={{ __html: card.copy }} />
                   {card.link.startsWith('#') ? (
                     <a
                       href={card.link}

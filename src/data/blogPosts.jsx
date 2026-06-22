@@ -4936,6 +4936,68 @@ const allBlogData = [
   `
   },
   {
+    slug: 'sliding-glass-door-tinting-arizona',
+    title: 'Sliding Glass Door Tinting Arizona — Privacy, Heat & Security Film Guide 2026',
+    h1: 'Sliding Glass Door Tinting in Arizona — Which Film Is Right for Your Patio Door?',
+    excerpt: 'Arizona homes average 2-4 sliding glass doors. Here\'s exactly which tinting film solves each problem — heat, privacy, security, and HOA compliance — with Phoenix-specific install guidance.',
+    canonicalUrl: '/blog/sliding-glass-door-tinting-arizona',
+    date: '2026-06-22',
+    alt: 'Sliding glass door window film installation on west-facing Arizona patio door showing ceramic solar film application.',
+    keywords: 'sliding glass door tinting arizona, sliding glass door film phoenix, patio door window film arizona, sliding door privacy film',
+    serviceLink: '/privacy-film-sliding-glass-door',
+    cityLink: '/residential-window-tinting-phoenix',
+    brandMentions: 'LLumar, Vista',
+    ctaCity: 'Arizona',
+    faqs: [
+      {
+        question: 'What is the best window tint for a sliding glass door?',
+        answer: 'Depends on the primary problem. For heat: ceramic or spectrally-selective film (LLumar VS70 blocks 53% heat while keeping 70% visible light). For 24/7 privacy: frosted or gradient film. For daytime privacy plus heat: one-way mirror film (82-93% glare reduction). For security: 8-14 mil safety film. Most Arizona homeowners combine heat and privacy in one film — Arizona House of Film recommends the specific film after assessing door orientation and HOA rules.'
+      },
+      {
+        question: 'How much does it cost to tint sliding glass doors in Arizona?',
+        answer: 'A single standard sliding glass door (approximately 40 sq ft) with ceramic solar film ranges from a few hundred dollars installed. Projects with multiple doors or combined with whole-home window film are priced per square foot. Free on-site estimate: (480) 788-1591.'
+      },
+      {
+        question: 'Can window film be applied to sliding glass doors with Low-E glass?',
+        answer: 'Yes, with manufacturer-verified film selection. New Arizona construction (post-2015) commonly uses Low-E dual-pane glass in sliding doors. Arizona House of Film confirms glass type during the estimate and only installs manufacturer-approved films for dual-pane Low-E applications to prevent thermal stress.'
+      },
+      {
+        question: 'Does window tint on sliding glass doors reduce privacy at night?',
+        answer: 'Depends on film type. Frosted film maintains privacy day and night by diffusing light. One-way mirror film provides daytime privacy only — the effect reverses at night when interior lights are brighter than outside. For night privacy, frosted film is always the correct specification.'
+      },
+      {
+        question: 'How long does sliding glass door window film last in Arizona?',
+        answer: 'LLumar and Vista films are engineered for Arizona\'s extreme UV and heat environment. Most residential films carry manufacturer-backed limited warranties. Arizona House of Film provides manufacturer warranty documentation at project completion.'
+      }
+    ],
+    customContent: `
+<p>Sliding glass doors are the most heat-exposed glass in most Arizona homes. A west-facing patio door in Phoenix takes direct sun from 2pm to sunset — without film, that single door can push room temperature 8-15°F above your thermostat setting during peak summer months. Add the privacy problem (pool-facing doors, street-visible living rooms, ground-floor bedrooms) and sliding glass door tinting is one of the most requested residential film installations across Phoenix, Queen Creek, Scottsdale, and Chandler.</p>
+
+<h2>Four Problems, Four Film Solutions</h2>
+
+<h3>Problem 1: Heat — Best Film: Ceramic Solar</h3>
+<p>Ceramic window film blocks 33-55% of solar heat without significantly darkening the glass or creating a reflective exterior. For HOA communities in Queen Creek, Chandler, and Gilbert, ceramic is the standard specification because it maintains a neutral appearance while delivering meaningful heat reduction. Spectrally-selective film (LLumar VS70) pushes heat rejection to 53% while allowing 70% of visible light through — the best clarity-to-heat tradeoff on the market. <a href="/window-film-comparison">Compare all heat rejection films here</a>.</p>
+
+<h3>Problem 2: Privacy — Best Film: Frosted or Gradient</h3>
+<p>Frosted film diffuses light while maintaining brightness — it works day and night because it does not depend on a brightness differential. Full frosted is most common for pool-facing bedroom doors and bathroom windows. Gradient frosted (frosted bottom 4 feet, clear top) is popular for pool deck doors where you want privacy at eye level while keeping the sky view. Both are HOA-approved in virtually all Phoenix metro master-planned communities. For full coverage of privacy options, see our <a href="/privacy-film-sliding-glass-door">sliding glass door privacy film guide</a>.</p>
+
+<h3>Problem 3: Daytime Privacy + Heat — Best Film: One-Way Mirror</h3>
+<p>Reflective film (LLumar RN07G or R15G) blocks 82-93% of glare and creates a mirror exterior during daylight hours — neighbors see a reflective surface, you see out clearly. It also blocks 75-82% of solar heat, making it the highest-performance combined solution. The tradeoff: <a href="/blog/one-way-window-film-day-and-night-guide">one-way mirror film reverses at night</a> when interior lights are on. Not a 24/7 privacy solution — but for pool decks and south-facing living rooms with heavy daytime use, it is the most effective single film available.</p>
+
+<h3>Problem 4: Security — Best Film: Safety/Security Film</h3>
+<p>Sliding glass doors are the most common residential break-in entry point in Arizona. Security film (minimum 8 mil, typically 12-14 mil for high-risk properties) holds shattered glass in place, significantly increasing forced-entry time and deterring smash-and-grab attempts. Arizona House of Film installs security film for <a href="/security-window-film-phoenix">residential security applications</a> throughout Phoenix metro.</p>
+
+<h2>HOA Compliance — What Phoenix Metro Associations Allow</h2>
+<p>Most Phoenix metro HOAs permit: frosted film (all variants), ceramic and spectrally-selective solar film (non-reflective appearance), and safety/security film (clear or lightly tinted). Many restrict: highly reflective one-way mirror film, dark-tinted film below 35% VLT on street-facing glass. Arizona House of Film confirms HOA requirements during the free on-site estimate before ordering any film — we carry Eastman LLumar and Vista options across the full HOA-compliant range.</p>
+
+<h2>Cost Guide — Sliding Glass Door Film in Arizona</h2>
+<p>A standard sliding glass door runs approximately 40-45 square feet (6ft wide x 6.8ft tall). Pricing depends on film type and total project scope. Single-door projects carry a minimum service charge. Multi-door projects priced per square foot with volume efficiency. <a href="/window-film-cost-arizona">See our full window film cost guide</a> or call (480) 788-1591 for a free on-site estimate.</p>
+
+<h2>Arizona Cities We Serve for Sliding Door Film</h2>
+<p>Arizona House of Film installs sliding glass door film throughout Phoenix metro: Phoenix, Scottsdale, Queen Creek, Chandler, Gilbert, Mesa, Tempe, Glendale, Peoria, Surprise, Fountain Hills, Paradise Valley, Cave Creek, and surrounding areas. ROC #314088, licensed and bonded. <a href="/service-areas">See all service areas</a>.</p>
+`
+  },
+  {
     slug: 'blast-mitigation-film-government-buildings-arizona',
     title: 'Blast Mitigation Film for Government Buildings AZ',
     h1: 'Blast Mitigation Window Film for Arizona Government Buildings — GSA Specs, Credentials & Installation',

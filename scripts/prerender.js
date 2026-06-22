@@ -120,6 +120,7 @@ const ROUTES = [
   '/blog/security-window-film-queen-creek',
   '/blog/commercial-window-film-queen-creek',
   '/blog/blast-mitigation-film-government-buildings-arizona',
+  '/blog/sliding-glass-door-tinting-arizona',
   '/brands/3m', '/brands/eastman', '/brands/solar-gard', '/brands/nexfil', '/brands/avery-dennison',
   '/brands/xpel', '/brands/madico', '/brands/suntek', '/brands/huper-optik', '/brands/johnson',
   '/brands/geoshield', '/brands/rayno', '/brands/global', '/brands/terminax',

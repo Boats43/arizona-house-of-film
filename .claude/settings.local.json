@@ -100,7 +100,8 @@
       "Bash(xxd)",
       "WebFetch(domain:www.johnsonwindowfilms.com)",
       "WebFetch(domain:globalwindowfilms.com)",
-      "WebFetch(domain:globalhitechfilms.com)"
+      "WebFetch(domain:globalhitechfilms.com)",
+      "Bash(tee /tmp/build-sliding-door-blog.txt)"
     ]
   }
 }

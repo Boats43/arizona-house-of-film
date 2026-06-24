@@ -1,3 +1,4 @@
+// Arizona House of Film — AI Chat Endpoint (Claude Sonnet 4)
 import Anthropic from '@anthropic-ai/sdk';
 import { solyxProducts, solyxCategories } from '../src/data/solyxFilms.js';
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });

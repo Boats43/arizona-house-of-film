@@ -1127,7 +1127,7 @@ ${(leadData.summary || 'No summary')}`.trim();
     // Agentic loop — handles tool calls
     while (true) {
       const response = await client.messages.create({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-5-20250929',
         max_tokens: maxTokens,
         system: SYSTEM_PROMPT,
         tools: tools,
@@ -1156,7 +1156,7 @@ ${(leadData.summary || 'No summary')}`.trim();
             // Web search via Anthropic's built-in capability
             try {
               const searchResult = await client.messages.create({
-                model: 'claude-sonnet-4-20250514',
+                model: 'claude-sonnet-4-5-20250929',
                 max_tokens: 512,
                 tools: [{ type: "web_search_20250305", name: "web_search" }],
                 messages: [{ role: 'user', content: `Search for: ${toolUse.input.query}. Return only the key facts in 2-3 sentences.` }]

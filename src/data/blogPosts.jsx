@@ -1485,6 +1485,74 @@ const allBlogData = [
   `
   },
   {
+    slug: 'conference-room-privacy-film-phoenix',
+    title: 'Conference Room Privacy Film Phoenix — Frosted, Casper & One-Way Mirror Options 2026',
+    excerpt: 'Glass-walled conference rooms create fishbowl environments and screen visibility problems. Here\'s exactly which privacy film solves each issue — frosted, Casper cloaking, or one-way mirror — with Phoenix pricing and install guidance.',
+    date: '2026-06-26',
+    alt: 'Conference room privacy window film installed on glass partition in Phoenix office.',
+    keywords: 'conference room privacy film phoenix, meeting room privacy film, conference room window film, glass office partition film, casper cloaking film conference room',
+    serviceLink: '/office-privacy-window-film',
+    cityLink: '/commercial-window-tinting-scottsdale',
+    brandMentions: 'Solyx, Casper',
+    ctaCity: 'Phoenix',
+    faqs: [
+      {
+        question: 'What is the best privacy film for a conference room?',
+        answer: 'For standard privacy (people can\'t see in clearly): frosted film, full height or bottom 4 feet depending on sight lines. For screen content protection (screens appear black from outside): Casper Cloaking film. For heat and glare without privacy appearance: ceramic solar film. Arizona House of Film recommends specific film after assessing glass orientation, room use, and existing building specifications.'
+      },
+      {
+        question: 'Does conference room window film affect natural light inside?',
+        answer: 'Frosted film diffuses light — the room stays bright but light becomes indirect rather than directional. There is no significant reduction in overall light level. Casper Cloaking film maintains essentially full visible light transmission. Ceramic solar film (non-privacy) also maintains 70%+ visible light depending on specification.'
+      },
+      {
+        question: 'Can conference room film be applied to existing glass partitions?',
+        answer: 'Yes. Film installs on existing glass surfaces without removal or replacement. Standard office partition glass (typically 1/4 inch or 3/8 inch tempered) is fully compatible with frosted and Casper film. Arizona House of Film confirms glass specification before ordering.'
+      },
+      {
+        question: 'How long does conference room privacy film installation take?',
+        answer: 'A single standard conference room (4 glass walls, ~150 sq ft of glass) typically installs in 2-4 hours. Multi-room projects are sequenced to minimize disruption — most floor-level projects complete within 1-2 days. Offices remain operational during installation.'
+      },
+      {
+        question: 'Is conference room window film permanent?',
+        answer: 'No. Film is removable without damage to the glass. Frosted film can be updated, replaced, or removed when office layouts change or tenants move. This makes it significantly more flexible than etched or sandblasted glass, which is permanent.'
+      }
+    ],
+    customContent: `
+    <p>Phoenix office buildings built since 2010 overwhelmingly use glass-walled conference rooms. The aesthetic is intentional — natural light, visual openness, modern design. The problem is operational: client meetings visible from the open floor, financial discussions conducted in a fishbowl, and presentation screens washed out by afternoon sun reflecting off glass. Conference room privacy film solves all three without replacing the glass or installing blinds that block light entirely.</p>
+
+    <h2>The Three Conference Room Problems Window Film Solves</h2>
+
+    <h3>Problem 1: Visual Privacy During Meetings</h3>
+    <p>Glass conference rooms are visible from every angle on the floor. Client negotiations, HR conversations, and executive reviews require confidentiality that floor-to-ceiling glass doesn't provide. Frosted film diffuses vision through the glass while maintaining brightness inside the room — people outside see shapes and movement, not faces and documents. Full-height frosted film on conference room glass is the standard specification for law firms, financial services, and healthcare administration offices throughout Phoenix metro. See our full range of options at <a href="/office-privacy-window-film">office privacy window film</a>.</p>
+
+    <h3>Problem 2: Presentation Screen Visibility (The Casper Problem)</h3>
+    <p>Standard frosted film blocks screens — if your conference room has a TV or projector facing glass, frosted film makes the display invisible from outside but also washes it out from inside under certain light conditions. Casper Cloaking film solves this specifically: it blocks OLED and LED screen content from being visible through the glass (screens appear black from outside) while maintaining normal visibility inside the room. Casper is specified for trading floors, legal offices, and executive boardrooms where screen content is sensitive. Full Casper detail at <a href="/blog/casper-cloaking-film-cost-phoenix">our Casper cloaking film guide</a>.</p>
+
+    <h3>Problem 3: West and South-Facing Glass — Glare on Screens and Occupants</h3>
+    <p>Phoenix conference rooms with west or south-facing glass exposure face afternoon glare that makes screens unusable and creates uncomfortable heat loads. Ceramic solar film (non-privacy, clear appearance) blocks 50-78% of solar heat and 85-95% of glare while maintaining clear glass appearance. For rooms where privacy isn't required but glare and heat are problems — typically executive offices and client-facing rooms with views — ceramic film is the specification. <a href="/window-film-comparison">Compare all heat rejection films here</a>.</p>
+
+    <h2>Film Options by Conference Room Type</h2>
+
+    <h3>Standard Conference Room (Privacy Only)</h3>
+    <p>Full-height frosted film, bottom 4 feet to full height depending on table height and sight lines. Solyx SF-SFP or equivalent — consistent with HOA-compliant and building-standard specifications across Phoenix office parks. Installed in one day per conference room. Most common specification in Phoenix for 4-20 person conference rooms.</p>
+
+    <h3>Executive Boardroom (Privacy + Screens)</h3>
+    <p>Casper Cloaking film (sx-ccf series) — blocks screen content from outside while maintaining full interior visibility. Specified for boardrooms, legal conference rooms, financial advisory offices, and medical group administration suites. Casper works on all OLED and LED displays. Standard install for executive-level Phoenix office suites.</p>
+
+    <h3>Client-Facing Conference Rooms (Branded Privacy)</h3>
+    <p>Frosted film with logo or pattern cutouts — your brand marks the glass while maintaining privacy. Common for law firm reception conference rooms, financial services client meeting rooms, and healthcare patient consultation spaces. Custom cut patterns available through Arizona House of Film's design service.</p>
+
+    <h3>Small Meeting Rooms and Phone Booths</h3>
+    <p>Gradient frosted (frosted bottom, clear top) or partial-height frosted for smaller glass panels. Sidelight panels adjacent to doors also benefit from frosted coverage. Pricing scales with square footage — small phone booth installations start significantly below full conference room pricing.</p>
+
+    <h2>Conference Room Privacy Film Cost in Phoenix</h2>
+    <p>Cost depends on square footage, film type, and number of rooms. Typical ranges: single standard conference room (4 glass walls, ~120-200 sq ft of glass) with frosted film starts from approximately $800-1,500 installed. Casper cloaking film runs higher due to material cost — executive boardroom installations typically $1,500-3,500 depending on glass area. Full floor build-outs (multiple conference rooms + partition walls) are quoted per project. <a href="/contact">Request a free on-site assessment</a> or call (480) 788-1591.</p>
+
+    <h2>Phoenix Office Buildings We've Served</h2>
+    <p>Arizona House of Film installs conference room privacy film in office buildings throughout Phoenix metro — Scottsdale, Tempe, Chandler, Gilbert, Glendale, Peoria, and downtown Phoenix. Government facility experience (State of Arizona, U.S. Navy recruitment centers, ASU MacroTechnology Works) means our team handles large-scale, multi-room office projects with minimal disruption to operations. ROC #314088, licensed and bonded. <a href="/service-areas">See all service areas</a>.</p>
+  `
+  },
+  {
     slug: 'window-tinting-queen-creek-guide',
     title: 'Queen Creek Window Film — Privacy & Heat Control 2026',
     excerpt: 'Window tinting Queen Creek — privacy + heat rejection + turf protection film. Residential & commercial. Licensed ROC #314088. Free estimate — (480) 788-1591.',
@@ -4937,7 +5005,7 @@ const allBlogData = [
   },
   {
     slug: 'sliding-glass-door-tinting-arizona',
-    title: 'Sliding Glass Door Tinting Arizona — Privacy, Heat & Security Film Guide 2026',
+    title: 'Sliding Glass Door Tinting Arizona — Film Guide 2026',
     h1: 'Sliding Glass Door Tinting in Arizona — Which Film Is Right for Your Patio Door?',
     excerpt: 'Arizona homes average 2-4 sliding glass doors. Here\'s exactly which tinting film solves each problem — heat, privacy, security, and HOA compliance — with Phoenix-specific install guidance.',
     canonicalUrl: '/blog/sliding-glass-door-tinting-arizona',

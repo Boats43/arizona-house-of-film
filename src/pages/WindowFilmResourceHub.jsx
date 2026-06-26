@@ -279,6 +279,11 @@ const WindowFilmResourceHub = () => {
                       Scottsdale Residential
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/office-privacy-window-film" className="text-blue-600 hover:underline font-semibold">
+                      Office privacy film
+                    </Link>
+                  </li>
                   <li>Office, retail, restaurant, hotel</li>
                   <li>Window & door graphics</li>
                   <li>

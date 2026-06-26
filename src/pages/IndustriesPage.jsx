@@ -290,6 +290,23 @@ const IndustriesPage = () => {
               </div>
             )}
 
+            {/* Complete Guide Links for Office Buildings */}
+            {slug === 'office-buildings' && (
+              <div className="my-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-sm text-blue-800">
+                  <strong>Conference Room & Office Privacy:</strong>{' '}
+                  See our complete guide to{' '}
+                  <Link to="/office-privacy-window-film" className="underline font-semibold hover:text-blue-900">
+                    office privacy window film
+                  </Link>
+                  {' '}and{' '}
+                  <Link to="/blog/window-film-for-offices-phoenix" className="underline font-semibold hover:text-blue-900">
+                    2026 Phoenix office window film guide
+                  </Link>.
+                </p>
+              </div>
+            )}
+
             {/* FAQ Section */}
             {faqsBySlug[slug] && (
               <div className="my-12">

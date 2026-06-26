@@ -93,6 +93,7 @@ const ROUTES = [
   '/blog/privacy-decorative-window-film-phoenix',
   '/blog/countertop-protection-film-arizona-guide',
   '/blog/casper-cloaking-film-cost-phoenix',
+  '/blog/conference-room-privacy-film-phoenix',
   '/blog/window-tinting-queen-creek-guide',
   '/blog/window-tinting-scottsdale-az-guide',
   '/blog/solar-window-film-phoenix-az',

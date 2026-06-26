@@ -101,7 +101,10 @@
       "WebFetch(domain:www.johnsonwindowfilms.com)",
       "WebFetch(domain:globalwindowfilms.com)",
       "WebFetch(domain:globalhitechfilms.com)",
-      "Bash(tee /tmp/build-sliding-door-blog.txt)"
+      "Bash(tee /tmp/build-sliding-door-blog.txt)",
+      "Bash(awk '/^const ROUTES = \\\\[/,/^\\\\]/' scripts/prerender.js)",
+      "Bash(awk '/slug: .conference-room-privacy-film-phoenix./,/^  \\\\},/ {print}' src/data/blogPosts.jsx)",
+      "Bash(awk '/^const ROUTES = \\\\[/,/^\\\\]/')"
     ]
   }
 }

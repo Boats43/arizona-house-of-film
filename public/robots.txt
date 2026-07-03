@@ -13,6 +13,7 @@ Disallow: /sv
 Disallow: /pages/
 Disallow: /en/
 Disallow: /en
+Disallow: /*.json$
 
 # AI Crawlers — explicitly welcome
 User-agent: GPTBot

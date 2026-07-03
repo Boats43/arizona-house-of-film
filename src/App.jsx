@@ -350,8 +350,8 @@ function AppRoutes() {
           <Route path="/how-long-does-window-film-last" element={<HowLongDoesWindowFilmLast />} />
           <Route path="/ceramic-vs-dual-reflective-film" element={<CeramicVsDualReflectiveFilm />} />
           <Route path="/countertop-protection-film-arizona" element={<CountertopProtectionFilmArizona />} />
-          <Route path="/countertop-protection-film-nationwide" element={<CountertopProtectionFilmNationwide />} />
-          <Route path="/countertop-protection-film/:regionSlug" element={<CountertopProtectionPage />} />
+          {/* <Route path="/countertop-protection-film-nationwide" element={<CountertopProtectionFilmNationwide />} /> */}
+          {/* <Route path="/countertop-protection-film/:regionSlug" element={<CountertopProtectionPage />} /> */}
           <Route path="/hurricane-window-film-arizona" element={<HurricaneWindowFilmArizona />} />
           <Route path="/reduce-heat-phoenix-windows" element={<ReduceHeatPhoenixWindows />} />
           <Route path="/uv-protection-window-film-phoenix" element={<UVProtectionWindowFilmPhoenix />} />

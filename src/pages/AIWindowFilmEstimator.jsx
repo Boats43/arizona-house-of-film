@@ -447,7 +447,7 @@ export default function AIWindowFilmEstimator() {
               <p>Projects Completed Since 2017</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl font-black text-green-400">4.6</p>
+              <p className="text-4xl font-black text-green-400">4.7</p>
               <p>Average Rating</p>
             </div>
             <div className="text-center">
